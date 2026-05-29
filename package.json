@@ -1,0 +1,12 @@
+{
+  "name": "spice-craft-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix frontend run start",
+    "lint": "npm --prefix frontend run lint",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "echo \"Backend is not implemented yet.\""
+  }
+}
