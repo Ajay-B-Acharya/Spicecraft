@@ -1,18 +1,9 @@
-'use client';
-
-import React from 'react';
-import { motion } from 'framer-motion';
-import { X, Download, Check, Zap, Maximize2, Share2, Settings2, Copy, Grid3x3, RefreshCw } from 'lucide-react';
+import { X, Zap, Share2, Settings2, Grid3x3, RefreshCw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export function CircuitMockup() {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.6, delay: 0.3 }}
-      className="floating relative h-full w-full max-w-2xl"
-    >
+    <div className="floating relative h-full w-full max-w-2xl">
       {/* Glow effects */}
       <div className="absolute -top-20 -right-20 h-40 w-40 glow-blob glow-blob-indigo" />
       <div className="absolute -bottom-32 -left-32 h-64 w-64 glow-blob glow-blob-cyan opacity-20" />
@@ -176,6 +167,6 @@ export function CircuitMockup() {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

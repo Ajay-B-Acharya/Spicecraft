@@ -1,5 +1,3 @@
-'use client';
-
 import { Button } from '@/components/ui/button';
 import { Cpu } from 'lucide-react';
 import Link from 'next/link';
@@ -14,7 +12,7 @@ export function Navbar() {
             <div className="rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 p-2">
               <Cpu className="h-5 w-5 text-white" />
             </div>
-            <span className="hidden font-bold text-xl text-white sm:inline">SpiceCraft</span>
+            <span className="font-bold text-lg text-white sm:text-xl">SpiceCraft</span>
           </Link>
 
           {/* Navigation Links */}

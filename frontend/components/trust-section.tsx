@@ -1,6 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import { Zap, Shield, Cpu, Wand2 } from 'lucide-react';
 
 const trustItems = [
@@ -38,12 +35,8 @@ export function TrustSection() {
           {trustItems.map((item, index) => {
             const Icon = item.icon;
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
                 className="flex flex-col items-center text-center space-y-4 group"
               >
                 <div className={`rounded-2xl bg-gradient-to-br ${item.color} p-4 group-hover:scale-110 transition-transform duration-300`}>
@@ -51,7 +44,7 @@ export function TrustSection() {
                 </div>
                 <h3 className="text-lg font-semibold text-white">{item.title}</h3>
                 <p className="text-sm text-gray-400">{item.description}</p>
-              </motion.div>
+              </div>
             );
           })}
         </div>

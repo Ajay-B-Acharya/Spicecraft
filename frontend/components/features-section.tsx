@@ -1,6 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import { Search, Brain, Edit3, FileDown } from 'lucide-react';
 
 const features = [
@@ -32,12 +29,8 @@ export function FeaturesSection() {
       {features.map((feature, index) => {
         const Icon = feature.icon;
         return (
-          <motion.div
+          <div
             key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
             className="group relative overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 p-4 hover:border-indigo-500/50 transition-all duration-300"
           >
             {/* Hover glow */}
@@ -50,7 +43,7 @@ export function FeaturesSection() {
               <h3 className="font-semibold text-white text-sm">{feature.title}</h3>
               <p className="text-xs text-gray-400">{feature.description}</p>
             </div>
-          </motion.div>
+          </div>
         );
       })}
     </div>
