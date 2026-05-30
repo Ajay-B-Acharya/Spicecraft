@@ -1,175 +1,452 @@
 "use client";
 
-import { ArrowRight, Plus, Sparkles } from "lucide-react";
+import { CircuitMockup } from "@/components/circuit-mockup";
+import {
+  ArrowRight,
+  Bot,
+  BrainCircuit,
+  FileCode2,
+  FileSearch,
+  PlayCircle,
+  Rocket,
+  ScanSearch,
+  Sparkles,
+  WandSparkles,
+} from "lucide-react";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { Navbar } from "@/components/navbar";
 import Spline from "@splinetool/react-spline";
+
+const techPills = ["React", "Python", "FastAPI", "LTspice", "AI Powered"];
+const hoverCubes = [
+  {
+    className:
+      "-left-6 top-10 h-10 w-10 border-violet-400/60 bg-violet-500/10 delay-0",
+  },
+  {
+    className:
+      "left-14 -top-6 h-6 w-6 border-sky-400/60 bg-sky-400/10 delay-75",
+  },
+  {
+    className:
+      "right-10 top-8 h-12 w-12 border-fuchsia-400/60 bg-fuchsia-500/10 delay-100",
+  },
+  {
+    className:
+      "-right-5 top-1/3 h-7 w-7 border-indigo-300/60 bg-indigo-400/10 delay-150",
+  },
+  {
+    className:
+      "left-8 bottom-12 h-8 w-8 border-cyan-300/60 bg-cyan-400/10 delay-200",
+  },
+  {
+    className:
+      "right-16 -bottom-5 h-11 w-11 border-violet-300/60 bg-violet-300/10 delay-300",
+  },
+];
+
+const workflowSteps = [
+  {
+    number: "1",
+    title: "Search",
+    description:
+      "Describe the circuit you need in natural language and let SpiceCraft interpret the request.",
+    example: '"I need a frequency modulation circuit"',
+    icon: FileSearch,
+  },
+  {
+    number: "2",
+    title: "Discover",
+    description:
+      "Search trusted electronics sources and collect real circuits that match your goal.",
+    example: "Electronics Hub, Circuit Digest, RF Wireless World",
+    icon: ScanSearch,
+  },
+  {
+    number: "3",
+    title: "Edit",
+    description:
+      "Modify the design with simple prompts and update components without redrawing manually.",
+    example: '"Replace BC547 with 2N2222"',
+    icon: WandSparkles,
+  },
+  {
+    number: "4",
+    title: "Export",
+    description:
+      "Export a clean `.asc` file and move straight into LTspice simulation.",
+    example: "FM_Modulator.asc ready to simulate",
+    icon: FileCode2,
+  },
+];
+
+const featureCards = [
+  {
+    title: "Search Real Circuits",
+    description:
+      "Find real-world circuit designs from trusted electronics websites in seconds.",
+    icon: ScanSearch,
+  },
+  {
+    title: "Understand Schematics",
+    description:
+      "AI analyzes components, connections, and values to help decode any circuit quickly.",
+    icon: BrainCircuit,
+  },
+  {
+    title: "Edit with Prompts",
+    description:
+      "Modify circuits naturally with prompt-based changes instead of complex CAD workflows.",
+    icon: Sparkles,
+  },
+  {
+    title: "LTspice Ready",
+    description:
+      "Export clean, simulation-ready `.asc` files that drop directly into LTspice.",
+    icon: FileCode2,
+  },
+];
+
+const techStack = [
+  { title: "Frontend", subtitle: "React + TypeScript" },
+  { title: "Backend", subtitle: "Python + FastAPI" },
+  { title: "AI Engine", subtitle: "LLM + Computer Vision" },
+  { title: "Export", subtitle: "LTspice .asc" },
+];
+
+const roadmapItems = [
+  {
+    version: "V1",
+    title: "Search + Export",
+    description: "Search circuits and export them to LTspice `.asc`.",
+  },
+  {
+    version: "V2",
+    title: "Image Recognition",
+    description: "Convert circuit images into editable schematics.",
+  },
+  {
+    version: "V3",
+    title: "Prompt Editing",
+    description: "Modify circuits using natural language instructions.",
+  },
+  {
+    version: "V4",
+    title: "Circuit Validation",
+    description: "Validate designs and prepare them for simulation faster.",
+  },
+  {
+    version: "V5",
+    title: "AI Circuit Design",
+    description: "Generate optimized circuits directly from requirements.",
+  },
+];
 
 function HeroSplineBackground() {
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="absolute inset-0 overflow-hidden">
       <Spline
-        className="h-screen w-full"
+        className="h-full w-full opacity-90"
         scene="https://prod.spline.design/dJqTIQ-tE3ULUPMi/scene.splinecode"
       />
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(to right, rgba(0, 0, 0, 0.82), transparent 30%, transparent 70%, rgba(0, 0, 0, 0.82)), linear-gradient(to bottom, rgba(3, 7, 18, 0.08) 20%, rgba(0, 0, 0, 0.94) 92%)",
-        }}
-      />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(99,102,241,0.18),transparent_35%),radial-gradient(circle_at_top_right,rgba(168,85,247,0.18),transparent_28%),linear-gradient(to_bottom,rgba(2,6,23,0.62),rgba(2,6,23,0.92)_30%,rgba(2,6,23,0.98))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(2,6,23,0.95),transparent_18%,transparent_82%,rgba(2,6,23,0.95))]" />
     </div>
   );
 }
 
-function ScreenshotSection({
-  screenshotRef,
+function SectionHeading({
+  eyebrow,
+  title,
+  highlight,
+  description,
 }: {
-  screenshotRef: React.RefObject<HTMLDivElement | null>;
+  eyebrow?: string;
+  title: string;
+  highlight?: string;
+  description?: string;
 }) {
   return (
-    <section className="relative z-10 mx-auto -mt-[10vh] w-full max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-      <div
-        ref={screenshotRef}
-        className="mx-auto w-full overflow-hidden rounded-[28px] border border-white/10 bg-slate-950 shadow-[0_30px_80px_rgba(0,0,0,0.45)] md:w-[84%] lg:w-[72%]"
-      >
-        <img
-          src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80"
-          alt="Product interface preview"
-          className="block h-auto w-full"
-        />
+    <div className="mx-auto max-w-3xl text-center">
+      {eyebrow ? (
+        <p className="mb-3 text-sm font-medium uppercase tracking-[0.35em] text-indigo-300/80">
+          {eyebrow}
+        </p>
+      ) : null}
+      <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+        {title}{" "}
+        {highlight ? (
+          <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-blue-400 bg-clip-text text-transparent">
+            {highlight}
+          </span>
+        ) : null}
+      </h2>
+      {description ? (
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-300/80 sm:text-base">
+          {description}
+        </p>
+      ) : null}
+    </div>
+  );
+}
+
+function HeroIntro() {
+  return (
+    <section className="relative z-10 mx-auto grid min-h-screen w-full max-w-7xl items-center gap-12 px-4 pb-20 pt-28 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:px-8 lg:pt-32">
+      <div className="max-w-2xl">
+        <div className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-slate-950/50 px-4 py-2 text-sm text-indigo-200 shadow-[0_0_20px_rgba(99,102,241,0.15)] backdrop-blur-md">
+          <Bot className="h-4 w-4 text-violet-400" />
+          AI-Powered Circuit Design
+        </div>
+
+        <h1 className="mt-8 text-5xl font-semibold leading-[1.05] tracking-[-0.05em] text-white sm:text-6xl lg:text-7xl">
+          From{" "}
+          <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+            Prompt
+          </span>{" "}
+          to LTspice.
+          <br />
+          Build Circuits with{" "}
+          <span className="bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">
+            AI.
+          </span>
+        </h1>
+
+        <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300/85">
+          Search real-world circuit designs, convert them into editable
+          schematics, modify them with natural language, and export directly to
+          LTspice.
+        </p>
+
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <Link
+            href="/signup"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 px-6 py-3.5 text-sm font-semibold text-white shadow-[0_10px_35px_rgba(99,102,241,0.35)] transition hover:scale-[1.02]"
+          >
+            Start Building
+            <Rocket className="h-4 w-4" />
+          </Link>
+          <Link
+            href="/login"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-slate-950/55 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition hover:border-white/30 hover:bg-white/8"
+          >
+            <PlayCircle className="h-4 w-4" />
+            Watch Demo
+          </Link>
+        </div>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          {techPills.map((pill) => (
+            <span
+              key={pill}
+              className="rounded-xl border border-white/10 bg-slate-950/55 px-4 py-2 text-sm text-slate-200/85 backdrop-blur-md"
+            >
+              {pill}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="group relative">
+        <div className="pointer-events-none absolute -inset-6 rounded-[32px] bg-[radial-gradient(circle,rgba(99,102,241,0.24),transparent_58%)] blur-3xl transition duration-500 group-hover:scale-105 group-hover:opacity-100" />
+        {hoverCubes.map((cube) => (
+          <div
+            key={cube.className}
+            className={`pointer-events-none absolute rounded-[0.85rem] border opacity-0 shadow-[0_0_30px_rgba(99,102,241,0.2)] transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:scale-100 group-hover:rotate-12 group-hover:opacity-100 ${cube.className} translate-y-4 scale-75`}
+          />
+        ))}
+        <div className="relative transition-transform duration-500 group-hover:-translate-y-1">
+          <CircuitMockup />
+        </div>
       </div>
     </section>
   );
 }
 
-function HeroContent() {
+function WorkflowSection() {
   return (
-    <div className="mx-auto flex w-full max-w-7xl flex-col justify-between gap-10 px-4 py-24 text-white sm:px-6 lg:flex-row lg:items-center lg:px-8">
-      <div className="w-full lg:w-1/2">
-        <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-7xl">
-          We&apos;re Building
-          <br />
-          Cool Experiences
-        </h1>
-        <p className="mt-5 text-sm uppercase tracking-[0.35em] text-slate-300/80">
-          AI / WEB3 / UI / 3D / MOTION
-        </p>
-      </div>
+    <section id="how-it-works" className="relative z-10 mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <div className="rounded-[28px] border border-white/10 bg-slate-950/45 p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_25px_80px_rgba(2,6,23,0.35)] backdrop-blur-md sm:p-8">
+        <SectionHeading
+          title="How"
+          highlight="SpiceCraft"
+          description="A practical workflow that moves from search to simulation without forcing engineers to redraw everything by hand."
+        />
 
-      <div className="flex w-full flex-col items-start lg:w-1/2 lg:pl-10">
-        <p className="mb-7 max-w-md text-base leading-7 text-slate-200/80 sm:text-lg">
-          Crafting awesome stories and sharp product experiences that help bold
-          brands stand out.
-        </p>
-
-        <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-          <Link
-            href="/login"
-            className="inline-flex w-full items-center justify-center rounded-2xl border border-white/80 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-black sm:w-auto"
-          >
-            Contact Us
-          </Link>
-          <Link
-            href="/signup"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-black transition hover:scale-[1.02] sm:w-auto"
-          >
-            <Plus className="h-4 w-4 text-cyan-500" />
-            Get Started
-          </Link>
+        <div className="mt-10 grid gap-5 lg:grid-cols-4">
+          {workflowSteps.map((step) => {
+            const Icon = step.icon;
+            return (
+              <div
+                key={step.number}
+                className="rounded-3xl border border-white/10 bg-[linear-gradient(180deg,rgba(15,23,42,0.88),rgba(2,6,23,0.76))] p-5"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-indigo-400/30 bg-indigo-500/10 text-indigo-300">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <span className="text-lg font-semibold text-violet-300">
+                    {step.number}
+                  </span>
+                </div>
+                <h3 className="mt-5 text-xl font-semibold text-white">
+                  {step.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-300/80">
+                  {step.description}
+                </p>
+                <div className="mt-5 rounded-2xl border border-white/8 bg-slate-900/70 px-4 py-3 text-sm text-slate-200/85">
+                  {step.example}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
-function Navbar() {
+function FeatureSection() {
   return (
-    <nav className="fixed inset-x-0 top-0 z-20">
-      <div className="mx-auto flex max-w-7xl items-center justify-between rounded-b-2xl border border-white/10 bg-slate-950/30 px-4 py-4 backdrop-blur-md sm:px-6 lg:px-8">
-        <div className="flex items-center gap-6 lg:gap-8">
-          <Link href="/" className="flex items-center gap-2 text-white">
-            <Sparkles className="h-7 w-7" />
-            <span className="text-sm font-semibold uppercase tracking-[0.3em]">
-              Spice Craft
-            </span>
-          </Link>
+    <section id="features" className="relative z-10 mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Why Engineers Love"
+        highlight="SpiceCraft"
+        description="The product experience stays grounded in real circuit workflows: discovery, understanding, editing, and export."
+      />
 
-          <div className="hidden items-center gap-6 md:flex">
-            <a href="#" className="text-sm text-slate-300 transition hover:text-white">
-              Home
-            </a>
-            <a href="#" className="text-sm text-slate-300 transition hover:text-white">
-              Cases
-            </a>
-            <a href="#" className="text-sm text-slate-300 transition hover:text-white">
-              Library
-            </a>
-            <a href="#" className="text-sm text-slate-300 transition hover:text-white">
-              Resources
-            </a>
-          </div>
-        </div>
-
-        <Link
-          href="/signup"
-          className="inline-flex items-center gap-2 rounded-full border border-white px-5 py-2 text-sm text-white transition hover:bg-white hover:text-black"
-        >
-          Let&apos;s Talk
-          <ArrowRight className="h-4 w-4" />
-        </Link>
+      <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        {featureCards.map((card) => {
+          const Icon = card.icon;
+          return (
+            <div
+              key={card.title}
+              className="rounded-[26px] border border-white/10 bg-slate-950/50 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-md"
+            >
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-indigo-400/25 bg-gradient-to-br from-indigo-500/15 to-fuchsia-500/10 text-sky-300">
+                <Icon className="h-7 w-7" />
+              </div>
+              <h3 className="mt-5 text-2xl font-semibold text-white">
+                {card.title}
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-slate-300/80">
+                {card.description}
+              </p>
+            </div>
+          );
+        })}
       </div>
-    </nav>
+    </section>
+  );
+}
+
+function TechSection() {
+  return (
+    <section id="docs" className="relative z-10 mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <div className="rounded-[28px] border border-white/10 bg-slate-950/45 p-6 backdrop-blur-md sm:p-8">
+        <SectionHeading
+          eyebrow="Built with Modern Tech"
+          title="Production-ready foundations for"
+          highlight="engineering workflows"
+        />
+
+        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {techStack.map((item) => (
+            <div
+              key={item.title}
+              className="rounded-2xl border border-white/10 bg-slate-900/65 px-5 py-5"
+            >
+              <p className="text-sm font-medium uppercase tracking-[0.25em] text-violet-300/80">
+                {item.title}
+              </p>
+              <p className="mt-3 text-lg font-semibold text-white">
+                {item.subtitle}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function RoadmapSection() {
+  return (
+    <section id="roadmap" className="relative z-10 mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <SectionHeading
+        eyebrow="Our Roadmap"
+        title="Shipping toward a more capable"
+        highlight="AI circuit workspace"
+      />
+
+      <div className="mt-10 grid gap-5 lg:grid-cols-5">
+        {roadmapItems.map((item, index) => (
+          <div
+            key={item.version}
+            className="relative rounded-[24px] border border-white/10 bg-slate-950/50 p-5 backdrop-blur-md"
+          >
+            {index < roadmapItems.length - 1 ? (
+              <div className="absolute -right-3 top-1/2 hidden h-px w-6 bg-gradient-to-r from-violet-400/60 to-sky-400/60 lg:block" />
+            ) : null}
+            <p className="text-sm font-medium uppercase tracking-[0.3em] text-violet-300/80">
+              {item.version}
+            </p>
+            <h3 className="mt-4 text-xl font-semibold text-white">
+              {item.title}
+            </h3>
+            <p className="mt-3 text-sm leading-7 text-slate-300/80">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function FinalCta() {
+  return (
+    <section className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-24 pt-10 sm:px-6 lg:px-8">
+      <div className="relative overflow-hidden rounded-[30px] border border-white/10 bg-[linear-gradient(135deg,rgba(15,23,42,0.88),rgba(30,27,75,0.72),rgba(2,6,23,0.92))] px-8 py-10 shadow-[0_35px_100px_rgba(0,0,0,0.35)] sm:px-10 lg:px-12">
+        <div className="absolute right-0 top-0 h-full w-full bg-[radial-gradient(circle_at_bottom_right,rgba(99,102,241,0.35),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(168,85,247,0.28),transparent_22%)]" />
+        <div className="relative flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-3xl">
+            <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+              Stop Drawing Circuits Manually.
+              <br />
+              <span className="bg-gradient-to-r from-sky-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+                Search. Understand. Edit. Export.
+              </span>
+            </h2>
+          </div>
+
+          <Link
+            href="/signup"
+            className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500 px-6 py-3.5 text-sm font-semibold text-white shadow-[0_12px_35px_rgba(99,102,241,0.35)] transition hover:scale-[1.02]"
+          >
+            Start Building with SpiceCraft
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }
 
 export function HeroSectionBoxes() {
-  const screenshotRef = useRef<HTMLDivElement>(null);
-  const heroContentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const screenshotElement = screenshotRef.current;
-      const heroContentElement = heroContentRef.current;
-
-      if (!screenshotElement || !heroContentElement) {
-        return;
-      }
-
-      requestAnimationFrame(() => {
-        const scrollPosition = window.pageYOffset;
-        screenshotElement.style.transform = `translateY(-${scrollPosition * 0.15}px)`;
-
-        const maxScroll = 360;
-        const opacity = 1 - Math.min(scrollPosition / maxScroll, 1);
-        heroContentElement.style.opacity = opacity.toString();
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div className="relative bg-black">
+    <div className="relative overflow-hidden bg-black">
+      <HeroSplineBackground />
       <Navbar />
 
-      <div className="relative min-h-screen">
-        <div className="absolute inset-0 z-0">
-          <HeroSplineBackground />
-        </div>
-
-        <div
-          ref={heroContentRef}
-          className="absolute inset-0 z-10 flex items-center justify-center pointer-events-none"
-        >
-          <HeroContent />
-        </div>
-      </div>
-
-      <div className="relative z-10 bg-black pb-24">
-        <ScreenshotSection screenshotRef={screenshotRef} />
+      <div className="relative">
+        <HeroIntro />
+        <WorkflowSection />
+        <FeatureSection />
+        <TechSection />
+        <RoadmapSection />
+        <FinalCta />
       </div>
     </div>
   );

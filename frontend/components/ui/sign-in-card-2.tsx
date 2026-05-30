@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion, useMotionValue, useTransform } from 'framer-motion';
 import { ArrowRight, Eye, EyeOff, Lock, Mail, User } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 import { cn } from '@/lib/utils';
 
@@ -31,6 +32,7 @@ function Input({ className, type, ...props }: React.ComponentProps<'input'>) {
 
 export function SignInCardTwo({ mode = 'signin' }: SignInCardTwoProps) {
   const isSignup = mode === 'signup';
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [name, setName] = useState('');
@@ -60,7 +62,10 @@ export function SignInCardTwo({ mode = 'signin' }: SignInCardTwoProps) {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
-    window.setTimeout(() => setIsLoading(false), 1600);
+    window.setTimeout(() => {
+      setIsLoading(false);
+      router.push('/dashboard');
+    }, 900);
   };
 
   const title = isSignup ? 'Create Account' : 'Welcome Back';
