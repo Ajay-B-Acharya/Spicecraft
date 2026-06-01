@@ -1,11 +1,6 @@
-"""
-"""
-Database models for SpiceCraft.
+"""Database models for SpiceCraft."""
 
-Import all models here to ensure they're registered with SQLAlchemy.
-"""
-from app.models.project import Project
-from app.models.circuit_source import CircuitSource
+from .circuit_source import CircuitSource
+from .project import Project
 
 __all__ = ["Project", "CircuitSource"]
-"""

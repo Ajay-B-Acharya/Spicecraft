@@ -1,37 +1,33 @@
-"""
-Database initialization script for SpiceCraft.
-
-Run this script to create all database tables.
-
-Usage:
-    python create_db.py
-"""
-
 import sys
 from pathlib import Path
 
-# Add the project root to the Python path
+from sqlalchemy import text
+from sqlalchemy.exc import OperationalError, SQLAlchemyError
+
 sys.path.insert(0, str(Path(__file__).parent))
 
-from app.database import create_tables
+from app.database import create_tables, engine  # noqa: E402
 
 
-def main():
-    """Create all database tables."""
-    print("🚀 Creating SpiceCraft database tables...")
-    print()
+def main() -> None:
+    print("🚀 Connecting to PostgreSQL...")
 
     try:
-        create_tables()
-        print()
-        print("✨ Database setup complete!")
-        print()
-        print("Next steps:")
-        print("1. Start the backend: uvicorn app.main:app --reload")
-        print("2. Visit API docs: http://localhost:8000/docs")
+        with engine.connect() as connection:
+            connection.execute(text("SELECT 1"))
+        print("✅ PostgreSQL connection successful")
 
-    except Exception as e:
-        print(f"❌ Error creating tables: {e}")
+        create_tables()
+        print("✅ SQLAlchemy tables created successfully")
+        print("🎉 Database setup complete")
+    except OperationalError as exc:
+        print(f"❌ Database connection error: {exc}")
+        sys.exit(1)
+    except SQLAlchemyError as exc:
+        print(f"❌ SQLAlchemy error: {exc}")
+        sys.exit(1)
+    except Exception as exc:
+        print(f"❌ Unexpected error: {exc}")
         sys.exit(1)
 
 

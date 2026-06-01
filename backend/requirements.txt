@@ -1,21 +1,8 @@
-# Core Framework
-fastapi==0.109.0
-uvicorn[standard]==0.27.0
-
-# Database
-sqlalchemy==2.0.25
-psycopg2-binary==2.9.9
-
-# Environment & Configuration
-python-dotenv==1.0.0
-
-# Data Validation
-pydantic==2.5.3
-pydantic-settings==2.1.0
-
-# Optional: Add these as you build features
-# openai==1.10.0  # For AI integration
-# httpx==0.26.0  # For async HTTP requests
-# python-multipart==0.0.6  # For file uploads
-# pytest==7.4.4  # For testing
-# pytest-asyncio==0.23.3  # For async testing
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg[binary]
+python-dotenv
+pydantic
+pydantic-settings
+firebase-admin

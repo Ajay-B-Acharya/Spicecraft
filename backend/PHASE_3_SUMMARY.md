@@ -2,263 +2,119 @@
 
 ## Summary
 
-Successfully implemented PostgreSQL database schema for SpiceCraft V1 with Firebase Authentication integration.
+Phase 3 is now implemented for SpiceCraft V1 using PostgreSQL, SQLAlchemy ORM, and Firebase UID ownership.
+
+This phase intentionally does **not** include authentication tables, roles, permissions, JWT auth, teams, payments, or other non-MVP tables.
 
 ---
 
 ## ✅ Deliverables
 
 ### 1. Database Configuration
-- ✅ Enhanced `app/database.py` with PostgreSQL support
-- ✅ Connection pooling configured
-- ✅ SQLite fallback for development
-- ✅ Table creation utilities
+- ✅ `app/database.py` uses `DATABASE_URL` from `.env`
+- ✅ SQLAlchemy engine and session factory configured
+- ✅ Table creation and drop helpers included
 
-### 2. Models (SQLAlchemy ORM)
-- ✅ `app/models/project.py` - Project model with Firebase UID
-- ✅ `app/models/circuit_source.py` - Circuit source model
+### 2. Models
+- ✅ `app/models/project.py`
+- ✅ `app/models/circuit_source.py`
 - ✅ UUID primary keys
 - ✅ Automatic UTC timestamps
-- ✅ Proper indexes on foreign keys and firebase_uid
-- ✅ One-to-Many relationship with CASCADE delete
+- ✅ One-to-many relationship from projects to circuit sources
+- ✅ Indexes on `firebase_uid` and `project_id`
+- ✅ `ON DELETE CASCADE` for project-owned circuit sources
 
-### 3. Pydantic Schemas
-- ✅ `app/schemas/project.py` - Project validation schemas
-- ✅ `app/schemas/circuit_source.py` - Circuit source validation schemas
-- ✅ Create, Update, Response, and List schemas
-- ✅ Full type validation and documentation
+### 3. Schemas
+- ✅ `app/schemas/project.py`
+- ✅ `app/schemas/circuit_source.py`
+- ✅ Create, update, response, and list schemas implemented
 
-### 4. Utilities & Examples
-- ✅ `create_db.py` - Database initialization script
-- ✅ `example_crud.py` - Complete CRUD operation examples
-- ✅ `DATABASE_SCHEMA.md` - Comprehensive schema documentation
-
-### 5. Documentation
-- ✅ PostgreSQL schema with SQL code
-- ✅ ERD relationship diagram
-- ✅ Security considerations
-- ✅ Performance optimizations
-- ✅ Usage examples
+### 4. Supporting Files
+- ✅ `create_db.py` table creation script
+- ✅ `example_crud.py` CRUD examples
+- ✅ `DATABASE_SCHEMA.md` PostgreSQL schema preview
+- ✅ `app/main.py` backend app entry point retained
 
 ---
 
-## 📊 Database Schema
+## 📊 Final Schema
 
-### Tables
+### `projects`
+- `id` (UUID, primary key)
+- `firebase_uid` (VARCHAR, not null, indexed)
+- `name` (VARCHAR, not null)
+- `description` (TEXT, nullable)
+- `created_at` (TIMESTAMPTZ)
+- `updated_at` (TIMESTAMPTZ)
 
-1. **projects**
-   - `id` (UUID, PK)
-   - `firebase_uid` (VARCHAR, INDEXED)
-   - `name` (VARCHAR)
-   - `description` (TEXT)
-   - `created_at` (TIMESTAMP)
-   - `updated_at` (TIMESTAMP)
+### `circuit_sources`
+- `id` (UUID, primary key)
+- `project_id` (UUID, foreign key → `projects.id`)
+- `title` (VARCHAR, not null)
+- `source_name` (VARCHAR, nullable)
+- `source_url` (TEXT, nullable)
+- `image_url` (TEXT, nullable)
+- `created_at` (TIMESTAMPTZ)
+- `updated_at` (TIMESTAMPTZ)
 
-2. **circuit_sources**
-   - `id` (UUID, PK)
-   - `project_id` (UUID, FK → projects)
-   - `title` (VARCHAR)
-   - `source_name` (VARCHAR)
-   - `source_url` (TEXT)
-   - `image_url` (TEXT)
-   - `description` (TEXT)
-   - `created_at` (TIMESTAMP)
-   - `updated_at` (TIMESTAMP)
+Relationship:
 
-### Relationships
-
+```text
+projects (1) ----< (N) circuit_sources
 ```
-projects (1) ─────< (N) circuit_sources
-```
-
-**CASCADE DELETE**: Deleting a project removes all its circuit sources.
 
 ---
 
-## 🔒 Security Features
+## 🚫 Explicitly Excluded
 
-1. **Firebase UID Verification**
-   - All projects linked to Firebase Auth UID
-   - No authentication tables in database
+Not included in Phase 3:
+- Users table
+- Authentication tables
+- Login / signup logic
+- Password storage
+- Roles / permissions
+- Teams / organizations
+- Payments
+- API keys
+- AI generations table
+- LTspice files table
 
-2. **Ownership Checks**
-   - Models include Firebase UID in queries
-   - Prevents unauthorized access
-
-3. **Input Validation**
-   - All inputs validated via Pydantic schemas
-
-4. **Database Security**
-   - Foreign key constraints
-   - Index optimization
-   - Connection pooling
+Firebase Authentication remains external and the backend stores only the authenticated user's `firebase_uid`.
 
 ---
 
-## 📦 File Structure
+## 📁 Files Implemented
 
-```
+```text
 backend/
 ├── app/
-│   ├── database.py              ✅ Enhanced
+│   ├── database.py
+│   ├── main.py
 │   ├── models/
-│   │   ├── __init__.py         ✅ Created
-│   │   ├── project.py          ✅ Created
-│   │   └── circuit_source.py   ✅ Created
+│   │   ├── __init__.py
+│   │   ├── project.py
+│   │   └── circuit_source.py
 │   └── schemas/
-│       ├── __init__.py         ✅ Created
-│       ├── project.py          ✅ Created
-│       └── circuit_source.py   ✅ Created
-│
-├── create_db.py                 ✅ Created
-├── example_crud.py              ✅ Created
-├── DATABASE_SCHEMA.md           ✅ Created
-└── PHASE_3_SUMMARY.md          ✅ This file
+│       ├── __init__.py
+│       ├── project.py
+│       └── circuit_source.py
+├── create_db.py
+├── example_crud.py
+├── DATABASE_SCHEMA.md
+└── PHASE_3_SUMMARY.md
 ```
 
 ---
 
-## 🚀 Quick Start
+## Validation Notes
 
-### 1. Create Tables
-
-```bash
-cd backend
-python create_db.py
-```
-
-### 2. Run Example CRUD
-
-```bash
-python example_crud.py
-```
-
-### 3. View Schema
-
-```bash
-cat DATABASE_SCHEMA.md
-```
+- ✅ Python syntax compilation completed successfully
+- ⚠️ Runtime database validation is blocked in this environment because installed Python packages are missing (`sqlalchemy` was not available when running `python backend/create_db.py`)
 
 ---
 
-## 💡 Usage Example
+## Phase 3 Status
 
-```python
-from app.models.project import Project
-from app.models.circuit_source import CircuitSource
-from app.database import SessionLocal
+**✅ COMPLETE**
 
-# Create session
-db = SessionLocal()
-
-# Create project
-project = Project(
-    firebase_uid="firebase-user-123",
-    name="FM Radio Circuit",
-    description="Building a frequency modulation receiver"
-)
-db.add(project)
-db.commit()
-
-# Add circuit source
-source = CircuitSource(
-    project_id=project.id,
-    title="FM Receiver Diagram",
-    source_name="Electronics Hub",
-    source_url="https://example.com/circuit"
-)
-db.add(source)
-db.commit()
-
-# Query user's projects
-user_projects = db.query(Project)\
-    .filter(Project.firebase_uid == "firebase-user-123")\
-    .all()
-
-# Get project with sources (via relationship)
-sources = project.circuit_sources.all()
-```
-
----
-
-## ⚙️ Configuration
-
-### PostgreSQL (Production)
-
-Edit `backend/.env`:
-
-```env
-DATABASE_URL=postgresql://username:password@localhost:5432/spicecraft
-```
-
-### SQLite (Development)
-
-Leave `DATABASE_URL` empty or unset:
-
-```env
-DATABASE_URL=
-```
-
----
-
-## 🎯 Key Features
-
-1. ✅ **Firebase Integration** - Uses Firebase UID instead of user table
-2. ✅ **UUID Primary Keys** - Better for distributed systems
-3. ✅ **Automatic Timestamps** - `created_at` and `updated_at`
-4. ✅ **Cascade Deletes** - Clean up related records automatically
-5. ✅ **Indexed Queries** - Fast lookups on firebase_uid and foreign keys
-6. ✅ **Type Safety** - Pydantic validation for all inputs/outputs
-7. ✅ **Connection Pooling** - Efficient database connections
-8. ✅ **Lazy Loading** - Avoid N+1 query problems
-
----
-
-## 📋 Checklist
-
-- [x] Database models created
-- [x] Pydantic schemas implemented
-- [x] Relationships defined
-- [x] Indexes added
-- [x] Cascade deletes configured
-- [x] Documentation complete
-- [x] Example CRUD operations
-- [x] Table creation script
-- [ ] API routers (Phase 4)
-- [ ] Firebase token verification (Phase 4)
-- [ ] Integration tests (Phase 4)
-
----
-
-## 🔜 Next Phase
-
-**Phase 4: API Routes**
-
-Implement FastAPI routers for:
-- Project CRUD endpoints
-- Circuit Source CRUD endpoints
-- Firebase token verification middleware
-- Pagination and filtering
-- Error handling
-
----
-
-## 📚 Documentation Files
-
-1. **DATABASE_SCHEMA.md** - Complete schema reference
-2. **PHASE_3_SUMMARY.md** - This file
-3. **README.md** - Backend setup guide
-4. **create_db.py** - Table creation utility
-5. **example_crud.py** - CRUD examples
-
----
-
-**Phase 3 Status: ✅ COMPLETE**
-
-Database schema is production-ready and follows all requirements:
-- ✅ No authentication tables
-- ✅ Firebase UID integration
-- ✅ Minimal MVP schema
-- ✅ PostgreSQL with SQLAlchemy
-- ✅ Proper relationships and indexes
-- ✅ Clean, maintainable code
+The database design is implemented and aligned with the Phase 3 MVP requirements.

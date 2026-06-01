@@ -1,80 +1,49 @@
-"""
-Project model for SpiceCraft.
-Stores user projects with Firebase UID as the user identifier.
-"""
-
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
+from typing import TYPE_CHECKING
 
-from sqlalchemy import Column, DateTime, Index, String, Text
+from sqlalchemy import DateTime, Index, String, Text
 from sqlalchemy.dialects.postgresql import UUID
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.database import Base
+from ..database import Base
+
+if TYPE_CHECKING:
+    from .circuit_source import CircuitSource
+
+
+def utc_now() -> datetime:
+    return datetime.now(timezone.utc)
 
 
 class Project(Base):
-    """
-    Project model - stores user-created SpiceCraft projects.
-
-    Each project belongs to a Firebase-authenticated user identified by firebase_uid.
-    """
-
     __tablename__ = "projects"
 
-    # Primary key
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, index=True)
-
-    # Firebase user identifier (NOT a foreign key - Firebase handles auth)
-    firebase_uid = Column(
-        String(128), nullable=False, index=True, comment="Firebase Authentication UID"
+    id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True),
+        primary_key=True,
+        default=uuid.uuid4,
     )
-
-    # Project details
-    name = Column(String(255), nullable=False, comment="Project name")
-
-    description = Column(Text, nullable=True, comment="Project description")
-
-    # Timestamps
-    created_at = Column(
-        DateTime,
+    firebase_uid: Mapped[str] = mapped_column(String(128), nullable=False)
+    name: Mapped[str] = mapped_column(String(255), nullable=False)
+    description: Mapped[str | None] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
         nullable=False,
-        default=datetime.utcnow,
-        comment="UTC timestamp of creation",
+        default=utc_now,
     )
 
-    updated_at = Column(
-        DateTime,
-        nullable=False,
-        default=datetime.utcnow,
-        onupdate=datetime.utcnow,
-        comment="UTC timestamp of last update",
-    )
-
-    # Relationships
-    circuit_sources = relationship(
+    circuit_sources: Mapped[list["CircuitSource"]] = relationship(
         "CircuitSource",
         back_populates="project",
-        cascade="all, delete-orphan",  # Delete sources when project is deleted
-        lazy="dynamic",  # Load sources on demand
+        cascade="all, delete-orphan",
+        passive_deletes=True,
     )
 
-    # Indexes
-    __table_args__ = (
-        Index("ix_projects_firebase_uid", "firebase_uid"),
-        Index("ix_projects_created_at", "created_at"),
-    )
+    __table_args__ = (Index("ix_projects_firebase_uid", "firebase_uid"),)
 
-    def __repr__(self):
-        return f"<Project(id={self.id}, name='{self.name}', firebase_uid='{self.firebase_uid}')>"
-
-    def to_dict(self):
-        """Convert model to dictionary."""
-        return {
-            "id": str(self.id),
-            "firebase_uid": self.firebase_uid,
-            "name": self.name,
-            "description": self.description,
-            "created_at": self.created_at.isoformat() if self.created_at else None,
-            "updated_at": self.updated_at.isoformat() if self.updated_at else None,
-        }
+    def __repr__(self) -> str:
+        return (
+            f"<Project(id={self.id}, firebase_uid={self.firebase_uid!r}, "
+            f"name={self.name!r})>"
+        )
