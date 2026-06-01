@@ -7,6 +7,6 @@
     "start": "npm --prefix frontend run start",
     "lint": "npm --prefix frontend run lint",
     "dev:frontend": "npm --prefix frontend run dev",
-    "dev:backend": "echo \"Backend is not implemented yet.\""
+    "dev:backend": "cd backend && uvicorn app.main:app --reload"
   }
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { CircuitMockup } from "@/components/circuit-mockup";
+import { DottedSurface } from "@/components/ui/dotted-surface";
 import {
   ArrowRight,
   Bot,
@@ -144,13 +145,18 @@ const roadmapItems = [
 
 function HeroSplineBackground() {
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 bg-[#020617]">
+      {/* Dotted wave shader — primary background effect */}
+      <DottedSurface className="absolute inset-0 z-0" />
+      {/* Soft colour glows on top of the dots */}
+      <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(99,102,241,0.22),transparent),radial-gradient(ellipse_60%_40%_at_80%_30%,rgba(168,85,247,0.16),transparent)]" />
+      {/* Bottom fade so sections below blend cleanly */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-40 bg-gradient-to-t from-[#020617] to-transparent" />
+      {/* Subtle Spline overlay — dimmed so it doesn't hide the dots */}
       <Spline
-        className="h-full w-full opacity-90"
+        className="pointer-events-none absolute inset-0 z-20 h-full w-full opacity-10"
         scene="https://prod.spline.design/dJqTIQ-tE3ULUPMi/scene.splinecode"
       />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(99,102,241,0.18),transparent_35%),radial-gradient(circle_at_top_right,rgba(168,85,247,0.18),transparent_28%),linear-gradient(to_bottom,rgba(2,6,23,0.62),rgba(2,6,23,0.92)_30%,rgba(2,6,23,0.98))]" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(2,6,23,0.95),transparent_18%,transparent_82%,rgba(2,6,23,0.95))]" />
     </div>
   );
 }
@@ -265,7 +271,10 @@ function HeroIntro() {
 
 function WorkflowSection() {
   return (
-    <section id="how-it-works" className="relative z-10 mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <section
+      id="how-it-works"
+      className="relative z-10 mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8"
+    >
       <div className="rounded-[28px] border border-white/10 bg-slate-950/45 p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_25px_80px_rgba(2,6,23,0.35)] backdrop-blur-md sm:p-8">
         <SectionHeading
           title="How"
@@ -309,7 +318,10 @@ function WorkflowSection() {
 
 function FeatureSection() {
   return (
-    <section id="features" className="relative z-10 mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <section
+      id="features"
+      className="relative z-10 mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8"
+    >
       <SectionHeading
         title="Why Engineers Love"
         highlight="SpiceCraft"
@@ -343,7 +355,10 @@ function FeatureSection() {
 
 function TechSection() {
   return (
-    <section id="docs" className="relative z-10 mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <section
+      id="docs"
+      className="relative z-10 mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8"
+    >
       <div className="rounded-[28px] border border-white/10 bg-slate-950/45 p-6 backdrop-blur-md sm:p-8">
         <SectionHeading
           eyebrow="Built with Modern Tech"
@@ -373,7 +388,10 @@ function TechSection() {
 
 function RoadmapSection() {
   return (
-    <section id="roadmap" className="relative z-10 mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <section
+      id="roadmap"
+      className="relative z-10 mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8"
+    >
       <SectionHeading
         eyebrow="Our Roadmap"
         title="Shipping toward a more capable"
