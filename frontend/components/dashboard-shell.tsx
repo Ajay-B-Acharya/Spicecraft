@@ -52,13 +52,13 @@ const primaryLinks = [
   { title: "My Projects", icon: FolderKanban, href: "/dashboard" },
   { title: "Search Circuits", icon: Search, href: "/search" },
   { title: "Recent Circuits", icon: Clock3, href: "#" },
-  { title: "Favorites", icon: Sparkles, href: "#" },
+  { title: "Favorites", icon: Sparkles, href: "/favorites" },
 ];
 
 const workspaceLinks = [
-  { title: "Editor", icon: PenTool, href: "#" },
-  { title: "AI Assistant", icon: WandSparkles, href: "#" },
-  { title: "Exports", icon: FileCode2, href: "#" },
+  { title: "Editor", icon: PenTool, href: "/editor" },
+  { title: "AI Assistant", icon: WandSparkles, href: "/assistant" },
+  { title: "Exports", icon: FileCode2, href: "/exports" },
 ];
 
 const toolLinks: Array<{
@@ -166,10 +166,12 @@ function DashboardSidebar() {
             <SidebarMenu>
               {workspaceLinks.map((item) => {
                 const Icon = item.icon;
+                const isActive = pathname === item.href;
                 return (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton
                       asChild
+                      isActive={isActive}
                       className="h-10 rounded-xl px-3 text-[13px] text-white/72 hover:bg-white/6 hover:text-white"
                     >
                       <Link href={item.href}>
