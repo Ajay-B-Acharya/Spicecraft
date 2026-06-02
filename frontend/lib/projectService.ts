@@ -23,6 +23,10 @@ export const projectService = {
     return api.get<Project[]>('/projects');
   },
 
+  getProject(id: string): Promise<Project> {
+    return api.get<Project>(`/projects/${id}`);
+  },
+
   createProject(data: CreateProjectData): Promise<Project> {
     return api.post<Project>('/projects', data);
   },

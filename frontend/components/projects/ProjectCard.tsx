@@ -1,18 +1,19 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { formatDistanceToNow } from 'date-fns';
-import { Trash2 } from 'lucide-react';
-import { toast } from 'sonner';
-import { Button } from '@/components/ui/button';
+import { useState } from "react";
+import Link from "next/link";
+import { formatDistanceToNow } from "date-fns";
+import { Trash2 } from "lucide-react";
+import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import type { Project, UpdateProjectData } from '@/lib/projectService';
+} from "@/components/ui/card";
+import type { Project, UpdateProjectData } from "@/lib/projectService";
 
 interface Props {
   project: Project;
@@ -24,14 +25,15 @@ export function ProjectCard({ project, onDelete }: Props) {
   const [deleting, setDeleting] = useState(false);
 
   const handleDelete = async () => {
-    if (!window.confirm(`Delete "${project.name}"? This cannot be undone.`)) return;
+    if (!window.confirm(`Delete "${project.name}"? This cannot be undone.`))
+      return;
     setDeleting(true);
     try {
       await onDelete(project.id);
-      toast.success('Project deleted');
+      toast.success("Project deleted");
     } catch (err) {
       toast.error(
-        err instanceof Error ? err.message : 'Failed to delete project',
+        err instanceof Error ? err.message : "Failed to delete project",
       );
       setDeleting(false);
     }
@@ -40,7 +42,14 @@ export function ProjectCard({ project, onDelete }: Props) {
   return (
     <Card className="flex flex-col transition-shadow hover:shadow-md">
       <CardHeader className="pb-2">
-        <CardTitle className="text-base leading-snug">{project.name}</CardTitle>
+        <CardTitle className="text-base leading-snug">
+          <Link
+            href={`/projects/${project.id}`}
+            className="hover:underline focus-visible:outline-none"
+          >
+            {project.name}
+          </Link>
+        </CardTitle>
       </CardHeader>
       {project.description && (
         <CardContent className="pb-2">
