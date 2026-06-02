@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   Bell,
   ChevronDown,
@@ -15,6 +15,7 @@ import {
   LogOut,
   Moon,
   PenTool,
+  Search,
   Settings,
   Sparkles,
   WandSparkles,
@@ -47,8 +48,9 @@ import { onAuthStateChanged, signOut, type User } from "firebase/auth";
 import { useTheme } from "next-themes";
 
 const primaryLinks = [
-  { title: "Dashboard", icon: Home, href: "/dashboard", active: true },
-  { title: "My Projects", icon: FolderKanban, href: "#" },
+  { title: "Dashboard", icon: Home, href: "/dashboard" },
+  { title: "My Projects", icon: FolderKanban, href: "/dashboard" },
+  { title: "Search Circuits", icon: Search, href: "/search" },
   { title: "Recent Circuits", icon: Clock3, href: "#" },
   { title: "Favorites", icon: Sparkles, href: "#" },
 ];
@@ -102,6 +104,7 @@ function getInitials(name: string) {
 }
 
 function DashboardSidebar() {
+  const pathname = usePathname();
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -132,11 +135,15 @@ function DashboardSidebar() {
             <SidebarMenu>
               {primaryLinks.map((item) => {
                 const Icon = item.icon;
+                const isActive =
+                  item.href !== "#" &&
+                  (pathname === item.href ||
+                    (item.href === "/dashboard" && pathname.startsWith("/projects/")));
                 return (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton
                       asChild
-                      isActive={item.active}
+                      isActive={isActive}
                       className="h-10 rounded-xl px-3 text-[13px] text-white/80 data-[active=true]:bg-white/6 data-[active=true]:text-white hover:bg-white/6 hover:text-white"
                     >
                       <Link href={item.href}>

@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
 import { BookOpen } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useCircuitSources } from '@/hooks/useCircuitSources';
@@ -12,12 +11,8 @@ interface Props {
 }
 
 export function SourcesView({ projectId }: Props) {
-  const { sources, loading, error, fetchSources, createSource, deleteSource } =
+  const { sources, loading, error, createSource, deleteSource } =
     useCircuitSources(projectId);
-
-  useEffect(() => {
-    void fetchSources();
-  }, [fetchSources]);
 
   return (
     <div className="space-y-6">

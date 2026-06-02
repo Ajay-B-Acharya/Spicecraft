@@ -1,6 +1,8 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '@/lib/firebase';
 import {
   circuitSourceService,
   type CircuitSource,
@@ -10,7 +12,7 @@ import {
 
 export function useCircuitSources(projectId: string) {
   const [sources, setSources] = useState<CircuitSource[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   const fetchSources = useCallback(async () => {
@@ -26,6 +28,20 @@ export function useCircuitSources(projectId: string) {
       setLoading(false);
     }
   }, [projectId]);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        setSources([]);
+        setLoading(false);
+        return;
+      }
+
+      void fetchSources();
+    });
+
+    return unsubscribe;
+  }, [fetchSources]);
 
   const createSource = useCallback(
     async (data: CreateSourceData): Promise<CircuitSource> => {

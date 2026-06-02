@@ -10,6 +10,12 @@ export interface CircuitSource {
   created_at: string;
 }
 
+type CircuitSourceApiShape = Partial<CircuitSource> & {
+  sourceName?: string;
+  sourceUrl?: string;
+  imageUrl?: string;
+};
+
 export interface CreateSourceData {
   title: string;
   source_name?: string;
@@ -24,15 +30,50 @@ export interface UpdateSourceData {
   image_url?: string;
 }
 
+function normalizeSource(source: CircuitSourceApiShape): CircuitSource {
+  return {
+    id: String(source.id ?? ''),
+    project_id: String(source.project_id ?? ''),
+    title: String(source.title ?? ''),
+    source_name:
+      source.source_name ?? source.sourceName ?? null,
+    source_url: source.source_url ?? source.sourceUrl ?? null,
+    image_url: source.image_url ?? source.imageUrl ?? null,
+    created_at: String(source.created_at ?? new Date().toISOString()),
+  };
+}
+
+function logApiResponse(operation: string, payload: unknown): void {
+  if (process.env.NODE_ENV !== 'production') {
+    // Keep the payload visible while debugging the response contract.
+    console.log(`[CircuitSources] ${operation}`, payload);
+  }
+}
+
 export const circuitSourceService = {
   getSources(projectId: string): Promise<CircuitSource[]> {
-    return api.get<CircuitSource[]>(`/projects/${projectId}/sources`);
+    return api.get<CircuitSourceApiShape[]>(`/projects/${projectId}/sources`).then(
+      (data) => {
+        logApiResponse('GET /projects/:id/sources', data);
+        return data.map(normalizeSource);
+      },
+    );
   },
   createSource(projectId: string, data: CreateSourceData): Promise<CircuitSource> {
-    return api.post<CircuitSource>(`/projects/${projectId}/sources`, data);
+    return api.post<CircuitSourceApiShape>(`/projects/${projectId}/sources`, data).then(
+      (payload) => {
+        logApiResponse('POST /projects/:id/sources', payload);
+        return normalizeSource(payload);
+      },
+    );
   },
   updateSource(sourceId: string, data: UpdateSourceData): Promise<CircuitSource> {
-    return api.put<CircuitSource>(`/sources/${sourceId}`, data);
+    return api.put<CircuitSourceApiShape>(`/sources/${sourceId}`, data).then(
+      (payload) => {
+        logApiResponse('PUT /sources/:id', payload);
+        return normalizeSource(payload);
+      },
+    );
   },
   deleteSource(sourceId: string): Promise<void> {
     return api.delete(`/sources/${sourceId}`);
