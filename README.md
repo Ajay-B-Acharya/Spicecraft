@@ -1,184 +1,101 @@
 # SpiceCraft
 
-**AI-Powered LTspice Circuit Generator**
+SpiceCraft is an AI-assisted electronic circuit discovery and design platform.
 
-Transform natural language circuit descriptions into simulation-ready LTspice files using AI.
+## Vision
 
----
+Instead of drawing circuits from scratch, users can:
 
-## 🚀 Quick Start
+* Search for existing electronic circuits
+* Browse and edit circuit designs
+* Modify component values visually
+* Export circuits to LTspice (`.asc`) format
+* Use AI assistance to improve and customize circuits
 
-### Frontend (Next.js)
-```bash
-cd frontend
-npm install
-npm run dev
-```
-**→** http://localhost:3000
+## Current Features
 
-### Backend (FastAPI)
-```bash
-cd backend
-python -m venv venv
-venv\Scripts\activate  # Windows (macOS: source venv/bin/activate)
-pip install -r requirements.txt
-uvicorn app.main:app --reload
-```
-**→** http://localhost:8000
+* FastAPI backend
+* Next.js frontend
+* Circuit search interface
+* Responsive dashboard layout
+* Swagger API documentation
 
----
+## Planned Features
 
-## 📋 Project Status
+### Circuit Library
 
-### ✅ Implemented (Frontend)
+* Search electronic circuits
+* Categorized circuit database
+* Circuit metadata and tags
 
-- 🔐 Firebase Authentication (Google + Email/Password)
-- 📊 Dashboard with sidebar navigation
-- 👤 User profile with Settings/Help/Logout
-- 🌓 Dark/Light theme toggle
-- ✨ Animated hero page with shader effects
-- 🎨 Complete shadcn UI component library
-- 📱 Fully responsive design
+### Circuit Editor
 
-### ✅ Implemented (Backend)
+* View circuit components
+* Edit component values
+* Save modified circuits
 
-- ⚡ FastAPI server with CORS
-- 🗄️ SQLAlchemy database setup (PostgreSQL/SQLite)
-- 📝 Environment configuration
-- 📚 Auto-generated API documentation (Swagger/ReDoc)
-- 🏗️ Clean project structure ready for development
+### LTspice Export
 
-### 🔜 Coming Next
+* Generate `.asc` files
+* Download compatible LTspice schematics
 
-- Circuit search and discovery
-- AI-powered circuit generation
-- Visual circuit editor
-- LTspice `.asc` file export
-- Component library management
+### AI Assistant
 
----
+* Modify circuits using natural language
+* Recommend component values
+* Generate circuits from user requirements
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-### Frontend
-- **Framework:** Next.js 16 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS v4
-- **UI:** shadcn/ui + Radix UI
-- **Auth:** Firebase
-- **Animations:** Framer Motion + Three.js
-- **State:** React 19 with hooks
+Frontend:
 
-### Backend
-- **Framework:** FastAPI
-- **Language:** Python 3.x
-- **Database:** SQLAlchemy (PostgreSQL/SQLite)
-- **Validation:** Pydantic
-- **AI:** OpenAI API (planned)
+* Next.js
+* React
+* Tailwind CSS
 
----
+Backend:
 
-## 📁 Project Structure
+* FastAPI
+* Python
 
-```
-Spice Craft/
-│
-├── frontend/                    # Next.js Application
-│   ├── app/                    # App Router pages
-│   │   ├── dashboard/          # Dashboard page
-│   │   ├── login/              # Login page
-│   │   ├── signup/             # Signup page
-│   │   └── layout.tsx          # Root layout
-│   ├── components/             # React components
-│   │   ├── ui/                # shadcn UI components
-│   │   ├── dashboard-shell.tsx
-│   │   └── hero-section.tsx
-│   ├── lib/                   # Utilities
-│   │   ├── firebase.ts        # Firebase config
-│   │   └── utils.ts           # Helper functions
-│   └── package.json
-│
-├── backend/                    # FastAPI Application
-│   ├── app/
-│   │   ├── main.py            # FastAPI entry point
-│   │   ├── database.py        # Database config
-│   │   ├── models/            # SQLAlchemy models
-│   │   ├── schemas/           # Pydantic schemas
-│   │   ├── routers/           # API routes
-│   │   └── services/          # Business logic
-│   ├── .env                   # Environment variables
-│   ├── requirements.txt       # Python dependencies
-│   └── README.md             # Backend docs
-│
-├── SETUP.md                   # Complete setup guide
-├── package.json              # Workspace scripts
-└── README.md                 # This file
+Database:
+
+* PostgreSQL
+
+## Project Structure
+
+```text
+frontend/
+backend/
+docs/
 ```
 
----
+## Roadmap
 
-## 📖 Documentation
+Phase 1
 
-- **[Complete Setup Guide](./SETUP.md)** - Detailed installation and configuration
-- **[Backend README](./backend/README.md)** - Backend-specific documentation
-- **[Frontend Package](./frontend/package.json)** - Frontend dependencies and scripts
+* Circuit database
+* Search system
+* Circuit details page
 
----
+Phase 2
 
-## 🔧 Development
+* Circuit editor
+* ASC export
 
-### Run Frontend
-```bash
-npm run dev:frontend
-```
+Phase 3
 
-### Run Backend
-```bash
-npm run dev:backend  # (requires venv activated)
-```
+* AI-assisted editing
 
-### Build Frontend
-```bash
-cd frontend
-npm run build
-```
+Phase 4
 
----
+* Community circuit library
+* AI circuit generation
 
-## 🌐 API Endpoints
+## License
 
-### Available Now
+This project is licensed under the Apache License 2.0.
 
-- `GET /` - Health check
-- `GET /health` - Detailed health status
-- `GET /docs` - Swagger UI documentation
-- `GET /redoc` - ReDoc documentation
+See the LICENSE file for details.
 
-### Coming Soon
-
-- `POST /api/auth/login` - User authentication
-- `POST /api/circuits/generate` - Generate circuit from prompt
-- `GET /api/circuits` - List user circuits
-- `POST /api/circuits/export` - Export to LTspice
-
----
-
-## 🤝 Contributing
-
-This is a Phase 1 foundation project. Backend API development is the next priority.
-
----
-
-## 📄 License
-
-Private project - All rights reserved
-
----
-
-## 👨‍💻 Development Team
-
-Building the future of circuit design automation.
-
----
-
-**Ready for Phase 2 Development** 🎯
+Copyright © 2026 Ajay Acharya.
