@@ -5,8 +5,14 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+});
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
 
 export const metadata: Metadata = {
   title: "SpiceCraft - AI-Powered Circuit Design",
@@ -25,7 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-sans antialiased bg-background text-foreground">
+      <body
+        className={`${geist.variable} ${geistMono.variable} bg-background font-sans text-foreground antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
