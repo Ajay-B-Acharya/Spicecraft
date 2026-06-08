@@ -9,6 +9,7 @@ import { CircuitEditorActions } from '@/components/circuits/CircuitEditorActions
 import { CircuitComponentsTable } from '@/components/circuits/CircuitComponentsTable';
 import { CircuitConnectionsTable } from '@/components/circuits/CircuitConnectionsTable';
 import { CircuitDetailSkeleton } from '@/components/circuits/CircuitDetailSkeleton';
+import { CircuitSchematic } from '@/components/circuits/CircuitSchematic';
 import {
   CircuitErrorState,
   CircuitNotFoundState,
@@ -97,6 +98,17 @@ export default function CircuitDetailPage() {
           <div className="grid gap-4 lg:grid-cols-[minmax(0,2fr)_minmax(280px,1fr)]">
             <div className="space-y-4">
               <CircuitOverview circuit={editableCircuit} />
+              
+              <div className="rounded-xl border bg-card text-card-foreground shadow">
+                <div className="p-6 space-y-1.5 flex flex-col">
+                  <h3 className="font-semibold leading-none tracking-tight">Circuit Schematic</h3>
+                  <p className="text-sm text-muted-foreground text-left mt-2">Visual representation. View-only for now.</p>
+                </div>
+                <div className="p-6 pt-0">
+                  <CircuitSchematic circuit={editableCircuit} />
+                </div>
+              </div>
+
               <CircuitComponentsTable
                 components={editableCircuit.components}
                 onValueChange={updateComponentValue}

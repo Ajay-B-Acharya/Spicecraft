@@ -3,25 +3,111 @@
   "name": "Common Emitter Amplifier",
   "description": "Basic single-stage common emitter amplifier for small-signal audio and sensor circuits.",
   "category": "Amplifiers",
-  "tags": ["amplifier", "transistor", "common-emitter", "analog", "small-signal"],
+  "tags": [
+    "amplifier",
+    "transistor",
+    "common-emitter",
+    "analog",
+    "small-signal"
+  ],
   "components": [
-    { "reference": "Q1", "type": "transistor", "value": "BC547" },
-    { "reference": "R1", "type": "resistor", "value": "100k" },
-    { "reference": "R2", "type": "resistor", "value": "10k" },
-    { "reference": "R3", "type": "resistor", "value": "1k" },
-    { "reference": "C1", "type": "capacitor", "value": "10uF" },
-    { "reference": "C2", "type": "capacitor", "value": "100uF" }
+    {
+      "reference": "Q1",
+      "type": "transistor",
+      "value": "BC547",
+      "id": "Q1"
+    },
+    {
+      "reference": "R1",
+      "type": "resistor",
+      "value": "100k",
+      "id": "R1"
+    },
+    {
+      "reference": "R2",
+      "type": "resistor",
+      "value": "10k",
+      "id": "R2"
+    },
+    {
+      "reference": "R3",
+      "type": "resistor",
+      "value": "1k",
+      "id": "R3"
+    },
+    {
+      "reference": "C1",
+      "type": "capacitor",
+      "value": "10uF",
+      "id": "C1"
+    },
+    {
+      "reference": "C2",
+      "type": "capacitor",
+      "value": "100uF",
+      "id": "C2"
+    }
   ],
   "wires": [
-    { "from": "VCC", "to": "R1.1" },
-    { "from": "R1.2", "to": "Q1.B" },
-    { "from": "Q1.B", "to": "R2.1" },
-    { "from": "R2.2", "to": "GND" },
-    { "from": "Q1.C", "to": "R3.1" },
-    { "from": "R3.2", "to": "VCC" },
-    { "from": "Q1.E", "to": "C1.1" },
-    { "from": "C1.2", "to": "GND" },
-    { "from": "Q1.C", "to": "C2.1" },
-    { "from": "C2.2", "to": "OUT" }
+    {
+      "from": "VCC",
+      "to": "R1.1",
+      "source": "VCC",
+      "destination": "R1.1"
+    },
+    {
+      "from": "R1.2",
+      "to": "Q1.B",
+      "source": "R1.2",
+      "destination": "Q1.B"
+    },
+    {
+      "from": "Q1.B",
+      "to": "R2.1",
+      "source": "Q1.B",
+      "destination": "R2.1"
+    },
+    {
+      "from": "R2.2",
+      "to": "GND",
+      "source": "R2.2",
+      "destination": "GND"
+    },
+    {
+      "from": "Q1.C",
+      "to": "R3.1",
+      "source": "Q1.C",
+      "destination": "R3.1"
+    },
+    {
+      "from": "R3.2",
+      "to": "VCC",
+      "source": "R3.2",
+      "destination": "VCC"
+    },
+    {
+      "from": "Q1.E",
+      "to": "C1.1",
+      "source": "Q1.E",
+      "destination": "C1.1"
+    },
+    {
+      "from": "C1.2",
+      "to": "GND",
+      "source": "C1.2",
+      "destination": "GND"
+    },
+    {
+      "from": "Q1.C",
+      "to": "C2.1",
+      "source": "Q1.C",
+      "destination": "C2.1"
+    },
+    {
+      "from": "C2.2",
+      "to": "OUT",
+      "source": "C2.2",
+      "destination": "OUT"
+    }
   ]
 }
