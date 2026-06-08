@@ -1,0 +1,25 @@
+{
+  "id": "555-astable-multivibrator",
+  "name": "555 Astable Multivibrator",
+  "description": "Classic 555 timer oscillator that generates a square wave output.",
+  "category": "Timers",
+  "tags": ["555", "timer", "astable", "oscillator", "square-wave"],
+  "components": [
+    { "reference": "U1", "type": "ic", "value": "NE555" },
+    { "reference": "R1", "type": "resistor", "value": "1k" },
+    { "reference": "R2", "type": "resistor", "value": "10k" },
+    { "reference": "C1", "type": "capacitor", "value": "10uF" }
+  ],
+  "wires": [
+    { "from": "VCC", "to": "U1.8" },
+    { "from": "U1.1", "to": "GND" },
+    { "from": "U1.2", "to": "U1.6" },
+    { "from": "U1.7", "to": "R1.1" },
+    { "from": "R1.2", "to": "VCC" },
+    { "from": "U1.7", "to": "R2.1" },
+    { "from": "R2.2", "to": "U1.2" },
+    { "from": "U1.6", "to": "C1.1" },
+    { "from": "C1.2", "to": "GND" }
+  ]
+}
+

@@ -1,0 +1,24 @@
+{
+  "id": "led-blinker",
+  "name": "LED Blinker",
+  "description": "Simple transistor-based LED blinker for indicator and timing experiments.",
+  "category": "Timers",
+  "tags": ["led", "blinker", "transistor", "oscillator", "indicator"],
+  "components": [
+    { "reference": "Q1", "type": "transistor", "value": "BC547" },
+    { "reference": "R1", "type": "resistor", "value": "10k" },
+    { "reference": "R2", "type": "resistor", "value": "1k" },
+    { "reference": "C1", "type": "capacitor", "value": "10uF" },
+    { "reference": "D1", "type": "led", "value": "RED" }
+  ],
+  "wires": [
+    { "from": "VCC", "to": "R1.1" },
+    { "from": "R1.2", "to": "Q1.B" },
+    { "from": "Q1.C", "to": "D1.A" },
+    { "from": "D1.K", "to": "R2.1" },
+    { "from": "R2.2", "to": "GND" },
+    { "from": "C1.1", "to": "Q1.B" },
+    { "from": "C1.2", "to": "GND" }
+  ]
+}
+

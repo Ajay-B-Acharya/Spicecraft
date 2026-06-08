@@ -3,7 +3,7 @@ import logging
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routers import circuit_sources, projects, search
+from app.routers import circuits, circuit_sources, projects, search
 
 logging.basicConfig(
     level=logging.INFO,
@@ -27,6 +27,7 @@ app.add_middleware(
 app.include_router(projects.router)
 app.include_router(circuit_sources.router)
 app.include_router(search.router)
+app.include_router(circuits.router)
 
 
 @app.get("/")

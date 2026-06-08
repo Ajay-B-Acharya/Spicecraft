@@ -1,0 +1,27 @@
+{
+  "id": "common-emitter-amplifier",
+  "name": "Common Emitter Amplifier",
+  "description": "Basic single-stage common emitter amplifier for small-signal audio and sensor circuits.",
+  "category": "Amplifiers",
+  "tags": ["amplifier", "transistor", "common-emitter", "analog", "small-signal"],
+  "components": [
+    { "reference": "Q1", "type": "transistor", "value": "BC547" },
+    { "reference": "R1", "type": "resistor", "value": "100k" },
+    { "reference": "R2", "type": "resistor", "value": "10k" },
+    { "reference": "R3", "type": "resistor", "value": "1k" },
+    { "reference": "C1", "type": "capacitor", "value": "10uF" },
+    { "reference": "C2", "type": "capacitor", "value": "100uF" }
+  ],
+  "wires": [
+    { "from": "VCC", "to": "R1.1" },
+    { "from": "R1.2", "to": "Q1.B" },
+    { "from": "Q1.B", "to": "R2.1" },
+    { "from": "R2.2", "to": "GND" },
+    { "from": "Q1.C", "to": "R3.1" },
+    { "from": "R3.2", "to": "VCC" },
+    { "from": "Q1.E", "to": "C1.1" },
+    { "from": "C1.2", "to": "GND" },
+    { "from": "Q1.C", "to": "C2.1" },
+    { "from": "C2.2", "to": "OUT" }
+  ]
+}

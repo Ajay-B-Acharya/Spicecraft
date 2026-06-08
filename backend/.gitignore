@@ -29,6 +29,7 @@ env/
 # Environment Variables
 .env
 .env.local
+firebase-admin.json
 
 # Database
 *.db

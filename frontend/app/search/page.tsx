@@ -4,14 +4,13 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { onAuthStateChanged } from 'firebase/auth';
 import { DashboardShell } from '@/components/dashboard-shell';
-import { SearchBar } from '@/components/search/SearchBar';
-import { SearchResults } from '@/components/search/SearchResults';
+import { CircuitResults } from '@/components/search/CircuitResults';
 import { auth } from '@/lib/firebase';
-import { useSearch } from '@/hooks/useSearch';
+import { useCircuits } from '@/hooks/useCircuits';
 
 export default function SearchPage() {
   const router = useRouter();
-  const { error, loading, query, results, runSearch, searched } = useSearch();
+  const { circuits, error, loading, refetch } = useCircuits();
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout> | undefined;
@@ -38,19 +37,11 @@ export default function SearchPage() {
         <div className="space-y-2">
           <h1 className="text-3xl font-semibold tracking-tight">Search Circuits</h1>
           <p className="max-w-2xl text-sm text-muted-foreground">
-            Search electronics resources and save useful references directly into your projects.
+            Browse the circuit library from the FastAPI backend and open any design for a closer look.
           </p>
         </div>
 
-        <SearchBar loading={loading} onSearch={runSearch} />
-
-        <SearchResults
-          error={error}
-          loading={loading}
-          query={query}
-          results={results}
-          searched={searched}
-        />
+        <CircuitResults circuits={circuits} error={error} loading={loading} onRetry={refetch} />
       </main>
     </DashboardShell>
   );
