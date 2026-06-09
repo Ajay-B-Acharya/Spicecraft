@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { onAuthStateChanged } from 'firebase/auth';
 import { ArrowLeft } from 'lucide-react';
@@ -17,10 +17,12 @@ import {
 import { CircuitMetadata } from '@/components/circuits/CircuitMetadata';
 import { CircuitOverview } from '@/components/circuits/CircuitOverview';
 import { DashboardShell } from '@/components/dashboard-shell';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useCircuitEditor } from '@/hooks/useCircuitEditor';
 import { auth } from '@/lib/firebase';
 import { useCircuit } from '@/hooks/useCircuit';
+import { buildCircuitFlow } from '@/components/circuits/CircuitSchematic';
 
 export default function CircuitDetailPage() {
   const params = useParams<{ circuitId: string }>();
@@ -35,6 +37,20 @@ export default function CircuitDetailPage() {
     saving,
     updateComponentValue,
   } = useCircuitEditor(circuit);
+
+  const schematicCounts = useMemo(() => {
+    if (!editableCircuit) {
+      return { components: 0, nodes: 0, wires: 0, edges: 0 };
+    }
+
+    const flow = buildCircuitFlow(editableCircuit);
+    return {
+      components: editableCircuit.components.length,
+      nodes: flow.nodes.length,
+      wires: editableCircuit.wires.length,
+      edges: flow.edges.length,
+    };
+  }, [editableCircuit]);
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout> | undefined;
@@ -79,6 +95,8 @@ export default function CircuitDetailPage() {
           </div>
           {!loading && !error && !notFound && editableCircuit ? (
             <CircuitEditorActions
+              circuitId={circuitId}
+              circuitName={editableCircuit.name}
               hasUnsavedChanges={hasUnsavedChanges}
               onSave={handleSaveChanges}
               saving={saving}
@@ -103,6 +121,20 @@ export default function CircuitDetailPage() {
                 <div className="p-6 space-y-1.5 flex flex-col">
                   <h3 className="font-semibold leading-none tracking-tight">Circuit Schematic</h3>
                   <p className="text-sm text-muted-foreground text-left mt-2">Visual representation. View-only for now.</p>
+                  <div className="flex flex-wrap gap-2 pt-3">
+                    <Badge variant="secondary" className="border border-border/60 bg-muted/50 text-foreground">
+                      Components: {schematicCounts.components}
+                    </Badge>
+                    <Badge variant="secondary" className="border border-border/60 bg-muted/50 text-foreground">
+                      Nodes: {schematicCounts.nodes}
+                    </Badge>
+                    <Badge variant="secondary" className="border border-border/60 bg-muted/50 text-foreground">
+                      Wires: {schematicCounts.wires}
+                    </Badge>
+                    <Badge variant="secondary" className="border border-border/60 bg-muted/50 text-foreground">
+                      Edges: {schematicCounts.edges}
+                    </Badge>
+                  </div>
                 </div>
                 <div className="p-6 pt-0">
                   <CircuitSchematic circuit={editableCircuit} />

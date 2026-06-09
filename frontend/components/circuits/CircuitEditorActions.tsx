@@ -1,14 +1,19 @@
 import { AlertCircle, Save } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { ExportLTspiceButton } from '@/components/circuits/ExportLTspiceButton';
 
 interface Props {
+  circuitId: string;
+  circuitName: string;
   hasUnsavedChanges: boolean;
   onSave: () => Promise<void> | void;
   saving: boolean;
 }
 
 export function CircuitEditorActions({
+  circuitId,
+  circuitName,
   hasUnsavedChanges,
   onSave,
   saving,
@@ -23,6 +28,8 @@ export function CircuitEditorActions({
           <AlertCircle className="h-3.5 w-3.5" />
           {hasUnsavedChanges ? 'Unsaved Changes' : 'All Changes Saved'}
         </Badge>
+
+        <ExportLTspiceButton circuitId={circuitId} circuitName={circuitName} />
 
         <Button onClick={onSave} disabled={!hasUnsavedChanges || saving}>
           <Save className="mr-2 h-4 w-4" />
