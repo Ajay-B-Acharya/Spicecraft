@@ -17,7 +17,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from app.services.ltspice_pin_map import (
+from app.services.pin_maps import (
     get_pin_coordinate,
     resolve_symbol_name,
 )
@@ -32,6 +32,21 @@ GRID_ROW_STEP = 256
 COLS_PER_ROW = 4
 ORIGIN_X = 64
 ORIGIN_Y = 128
+
+SPECIAL_NODE_FLAGS: dict[str, str] = {
+    "0": "0",
+    "GND": "0",
+    "GROUND": "0",
+    "VCC": "VCC",
+    "VDD": "VCC",
+    "PWR": "VCC",
+    "VIN": "VIN",
+    "IN": "VIN",
+    "VOUT": "VOUT",
+    "OUT": "VOUT",
+}
+
+SPECIAL_NODE_ORDER = {"GND": 0, "VCC": 1, "VIN": 2, "VOUT": 3}
 
 
 # ---------------------------------------------------------------------------
@@ -60,6 +75,10 @@ def _flag_line(x: int, y: int, net: str) -> str:
     return f"FLAG {x} {y} {net}"
 
 
+def _flag_net_name(special_node: str) -> str:
+    return "0" if special_node == "GND" else special_node
+
+
 def _symbol_block(
     symbol: str,
     x: int,
@@ -75,21 +94,16 @@ def _symbol_block(
     return lines
 
 
-def _is_ground_node(node: str) -> bool:
-    return node.strip().upper() in {"GND", "0", "GROUND"}
-
-
-def _canonical_special_node(node: str) -> str:
+def _canonical_special_node(node: str) -> str | None:
     node_upper = node.strip().upper()
-    if node_upper in {"GND", "0", "GROUND"}:
+    flag = SPECIAL_NODE_FLAGS.get(node_upper)
+    if flag == "0":
         return "GND"
-    if node_upper in {"VCC", "VDD", "PWR"}:
-        return "VCC"
-    if node_upper in {"VIN", "IN"}:
-        return "VIN"
-    if node_upper in {"VOUT", "OUT"}:
-        return "VOUT"
-    return node_upper
+    return flag
+
+
+def _choose_special_node(nodes: list[str]) -> str:
+    return sorted(nodes, key=lambda node: SPECIAL_NODE_ORDER.get(node, 99))[0]
 
 
 def _parse_node(node: str) -> tuple[str, str]:
@@ -102,7 +116,10 @@ def _parse_node(node: str) -> tuple[str, str]:
         return "component", f"{ref.strip()}.{pin.strip()}"
 
     special = _canonical_special_node(raw)
-    return "special", special
+    if special:
+        return "special", special
+
+    return "net", raw
 
 
 class _UnionFind:
@@ -218,9 +235,8 @@ def generate_asc(circuit: dict[str, Any]) -> str:
 
         inst_name = str(comp.get("reference") or comp.get("id") or f"X{idx + 1}")
         raw_type = str(comp.get("type", ""))
-        comp_type = _normalise_type(raw_type)
         symbol = resolve_symbol_name(comp)
-        if symbol == "res" and comp_type in {"ic", "timer", "ne555", "555"}:
+        if symbol == "res" and _normalise_type(raw_type) in {"ic", "timer", "ne555", "555"}:
             # TODO: implement dedicated 8-pin placement and symbol mapping for NE555.
             symbol = "res"
         rotation = _rotation(symbol)
@@ -294,7 +310,7 @@ def generate_asc(circuit: dict[str, Any]) -> str:
         bounds = (min_x, min_y, max_x, max_y)
 
         group_specials = [node for node in members if node in special_nodes_seen]
-        net_name = group_specials[0] if group_specials else ""
+        net_name = _choose_special_node(group_specials) if group_specials else ""
         hub = (
             _label_position(net_name, member_points, bounds)
             if net_name
@@ -305,9 +321,7 @@ def generate_asc(circuit: dict[str, Any]) -> str:
         )
 
         if net_name and net_name not in emitted_flags:
-            lines.append(
-                _flag_line(hub[0], hub[1], "0" if net_name == "GND" else net_name)
-            )
+            lines.append(_flag_line(hub[0], hub[1], _flag_net_name(net_name)))
             emitted_flags.add(net_name)
 
         for node in members:
@@ -323,8 +337,6 @@ def generate_asc(circuit: dict[str, Any]) -> str:
         point = node_points.get(special)
         if point is None:
             continue
-        lines.append(
-            _flag_line(point[0], point[1], "0" if special == "GND" else special)
-        )
+        lines.append(_flag_line(point[0], point[1], _flag_net_name(special)))
 
     return "\n".join(lines) + "\n"
