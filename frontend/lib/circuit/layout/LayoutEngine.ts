@@ -7,21 +7,25 @@
  * future export targets (LTspice, KiCad, SVG, PDF) can reuse the same placement
  * logic.
  */
-import { Circuit } from '../models/Circuit';
-import { Component } from '../models/Component';
-import { Grid } from './Grid';
-import { LayoutAnalyzer } from './LayoutAnalyzer';
-import { PlacementStrategy } from './PlacementStrategy';
-import { PositionOptimizer } from './PositionOptimizer';
+import { Circuit } from "../models/Circuit";
+import { Component } from "../models/Component";
+import { ComponentGrouping } from "./ComponentGrouping";
+import { Grid } from "./Grid";
+import { LayoutAnalyzer } from "./LayoutAnalyzer";
+import { OrientationStrategy } from "./OrientationStrategy";
+import { PlacementStrategy } from "./PlacementStrategy";
+import { PositionOptimizer } from "./PositionOptimizer";
 import {
   DEFAULT_LAYOUT_CONFIG,
   GridPosition,
   LayoutConfig,
   LayoutResult,
   PlacementResult,
-} from './LayoutTypes';
+} from "./LayoutTypes";
 
-function computeBounds(placements: Map<string, PlacementResult>): LayoutResult['bounds'] {
+function computeBounds(
+  placements: Map<string, PlacementResult>,
+): LayoutResult["bounds"] {
   let minX = Infinity;
   let maxX = -Infinity;
   let minY = Infinity;
@@ -52,7 +56,9 @@ function computeBounds(placements: Map<string, PlacementResult>): LayoutResult['
   };
 }
 
-function computeGridBounds(placements: Map<string, PlacementResult>): LayoutResult['gridBounds'] {
+function computeGridBounds(
+  placements: Map<string, PlacementResult>,
+): LayoutResult["gridBounds"] {
   let minCol = Infinity;
   let maxCol = -Infinity;
   let minRow = Infinity;
@@ -83,7 +89,10 @@ function computeGridBounds(placements: Map<string, PlacementResult>): LayoutResu
   };
 }
 
-function applyLayoutToCircuit(circuit: Circuit, layoutResult: LayoutResult): Circuit {
+function applyLayoutToCircuit(
+  circuit: Circuit,
+  layoutResult: LayoutResult,
+): Circuit {
   const updatedComponents = circuit.components.map((component) => {
     const placement = layoutResult.placements.get(component.id);
 
@@ -94,6 +103,8 @@ function applyLayoutToCircuit(circuit: Circuit, layoutResult: LayoutResult): Cir
     return {
       ...component,
       position: placement.absolutePosition,
+      rotation: placement.rotation,
+      mirror: placement.mirror,
     };
   });
 
@@ -121,22 +132,39 @@ export class LayoutEngine {
 
   computeLayout(circuit: Circuit): LayoutResult {
     const analysis = LayoutAnalyzer.analyze(circuit);
+    const groups = ComponentGrouping.detectGroups(circuit, analysis);
     const hints = PlacementStrategy.generateHints(circuit, analysis);
-    let gridPlacements = PlacementStrategy.computePlacements(circuit, analysis, hints);
+    let gridPlacements = PlacementStrategy.computePlacements(
+      circuit,
+      analysis,
+      hints,
+    );
 
     if (this.config.enableOptimization) {
       gridPlacements = this.optimizer.optimize(gridPlacements, circuit);
     }
 
+    const orientations = OrientationStrategy.assignOrientations(
+      circuit.components,
+      gridPlacements,
+      analysis,
+    );
+
     const placements = new Map<string, PlacementResult>();
 
     gridPlacements.forEach((gridPosition, componentId) => {
       const absolutePosition = this.grid.toAbsolute(gridPosition);
+      const orientation = orientations.get(componentId) ?? {
+        rotation: 0,
+        mirror: false,
+      };
 
       placements.set(componentId, {
         componentId,
         gridPosition,
         absolutePosition,
+        rotation: orientation.rotation,
+        mirror: orientation.mirror,
       });
     });
 

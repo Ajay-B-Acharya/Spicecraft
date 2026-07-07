@@ -6,27 +6,43 @@
  * topology data guides the placement strategy so the layout engine produces
  * EDA-compliant schematics without hardcoded circuit templates.
  */
-import { Circuit } from '../models/Circuit';
-import { Component } from '../models/Component';
-import { Net } from '../models/Net';
-import { CircuitAnalysis, ComponentAnalysis, ComponentClassification } from './LayoutTypes';
+import { Circuit } from "../models/Circuit";
+import { Component } from "../models/Component";
+import { Net } from "../models/Net";
+import {
+  CircuitAnalysis,
+  ComponentAnalysis,
+  ComponentClassification,
+} from "./LayoutTypes";
 
-const SUPPLY_LABELS = new Set(['VCC', 'VDD', 'VEE', 'VSS', 'V+', 'V-', 'SUPPLY', 'POWER']);
-const GROUND_LABELS = new Set(['GND', 'GROUND', 'VSS', '0']);
-const INPUT_LABELS = new Set(['VIN', 'INPUT', 'IN', 'SIG', 'SIGNAL']);
-const OUTPUT_LABELS = new Set(['VOUT', 'OUTPUT', 'OUT']);
+const SUPPLY_LABELS = new Set([
+  "VCC",
+  "VDD",
+  "VEE",
+  "VSS",
+  "V+",
+  "V-",
+  "SUPPLY",
+  "POWER",
+]);
+const GROUND_LABELS = new Set(["GND", "GROUND", "VSS", "0"]);
+const INPUT_LABELS = new Set(["VIN", "INPUT", "IN", "SIG", "SIGNAL"]);
+const OUTPUT_LABELS = new Set(["VOUT", "OUTPUT", "OUT"]);
 
 const ACTIVE_TYPES = new Set([
-  'npn_transistor',
-  'pnp_transistor',
-  'voltage_source',
-  'current_source',
+  "npn_transistor",
+  "pnp_transistor",
+  "voltage_source",
+  "current_source",
 ]);
 
-const PASSIVE_TYPES = new Set(['resistor', 'capacitor', 'inductor', 'diode']);
+const PASSIVE_TYPES = new Set(["resistor", "capacitor", "inductor", "diode"]);
 
 function normalizeLabel(label: string): string {
-  return label.trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+  return label
+    .trim()
+    .toUpperCase()
+    .replace(/[^A-Z0-9]/g, "");
 }
 
 function isLabelMatch(label: string, referenceSet: Set<string>): boolean {
@@ -40,7 +56,9 @@ function classifyNetByLabel(net: Net): {
   isInput: boolean;
   isOutput: boolean;
 } {
-  const labels = [net.name, ...(net.labels ?? [])].filter((label): label is string => typeof label === 'string');
+  const labels = [net.name, ...(net.labels ?? [])].filter(
+    (label): label is string => typeof label === "string",
+  );
 
   return {
     isSupply: labels.some((label) => isLabelMatch(label, SUPPLY_LABELS)),
@@ -51,46 +69,64 @@ function classifyNetByLabel(net: Net): {
 }
 
 function isCouplingCapacitor(component: Component, circuit: Circuit): boolean {
-  if (component.type !== 'capacitor') {
+  if (component.type !== "capacitor") {
     return false;
   }
 
-  const connectedNets = component.pins.map((pin) => pin.net).filter((net): net is string => typeof net === 'string');
+  const connectedNets = component.pins
+    .map((pin) => pin.net)
+    .filter((net): net is string => typeof net === "string");
 
   if (connectedNets.length !== 2) {
     return false;
   }
 
-  const nets = circuit.nets.filter((net) => connectedNets.includes(net.name ?? net.id));
+  const nets = circuit.nets.filter((net) =>
+    connectedNets.includes(net.name ?? net.id),
+  );
   return nets.some((net) => {
     const classification = classifyNetByLabel(net);
     return classification.isInput || classification.isOutput;
   });
 }
 
-function isDecouplingCapacitor(component: Component, circuit: Circuit): boolean {
-  if (component.type !== 'capacitor') {
+function isDecouplingCapacitor(
+  component: Component,
+  circuit: Circuit,
+): boolean {
+  if (component.type !== "capacitor") {
     return false;
   }
 
-  const connectedNets = component.pins.map((pin) => pin.net).filter((net): net is string => typeof net === 'string');
+  const connectedNets = component.pins
+    .map((pin) => pin.net)
+    .filter((net): net is string => typeof net === "string");
 
   if (connectedNets.length !== 2) {
     return false;
   }
 
-  const nets = circuit.nets.filter((net) => connectedNets.includes(net.name ?? net.id));
+  const nets = circuit.nets.filter((net) =>
+    connectedNets.includes(net.name ?? net.id),
+  );
   const hasSupply = nets.some((net) => classifyNetByLabel(net).isSupply);
   const hasGround = nets.some((net) => classifyNetByLabel(net).isGround);
 
   return hasSupply && hasGround;
 }
 
-function analyzeComponent(component: Component, circuit: Circuit): ComponentAnalysis {
-  const connectedNets = component.pins.map((pin) => pin.net).filter((net): net is string => typeof net === 'string');
+function analyzeComponent(
+  component: Component,
+  circuit: Circuit,
+): ComponentAnalysis {
+  const connectedNets = component.pins
+    .map((pin) => pin.net)
+    .filter((net): net is string => typeof net === "string");
   const uniqueNets = Array.from(new Set(connectedNets));
   const degree = uniqueNets.length;
-  const nets = circuit.nets.filter((net) => uniqueNets.includes(net.name ?? net.id));
+  const nets = circuit.nets.filter((net) =>
+    uniqueNets.includes(net.name ?? net.id),
+  );
   const isSupply = nets.some((net) => classifyNetByLabel(net).isSupply);
   const isGround = nets.some((net) => classifyNetByLabel(net).isGround);
   const isInput = nets.some((net) => classifyNetByLabel(net).isInput);
@@ -153,7 +189,11 @@ export class LayoutAnalyzer {
         classification.active.push(component.id);
       }
 
-      if (analysis.isPassive && !analysis.isCoupling && !analysis.isDecoupling) {
+      if (
+        analysis.isPassive &&
+        !analysis.isCoupling &&
+        !analysis.isDecoupling
+      ) {
         classification.passive.push(component.id);
       }
 

@@ -5,23 +5,25 @@
  * placements, and bounds for inspection before export. This helps debug layout
  * strategy issues and verify that the placement engine is working correctly.
  */
-import { Circuit } from '../models/Circuit';
-import { LayoutResult } from './LayoutTypes';
+import { Circuit } from "../models/Circuit";
+import { LayoutResult } from "./LayoutTypes";
 
 export class LayoutDebugger {
   static format(circuit: Circuit, layoutResult: LayoutResult): string {
-    const lines: string[] = ['Component Positions', '-------------------', ''];
+    const lines: string[] = ["Component Positions", "-------------------", ""];
 
-    const sortedPlacements = Array.from(layoutResult.placements.entries()).sort((left, right) => {
-      const leftPos = left[1].gridPosition;
-      const rightPos = right[1].gridPosition;
+    const sortedPlacements = Array.from(layoutResult.placements.entries()).sort(
+      (left, right) => {
+        const leftPos = left[1].gridPosition;
+        const rightPos = right[1].gridPosition;
 
-      if (leftPos.row !== rightPos.row) {
-        return leftPos.row - rightPos.row;
-      }
+        if (leftPos.row !== rightPos.row) {
+          return leftPos.row - rightPos.row;
+        }
 
-      return leftPos.col - rightPos.col;
-    });
+        return leftPos.col - rightPos.col;
+      },
+    );
 
     sortedPlacements.forEach(([componentId, placement]) => {
       const component = circuit.components.find((c) => c.id === componentId);
@@ -34,18 +36,20 @@ export class LayoutDebugger {
       lines.push(`${label}`);
       lines.push(`  Grid: (${gridCol}, ${gridRow})`);
       lines.push(`  Absolute: (${absX}, ${absY})`);
-      lines.push('');
+      lines.push("");
     });
 
-    lines.push('------------------------', '');
-    lines.push('Layout Bounds', '');
-    lines.push(`  Grid: ${layoutResult.gridBounds.cols} cols × ${layoutResult.gridBounds.rows} rows`);
+    lines.push("------------------------", "");
+    lines.push("Layout Bounds", "");
+    lines.push(
+      `  Grid: ${layoutResult.gridBounds.cols} cols × ${layoutResult.gridBounds.rows} rows`,
+    );
     lines.push(
       `  Absolute: ${layoutResult.bounds.width} × ${layoutResult.bounds.height} (${layoutResult.bounds.minX}, ${layoutResult.bounds.minY}) to (${layoutResult.bounds.maxX}, ${layoutResult.bounds.maxY})`,
     );
-    lines.push('');
+    lines.push("");
 
-    return lines.join('\n').trimEnd();
+    return lines.join("\n").trimEnd();
   }
 
   static print(circuit: Circuit, layoutResult: LayoutResult): string {
@@ -56,13 +60,14 @@ export class LayoutDebugger {
 
   static formatGrid(circuit: Circuit, layoutResult: LayoutResult): string {
     const { gridBounds } = layoutResult;
+    const cellWidth = 6;
     const grid: string[][] = [];
 
     for (let row = gridBounds.minRow; row <= gridBounds.maxRow; row++) {
       const gridRow: string[] = [];
 
       for (let col = gridBounds.minCol; col <= gridBounds.maxCol; col++) {
-        gridRow.push('.');
+        gridRow.push("·".padEnd(cellWidth));
       }
 
       grid.push(gridRow);
@@ -75,23 +80,52 @@ export class LayoutDebugger {
       const col = placement.gridPosition.col - gridBounds.minCol;
 
       if (row >= 0 && row < grid.length && col >= 0 && col < grid[row].length) {
-        grid[row][col] = label.substring(0, 4).padEnd(4);
+        grid[row][col] = label.substring(0, cellWidth - 1).padEnd(cellWidth);
       }
     });
 
-    const lines: string[] = ['Grid Layout', '-----------', ''];
+    const lines: string[] = [
+      "",
+      "ASCII Grid Visualization",
+      "========================",
+      "",
+    ];
+    const colHeader =
+      "      " +
+      Array.from({ length: gridBounds.cols }, (_, i) => {
+        const col = gridBounds.minCol + i;
+        return col.toString().padEnd(cellWidth);
+      }).join("");
+
+    lines.push(colHeader);
+    lines.push("      " + "─".repeat(gridBounds.cols * cellWidth));
 
     grid.forEach((row, rowIndex) => {
-      lines.push(row.join(' '));
+      const rowLabel =
+        (gridBounds.minRow + rowIndex).toString().padStart(3) + " │ ";
+      lines.push(rowLabel + row.join(""));
     });
 
-    lines.push('');
+    lines.push("");
 
-    return lines.join('\n');
+    return lines.join("\n");
+  }
+
+  static visualize(circuit: Circuit, layoutResult: LayoutResult): string {
+    const formattedGrid = LayoutDebugger.formatGrid(circuit, layoutResult);
+    const formattedPositions = LayoutDebugger.format(circuit, layoutResult);
+
+    return `${formattedGrid}\n${formattedPositions}`;
   }
 
   static printGrid(circuit: Circuit, layoutResult: LayoutResult): string {
     const output = LayoutDebugger.formatGrid(circuit, layoutResult);
+    console.log(output);
+    return output;
+  }
+
+  static printVisualize(circuit: Circuit, layoutResult: LayoutResult): string {
+    const output = LayoutDebugger.visualize(circuit, layoutResult);
     console.log(output);
     return output;
   }

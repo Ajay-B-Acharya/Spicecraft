@@ -5,8 +5,8 @@
  * intelligent auto-layout system. The layout engine operates exclusively on
  * Circuit objects without requiring UI or exporter dependencies.
  */
-import { Component } from '../models/Component';
-import { Net } from '../models/Net';
+import { Component } from "../models/Component";
+import { Net } from "../models/Net";
 
 export interface GridConfig {
   spacingX: number;
@@ -45,7 +45,20 @@ export interface ComponentAnalysis {
   isPassive: boolean;
   isCoupling: boolean;
   isDecoupling: boolean;
+  groupId?: string;
+  groupRole?: string;
 }
+
+export type ComponentGroup =
+  | { type: "voltage_divider"; components: string[] }
+  | { type: "rc_filter"; components: string[]; isHighPass: boolean }
+  | { type: "bias_network"; components: string[]; target: string }
+  | { type: "amplifier_stage"; components: string[]; transistor: string }
+  | {
+      type: "differential_pair";
+      components: string[];
+      transistors: [string, string];
+    };
 
 export interface CircuitAnalysis {
   classification: ComponentClassification;
@@ -58,7 +71,7 @@ export interface PlacementHint {
   componentId: string;
   preferredCol?: number;
   preferredRow?: number;
-  anchor?: 'left' | 'right' | 'top' | 'bottom' | 'center';
+  anchor?: "left" | "right" | "top" | "bottom" | "center";
   weight: number;
 }
 
@@ -66,6 +79,8 @@ export interface PlacementResult {
   componentId: string;
   gridPosition: GridPosition;
   absolutePosition: { x: number; y: number };
+  rotation: number;
+  mirror: boolean;
 }
 
 export interface LayoutConfig {
