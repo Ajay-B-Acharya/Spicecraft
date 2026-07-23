@@ -20,6 +20,8 @@ from typing import Any
 from app.services.pin_maps import (
     get_pin_coordinate,
     resolve_symbol_name,
+    COMPONENT_LIBRARY,
+    resolve_component_kind,
 )
 
 # ---------------------------------------------------------------------------
@@ -60,6 +62,11 @@ def _normalise_type(raw_type: str) -> str:
 
 def _rotation(symbol: str) -> str:
     # Passive and transistor symbols are exported horizontally.
+    return "R90" if symbol in {"voltage", "current"} else "R0"
+
+
+def _ltspice_rotation_for_symbol(symbol: str) -> str:
+    """Return the LTspice rotation string for a given symbol name."""
     return "R90" if symbol in {"voltage", "current"} else "R0"
 
 
@@ -234,12 +241,8 @@ def generate_asc(circuit: dict[str, Any]) -> str:
         cy = ORIGIN_Y + row * GRID_ROW_STEP
 
         inst_name = str(comp.get("reference") or comp.get("id") or f"X{idx + 1}")
-        raw_type = str(comp.get("type", ""))
         symbol = resolve_symbol_name(comp)
-        if symbol == "res" and _normalise_type(raw_type) in {"ic", "timer", "ne555", "555"}:
-            # TODO: implement dedicated 8-pin placement and symbol mapping for NE555.
-            symbol = "res"
-        rotation = _rotation(symbol)
+        ltspice_rotation = _ltspice_rotation_for_symbol(symbol)
 
         value = comp.get("value")
         value_str = str(value) if value is not None else None
@@ -247,13 +250,15 @@ def generate_asc(circuit: dict[str, Any]) -> str:
         layout = dict(comp)
         layout["_ltspice_anchor"] = (cx, cy)
         layout["_ltspice_symbol"] = symbol
+        layout["_ltspice_rotation"] = ltspice_rotation
+        layout["_ltspice_mirror"] = False  # future: read from comp dict
         component_layouts[inst_name] = layout
 
         comp_id = str(comp.get("id", "")).strip()
         if comp_id:
             component_layouts[comp_id] = layout
 
-        lines.extend(_symbol_block(symbol, cx, cy, rotation, inst_name, value_str))
+        lines.extend(_symbol_block(symbol, cx, cy, ltspice_rotation, inst_name, value_str))
 
     if not wires:
         return "\n".join(lines) + "\n"

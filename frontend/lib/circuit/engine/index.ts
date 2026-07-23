@@ -23,3 +23,4 @@ export {
   buildNetsFromVisualEdges,
   visualEdgesToConnections,
 } from "./NetBuilder";
+export { PinSystemDebugger } from "./PinSystemDebugger";

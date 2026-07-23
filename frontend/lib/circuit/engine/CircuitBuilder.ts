@@ -170,7 +170,7 @@ function normalizeComponentType(rawType?: string, rawValue?: string): string | u
     ind: 'inductor',
     l: 'inductor',
     diode: 'diode',
-    led: 'diode',
+    led: 'led',
     d: 'diode',
     transistor: 'npn_transistor',
     npn: 'npn_transistor',
@@ -189,6 +189,12 @@ function normalizeComponentType(rawType?: string, rawValue?: string): string | u
     ground: 'ground',
     gnd: 'ground',
     '0': 'ground',
+    // NE555 / timer IC aliases
+    ne555: 'ne555',
+    '555': 'ne555',
+    ic: 'ne555',
+    timer: 'ne555',
+    '555timer': 'ne555',
   };
 
   if (typeKey && aliases[typeKey]) {
@@ -295,15 +301,22 @@ function buildPinAliases(component: Component): Map<string, string> {
   });
 
   if (component.type === 'npn_transistor' || component.type === 'pnp_transistor') {
-    aliases.set('B', 'base');
-    aliases.set('BASE', 'base');
-    aliases.set('C', 'collector');
-    aliases.set('COLLECTOR', 'collector');
-    aliases.set('E', 'emitter');
-    aliases.set('EMITTER', 'emitter');
-    aliases.set('1', 'collector');
-    aliases.set('2', 'base');
-    aliases.set('3', 'emitter');
+    // Canonical IDs: C, B, E
+    aliases.set('C', 'C');
+    aliases.set('B', 'B');
+    aliases.set('E', 'E');
+    // Semantic name aliases
+    aliases.set('BASE', 'B');
+    aliases.set('COLLECTOR', 'C');
+    aliases.set('EMITTER', 'E');
+    // Legacy lowercase semantic aliases (from old pin IDs)
+    aliases.set('COLLECTOR', 'C');
+    aliases.set('BASE', 'B');
+    aliases.set('EMITTER', 'E');
+    // Numeric aliases per standard BJT pinout (C=1, B=2, E=3)
+    aliases.set('1', 'C');
+    aliases.set('2', 'B');
+    aliases.set('3', 'E');
   }
 
   if (component.type === 'resistor' || component.type === 'capacitor' || component.type === 'inductor') {
@@ -330,6 +343,24 @@ function buildPinAliases(component: Component): Map<string, string> {
     aliases.set('NEG', '2');
   }
 
+  if (component.type === 'led') {
+    // Canonical IDs: A, K
+    aliases.set('A', 'A');
+    aliases.set('K', 'K');
+    // Semantic aliases
+    aliases.set('ANODE', 'A');
+    aliases.set('CATHODE', 'K');
+    aliases.set('PLUS', 'A');
+    aliases.set('POS', 'A');
+    aliases.set('POSITIVE', 'A');
+    aliases.set('MINUS', 'K');
+    aliases.set('NEG', 'K');
+    aliases.set('NEGATIVE', 'K');
+    // Numeric aliases
+    aliases.set('1', 'A');
+    aliases.set('2', 'K');
+  }
+
   if (component.type === 'voltage_source' || component.type === 'current_source') {
     aliases.set('+', '+');
     aliases.set('PLUS', '+');
@@ -348,6 +379,34 @@ function buildPinAliases(component: Component): Map<string, string> {
     aliases.set('1', '0');
     aliases.set('GND', '0');
     aliases.set('GROUND', '0');
+  }
+
+  if (component.type === 'ne555') {
+    // Canonical IDs: 1-8
+    for (let i = 1; i <= 8; i++) {
+      aliases.set(String(i), String(i));
+    }
+    // Semantic name aliases for common pins
+    aliases.set('GND', '1');
+    aliases.set('GROUND', '1');
+    aliases.set('TRIG', '2');
+    aliases.set('TRIGGER', '2');
+    aliases.set('OUT', '3');
+    aliases.set('OUTPUT', '3');
+    aliases.set('RESET', '4');
+    aliases.set('RST', '4');
+    aliases.set('CTRL', '5');
+    aliases.set('CONTROL', '5');
+    aliases.set('CV', '5');
+    aliases.set('THR', '6');
+    aliases.set('THRESH', '6');
+    aliases.set('THRESHOLD', '6');
+    aliases.set('DIS', '7');
+    aliases.set('DISCHARGE', '7');
+    aliases.set('VCC', '8');
+    aliases.set('VDD', '8');
+    aliases.set('PWR', '8');
+    aliases.set('POWER', '8');
   }
 
   return aliases;

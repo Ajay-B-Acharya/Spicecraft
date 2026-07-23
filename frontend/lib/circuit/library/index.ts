@@ -9,9 +9,11 @@ import resistor from './resistor';
 import capacitor from './capacitor';
 import inductor from './inductor';
 import diode from './diode';
+import led from './led';
 import { npnTransistor, pnpTransistor } from './transistor';
 import { currentSource, voltageSource } from './voltage';
 import ground from './ground';
+import ne555 from './ne555';
 import { ComponentDefinition } from '../types';
 
 export const componentDefinitions: ComponentDefinition[] = [
@@ -19,11 +21,13 @@ export const componentDefinitions: ComponentDefinition[] = [
   capacitor,
   inductor,
   diode,
+  led,
   npnTransistor,
   pnpTransistor,
   voltageSource,
   currentSource,
   ground,
+  ne555,
 ];
 
 export {
@@ -31,9 +35,11 @@ export {
   capacitor,
   inductor,
   diode,
+  led,
   npnTransistor,
   pnpTransistor,
   voltageSource,
   currentSource,
   ground,
+  ne555,
 };
