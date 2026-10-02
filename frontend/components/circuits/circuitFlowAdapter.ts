@@ -2,13 +2,15 @@
 import type { Node, Edge } from '@xyflow/react';
 import { CircuitCompiler } from '@/lib/circuit/engine/CircuitCompiler';
 import type { Circuit } from '@/lib/circuitService';
+import type { CircuitValidationResult } from '@/lib/circuit/types';
 
 const STEP_X = 220;
 const STEP_Y = 160;
 
 /** Derives a visual view without altering the source circuit or its connectivity. */
-export function buildCircuitFlow(circuit: Circuit): { nodes: Node[]; edges: Edge[] } {
+export function buildCircuitFlow(circuit: Circuit): { nodes: Node[]; edges: Edge[]; validation: CircuitValidationResult } {
   const compiled = CircuitCompiler.compile(circuit);
+  if (!compiled.validation.valid) return { nodes: [], edges: [], validation: compiled.validation };
   const positions = new Map<string, { x: number; y: number }>();
   const netsFor = (id: string) => compiled.nets.filter(net => net.pins.some(pin => pin.componentId === id));
   const hasLabel = (id: string, pattern: RegExp) => netsFor(id).some(net =>
@@ -69,7 +71,7 @@ export function buildCircuitFlow(circuit: Circuit): { nodes: Node[]; edges: Edge
     });
   };
   compiled.nets.forEach((net, index) => {
-    const pins = net.pins.filter(ref => compiled.components.some(c => c.id === ref.componentId && c.pins.some(p => p.id === ref.pinId)));
+    const pins = net.pins; // Compiler validation guarantees every endpoint exists.
     for (let i = 1; i < pins.length; i++) {
       connect(pins[0].componentId, pins[0].pinId, pins[i].componentId, pins[i].pinId, net.id);
     }
@@ -86,5 +88,5 @@ export function buildCircuitFlow(circuit: Circuit): { nodes: Node[]; edges: Edge
       if (pins[0]) connect(id, 'net', pins[0].componentId, pins[0].pinId, net.id);
     });
   });
-  return { nodes, edges };
+  return { nodes, edges, validation: compiled.validation };
 }

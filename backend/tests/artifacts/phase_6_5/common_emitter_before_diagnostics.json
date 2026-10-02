@@ -1,0 +1,288 @@
+[
+  {
+    "severity": "warning",
+    "code": "WIRE_CROSSES_PIN",
+    "message": "Wire of one net passes over a pin of another net",
+    "net": "VCC / N1",
+    "component": "R1",
+    "pin": "2",
+    "expected": null,
+    "actual": [
+      336,
+      224
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "WIRE_CROSSES_PIN",
+    "message": "Wire of one net passes over a pin of another net",
+    "net": "VCC / 0",
+    "component": "R2",
+    "pin": "2",
+    "expected": null,
+    "actual": [
+      592,
+      224
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "NET_SHORT",
+    "message": "Wires of different nets overlap",
+    "net": "VCC / 0",
+    "component": null,
+    "pin": null,
+    "expected": null,
+    "actual": [
+      848,
+      224
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "NET_SHORT",
+    "message": "Wire of one net ends on the middle of another net's wire",
+    "net": "VCC / 0",
+    "component": null,
+    "pin": null,
+    "expected": null,
+    "actual": [
+      240,
+      224
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "NET_SHORT",
+    "message": "Wire of one net ends on the middle of another net's wire",
+    "net": "N1 / VCC",
+    "component": null,
+    "pin": null,
+    "expected": null,
+    "actual": [
+      336,
+      224
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "NET_SHORT",
+    "message": "Wire of one net ends exactly on a pin of another net",
+    "net": "N1 / VCC",
+    "component": "R1",
+    "pin": "1",
+    "expected": null,
+    "actual": [
+      336,
+      144
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "NET_SHORT",
+    "message": "Wire of one net ends on the middle of another net's wire",
+    "net": "N1 / 0",
+    "component": null,
+    "pin": null,
+    "expected": null,
+    "actual": [
+      336,
+      224
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "NET_SHORT",
+    "message": "Wires of different nets overlap",
+    "net": "N1 / N2",
+    "component": null,
+    "pin": null,
+    "expected": null,
+    "actual": [
+      592,
+      144
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "NET_SHORT",
+    "message": "Wire of one net ends on the middle of another net's wire",
+    "net": "N1 / N2",
+    "component": null,
+    "pin": null,
+    "expected": null,
+    "actual": [
+      592,
+      144
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "NET_SHORT",
+    "message": "Wires of different nets overlap",
+    "net": "0 / VCC",
+    "component": null,
+    "pin": null,
+    "expected": null,
+    "actual": [
+      592,
+      224
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "NET_SHORT",
+    "message": "Wire of one net ends on the middle of another net's wire",
+    "net": "0 / VCC",
+    "component": null,
+    "pin": null,
+    "expected": null,
+    "actual": [
+      592,
+      224
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "WIRE_CROSSES_PIN",
+    "message": "Wire of one net passes over a pin of another net",
+    "net": "0 / N1",
+    "component": "R1",
+    "pin": "2",
+    "expected": null,
+    "actual": [
+      336,
+      224
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "WIRE_CROSSES_PIN",
+    "message": "Wire of one net passes over a pin of another net",
+    "net": "0 / N3",
+    "component": "Q1",
+    "pin": "E",
+    "expected": null,
+    "actual": [
+      128,
+      224
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "NET_SHORT",
+    "message": "Wires of different nets overlap",
+    "net": "0 / N3",
+    "component": null,
+    "pin": null,
+    "expected": null,
+    "actual": [
+      592,
+      224
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "NET_SHORT",
+    "message": "Wire of one net ends on the middle of another net's wire",
+    "net": "N2 / VCC",
+    "component": null,
+    "pin": null,
+    "expected": null,
+    "actual": [
+      432,
+      224
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "WIRE_CROSSES_PIN",
+    "message": "Wire of one net passes over a pin of another net",
+    "net": "N2 / N1",
+    "component": "R2",
+    "pin": "1",
+    "expected": null,
+    "actual": [
+      592,
+      144
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "NET_SHORT",
+    "message": "Wires of different nets overlap",
+    "net": "N2 / N1",
+    "component": null,
+    "pin": null,
+    "expected": null,
+    "actual": [
+      848,
+      144
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "NET_SHORT",
+    "message": "Wire of one net ends on the middle of another net's wire",
+    "net": "N2 / N1",
+    "component": null,
+    "pin": null,
+    "expected": null,
+    "actual": [
+      432,
+      144
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "NET_SHORT",
+    "message": "Wire of one net ends on the middle of another net's wire",
+    "net": "N2 / 0",
+    "component": null,
+    "pin": null,
+    "expected": null,
+    "actual": [
+      432,
+      224
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "NET_SHORT",
+    "message": "Wires of different nets overlap",
+    "net": "N3 / 0",
+    "component": null,
+    "pin": null,
+    "expected": null,
+    "actual": [
+      128,
+      224
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "NET_SHORT",
+    "message": "Wire of one net ends on the middle of another net's wire",
+    "net": "N3 / 0",
+    "component": null,
+    "pin": null,
+    "expected": null,
+    "actual": [
+      128,
+      224
+    ]
+  },
+  {
+    "severity": "warning",
+    "code": "NET_SHORT",
+    "message": "Wire of one net ends on the middle of another net's wire",
+    "net": "N3 / 0",
+    "component": null,
+    "pin": null,
+    "expected": null,
+    "actual": [
+      96,
+      224
+    ]
+  }
+]

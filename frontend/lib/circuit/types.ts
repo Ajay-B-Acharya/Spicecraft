@@ -39,6 +39,9 @@ export interface VisualConnection {
   id?: string;
   source: PinConnection;
   target: PinConnection;
+  /** Original explicit label text; endpoint identity uses canonicalLabel. */
+  sourceLabel?: string;
+  targetLabel?: string;
 }
 
 /**

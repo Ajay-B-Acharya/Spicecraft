@@ -82,7 +82,7 @@ function isCouplingCapacitor(component: Component, circuit: Circuit): boolean {
   }
 
   const nets = circuit.nets.filter((net) =>
-    connectedNets.includes(net.name ?? net.id),
+    connectedNets.includes(net.id),
   );
   return nets.some((net) => {
     const classification = classifyNetByLabel(net);
@@ -107,7 +107,7 @@ function isDecouplingCapacitor(
   }
 
   const nets = circuit.nets.filter((net) =>
-    connectedNets.includes(net.name ?? net.id),
+    connectedNets.includes(net.id),
   );
   const hasSupply = nets.some((net) => classifyNetByLabel(net).isSupply);
   const hasGround = nets.some((net) => classifyNetByLabel(net).isGround);
@@ -125,7 +125,7 @@ function analyzeComponent(
   const uniqueNets = Array.from(new Set(connectedNets));
   const degree = uniqueNets.length;
   const nets = circuit.nets.filter((net) =>
-    uniqueNets.includes(net.name ?? net.id),
+    uniqueNets.includes(net.id),
   );
   const isSupply = nets.some((net) => classifyNetByLabel(net).isSupply);
   const isGround = nets.some((net) => classifyNetByLabel(net).isGround);
@@ -208,7 +208,7 @@ export class LayoutAnalyzer {
 
     const netDegrees = new Map<string, number>();
     circuit.nets.forEach((net) => {
-      netDegrees.set(net.name ?? net.id, net.pins.length);
+      netDegrees.set(net.id, net.pins.length);
     });
 
     const signalFlow = new Map<string, number>();

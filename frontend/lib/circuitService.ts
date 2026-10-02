@@ -65,11 +65,11 @@ function normalizeComponent(component: CircuitNode, index: number): CircuitCompo
   };
 }
 
-function normalizeWire(wire: CircuitNode, index: number): CircuitWire {
+function normalizeWire(wire: CircuitNode): CircuitWire {
   return {
     ...wire,
-    source: toDisplayString(wire.source ?? wire.from ?? wire.start, `Node ${index + 1}`),
-    destination: toDisplayString(wire.destination ?? wire.to ?? wire.end),
+    source: toDisplayString('source' in wire ? wire.source : wire.from ?? wire.start, ''),
+    destination: toDisplayString('destination' in wire ? wire.destination : wire.target ?? wire.to ?? wire.end, ''),
   };
 }
 

@@ -6,9 +6,13 @@
  */
 import { Component } from './Component';
 import { Net } from './Net';
+import type { VisualConnection } from '../types';
 
 export interface Circuit {
   components: Component[];
 
   nets: Net[];
+
+  /** Canonical source wires retained for source-to-net equivalence checks. */
+  connections?: VisualConnection[];
 }

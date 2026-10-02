@@ -6,7 +6,9 @@
     "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "node --test tests/*.test.cjs",
+    "typecheck": "node node_modules/typescript/bin/tsc -p tsconfig.json --noEmit --incremental false"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

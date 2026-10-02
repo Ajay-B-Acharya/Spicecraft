@@ -31,10 +31,15 @@ from __future__ import annotations
 
 from typing import Any
 
+from app.services.connectivity import (
+    ConnectivityModel,
+    build_connectivity,
+    component_identity,
+    validate_connectivity,
+)
 from app.services.pin_maps import (
     COMPONENT_LIBRARY,
     PinResolver,
-    canonical_pin_id,
     get_pin_coordinate,
     resolve_component_kind,
     resolve_symbol_name,
@@ -47,7 +52,7 @@ from app.services.pin_maps import (
 
 
 def _inst_name(comp: dict[str, Any], idx: int) -> str:
-    return str(comp.get("reference") or comp.get("id") or f"X{idx + 1}")
+    return component_identity(comp, idx)
 
 
 def _all_pin_coords(comp: dict[str, Any]) -> list[tuple[str, str, tuple[int, int] | None]]:
@@ -66,27 +71,6 @@ def _all_pin_coords(comp: dict[str, Any]) -> list[tuple[str, str, tuple[int, int
         result.append((pin.id, pin.name, coord))
 
     return result
-
-
-def _canonical_node(node_str: str, comp_map: dict[str, dict[str, Any]]) -> str:
-    """Rewrite ``Q1.base`` / ``Q1.B`` to one spelling so they land in one net."""
-    parsed = _parse_node(node_str)
-    if parsed is None:
-        return node_str.strip()
-    ref, pin = parsed
-    comp = comp_map.get(ref)
-    if comp is None:
-        return f"{ref}.{pin}"
-    return f"{ref}.{canonical_pin_id(comp, pin)}"
-
-
-def _parse_node(node_str: str) -> tuple[str, str] | None:
-    """Split 'REF.pin' into (ref, pin).  Returns None for special nodes."""
-    raw = node_str.strip()
-    if "." in raw:
-        ref, pin = raw.split(".", 1)
-        return ref.strip(), pin.strip()
-    return None
 
 
 # ---------------------------------------------------------------------------
@@ -255,86 +239,56 @@ class ExporterDebugger:
                   R1.Pin2  → (192, 96)
                   ↓ Q1.B   → (320, 128)
         """
-        components_raw: list[dict[str, Any]] = circuit.get("components", [])
-        wires: list[dict[str, Any]] = circuit.get("wires", [])
-
-        # Build a lookup: inst_name → component dict
-        comp_map: dict[str, dict[str, Any]] = {}
-        for idx, comp in enumerate(components_raw):
-            name = _inst_name(comp, idx)
-            comp_map[name] = comp
-            # Also index by id if different
-            comp_id = str(comp.get("id", "")).strip()
-            if comp_id and comp_id != name:
-                comp_map[comp_id] = comp
-
-        # Build nets via union-find (mirrors exporter logic)
-        parent: dict[str, str] = {}
-
-        def _find(x: str) -> str:
-            if parent.setdefault(x, x) != x:
-                parent[x] = _find(parent[x])
-            return parent[x]
-
-        def _union(a: str, b: str) -> None:
-            ra, rb = _find(a), _find(b)
-            if ra != rb:
-                parent[rb] = ra
-
-        for wire in wires:
-            src = str(wire.get("source") or wire.get("from") or "")
-            dst = str(wire.get("destination") or wire.get("to") or "")
-            if not src or not dst or src == dst:
-                continue
-            _union(_canonical_node(src, comp_map), _canonical_node(dst, comp_map))
-
-        # Group nodes into nets
-        net_groups: dict[str, list[str]] = {}
-        for node in list(parent.keys()):
-            root = _find(node)
-            net_groups.setdefault(root, []).append(node)
-
-        lines: list[str] = ["Electrical Nets", "───────────────", ""]
-
-        if not net_groups:
+        model = build_connectivity(circuit)
+        lines: list[str] = ["Electrical Nets (explicit source model)", "───────────────", ""]
+        if not model.nets:
             lines.append("  <no connections>")
-            return "\n".join(lines)
-
-        for net_idx, (_, members) in enumerate(sorted(net_groups.items()), 1):
-            lines.append(f"Net N{net_idx}")
-
-            sorted_members = sorted(members)
-            for i, member in enumerate(sorted_members):
-                parsed = _parse_node(member)
-                arrow = "  " if i == 0 else "  ↓ "
-
-                if parsed:
-                    ref, raw_pin = parsed
-                    comp = comp_map.get(ref)
-                    coord = None
-                    pin_label = raw_pin
-                    if comp is not None:
-                        try:
-                            coord = get_pin_coordinate(comp, raw_pin)
-                        except ValueError:
-                            pass
-                        # Resolve display name
-                        kind = resolve_component_kind(comp)
-                        comp_def = COMPONENT_LIBRARY.get(kind)
-                        if comp_def:
-                            pin_def = next((p for p in comp_def.pins if p.id == raw_pin), None)
-                            if pin_def:
-                                pin_label = f"{pin_def.name} ({pin_def.id})"
-
-                    coord_str = f"  → ({coord[0]}, {coord[1]})" if coord else ""
-                    lines.append(f"  {arrow}{ref}.{pin_label}{coord_str}")
-                else:
-                    # Special node (VCC, GND, etc.)
-                    lines.append(f"  {arrow}[{member}]")
-
+        for net in model.nets:
+            lines.extend(ExporterDebugger._format_net(model, net.name))
             lines.append("")
-
+        diagnostics = validate_connectivity(model)
+        if diagnostics:
+            lines.append("Connectivity Diagnostics")
+            for diagnostic in diagnostics:
+                lines.append(f"  {diagnostic.severity.upper()}: {diagnostic.format()}")
         return "\n".join(lines).rstrip()
+
+    @staticmethod
+    def _format_net(model: ConnectivityModel, node_or_name: str) -> list[str]:
+        net = model.trace_net(node_or_name)
+        if net is None:
+            return [f"<no explicit net for {node_or_name}>"]
+        lines = [f"Net {net.name}"]
+        for member in net.members:
+            pin = model.pin_refs.get(member)
+            if pin is None:
+                lines.append(f"  [{member}]")
+                continue
+            component = model.components[pin.component]
+            definition = COMPONENT_LIBRARY.get(resolve_component_kind(component))
+            pin_def = definition.pin(pin.pin) if definition else None
+            label = f"{pin_def.name} ({pin.pin})" if pin_def else pin.pin
+            try:
+                coord = get_pin_coordinate(component, pin.pin)
+                suffix = f"  → ({coord[0]}, {coord[1]})"
+            except ValueError:
+                suffix = ""  # raw circuits need no layout for logical traces
+            lines.append(f"  {pin.key}  {label}{suffix}")
+        for wire in model.wires_for_net(node_or_name):
+            lines.append(f"  {wire.format()} => {wire.source} -> {wire.destination}")
+        return lines
+
+    @staticmethod
+    def trace_net(circuit: dict[str, Any], node_or_name: str) -> str:
+        """Inspect an actual named/anonymous net with canonical pins and source edges."""
+        model = build_connectivity(circuit)
+        return "\n".join(ExporterDebugger._format_net(model, node_or_name))
+
+    @staticmethod
+    def trace_pin(circuit: dict[str, Any], component: str, pin: str | None = None) -> str:
+        """Trace REF.pin (or component, pin), accepting existing identity/pin aliases."""
+        key = f"{component}.{pin}" if pin is not None else component
+        return ExporterDebugger.trace_net(circuit, key)
 
     @staticmethod
     def print_connections(circuit: dict[str, Any]) -> str:

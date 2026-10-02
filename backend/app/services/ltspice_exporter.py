@@ -2,9 +2,9 @@
 LTspice ASC Exporter Service (Version 1)
 
 Converts the SpiceCraft circuit JSON model into a valid LTspice ASCII schematic
-(.asc) file. The exporter keeps component references and values intact while
-routing wires against a dedicated pin map so the resulting topology is electrically
-meaningful.
+(.asc) file. The exporter keeps component references and values intact, validates
+explicit source connectivity, and routes against the existing dedicated pin map.
+Logical model validation does not establish electrical correctness of ASC routing.
 
 Geometry rules (see ``pin_maps`` for the full model):
 
@@ -27,10 +27,11 @@ place_component(idx, component) / place_components(components)
     The placement step on its own, for debugging.
 
 Known limitation: wire *routing* is still the original single-elbow hub router.
-It connects every pin correctly but can draw one net across another net's pins.
-Those cases are reported as ``NET_SHORT`` / ``WIRE_CROSSES_PIN`` warnings (or
-errors with ``strict=True``) rather than hidden; fixing them is the routing
-phase, not this module's geometry layer.
+It reaches the intended pin coordinates but can electrically short distinct nets.
+In the installed-LTspice Common Emitter baseline, five intended nets collapse to
+ground. Geometry overlap checks report ``NET_SHORT`` / ``WIRE_CROSSES_PIN``
+warnings (errors with ``strict=True``), but do not replace LTspice netlisting.
+Fixing those physical shorts belongs to Phase 7, not logical connectivity.
 """
 
 from __future__ import annotations
@@ -48,11 +49,15 @@ from app.services.asc_validation import (
     WireSegment,
     validate_net_geometry,
 )
+from app.services.connectivity import (
+    build_connectivity,
+    component_identity,
+    validate_connectivity,
+)
 from app.services.grid_system import GridSystem
 from app.services.pin_maps import (
     COMPONENT_LIBRARY,
     PinResolver,
-    canonical_pin_id,
     get_pin_coordinate,
     resolve_component_kind,
     resolve_symbol_name,
@@ -70,21 +75,6 @@ GRID_ROW_STEP = 256
 COLS_PER_ROW = 4
 ORIGIN_X = 64
 ORIGIN_Y = 128
-
-SPECIAL_NODE_FLAGS: dict[str, str] = {
-    "0": "0",
-    "GND": "0",
-    "GROUND": "0",
-    "VCC": "VCC",
-    "VDD": "VCC",
-    "PWR": "VCC",
-    "VIN": "VIN",
-    "IN": "VIN",
-    "VOUT": "VOUT",
-    "OUT": "VOUT",
-}
-
-SPECIAL_NODE_ORDER = {"GND": 0, "VCC": 1, "VIN": 2, "VOUT": 3}
 
 Point = tuple[int, int]
 
@@ -137,58 +127,6 @@ def _symbol_block(
     if value:
         lines.append(f"SYMATTR Value {value}")
     return lines
-
-
-def _canonical_special_node(node: str) -> str | None:
-    node_upper = node.strip().upper()
-    flag = SPECIAL_NODE_FLAGS.get(node_upper)
-    if flag == "0":
-        return "GND"
-    return flag
-
-
-def _choose_special_node(nodes: list[str]) -> str:
-    return sorted(nodes, key=lambda node: SPECIAL_NODE_ORDER.get(node, 99))[0]
-
-
-def _parse_node(node: str) -> tuple[str, str]:
-    raw = node.strip()
-    if not raw:
-        return "", ""
-
-    if "." in raw:
-        ref, pin = raw.split(".", 1)
-        return "component", f"{ref.strip()}.{pin.strip()}"
-
-    special = _canonical_special_node(raw)
-    if special:
-        return "special", special
-
-    return "net", raw
-
-
-class _UnionFind:
-    def __init__(self) -> None:
-        self._parent: dict[str, str] = {}
-
-    def add(self, item: str) -> None:
-        if item and item not in self._parent:
-            self._parent[item] = item
-
-    def find(self, item: str) -> str:
-        parent = self._parent.get(item)
-        if parent is None:
-            self._parent[item] = item
-            return item
-        if parent != item:
-            self._parent[item] = self.find(parent)
-        return self._parent[item]
-
-    def union(self, left: str, right: str) -> None:
-        root_left = self.find(left)
-        root_right = self.find(right)
-        if root_left != root_right:
-            self._parent[root_right] = root_left
 
 
 def _snap(value: float, grid: int = GridSystem.SIZE) -> int:
@@ -265,7 +203,7 @@ def place_component(idx: int, comp: dict[str, Any]) -> tuple[str, dict[str, Any]
         (ORIGIN_X + col * GRID_COL_STEP, ORIGIN_Y + row * GRID_ROW_STEP)
     )
 
-    inst_name = str(comp.get("reference") or comp.get("id") or f"X{idx + 1}")
+    inst_name = component_identity(comp, idx)
     symbol = resolve_symbol_name(comp)
     definition = COMPONENT_LIBRARY.get(resolve_component_kind(comp))
     rotation = (
@@ -327,17 +265,22 @@ def generate_asc_with_diagnostics(
 ) -> tuple[str, list[ExportDiagnostic]]:
     """Convert a circuit dict into ``(asc_text, diagnostics)``.
 
-    Never raises for geometry problems; inspect ``diagnostics`` (errors mean the
-    text should not be used as-is). With ``strict=True`` wires that short or
-    cross other nets are reported as errors instead of warnings.
+    Never raises for validation problems. Logical errors return empty text
+    before placement/routing; geometry errors return inspectable but unusable
+    text. With ``strict=True`` wires that short or cross other nets are reported
+    as errors instead of warnings.
     """
+    connectivity = build_connectivity(circuit)
+    diagnostics = validate_connectivity(connectivity)
+    # Fail before placement/routing; diagnostic mode never returns usable text
+    # for logically invalid source and generate_asc raises AscExportError.
+    if any(d.severity == ERROR for d in diagnostics):
+        return "", diagnostics
+
     name: str = str(circuit.get("name", "Circuit"))
     description: str = str(circuit.get("description", ""))
     components: list[dict[str, Any]] = circuit.get("components", [])
-    wires: list[dict[str, Any]] = circuit.get("wires", [])
-
     lines: list[str] = []
-    diagnostics: list[ExportDiagnostic] = []
 
     # ---- Header -----------------------------------------------------------
     lines.append("Version 4")
@@ -360,16 +303,6 @@ def generate_asc_with_diagnostics(
         if comp_id:
             component_layouts[comp_id] = layout
 
-        if resolve_component_kind(comp) not in COMPONENT_LIBRARY:
-            diagnostics.append(
-                ExportDiagnostic(
-                    WARNING, "UNKNOWN_COMPONENT_KIND",
-                    "Unknown component kind; exported as a generic 'res' symbol "
-                    "and its pins cannot be wired",
-                    component=inst_name,
-                )
-            )
-
         value = comp.get("value")
         value_str = str(value) if value is not None else None
         anchor = layout["_ltspice_anchor"]
@@ -384,78 +317,28 @@ def generate_asc_with_diagnostics(
             )
         )
 
-    if not wires:
-        return "\n".join(lines) + "\n", diagnostics
-
-    # ---- Connectivity model ----------------------------------------------
-    uf = _UnionFind()
-    special_nodes_seen: set[str] = set()
-    pin_refs: dict[str, tuple[str, str]] = {}  # node key -> (inst_name, pin id)
-
-    def resolve_endpoint(kind: str, key: str, wire_label: str) -> str:
-        """Canonicalise ``REF.pin`` keys and record the pin's coordinate."""
-        if kind != "component":
-            return key
-        ref, pin = key.split(".", 1)
-        component = component_layouts.get(ref)
-        if component is None:
-            diagnostics.append(
-                ExportDiagnostic(
-                    ERROR, "MISSING_COMPONENT",
-                    f"Wire {wire_label} references a component that does not exist",
-                    component=ref, pin=pin,
+    # ---- Validated connectivity model -------------------------------------
+    # Coordinates do not participate in logical grouping. Resolve geometry
+    # only after the source model passed validation, preserving member order.
+    for net in connectivity.nets:
+        for pin in net.pins:
+            try:
+                node_points[pin.key] = get_pin_coordinate(
+                    component_layouts[pin.component], pin.pin
                 )
-            )
-            return key
-        inst = component["_inst_name"]
-        pin_id = canonical_pin_id(component, pin)
-        canonical_key = f"{inst}.{pin_id}"
-        try:
-            node_points[canonical_key] = get_pin_coordinate(component, pin_id)
-            pin_refs[canonical_key] = (inst, pin_id)
-        except ValueError as exc:
-            diagnostics.append(
-                ExportDiagnostic(
-                    ERROR, "UNRESOLVED_PIN", str(exc), component=inst, pin=pin,
-                )
-            )
-        return canonical_key
-
-    for wire_index, wire in enumerate(wires, start=1):
-        src = str(wire.get("source") or wire.get("from") or "")
-        dst = str(wire.get("destination") or wire.get("to") or "")
-        src_kind, src_key = _parse_node(src)
-        dst_kind, dst_key = _parse_node(dst)
-
-        if not src_key or not dst_key or src_key == dst_key:
-            continue
-
-        wire_label = f"#{wire_index} ({src} -> {dst})"
-        src_key = resolve_endpoint(src_kind, src_key, wire_label)
-        dst_key = resolve_endpoint(dst_kind, dst_key, wire_label)
-
-        if src_key == dst_key:
-            continue
-
-        uf.add(src_key)
-        uf.add(dst_key)
-        uf.union(src_key, dst_key)
-
-        if src_kind == "special":
-            special_nodes_seen.add(src_key)
-        if dst_kind == "special":
-            special_nodes_seen.add(dst_key)
-
-    groups: dict[str, list[str]] = {}
-    for node in uf._parent:
-        root = uf.find(node)
-        groups.setdefault(root, []).append(node)
+            except ValueError as exc:
+                diagnostics.append(ExportDiagnostic(
+                    ERROR, "UNRESOLVED_PIN", str(exc), net=net.name,
+                    component=pin.component, pin=pin.pin,
+                ))
+    if any(d.severity == ERROR for d in diagnostics):
+        return "", diagnostics
 
     emitted_flags: set[str] = set()
     net_geometries: list[NetGeometry] = []
-    anonymous_nets = 0
 
-    for members in groups.values():
+    for net in connectivity.nets:
+        members = net.members
         member_points = [node_points[node] for node in members if node in node_points]
         if not member_points:
             continue
@@ -466,8 +349,7 @@ def generate_asc_with_diagnostics(
         max_y = max(y for _, y in member_points)
         bounds = (min_x, min_y, max_x, max_y)
 
-        group_specials = [node for node in members if node in special_nodes_seen]
-        net_name = _choose_special_node(group_specials) if group_specials else ""
+        net_name = net.special
         hub = (
             _label_position(net_name, member_points, bounds)
             if net_name
@@ -477,17 +359,11 @@ def generate_asc_with_diagnostics(
             )
         )
 
-        if net_name:
-            geometry_name = _flag_net_name(net_name)
-        else:
-            anonymous_nets += 1
-            geometry_name = f"N{anonymous_nets}"
+        geometry_name = net.name
         geometry = NetGeometry(name=geometry_name)
 
-        for node in members:
-            if node in pin_refs and node in node_points:
-                inst, pin_id = pin_refs[node]
-                geometry.pins.append(PinPoint(inst, pin_id, node_points[node]))
+        for pin in net.pins:
+            geometry.pins.append(PinPoint(pin.component, pin.pin, node_points[pin.key]))
 
         if net_name and net_name not in emitted_flags:
             lines.append(_flag_line(hub[0], hub[1], _flag_net_name(net_name)))
@@ -505,6 +381,9 @@ def generate_asc_with_diagnostics(
         net_geometries.append(geometry)
 
     # ---- Validate before returning ---------------------------------------
+    # Compare recorded pins with immutable explicit source groups. This does
+    # NOT prove LTspice's physical wire interpretation matches those groups.
+    diagnostics = validate_connectivity(connectivity, net_geometries)
     geometry_diagnostics = validate_net_geometry(net_geometries)
     if strict:
         geometry_diagnostics = _promote_shorts(geometry_diagnostics)

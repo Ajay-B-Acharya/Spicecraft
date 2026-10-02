@@ -55,7 +55,29 @@ class DisjointSet {
   }
 }
 
-function endpointKey(endpoint: PinConnection): string {
+export const LABEL_COMPONENT_PREFIX = '__label__:';
+export const LABEL_PIN_ID = 'label';
+
+/** Only the established special-node aliases share electrical identity. */
+export function canonicalLabel(label: string): string {
+  const text = label.trim();
+  const aliases: Record<string, string> = {
+    '0': 'GND', GND: 'GND', GROUND: 'GND',
+    VCC: 'VCC', VDD: 'VCC', PWR: 'VCC',
+    VIN: 'VIN', IN: 'VIN', VOUT: 'VOUT', OUT: 'VOUT',
+  };
+  return aliases[text.toUpperCase()] ?? text;
+}
+
+export function labelConnection(label: string): PinConnection {
+  return { componentId: `${LABEL_COMPONENT_PREFIX}${canonicalLabel(label)}`, pinId: LABEL_PIN_ID };
+}
+
+export function isLabelConnection(endpoint: PinConnection): boolean {
+  return endpoint.componentId.startsWith(LABEL_COMPONENT_PREFIX) && endpoint.pinId === LABEL_PIN_ID;
+}
+
+export function endpointKey(endpoint: PinConnection): string {
   return JSON.stringify([endpoint.componentId, endpoint.pinId]);
 }
 
@@ -112,27 +134,22 @@ export function visualEdgesToConnections(
   edges: VisualEdgeLike[],
   options: VisualEdgeAdapterOptions = {},
 ): VisualConnection[] {
-  return edges.flatMap((edge) => {
+  return edges.map((edge, index) => {
     const sourcePinId = options.getSourcePinId?.(edge) ?? edge.sourceHandle ?? options.defaultSourcePinId;
     const targetPinId = options.getTargetPinId?.(edge) ?? edge.targetHandle ?? options.defaultTargetPinId;
-
-    if (!sourcePinId || !targetPinId) {
-      return [];
+    const text = (value: unknown): value is string => typeof value === 'string' && value.trim().length > 0;
+    if (!text(edge.source) || !text(edge.target) || !text(sourcePinId) || !text(targetPinId) ||
+        edge.sourceHandle === '' || edge.targetHandle === '') {
+      throw new Error(`Visual edge ${edge.id ?? `#${index + 1}`} has invalid or missing node/handle endpoints.`);
     }
-
-    return [
-      {
-        id: edge.id,
-        source: {
-          componentId: edge.source,
-          pinId: sourcePinId,
-        },
-        target: {
-          componentId: edge.target,
-          pinId: targetPinId,
-        },
-      },
-    ];
+    if (edge.source === edge.target && sourcePinId === targetPinId) {
+      throw new Error(`Visual edge ${edge.id ?? `#${index + 1}`} is a self-connection to the same pin.`);
+    }
+    return {
+      id: edge.id,
+      source: { componentId: edge.source, pinId: sourcePinId },
+      target: { componentId: edge.target, pinId: targetPinId },
+    };
   });
 }
 

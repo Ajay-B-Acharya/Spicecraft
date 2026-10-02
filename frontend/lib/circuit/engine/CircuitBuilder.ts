@@ -6,7 +6,7 @@
  * electrical nets through the NetBuilder, and returns a complete UI-independent
  * circuit object. The builder does not depend on React Flow.
  */
-import { buildNets } from './NetBuilder';
+import { buildNets, canonicalLabel, endpointKey, isLabelConnection, labelConnection, LABEL_COMPONENT_PREFIX } from './NetBuilder';
 import { componentLibrary } from './ComponentLibrary';
 import { resolvePins } from './PinResolver';
 import { Component } from '../models/Component';
@@ -19,8 +19,6 @@ import {
   VisualConnection,
 } from '../types';
 
-const LABEL_COMPONENT_PREFIX = '__label__:';
-const LABEL_PIN_ID = 'label';
 const DEFAULT_COMPONENT_SPACING_X = 220;
 const DEFAULT_COMPONENT_SPACING_Y = 160;
 const DEFAULT_COMPONENT_COLUMNS = 4;
@@ -39,8 +37,7 @@ interface NormalizedComponentInput {
 interface NormalizedWireInput {
   rawIndex: number;
   id?: string;
-  source: unknown;
-  target: unknown;
+  raw: Record<string, unknown>;
 }
 
 type EndpointReference =
@@ -151,12 +148,13 @@ function normalizeComponentType(rawType?: string, rawValue?: string): string | u
   const pnpValues = new Set(['pnp', '2n3906', 'bc557', 's8550']);
   const npnValues = new Set(['npn', 'bc547', '2n3904', '2n2222', 's8050']);
 
-  if (valueKey && pnpValues.has(valueKey)) {
-    return 'pnp_transistor';
+  // Value refines only a generic family, never an explicit unrelated type.
+  if (typeKey === 'transistor' || typeKey === 'bjt') {
+    if (valueKey && pnpValues.has(valueKey)) return 'pnp_transistor';
+    if (valueKey && npnValues.has(valueKey)) return 'npn_transistor';
   }
-
-  if (valueKey && npnValues.has(valueKey)) {
-    return 'npn_transistor';
+  if (typeKey === 'ic') {
+    return valueKey && ['ne555', '555', 'ne555p', 'lm555'].includes(valueKey) ? 'ne555' : 'ic';
   }
 
   const aliases: Record<string, string> = {
@@ -192,7 +190,6 @@ function normalizeComponentType(rawType?: string, rawValue?: string): string | u
     // NE555 / timer IC aliases
     ne555: 'ne555',
     '555': 'ne555',
-    ic: 'ne555',
     timer: 'ne555',
     '555timer': 'ne555',
   };
@@ -201,7 +198,7 @@ function normalizeComponentType(rawType?: string, rawValue?: string): string | u
     return aliases[typeKey];
   }
 
-  if (valueKey && aliases[valueKey]) {
+  if (!typeKey && valueKey && aliases[valueKey]) {
     return aliases[valueKey];
   }
 
@@ -268,28 +265,12 @@ function normalizeWireInput(rawWire: Record<string, unknown>, index: number): No
   return {
     rawIndex: index,
     id: toText(rawWire.id),
-    source: rawWire.source ?? rawWire.from ?? rawWire.start,
-    target: rawWire.target ?? rawWire.to ?? rawWire.destination ?? rawWire.end,
+    raw: rawWire,
   };
-}
-
-function labelPinConnection(label: string): PinConnection {
-  return {
-    componentId: `${LABEL_COMPONENT_PREFIX}${label}`,
-    pinId: LABEL_PIN_ID,
-  };
-}
-
-function isLabelConnection(connection: PinConnection): boolean {
-  return connection.componentId.startsWith(LABEL_COMPONENT_PREFIX);
-}
-
-function labelFromConnection(connection: PinConnection): string {
-  return connection.componentId.slice(LABEL_COMPONENT_PREFIX.length);
 }
 
 function pinKey(componentId: string, pinId: string): string {
-  return `${componentId}:${pinId}`;
+  return endpointKey({ componentId, pinId });
 }
 
 function buildPinAliases(component: Component): Map<string, string> {
@@ -426,14 +407,27 @@ function parseEndpointReference(
   endpointRole: 'source' | 'target',
 ): EndpointReference | undefined {
   if (isRecord(rawEndpoint)) {
-    const label = toText(rawEndpoint.label) ?? toText(rawEndpoint.net) ?? toText(rawEndpoint.name);
-    if (label) {
-      return { kind: 'label', label };
+    const componentFields = ['componentId', 'component', 'reference', 'id'];
+    const pinFields = ['pinId', 'pin', 'handle'];
+    const componentIds = componentFields.filter(field => field in rawEndpoint).map(field => toText(rawEndpoint[field]));
+    const rawPinIds = pinFields.filter(field => field in rawEndpoint).map(field => toText(rawEndpoint[field]));
+    const componentId = componentIds[0];
+    const rawPinId = rawPinIds[0];
+    const labelFields = ['label', 'net', ...(componentIds.length === 0 && rawPinIds.length === 0 ? ['name'] : [])];
+    const labels = labelFields.filter(field => field in rawEndpoint).map(field => toText(rawEndpoint[field]));
+    if (labels.length > 0) {
+      if (componentIds.length > 0 || rawPinIds.length > 0 || labels.some(label => !label) ||
+          new Set(labels.map(label => canonicalLabel(label ?? ''))).size > 1) {
+        errors.push(`Wire ${wireDescription} has contradictory or malformed label/pin fields on its ${endpointRole} endpoint.`);
+        return undefined;
+      }
+      return { kind: 'label', label: labels[0]! };
     }
-
-    const componentId =
-      toText(rawEndpoint.componentId) ?? toText(rawEndpoint.component) ?? toText(rawEndpoint.reference) ?? toText(rawEndpoint.id);
-    const rawPinId = toText(rawEndpoint.pinId) ?? toText(rawEndpoint.pin) ?? toText(rawEndpoint.handle);
+    if (componentIds.length > 0 && (componentIds.some(id => !id) ||
+        new Set(componentIds.map(id => componentsById.get(id!)?.id ?? id)).size > 1)) {
+      errors.push(`Wire ${wireDescription} has contradictory component fields on its ${endpointRole} endpoint.`);
+      return undefined;
+    }
 
     if (componentId) {
       const component = componentsById.get(componentId);
@@ -443,9 +437,15 @@ function parseEndpointReference(
         return undefined;
       }
 
+      if (rawPinIds.length > 0 && (rawPinIds.some(id => !id || !resolvePinId(component, id)) ||
+          new Set(rawPinIds.map(id => resolvePinId(component, id!))).size > 1)) {
+        errors.push(`Wire ${wireDescription} has contradictory or invalid pin fields for ${component.id} on its ${endpointRole} endpoint.`);
+        return undefined;
+      }
+
       if (!rawPinId) {
         if (component.pins.length === 1) {
-          return { kind: 'pin', componentId, pinId: component.pins[0].id };
+          return { kind: 'pin', componentId: component.id, pinId: component.pins[0].id };
         }
 
         errors.push(`Wire ${wireDescription} is missing a pin reference for ${componentId} on its ${endpointRole} endpoint.`);
@@ -459,7 +459,7 @@ function parseEndpointReference(
         return undefined;
       }
 
-      return { kind: 'pin', componentId, pinId };
+      return { kind: 'pin', componentId: component.id, pinId };
     }
   }
 
@@ -489,7 +489,7 @@ function parseEndpointReference(
       return undefined;
     }
 
-    return { kind: 'pin', componentId, pinId };
+    return { kind: 'pin', componentId: component.id, pinId };
   }
 
   const directComponent = componentsById.get(text);
@@ -514,21 +514,68 @@ function parseEndpointReference(
   };
 }
 
+function normalizeWireEndpoint(
+  wire: NormalizedWireInput, role: 'source' | 'target', componentsById: Map<string, Component>,
+  warnings: string[], errors: string[],
+): EndpointReference | undefined {
+  const fields = role === 'source' ? ['source', 'from', 'start'] : ['target', 'to', 'destination', 'end'];
+  const description = wire.id ?? `#${wire.rawIndex + 1}`;
+  const handleField = `${role}Handle`;
+  const hasHandle = handleField in wire.raw;
+  const candidates: EndpointReference[] = [];
+  const before = errors.length;
+  fields.filter(field => field in wire.raw).forEach(field => {
+    let raw = wire.raw[field];
+    if (field === role && hasHandle) {
+      const handle = toText(wire.raw[handleField]);
+      if (!handle || !toText(raw)) {
+        errors.push(`Wire ${description} has a malformed React Flow ${role}/handle pair.`);
+        return;
+      }
+      const text = toText(raw)!;
+      // A dotted source is also accepted, but must agree with the handle.
+      if (componentsById.has(text) || !text.includes('.')) {
+        raw = { componentId: text, pinId: handle };
+      } else {
+        const parsed = parseEndpointReference(raw, componentsById, warnings, errors, description, role);
+        if (parsed?.kind !== 'pin' || resolvePinId(componentsById.get(parsed.componentId)!, handle) !== parsed.pinId) {
+          errors.push(`Wire ${description} has contradictory ${role} and ${handleField} fields.`);
+          return;
+        }
+        candidates.push(parsed);
+        return;
+      }
+    }
+    const parsed = parseEndpointReference(raw, componentsById, warnings, errors, description, role);
+    if (parsed) candidates.push(parsed);
+  });
+  if (hasHandle && !(role in wire.raw)) errors.push(`Wire ${description} has ${handleField} without ${role}.`);
+  if (candidates.length === 0 && errors.length === before) {
+    errors.push(`Wire ${description} is missing its ${role} reference.`);
+  }
+  const keys = candidates.map(endpoint => endpointKey(endpoint.kind === 'label'
+    ? labelConnection(endpoint.label) : endpoint));
+  if (new Set(keys).size > 1) errors.push(`Wire ${description} has contradictory ${role} endpoint fields after canonicalization.`);
+  return errors.length === before ? candidates[0] : undefined;
+}
+
 function toVisualConnection(source: EndpointReference, target: EndpointReference, id?: string): VisualConnection {
   return {
     id,
-    source: source.kind === 'label' ? labelPinConnection(source.label) : { componentId: source.componentId, pinId: source.pinId },
-    target: target.kind === 'label' ? labelPinConnection(target.label) : { componentId: target.componentId, pinId: target.pinId },
+    source: source.kind === 'label' ? labelConnection(source.label) : { componentId: source.componentId, pinId: source.pinId },
+    target: target.kind === 'label' ? labelConnection(target.label) : { componentId: target.componentId, pinId: target.pinId },
+    sourceLabel: source.kind === 'label' ? source.label : undefined,
+    targetLabel: target.kind === 'label' ? target.label : undefined,
   };
 }
 
-function extractLabels(net: Net): Net {
+function extractLabels(net: Net, labelsByIdentity: Map<string, Set<string>>): Net {
   const labels: string[] = [];
   const pins: PinConnection[] = [];
 
   net.pins.forEach((pin) => {
     if (isLabelConnection(pin)) {
-      labels.push(labelFromConnection(pin));
+      labels.push(...(labelsByIdentity.get(pin.componentId) ?? [pin.componentId.slice(LABEL_COMPONENT_PREFIX.length)]));
       return;
     }
 
@@ -550,10 +597,8 @@ function assignNetReferences(components: Component[], nets: Net[], resolvedPins:
   const netByPin = new Map<string, string>();
 
   nets.forEach((net) => {
-    const netName = net.name ?? net.id;
-
     net.pins.forEach((pin) => {
-      netByPin.set(pinKey(pin.componentId, pin.pinId), netName);
+      netByPin.set(pinKey(pin.componentId, pin.pinId), net.id);
     });
   });
 
@@ -583,6 +628,18 @@ export class CircuitBuilder {
     const components: Component[] = [];
     const componentsById = new Map<string, Component>();
     const componentIdCounts = new Map<string, number>();
+    const reservedIds = new Set(componentInputs.map(input => input.reference).filter((id): id is string => !!id));
+    const localCounters = new Map<string, number>();
+    const rawComponents = readComponents(root);
+    if (!isRecord(source)) errors.push('Circuit input must be a record.');
+    for (const [kind, fields] of [['component', ['components', 'nodes']], ['wire', ['wires', 'connections', 'edges']]] as const) {
+      const field = fields.find(key => key in root);
+      if (field && !Array.isArray(root[field])) errors.push(`Circuit ${field} must be an array.`);
+      if (field && Array.isArray(root[field])) (root[field] as unknown[]).forEach((entry, index) => {
+        if (!isRecord(entry)) errors.push(`Malformed ${kind} at index ${index}; expected a record.`);
+      });
+    }
+    if (componentInputs.length === 0 && wireInputs.length === 0) warnings.push('Circuit is empty: no components or connections.');
 
     componentInputs.forEach((input) => {
       if (!input.reference) {
@@ -607,8 +664,17 @@ export class CircuitBuilder {
         return;
       }
 
+      let id = input.reference;
+      if (!id) {
+        const prefix = componentLibrary.getDefinition(input.canonicalType)!.prefix;
+        let next = localCounters.get(prefix) ?? 0;
+        do { next++; id = `${prefix}${next}`; } while (reservedIds.has(id));
+        localCounters.set(prefix, next);
+        reservedIds.add(id);
+      }
+      if (id.startsWith(LABEL_COMPONENT_PREFIX)) errors.push(`Component ID ${id} uses the reserved label identity prefix.`);
       const component = componentLibrary.createComponent(input.canonicalType, {
-        id: input.reference,
+        id,
         name: input.reference,
         value: input.rawValue,
         position: input.position,
@@ -630,38 +696,51 @@ export class CircuitBuilder {
       }
     });
 
+    // Resolve reference/name aliases only when they identify exactly one component.
+    const aliasOwners = new Map<string, Set<string>>();
+    rawComponents.forEach(raw => {
+      const id = toText(raw.id) ?? toText(raw.reference) ?? toText(raw.name);
+      if (!id || !componentsById.has(id)) return;
+      [raw.reference, raw.name].forEach(value => {
+        const alias = toText(value);
+        if (!alias) return;
+        const owners = aliasOwners.get(alias) ?? new Set<string>();
+        owners.add(id);
+        aliasOwners.set(alias, owners);
+      });
+    });
+    aliasOwners.forEach((owners, alias) => {
+      const direct = componentsById.get(alias);
+      if (owners.size > 1 || (direct && !owners.has(direct.id))) {
+        errors.push(`Ambiguous component alias/ID collision: ${alias}.`);
+      } else if (!direct) componentsById.set(alias, componentsById.get([...owners][0])!);
+    });
     const resolvedPins = components.flatMap((component) => resolvePins(component));
-
     const visualConnections: VisualConnection[] = [];
-
-    wireInputs.forEach((wireInput) => {
-      const wireDescription = wireInput.id ?? `#${wireInput.rawIndex + 1}`;
-      const sourceReference = parseEndpointReference(
-        wireInput.source,
-        componentsById,
-        warnings,
-        errors,
-        wireDescription,
-        'source',
-      );
-      const targetReference = parseEndpointReference(
-        wireInput.target,
-        componentsById,
-        warnings,
-        errors,
-        wireDescription,
-        'target',
-      );
-
-      if (!sourceReference || !targetReference) {
-        return;
+    const labelsByIdentity = new Map<string, Set<string>>();
+    wireInputs.forEach(wireInput => {
+      const sourceReference = normalizeWireEndpoint(wireInput, 'source', componentsById, warnings, errors);
+      const targetReference = normalizeWireEndpoint(wireInput, 'target', componentsById, warnings, errors);
+      if (!sourceReference || !targetReference) return;
+      const connection = toVisualConnection(sourceReference, targetReference, wireInput.id);
+      visualConnections.push(connection);
+      // Keep every equivalent field's label spelling, without altering its identity.
+      for (const role of ['source', 'target'] as const) {
+        const endpoint = connection[role];
+        if (!isLabelConnection(endpoint)) continue;
+        const texts = labelsByIdentity.get(endpoint.componentId) ?? new Set<string>();
+        const fields = role === 'source' ? ['source', 'from', 'start'] : ['target', 'to', 'destination', 'end'];
+        fields.forEach(field => {
+          if (!(field in wireInput.raw)) return;
+          const parsed = parseEndpointReference(wireInput.raw[field], componentsById, [], [], '', role);
+          if (parsed?.kind === 'label') texts.add(parsed.label);
+        });
+        labelsByIdentity.set(endpoint.componentId, texts);
       }
-
-      visualConnections.push(toVisualConnection(sourceReference, targetReference, wireInput.id));
     });
 
     const nets = buildNets(visualConnections)
-      .map(extractLabels)
+      .map(net => extractLabels(net, labelsByIdentity))
       .filter((net) => net.pins.length > 0 || (net.labels?.length ?? 0) > 0);
 
     assignNetReferences(components, nets, resolvedPins);
@@ -669,8 +748,9 @@ export class CircuitBuilder {
     const circuit: CompiledCircuit = {
       components,
       nets,
+      connections: visualConnections,
       resolvedPins,
-      validation: emptyValidation(),
+      validation: { valid: errors.length === 0, warnings: [...warnings], errors: [...errors] },
     };
 
     return {

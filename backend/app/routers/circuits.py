@@ -6,6 +6,7 @@ from fastapi.responses import Response
 
 from app.schemas.circuit import CircuitResponse, CircuitUpdateRequest
 from app.services.asc_validation import ERROR, AscExportError
+from app.services.connectivity import validate_connectivity
 from app.services.ltspice_exporter import generate_asc
 from circuits.repository import CircuitRepository
 
@@ -87,10 +88,18 @@ def update_circuit(
             detail="Circuit not found",
         )
 
+    circuit_data = payload.model_dump(mode="json")
+    logical_errors = [d for d in validate_connectivity(circuit_data) if d.severity == ERROR]
+    if logical_errors:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail=[d.format() for d in logical_errors],
+        )
+
     try:
         updated_circuit = repository.update_circuit(
             circuit_id,
-            payload.model_dump(mode="json"),
+            circuit_data,
         )
     except OSError as exc:
         logger.exception("Failed to write circuit file for %s", circuit_id)

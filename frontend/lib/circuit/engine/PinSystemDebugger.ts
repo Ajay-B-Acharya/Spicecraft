@@ -18,7 +18,9 @@ import { Circuit } from '../models/Circuit';
 import { Pin } from '../models/Pin';
 import { Net } from '../models/Net';
 import { ResolvedPin, resolvePins } from './PinResolver';
-import { CompiledCircuit } from '../types';
+import { CompiledCircuit, CircuitValidationResult, VisualEdgeLike } from '../types';
+import { CircuitValidator } from './CircuitValidator';
+import { canonicalLabel, endpointKey } from './NetBuilder';
 
 // ─── Formatting helpers ───────────────────────────────────────────────────────
 
@@ -139,7 +141,7 @@ export class PinSystemDebugger {
       } else {
         component.pins.forEach((pin) => {
           const dir = pin.direction ?? 'left';
-          const handleType = dir === 'right' || dir === 'bottom' ? 'source' : 'target';
+          const handleType = 'source'; // All electrical handles use React Flow Loose mode.
           const position =
             dir === 'top' ? 'Top' : dir === 'bottom' ? 'Bottom' : dir === 'right' ? 'Right' : 'Left';
           lines.push(
@@ -213,77 +215,72 @@ export class PinSystemDebugger {
     return output;
   }
 
-  /**
-   * Validate that all circuit nets reference valid component pins.
-   * Returns a list of validation errors. An empty list means all nets are clean.
-   *
-   * Checks:
-   *   - Every net has at least 2 pins
-   *   - Every net references a component that exists in the circuit
-   *   - Every net pin reference points to a pin that exists on that component
-   *   - No duplicate pin references within a net
-   */
-  static validateHandles(circuit: Circuit): string[] {
-    const errors: string[] = [];
-    const componentsById = new Map(circuit.components.map((c) => [c.id, c]));
+  /** Validate source equivalence, pin identities and reciprocal net membership. */
+  static validateNets(circuit: Circuit): CircuitValidationResult {
+    return CircuitValidator.validate(circuit, 'validation' in circuit ? (circuit as CompiledCircuit).validation : {});
+  }
 
-    circuit.nets.forEach((net) => {
-      const netName = net.name ?? net.id;
+  /** Validate electrical graph and, when supplied, exact rendered edge handles. */
+  static validateHandles(circuit: Circuit, edges: VisualEdgeLike[] = []): string[] {
+    return [...new Set([
+      ...PinSystemDebugger.validateNets(circuit).errors,
+      ...PinSystemDebugger.findInvalidConnections(circuit, edges),
+    ])];
+  }
 
-      if (net.pins.length < 2) {
-        errors.push(
-          `Net "${netName}": has only ${net.pins.length} pin(s), needs at least 2 for a valid connection.`,
-        );
-      }
+  static tracePin(circuit: Circuit, componentId: string, pinId: string): string {
+    const component = circuit.components.find(item => item.id === componentId);
+    const pin = component?.pins.find(item => item.id === pinId);
+    if (!pin) return `Invalid pin ${componentId}.${pinId}.`;
+    const nets = circuit.nets.filter(net => net.pins.some(ref => ref.componentId === componentId && ref.pinId === pinId));
+    const connections = (circuit.connections ?? []).filter(connection => [connection.source, connection.target].some(ref =>
+      ref.componentId === componentId && ref.pinId === pinId));
+    return [
+      `Handle ${componentId}.${pinId} -> pin [${pin.name}] -> net ID ${pin.net ?? '<unconnected>'}`,
+      `Net membership: ${nets.map(net => net.id).join(', ') || '<none>'}`,
+      ...connections.map(connection => `Source edge ${connection.id ?? '<unnamed>'}: ${endpointKey(connection.source)} -> ${endpointKey(connection.target)}`),
+    ].join('\n');
+  }
 
-      const seenKeys = new Set<string>();
+  static traceNet(circuit: Circuit, netId: string): string {
+    const net = circuit.nets.find(item => item.id === netId);
+    if (!net) return `Invalid net ID ${netId}.`;
+    return [
+      `Net ID ${net.id} (${net.name ?? net.id}), labels: [${(net.labels ?? []).join(', ')}]`,
+      ...net.pins.map(ref => PinSystemDebugger.tracePin(circuit, ref.componentId, ref.pinId)),
+    ].join('\n');
+  }
 
-      net.pins.forEach((pinRef) => {
-        const key = `${pinRef.componentId}:${pinRef.pinId}`;
-
-        if (seenKeys.has(key)) {
-          errors.push(`Net "${netName}": duplicate pin reference ${key}.`);
-        }
-        seenKeys.add(key);
-
-        const component = componentsById.get(pinRef.componentId);
-
-        if (!component) {
-          errors.push(
-            `Net "${netName}": references component "${pinRef.componentId}" which does not exist in the circuit.`,
-          );
+  static findInvalidConnections(circuit: Circuit, edges: VisualEdgeLike[] = []): string[] {
+    const errors = PinSystemDebugger.validateNets(circuit).errors.filter(message => /connection|source|pin|overlap|reciprocal/i.test(message));
+    edges.forEach((edge, index) => {
+      const description = edge.id ?? `#${index + 1}`;
+      const endpoints = [[edge.source, edge.sourceHandle], [edge.target, edge.targetHandle]] as const;
+      const memberships: string[][] = [];
+      endpoints.forEach(([componentId, handle]) => {
+        if (componentId.startsWith('net-label:')) {
+          const labelNets = circuit.nets.filter(net => (net.labels ?? []).some(label =>
+            componentId === `net-label:${JSON.stringify([net.id, label])}`));
+          const ids = handle === 'net' ? labelNets.map(net => net.id) : [];
+          memberships.push(ids);
+          if (ids.length !== 1) errors.push(`Edge ${description}: label handle ${componentId}.${handle ?? '<missing>'} does not identify one electrical net.`);
           return;
         }
-
-        const pinExists = component.pins.some((p) => p.id === pinRef.pinId);
-
-        if (!pinExists) {
-          errors.push(
-            `Net "${netName}": references pin "${pinRef.pinId}" on component "${pinRef.componentId}" (${component.type}), ` +
-              `but that pin does not exist. Valid pins: [${component.pins.map((p) => p.id).join(', ')}].`,
-          );
+        const component = circuit.components.find(item => item.id === componentId);
+        const pin = component?.pins.find(item => item.id === handle);
+        if (!handle || !pin) {
+          errors.push(`Edge ${description}: handle ${componentId}.${handle ?? '<missing>'} has no canonical component pin.`);
+          memberships.push([]);
+          return;
         }
+        const ids = circuit.nets.filter(net => net.pins.some(ref => ref.componentId === componentId && ref.pinId === handle)).map(net => net.id);
+        memberships.push(ids);
+        if (ids.length !== 1 || pin.net !== ids[0]) errors.push(`Edge ${description}: handle ${componentId}.${handle} -> pin -> net ID mapping is not unambiguous/reciprocal.`);
       });
+      if (edge.source === edge.target && edge.sourceHandle === edge.targetHandle) errors.push(`Edge ${description} is a self-connection.`);
+      if (!memberships[0].some(id => memberships[1].includes(id))) errors.push(`Edge ${description} endpoints do not share an electrical net.`);
     });
-
-    // Also check that every component pin that has a net assignment exists
-    circuit.components.forEach((component) => {
-      component.pins.forEach((pin) => {
-        if (!pin.net) {
-          return; // unconnected pins are allowed
-        }
-
-        const net = circuit.nets.find((n) => (n.name ?? n.id) === pin.net);
-
-        if (!net) {
-          errors.push(
-            `Component "${component.id}" pin "${pin.id}" references net "${pin.net}" which does not exist.`,
-          );
-        }
-      });
-    });
-
-    return errors;
+    return [...new Set(errors)];
   }
 
   /**

@@ -79,8 +79,8 @@ function isRCFilter(components: Component[], circuit: Circuit): ComponentGroup |
     return null;
   }
 
-  const resistorOtherNetObj = circuit.nets.find((net) => (net.name ?? net.id) === resistorOtherNet);
-  const capacitorOtherNetObj = circuit.nets.find((net) => (net.name ?? net.id) === capacitorOtherNet);
+  const resistorOtherNetObj = circuit.nets.find((net) => net.id === resistorOtherNet);
+  const capacitorOtherNetObj = circuit.nets.find((net) => net.id === capacitorOtherNet);
 
   if (!resistorOtherNetObj || !capacitorOtherNetObj) {
     return null;

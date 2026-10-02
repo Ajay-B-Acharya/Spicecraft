@@ -14,5 +14,9 @@ export interface Pin {
 
   direction?: 'left' | 'right' | 'top' | 'bottom';
 
+  /** Electrical net ID, never its display name. Undefined means unconnected. */
   net?: string;
+
+  /** Optional pins may intentionally remain unconnected. */
+  optional?: boolean;
 }
