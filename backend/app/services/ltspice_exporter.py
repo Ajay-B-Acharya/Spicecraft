@@ -145,7 +145,7 @@ def place_component(idx: int, comp: dict[str, Any]) -> tuple[str, dict[str, Any]
     return inst_name, layout
 
 
-def place_components(components: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+def place_components(components: list[dict[str, Any]], connectivity=None) -> dict[str, dict[str, Any]]:
     """Placement step on its own: ``{inst_name: layout}`` (also keyed by ``id``)."""
     layouts: dict[str, dict[str, Any]] = {}
     for idx, comp in enumerate(components):
@@ -154,6 +154,9 @@ def place_components(components: list[dict[str, Any]]) -> dict[str, dict[str, An
         comp_id = str(comp.get("id", "")).strip()
         if comp_id:
             layouts[comp_id] = layout
+    if connectivity is not None:
+        from app.services.schematic_layout import refine_layout
+        layouts = refine_layout(connectivity, layouts)
     return layouts
 
 
@@ -232,15 +235,11 @@ def generate_asc_with_routing(
         lines.append(_text_line(16, 48, description))
 
     # ---- Components -------------------------------------------------------
-    component_layouts: dict[str, dict[str, Any]] = {}
+    component_layouts = place_components(components, connectivity)
 
     for idx, comp in enumerate(components):
-        inst_name, layout = place_component(idx, comp)
-        component_layouts[inst_name] = layout
-
-        comp_id = str(comp.get("id", "")).strip()
-        if comp_id:
-            component_layouts[comp_id] = layout
+        inst_name = component_identity(comp, idx)
+        layout = component_layouts[inst_name]
 
         value = comp.get("value")
         value_str = str(value) if value is not None else None

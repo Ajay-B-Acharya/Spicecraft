@@ -1,0 +1,101 @@
+{
+  "circuit": "555 Astable Multivibrator",
+  "source_file": "555_astable_multivibrator.json",
+  "components": 4,
+  "expected_nets": {
+    "VCC": [
+      "U1.8",
+      "R1.2"
+    ],
+    "0": [
+      "U1.1",
+      "C1.2"
+    ],
+    "N1": [
+      "U1.2",
+      "U1.6",
+      "R2.2",
+      "C1.1"
+    ],
+    "N2": [
+      "U1.7",
+      "R1.1",
+      "R2.1"
+    ],
+    "unconnected:U1.3": [
+      "U1.3"
+    ],
+    "unconnected:U1.4": [
+      "U1.4"
+    ],
+    "unconnected:U1.5": [
+      "U1.5"
+    ]
+  },
+  "metrics": {
+    "candidate_paths": 254,
+    "astar_searches": 1,
+    "astar_states": 142,
+    "peak_grid_vertices": 575,
+    "collision_checks": 500,
+    "budget_exhaustions": 0,
+    "order_attempts": 1,
+    "failed_connections": 0,
+    "crossings": 0,
+    "segments": 29,
+    "length": 2400,
+    "planar_attempts": 1,
+    "fallback_attempts": 0
+  },
+  "junctions": {
+    "VCC": [],
+    "0": [],
+    "N1": [
+      [
+        288,
+        560
+      ],
+      [
+        608,
+        544
+      ]
+    ],
+    "N2": [
+      [
+        736,
+        336
+      ]
+    ]
+  },
+  "crossings": [],
+  "diagnostics": [],
+  "deterministic": true,
+  "netlist_verification": {
+    "ok": true,
+    "shorts": [],
+    "opens": [],
+    "missing_pins": [],
+    "unexpected_pins": []
+  },
+  "actual_pin_nodes": {
+    "U1.1": "0",
+    "U1.2": "N001",
+    "U1.3": "NC_01",
+    "U1.4": "NC_02",
+    "U1.5": "NC_03",
+    "U1.6": "N001",
+    "U1.7": "N002",
+    "U1.8": "VCC",
+    "R1.1": "N002",
+    "R1.2": "VCC",
+    "R2.1": "N002",
+    "R2.2": "N001",
+    "C1.1": "N001",
+    "C1.2": "0"
+  },
+  "inspection_image": {
+    "file": "555_astable_multivibrator.png",
+    "width": 1800,
+    "height": 1297
+  }
+}

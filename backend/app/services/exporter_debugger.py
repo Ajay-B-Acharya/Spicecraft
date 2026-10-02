@@ -211,11 +211,14 @@ class ExporterDebugger:
         """
         # Imported lazily so this debugging module never forces the exporter
         # (and its logging setup) to load for callers that only need pins.
-        from app.services.ltspice_exporter import place_component
+        from app.services.ltspice_exporter import place_components
+        from app.services.connectivity import component_identity
 
+        components = circuit.get("components", [])
+        layouts = place_components(components, build_connectivity(circuit))
         blocks: list[str] = []
-        for idx, comp in enumerate(circuit.get("components", [])):
-            _, layout = place_component(idx, comp)
+        for idx, comp in enumerate(components):
+            layout = layouts[component_identity(comp, idx)]
             blocks.append(ExporterDebugger.format_geometry(layout, idx))
         return "\n\n".join(blocks) if blocks else "<no components>"
 
