@@ -5,6 +5,7 @@ from fastapi import APIRouter, HTTPException, status
 from fastapi.responses import Response
 
 from app.schemas.circuit import CircuitResponse, CircuitUpdateRequest
+from app.services.asc_validation import ERROR, AscExportError
 from app.services.ltspice_exporter import generate_asc
 from circuits.repository import CircuitRepository
 
@@ -45,7 +46,15 @@ def export_circuit_asc(circuit_id: str) -> Response:
             detail="Circuit not found",
         )
 
-    asc_content = generate_asc(circuit)
+    try:
+        asc_content = generate_asc(circuit)
+    except AscExportError as exc:
+        # Refuse to hand back a schematic whose wires miss their pins.
+        logger.warning("ASC export blocked for %s: %s", circuit_id, exc)
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+            detail=[d.format() for d in exc.diagnostics if d.severity == ERROR],
+        ) from exc
 
     # Build a safe filename from the circuit name
     safe_name = re.sub(r"[^\w\-]", "_", str(circuit.get("name", circuit_id)))

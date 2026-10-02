@@ -12,6 +12,8 @@ Usage
 
     ExporterDebugger.print_pins(component_layout)
     ExporterDebugger.print_connections(circuit_dict)
+    ExporterDebugger.print_geometry(component_layout)   # symbol + pin geometry
+    ExporterDebugger.print_circuit_geometry(circuit_dict)
 
 Output examples
 ---------------
@@ -31,8 +33,11 @@ from typing import Any
 
 from app.services.pin_maps import (
     COMPONENT_LIBRARY,
+    PinResolver,
+    canonical_pin_id,
     get_pin_coordinate,
     resolve_component_kind,
+    resolve_symbol_name,
 )
 
 
@@ -61,6 +66,18 @@ def _all_pin_coords(comp: dict[str, Any]) -> list[tuple[str, str, tuple[int, int
         result.append((pin.id, pin.name, coord))
 
     return result
+
+
+def _canonical_node(node_str: str, comp_map: dict[str, dict[str, Any]]) -> str:
+    """Rewrite ``Q1.base`` / ``Q1.B`` to one spelling so they land in one net."""
+    parsed = _parse_node(node_str)
+    if parsed is None:
+        return node_str.strip()
+    ref, pin = parsed
+    comp = comp_map.get(ref)
+    if comp is None:
+        return f"{ref}.{pin}"
+    return f"{ref}.{canonical_pin_id(comp, pin)}"
 
 
 def _parse_node(node_str: str) -> tuple[str, str] | None:
@@ -117,6 +134,110 @@ class ExporterDebugger:
         return output
 
     @staticmethod
+    def format_geometry(component: dict[str, Any], index: int = 0) -> str:
+        """Return the symbol placement and per-pin geometry of one component.
+
+        Every number comes from ``PinResolver.resolve_pin_geometry``, i.e. the
+        same code path the exporter uses for wire endpoints.
+
+        Args:
+            component: Component dict that has been through ``place_component``
+                       (needs ``_ltspice_anchor``).
+            index:     Position in the circuit list (used for naming only).
+
+        Example::
+
+            Q1
+              Symbol:     npn  (npn.asy)
+              Position:   (500, 300)
+              Rotation:   R0
+              Mirror:     False
+              Bounds:     64 x 96
+              Collector (C)
+                relative = (64, 0)
+                oriented = (64, 0)
+                absolute = (564, 300)
+        """
+        inst = _inst_name(component, index)
+        kind = resolve_component_kind(component)
+        comp_def = COMPONENT_LIBRARY.get(kind)
+        lines = [inst]
+
+        if comp_def is None:
+            lines.append(f"  <no symbol definition for kind '{kind}'>")
+            return "\n".join(lines)
+
+        anchor = component.get("_ltspice_anchor")
+        rotation = str(component.get("_ltspice_rotation", "R0"))
+        mirrored = bool(component.get("_ltspice_mirror", False))
+
+        if not anchor:
+            lines.append("  <component has not been placed: no _ltspice_anchor>")
+            return "\n".join(lines)
+
+        anchor_xy = (int(anchor[0]), int(anchor[1]))
+        try:
+            orientation = PinResolver.orientation_string(rotation, mirrored)
+        except ValueError as exc:
+            lines.append(f"  <{exc}>")
+            return "\n".join(lines)
+
+        asy = f"  ({comp_def.asy_file})" if comp_def.asy_file else ""
+        lines.append(f"  Symbol:     {resolve_symbol_name(component)}{asy}")
+        lines.append(f"  Position:   ({anchor_xy[0]}, {anchor_xy[1]})")
+        lines.append(f"  Rotation:   {rotation}")
+        lines.append(f"  Mirror:     {mirrored}")
+        lines.append(f"  SYMBOL:     {orientation}")
+        lines.append(f"  Bounds:     {comp_def.width} x {comp_def.height}")
+
+        for pin in comp_def.pins:
+            try:
+                geo = PinResolver.resolve_pin_geometry(
+                    comp_def, pin.id, anchor_xy, rotation, mirrored
+                )
+            except ValueError as exc:
+                lines.append(f"  {pin.name} ({pin.id})")
+                lines.append(f"    <unresolvable: {exc}>")
+                continue
+            lines.append(f"  {geo.name} ({geo.pin_id})  facing {geo.facing.value}")
+            lines.append(f"    relative = ({geo.relative[0]}, {geo.relative[1]})")
+            lines.append(f"    oriented = ({geo.oriented[0]}, {geo.oriented[1]})")
+            lines.append(f"    absolute = ({geo.absolute[0]}, {geo.absolute[1]})")
+
+        return "\n".join(lines)
+
+    @staticmethod
+    def print_geometry(component: dict[str, Any], index: int = 0) -> str:
+        """Print and return the geometry listing for a single component."""
+        output = ExporterDebugger.format_geometry(component, index)
+        print(output)
+        return output
+
+    @staticmethod
+    def format_circuit_geometry(circuit: dict[str, Any]) -> str:
+        """Geometry listing for every component of a raw circuit dict.
+
+        Runs the exporter's own placement step so the numbers match what an
+        export of this circuit would write.
+        """
+        # Imported lazily so this debugging module never forces the exporter
+        # (and its logging setup) to load for callers that only need pins.
+        from app.services.ltspice_exporter import place_component
+
+        blocks: list[str] = []
+        for idx, comp in enumerate(circuit.get("components", [])):
+            _, layout = place_component(idx, comp)
+            blocks.append(ExporterDebugger.format_geometry(layout, idx))
+        return "\n\n".join(blocks) if blocks else "<no components>"
+
+    @staticmethod
+    def print_circuit_geometry(circuit: dict[str, Any]) -> str:
+        """Print and return the geometry listing for a whole circuit."""
+        output = ExporterDebugger.format_circuit_geometry(circuit)
+        print(output)
+        return output
+
+    @staticmethod
     def format_connections(circuit: dict[str, Any]) -> str:
         """Return a formatted string describing every electrical net.
 
@@ -165,7 +286,7 @@ class ExporterDebugger:
             dst = str(wire.get("destination") or wire.get("to") or "")
             if not src or not dst or src == dst:
                 continue
-            _union(src, dst)
+            _union(_canonical_node(src, comp_map), _canonical_node(dst, comp_map))
 
         # Group nodes into nets
         net_groups: dict[str, list[str]] = {}
