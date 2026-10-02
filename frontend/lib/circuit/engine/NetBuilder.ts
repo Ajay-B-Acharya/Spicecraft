@@ -56,16 +56,13 @@ class DisjointSet {
 }
 
 function endpointKey(endpoint: PinConnection): string {
-  return `${endpoint.componentId}:${endpoint.pinId}`;
+  return JSON.stringify([endpoint.componentId, endpoint.pinId]);
 }
 
 function parseEndpointKey(key: string): PinConnection {
-  const separatorIndex = key.indexOf(':');
-
-  return {
-    componentId: key.slice(0, separatorIndex),
-    pinId: key.slice(separatorIndex + 1),
-  };
+  // IDs can contain separators, including the compiler's internal label IDs.
+  const [componentId, pinId] = JSON.parse(key) as [string, string];
+  return { componentId, pinId };
 }
 
 function dedupePins(pins: PinConnection[]): PinConnection[] {
