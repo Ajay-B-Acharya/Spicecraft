@@ -45,6 +45,17 @@ class WireSegment:
     start: Point
     end: Point
 
+    @property
+    def orientation(self) -> str:
+        """Return the Manhattan axis; invalid segments are never routable."""
+        if self.start == self.end:
+            raise ValueError("A wire segment must have nonzero length")
+        if self.start[1] == self.end[1]:
+            return "horizontal"
+        if self.start[0] == self.end[0]:
+            return "vertical"
+        raise ValueError("A wire segment must be orthogonal")
+
 
 @dataclass
 class NetGeometry:
@@ -100,8 +111,9 @@ class AscExportError(Exception):
 
 
 # ---------------------------------------------------------------------------
-# Geometry helpers (segments are axis-aligned in practice; diagonals are
-# handled where it is cheap and skipped where it is not)
+# Geometry helpers. Invalid segments are diagnosed before connectivity checks.
+# A perpendicular crossing strictly inside both wires is NOT conductive in
+# LTspice; endpoints, pins, flags, and collinear overlaps ARE conductive.
 # ---------------------------------------------------------------------------
 
 
@@ -165,8 +177,23 @@ def _check_net(net: NetGeometry) -> list[ExportDiagnostic]:
     flag_points = set(net.flags)
     terminals = pin_points | flag_points
 
+    segments: list[WireSegment] = []
     endpoints: Counter[Point] = Counter()
     for segment in net.segments:
+        if segment.net != net.name:
+            found.append(ExportDiagnostic(
+                ERROR, "WIRE_NET_MISMATCH", "Wire ownership differs from its containing net",
+                net=net.name, actual=segment.start,
+            ))
+        try:
+            segment.orientation
+        except ValueError as exc:
+            found.append(ExportDiagnostic(
+                ERROR, "ZERO_LENGTH_WIRE" if segment.start == segment.end else "NON_ORTHOGONAL_WIRE",
+                str(exc), net=net.name, actual=segment.start, expected=segment.end,
+            ))
+        else:
+            segments.append(segment)
         endpoints[segment.start] += 1
         endpoints[segment.end] += 1
 
@@ -225,28 +252,41 @@ def _check_net(net: NetGeometry) -> list[ExportDiagnostic]:
                 )
             )
 
-    # 4. The net must be a single connected piece.
-    if net.segments and len(terminals) >= 2:
-        sets = _DisjointSet()
-        for segment in net.segments:
-            sets.union(segment.start, segment.end)
-        # T-junctions join a wire end to the interior of another segment.
-        for segment in net.segments:
-            for other in net.segments:
-                if other is segment:
-                    continue
-                for end in (segment.start, segment.end):
-                    if _strictly_inside(end, other.start, other.end):
-                        sets.union(end, other.start)
-        roots = {sets.find(t) for t in terminals if t in endpoints}
-        if len(roots) > 1:
-            found.append(
-                ExportDiagnostic(
-                    ERROR, "NET_DISCONNECTED",
-                    f"Net is split into {len(roots)} unconnected pieces",
-                    net=net.name,
-                )
-            )
+    # 4. Flags must attach to their own wire or directly to a pin. A bare
+    # floating label is not an electrically meaningful exported terminal.
+    for point in sorted(flag_points):
+        if point not in pin_points and not any(
+            _on_segment(point, s.start, s.end) for s in segments
+        ):
+            found.append(ExportDiagnostic(
+                ERROR, "FLAG_NOT_CONNECTED", "Flag is not attached to its net's wire or pin",
+                net=net.name, actual=point,
+            ))
+
+    # 5. Include ALL wire islands, not just components containing terminals.
+    # Unsplit interior perpendicular crossings do not join even within a net.
+    sets = _DisjointSet()
+    for segment in segments:
+        sets.union(segment.start, segment.end)
+    vertices = {p for s in segments for p in (s.start, s.end)} | terminals
+    for point in sorted(vertices):
+        sets.find(point)
+        for segment in segments:
+            if _on_segment(point, segment.start, segment.end):
+                sets.union(point, segment.start)
+    roots = {sets.find(point) for point in vertices}
+    if len(roots) > 1 and (segments or len(terminals) > 1):
+        found.append(ExportDiagnostic(
+            ERROR, "NET_DISCONNECTED", f"Net is split into {len(roots)} unconnected pieces",
+            net=net.name,
+        ))
+    attached_roots = {sets.find(point) for point in terminals}
+    orphan_roots = {sets.find(s.start) for s in segments} - attached_roots
+    for root in sorted(orphan_roots):
+        found.append(ExportDiagnostic(
+            ERROR, "ORPHAN_WIRE_ISLAND", "Wire island has no pin or flag of its net",
+            net=net.name, actual=root,
+        ))
 
     return found
 
@@ -303,7 +343,21 @@ def _check_between_nets(nets: Sequence[NetGeometry]) -> list[ExportDiagnostic]:
                                 net=f"{a.name} / {b.name}", component=pin.component,
                                 pin=pin.pin, actual=pin.point,
                             )
+                for point in b.flags:
+                    if _on_segment(point, seg.start, seg.end):
+                        report(
+                            WARNING, "NET_SHORT", "Flag of another net touches this wire",
+                            ("flag-wire", a.name, b.name, point),
+                            net=f"{a.name} / {b.name}", actual=point,
+                        )
                 for other in b.segments:
+                    shared = {seg.start, seg.end} & {other.start, other.end}
+                    for point in sorted(shared):
+                        report(
+                            WARNING, "NET_SHORT", "Wires of different nets share an endpoint",
+                            ("shared-end", *sorted((a.name, b.name)), point),
+                            net=f"{a.name} / {b.name}", actual=point,
+                        )
                     if _collinear_overlap(seg, other):
                         report(
                             WARNING, "NET_SHORT", "Wires of different nets overlap",
@@ -321,11 +375,29 @@ def _check_between_nets(nets: Sequence[NetGeometry]) -> list[ExportDiagnostic]:
     return found
 
 
-def validate_net_geometry(nets: Iterable[NetGeometry]) -> list[ExportDiagnostic]:
-    """Run all structural checks on the exporter's recorded geometry."""
+def validate_net_geometry(
+    nets: Iterable[NetGeometry], *, reserved_pins: Iterable[PinPoint] = ()
+) -> list[ExportDiagnostic]:
+    """Check Manhattan geometry and actual LTspice conductive contacts.
+
+    ``reserved_pins`` includes definition pins absent from source wires. Those
+    pins must stay singleton nodes; geometry cannot silently wire or flag them.
+    Standalone contact diagnostics retain WARNING severity for compatibility;
+    the exporter always promotes unsafe contacts to blocking errors.
+    """
     net_list = list(nets)
     diagnostics: list[ExportDiagnostic] = []
     for net in net_list:
         diagnostics.extend(_check_net(net))
+    # Model reserved pins as independent, unwired nets for collision checking.
+    recorded = {(pin.component, pin.pin) for net in net_list for pin in net.pins}
+    reserved = [pin for pin in reserved_pins if (pin.component, pin.pin) not in recorded]
+    occupied_names = {net.name for net in net_list}
+    for index, pin in enumerate(reserved):
+        name = f"<unwired:{pin.component}.{pin.pin}:{index}>"
+        while name in occupied_names:
+            name += "_"
+        occupied_names.add(name)
+        net_list.append(NetGeometry(name, pins=[pin]))
     diagnostics.extend(_check_between_nets(net_list))
     return diagnostics

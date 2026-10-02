@@ -1,0 +1,68 @@
+{
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "ltspice_executable": "C:\\Users\\ASUS\\AppData\\Local\\Programs\\ADI\\LTspice\\LTspice.exe",
+  "measurement": "Three sequential strict exports per bundled circuit; includes connectivity, placement, routing, validation, serialization; excludes LTspice invocation and rendering.",
+  "circuits": [
+    {
+      "source_file": "555_astable_multivibrator.json",
+      "components": 4,
+      "samples_seconds": [
+        0.30031919999964884,
+        0.28030889999990904,
+        0.27260200000000623
+      ],
+      "min_seconds": 0.27260200000000623,
+      "max_seconds": 0.30031919999964884,
+      "mean_seconds": 0.28441003333318804
+    },
+    {
+      "source_file": "common_emitter_amplifier.json",
+      "components": 6,
+      "samples_seconds": [
+        0.3287470999994184,
+        0.33149129999947036,
+        0.3324757000000318
+      ],
+      "min_seconds": 0.3287470999994184,
+      "max_seconds": 0.3324757000000318,
+      "mean_seconds": 0.3309046999996402
+    },
+    {
+      "source_file": "led_blinker.json",
+      "components": 5,
+      "samples_seconds": [
+        0.0052145999998174375,
+        0.005899300000237417,
+        0.005305599999701371
+      ],
+      "min_seconds": 0.0052145999998174375,
+      "max_seconds": 0.005899300000237417,
+      "mean_seconds": 0.005473166666585409
+    },
+    {
+      "source_file": "rc_high_pass_filter.json",
+      "components": 2,
+      "samples_seconds": [
+        0.0008089999992080266,
+        0.000720500000170432,
+        0.000723199999811186
+      ],
+      "min_seconds": 0.000720500000170432,
+      "max_seconds": 0.0008089999992080266,
+      "mean_seconds": 0.0007508999997298815
+    },
+    {
+      "source_file": "rc_low_pass_filter.json",
+      "components": 2,
+      "samples_seconds": [
+        0.0007875000001149601,
+        0.0014399000001503737,
+        0.00101859999995213
+      ],
+      "min_seconds": 0.0007875000001149601,
+      "max_seconds": 0.0014399000001503737,
+      "mean_seconds": 0.0010820000000724879
+    }
+  ]
+}

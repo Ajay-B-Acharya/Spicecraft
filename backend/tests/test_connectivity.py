@@ -1,4 +1,9 @@
-"""Phase 6.5 source-only connectivity and unchanged Phase 6 ASC regressions."""
+"""Source-only connectivity and frozen Phase 6 symbol/header regressions.
+
+Phase 7 intentionally replaces unsafe WIRE/FLAG bytes. Exact symbol/placement
+bytes remain frozen; real LTspice tests separately establish routing correctness.
+The original known-short ASC/netlist artifacts remain a negative control.
+"""
 
 from __future__ import annotations
 
@@ -29,14 +34,15 @@ from app.services.ltspice_exporter import generate_asc, generate_asc_with_diagno
 
 CIRCUITS_DIR = BACKEND_ROOT / "circuits"
 
-# Captured from the actual bundled JSON before extraction, not synthesized
-# "typical" circuits. Hashes include all SYMBOL/FLAG/WIRE lines and their order.
-PHASE6_ASC_HASHES = {
-    "555_astable_multivibrator.json": "177d104ab29eb6b87ec29ccd32c22fccc135b25a5e3787a449a1d3ed9afec55e",
-    "common_emitter_amplifier.json": "22dc2630f44e4dc5261ea5dc1d24d5254f74667a18ec13729d9be816427dff93",
-    "led_blinker.json": "cce10c443d3b37b08d25573bff40e4e22b4b09f939fadef892085c95a2e30ab5",
-    "rc_high_pass_filter.json": "34cd9b8b8c782750cfac1dc2f7d3af3c0e834fa76842f6405c1fe23011f2d938",
-    "rc_low_pass_filter.json": "d289090dc50dc2fb234178e14ee74a347f468376f06013068b7a619d208fc951",
+# Captured by running the exporter from e8bb314 in an isolated temp directory,
+# filtering ONLY WIRE/FLAG lines. Phase 7 must change those unsafe route bytes,
+# not SYMBOL/SYMATTR/header/placement. Not hashes of the new implementation.
+PHASE6_SYMBOL_HEADER_HASHES = {
+    "555_astable_multivibrator.json": "9f8ccab8f04ffaaee328013d37a2a026fa07207b135f0cdc00066288ab1a11dd",
+    "common_emitter_amplifier.json": "e899404461d0e4d7d7e22d682fe9e85399612b37732a3c7fd9f6247d4c0c0c94",
+    "led_blinker.json": "5c81dad93d32b6690fe866d937d70e1530b4dac0ce4ab96b8ed42f1070d93df4",
+    "rc_high_pass_filter.json": "f4ca1f8e9dd7bfcdfca7513d7306b86874082c49d004d6d48e481ab20d4feeec",
+    "rc_low_pass_filter.json": "3353cc048bcb8c62ab116d972a7fb28dabaae7d35fb13cfe62b8e72f83612920",
 }
 
 # Independent expectations taken from each bundled file's explicit wires.
@@ -481,19 +487,50 @@ class BundledSourceRegressionTests(unittest.TestCase):
         self.assertEqual(partition(build_connectivity(source)), TEMPLATE_PARTITIONS["common_emitter_amplifier.json"])
         self.assertEqual(build_connectivity(source).diagnostics, [])
 
-    def test_all_bundled_phase6_asc_bytes_unchanged(self) -> None:
-        for filename, expected in PHASE6_ASC_HASHES.items():
+    def test_all_bundled_phase6_symbol_header_bytes_unchanged(self) -> None:
+        for filename, expected in PHASE6_SYMBOL_HEADER_HASHES.items():
             with self.subTest(filename=filename):
-                asc = generate_asc(load_circuit(filename))
-                self.assertEqual(hashlib.sha256(asc.encode("utf-8")).hexdigest(), expected)
+                asc, diagnostics = generate_asc_with_diagnostics(load_circuit(filename), strict=True)
+                self.assertTrue(asc)
+                self.assertEqual(codes(diagnostics, ERROR), set())
+                frozen = "\n".join(line for line in asc.splitlines()
+                                   if not line.startswith(("WIRE ", "FLAG "))) + "\n"
+                self.assertEqual(hashlib.sha256(frozen.encode("utf-8")).hexdigest(), expected)
 
     def test_model_validation_does_not_claim_physical_short_free_asc(self) -> None:
+        from tools.verify_ltspice import compare_partitions, parse_netlist
         source = load_circuit("common_emitter_amplifier.json")
         self.assertEqual(validate_connectivity(source), [])
-        _, diagnostics = generate_asc_with_diagnostics(source)
-        self.assertTrue({"NET_SHORT", "WIRE_CROSSES_PIN"}.issubset(codes(diagnostics, WARNING)))
-        with self.assertRaises(AscExportError):
-            generate_asc(source, strict=True)
+        # Independent actual Phase6.5 ASC/netlist, NOT today's safe export:
+        # logical validation still makes no claim that this old artifact is safe.
+        root = BACKEND_ROOT / "tests/artifacts/phase_6_5"
+        asc = (root / "common_emitter_before.asc").read_text(encoding="utf-8")
+        self.assertEqual(hashlib.sha256(asc.encode("utf-8")).hexdigest(),
+                         "22dc2630f44e4dc5261ea5dc1d24d5254f74667a18ec13729d9be816427dff93")
+        # Stock-shaped independent ASY files make this negative parser test
+        # portable without requiring a local LTspice installation.
+        import tempfile
+        from test_pin_geometry import ASY_PINS, SYMBOLS
+        with tempfile.TemporaryDirectory() as directory:
+            symbols = Path(directory)
+            for kind, pins in ASY_PINS.items():
+                path = symbols / (SYMBOLS[kind].replace("\\", "/") + ".asy")
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text("\n".join(
+                    f"PIN {x} {y} NONE 0\nPINATTR SpiceOrder {order}"
+                    for order, (x, y) in enumerate(pins.values(), 1)
+                ), encoding="utf-8")
+            actual = parse_netlist(asc, (root / "common_emitter_before.net").read_text(encoding="utf-8"),
+                                   symbol_roots=[symbols])
+        report = compare_partitions(TEMPLATE_PARTITIONS["common_emitter_amplifier.json"], actual)
+        self.assertFalse(report.ok)
+        self.assertEqual(len(report.shorts), 1)
+        self.assertEqual(report.shorts[0]["actual_node"], "0")
+        # New Phase7 geometry is safe, while the historical fixture stays bad.
+        current, diagnostics = generate_asc_with_diagnostics(source, strict=True)
+        self.assertTrue(current)
+        self.assertEqual(codes(diagnostics, ERROR), set())
+        self.assertTrue(generate_asc(source, strict=True))
 
     def test_exporter_checks_produced_pins_against_source_model(self) -> None:
         source = load_circuit("common_emitter_amplifier.json")

@@ -1,0 +1,85 @@
+{
+  "circuit": "LED Blinker",
+  "source_file": "led_blinker.json",
+  "components": 5,
+  "expected_nets": {
+    "VCC": [
+      "R1.1"
+    ],
+    "N1": [
+      "R1.2",
+      "Q1.B",
+      "C1.1"
+    ],
+    "N2": [
+      "Q1.C",
+      "D1.A"
+    ],
+    "N3": [
+      "D1.K",
+      "R2.1"
+    ],
+    "0": [
+      "R2.2",
+      "C1.2"
+    ],
+    "unconnected:Q1.E": [
+      "Q1.E"
+    ]
+  },
+  "metrics": {
+    "candidate_paths": 105,
+    "astar_searches": 0,
+    "astar_states": 0,
+    "peak_grid_vertices": 0,
+    "collision_checks": 139,
+    "budget_exhaustions": 0,
+    "order_attempts": 1,
+    "failed_connections": 0,
+    "crossings": 0,
+    "segments": 24,
+    "length": 3008,
+    "planar_attempts": 1,
+    "fallback_attempts": 0
+  },
+  "junctions": {
+    "VCC": [],
+    "N1": [
+      [
+        336,
+        256
+      ]
+    ],
+    "N2": [],
+    "N3": [],
+    "0": []
+  },
+  "crossings": [],
+  "diagnostics": [],
+  "deterministic": true,
+  "netlist_verification": {
+    "ok": true,
+    "shorts": [],
+    "opens": [],
+    "missing_pins": [],
+    "unexpected_pins": []
+  },
+  "actual_pin_nodes": {
+    "Q1.C": "N001",
+    "Q1.B": "N002",
+    "Q1.E": "NC_01",
+    "R1.1": "VCC",
+    "R1.2": "N002",
+    "R2.1": "N003",
+    "R2.2": "0",
+    "C1.1": "N002",
+    "C1.2": "0",
+    "D1.A": "N001",
+    "D1.K": "N003"
+  },
+  "inspection_image": {
+    "file": "led_blinker.png",
+    "width": 1800,
+    "height": 959
+  }
+}

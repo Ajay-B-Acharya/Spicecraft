@@ -1,0 +1,51 @@
+[
+  {
+    "page": 1,
+    "circuit": "Common Emitter Amplifier",
+    "stem": "common_emitter_amplifier",
+    "image": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_7_visual\\before\\common_emitter_amplifier.png",
+    "method": "Inspection rendering of exported ASC with installed LTspice ASY geometry (not an application screenshot)"
+  },
+  {
+    "page": 2,
+    "circuit": "RC Low-pass Filter",
+    "stem": "rc_low_pass_filter",
+    "image": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_7_visual\\before\\rc_low_pass_filter.png",
+    "method": "Inspection rendering of exported ASC with installed LTspice ASY geometry (not an application screenshot)"
+  },
+  {
+    "page": 3,
+    "circuit": "RC High-pass Filter",
+    "stem": "rc_high_pass_filter",
+    "image": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_7_visual\\before\\rc_high_pass_filter.png",
+    "method": "Inspection rendering of exported ASC with installed LTspice ASY geometry (not an application screenshot)"
+  },
+  {
+    "page": 4,
+    "circuit": "Voltage Divider",
+    "stem": "voltage_divider",
+    "image": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_7_visual\\before\\voltage_divider.png",
+    "method": "Inspection rendering of exported ASC with installed LTspice ASY geometry (not an application screenshot)"
+  },
+  {
+    "page": 5,
+    "circuit": "Bridge Rectifier",
+    "stem": "bridge_rectifier",
+    "image": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_7_visual\\before\\bridge_rectifier.png",
+    "method": "Inspection rendering of exported ASC with installed LTspice ASY geometry (not an application screenshot)"
+  },
+  {
+    "page": 6,
+    "circuit": "NE555 Astable Multivibrator",
+    "stem": "555_astable_multivibrator",
+    "image": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_7_visual\\before\\555_astable_multivibrator.png",
+    "method": "Inspection rendering of exported ASC with installed LTspice ASY geometry (not an application screenshot)"
+  },
+  {
+    "page": 7,
+    "circuit": "LED Blinker",
+    "stem": "led_blinker",
+    "image": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_7_visual\\before\\led_blinker.png",
+    "method": "Inspection rendering of exported ASC with installed LTspice ASY geometry (not an application screenshot)"
+  }
+]

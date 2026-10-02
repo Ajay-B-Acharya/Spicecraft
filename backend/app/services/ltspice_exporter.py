@@ -1,37 +1,16 @@
-"""
-LTspice ASC Exporter Service (Version 1)
+"""LTspice ASC serialization with source-only connectivity and Manhattan routing.
 
-Converts the SpiceCraft circuit JSON model into a valid LTspice ASCII schematic
-(.asc) file. The exporter keeps component references and values intact, validates
-explicit source connectivity, and routes against the existing dedicated pin map.
-Logical model validation does not establish electrical correctness of ASC routing.
+Symbol definitions, placement, orientation, and headers retain Phase 6 geometry.
+The dedicated ``routing`` service owns all wires and label placement; coordinates
+never infer logical membership. Shared validation blocks unsafe conductive
+contacts for ALL exports, including ``strict=False``. Unsplit perpendicular
+interior crossings are nonconductive, as verified with real LTspice netlisting.
 
-Geometry rules (see ``pin_maps`` for the full model):
-
-* the SYMBOL line and every pin coordinate are derived from the same
-  ``_ltspice_anchor`` / ``_ltspice_rotation`` / ``_ltspice_mirror`` fields, so a
-  symbol can never be drawn in one orientation while its pins are wired as if it
-  were in another;
-* all coordinates are snapped through ``GridSystem`` (the only grid utility);
-* before anything is returned, ``asc_validation`` checks every wire endpoint.
-
-Public API
-----------
-generate_asc(circuit: dict) -> str
-    Returns the full content of a Version-4 LTspice .asc file. Raises
-    ``AscExportError`` if the geometry has blocking problems.
-generate_asc_with_diagnostics(circuit: dict) -> tuple[str, list[ExportDiagnostic]]
-    Same output plus every diagnostic (errors and warnings); never raises on
-    geometry problems.
-place_component(idx, component) / place_components(components)
-    The placement step on its own, for debugging.
-
-Known limitation: wire *routing* is still the original single-elbow hub router.
-It reaches the intended pin coordinates but can electrically short distinct nets.
-In the installed-LTspice Common Emitter baseline, five intended nets collapse to
-ground. Geometry overlap checks report ``NET_SHORT`` / ``WIRE_CROSSES_PIN``
-warnings (errors with ``strict=True``), but do not replace LTspice netlisting.
-Fixing those physical shorts belongs to Phase 7, not logical connectivity.
+``generate_asc_with_routing`` returns the same routed result used to serialize
+and validate, so debugging requires neither duplicate routing nor symbol tables.
+Diagnostic exports return empty text on any blocking failure; the routed result
+still remains inspectable. ``generate_asc`` raises ``AscExportError`` rather than
+returning an unsafe or only partially connected artifact.
 """
 
 from __future__ import annotations
@@ -44,9 +23,7 @@ from app.services.asc_validation import (
     WARNING,
     AscExportError,
     ExportDiagnostic,
-    NetGeometry,
     PinPoint,
-    WireSegment,
     validate_net_geometry,
 )
 from app.services.connectivity import (
@@ -55,6 +32,7 @@ from app.services.connectivity import (
     validate_connectivity,
 )
 from app.services.grid_system import GridSystem
+from app.services.routing import RoutingResult, route_nets
 from app.services.pin_maps import (
     COMPONENT_LIBRARY,
     PinResolver,
@@ -75,9 +53,6 @@ GRID_ROW_STEP = 256
 COLS_PER_ROW = 4
 ORIGIN_X = 64
 ORIGIN_Y = 128
-
-Point = tuple[int, int]
-
 
 # ---------------------------------------------------------------------------
 # Component / net helpers
@@ -110,10 +85,6 @@ def _flag_line(x: int, y: int, net: str) -> str:
     return f"FLAG {x} {y} {net}"
 
 
-def _flag_net_name(special_node: str) -> str:
-    return "0" if special_node == "GND" else special_node
-
-
 def _symbol_block(
     symbol: str,
     x: int,
@@ -136,53 +107,6 @@ def _snap(value: float, grid: int = GridSystem.SIZE) -> int:
             return int(round(value))
         return int(round(value / grid) * grid)
     return GridSystem.snap(value)
-
-
-def _route_points(start: Point, end: Point) -> list[tuple[Point, Point]]:
-    """Orthogonal route from ``start`` to ``end`` as ``(a, b)`` segments."""
-    if start == end:
-        return []
-
-    sx, sy = start
-    ex, ey = end
-
-    if sx == ex or sy == ey:
-        return [(start, end)]
-
-    # Route orthogonally using a single elbow.
-    elbow_a = (ex, sy)
-    if elbow_a != start and elbow_a != end:
-        return [(start, elbow_a), (elbow_a, end)]
-
-    elbow_b = (sx, ey)
-    if elbow_b != start and elbow_b != end:
-        return [(start, elbow_b), (elbow_b, end)]
-
-    return [(start, end)]
-
-
-def _route_wire(start: Point, end: Point) -> list[str]:
-    return [_wire_line(a[0], a[1], b[0], b[1]) for a, b in _route_points(start, end)]
-
-
-def _label_position(
-    net_name: str,
-    member_points: list[Point],
-    bounds: tuple[int, int, int, int],
-) -> Point:
-    min_x, min_y, max_x, max_y = bounds
-    anchor_x, anchor_y = member_points[0]
-
-    if net_name == "GND":
-        return min_x - 96, max_y + 96
-    if net_name == "VCC":
-        return min_x - 96, min_y - 96
-    if net_name == "VIN":
-        return min_x - 96, GridSystem.snap(anchor_y)
-    if net_name == "VOUT":
-        return max_x + 96, GridSystem.snap(anchor_y)
-
-    return GridSystem.snap((min_x + max_x) / 2), GridSystem.snap((min_y + max_y) / 2)
 
 
 # ---------------------------------------------------------------------------
@@ -248,7 +172,7 @@ def _symbol_orientation(layout: dict[str, Any]) -> str:
 
 
 def _promote_shorts(diagnostics: list[ExportDiagnostic]) -> list[ExportDiagnostic]:
-    """Turn routing-overlap warnings into errors (``strict`` mode)."""
+    """Unsafe LTspice conductive contacts block export in every mode."""
     promoted_codes = {"NET_SHORT", "WIRE_CROSSES_PIN"}
     return [
         ExportDiagnostic(
@@ -260,22 +184,38 @@ def _promote_shorts(diagnostics: list[ExportDiagnostic]) -> list[ExportDiagnosti
     ]
 
 
-def generate_asc_with_diagnostics(
+def generate_asc_with_routing(
     circuit: dict[str, Any], strict: bool = False
-) -> tuple[str, list[ExportDiagnostic]]:
-    """Convert a circuit dict into ``(asc_text, diagnostics)``.
+) -> tuple[str, list[ExportDiagnostic], RoutingResult | None]:
+    """Export once and expose the exact router result for inspection.
 
-    Never raises for validation problems. Logical errors return empty text
-    before placement/routing; geometry errors return inspectable but unusable
-    text. With ``strict=True`` wires that short or cross other nets are reported
-    as errors instead of warnings.
+    ``strict`` remains a compatibility argument: unsafe contacts are always
+    errors. Blocking failures return empty ASC text, never a plausible partial
+    schematic; the routed object and all diagnostics remain inspectable.
     """
     connectivity = build_connectivity(circuit)
     diagnostics = validate_connectivity(connectivity)
     # Fail before placement/routing; diagnostic mode never returns usable text
     # for logically invalid source and generate_asc raises AscExportError.
     if any(d.severity == ERROR for d in diagnostics):
-        return "", diagnostics
+        return "", diagnostics, None
+
+    # LTspice names nodes case-insensitively. Preserve explicit source nets,
+    # but never emit labels that would silently merge two distinct groups.
+    labels: dict[str, str] = {}
+    for group in connectivity.source_groups:
+        if not group.pins or not group.labels:
+            continue
+        key = group.name.casefold()
+        if key in labels and labels[key] != group.name:
+            diagnostics.append(ExportDiagnostic(
+                ERROR, "NET_LABEL_COLLISION",
+                "Distinct source nets have case-insensitively identical LTspice FLAG names",
+                net=f"{labels[key]} / {group.name}",
+            ))
+        labels[key] = group.name
+    if any(d.severity == ERROR for d in diagnostics):
+        return "", diagnostics, None
 
     name: str = str(circuit.get("name", "Circuit"))
     description: str = str(circuit.get("description", ""))
@@ -293,7 +233,6 @@ def generate_asc_with_diagnostics(
 
     # ---- Components -------------------------------------------------------
     component_layouts: dict[str, dict[str, Any]] = {}
-    node_points: dict[str, Point] = {}
 
     for idx, comp in enumerate(components):
         inst_name, layout = place_component(idx, comp)
@@ -317,79 +256,90 @@ def generate_asc_with_diagnostics(
             )
         )
 
-    # ---- Validated connectivity model -------------------------------------
-    # Coordinates do not participate in logical grouping. Resolve geometry
-    # only after the source model passed validation, preserving member order.
-    for net in connectivity.nets:
-        for pin in net.pins:
-            try:
-                node_points[pin.key] = get_pin_coordinate(
-                    component_layouts[pin.component], pin.pin
-                )
-            except ValueError as exc:
-                diagnostics.append(ExportDiagnostic(
-                    ERROR, "UNRESOLVED_PIN", str(exc), net=net.name,
-                    component=pin.component, pin=pin.pin,
-                ))
+    # ---- Route immutable explicit memberships -----------------------------
+    # Reserve ALL definition pins, including unwired singleton pins. Routing
+    # cannot claim those pins or let a foreign wire accidentally contact them.
+    reserved_pins: list[PinPoint] = []
+    for pin in connectivity.pin_refs.values():
+        try:
+            point = get_pin_coordinate(component_layouts[pin.component], pin.pin)
+        except ValueError as exc:
+            diagnostics.append(ExportDiagnostic(
+                ERROR, "UNRESOLVED_PIN", str(exc), component=pin.component, pin=pin.pin,
+            ))
+        else:
+            reserved_pins.append(PinPoint(pin.component, pin.pin, point))
     if any(d.severity == ERROR for d in diagnostics):
-        return "", diagnostics
+        return "", diagnostics, None
 
-    emitted_flags: set[str] = set()
-    net_geometries: list[NetGeometry] = []
+    try:
+        # A completely unwired schematic needs no geometry. Preserve Phase6's
+        # warning-only generic symbol serialization in that case; unknown
+        # symbols still cannot be substituted as obstacles in an active route.
+        routed = (route_nets(connectivity, component_layouts)
+                  if any(group.pins for group in connectivity.source_groups)
+                  else RoutingResult())
+    except AscExportError as exc:
+        return "", diagnostics + list(exc.diagnostics), None
+    diagnostics.extend(d for d in _promote_shorts(routed.diagnostics) if d not in diagnostics)
+    if any(d.severity == ERROR for d in diagnostics):
+        return "", diagnostics, routed
 
-    for net in connectivity.nets:
-        members = net.members
-        member_points = [node_points[node] for node in members if node in node_points]
-        if not member_points:
-            continue
-
-        min_x = min(x for x, _ in member_points)
-        min_y = min(y for _, y in member_points)
-        max_x = max(x for x, _ in member_points)
-        max_y = max(y for _, y in member_points)
-        bounds = (min_x, min_y, max_x, max_y)
-
-        net_name = net.special
-        hub = (
-            _label_position(net_name, member_points, bounds)
-            if net_name
-            else (
-                GridSystem.snap(sum(x for x, _ in member_points) / len(member_points)),
-                GridSystem.snap(sum(y for _, y in member_points) / len(member_points)),
-            )
-        )
-
-        geometry_name = net.name
-        geometry = NetGeometry(name=geometry_name)
-
+    net_geometries = routed.net_geometries
+    # Check both the router's input model and output against captured source;
+    # mutable logical lists must never redefine the immutable source partition.
+    diagnostics.extend(d for d in validate_connectivity(connectivity) if d not in diagnostics)
+    diagnostics.extend(d for d in validate_connectivity(connectivity, net_geometries)
+                       if d not in diagnostics)
+    expected_points = {(p.component, p.pin): p.point for p in reserved_pins}
+    source_groups = {group.name: group for group in connectivity.source_groups}
+    for net in net_geometries:
         for pin in net.pins:
-            geometry.pins.append(PinPoint(pin.component, pin.pin, node_points[pin.key]))
+            expected = expected_points.get((pin.component, pin.pin))
+            if expected is not None and pin.point != expected:
+                diagnostics.append(ExportDiagnostic(
+                    ERROR, "PIN_POSITION_MISMATCH", "Routed pin differs from the serialized symbol pin",
+                    net=net.name, component=pin.component, pin=pin.pin,
+                    expected=expected, actual=pin.point,
+                ))
+        group = source_groups.get(net.name)
+        if group and bool(group.labels) != bool(net.flags):
+            diagnostics.append(ExportDiagnostic(
+                ERROR, "NET_FLAG_MISMATCH", "Routed flags do not match explicit source label presence",
+                net=net.name,
+            ))
+    expected_flags = sorted((net.name, point, net.name)
+                            for net in net_geometries for point in net.flags)
+    actual_flags = sorted((flag.net, flag.point, flag.name) for flag in routed.flags)
+    if expected_flags != actual_flags:
+        diagnostics.append(ExportDiagnostic(
+            ERROR, "NET_FLAG_MISMATCH", "Router flags differ from canonical net geometry flags",
+        ))
+    if any(d.severity == ERROR for d in diagnostics):
+        return "", diagnostics, routed
 
-        if net_name and net_name not in emitted_flags:
-            lines.append(_flag_line(hub[0], hub[1], _flag_net_name(net_name)))
-            emitted_flags.add(net_name)
-            geometry.flags.append(hub)
+    diagnostics.extend(_promote_shorts(validate_net_geometry(
+        net_geometries, reserved_pins=reserved_pins,
+    )))
+    if any(d.severity == ERROR for d in diagnostics):
+        return "", diagnostics, routed
 
-        for node in members:
-            point = node_points.get(node)
-            if point is None or point == hub:
-                continue
-            for start, end in _route_points(point, hub):
-                lines.append(_wire_line(start[0], start[1], end[0], end[1]))
-                geometry.segments.append(WireSegment(geometry_name, start, end))
+    # Serialize route-owned points only; never guess a hub, label location,
+    # membership, or replacement path. SYMBOL/header blocks above are unchanged.
+    for net in net_geometries:
+        for point in net.flags:
+            lines.append(_flag_line(point[0], point[1], net.name))
+        for segment in net.segments:
+            lines.append(_wire_line(*segment.start, *segment.end))
+    return "\n".join(lines) + "\n", diagnostics, routed
 
-        net_geometries.append(geometry)
 
-    # ---- Validate before returning ---------------------------------------
-    # Compare recorded pins with immutable explicit source groups. This does
-    # NOT prove LTspice's physical wire interpretation matches those groups.
-    diagnostics = validate_connectivity(connectivity, net_geometries)
-    geometry_diagnostics = validate_net_geometry(net_geometries)
-    if strict:
-        geometry_diagnostics = _promote_shorts(geometry_diagnostics)
-    diagnostics.extend(geometry_diagnostics)
-
-    return "\n".join(lines) + "\n", diagnostics
+def generate_asc_with_diagnostics(
+    circuit: dict[str, Any], strict: bool = False
+) -> tuple[str, list[ExportDiagnostic]]:
+    """Return text and diagnostics, without raising for validation failures."""
+    asc, diagnostics, _ = generate_asc_with_routing(circuit, strict=strict)
+    return asc, diagnostics
 
 
 def generate_asc(circuit: dict[str, Any], strict: bool = False) -> str:

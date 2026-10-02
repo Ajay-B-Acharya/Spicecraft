@@ -29,7 +29,12 @@ Net N1
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any, Sequence
+
+from app.services.asc_validation import ExportDiagnostic
+
+if TYPE_CHECKING:
+    from app.services.routing import RoutingResult
 
 from app.services.connectivity import (
     ConnectivityModel,
@@ -289,6 +294,50 @@ class ExporterDebugger:
         """Trace REF.pin (or component, pin), accepting existing identity/pin aliases."""
         key = f"{component}.{pin}" if pin is not None else component
         return ExporterDebugger.trace_net(circuit, key)
+
+    @staticmethod
+    def format_routing(
+        routed: RoutingResult | None, diagnostics: Sequence[ExportDiagnostic] | None = None
+    ) -> str:
+        """Inspect the exact ``generate_asc_with_routing`` result, without routing again.
+
+        ``routed`` is a RoutingResult (or None after an early logical failure).
+        Pass the export's diagnostics to include shared collision/membership gates.
+        """
+        lines = ["Routed Geometry"]
+        if routed is None:
+            lines.append("  <routing not produced>")
+        else:
+            for net in routed.net_geometries:
+                lines.append(f"Net {net.name}")
+                for pin in net.pins:
+                    lines.append(f"  Pin {pin.component}.{pin.pin} -> {pin.point}")
+                for point in net.flags:
+                    lines.append(f"  FLAG {point} {net.name}")
+                for segment in net.segments:
+                    lines.append(f"  WIRE {segment.start} -> {segment.end}")
+                for point in routed.junctions.get(net.name, ()):
+                    lines.append(f"  Junction {point}")
+            for crossing in routed.crossings:
+                lines.append(f"Safe crossing {crossing.nets} at {crossing.point} (nonconductive)")
+            lines.append("Routing Metrics")
+            for name, value in sorted(routed.metrics.items()):
+                lines.append(f"  {name}: {value}")
+        found = diagnostics if diagnostics is not None else (routed.diagnostics if routed else [])
+        if found:
+            lines.append("Export Diagnostics")
+            for diagnostic in found:
+                lines.append(f"  {diagnostic.severity.upper()}: {diagnostic.format()}")
+        return "\n".join(lines)
+
+    @staticmethod
+    def print_routing(
+        routed: RoutingResult | None, diagnostics: Sequence[ExportDiagnostic] | None = None
+    ) -> str:
+        """Print and return a previously computed routing inspection."""
+        output = ExporterDebugger.format_routing(routed, diagnostics)
+        print(output)
+        return output
 
     @staticmethod
     def print_connections(circuit: dict[str, Any]) -> str:

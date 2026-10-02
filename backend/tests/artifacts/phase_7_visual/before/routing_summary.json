@@ -1,0 +1,597 @@
+{
+  "circuits": [
+    {
+      "circuit": "Common Emitter Amplifier",
+      "source_file": "common_emitter_amplifier.json",
+      "components": 6,
+      "expected_nets": {
+        "VCC": [
+          "R1.1",
+          "R3.2"
+        ],
+        "N1": [
+          "R1.2",
+          "Q1.B",
+          "R2.1"
+        ],
+        "0": [
+          "R2.2",
+          "C1.2"
+        ],
+        "N2": [
+          "Q1.C",
+          "R3.1",
+          "C2.1"
+        ],
+        "N3": [
+          "Q1.E",
+          "C1.1"
+        ],
+        "VOUT": [
+          "C2.2"
+        ]
+      },
+      "metrics": {
+        "candidate_paths": 1514,
+        "astar_searches": 22,
+        "astar_states": 8055,
+        "peak_grid_vertices": 980,
+        "collision_checks": 10927,
+        "budget_exhaustions": 0,
+        "order_attempts": 5,
+        "failed_connections": 4,
+        "crossings": 2,
+        "segments": 36,
+        "length": 5008,
+        "planar_attempts": 4,
+        "fallback_attempts": 1
+      },
+      "junctions": {
+        "VCC": [],
+        "N1": [
+          [
+            32,
+            176
+          ]
+        ],
+        "0": [],
+        "N2": [
+          [
+            336,
+            352
+          ]
+        ],
+        "N3": [],
+        "VOUT": []
+      },
+      "crossings": [
+        {
+          "nets": [
+            "N1",
+            "N3"
+          ],
+          "point": [
+            128,
+            272
+          ]
+        },
+        {
+          "nets": [
+            "N1",
+            "N2"
+          ],
+          "point": [
+            160,
+            272
+          ]
+        }
+      ],
+      "diagnostics": [],
+      "deterministic": true,
+      "netlist_verification": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      },
+      "actual_pin_nodes": {
+        "Q1.C": "N002",
+        "Q1.B": "N001",
+        "Q1.E": "N003",
+        "R1.1": "VCC",
+        "R1.2": "N001",
+        "R2.1": "N001",
+        "R2.2": "0",
+        "R3.1": "N002",
+        "R3.2": "VCC",
+        "C1.1": "N003",
+        "C1.2": "0",
+        "C2.1": "N002",
+        "C2.2": "VOUT"
+      },
+      "inspection_image": {
+        "file": "common_emitter_amplifier.png",
+        "width": 1800,
+        "height": 1045
+      }
+    },
+    {
+      "circuit": "RC Low Pass Filter",
+      "source_file": "rc_low_pass_filter.json",
+      "components": 2,
+      "expected_nets": {
+        "VIN": [
+          "R1.1"
+        ],
+        "VOUT": [
+          "R1.2",
+          "C1.1"
+        ],
+        "0": [
+          "C1.2"
+        ]
+      },
+      "metrics": {
+        "candidate_paths": 8,
+        "astar_searches": 0,
+        "astar_states": 0,
+        "peak_grid_vertices": 0,
+        "collision_checks": 14,
+        "budget_exhaustions": 0,
+        "order_attempts": 1,
+        "failed_connections": 0,
+        "crossings": 0,
+        "segments": 7,
+        "length": 544,
+        "planar_attempts": 1,
+        "fallback_attempts": 0
+      },
+      "junctions": {
+        "VIN": [],
+        "VOUT": [],
+        "0": []
+      },
+      "crossings": [],
+      "diagnostics": [],
+      "deterministic": true,
+      "netlist_verification": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      },
+      "actual_pin_nodes": {
+        "R1.1": "VIN",
+        "R1.2": "VOUT",
+        "C1.1": "VOUT",
+        "C1.2": "0"
+      },
+      "inspection_image": {
+        "file": "rc_low_pass_filter.png",
+        "width": 1800,
+        "height": 1192
+      }
+    },
+    {
+      "circuit": "RC High Pass Filter",
+      "source_file": "rc_high_pass_filter.json",
+      "components": 2,
+      "expected_nets": {
+        "VIN": [
+          "C1.1"
+        ],
+        "VOUT": [
+          "C1.2",
+          "R1.1"
+        ],
+        "0": [
+          "R1.2"
+        ]
+      },
+      "metrics": {
+        "candidate_paths": 8,
+        "astar_searches": 0,
+        "astar_states": 0,
+        "peak_grid_vertices": 0,
+        "collision_checks": 10,
+        "budget_exhaustions": 0,
+        "order_attempts": 1,
+        "failed_connections": 0,
+        "crossings": 0,
+        "segments": 7,
+        "length": 496,
+        "planar_attempts": 1,
+        "fallback_attempts": 0
+      },
+      "junctions": {
+        "VIN": [],
+        "VOUT": [],
+        "0": []
+      },
+      "crossings": [],
+      "diagnostics": [],
+      "deterministic": true,
+      "netlist_verification": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      },
+      "actual_pin_nodes": {
+        "C1.1": "VIN",
+        "C1.2": "VOUT",
+        "R1.1": "VOUT",
+        "R1.2": "0"
+      },
+      "inspection_image": {
+        "file": "rc_high_pass_filter.png",
+        "width": 1800,
+        "height": 1274
+      }
+    },
+    {
+      "circuit": "Voltage Divider Routing Regression",
+      "source_file": "voltage_divider.json",
+      "components": 2,
+      "expected_nets": {
+        "VIN": [
+          "R1.1"
+        ],
+        "VOUT": [
+          "R1.2",
+          "R2.1"
+        ],
+        "0": [
+          "R2.2"
+        ]
+      },
+      "metrics": {
+        "candidate_paths": 8,
+        "astar_searches": 0,
+        "astar_states": 0,
+        "peak_grid_vertices": 0,
+        "collision_checks": 11,
+        "budget_exhaustions": 0,
+        "order_attempts": 1,
+        "failed_connections": 0,
+        "crossings": 0,
+        "segments": 7,
+        "length": 528,
+        "planar_attempts": 1,
+        "fallback_attempts": 0
+      },
+      "junctions": {
+        "VIN": [],
+        "VOUT": [],
+        "0": []
+      },
+      "crossings": [],
+      "diagnostics": [],
+      "deterministic": true,
+      "netlist_verification": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      },
+      "actual_pin_nodes": {
+        "R1.1": "VIN",
+        "R1.2": "VOUT",
+        "R2.1": "VOUT",
+        "R2.2": "0"
+      },
+      "inspection_image": {
+        "file": "voltage_divider.png",
+        "width": 1800,
+        "height": 1175
+      }
+    },
+    {
+      "circuit": "Bridge Rectifier Routing Regression",
+      "source_file": "bridge_rectifier.json",
+      "components": 5,
+      "expected_nets": {
+        "AC+": [
+          "D1.1",
+          "D3.2"
+        ],
+        "AC-": [
+          "D2.1",
+          "D4.2"
+        ],
+        "OUT+": [
+          "D1.2",
+          "D2.2",
+          "R1.1"
+        ],
+        "0": [
+          "D3.1",
+          "D4.1",
+          "R1.2"
+        ]
+      },
+      "metrics": {
+        "candidate_paths": 357,
+        "astar_searches": 8,
+        "astar_states": 937,
+        "peak_grid_vertices": 696,
+        "collision_checks": 1816,
+        "budget_exhaustions": 0,
+        "order_attempts": 2,
+        "failed_connections": 1,
+        "crossings": 0,
+        "segments": 24,
+        "length": 4016,
+        "planar_attempts": 2,
+        "fallback_attempts": 0
+      },
+      "junctions": {
+        "0": [
+          [
+            592,
+            96
+          ]
+        ],
+        "OUT+": [
+          [
+            80,
+            224
+          ]
+        ],
+        "AC-": [],
+        "AC+": []
+      },
+      "crossings": [],
+      "diagnostics": [],
+      "deterministic": true,
+      "netlist_verification": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      },
+      "actual_pin_nodes": {
+        "D1.1": "AC+",
+        "D1.2": "OUT+",
+        "D2.1": "AC-",
+        "D2.2": "OUT+",
+        "D3.1": "0",
+        "D3.2": "AC+",
+        "D4.1": "0",
+        "D4.2": "AC-",
+        "R1.1": "OUT+",
+        "R1.2": "0"
+      },
+      "inspection_image": {
+        "file": "bridge_rectifier.png",
+        "width": 1800,
+        "height": 1075
+      }
+    },
+    {
+      "circuit": "555 Astable Multivibrator",
+      "source_file": "555_astable_multivibrator.json",
+      "components": 4,
+      "expected_nets": {
+        "VCC": [
+          "U1.8",
+          "R1.2"
+        ],
+        "0": [
+          "U1.1",
+          "C1.2"
+        ],
+        "N1": [
+          "U1.2",
+          "U1.6",
+          "R2.2",
+          "C1.1"
+        ],
+        "N2": [
+          "U1.7",
+          "R1.1",
+          "R2.1"
+        ],
+        "unconnected:U1.3": [
+          "U1.3"
+        ],
+        "unconnected:U1.4": [
+          "U1.4"
+        ],
+        "unconnected:U1.5": [
+          "U1.5"
+        ]
+      },
+      "metrics": {
+        "candidate_paths": 1292,
+        "astar_searches": 21,
+        "astar_states": 7905,
+        "peak_grid_vertices": 851,
+        "collision_checks": 10166,
+        "budget_exhaustions": 0,
+        "order_attempts": 5,
+        "failed_connections": 4,
+        "crossings": 3,
+        "segments": 36,
+        "length": 4320,
+        "planar_attempts": 4,
+        "fallback_attempts": 1
+      },
+      "junctions": {
+        "VCC": [],
+        "0": [],
+        "N1": [
+          [
+            384,
+            256
+          ],
+          [
+            592,
+            256
+          ]
+        ],
+        "N2": [
+          [
+            272,
+            112
+          ]
+        ]
+      },
+      "crossings": [
+        {
+          "nets": [
+            "N2",
+            "VCC"
+          ],
+          "point": [
+            224,
+            112
+          ]
+        },
+        {
+          "nets": [
+            "N1",
+            "VCC"
+          ],
+          "point": [
+            224,
+            160
+          ]
+        },
+        {
+          "nets": [
+            "N1",
+            "N2"
+          ],
+          "point": [
+            288,
+            112
+          ]
+        }
+      ],
+      "diagnostics": [],
+      "deterministic": true,
+      "netlist_verification": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      },
+      "actual_pin_nodes": {
+        "U1.1": "0",
+        "U1.2": "N002",
+        "U1.3": "NC_01",
+        "U1.4": "NC_02",
+        "U1.5": "NC_03",
+        "U1.6": "N002",
+        "U1.7": "N001",
+        "U1.8": "VCC",
+        "R1.1": "N001",
+        "R1.2": "VCC",
+        "R2.1": "N001",
+        "R2.2": "N002",
+        "C1.1": "N002",
+        "C1.2": "0"
+      },
+      "inspection_image": {
+        "file": "555_astable_multivibrator.png",
+        "width": 1800,
+        "height": 760
+      }
+    },
+    {
+      "circuit": "LED Blinker",
+      "source_file": "led_blinker.json",
+      "components": 5,
+      "expected_nets": {
+        "VCC": [
+          "R1.1"
+        ],
+        "N1": [
+          "R1.2",
+          "Q1.B",
+          "C1.1"
+        ],
+        "N2": [
+          "Q1.C",
+          "D1.A"
+        ],
+        "N3": [
+          "D1.K",
+          "R2.1"
+        ],
+        "0": [
+          "R2.2",
+          "C1.2"
+        ],
+        "unconnected:Q1.E": [
+          "Q1.E"
+        ]
+      },
+      "metrics": {
+        "candidate_paths": 105,
+        "astar_searches": 0,
+        "astar_states": 0,
+        "peak_grid_vertices": 0,
+        "collision_checks": 139,
+        "budget_exhaustions": 0,
+        "order_attempts": 1,
+        "failed_connections": 0,
+        "crossings": 0,
+        "segments": 24,
+        "length": 3008,
+        "planar_attempts": 1,
+        "fallback_attempts": 0
+      },
+      "junctions": {
+        "VCC": [],
+        "N1": [
+          [
+            336,
+            256
+          ]
+        ],
+        "N2": [],
+        "N3": [],
+        "0": []
+      },
+      "crossings": [],
+      "diagnostics": [],
+      "deterministic": true,
+      "netlist_verification": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      },
+      "actual_pin_nodes": {
+        "Q1.C": "N001",
+        "Q1.B": "N002",
+        "Q1.E": "NC_01",
+        "R1.1": "VCC",
+        "R1.2": "N002",
+        "R2.1": "N003",
+        "R2.2": "0",
+        "C1.1": "N002",
+        "C1.2": "0",
+        "D1.A": "N001",
+        "D1.K": "N003"
+      },
+      "inspection_image": {
+        "file": "led_blinker.png",
+        "width": 1800,
+        "height": 959
+      }
+    }
+  ],
+  "all_deterministic": true,
+  "ltspice_verified": true,
+  "all_verified": true
+}

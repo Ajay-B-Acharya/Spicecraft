@@ -1,0 +1,58 @@
+{
+  "circuit": "RC Low Pass Filter",
+  "source_file": "rc_low_pass_filter.json",
+  "components": 2,
+  "expected_nets": {
+    "VIN": [
+      "R1.1"
+    ],
+    "VOUT": [
+      "R1.2",
+      "C1.1"
+    ],
+    "0": [
+      "C1.2"
+    ]
+  },
+  "metrics": {
+    "candidate_paths": 8,
+    "astar_searches": 0,
+    "astar_states": 0,
+    "peak_grid_vertices": 0,
+    "collision_checks": 14,
+    "budget_exhaustions": 0,
+    "order_attempts": 1,
+    "failed_connections": 0,
+    "crossings": 0,
+    "segments": 7,
+    "length": 544,
+    "planar_attempts": 1,
+    "fallback_attempts": 0
+  },
+  "junctions": {
+    "VIN": [],
+    "VOUT": [],
+    "0": []
+  },
+  "crossings": [],
+  "diagnostics": [],
+  "deterministic": true,
+  "netlist_verification": {
+    "ok": true,
+    "shorts": [],
+    "opens": [],
+    "missing_pins": [],
+    "unexpected_pins": []
+  },
+  "actual_pin_nodes": {
+    "R1.1": "VIN",
+    "R1.2": "VOUT",
+    "C1.1": "VOUT",
+    "C1.2": "0"
+  },
+  "inspection_image": {
+    "file": "rc_low_pass_filter.png",
+    "width": 1800,
+    "height": 1192
+  }
+}

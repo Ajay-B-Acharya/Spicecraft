@@ -1,0 +1,116 @@
+{
+  "circuit": "Common Emitter Amplifier",
+  "source_file": "common_emitter_amplifier.json",
+  "components": 6,
+  "expected_nets": {
+    "VCC": [
+      "R1.1",
+      "R3.2"
+    ],
+    "N1": [
+      "R1.2",
+      "Q1.B",
+      "R2.1"
+    ],
+    "0": [
+      "R2.2",
+      "C1.2"
+    ],
+    "N2": [
+      "Q1.C",
+      "R3.1",
+      "C2.1"
+    ],
+    "N3": [
+      "Q1.E",
+      "C1.1"
+    ],
+    "VOUT": [
+      "C2.2"
+    ]
+  },
+  "metrics": {
+    "candidate_paths": 1514,
+    "astar_searches": 22,
+    "astar_states": 8055,
+    "peak_grid_vertices": 980,
+    "collision_checks": 10927,
+    "budget_exhaustions": 0,
+    "order_attempts": 5,
+    "failed_connections": 4,
+    "crossings": 2,
+    "segments": 36,
+    "length": 5008,
+    "planar_attempts": 4,
+    "fallback_attempts": 1
+  },
+  "junctions": {
+    "VCC": [],
+    "N1": [
+      [
+        32,
+        176
+      ]
+    ],
+    "0": [],
+    "N2": [
+      [
+        336,
+        352
+      ]
+    ],
+    "N3": [],
+    "VOUT": []
+  },
+  "crossings": [
+    {
+      "nets": [
+        "N1",
+        "N3"
+      ],
+      "point": [
+        128,
+        272
+      ]
+    },
+    {
+      "nets": [
+        "N1",
+        "N2"
+      ],
+      "point": [
+        160,
+        272
+      ]
+    }
+  ],
+  "diagnostics": [],
+  "deterministic": true,
+  "netlist_verification": {
+    "ok": true,
+    "shorts": [],
+    "opens": [],
+    "missing_pins": [],
+    "unexpected_pins": []
+  },
+  "actual_pin_nodes": {
+    "Q1.C": "N002",
+    "Q1.B": "N001",
+    "Q1.E": "N003",
+    "R1.1": "VCC",
+    "R1.2": "N001",
+    "R2.1": "N001",
+    "R2.2": "0",
+    "R3.1": "N002",
+    "R3.2": "VCC",
+    "C1.1": "N003",
+    "C1.2": "0",
+    "C2.1": "N002",
+    "C2.2": "VOUT"
+  },
+  "inspection_image": {
+    "file": "common_emitter_amplifier.png",
+    "width": 1800,
+    "height": 1045
+  }
+}

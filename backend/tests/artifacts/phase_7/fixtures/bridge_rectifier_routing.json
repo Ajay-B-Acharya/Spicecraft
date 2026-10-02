@@ -1,0 +1,83 @@
+{
+  "circuit": "Bridge Rectifier Routing Regression",
+  "source_file": "bridge_rectifier.json",
+  "components": 5,
+  "expected_nets": {
+    "AC+": [
+      "D1.1",
+      "D3.2"
+    ],
+    "AC-": [
+      "D2.1",
+      "D4.2"
+    ],
+    "OUT+": [
+      "D1.2",
+      "D2.2",
+      "R1.1"
+    ],
+    "0": [
+      "D3.1",
+      "D4.1",
+      "R1.2"
+    ]
+  },
+  "metrics": {
+    "candidate_paths": 357,
+    "astar_searches": 8,
+    "astar_states": 937,
+    "peak_grid_vertices": 696,
+    "collision_checks": 1816,
+    "budget_exhaustions": 0,
+    "order_attempts": 2,
+    "failed_connections": 1,
+    "crossings": 0,
+    "segments": 24,
+    "length": 4016,
+    "planar_attempts": 2,
+    "fallback_attempts": 0
+  },
+  "junctions": {
+    "0": [
+      [
+        592,
+        96
+      ]
+    ],
+    "OUT+": [
+      [
+        80,
+        224
+      ]
+    ],
+    "AC-": [],
+    "AC+": []
+  },
+  "crossings": [],
+  "diagnostics": [],
+  "deterministic": true,
+  "netlist_verification": {
+    "ok": true,
+    "shorts": [],
+    "opens": [],
+    "missing_pins": [],
+    "unexpected_pins": []
+  },
+  "actual_pin_nodes": {
+    "D1.1": "AC+",
+    "D1.2": "OUT+",
+    "D2.1": "AC-",
+    "D2.2": "OUT+",
+    "D3.1": "0",
+    "D3.2": "AC+",
+    "D4.1": "0",
+    "D4.2": "AC-",
+    "R1.1": "OUT+",
+    "R1.2": "0"
+  },
+  "inspection_image": {
+    "file": "bridge_rectifier.png",
+    "width": 1800,
+    "height": 1075
+  }
+}

@@ -1,0 +1,51 @@
+[
+  {
+    "page": 1,
+    "circuit": "Common Emitter Amplifier",
+    "stem": "common_emitter_amplifier",
+    "image": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_7_visual\\native\\common_emitter_amplifier\\common_emitter_amplifier_ltspice.png",
+    "method": "Native LTspice application screenshot of the exported ASC"
+  },
+  {
+    "page": 2,
+    "circuit": "RC Low-pass Filter",
+    "stem": "rc_low_pass_filter",
+    "image": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_7_visual\\native\\rc_low_pass_filter\\rc_low_pass_filter_ltspice.png",
+    "method": "Native LTspice application screenshot of the exported ASC"
+  },
+  {
+    "page": 3,
+    "circuit": "RC High-pass Filter",
+    "stem": "rc_high_pass_filter",
+    "image": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_7_visual\\native\\rc_high_pass_filter\\rc_high_pass_filter_ltspice.png",
+    "method": "Native LTspice application screenshot of the exported ASC"
+  },
+  {
+    "page": 4,
+    "circuit": "Voltage Divider",
+    "stem": "voltage_divider",
+    "image": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_7_visual\\native\\voltage_divider\\voltage_divider_ltspice.png",
+    "method": "Native LTspice application screenshot of the exported ASC"
+  },
+  {
+    "page": 5,
+    "circuit": "Bridge Rectifier",
+    "stem": "bridge_rectifier",
+    "image": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_7_visual\\native\\bridge_rectifier\\bridge_rectifier_ltspice.png",
+    "method": "Native LTspice application screenshot of the exported ASC"
+  },
+  {
+    "page": 6,
+    "circuit": "NE555 Astable Multivibrator",
+    "stem": "555_astable_multivibrator",
+    "image": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_7_visual\\native\\555_astable_multivibrator\\555_astable_multivibrator_ltspice.png",
+    "method": "Native LTspice application screenshot of the exported ASC"
+  },
+  {
+    "page": 7,
+    "circuit": "LED Blinker",
+    "stem": "led_blinker",
+    "image": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_7_visual\\native\\led_blinker\\led_blinker_ltspice.png",
+    "method": "Native LTspice application screenshot of the exported ASC"
+  }
+]

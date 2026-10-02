@@ -1,0 +1,84 @@
+{
+  "visual_acceptance": "blocked",
+  "reason": "Visual reviewer provider unavailable (provider-not-found); session model does not support image input.",
+  "circuits": [
+    {
+      "circuit": "Common Emitter Amplifier",
+      "visual_verdict": "not_evaluated",
+      "electrical": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      }
+    },
+    {
+      "circuit": "RC Low Pass Filter",
+      "visual_verdict": "not_evaluated",
+      "electrical": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      }
+    },
+    {
+      "circuit": "RC High Pass Filter",
+      "visual_verdict": "not_evaluated",
+      "electrical": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      }
+    },
+    {
+      "circuit": "Voltage Divider Routing Regression",
+      "visual_verdict": "not_evaluated",
+      "electrical": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      }
+    },
+    {
+      "circuit": "Bridge Rectifier Routing Regression",
+      "visual_verdict": "not_evaluated",
+      "electrical": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      }
+    },
+    {
+      "circuit": "555 Astable Multivibrator",
+      "visual_verdict": "not_evaluated",
+      "electrical": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      }
+    },
+    {
+      "circuit": "LED Blinker",
+      "visual_verdict": "not_evaluated",
+      "electrical": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      }
+    }
+  ],
+  "production_changes": false
+}

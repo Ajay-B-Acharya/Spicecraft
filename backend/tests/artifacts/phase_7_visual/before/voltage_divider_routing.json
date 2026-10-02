@@ -1,0 +1,58 @@
+{
+  "circuit": "Voltage Divider Routing Regression",
+  "source_file": "voltage_divider.json",
+  "components": 2,
+  "expected_nets": {
+    "VIN": [
+      "R1.1"
+    ],
+    "VOUT": [
+      "R1.2",
+      "R2.1"
+    ],
+    "0": [
+      "R2.2"
+    ]
+  },
+  "metrics": {
+    "candidate_paths": 8,
+    "astar_searches": 0,
+    "astar_states": 0,
+    "peak_grid_vertices": 0,
+    "collision_checks": 11,
+    "budget_exhaustions": 0,
+    "order_attempts": 1,
+    "failed_connections": 0,
+    "crossings": 0,
+    "segments": 7,
+    "length": 528,
+    "planar_attempts": 1,
+    "fallback_attempts": 0
+  },
+  "junctions": {
+    "VIN": [],
+    "VOUT": [],
+    "0": []
+  },
+  "crossings": [],
+  "diagnostics": [],
+  "deterministic": true,
+  "netlist_verification": {
+    "ok": true,
+    "shorts": [],
+    "opens": [],
+    "missing_pins": [],
+    "unexpected_pins": []
+  },
+  "actual_pin_nodes": {
+    "R1.1": "VIN",
+    "R1.2": "VOUT",
+    "R2.1": "VOUT",
+    "R2.2": "0"
+  },
+  "inspection_image": {
+    "file": "voltage_divider.png",
+    "width": 1800,
+    "height": 1175
+  }
+}

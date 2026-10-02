@@ -1,0 +1,1275 @@
+{
+  "source": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_7_visual\\before\\common_emitter_amplifier.asc",
+  "inspection_copy": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_7_visual\\native\\common_emitter_amplifier\\common_emitter_amplifier.asc",
+  "source_sha256": "a605ee21b284785783d8fda5e256e2960990e42d7c19c981d2a3cad0ed812c0d",
+  "visual_acceptance": "not_evaluated",
+  "clipping": "not_visually_evaluated",
+  "preexisting_ltspice_windows": [],
+  "launched_pid": 2012,
+  "observed_process_windows": [
+    {
+      "hwnd": 10355396,
+      "pid": 2012,
+      "title": "LTspice - [common_emitter_amplifier]",
+      "class_name": "Afx:00007FF79E5D0000:8:0000000000010003:0000000000000000:0000000001F50227",
+      "visible": true,
+      "rect": [
+        -9,
+        -9,
+        1929,
+        1029
+      ]
+    }
+  ],
+  "owned_window": {
+    "hwnd": 10355396,
+    "pid": 2012,
+    "title": "LTspice - [common_emitter_amplifier]",
+    "class_name": "Afx:00007FF79E5D0000:8:0000000000010003:0000000000000000:0000000001F50227",
+    "visible": true,
+    "rect": [
+      -9,
+      -9,
+      1929,
+      1029
+    ]
+  },
+  "child_windows": [
+    {
+      "hwnd": 9307772,
+      "pid": 2012,
+      "title": "",
+      "class_name": "AfxControlBar140su",
+      "visible": true,
+      "rect": [
+        29,
+        83,
+        1811,
+        130
+      ]
+    },
+    {
+      "hwnd": 6948496,
+      "pid": 2012,
+      "title": "",
+      "class_name": "ToolbarWindow32",
+      "visible": true,
+      "rect": [
+        27,
+        83,
+        1454,
+        132
+      ]
+    },
+    {
+      "hwnd": 15402942,
+      "pid": 2012,
+      "title": "",
+      "class_name": "AfxControlBar140su",
+      "visible": true,
+      "rect": [
+        29,
+        1061,
+        1811,
+        1061
+      ]
+    },
+    {
+      "hwnd": 12257648,
+      "pid": 2012,
+      "title": "",
+      "class_name": "AfxControlBar140su",
+      "visible": true,
+      "rect": [
+        29,
+        130,
+        29,
+        1061
+      ]
+    },
+    {
+      "hwnd": 8980850,
+      "pid": 2012,
+      "title": "",
+      "class_name": "AfxControlBar140su",
+      "visible": true,
+      "rect": [
+        1811,
+        130,
+        1811,
+        1061
+      ]
+    },
+    {
+      "hwnd": 13369828,
+      "pid": 2012,
+      "title": "",
+      "class_name": "msctls_statusbar32",
+      "visible": true,
+      "rect": [
+        29,
+        1024,
+        1811,
+        1061
+      ]
+    },
+    {
+      "hwnd": 3606836,
+      "pid": 2012,
+      "title": "",
+      "class_name": "SysTabControl32",
+      "visible": false,
+      "rect": [
+        29,
+        83,
+        29,
+        83
+      ]
+    },
+    {
+      "hwnd": 9570070,
+      "pid": 2012,
+      "title": "",
+      "class_name": "MDIClient",
+      "visible": true,
+      "rect": [
+        29,
+        130,
+        1811,
+        1024
+      ]
+    },
+    {
+      "hwnd": 10356168,
+      "pid": 2012,
+      "title": "common_emitter_amplifier",
+      "class_name": "Afx:00007FF79E5D0000:b:0000000000010003:0000000000000006:000000000043085E",
+      "visible": true,
+      "rect": [
+        20,
+        92,
+        1820,
+        1033
+      ]
+    },
+    {
+      "hwnd": 5769212,
+      "pid": 2012,
+      "title": "",
+      "class_name": "Afx:00007FF79E5D0000:3:00000000035008F9:0000000000000000:0000000000000000",
+      "visible": true,
+      "rect": [
+        29,
+        130,
+        1811,
+        1024
+      ]
+    },
+    {
+      "hwnd": 7670054,
+      "pid": 2012,
+      "title": "",
+      "class_name": "Edit",
+      "visible": false,
+      "rect": [
+        1571,
+        84,
+        1796,
+        111
+      ]
+    }
+  ],
+  "menu": [
+    {
+      "path": "/",
+      "label": "",
+      "command_id": 4294967295,
+      "state": 2324,
+      "submenu": true
+    },
+    {
+      "path": "//&Restore",
+      "label": "&Restore",
+      "command_id": 61728,
+      "state": 536870912,
+      "submenu": false
+    },
+    {
+      "path": "//&Move",
+      "label": "&Move",
+      "command_id": 61456,
+      "state": 3,
+      "submenu": false
+    },
+    {
+      "path": "//&Size",
+      "label": "&Size",
+      "command_id": 61440,
+      "state": 3,
+      "submenu": false
+    },
+    {
+      "path": "//Mi&nimize",
+      "label": "Mi&nimize",
+      "command_id": 61472,
+      "state": 536870912,
+      "submenu": false
+    },
+    {
+      "path": "//Ma&ximize",
+      "label": "Ma&ximize",
+      "command_id": 61488,
+      "state": 536870915,
+      "submenu": false
+    },
+    {
+      "path": "//",
+      "label": "",
+      "command_id": 0,
+      "state": 2051,
+      "submenu": false
+    },
+    {
+      "path": "//&Close\tCtrl+F4",
+      "label": "&Close\tCtrl+F4",
+      "command_id": 61536,
+      "state": 536875008,
+      "submenu": false
+    },
+    {
+      "path": "//",
+      "label": "",
+      "command_id": 0,
+      "state": 2051,
+      "submenu": false
+    },
+    {
+      "path": "//Nex&t\tCtrl+F6",
+      "label": "Nex&t\tCtrl+F6",
+      "command_id": 61504,
+      "state": 0,
+      "submenu": false
+    },
+    {
+      "path": "/&File",
+      "label": "&File",
+      "command_id": 4294967295,
+      "state": 4112,
+      "submenu": true
+    },
+    {
+      "path": "/&File/&New Schematic\tCtrl+N",
+      "label": "&New Schematic\tCtrl+N",
+      "command_id": 57600,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&File/New Symbol",
+      "label": "New Symbol",
+      "command_id": 32870,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&File/&Open...\tCtrl+O",
+      "label": "&Open...\tCtrl+O",
+      "command_id": 57601,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&File/Open Examples...",
+      "label": "Open Examples...",
+      "command_id": 32996,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&File/&Save\tCtrl+S",
+      "label": "&Save\tCtrl+S",
+      "command_id": 57603,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&File/Save &As...",
+      "label": "Save &As...",
+      "command_id": 57604,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&File/&Close",
+      "label": "&Close",
+      "command_id": 57602,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&File/",
+      "label": "",
+      "command_id": 0,
+      "state": 2051,
+      "submenu": false
+    },
+    {
+      "path": "/&File/&Print...\tCtrl+P",
+      "label": "&Print...\tCtrl+P",
+      "command_id": 57607,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&File/Print Pre&view",
+      "label": "Print Pre&view",
+      "command_id": 57609,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&File/P&rint Setup...",
+      "label": "P&rint Setup...",
+      "command_id": 57606,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&File/Print &Monochrome",
+      "label": "Print &Monochrome",
+      "command_id": 32827,
+      "state": 264,
+      "submenu": false
+    },
+    {
+      "path": "/&File/",
+      "label": "",
+      "command_id": 0,
+      "state": 2051,
+      "submenu": false
+    },
+    {
+      "path": "/&File/Recent File",
+      "label": "Recent File",
+      "command_id": 57616,
+      "state": 257,
+      "submenu": false
+    },
+    {
+      "path": "/&File/",
+      "label": "",
+      "command_id": 0,
+      "state": 2051,
+      "submenu": false
+    },
+    {
+      "path": "/&File/E&xit",
+      "label": "E&xit",
+      "command_id": 57665,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit",
+      "label": "&Edit",
+      "command_id": 4294967295,
+      "state": 5648,
+      "submenu": true
+    },
+    {
+      "path": "/&Edit/Und&o\tF9",
+      "label": "Und&o\tF9",
+      "command_id": 32876,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/R&edo\tShift+F9",
+      "label": "R&edo\tShift+F9",
+      "command_id": 32877,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/&Text\t'T'",
+      "label": "&Text\t'T'",
+      "command_id": 32812,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/&SPICE Directive\t'S'",
+      "label": "&SPICE Directive\t'S'",
+      "command_id": 32828,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/Configure SPICE Analysis",
+      "label": "Configure SPICE Analysis",
+      "command_id": 32857,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/Resistor\t'R'",
+      "label": "Resistor\t'R'",
+      "command_id": 32833,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/Capacitor\t'C'",
+      "label": "Capacitor\t'C'",
+      "command_id": 32836,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/Inductor\t'L'",
+      "label": "Inductor\t'L'",
+      "command_id": 32834,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/Diode\t'D'",
+      "label": "Diode\t'D'",
+      "command_id": 32835,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/&Component\tF2",
+      "label": "&Component\tF2",
+      "command_id": 32804,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/   &Rotate\tCtrl+R",
+      "label": "   &Rotate\tCtrl+R",
+      "command_id": 32879,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/   M&irror\tCtrl+E",
+      "label": "   M&irror\tCtrl+E",
+      "command_id": 32880,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/Draw &Wire\tF3",
+      "label": "Draw &Wire\tF3",
+      "command_id": 32805,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/Label &Net\tF4",
+      "label": "Label &Net\tF4",
+      "command_id": 32806,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/Place &GND\t'G'",
+      "label": "Place &GND\t'G'",
+      "command_id": 32830,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/Place BUS tap",
+      "label": "Place BUS tap",
+      "command_id": 32945,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/&Delete\tF5",
+      "label": "&Delete\tF5",
+      "command_id": 32872,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/D&uplicate\tF6",
+      "label": "D&uplicate\tF6",
+      "command_id": 32873,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/&Move\tF7",
+      "label": "&Move\tF7",
+      "command_id": 32874,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/Str&etch\tF8",
+      "label": "Str&etch\tF8",
+      "command_id": 32875,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/&Paste\tCtrl+V",
+      "label": "&Paste\tCtrl+V",
+      "command_id": 57637,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/Draw ",
+      "label": "Draw ",
+      "command_id": 4294967295,
+      "state": 1296,
+      "submenu": true
+    },
+    {
+      "path": "/&Edit/Draw /Line",
+      "label": "Line",
+      "command_id": 32858,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/Draw /Rectangle",
+      "label": "Rectangle",
+      "command_id": 32859,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/Draw /Ellipse",
+      "label": "Ellipse",
+      "command_id": 32860,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/Draw /Arc",
+      "label": "Arc",
+      "command_id": 32861,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Edit/Draw /Line Style",
+      "label": "Line Style",
+      "command_id": 32927,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/H&ierarchy",
+      "label": "H&ierarchy",
+      "command_id": 4294967295,
+      "state": 784,
+      "submenu": true
+    },
+    {
+      "path": "/H&ierarchy/Open or Generate this Sheet's &Symbol",
+      "label": "Open or Generate this Sheet's &Symbol",
+      "command_id": 32865,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/H&ierarchy/Create a &New Symbol",
+      "label": "Create a &New Symbol",
+      "command_id": 32866,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/H&ierarchy/Create a New S&heet",
+      "label": "Create a New S&heet",
+      "command_id": 32868,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View",
+      "label": "&View",
+      "command_id": 4294967295,
+      "state": 5648,
+      "submenu": true
+    },
+    {
+      "path": "/&View/Zoom &Area\tCtrl+Z",
+      "label": "Zoom &Area\tCtrl+Z",
+      "command_id": 32881,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/Zoom &Back\tCtrl+B",
+      "label": "Zoom &Back\tCtrl+B",
+      "command_id": 32882,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/Zoom to &Fit",
+      "label": "Zoom to &Fit",
+      "command_id": 32883,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/Recenter",
+      "label": "Recenter",
+      "command_id": 32797,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/",
+      "label": "",
+      "command_id": 0,
+      "state": 2051,
+      "submenu": false
+    },
+    {
+      "path": "/&View/Show Grid\tCtrl+G",
+      "label": "Show Grid\tCtrl+G",
+      "command_id": 32837,
+      "state": 264,
+      "submenu": false
+    },
+    {
+      "path": "/&View/Mark Unconn. Pins\t'U'",
+      "label": "Mark Unconn. Pins\t'U'",
+      "command_id": 32816,
+      "state": 264,
+      "submenu": false
+    },
+    {
+      "path": "/&View/Mark Anchors\t'A'",
+      "label": "Mark Anchors\t'A'",
+      "command_id": 32817,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/",
+      "label": "",
+      "command_id": 0,
+      "state": 2051,
+      "submenu": false
+    },
+    {
+      "path": "/&View/Bill of &Materials",
+      "label": "Bill of &Materials",
+      "command_id": 4294967295,
+      "state": 528,
+      "submenu": true
+    },
+    {
+      "path": "/&View/Bill of &Materials/Show on Sche&matic",
+      "label": "Show on Sche&matic",
+      "command_id": 32790,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/Bill of &Materials/&Paste to clipboard",
+      "label": "&Paste to clipboard",
+      "command_id": 32912,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/Efficiency &Report",
+      "label": "Efficiency &Report",
+      "command_id": 4294967295,
+      "state": 528,
+      "submenu": true
+    },
+    {
+      "path": "/&View/Efficiency &Report/Show on Sche&matic",
+      "label": "Show on Sche&matic",
+      "command_id": 32794,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/Efficiency &Report/&Paste to clipboard",
+      "label": "&Paste to clipboard",
+      "command_id": 32913,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/SPICE &Netlist",
+      "label": "SPICE &Netlist",
+      "command_id": 32788,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/SPICE Output &Log",
+      "label": "SPICE Output &Log",
+      "command_id": 33007,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/",
+      "label": "",
+      "command_id": 0,
+      "state": 2051,
+      "submenu": false
+    },
+    {
+      "path": "/&View/&Visible Traces",
+      "label": "&Visible Traces",
+      "command_id": 32791,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/Autorange &Y-axis",
+      "label": "Autorange &Y-axis",
+      "command_id": 32910,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/Marching &Waves",
+      "label": "Marching &Waves",
+      "command_id": 4294967295,
+      "state": 528,
+      "submenu": true
+    },
+    {
+      "path": "/&View/Marching &Waves/(Re-)&Start",
+      "label": "(Re-)&Start",
+      "command_id": 32795,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/Marching &Waves/&Pause",
+      "label": "&Pause",
+      "command_id": 32796,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/Set Probe Reference",
+      "label": "Set Probe Reference",
+      "command_id": 32923,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/",
+      "label": "",
+      "command_id": 0,
+      "state": 2051,
+      "submenu": false
+    },
+    {
+      "path": "/&View/&Toolbar",
+      "label": "&Toolbar",
+      "command_id": 59392,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/&Status Bar",
+      "label": "&Status Bar",
+      "command_id": 59393,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&View/Window Tabs",
+      "label": "Window Tabs",
+      "command_id": 32941,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Simulate",
+      "label": "&Simulate",
+      "command_id": 4294967295,
+      "state": 2064,
+      "submenu": true
+    },
+    {
+      "path": "/&Simulate/&Run/Pause",
+      "label": "&Run/Pause",
+      "command_id": 32911,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Simulate/&Stop\tCtrl+H",
+      "label": "&Stop\tCtrl+H",
+      "command_id": 32884,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Simulate/Clear Waveforms\t'0'",
+      "label": "Clear Waveforms\t'0'",
+      "command_id": 32878,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Simulate/Efficiency Calculation",
+      "label": "Efficiency Calculation",
+      "command_id": 4294967295,
+      "state": 528,
+      "submenu": true
+    },
+    {
+      "path": "/&Simulate/Efficiency Calculation/&Mark Start",
+      "label": "&Mark Start",
+      "command_id": 32802,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Simulate/Efficiency Calculation/Mark &End",
+      "label": "Mark &End",
+      "command_id": 32803,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Simulate/",
+      "label": "",
+      "command_id": 0,
+      "state": 2051,
+      "submenu": false
+    },
+    {
+      "path": "/&Simulate/&Settings",
+      "label": "&Settings",
+      "command_id": 32793,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Simulate/",
+      "label": "",
+      "command_id": 0,
+      "state": 2051,
+      "submenu": false
+    },
+    {
+      "path": "/&Simulate/Configure Analysis",
+      "label": "Configure Analysis",
+      "command_id": 32857,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Tools",
+      "label": "&Tools",
+      "command_id": 4294967295,
+      "state": 1552,
+      "submenu": true
+    },
+    {
+      "path": "/&Tools/Copy bitmap to Clipboard",
+      "label": "Copy bitmap to Clipboard",
+      "command_id": 32800,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Tools/Write image to .emf file",
+      "label": "Write image to .emf file",
+      "command_id": 32940,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Tools/&Settings",
+      "label": "&Settings",
+      "command_id": 32793,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Tools/Color Preferences",
+      "label": "Color Preferences",
+      "command_id": 32840,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Tools/Update components",
+      "label": "Update components",
+      "command_id": 32821,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Tools/Export Netlist",
+      "label": "Export Netlist",
+      "command_id": 32918,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Window",
+      "label": "&Window",
+      "command_id": 4294967295,
+      "state": 1808,
+      "submenu": true
+    },
+    {
+      "path": "/&Window/&Tile Horizontally",
+      "label": "&Tile Horizontally",
+      "command_id": 57651,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Window/Tile Vertically",
+      "label": "Tile Vertically",
+      "command_id": 57652,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Window/&Cascade",
+      "label": "&Cascade",
+      "command_id": 57650,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Window/Close Everything",
+      "label": "Close Everything",
+      "command_id": 32801,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Window/&Arrange Icons",
+      "label": "&Arrange Icons",
+      "command_id": 57649,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Window/",
+      "label": "",
+      "command_id": 0,
+      "state": 2051,
+      "submenu": false
+    },
+    {
+      "path": "/&Window/&1 common_emitter_amplifier",
+      "label": "&1 common_emitter_amplifier",
+      "command_id": 65280,
+      "state": 264,
+      "submenu": false
+    },
+    {
+      "path": "/&Help",
+      "label": "&Help",
+      "command_id": 4294967295,
+      "state": 2832,
+      "submenu": true
+    },
+    {
+      "path": "/&Help/LTspice &Help\tF1",
+      "label": "LTspice &Help\tF1",
+      "command_id": 57667,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Help/Keyboard Shortcut Cheat Sheet",
+      "label": "Keyboard Shortcut Cheat Sheet",
+      "command_id": 32998,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Help/Open Examples...",
+      "label": "Open Examples...",
+      "command_id": 32996,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Help/Get Support on EngineerZone",
+      "label": "Get Support on EngineerZone",
+      "command_id": 33017,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Help/Go to Analog.com",
+      "label": "Go to Analog.com",
+      "command_id": 33016,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Help/Go to myAnalog",
+      "label": "Go to myAnalog",
+      "command_id": 33018,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Help/",
+      "label": "",
+      "command_id": 0,
+      "state": 2051,
+      "submenu": false
+    },
+    {
+      "path": "/&Help/&Show Model Change Log",
+      "label": "&Show Model Change Log",
+      "command_id": 32984,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Help/&Show LTspice Change Log",
+      "label": "&Show LTspice Change Log",
+      "command_id": 33023,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Help/Check for LTspice updates...",
+      "label": "Check for LTspice updates...",
+      "command_id": 32988,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/&Help/&About LTspice",
+      "label": "&About LTspice",
+      "command_id": 57664,
+      "state": 256,
+      "submenu": false
+    },
+    {
+      "path": "/",
+      "label": "",
+      "command_id": 61472,
+      "state": 536887556,
+      "submenu": false
+    },
+    {
+      "path": "/",
+      "label": "",
+      "command_id": 61728,
+      "state": 536887556,
+      "submenu": false
+    },
+    {
+      "path": "/",
+      "label": "",
+      "command_id": 61536,
+      "state": 536887556,
+      "submenu": false
+    }
+  ],
+  "zoom_command": {
+    "path": "/&View/Zoom to &Fit",
+    "label": "Zoom to &Fit",
+    "command_id": 32883,
+    "state": 256,
+    "submenu": false
+  },
+  "zoom_fit_command_sent": true,
+  "capture": {
+    "method": "Win32 PrintWindow(PW_RENDERFULLCONTENT)",
+    "width": 1800,
+    "height": 1050,
+    "print_window_success": true,
+    "dib_rows": 1050,
+    "rect": [
+      20,
+      20,
+      1820,
+      1070
+    ]
+  },
+  "screenshot": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_7_visual\\native\\common_emitter_amplifier\\common_emitter_amplifier_ltspice.png",
+  "post_zoom_window": {
+    "hwnd": 10355396,
+    "pid": 2012,
+    "title": "LTspice - [common_emitter_amplifier]",
+    "class_name": "Afx:00007FF79E5D0000:8:0000000000010003:0000000000000000:0000000001F50227",
+    "visible": true,
+    "rect": [
+      20,
+      20,
+      1820,
+      1070
+    ]
+  },
+  "post_zoom_children": [
+    {
+      "hwnd": 9307772,
+      "pid": 2012,
+      "title": "",
+      "class_name": "AfxControlBar140su",
+      "visible": true,
+      "rect": [
+        29,
+        83,
+        1811,
+        130
+      ]
+    },
+    {
+      "hwnd": 6948496,
+      "pid": 2012,
+      "title": "",
+      "class_name": "ToolbarWindow32",
+      "visible": true,
+      "rect": [
+        27,
+        83,
+        1454,
+        132
+      ]
+    },
+    {
+      "hwnd": 15402942,
+      "pid": 2012,
+      "title": "",
+      "class_name": "AfxControlBar140su",
+      "visible": true,
+      "rect": [
+        29,
+        1061,
+        1811,
+        1061
+      ]
+    },
+    {
+      "hwnd": 12257648,
+      "pid": 2012,
+      "title": "",
+      "class_name": "AfxControlBar140su",
+      "visible": true,
+      "rect": [
+        29,
+        130,
+        29,
+        1061
+      ]
+    },
+    {
+      "hwnd": 8980850,
+      "pid": 2012,
+      "title": "",
+      "class_name": "AfxControlBar140su",
+      "visible": true,
+      "rect": [
+        1811,
+        130,
+        1811,
+        1061
+      ]
+    },
+    {
+      "hwnd": 13369828,
+      "pid": 2012,
+      "title": "",
+      "class_name": "msctls_statusbar32",
+      "visible": true,
+      "rect": [
+        29,
+        1024,
+        1811,
+        1061
+      ]
+    },
+    {
+      "hwnd": 3606836,
+      "pid": 2012,
+      "title": "",
+      "class_name": "SysTabControl32",
+      "visible": false,
+      "rect": [
+        29,
+        83,
+        29,
+        83
+      ]
+    },
+    {
+      "hwnd": 9570070,
+      "pid": 2012,
+      "title": "",
+      "class_name": "MDIClient",
+      "visible": true,
+      "rect": [
+        29,
+        130,
+        1811,
+        1024
+      ]
+    },
+    {
+      "hwnd": 10356168,
+      "pid": 2012,
+      "title": "common_emitter_amplifier",
+      "class_name": "Afx:00007FF79E5D0000:b:0000000000010003:0000000000000006:000000000043085E",
+      "visible": true,
+      "rect": [
+        20,
+        92,
+        1820,
+        1033
+      ]
+    },
+    {
+      "hwnd": 5769212,
+      "pid": 2012,
+      "title": "",
+      "class_name": "Afx:00007FF79E5D0000:3:00000000035008F9:0000000000000000:0000000000000000",
+      "visible": true,
+      "rect": [
+        29,
+        130,
+        1811,
+        1024
+      ]
+    },
+    {
+      "hwnd": 7670054,
+      "pid": 2012,
+      "title": "",
+      "class_name": "Edit",
+      "visible": false,
+      "rect": [
+        1571,
+        84,
+        1796,
+        111
+      ]
+    }
+  ],
+  "status": "captured_not_visually_reviewed",
+  "pitfalls": [
+    "Native zoom-fit command issued; readable values and clipping require independent visual judge.",
+    "Full application frame included; PrintWindow evidence is not a visual correctness check."
+  ],
+  "inspection_process_exit_code": 0,
+  "inspection_copy_sha256_after": "a605ee21b284785783d8fda5e256e2960990e42d7c19c981d2a3cad0ed812c0d",
+  "inspection_copy_unchanged": true
+}

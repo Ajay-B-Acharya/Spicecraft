@@ -495,6 +495,77 @@ class ValidatorTests(unittest.TestCase):
         self.assertEqual(collision[0].severity, ERROR)
 
 
+class Phase7ValidatorTests(unittest.TestCase):
+    def test_orientation_rejects_diagonal_and_zero_length(self) -> None:
+        self.assertEqual(WireSegment("N", (0, 0), (16, 0)).orientation, "horizontal")
+        self.assertEqual(WireSegment("N", (0, 0), (0, 16)).orientation, "vertical")
+        for end, code in [((16, 16), "NON_ORTHOGONAL_WIRE"), ((0, 0), "ZERO_LENGTH_WIRE")]:
+            segment = WireSegment("N", (0, 0), end)
+            with self.subTest(end=end):
+                with self.assertRaises(ValueError):
+                    _ = segment.orientation
+                self.assertIn(code, {d.code for d in validate_net_geometry([NetGeometry("N", segments=[segment])])})
+
+    def test_foreign_wire_shared_endpoint_is_short_without_pin_there(self) -> None:
+        a = NetGeometry("A", segments=[WireSegment("A", (0, 0), (64, 0))])
+        b = NetGeometry("B", segments=[WireSegment("B", (64, 0), (64, 64))])
+        shorts = [d for d in validate_net_geometry([a, b]) if d.code == "NET_SHORT"]
+        self.assertTrue(shorts)
+        self.assertTrue(all(d.severity == WARNING for d in shorts))
+
+    def test_flag_on_foreign_wire_is_a_short(self) -> None:
+        a = NetGeometry("A", segments=[WireSegment("A", (0, 0), (128, 0))])
+        b = NetGeometry("B", flags=[(64, 0)])
+        diagnostics = validate_net_geometry([a, b])
+        self.assertIn("NET_SHORT", {d.code for d in diagnostics})
+        self.assertIn("FLAG_NOT_CONNECTED", {d.code for d in diagnostics})
+
+    def test_unwired_reserved_pin_cannot_be_crossed_or_flagged(self) -> None:
+        reserved = PinPoint("R99", "1", (64, 0))
+        for net in [NetGeometry("A", segments=[WireSegment("A", (0, 0), (128, 0))]),
+                    NetGeometry("A", flags=[(64, 0)])]:
+            with self.subTest(net=net):
+                diagnostics = validate_net_geometry([net], reserved_pins=[reserved])
+                self.assertTrue({"WIRE_CROSSES_PIN", "PIN_COLLISION"} & {d.code for d in diagnostics})
+
+    def test_closed_orphan_island_is_not_mistaken_for_connected_net(self) -> None:
+        net = NetGeometry("N", pins=[PinPoint("R1", "1", (0, 0)), PinPoint("R2", "1", (64, 0))],
+                          segments=[WireSegment("N", (0, 0), (64, 0)),
+                                    WireSegment("N", (128, 0), (160, 0)),
+                                    WireSegment("N", (160, 0), (160, 32)),
+                                    WireSegment("N", (160, 32), (128, 32)),
+                                    WireSegment("N", (128, 32), (128, 0))])
+        codes = {d.code for d in validate_net_geometry([net])}
+        self.assertTrue({"NET_DISCONNECTED", "ORPHAN_WIRE_ISLAND"}.issubset(codes))
+
+    def test_unsplit_interior_perpendicular_crossing_is_nonconductive(self) -> None:
+        a = NetGeometry("A", pins=[PinPoint("R1", "1", (0, 64)), PinPoint("R2", "1", (128, 64))],
+                        segments=[WireSegment("A", (0, 64), (128, 64))])
+        b = NetGeometry("B", pins=[PinPoint("R3", "1", (64, 0)), PinPoint("R4", "1", (64, 128))],
+                        segments=[WireSegment("B", (64, 0), (64, 128))])
+        self.assertEqual(validate_net_geometry([a, b]), [])
+        # Splitting one wire creates a real conductive endpoint/interior contact.
+        a.segments = [WireSegment("A", (0, 64), (64, 64)), WireSegment("A", (64, 64), (128, 64))]
+        self.assertIn("NET_SHORT", {d.code for d in validate_net_geometry([a, b])})
+
+    def test_unsplit_interior_crossing_does_not_repair_disconnected_same_net(self) -> None:
+        net = NetGeometry("N", pins=[PinPoint("R1", "1", (0, 64)), PinPoint("R2", "1", (128, 64)),
+                                     PinPoint("R3", "1", (64, 0)), PinPoint("R4", "1", (64, 128))],
+                          segments=[WireSegment("N", (0, 64), (128, 64)),
+                                    WireSegment("N", (64, 0), (64, 128))])
+        self.assertIn("NET_DISCONNECTED", {d.code for d in validate_net_geometry([net])})
+        net.segments = [WireSegment("N", (0, 64), (64, 64)),
+                        WireSegment("N", (64, 64), (128, 64)), net.segments[1]]
+        self.assertEqual(validate_net_geometry([net]), [])
+
+    def test_flag_at_own_wire_interior_attaches_but_floating_flag_errors(self) -> None:
+        net = NetGeometry("A", pins=[PinPoint("R1", "1", (0, 0)), PinPoint("R2", "1", (128, 0))],
+                          flags=[(64, 0)], segments=[WireSegment("A", (0, 0), (128, 0))])
+        self.assertEqual(validate_net_geometry([net]), [])
+        net.flags = [(64, 16)]
+        self.assertIn("FLAG_NOT_CONNECTED", {d.code for d in validate_net_geometry([net])})
+
+
 # ---------------------------------------------------------------------------
 # End-to-end export
 # ---------------------------------------------------------------------------
@@ -636,23 +707,23 @@ class EndToEndExportTests(unittest.TestCase):
                         independent[(comp["reference"], pin.id)],
                     )
 
-    def test_strict_mode_rejects_the_known_routing_shorts(self) -> None:
-        """Documents the Phase 7 limitation.
+    def test_strict_mode_accepts_phase7_common_emitter_routing(self) -> None:
+        """Phase7 replaces the centroid routes that shorted five nets on ground.
 
-        The placeholder router (centroid hub + one elbow) still draws one net
-        across another's pins. Pin geometry is exact; routing is not. When the
-        Phase 7 router lands this test should flip to ``assertDoesNotRaise``.
+        The old ASC remains the negative fixture in tests/artifacts/phase_6_5;
+        its real LTspice test must continue reporting that known short. The
+        current router must pass BOTH default and strict collision gates.
         """
         circuit = load_circuit("common_emitter_amplifier.json")
-        _, diagnostics = generate_asc_with_diagnostics(circuit)
-        self.assertTrue(
-            any(d.code in {"NET_SHORT", "WIRE_CROSSES_PIN"} for d in diagnostics)
-        )
-        with self.assertRaises(AscExportError) as ctx:
-            generate_asc(circuit, strict=True)
-        self.assertTrue(ctx.exception.diagnostics)
+        for strict in (False, True):
+            with self.subTest(strict=strict):
+                asc, diagnostics = generate_asc_with_diagnostics(circuit, strict=strict)
+                self.assertTrue(asc)
+                self.assertEqual([d for d in diagnostics if d.severity == ERROR], [])
+                self.assertFalse(any(d.code in {"NET_SHORT", "WIRE_CROSSES_PIN"} for d in diagnostics))
+                self.assertEqual(generate_asc(circuit, strict=strict), asc)
 
-    def test_non_strict_export_returns_text_despite_warnings(self) -> None:
+    def test_non_strict_export_returns_safe_text(self) -> None:
         asc = generate_asc(load_circuit("common_emitter_amplifier.json"))
         self.assertTrue(asc.startswith("Version 4\nSHEET 1 "))
 
