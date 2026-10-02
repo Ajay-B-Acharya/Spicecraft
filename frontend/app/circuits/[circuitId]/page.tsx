@@ -36,6 +36,8 @@ export default function CircuitDetailPage() {
     saveChanges,
     saving,
     updateComponentValue,
+    connectPins,
+    updateComponentPosition,
   } = useCircuitEditor(circuit);
 
   const schematicCounts = useMemo(() => {
@@ -120,7 +122,7 @@ export default function CircuitDetailPage() {
               <div className="rounded-xl border bg-card text-card-foreground shadow">
                 <div className="p-6 space-y-1.5 flex flex-col">
                   <h3 className="font-semibold leading-none tracking-tight">Circuit Schematic</h3>
-                  <p className="text-sm text-muted-foreground text-left mt-2">Visual representation. View-only for now.</p>
+                  <p className="text-sm text-muted-foreground text-left mt-2">Connect electrical pins or drag components. Save to keep your changes.</p>
                   <div className="flex flex-wrap gap-2 pt-3">
                     <Badge variant="secondary" className="border border-border/60 bg-muted/50 text-foreground">
                       Components: {schematicCounts.components}
@@ -137,7 +139,7 @@ export default function CircuitDetailPage() {
                   </div>
                 </div>
                 <div className="p-6 pt-0">
-                  <CircuitSchematic circuit={editableCircuit} />
+                  <CircuitSchematic circuit={editableCircuit} onConnectPins={saving ? undefined : connectPins} onPositionChange={saving ? undefined : updateComponentPosition} />
                 </div>
               </div>
 

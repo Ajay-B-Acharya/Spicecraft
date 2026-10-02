@@ -2,28 +2,31 @@
  * Bipolar junction transistor component definitions.
  *
  * Defines separate NPN and PNP entries with explicit collector/base/emitter pin
- * names. Pin IDs match their semantic names so future netlist and ERC modules
- * can reason about transistor terminals without brittle handle mapping.
+ * names. Pin IDs use uppercase single-letter conventions (C, B, E) to match
+ * standard schematic notation and backend pin map definitions.
+ *
+ * Alias mapping in CircuitBuilder resolves alternate references ("collector",
+ * "base", "emitter", "1", "2", "3") back to these canonical IDs.
  */
 import { ComponentDefinition } from '../types';
 
 const transistorPins: ComponentDefinition['pins'] = [
   {
-    id: 'collector',
+    id: 'C',
     name: 'collector',
     x: 0,
     y: -32,
     direction: 'top',
   },
   {
-    id: 'base',
+    id: 'B',
     name: 'base',
     x: -32,
     y: 0,
     direction: 'left',
   },
   {
-    id: 'emitter',
+    id: 'E',
     name: 'emitter',
     x: 0,
     y: 32,
