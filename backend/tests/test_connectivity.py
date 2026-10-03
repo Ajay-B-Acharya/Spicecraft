@@ -1,8 +1,9 @@
-"""Source-only connectivity and frozen Phase 6 symbol/header regressions.
+"""Source-only connectivity and frozen Phase 7.5 symbol regressions.
 
-Phase 7 intentionally replaces unsafe WIRE/FLAG bytes. Exact symbol/placement
-bytes remain frozen; real LTspice tests separately establish routing correctness.
-The original known-short ASC/netlist artifacts remain a negative control.
+Compact SYMBOL placement, component identities and values remain frozen,
+independent of WIRE/FLAG routing and WINDOW/TEXT/SHEET presentation. Real
+LTspice tests separately establish routing correctness. The original known-short
+ASC/netlist artifacts remain a negative control.
 """
 
 from __future__ import annotations
@@ -33,17 +34,6 @@ from app.services.exporter_debugger import ExporterDebugger
 from app.services.ltspice_exporter import generate_asc, generate_asc_with_diagnostics
 
 CIRCUITS_DIR = BACKEND_ROOT / "circuits"
-
-# Captured by running the exporter from e8bb314 in an isolated temp directory,
-# filtering ONLY WIRE/FLAG lines. Phase 7 must change those unsafe route bytes,
-# not SYMBOL/SYMATTR/header/placement. Not hashes of the new implementation.
-PHASE6_SYMBOL_HEADER_HASHES = {
-    "555_astable_multivibrator.json": "9f8ccab8f04ffaaee328013d37a2a026fa07207b135f0cdc00066288ab1a11dd",
-    "common_emitter_amplifier.json": "e899404461d0e4d7d7e22d682fe9e85399612b37732a3c7fd9f6247d4c0c0c94",
-    "led_blinker.json": "5c81dad93d32b6690fe866d937d70e1530b4dac0ce4ab96b8ed42f1070d93df4",
-    "rc_high_pass_filter.json": "f4ca1f8e9dd7bfcdfca7513d7306b86874082c49d004d6d48e481ab20d4feeec",
-    "rc_low_pass_filter.json": "3353cc048bcb8c62ab116d972a7fb28dabaae7d35fb13cfe62b8e72f83612920",
-}
 
 # Independent expectations taken from each bundled file's explicit wires.
 # These are logical partitions only: the legacy ASC router can short them.
@@ -487,15 +477,28 @@ class BundledSourceRegressionTests(unittest.TestCase):
         self.assertEqual(partition(build_connectivity(source)), TEMPLATE_PARTITIONS["common_emitter_amplifier.json"])
         self.assertEqual(build_connectivity(source).diagnostics, [])
 
-    def test_all_bundled_phase6_symbol_header_bytes_unchanged(self) -> None:
-        for filename, expected in PHASE6_SYMBOL_HEADER_HASHES.items():
+    def test_all_bundled_phase75_symbol_placement_identity_and_values_unchanged(self) -> None:
+        from test_pin_geometry import PHASE75_SYMBOL_RECORDS, parse_asc
+
+        self.assertEqual(set(PHASE75_SYMBOL_RECORDS), set(TEMPLATE_PARTITIONS))
+        for filename, expected in PHASE75_SYMBOL_RECORDS.items():
             with self.subTest(filename=filename):
-                asc, diagnostics = generate_asc_with_diagnostics(load_circuit(filename), strict=True)
+                source = load_circuit(filename)
+                before = copy.deepcopy(source)
+                asc, diagnostics = generate_asc_with_diagnostics(source, strict=True)
                 self.assertTrue(asc)
                 self.assertEqual(codes(diagnostics, ERROR), set())
-                frozen = "\n".join(line for line in asc.splitlines()
-                                   if not line.startswith(("WIRE ", "FLAG "))) + "\n"
-                self.assertEqual(hashlib.sha256(frozen.encode("utf-8")).hexdigest(), expected)
+                symbols, _, _ = parse_asc(asc)
+                self.assertEqual(
+                    sorted((s["inst"], s["symbol"], s["x"], s["y"], s["orient"], s["value"])
+                           for s in symbols),
+                    sorted(expected),
+                )
+                self.assertEqual(
+                    sorted((s["inst"], s["value"]) for s in symbols),
+                    sorted((comp["reference"], comp["value"]) for comp in source["components"]),
+                )
+                self.assertEqual(source, before)
 
     def test_model_validation_does_not_claim_physical_short_free_asc(self) -> None:
         from tools.verify_ltspice import compare_partitions, parse_netlist

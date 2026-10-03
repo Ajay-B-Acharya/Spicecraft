@@ -93,7 +93,13 @@ class RoutingIntegrationTests(unittest.TestCase):
             self.assertIn(f"Net {net.name}", text)
             for pin in net.pins:
                 self.assertIn(f"{pin.component}.{pin.pin} -> {pin.point}", text)
-        self.assertIn("nonconductive", text)
+        # Phase 7.5's compact CE is planar. Report exactly the returned
+        # crossing list, including an empty list, rather than requiring one.
+        self.assertEqual(
+            [line for line in text.splitlines() if line.startswith("Safe crossing ")],
+            [f"Safe crossing {crossing.nets} at {crossing.point} (nonconductive)"
+             for crossing in routed.crossings],
+        )
         self.assertIn("routing not produced", ExporterDebugger.format_routing(None))
 
     def test_custom_labels_are_canonical_route_flags_not_inferred_membership(self) -> None:

@@ -1,0 +1,4 @@
+# Evidence hashes and byte counts refer to the captured files, including line endings.
+*.asc -text whitespace=cr-at-eol
+*.net -text whitespace=cr-at-eol
+*.log -text -whitespace

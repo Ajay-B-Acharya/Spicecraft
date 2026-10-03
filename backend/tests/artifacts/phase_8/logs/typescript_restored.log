@@ -1,0 +1,4 @@
+
+> my-project@0.1.0 typecheck
+> node node_modules/typescript/bin/tsc -p tsconfig.json --noEmit --incremental false
+

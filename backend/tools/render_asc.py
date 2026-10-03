@@ -416,7 +416,7 @@ def _alignment(alignment: str, instance: Instance | None = None) -> str:
     # Keep glyphs upright but transform the window's anchoring side with the body.
     alignment = alignment.title()
     if alignment.startswith("V"):
-        alignment = alignment[1:]
+        alignment = alignment[1:].title()
     vectors = {"Left": (1, 0), "Right": (-1, 0), "Top": (0, 1), "Bottom": (0, -1)}
     if alignment == "Center":
         return alignment

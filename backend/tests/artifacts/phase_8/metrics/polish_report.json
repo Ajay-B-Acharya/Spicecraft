@@ -1,0 +1,4790 @@
+{
+  "schema_version": 1,
+  "phase": 8,
+  "measurement_only": true,
+  "ok": true,
+  "before_directory": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\before",
+  "after_directory": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after",
+  "definitions": {
+    "scope": "Measurement only; no optimization, native rendering, PDF, or visual acceptance claim.",
+    "components": "Number of actual ASC SYMBOL blocks; identities, positions, orientations and SYMATTR values are compared independently of block order. WINDOW changes are presentation-only.",
+    "segments": "One segment per serialized WIRE record, including duplicates and zero-length records. Endpoints are not snapped; nonzero diagonals are rejected.",
+    "wire_length": "routing.total_length is the sum of serialized Manhattan lengths in LTspice coordinate units. Duplicates/overlaps count as recorded. wire_coverage_length instead measures their collinear union once.",
+    "net_assignment": "Every nonzero ASC WIRE must fit wholly within exactly one source-routed net's collinear coverage union. Exact coverage must match per net. This permits reversal, sorting, merging and splitting, not relocation. No geometry is read from *_routing.json.",
+    "bends_junctions": "routing.bend_count counts degree-two orthogonal turns; junction_count counts degree >= 3 contacts in measure_routing's private per-net graphs. Collinear subdivisions are not bends. Unsplit interior Xs do not conduct. Physical pins/flags make contacts; labels do not shortcut remote islands.",
+    "crossings": "Distinct proper interior cross-net Xs from the serialized segments using routing.geometry.intersection; contact/short validation is separate. No crossings are assumed from a stale routing summary.",
+    "pin_pairs": "measure_routing evaluates all unordered pin pairs per net. Detour ratio is mean shortest routed/Manhattan distance for reachable noncoincident pairs; detours require ratio > 1.5 and excess >= 64. Disconnected pairs and coincident pairs are explicit. Efficiency is summed per-net pin HPWL / recorded length, or null for disconnected pairs.",
+    "routing_bbox": "routing.bounding_box encloses recorded wire endpoints and all installed ASY pins, including unwired singleton pins; no text, flags or symbol bodies. Area is envelope width times height.",
+    "circuit_bbox": "circuit_bbox encloses serialized wire endpoints plus transformed installed ASY body strokes and pins, excluding FLAG glyphs, text, windows and ASC decorative primitives. Curves use the existing renderer tessellation; no sheet margin is added.",
+    "full_presentation_bbox": "Renderer estimate at scale 1.0 from the existing _build_scene/_layout helpers, with ALL descriptions included, installed ASY default windows plus ASC overrides, flags, primitives, pin labels and text. Includes the renderer's 4-unit geometry padding and host font measurements. Text stays upright and renderer default/alignment behavior may differ from LTspice; this is NOT a native ink/crop bound. Hidden windows and unsupported defaults follow the existing renderer unchanged.",
+    "labels": "Counts distinguish FLAG records, ground/non-ground flags, ASC TEXT comments/directives, leading descriptions, WINDOW overrides, and renderer-visible label objects. Counts are records/objects, not unique strings or wrapped lines.",
+    "sheet": "Exact SHEET [number, width, height] declaration. Independent of occupied geometry and presentation bounds; not a clipping or page-fit assertion.",
+    "topology": "Existing adjacent .net files are parsed by verify_ltspice.parse_netlist and compared to source canonical pin partitions (including singleton unwired pins), then to each other. Node-token renaming is allowed. No netlist is generated here; provenance/freshness of supplied .net files is the caller's responsibility. SHA-256 identifies the exact inputs measured.",
+    "invariants": "Fail on exact per-net coverage, SYMBOL identity/attribute/position/orientation, pin, FLAG, IOPIN, conductive geometry, or actual netlist partition drift. Wire record count/length, windows, descriptions and sheet size may change. Electrical TEXT directives must remain equal ignoring position/order.",
+    "delta": "Numeric deltas are after minus before; negative means a smaller measured quantity, not automatically a quality improvement. All lengths are source-coordinate units and all areas squared units; file_bytes is the on-disk byte count."
+  },
+  "circuits": [
+    {
+      "source_file": "555_astable_multivibrator.json",
+      "source_path": "C:\\Projects\\Spice Craft\\backend\\circuits\\555_astable_multivibrator.json",
+      "source_sha256": "3b012a68b259e3bb85198771e3a7d698e4a9772bb0cafa56bbc18b094dcfe4f0",
+      "circuit": "555 Astable Multivibrator",
+      "ok": true,
+      "checks": {
+        "symbols_unchanged": true,
+        "pins_unchanged": true,
+        "flags_unchanged": true,
+        "iopins_unchanged": true,
+        "electrical_directives_unchanged": true,
+        "wire_coverage_unchanged": true,
+        "before_geometry_valid": true,
+        "after_geometry_valid": true,
+        "before_topology_matches_source": true,
+        "after_topology_matches_source": true,
+        "topology_unchanged": true
+      },
+      "expected_nets": {
+        "VCC": [
+          "U1.8",
+          "R1.2"
+        ],
+        "0": [
+          "U1.1",
+          "C1.2"
+        ],
+        "N1": [
+          "U1.2",
+          "U1.6",
+          "R2.2",
+          "C1.1"
+        ],
+        "N2": [
+          "U1.7",
+          "R1.1",
+          "R2.1"
+        ],
+        "unconnected:U1.3": [
+          "U1.3"
+        ],
+        "unconnected:U1.4": [
+          "U1.4"
+        ],
+        "unconnected:U1.5": [
+          "U1.5"
+        ]
+      },
+      "before": {
+        "asc": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\before\\555_astable_multivibrator.asc",
+        "asc_sha256": "5e60c107c9eda2b7cbd44f9af180dba2dac9d3d0057c5bb128efd678d53514c4",
+        "file_bytes": 1096,
+        "components": 4,
+        "wires": 29,
+        "sheet": [
+          1,
+          1200,
+          800
+        ],
+        "routing": {
+          "total_length": 2400,
+          "segment_count": 29,
+          "bend_count": 15,
+          "junction_count": 3,
+          "crossing_count": 0,
+          "terminal_pair_count": 11,
+          "evaluated_pair_count": 11,
+          "disconnected_pair_count": 0,
+          "coincident_pair_count": 0,
+          "detour_count": 3,
+          "detour_ratio": 1.5888833123282884,
+          "max_detour_ratio": 3.0,
+          "bounding_box": [
+            176,
+            192,
+            736,
+            560
+          ],
+          "area": 206080,
+          "reference_length": 1600,
+          "routing_efficiency": 0.6666666666666666
+        },
+        "circuit_bbox": {
+          "bounds": [
+            176,
+            192,
+            752,
+            560
+          ],
+          "width": 576,
+          "height": 368,
+          "area": 211968
+        },
+        "full_presentation_bbox": {
+          "bounds": [
+            16.0,
+            8.5,
+            788.0,
+            564.0
+          ],
+          "width": 772.0,
+          "height": 555.5,
+          "area": 428846.0
+        },
+        "labels": {
+          "flags": 2,
+          "ground_flags": 1,
+          "non_ground_flags": 1,
+          "text_records": 2,
+          "comments": 2,
+          "directives": 0,
+          "header_descriptions": 2,
+          "symbol_window_overrides": 0,
+          "renderer_visible_labels": 20,
+          "omitted_descriptions": 0
+        },
+        "wire_coverage_length": 2400,
+        "wire_coverage": {
+          "0": [
+            [
+              "h",
+              240,
+              272,
+              336
+            ],
+            [
+              "h",
+              544,
+              224,
+              272
+            ],
+            [
+              "v",
+              224,
+              512,
+              544
+            ],
+            [
+              "v",
+              272,
+              240,
+              544
+            ]
+          ],
+          "N1": [
+            [
+              "h",
+              304,
+              288,
+              336
+            ],
+            [
+              "h",
+              368,
+              560,
+              608
+            ],
+            [
+              "h",
+              416,
+              176,
+              224
+            ],
+            [
+              "h",
+              544,
+              608,
+              736
+            ],
+            [
+              "h",
+              560,
+              176,
+              608
+            ],
+            [
+              "v",
+              176,
+              416,
+              560
+            ],
+            [
+              "v",
+              224,
+              416,
+              448
+            ],
+            [
+              "v",
+              288,
+              304,
+              560
+            ],
+            [
+              "v",
+              608,
+              368,
+              560
+            ],
+            [
+              "v",
+              736,
+              512,
+              544
+            ]
+          ],
+          "N2": [
+            [
+              "h",
+              304,
+              560,
+              592
+            ],
+            [
+              "h",
+              336,
+              592,
+              736
+            ],
+            [
+              "v",
+              592,
+              304,
+              336
+            ],
+            [
+              "v",
+              736,
+              304,
+              432
+            ]
+          ],
+          "VCC": [
+            [
+              "h",
+              192,
+              592,
+              736
+            ],
+            [
+              "h",
+              240,
+              560,
+              592
+            ],
+            [
+              "v",
+              592,
+              192,
+              240
+            ],
+            [
+              "v",
+              736,
+              192,
+              224
+            ]
+          ],
+          "unconnected:U1.3": [],
+          "unconnected:U1.4": [],
+          "unconnected:U1.5": []
+        },
+        "symbols": [
+          {
+            "reference": "C1",
+            "symbol": "cap",
+            "position": [
+              208,
+              448
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "C1",
+              "Value": "10uF"
+            }
+          },
+          {
+            "reference": "R1",
+            "symbol": "res",
+            "position": [
+              752,
+              320
+            ],
+            "orientation": "R180",
+            "attributes": {
+              "InstName": "R1",
+              "Value": "1k"
+            }
+          },
+          {
+            "reference": "R2",
+            "symbol": "res",
+            "position": [
+              720,
+              416
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R2",
+              "Value": "10k"
+            }
+          },
+          {
+            "reference": "U1",
+            "symbol": "misc/ne555",
+            "position": [
+              448,
+              336
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "U1",
+              "Value": "NE555"
+            }
+          }
+        ],
+        "pins": {
+          "C1.1": [
+            224,
+            448
+          ],
+          "C1.2": [
+            224,
+            512
+          ],
+          "R1.1": [
+            736,
+            304
+          ],
+          "R1.2": [
+            736,
+            224
+          ],
+          "R2.1": [
+            736,
+            432
+          ],
+          "R2.2": [
+            736,
+            512
+          ],
+          "U1.1": [
+            336,
+            240
+          ],
+          "U1.2": [
+            336,
+            304
+          ],
+          "U1.3": [
+            336,
+            368
+          ],
+          "U1.4": [
+            336,
+            432
+          ],
+          "U1.5": [
+            560,
+            432
+          ],
+          "U1.6": [
+            560,
+            368
+          ],
+          "U1.7": [
+            560,
+            304
+          ],
+          "U1.8": [
+            560,
+            240
+          ]
+        },
+        "flags": [
+          [
+            [
+              224,
+              544
+            ],
+            "0"
+          ],
+          [
+            [
+              736,
+              192
+            ],
+            "VCC"
+          ]
+        ],
+        "iopins": [],
+        "electrical_directives": [],
+        "geometry_diagnostics": [],
+        "symbol_root": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym",
+        "symbols_used": [
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\Misc\\NE555.asy",
+            "sha256": "09676c026690b837573823e736484cf99fac84714b44d56b9705b6190858590c"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\cap.asy",
+            "sha256": "fcc7190ea1110f612453b86c02facc3ac46441a06f04274054ed021746e79fac"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\res.asy",
+            "sha256": "228e75e841b1b239fbe8cea04c9ae86e84eac492faf88501fa21bbee88d7eb96"
+          }
+        ],
+        "presentation_estimator": {
+          "tool": "tools.render_asc",
+          "scale": 1.0,
+          "font": "C:\\WINDOWS\\Fonts\\segoeui.ttf",
+          "include_description": true,
+          "native_ltspice_bounds": false
+        },
+        "netlist": {
+          "file": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\before\\555_astable_multivibrator.net",
+          "sha256": "86720746a2bbda0bc3a2c0ec16504b1ff0370eb86ddd1b1013531b2bc1033254",
+          "verification": {
+            "ok": true,
+            "shorts": [],
+            "opens": [],
+            "missing_pins": [],
+            "unexpected_pins": []
+          },
+          "actual_pin_nodes": {
+            "U1.1": "0",
+            "U1.2": "N001",
+            "U1.3": "NC_01",
+            "U1.4": "NC_02",
+            "U1.5": "NC_03",
+            "U1.6": "N001",
+            "U1.7": "N002",
+            "U1.8": "VCC",
+            "R1.1": "N002",
+            "R1.2": "VCC",
+            "R2.1": "N002",
+            "R2.2": "N001",
+            "C1.1": "N001",
+            "C1.2": "0"
+          }
+        }
+      },
+      "after": {
+        "asc": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\555_astable_multivibrator.asc",
+        "asc_sha256": "a035f6b1ff42bf84b9dadb7d323b76e64a161c4440802353792bf24c6c76a2e4",
+        "file_bytes": 1216,
+        "components": 4,
+        "wires": 25,
+        "sheet": [
+          1,
+          752,
+          576
+        ],
+        "routing": {
+          "total_length": 2400,
+          "segment_count": 25,
+          "bend_count": 15,
+          "junction_count": 3,
+          "crossing_count": 0,
+          "terminal_pair_count": 11,
+          "evaluated_pair_count": 11,
+          "disconnected_pair_count": 0,
+          "coincident_pair_count": 0,
+          "detour_count": 3,
+          "detour_ratio": 1.5888833123282884,
+          "max_detour_ratio": 3.0,
+          "bounding_box": [
+            176,
+            192,
+            736,
+            560
+          ],
+          "area": 206080,
+          "reference_length": 1600,
+          "routing_efficiency": 0.6666666666666666
+        },
+        "circuit_bbox": {
+          "bounds": [
+            176,
+            192,
+            752,
+            560
+          ],
+          "width": 576,
+          "height": 368,
+          "area": 211968
+        },
+        "full_presentation_bbox": {
+          "bounds": [
+            104.0,
+            69.5,
+            760.0,
+            564.0
+          ],
+          "width": 656.0,
+          "height": 494.5,
+          "area": 324392.0
+        },
+        "labels": {
+          "flags": 2,
+          "ground_flags": 1,
+          "non_ground_flags": 1,
+          "text_records": 2,
+          "comments": 2,
+          "directives": 0,
+          "header_descriptions": 0,
+          "symbol_window_overrides": 8,
+          "renderer_visible_labels": 20,
+          "omitted_descriptions": 0
+        },
+        "wire_coverage_length": 2400,
+        "wire_coverage": {
+          "0": [
+            [
+              "h",
+              240,
+              272,
+              336
+            ],
+            [
+              "h",
+              544,
+              224,
+              272
+            ],
+            [
+              "v",
+              224,
+              512,
+              544
+            ],
+            [
+              "v",
+              272,
+              240,
+              544
+            ]
+          ],
+          "N1": [
+            [
+              "h",
+              304,
+              288,
+              336
+            ],
+            [
+              "h",
+              368,
+              560,
+              608
+            ],
+            [
+              "h",
+              416,
+              176,
+              224
+            ],
+            [
+              "h",
+              544,
+              608,
+              736
+            ],
+            [
+              "h",
+              560,
+              176,
+              608
+            ],
+            [
+              "v",
+              176,
+              416,
+              560
+            ],
+            [
+              "v",
+              224,
+              416,
+              448
+            ],
+            [
+              "v",
+              288,
+              304,
+              560
+            ],
+            [
+              "v",
+              608,
+              368,
+              560
+            ],
+            [
+              "v",
+              736,
+              512,
+              544
+            ]
+          ],
+          "N2": [
+            [
+              "h",
+              304,
+              560,
+              592
+            ],
+            [
+              "h",
+              336,
+              592,
+              736
+            ],
+            [
+              "v",
+              592,
+              304,
+              336
+            ],
+            [
+              "v",
+              736,
+              304,
+              432
+            ]
+          ],
+          "VCC": [
+            [
+              "h",
+              192,
+              592,
+              736
+            ],
+            [
+              "h",
+              240,
+              560,
+              592
+            ],
+            [
+              "v",
+              592,
+              192,
+              240
+            ],
+            [
+              "v",
+              736,
+              192,
+              224
+            ]
+          ],
+          "unconnected:U1.3": [],
+          "unconnected:U1.4": [],
+          "unconnected:U1.5": []
+        },
+        "symbols": [
+          {
+            "reference": "C1",
+            "symbol": "cap",
+            "position": [
+              208,
+              448
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "C1",
+              "Value": "10uF"
+            }
+          },
+          {
+            "reference": "R1",
+            "symbol": "res",
+            "position": [
+              752,
+              320
+            ],
+            "orientation": "R180",
+            "attributes": {
+              "InstName": "R1",
+              "Value": "1k"
+            }
+          },
+          {
+            "reference": "R2",
+            "symbol": "res",
+            "position": [
+              720,
+              416
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R2",
+              "Value": "10k"
+            }
+          },
+          {
+            "reference": "U1",
+            "symbol": "misc/ne555",
+            "position": [
+              448,
+              336
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "U1",
+              "Value": "NE555"
+            }
+          }
+        ],
+        "pins": {
+          "C1.1": [
+            224,
+            448
+          ],
+          "C1.2": [
+            224,
+            512
+          ],
+          "R1.1": [
+            736,
+            304
+          ],
+          "R1.2": [
+            736,
+            224
+          ],
+          "R2.1": [
+            736,
+            432
+          ],
+          "R2.2": [
+            736,
+            512
+          ],
+          "U1.1": [
+            336,
+            240
+          ],
+          "U1.2": [
+            336,
+            304
+          ],
+          "U1.3": [
+            336,
+            368
+          ],
+          "U1.4": [
+            336,
+            432
+          ],
+          "U1.5": [
+            560,
+            432
+          ],
+          "U1.6": [
+            560,
+            368
+          ],
+          "U1.7": [
+            560,
+            304
+          ],
+          "U1.8": [
+            560,
+            240
+          ]
+        },
+        "flags": [
+          [
+            [
+              224,
+              544
+            ],
+            "0"
+          ],
+          [
+            [
+              736,
+              192
+            ],
+            "VCC"
+          ]
+        ],
+        "iopins": [],
+        "electrical_directives": [],
+        "geometry_diagnostics": [],
+        "symbol_root": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym",
+        "symbols_used": [
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\Misc\\NE555.asy",
+            "sha256": "09676c026690b837573823e736484cf99fac84714b44d56b9705b6190858590c"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\cap.asy",
+            "sha256": "fcc7190ea1110f612453b86c02facc3ac46441a06f04274054ed021746e79fac"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\res.asy",
+            "sha256": "228e75e841b1b239fbe8cea04c9ae86e84eac492faf88501fa21bbee88d7eb96"
+          }
+        ],
+        "presentation_estimator": {
+          "tool": "tools.render_asc",
+          "scale": 1.0,
+          "font": "C:\\WINDOWS\\Fonts\\segoeui.ttf",
+          "include_description": true,
+          "native_ltspice_bounds": false
+        },
+        "netlist": {
+          "file": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\555_astable_multivibrator.net",
+          "sha256": "c48b88b35de8f50d30f8c0d14f7aed84056de0ff0c82aee09b324f87f3621d9c",
+          "verification": {
+            "ok": true,
+            "shorts": [],
+            "opens": [],
+            "missing_pins": [],
+            "unexpected_pins": []
+          },
+          "actual_pin_nodes": {
+            "C1.1": "N001",
+            "C1.2": "0",
+            "R1.1": "N002",
+            "R1.2": "VCC",
+            "R2.1": "N002",
+            "R2.2": "N001",
+            "U1.1": "0",
+            "U1.2": "N001",
+            "U1.3": "NC_01",
+            "U1.4": "NC_02",
+            "U1.5": "NC_03",
+            "U1.6": "N001",
+            "U1.7": "N002",
+            "U1.8": "VCC"
+          }
+        }
+      },
+      "topology_comparison": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      },
+      "delta": {
+        "circuit_bbox": {
+          "area": 0,
+          "height": 0,
+          "width": 0
+        },
+        "components": 0,
+        "file_bytes": 120,
+        "full_presentation_bbox": {
+          "area": -104454.0,
+          "height": -61.0,
+          "width": -116.0
+        },
+        "labels": {
+          "comments": 0,
+          "directives": 0,
+          "flags": 0,
+          "ground_flags": 0,
+          "header_descriptions": -2,
+          "non_ground_flags": 0,
+          "omitted_descriptions": 0,
+          "renderer_visible_labels": 0,
+          "symbol_window_overrides": 8,
+          "text_records": 0
+        },
+        "routing": {
+          "area": 0,
+          "bend_count": 0,
+          "coincident_pair_count": 0,
+          "crossing_count": 0,
+          "detour_count": 0,
+          "detour_ratio": 0.0,
+          "disconnected_pair_count": 0,
+          "evaluated_pair_count": 0,
+          "junction_count": 0,
+          "max_detour_ratio": 0.0,
+          "reference_length": 0,
+          "routing_efficiency": 0.0,
+          "segment_count": -4,
+          "terminal_pair_count": 0,
+          "total_length": 0
+        },
+        "wire_coverage_length": 0,
+        "wires": -4
+      }
+    },
+    {
+      "source_file": "common_emitter_amplifier.json",
+      "source_path": "C:\\Projects\\Spice Craft\\backend\\circuits\\common_emitter_amplifier.json",
+      "source_sha256": "0a1cc73d6c750a68a7485daefb522a3a30e7c7046b2b06f570fe9b0c741f6802",
+      "circuit": "Common Emitter Amplifier",
+      "ok": true,
+      "checks": {
+        "symbols_unchanged": true,
+        "pins_unchanged": true,
+        "flags_unchanged": true,
+        "iopins_unchanged": true,
+        "electrical_directives_unchanged": true,
+        "wire_coverage_unchanged": true,
+        "before_geometry_valid": true,
+        "after_geometry_valid": true,
+        "before_topology_matches_source": true,
+        "after_topology_matches_source": true,
+        "topology_unchanged": true
+      },
+      "expected_nets": {
+        "VCC": [
+          "R1.1",
+          "R3.2"
+        ],
+        "N1": [
+          "R1.2",
+          "Q1.B",
+          "R2.1"
+        ],
+        "0": [
+          "R2.2",
+          "C1.2"
+        ],
+        "N2": [
+          "Q1.C",
+          "R3.1",
+          "C2.1"
+        ],
+        "N3": [
+          "Q1.E",
+          "C1.1"
+        ],
+        "VOUT": [
+          "C2.2"
+        ]
+      },
+      "before": {
+        "asc": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\before\\common_emitter_amplifier.asc",
+        "asc_sha256": "c9c4c2d512c20f477349e684033e56f7f8b6a34285207b38e2262d1a53cc9501",
+        "file_bytes": 1128,
+        "components": 6,
+        "wires": 23,
+        "sheet": [
+          1,
+          1200,
+          800
+        ],
+        "routing": {
+          "total_length": 1536,
+          "segment_count": 23,
+          "bend_count": 4,
+          "junction_count": 2,
+          "crossing_count": 0,
+          "terminal_pair_count": 9,
+          "evaluated_pair_count": 9,
+          "disconnected_pair_count": 0,
+          "coincident_pair_count": 0,
+          "detour_count": 0,
+          "detour_ratio": 1.0424242424242425,
+          "max_detour_ratio": 1.2,
+          "bounding_box": [
+            240,
+            128,
+            768,
+            624
+          ],
+          "area": 261888,
+          "reference_length": 1376,
+          "routing_efficiency": 0.8958333333333334
+        },
+        "circuit_bbox": {
+          "bounds": [
+            224,
+            128,
+            768,
+            624
+          ],
+          "width": 544,
+          "height": 496,
+          "area": 269824
+        },
+        "full_presentation_bbox": {
+          "bounds": [
+            16.0,
+            6.0,
+            800.0,
+            644.0
+          ],
+          "width": 784.0,
+          "height": 638.0,
+          "area": 500192.0
+        },
+        "labels": {
+          "flags": 3,
+          "ground_flags": 1,
+          "non_ground_flags": 2,
+          "text_records": 2,
+          "comments": 2,
+          "directives": 0,
+          "header_descriptions": 2,
+          "symbol_window_overrides": 0,
+          "renderer_visible_labels": 17,
+          "omitted_descriptions": 0
+        },
+        "wire_coverage_length": 1536,
+        "wire_coverage": {
+          "0": [
+            [
+              "h",
+              624,
+              240,
+              512
+            ],
+            [
+              "v",
+              240,
+              544,
+              624
+            ],
+            [
+              "v",
+              512,
+              592,
+              624
+            ]
+          ],
+          "N1": [
+            [
+              "h",
+              384,
+              240,
+              448
+            ],
+            [
+              "v",
+              240,
+              320,
+              464
+            ]
+          ],
+          "N2": [
+            [
+              "h",
+              304,
+              512,
+              672
+            ],
+            [
+              "v",
+              512,
+              240,
+              336
+            ]
+          ],
+          "N3": [
+            [
+              "v",
+              512,
+              432,
+              528
+            ]
+          ],
+          "VCC": [
+            [
+              "h",
+              128,
+              240,
+              512
+            ],
+            [
+              "v",
+              240,
+              128,
+              240
+            ],
+            [
+              "v",
+              512,
+              128,
+              160
+            ]
+          ],
+          "VOUT": [
+            [
+              "h",
+              304,
+              736,
+              768
+            ]
+          ]
+        },
+        "symbols": [
+          {
+            "reference": "C1",
+            "symbol": "cap",
+            "position": [
+              496,
+              528
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "C1",
+              "Value": "10uF"
+            }
+          },
+          {
+            "reference": "C2",
+            "symbol": "cap",
+            "position": [
+              672,
+              320
+            ],
+            "orientation": "R270",
+            "attributes": {
+              "InstName": "C2",
+              "Value": "100uF"
+            }
+          },
+          {
+            "reference": "Q1",
+            "symbol": "npn",
+            "position": [
+              448,
+              336
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "Q1",
+              "Value": "BC547"
+            }
+          },
+          {
+            "reference": "R1",
+            "symbol": "res",
+            "position": [
+              224,
+              224
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R1",
+              "Value": "100k"
+            }
+          },
+          {
+            "reference": "R2",
+            "symbol": "res",
+            "position": [
+              224,
+              448
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R2",
+              "Value": "10k"
+            }
+          },
+          {
+            "reference": "R3",
+            "symbol": "res",
+            "position": [
+              528,
+              256
+            ],
+            "orientation": "R180",
+            "attributes": {
+              "InstName": "R3",
+              "Value": "1k"
+            }
+          }
+        ],
+        "pins": {
+          "C1.1": [
+            512,
+            528
+          ],
+          "C1.2": [
+            512,
+            592
+          ],
+          "C2.1": [
+            672,
+            304
+          ],
+          "C2.2": [
+            736,
+            304
+          ],
+          "Q1.B": [
+            448,
+            384
+          ],
+          "Q1.C": [
+            512,
+            336
+          ],
+          "Q1.E": [
+            512,
+            432
+          ],
+          "R1.1": [
+            240,
+            240
+          ],
+          "R1.2": [
+            240,
+            320
+          ],
+          "R2.1": [
+            240,
+            464
+          ],
+          "R2.2": [
+            240,
+            544
+          ],
+          "R3.1": [
+            512,
+            240
+          ],
+          "R3.2": [
+            512,
+            160
+          ]
+        },
+        "flags": [
+          [
+            [
+              512,
+              128
+            ],
+            "VCC"
+          ],
+          [
+            [
+              512,
+              624
+            ],
+            "0"
+          ],
+          [
+            [
+              768,
+              304
+            ],
+            "VOUT"
+          ]
+        ],
+        "iopins": [],
+        "electrical_directives": [],
+        "geometry_diagnostics": [],
+        "symbol_root": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym",
+        "symbols_used": [
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\cap.asy",
+            "sha256": "fcc7190ea1110f612453b86c02facc3ac46441a06f04274054ed021746e79fac"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\npn.asy",
+            "sha256": "a6940b1a2c95a718da1f4e53e9f508a9a69cb9734656f3526f48acabe4e1d56e"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\res.asy",
+            "sha256": "228e75e841b1b239fbe8cea04c9ae86e84eac492faf88501fa21bbee88d7eb96"
+          }
+        ],
+        "presentation_estimator": {
+          "tool": "tools.render_asc",
+          "scale": 1.0,
+          "font": "C:\\WINDOWS\\Fonts\\segoeui.ttf",
+          "include_description": true,
+          "native_ltspice_bounds": false
+        },
+        "netlist": {
+          "file": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\before\\common_emitter_amplifier.net",
+          "sha256": "144162dc1d3c923612b42cb24e4eaa8a0250baef0204c348140be3286a9f2641",
+          "verification": {
+            "ok": true,
+            "shorts": [],
+            "opens": [],
+            "missing_pins": [],
+            "unexpected_pins": []
+          },
+          "actual_pin_nodes": {
+            "Q1.C": "N001",
+            "Q1.B": "N002",
+            "Q1.E": "N003",
+            "R1.1": "VCC",
+            "R1.2": "N002",
+            "R2.1": "N002",
+            "R2.2": "0",
+            "R3.1": "N001",
+            "R3.2": "VCC",
+            "C1.1": "N003",
+            "C1.2": "0",
+            "C2.1": "N001",
+            "C2.2": "VOUT"
+          }
+        }
+      },
+      "after": {
+        "asc": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\common_emitter_amplifier.asc",
+        "asc_sha256": "e02ac64d2721ef7f164c390808741ee625fbd2b63741c024eb64780f701abc7e",
+        "file_bytes": 1257,
+        "components": 6,
+        "wires": 14,
+        "sheet": [
+          1,
+          736,
+          720
+        ],
+        "routing": {
+          "total_length": 1536,
+          "segment_count": 14,
+          "bend_count": 4,
+          "junction_count": 2,
+          "crossing_count": 0,
+          "terminal_pair_count": 9,
+          "evaluated_pair_count": 9,
+          "disconnected_pair_count": 0,
+          "coincident_pair_count": 0,
+          "detour_count": 0,
+          "detour_ratio": 1.0424242424242425,
+          "max_detour_ratio": 1.2,
+          "bounding_box": [
+            240,
+            128,
+            768,
+            624
+          ],
+          "area": 261888,
+          "reference_length": 1376,
+          "routing_efficiency": 0.8958333333333334
+        },
+        "circuit_bbox": {
+          "bounds": [
+            224,
+            128,
+            768,
+            624
+          ],
+          "width": 544,
+          "height": 496,
+          "area": 269824
+        },
+        "full_presentation_bbox": {
+          "bounds": [
+            174.0,
+            -4.5,
+            800.0,
+            644.0
+          ],
+          "width": 626.0,
+          "height": 648.5,
+          "area": 405961.0
+        },
+        "labels": {
+          "flags": 3,
+          "ground_flags": 1,
+          "non_ground_flags": 2,
+          "text_records": 3,
+          "comments": 3,
+          "directives": 0,
+          "header_descriptions": 0,
+          "symbol_window_overrides": 12,
+          "renderer_visible_labels": 18,
+          "omitted_descriptions": 0
+        },
+        "wire_coverage_length": 1536,
+        "wire_coverage": {
+          "0": [
+            [
+              "h",
+              624,
+              240,
+              512
+            ],
+            [
+              "v",
+              240,
+              544,
+              624
+            ],
+            [
+              "v",
+              512,
+              592,
+              624
+            ]
+          ],
+          "N1": [
+            [
+              "h",
+              384,
+              240,
+              448
+            ],
+            [
+              "v",
+              240,
+              320,
+              464
+            ]
+          ],
+          "N2": [
+            [
+              "h",
+              304,
+              512,
+              672
+            ],
+            [
+              "v",
+              512,
+              240,
+              336
+            ]
+          ],
+          "N3": [
+            [
+              "v",
+              512,
+              432,
+              528
+            ]
+          ],
+          "VCC": [
+            [
+              "h",
+              128,
+              240,
+              512
+            ],
+            [
+              "v",
+              240,
+              128,
+              240
+            ],
+            [
+              "v",
+              512,
+              128,
+              160
+            ]
+          ],
+          "VOUT": [
+            [
+              "h",
+              304,
+              736,
+              768
+            ]
+          ]
+        },
+        "symbols": [
+          {
+            "reference": "C1",
+            "symbol": "cap",
+            "position": [
+              496,
+              528
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "C1",
+              "Value": "10uF"
+            }
+          },
+          {
+            "reference": "C2",
+            "symbol": "cap",
+            "position": [
+              672,
+              320
+            ],
+            "orientation": "R270",
+            "attributes": {
+              "InstName": "C2",
+              "Value": "100uF"
+            }
+          },
+          {
+            "reference": "Q1",
+            "symbol": "npn",
+            "position": [
+              448,
+              336
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "Q1",
+              "Value": "BC547"
+            }
+          },
+          {
+            "reference": "R1",
+            "symbol": "res",
+            "position": [
+              224,
+              224
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R1",
+              "Value": "100k"
+            }
+          },
+          {
+            "reference": "R2",
+            "symbol": "res",
+            "position": [
+              224,
+              448
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R2",
+              "Value": "10k"
+            }
+          },
+          {
+            "reference": "R3",
+            "symbol": "res",
+            "position": [
+              528,
+              256
+            ],
+            "orientation": "R180",
+            "attributes": {
+              "InstName": "R3",
+              "Value": "1k"
+            }
+          }
+        ],
+        "pins": {
+          "C1.1": [
+            512,
+            528
+          ],
+          "C1.2": [
+            512,
+            592
+          ],
+          "C2.1": [
+            672,
+            304
+          ],
+          "C2.2": [
+            736,
+            304
+          ],
+          "Q1.B": [
+            448,
+            384
+          ],
+          "Q1.C": [
+            512,
+            336
+          ],
+          "Q1.E": [
+            512,
+            432
+          ],
+          "R1.1": [
+            240,
+            240
+          ],
+          "R1.2": [
+            240,
+            320
+          ],
+          "R2.1": [
+            240,
+            464
+          ],
+          "R2.2": [
+            240,
+            544
+          ],
+          "R3.1": [
+            512,
+            240
+          ],
+          "R3.2": [
+            512,
+            160
+          ]
+        },
+        "flags": [
+          [
+            [
+              512,
+              128
+            ],
+            "VCC"
+          ],
+          [
+            [
+              512,
+              624
+            ],
+            "0"
+          ],
+          [
+            [
+              768,
+              304
+            ],
+            "VOUT"
+          ]
+        ],
+        "iopins": [],
+        "electrical_directives": [],
+        "geometry_diagnostics": [],
+        "symbol_root": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym",
+        "symbols_used": [
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\cap.asy",
+            "sha256": "fcc7190ea1110f612453b86c02facc3ac46441a06f04274054ed021746e79fac"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\npn.asy",
+            "sha256": "a6940b1a2c95a718da1f4e53e9f508a9a69cb9734656f3526f48acabe4e1d56e"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\res.asy",
+            "sha256": "228e75e841b1b239fbe8cea04c9ae86e84eac492faf88501fa21bbee88d7eb96"
+          }
+        ],
+        "presentation_estimator": {
+          "tool": "tools.render_asc",
+          "scale": 1.0,
+          "font": "C:\\WINDOWS\\Fonts\\segoeui.ttf",
+          "include_description": true,
+          "native_ltspice_bounds": false
+        },
+        "netlist": {
+          "file": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\common_emitter_amplifier.net",
+          "sha256": "7d0776347137cb08ba773d793e9070b6d1e77c432a4df00274d0c581a063396d",
+          "verification": {
+            "ok": true,
+            "shorts": [],
+            "opens": [],
+            "missing_pins": [],
+            "unexpected_pins": []
+          },
+          "actual_pin_nodes": {
+            "C1.1": "N003",
+            "C1.2": "0",
+            "C2.1": "N001",
+            "C2.2": "VOUT",
+            "Q1.C": "N001",
+            "Q1.B": "N002",
+            "Q1.E": "N003",
+            "R1.1": "VCC",
+            "R1.2": "N002",
+            "R2.1": "N002",
+            "R2.2": "0",
+            "R3.1": "N001",
+            "R3.2": "VCC"
+          }
+        }
+      },
+      "topology_comparison": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      },
+      "delta": {
+        "circuit_bbox": {
+          "area": 0,
+          "height": 0,
+          "width": 0
+        },
+        "components": 0,
+        "file_bytes": 129,
+        "full_presentation_bbox": {
+          "area": -94231.0,
+          "height": 10.5,
+          "width": -158.0
+        },
+        "labels": {
+          "comments": 1,
+          "directives": 0,
+          "flags": 0,
+          "ground_flags": 0,
+          "header_descriptions": -2,
+          "non_ground_flags": 0,
+          "omitted_descriptions": 0,
+          "renderer_visible_labels": 1,
+          "symbol_window_overrides": 12,
+          "text_records": 1
+        },
+        "routing": {
+          "area": 0,
+          "bend_count": 0,
+          "coincident_pair_count": 0,
+          "crossing_count": 0,
+          "detour_count": 0,
+          "detour_ratio": 0.0,
+          "disconnected_pair_count": 0,
+          "evaluated_pair_count": 0,
+          "junction_count": 0,
+          "max_detour_ratio": 0.0,
+          "reference_length": 0,
+          "routing_efficiency": 0.0,
+          "segment_count": -9,
+          "terminal_pair_count": 0,
+          "total_length": 0
+        },
+        "wire_coverage_length": 0,
+        "wires": -9
+      }
+    },
+    {
+      "source_file": "led_blinker.json",
+      "source_path": "C:\\Projects\\Spice Craft\\backend\\circuits\\led_blinker.json",
+      "source_sha256": "5dde5356131a233a871d6568b4addea1f73f75f3f1a2125008f0ec27ede7b390",
+      "circuit": "LED Blinker",
+      "ok": true,
+      "checks": {
+        "symbols_unchanged": true,
+        "pins_unchanged": true,
+        "flags_unchanged": true,
+        "iopins_unchanged": true,
+        "electrical_directives_unchanged": true,
+        "wire_coverage_unchanged": true,
+        "before_geometry_valid": true,
+        "after_geometry_valid": true,
+        "before_topology_matches_source": true,
+        "after_topology_matches_source": true,
+        "topology_unchanged": true
+      },
+      "expected_nets": {
+        "VCC": [
+          "R1.1"
+        ],
+        "N1": [
+          "R1.2",
+          "Q1.B",
+          "C1.1"
+        ],
+        "N2": [
+          "Q1.C",
+          "D1.A"
+        ],
+        "N3": [
+          "D1.K",
+          "R2.1"
+        ],
+        "0": [
+          "R2.2",
+          "C1.2"
+        ],
+        "unconnected:Q1.E": [
+          "Q1.E"
+        ]
+      },
+      "before": {
+        "asc": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\before\\led_blinker.asc",
+        "asc_sha256": "021584e7130bf433413cba466d0b831cc1ac396ef0e52da8751169e59faa8b4b",
+        "file_bytes": 904,
+        "components": 5,
+        "wires": 18,
+        "sheet": [
+          1,
+          1200,
+          800
+        ],
+        "routing": {
+          "total_length": 1472,
+          "segment_count": 18,
+          "bend_count": 6,
+          "junction_count": 1,
+          "crossing_count": 0,
+          "terminal_pair_count": 6,
+          "evaluated_pair_count": 6,
+          "disconnected_pair_count": 0,
+          "coincident_pair_count": 0,
+          "detour_count": 0,
+          "detour_ratio": 1.018018018018018,
+          "max_detour_ratio": 1.1081081081081081,
+          "bounding_box": [
+            240,
+            208,
+            800,
+            592
+          ],
+          "area": 215040,
+          "reference_length": 1376,
+          "routing_efficiency": 0.9347826086956522
+        },
+        "circuit_bbox": {
+          "bounds": [
+            224,
+            208,
+            816,
+            592
+          ],
+          "width": 592,
+          "height": 384,
+          "area": 227328
+        },
+        "full_presentation_bbox": {
+          "bounds": [
+            16.0,
+            8.5,
+            843.0,
+            612.0
+          ],
+          "width": 827.0,
+          "height": 603.5,
+          "area": 499094.5
+        },
+        "labels": {
+          "flags": 2,
+          "ground_flags": 1,
+          "non_ground_flags": 1,
+          "text_records": 2,
+          "comments": 2,
+          "directives": 0,
+          "header_descriptions": 2,
+          "symbol_window_overrides": 0,
+          "renderer_visible_labels": 14,
+          "omitted_descriptions": 0
+        },
+        "wire_coverage_length": 1472,
+        "wire_coverage": {
+          "0": [
+            [
+              "h",
+              592,
+              240,
+              800
+            ],
+            [
+              "v",
+              240,
+              528,
+              592
+            ],
+            [
+              "v",
+              800,
+              560,
+              592
+            ]
+          ],
+          "N1": [
+            [
+              "h",
+              384,
+              240,
+              448
+            ],
+            [
+              "v",
+              240,
+              320,
+              464
+            ]
+          ],
+          "N2": [
+            [
+              "h",
+              304,
+              512,
+              672
+            ],
+            [
+              "v",
+              512,
+              304,
+              336
+            ]
+          ],
+          "N3": [
+            [
+              "h",
+              304,
+              736,
+              768
+            ],
+            [
+              "h",
+              448,
+              768,
+              800
+            ],
+            [
+              "v",
+              768,
+              304,
+              448
+            ],
+            [
+              "v",
+              800,
+              448,
+              480
+            ]
+          ],
+          "VCC": [
+            [
+              "v",
+              240,
+              208,
+              240
+            ]
+          ],
+          "unconnected:Q1.E": []
+        },
+        "symbols": [
+          {
+            "reference": "C1",
+            "symbol": "cap",
+            "position": [
+              224,
+              464
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "C1",
+              "Value": "10uF"
+            }
+          },
+          {
+            "reference": "D1",
+            "symbol": "led",
+            "position": [
+              672,
+              320
+            ],
+            "orientation": "R270",
+            "attributes": {
+              "InstName": "D1",
+              "Value": "RED"
+            }
+          },
+          {
+            "reference": "Q1",
+            "symbol": "npn",
+            "position": [
+              448,
+              336
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "Q1",
+              "Value": "BC547"
+            }
+          },
+          {
+            "reference": "R1",
+            "symbol": "res",
+            "position": [
+              224,
+              224
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R1",
+              "Value": "10k"
+            }
+          },
+          {
+            "reference": "R2",
+            "symbol": "res",
+            "position": [
+              784,
+              464
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R2",
+              "Value": "1k"
+            }
+          }
+        ],
+        "pins": {
+          "C1.1": [
+            240,
+            464
+          ],
+          "C1.2": [
+            240,
+            528
+          ],
+          "D1.A": [
+            672,
+            304
+          ],
+          "D1.K": [
+            736,
+            304
+          ],
+          "Q1.B": [
+            448,
+            384
+          ],
+          "Q1.C": [
+            512,
+            336
+          ],
+          "Q1.E": [
+            512,
+            432
+          ],
+          "R1.1": [
+            240,
+            240
+          ],
+          "R1.2": [
+            240,
+            320
+          ],
+          "R2.1": [
+            800,
+            480
+          ],
+          "R2.2": [
+            800,
+            560
+          ]
+        },
+        "flags": [
+          [
+            [
+              240,
+              208
+            ],
+            "VCC"
+          ],
+          [
+            [
+              800,
+              592
+            ],
+            "0"
+          ]
+        ],
+        "iopins": [],
+        "electrical_directives": [],
+        "geometry_diagnostics": [],
+        "symbol_root": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym",
+        "symbols_used": [
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\cap.asy",
+            "sha256": "fcc7190ea1110f612453b86c02facc3ac46441a06f04274054ed021746e79fac"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\LED.asy",
+            "sha256": "b8af339a46b6c0311079abfc70775943f34a68ed29ebf3fa36d33398fb51a5ca"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\npn.asy",
+            "sha256": "a6940b1a2c95a718da1f4e53e9f508a9a69cb9734656f3526f48acabe4e1d56e"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\res.asy",
+            "sha256": "228e75e841b1b239fbe8cea04c9ae86e84eac492faf88501fa21bbee88d7eb96"
+          }
+        ],
+        "presentation_estimator": {
+          "tool": "tools.render_asc",
+          "scale": 1.0,
+          "font": "C:\\WINDOWS\\Fonts\\segoeui.ttf",
+          "include_description": true,
+          "native_ltspice_bounds": false
+        },
+        "netlist": {
+          "file": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\before\\led_blinker.net",
+          "sha256": "e06810d7f9a17479a9b6c86147d04a4863681617b915447b02ff9f5b99f2ee06",
+          "verification": {
+            "ok": true,
+            "shorts": [],
+            "opens": [],
+            "missing_pins": [],
+            "unexpected_pins": []
+          },
+          "actual_pin_nodes": {
+            "Q1.C": "N001",
+            "Q1.B": "N003",
+            "Q1.E": "NC_01",
+            "R1.1": "VCC",
+            "R1.2": "N003",
+            "R2.1": "N002",
+            "R2.2": "0",
+            "C1.1": "N003",
+            "C1.2": "0",
+            "D1.A": "N001",
+            "D1.K": "N002"
+          }
+        }
+      },
+      "after": {
+        "asc": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\led_blinker.asc",
+        "asc_sha256": "0aebf8c538fc3f2c15a9ab4b2fd70b789221d3dae5540267fe2557e4214533d1",
+        "file_bytes": 1077,
+        "components": 5,
+        "wires": 13,
+        "sheet": [
+          1,
+          720,
+          608
+        ],
+        "routing": {
+          "total_length": 1472,
+          "segment_count": 13,
+          "bend_count": 6,
+          "junction_count": 1,
+          "crossing_count": 0,
+          "terminal_pair_count": 6,
+          "evaluated_pair_count": 6,
+          "disconnected_pair_count": 0,
+          "coincident_pair_count": 0,
+          "detour_count": 0,
+          "detour_ratio": 1.018018018018018,
+          "max_detour_ratio": 1.1081081081081081,
+          "bounding_box": [
+            240,
+            208,
+            800,
+            592
+          ],
+          "area": 215040,
+          "reference_length": 1376,
+          "routing_efficiency": 0.9347826086956522
+        },
+        "circuit_bbox": {
+          "bounds": [
+            224,
+            208,
+            816,
+            592
+          ],
+          "width": 592,
+          "height": 384,
+          "area": 227328
+        },
+        "full_presentation_bbox": {
+          "bounds": [
+            174.0,
+            77.5,
+            823.0,
+            612.0
+          ],
+          "width": 649.0,
+          "height": 534.5,
+          "area": 346890.5
+        },
+        "labels": {
+          "flags": 2,
+          "ground_flags": 1,
+          "non_ground_flags": 1,
+          "text_records": 3,
+          "comments": 3,
+          "directives": 0,
+          "header_descriptions": 0,
+          "symbol_window_overrides": 10,
+          "renderer_visible_labels": 15,
+          "omitted_descriptions": 0
+        },
+        "wire_coverage_length": 1472,
+        "wire_coverage": {
+          "0": [
+            [
+              "h",
+              592,
+              240,
+              800
+            ],
+            [
+              "v",
+              240,
+              528,
+              592
+            ],
+            [
+              "v",
+              800,
+              560,
+              592
+            ]
+          ],
+          "N1": [
+            [
+              "h",
+              384,
+              240,
+              448
+            ],
+            [
+              "v",
+              240,
+              320,
+              464
+            ]
+          ],
+          "N2": [
+            [
+              "h",
+              304,
+              512,
+              672
+            ],
+            [
+              "v",
+              512,
+              304,
+              336
+            ]
+          ],
+          "N3": [
+            [
+              "h",
+              304,
+              736,
+              768
+            ],
+            [
+              "h",
+              448,
+              768,
+              800
+            ],
+            [
+              "v",
+              768,
+              304,
+              448
+            ],
+            [
+              "v",
+              800,
+              448,
+              480
+            ]
+          ],
+          "VCC": [
+            [
+              "v",
+              240,
+              208,
+              240
+            ]
+          ],
+          "unconnected:Q1.E": []
+        },
+        "symbols": [
+          {
+            "reference": "C1",
+            "symbol": "cap",
+            "position": [
+              224,
+              464
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "C1",
+              "Value": "10uF"
+            }
+          },
+          {
+            "reference": "D1",
+            "symbol": "led",
+            "position": [
+              672,
+              320
+            ],
+            "orientation": "R270",
+            "attributes": {
+              "InstName": "D1",
+              "Value": "RED"
+            }
+          },
+          {
+            "reference": "Q1",
+            "symbol": "npn",
+            "position": [
+              448,
+              336
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "Q1",
+              "Value": "BC547"
+            }
+          },
+          {
+            "reference": "R1",
+            "symbol": "res",
+            "position": [
+              224,
+              224
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R1",
+              "Value": "10k"
+            }
+          },
+          {
+            "reference": "R2",
+            "symbol": "res",
+            "position": [
+              784,
+              464
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R2",
+              "Value": "1k"
+            }
+          }
+        ],
+        "pins": {
+          "C1.1": [
+            240,
+            464
+          ],
+          "C1.2": [
+            240,
+            528
+          ],
+          "D1.A": [
+            672,
+            304
+          ],
+          "D1.K": [
+            736,
+            304
+          ],
+          "Q1.B": [
+            448,
+            384
+          ],
+          "Q1.C": [
+            512,
+            336
+          ],
+          "Q1.E": [
+            512,
+            432
+          ],
+          "R1.1": [
+            240,
+            240
+          ],
+          "R1.2": [
+            240,
+            320
+          ],
+          "R2.1": [
+            800,
+            480
+          ],
+          "R2.2": [
+            800,
+            560
+          ]
+        },
+        "flags": [
+          [
+            [
+              240,
+              208
+            ],
+            "VCC"
+          ],
+          [
+            [
+              800,
+              592
+            ],
+            "0"
+          ]
+        ],
+        "iopins": [],
+        "electrical_directives": [],
+        "geometry_diagnostics": [],
+        "symbol_root": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym",
+        "symbols_used": [
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\cap.asy",
+            "sha256": "fcc7190ea1110f612453b86c02facc3ac46441a06f04274054ed021746e79fac"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\LED.asy",
+            "sha256": "b8af339a46b6c0311079abfc70775943f34a68ed29ebf3fa36d33398fb51a5ca"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\npn.asy",
+            "sha256": "a6940b1a2c95a718da1f4e53e9f508a9a69cb9734656f3526f48acabe4e1d56e"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\res.asy",
+            "sha256": "228e75e841b1b239fbe8cea04c9ae86e84eac492faf88501fa21bbee88d7eb96"
+          }
+        ],
+        "presentation_estimator": {
+          "tool": "tools.render_asc",
+          "scale": 1.0,
+          "font": "C:\\WINDOWS\\Fonts\\segoeui.ttf",
+          "include_description": true,
+          "native_ltspice_bounds": false
+        },
+        "netlist": {
+          "file": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\led_blinker.net",
+          "sha256": "e36f9e4017f4bba58cf5fac076527edb5d29178b0efc8720c6aea1a802d18366",
+          "verification": {
+            "ok": true,
+            "shorts": [],
+            "opens": [],
+            "missing_pins": [],
+            "unexpected_pins": []
+          },
+          "actual_pin_nodes": {
+            "C1.1": "N003",
+            "C1.2": "0",
+            "D1.A": "N001",
+            "D1.K": "N002",
+            "Q1.C": "N001",
+            "Q1.B": "N003",
+            "Q1.E": "NC_01",
+            "R1.1": "VCC",
+            "R1.2": "N003",
+            "R2.1": "N002",
+            "R2.2": "0"
+          }
+        }
+      },
+      "topology_comparison": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      },
+      "delta": {
+        "circuit_bbox": {
+          "area": 0,
+          "height": 0,
+          "width": 0
+        },
+        "components": 0,
+        "file_bytes": 173,
+        "full_presentation_bbox": {
+          "area": -152204.0,
+          "height": -69.0,
+          "width": -178.0
+        },
+        "labels": {
+          "comments": 1,
+          "directives": 0,
+          "flags": 0,
+          "ground_flags": 0,
+          "header_descriptions": -2,
+          "non_ground_flags": 0,
+          "omitted_descriptions": 0,
+          "renderer_visible_labels": 1,
+          "symbol_window_overrides": 10,
+          "text_records": 1
+        },
+        "routing": {
+          "area": 0,
+          "bend_count": 0,
+          "coincident_pair_count": 0,
+          "crossing_count": 0,
+          "detour_count": 0,
+          "detour_ratio": 0.0,
+          "disconnected_pair_count": 0,
+          "evaluated_pair_count": 0,
+          "junction_count": 0,
+          "max_detour_ratio": 0.0,
+          "reference_length": 0,
+          "routing_efficiency": 0.0,
+          "segment_count": -5,
+          "terminal_pair_count": 0,
+          "total_length": 0
+        },
+        "wire_coverage_length": 0,
+        "wires": -5
+      }
+    },
+    {
+      "source_file": "rc_high_pass_filter.json",
+      "source_path": "C:\\Projects\\Spice Craft\\backend\\circuits\\rc_high_pass_filter.json",
+      "source_sha256": "69737c83b8d23c00b05100a482758d384e6bba6e7d12fe9ccded74039cae86b0",
+      "circuit": "RC High Pass Filter",
+      "ok": true,
+      "checks": {
+        "symbols_unchanged": true,
+        "pins_unchanged": true,
+        "flags_unchanged": true,
+        "iopins_unchanged": true,
+        "electrical_directives_unchanged": true,
+        "wire_coverage_unchanged": true,
+        "before_geometry_valid": true,
+        "after_geometry_valid": true,
+        "before_topology_matches_source": true,
+        "after_topology_matches_source": true,
+        "topology_unchanged": true
+      },
+      "expected_nets": {
+        "VIN": [
+          "C1.1"
+        ],
+        "VOUT": [
+          "C1.2",
+          "R1.1"
+        ],
+        "0": [
+          "R1.2"
+        ]
+      },
+      "before": {
+        "asc": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\before\\rc_high_pass_filter.asc",
+        "asc_sha256": "c58a8752714c9ab720401439b80d80eafeab9b49699dcb9fc915e9e6f3af303e",
+        "file_bytes": 486,
+        "components": 2,
+        "wires": 6,
+        "sheet": [
+          1,
+          1200,
+          800
+        ],
+        "routing": {
+          "total_length": 224,
+          "segment_count": 6,
+          "bend_count": 3,
+          "junction_count": 0,
+          "crossing_count": 0,
+          "terminal_pair_count": 1,
+          "evaluated_pair_count": 1,
+          "disconnected_pair_count": 0,
+          "coincident_pair_count": 0,
+          "detour_count": 1,
+          "detour_ratio": 1.6666666666666667,
+          "max_detour_ratio": 1.6666666666666667,
+          "bounding_box": [
+            128,
+            160,
+            320,
+            304
+          ],
+          "area": 27648,
+          "reference_length": 96,
+          "routing_efficiency": 0.42857142857142855
+        },
+        "circuit_bbox": {
+          "bounds": [
+            128,
+            160,
+            336,
+            304
+          ],
+          "width": 208,
+          "height": 144,
+          "area": 29952
+        },
+        "full_presentation_bbox": {
+          "bounds": [
+            16.0,
+            6.0,
+            710.0,
+            324.0
+          ],
+          "width": 694.0,
+          "height": 318.0,
+          "area": 220692.0
+        },
+        "labels": {
+          "flags": 3,
+          "ground_flags": 1,
+          "non_ground_flags": 2,
+          "text_records": 2,
+          "comments": 2,
+          "directives": 0,
+          "header_descriptions": 2,
+          "symbol_window_overrides": 0,
+          "renderer_visible_labels": 9,
+          "omitted_descriptions": 0
+        },
+        "wire_coverage_length": 224,
+        "wire_coverage": {
+          "0": [
+            [
+              "v",
+              320,
+              272,
+              304
+            ]
+          ],
+          "VIN": [
+            [
+              "h",
+              192,
+              128,
+              160
+            ]
+          ],
+          "VOUT": [
+            [
+              "h",
+              160,
+              256,
+              320
+            ],
+            [
+              "h",
+              192,
+              224,
+              256
+            ],
+            [
+              "v",
+              256,
+              160,
+              192
+            ],
+            [
+              "v",
+              320,
+              160,
+              192
+            ]
+          ]
+        },
+        "symbols": [
+          {
+            "reference": "C1",
+            "symbol": "cap",
+            "position": [
+              160,
+              208
+            ],
+            "orientation": "R270",
+            "attributes": {
+              "InstName": "C1",
+              "Value": "100nF"
+            }
+          },
+          {
+            "reference": "R1",
+            "symbol": "res",
+            "position": [
+              304,
+              176
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R1",
+              "Value": "1k"
+            }
+          }
+        ],
+        "pins": {
+          "C1.1": [
+            160,
+            192
+          ],
+          "C1.2": [
+            224,
+            192
+          ],
+          "R1.1": [
+            320,
+            192
+          ],
+          "R1.2": [
+            320,
+            272
+          ]
+        },
+        "flags": [
+          [
+            [
+              128,
+              192
+            ],
+            "VIN"
+          ],
+          [
+            [
+              320,
+              160
+            ],
+            "VOUT"
+          ],
+          [
+            [
+              320,
+              304
+            ],
+            "0"
+          ]
+        ],
+        "iopins": [],
+        "electrical_directives": [],
+        "geometry_diagnostics": [],
+        "symbol_root": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym",
+        "symbols_used": [
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\cap.asy",
+            "sha256": "fcc7190ea1110f612453b86c02facc3ac46441a06f04274054ed021746e79fac"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\res.asy",
+            "sha256": "228e75e841b1b239fbe8cea04c9ae86e84eac492faf88501fa21bbee88d7eb96"
+          }
+        ],
+        "presentation_estimator": {
+          "tool": "tools.render_asc",
+          "scale": 1.0,
+          "font": "C:\\WINDOWS\\Fonts\\segoeui.ttf",
+          "include_description": true,
+          "native_ltspice_bounds": false
+        },
+        "netlist": {
+          "file": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\before\\rc_high_pass_filter.net",
+          "sha256": "a3ed85e99c104760cf4c5f35eea00c4ca43a4be450f7a2135bc6d9285b3d7981",
+          "verification": {
+            "ok": true,
+            "shorts": [],
+            "opens": [],
+            "missing_pins": [],
+            "unexpected_pins": []
+          },
+          "actual_pin_nodes": {
+            "C1.1": "VIN",
+            "C1.2": "VOUT",
+            "R1.1": "VOUT",
+            "R1.2": "0"
+          }
+        }
+      },
+      "after": {
+        "asc": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\rc_high_pass_filter.asc",
+        "asc_sha256": "05e196daf204d5c8619edc9e7fc164f587319b3d20b0b7d902c4f33b9da58bcb",
+        "file_bytes": 614,
+        "components": 2,
+        "wires": 6,
+        "sheet": [
+          1,
+          528,
+          368
+        ],
+        "routing": {
+          "total_length": 224,
+          "segment_count": 6,
+          "bend_count": 3,
+          "junction_count": 0,
+          "crossing_count": 0,
+          "terminal_pair_count": 1,
+          "evaluated_pair_count": 1,
+          "disconnected_pair_count": 0,
+          "coincident_pair_count": 0,
+          "detour_count": 1,
+          "detour_ratio": 1.6666666666666667,
+          "max_detour_ratio": 1.6666666666666667,
+          "bounding_box": [
+            128,
+            160,
+            320,
+            304
+          ],
+          "area": 27648,
+          "reference_length": 96,
+          "routing_efficiency": 0.42857142857142855
+        },
+        "circuit_bbox": {
+          "bounds": [
+            128,
+            160,
+            336,
+            304
+          ],
+          "width": 208,
+          "height": 144,
+          "area": 29952
+        },
+        "full_presentation_bbox": {
+          "bounds": [
+            118.0,
+            27.5,
+            489.0,
+            324.0
+          ],
+          "width": 371.0,
+          "height": 296.5,
+          "area": 110001.5
+        },
+        "labels": {
+          "flags": 3,
+          "ground_flags": 1,
+          "non_ground_flags": 2,
+          "text_records": 3,
+          "comments": 3,
+          "directives": 0,
+          "header_descriptions": 0,
+          "symbol_window_overrides": 4,
+          "renderer_visible_labels": 10,
+          "omitted_descriptions": 0
+        },
+        "wire_coverage_length": 224,
+        "wire_coverage": {
+          "0": [
+            [
+              "v",
+              320,
+              272,
+              304
+            ]
+          ],
+          "VIN": [
+            [
+              "h",
+              192,
+              128,
+              160
+            ]
+          ],
+          "VOUT": [
+            [
+              "h",
+              160,
+              256,
+              320
+            ],
+            [
+              "h",
+              192,
+              224,
+              256
+            ],
+            [
+              "v",
+              256,
+              160,
+              192
+            ],
+            [
+              "v",
+              320,
+              160,
+              192
+            ]
+          ]
+        },
+        "symbols": [
+          {
+            "reference": "C1",
+            "symbol": "cap",
+            "position": [
+              160,
+              208
+            ],
+            "orientation": "R270",
+            "attributes": {
+              "InstName": "C1",
+              "Value": "100nF"
+            }
+          },
+          {
+            "reference": "R1",
+            "symbol": "res",
+            "position": [
+              304,
+              176
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R1",
+              "Value": "1k"
+            }
+          }
+        ],
+        "pins": {
+          "C1.1": [
+            160,
+            192
+          ],
+          "C1.2": [
+            224,
+            192
+          ],
+          "R1.1": [
+            320,
+            192
+          ],
+          "R1.2": [
+            320,
+            272
+          ]
+        },
+        "flags": [
+          [
+            [
+              128,
+              192
+            ],
+            "VIN"
+          ],
+          [
+            [
+              320,
+              160
+            ],
+            "VOUT"
+          ],
+          [
+            [
+              320,
+              304
+            ],
+            "0"
+          ]
+        ],
+        "iopins": [],
+        "electrical_directives": [],
+        "geometry_diagnostics": [],
+        "symbol_root": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym",
+        "symbols_used": [
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\cap.asy",
+            "sha256": "fcc7190ea1110f612453b86c02facc3ac46441a06f04274054ed021746e79fac"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\res.asy",
+            "sha256": "228e75e841b1b239fbe8cea04c9ae86e84eac492faf88501fa21bbee88d7eb96"
+          }
+        ],
+        "presentation_estimator": {
+          "tool": "tools.render_asc",
+          "scale": 1.0,
+          "font": "C:\\WINDOWS\\Fonts\\segoeui.ttf",
+          "include_description": true,
+          "native_ltspice_bounds": false
+        },
+        "netlist": {
+          "file": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\rc_high_pass_filter.net",
+          "sha256": "a72ad566e39bec2e2b89aae8b008a65c71ed093ef0582147d7291f38adb31619",
+          "verification": {
+            "ok": true,
+            "shorts": [],
+            "opens": [],
+            "missing_pins": [],
+            "unexpected_pins": []
+          },
+          "actual_pin_nodes": {
+            "C1.1": "VIN",
+            "C1.2": "VOUT",
+            "R1.1": "VOUT",
+            "R1.2": "0"
+          }
+        }
+      },
+      "topology_comparison": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      },
+      "delta": {
+        "circuit_bbox": {
+          "area": 0,
+          "height": 0,
+          "width": 0
+        },
+        "components": 0,
+        "file_bytes": 128,
+        "full_presentation_bbox": {
+          "area": -110690.5,
+          "height": -21.5,
+          "width": -323.0
+        },
+        "labels": {
+          "comments": 1,
+          "directives": 0,
+          "flags": 0,
+          "ground_flags": 0,
+          "header_descriptions": -2,
+          "non_ground_flags": 0,
+          "omitted_descriptions": 0,
+          "renderer_visible_labels": 1,
+          "symbol_window_overrides": 4,
+          "text_records": 1
+        },
+        "routing": {
+          "area": 0,
+          "bend_count": 0,
+          "coincident_pair_count": 0,
+          "crossing_count": 0,
+          "detour_count": 0,
+          "detour_ratio": 0.0,
+          "disconnected_pair_count": 0,
+          "evaluated_pair_count": 0,
+          "junction_count": 0,
+          "max_detour_ratio": 0.0,
+          "reference_length": 0,
+          "routing_efficiency": 0.0,
+          "segment_count": 0,
+          "terminal_pair_count": 0,
+          "total_length": 0
+        },
+        "wire_coverage_length": 0,
+        "wires": 0
+      }
+    },
+    {
+      "source_file": "rc_low_pass_filter.json",
+      "source_path": "C:\\Projects\\Spice Craft\\backend\\circuits\\rc_low_pass_filter.json",
+      "source_sha256": "dfb83bd1db2ae2752c4bd07ebaf4c3c674574ad7df8758c694ba17ee702a28b1",
+      "circuit": "RC Low Pass Filter",
+      "ok": true,
+      "checks": {
+        "symbols_unchanged": true,
+        "pins_unchanged": true,
+        "flags_unchanged": true,
+        "iopins_unchanged": true,
+        "electrical_directives_unchanged": true,
+        "wire_coverage_unchanged": true,
+        "before_geometry_valid": true,
+        "after_geometry_valid": true,
+        "before_topology_matches_source": true,
+        "after_topology_matches_source": true,
+        "topology_unchanged": true
+      },
+      "expected_nets": {
+        "VIN": [
+          "R1.1"
+        ],
+        "VOUT": [
+          "R1.2",
+          "C1.1"
+        ],
+        "0": [
+          "C1.2"
+        ]
+      },
+      "before": {
+        "asc": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\before\\rc_low_pass_filter.asc",
+        "asc_sha256": "415fb1aab0095e90a72efc787a6584765097151c5f7252007291f9532565383f",
+        "file_bytes": 485,
+        "components": 2,
+        "wires": 6,
+        "sheet": [
+          1,
+          1200,
+          800
+        ],
+        "routing": {
+          "total_length": 224,
+          "segment_count": 6,
+          "bend_count": 3,
+          "junction_count": 0,
+          "crossing_count": 0,
+          "terminal_pair_count": 1,
+          "evaluated_pair_count": 1,
+          "disconnected_pair_count": 0,
+          "coincident_pair_count": 0,
+          "detour_count": 1,
+          "detour_ratio": 1.6666666666666667,
+          "max_detour_ratio": 1.6666666666666667,
+          "bounding_box": [
+            128,
+            160,
+            336,
+            288
+          ],
+          "area": 26624,
+          "reference_length": 96,
+          "routing_efficiency": 0.42857142857142855
+        },
+        "circuit_bbox": {
+          "bounds": [
+            128,
+            160,
+            352,
+            288
+          ],
+          "width": 224,
+          "height": 128,
+          "area": 28672
+        },
+        "full_presentation_bbox": {
+          "bounds": [
+            16.0,
+            8.5,
+            710.0,
+            308.0
+          ],
+          "width": 694.0,
+          "height": 299.5,
+          "area": 207853.0
+        },
+        "labels": {
+          "flags": 3,
+          "ground_flags": 1,
+          "non_ground_flags": 2,
+          "text_records": 2,
+          "comments": 2,
+          "directives": 0,
+          "header_descriptions": 2,
+          "symbol_window_overrides": 0,
+          "renderer_visible_labels": 9,
+          "omitted_descriptions": 0
+        },
+        "wire_coverage_length": 224,
+        "wire_coverage": {
+          "0": [
+            [
+              "v",
+              336,
+              256,
+              288
+            ]
+          ],
+          "VIN": [
+            [
+              "h",
+              192,
+              128,
+              160
+            ]
+          ],
+          "VOUT": [
+            [
+              "h",
+              160,
+              272,
+              336
+            ],
+            [
+              "h",
+              192,
+              240,
+              272
+            ],
+            [
+              "v",
+              272,
+              160,
+              192
+            ],
+            [
+              "v",
+              336,
+              160,
+              192
+            ]
+          ]
+        },
+        "symbols": [
+          {
+            "reference": "C1",
+            "symbol": "cap",
+            "position": [
+              320,
+              192
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "C1",
+              "Value": "100nF"
+            }
+          },
+          {
+            "reference": "R1",
+            "symbol": "res",
+            "position": [
+              144,
+              208
+            ],
+            "orientation": "R270",
+            "attributes": {
+              "InstName": "R1",
+              "Value": "1k"
+            }
+          }
+        ],
+        "pins": {
+          "C1.1": [
+            336,
+            192
+          ],
+          "C1.2": [
+            336,
+            256
+          ],
+          "R1.1": [
+            160,
+            192
+          ],
+          "R1.2": [
+            240,
+            192
+          ]
+        },
+        "flags": [
+          [
+            [
+              128,
+              192
+            ],
+            "VIN"
+          ],
+          [
+            [
+              336,
+              160
+            ],
+            "VOUT"
+          ],
+          [
+            [
+              336,
+              288
+            ],
+            "0"
+          ]
+        ],
+        "iopins": [],
+        "electrical_directives": [],
+        "geometry_diagnostics": [],
+        "symbol_root": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym",
+        "symbols_used": [
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\cap.asy",
+            "sha256": "fcc7190ea1110f612453b86c02facc3ac46441a06f04274054ed021746e79fac"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\res.asy",
+            "sha256": "228e75e841b1b239fbe8cea04c9ae86e84eac492faf88501fa21bbee88d7eb96"
+          }
+        ],
+        "presentation_estimator": {
+          "tool": "tools.render_asc",
+          "scale": 1.0,
+          "font": "C:\\WINDOWS\\Fonts\\segoeui.ttf",
+          "include_description": true,
+          "native_ltspice_bounds": false
+        },
+        "netlist": {
+          "file": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\before\\rc_low_pass_filter.net",
+          "sha256": "2c3a4f439428cb4e552cbe8e686f467ed2b7f9df1f163a19387f1f46feb6969c",
+          "verification": {
+            "ok": true,
+            "shorts": [],
+            "opens": [],
+            "missing_pins": [],
+            "unexpected_pins": []
+          },
+          "actual_pin_nodes": {
+            "R1.1": "VIN",
+            "R1.2": "VOUT",
+            "C1.1": "VOUT",
+            "C1.2": "0"
+          }
+        }
+      },
+      "after": {
+        "asc": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\rc_low_pass_filter.asc",
+        "asc_sha256": "b51258c1379ca12df2c7068fa38ec2d27236691e888d189ed207aea15ed25452",
+        "file_bytes": 609,
+        "components": 2,
+        "wires": 6,
+        "sheet": [
+          1,
+          512,
+          368
+        ],
+        "routing": {
+          "total_length": 224,
+          "segment_count": 6,
+          "bend_count": 3,
+          "junction_count": 0,
+          "crossing_count": 0,
+          "terminal_pair_count": 1,
+          "evaluated_pair_count": 1,
+          "disconnected_pair_count": 0,
+          "coincident_pair_count": 0,
+          "detour_count": 1,
+          "detour_ratio": 1.6666666666666667,
+          "max_detour_ratio": 1.6666666666666667,
+          "bounding_box": [
+            128,
+            160,
+            336,
+            288
+          ],
+          "area": 26624,
+          "reference_length": 96,
+          "routing_efficiency": 0.42857142857142855
+        },
+        "circuit_bbox": {
+          "bounds": [
+            128,
+            160,
+            352,
+            288
+          ],
+          "width": 224,
+          "height": 128,
+          "area": 28672
+        },
+        "full_presentation_bbox": {
+          "bounds": [
+            118.0,
+            13.5,
+            481.0,
+            308.0
+          ],
+          "width": 363.0,
+          "height": 294.5,
+          "area": 106903.5
+        },
+        "labels": {
+          "flags": 3,
+          "ground_flags": 1,
+          "non_ground_flags": 2,
+          "text_records": 3,
+          "comments": 3,
+          "directives": 0,
+          "header_descriptions": 0,
+          "symbol_window_overrides": 4,
+          "renderer_visible_labels": 10,
+          "omitted_descriptions": 0
+        },
+        "wire_coverage_length": 224,
+        "wire_coverage": {
+          "0": [
+            [
+              "v",
+              336,
+              256,
+              288
+            ]
+          ],
+          "VIN": [
+            [
+              "h",
+              192,
+              128,
+              160
+            ]
+          ],
+          "VOUT": [
+            [
+              "h",
+              160,
+              272,
+              336
+            ],
+            [
+              "h",
+              192,
+              240,
+              272
+            ],
+            [
+              "v",
+              272,
+              160,
+              192
+            ],
+            [
+              "v",
+              336,
+              160,
+              192
+            ]
+          ]
+        },
+        "symbols": [
+          {
+            "reference": "C1",
+            "symbol": "cap",
+            "position": [
+              320,
+              192
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "C1",
+              "Value": "100nF"
+            }
+          },
+          {
+            "reference": "R1",
+            "symbol": "res",
+            "position": [
+              144,
+              208
+            ],
+            "orientation": "R270",
+            "attributes": {
+              "InstName": "R1",
+              "Value": "1k"
+            }
+          }
+        ],
+        "pins": {
+          "C1.1": [
+            336,
+            192
+          ],
+          "C1.2": [
+            336,
+            256
+          ],
+          "R1.1": [
+            160,
+            192
+          ],
+          "R1.2": [
+            240,
+            192
+          ]
+        },
+        "flags": [
+          [
+            [
+              128,
+              192
+            ],
+            "VIN"
+          ],
+          [
+            [
+              336,
+              160
+            ],
+            "VOUT"
+          ],
+          [
+            [
+              336,
+              288
+            ],
+            "0"
+          ]
+        ],
+        "iopins": [],
+        "electrical_directives": [],
+        "geometry_diagnostics": [],
+        "symbol_root": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym",
+        "symbols_used": [
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\cap.asy",
+            "sha256": "fcc7190ea1110f612453b86c02facc3ac46441a06f04274054ed021746e79fac"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\res.asy",
+            "sha256": "228e75e841b1b239fbe8cea04c9ae86e84eac492faf88501fa21bbee88d7eb96"
+          }
+        ],
+        "presentation_estimator": {
+          "tool": "tools.render_asc",
+          "scale": 1.0,
+          "font": "C:\\WINDOWS\\Fonts\\segoeui.ttf",
+          "include_description": true,
+          "native_ltspice_bounds": false
+        },
+        "netlist": {
+          "file": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\rc_low_pass_filter.net",
+          "sha256": "cdc5c1129a7cda69d10fcd644dbce4f5f020fffcfea6110d1f23bdc971912767",
+          "verification": {
+            "ok": true,
+            "shorts": [],
+            "opens": [],
+            "missing_pins": [],
+            "unexpected_pins": []
+          },
+          "actual_pin_nodes": {
+            "C1.1": "VOUT",
+            "C1.2": "0",
+            "R1.1": "VIN",
+            "R1.2": "VOUT"
+          }
+        }
+      },
+      "topology_comparison": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      },
+      "delta": {
+        "circuit_bbox": {
+          "area": 0,
+          "height": 0,
+          "width": 0
+        },
+        "components": 0,
+        "file_bytes": 124,
+        "full_presentation_bbox": {
+          "area": -100949.5,
+          "height": -5.0,
+          "width": -331.0
+        },
+        "labels": {
+          "comments": 1,
+          "directives": 0,
+          "flags": 0,
+          "ground_flags": 0,
+          "header_descriptions": -2,
+          "non_ground_flags": 0,
+          "omitted_descriptions": 0,
+          "renderer_visible_labels": 1,
+          "symbol_window_overrides": 4,
+          "text_records": 1
+        },
+        "routing": {
+          "area": 0,
+          "bend_count": 0,
+          "coincident_pair_count": 0,
+          "crossing_count": 0,
+          "detour_count": 0,
+          "detour_ratio": 0.0,
+          "disconnected_pair_count": 0,
+          "evaluated_pair_count": 0,
+          "junction_count": 0,
+          "max_detour_ratio": 0.0,
+          "reference_length": 0,
+          "routing_efficiency": 0.0,
+          "segment_count": 0,
+          "terminal_pair_count": 0,
+          "total_length": 0
+        },
+        "wire_coverage_length": 0,
+        "wires": 0
+      }
+    },
+    {
+      "source_file": "voltage_divider.json",
+      "source_path": "C:\\Projects\\Spice Craft\\backend\\tests\\fixtures\\routing\\voltage_divider.json",
+      "source_sha256": "c93da3a6039246e75f9b1e00881fa4a408fe2d150a4d97445c0e463b73170ebe",
+      "circuit": "Voltage Divider Routing Regression",
+      "ok": true,
+      "checks": {
+        "symbols_unchanged": true,
+        "pins_unchanged": true,
+        "flags_unchanged": true,
+        "iopins_unchanged": true,
+        "electrical_directives_unchanged": true,
+        "wire_coverage_unchanged": true,
+        "before_geometry_valid": true,
+        "after_geometry_valid": true,
+        "before_topology_matches_source": true,
+        "after_topology_matches_source": true,
+        "topology_unchanged": true
+      },
+      "expected_nets": {
+        "VIN": [
+          "R1.1"
+        ],
+        "VOUT": [
+          "R1.2",
+          "R2.1"
+        ],
+        "0": [
+          "R2.2"
+        ]
+      },
+      "before": {
+        "asc": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\before\\voltage_divider.asc",
+        "asc_sha256": "c8276fcc6a5ad801acfb9d16ed8d273363e7d6553276d0933d8cf7d3711b2fec",
+        "file_bytes": 461,
+        "components": 2,
+        "wires": 5,
+        "sheet": [
+          1,
+          1200,
+          800
+        ],
+        "routing": {
+          "total_length": 160,
+          "segment_count": 5,
+          "bend_count": 0,
+          "junction_count": 0,
+          "crossing_count": 0,
+          "terminal_pair_count": 1,
+          "evaluated_pair_count": 1,
+          "disconnected_pair_count": 0,
+          "coincident_pair_count": 0,
+          "detour_count": 0,
+          "detour_ratio": 1.0,
+          "max_detour_ratio": 1.0,
+          "bounding_box": [
+            160,
+            160,
+            160,
+            480
+          ],
+          "area": 0,
+          "reference_length": 96,
+          "routing_efficiency": 0.6
+        },
+        "circuit_bbox": {
+          "bounds": [
+            144,
+            160,
+            176,
+            480
+          ],
+          "width": 32,
+          "height": 320,
+          "area": 10240
+        },
+        "full_presentation_bbox": {
+          "bounds": [
+            16.0,
+            6.0,
+            581.0,
+            500.0
+          ],
+          "width": 565.0,
+          "height": 494.0,
+          "area": 279110.0
+        },
+        "labels": {
+          "flags": 3,
+          "ground_flags": 1,
+          "non_ground_flags": 2,
+          "text_records": 2,
+          "comments": 2,
+          "directives": 0,
+          "header_descriptions": 2,
+          "symbol_window_overrides": 0,
+          "renderer_visible_labels": 9,
+          "omitted_descriptions": 0
+        },
+        "wire_coverage_length": 160,
+        "wire_coverage": {
+          "0": [
+            [
+              "v",
+              160,
+              448,
+              480
+            ]
+          ],
+          "VIN": [
+            [
+              "v",
+              160,
+              160,
+              192
+            ]
+          ],
+          "VOUT": [
+            [
+              "v",
+              160,
+              272,
+              368
+            ]
+          ]
+        },
+        "symbols": [
+          {
+            "reference": "R1",
+            "symbol": "res",
+            "position": [
+              144,
+              176
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R1",
+              "Value": "10k"
+            }
+          },
+          {
+            "reference": "R2",
+            "symbol": "res",
+            "position": [
+              144,
+              352
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R2",
+              "Value": "10k"
+            }
+          }
+        ],
+        "pins": {
+          "R1.1": [
+            160,
+            192
+          ],
+          "R1.2": [
+            160,
+            272
+          ],
+          "R2.1": [
+            160,
+            368
+          ],
+          "R2.2": [
+            160,
+            448
+          ]
+        },
+        "flags": [
+          [
+            [
+              160,
+              160
+            ],
+            "VIN"
+          ],
+          [
+            [
+              160,
+              304
+            ],
+            "VOUT"
+          ],
+          [
+            [
+              160,
+              480
+            ],
+            "0"
+          ]
+        ],
+        "iopins": [],
+        "electrical_directives": [],
+        "geometry_diagnostics": [],
+        "symbol_root": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym",
+        "symbols_used": [
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\res.asy",
+            "sha256": "228e75e841b1b239fbe8cea04c9ae86e84eac492faf88501fa21bbee88d7eb96"
+          }
+        ],
+        "presentation_estimator": {
+          "tool": "tools.render_asc",
+          "scale": 1.0,
+          "font": "C:\\WINDOWS\\Fonts\\segoeui.ttf",
+          "include_description": true,
+          "native_ltspice_bounds": false
+        },
+        "netlist": {
+          "file": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\before\\voltage_divider.net",
+          "sha256": "a5f39a5b3e7746084438c1759d6d85a68ef7a97ddb5d6ffd422992c60d73f7d5",
+          "verification": {
+            "ok": true,
+            "shorts": [],
+            "opens": [],
+            "missing_pins": [],
+            "unexpected_pins": []
+          },
+          "actual_pin_nodes": {
+            "R1.1": "VIN",
+            "R1.2": "VOUT",
+            "R2.1": "VOUT",
+            "R2.2": "0"
+          }
+        }
+      },
+      "after": {
+        "asc": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\voltage_divider.asc",
+        "asc_sha256": "e0873791f013972c9f8e229a64f88fe1085a7c55f75d1773c1f9572162fc30b5",
+        "file_bytes": 562,
+        "components": 2,
+        "wires": 4,
+        "sheet": [
+          1,
+          512,
+          544
+        ],
+        "routing": {
+          "total_length": 160,
+          "segment_count": 4,
+          "bend_count": 0,
+          "junction_count": 0,
+          "crossing_count": 0,
+          "terminal_pair_count": 1,
+          "evaluated_pair_count": 1,
+          "disconnected_pair_count": 0,
+          "coincident_pair_count": 0,
+          "detour_count": 0,
+          "detour_ratio": 1.0,
+          "max_detour_ratio": 1.0,
+          "bounding_box": [
+            160,
+            160,
+            160,
+            480
+          ],
+          "area": 0,
+          "reference_length": 96,
+          "routing_efficiency": 0.6
+        },
+        "circuit_bbox": {
+          "bounds": [
+            144,
+            160,
+            176,
+            480
+          ],
+          "width": 32,
+          "height": 320,
+          "area": 10240
+        },
+        "full_presentation_bbox": {
+          "bounds": [
+            94.0,
+            27.5,
+            443.0,
+            500.0
+          ],
+          "width": 349.0,
+          "height": 472.5,
+          "area": 164902.5
+        },
+        "labels": {
+          "flags": 3,
+          "ground_flags": 1,
+          "non_ground_flags": 2,
+          "text_records": 3,
+          "comments": 3,
+          "directives": 0,
+          "header_descriptions": 0,
+          "symbol_window_overrides": 4,
+          "renderer_visible_labels": 10,
+          "omitted_descriptions": 0
+        },
+        "wire_coverage_length": 160,
+        "wire_coverage": {
+          "0": [
+            [
+              "v",
+              160,
+              448,
+              480
+            ]
+          ],
+          "VIN": [
+            [
+              "v",
+              160,
+              160,
+              192
+            ]
+          ],
+          "VOUT": [
+            [
+              "v",
+              160,
+              272,
+              368
+            ]
+          ]
+        },
+        "symbols": [
+          {
+            "reference": "R1",
+            "symbol": "res",
+            "position": [
+              144,
+              176
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R1",
+              "Value": "10k"
+            }
+          },
+          {
+            "reference": "R2",
+            "symbol": "res",
+            "position": [
+              144,
+              352
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R2",
+              "Value": "10k"
+            }
+          }
+        ],
+        "pins": {
+          "R1.1": [
+            160,
+            192
+          ],
+          "R1.2": [
+            160,
+            272
+          ],
+          "R2.1": [
+            160,
+            368
+          ],
+          "R2.2": [
+            160,
+            448
+          ]
+        },
+        "flags": [
+          [
+            [
+              160,
+              160
+            ],
+            "VIN"
+          ],
+          [
+            [
+              160,
+              304
+            ],
+            "VOUT"
+          ],
+          [
+            [
+              160,
+              480
+            ],
+            "0"
+          ]
+        ],
+        "iopins": [],
+        "electrical_directives": [],
+        "geometry_diagnostics": [],
+        "symbol_root": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym",
+        "symbols_used": [
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\res.asy",
+            "sha256": "228e75e841b1b239fbe8cea04c9ae86e84eac492faf88501fa21bbee88d7eb96"
+          }
+        ],
+        "presentation_estimator": {
+          "tool": "tools.render_asc",
+          "scale": 1.0,
+          "font": "C:\\WINDOWS\\Fonts\\segoeui.ttf",
+          "include_description": true,
+          "native_ltspice_bounds": false
+        },
+        "netlist": {
+          "file": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\voltage_divider.net",
+          "sha256": "8b6fad2ad02d5e17d4e47a6807e7a2d0ae50d3c344cbe0fad37260dc6703e2e0",
+          "verification": {
+            "ok": true,
+            "shorts": [],
+            "opens": [],
+            "missing_pins": [],
+            "unexpected_pins": []
+          },
+          "actual_pin_nodes": {
+            "R1.1": "VIN",
+            "R1.2": "VOUT",
+            "R2.1": "VOUT",
+            "R2.2": "0"
+          }
+        }
+      },
+      "topology_comparison": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      },
+      "delta": {
+        "circuit_bbox": {
+          "area": 0,
+          "height": 0,
+          "width": 0
+        },
+        "components": 0,
+        "file_bytes": 101,
+        "full_presentation_bbox": {
+          "area": -114207.5,
+          "height": -21.5,
+          "width": -216.0
+        },
+        "labels": {
+          "comments": 1,
+          "directives": 0,
+          "flags": 0,
+          "ground_flags": 0,
+          "header_descriptions": -2,
+          "non_ground_flags": 0,
+          "omitted_descriptions": 0,
+          "renderer_visible_labels": 1,
+          "symbol_window_overrides": 4,
+          "text_records": 1
+        },
+        "routing": {
+          "area": 0,
+          "bend_count": 0,
+          "coincident_pair_count": 0,
+          "crossing_count": 0,
+          "detour_count": 0,
+          "detour_ratio": 0.0,
+          "disconnected_pair_count": 0,
+          "evaluated_pair_count": 0,
+          "junction_count": 0,
+          "max_detour_ratio": 0.0,
+          "reference_length": 0,
+          "routing_efficiency": 0.0,
+          "segment_count": -1,
+          "terminal_pair_count": 0,
+          "total_length": 0
+        },
+        "wire_coverage_length": 0,
+        "wires": -1
+      }
+    },
+    {
+      "source_file": "bridge_rectifier.json",
+      "source_path": "C:\\Projects\\Spice Craft\\backend\\tests\\fixtures\\routing\\bridge_rectifier.json",
+      "source_sha256": "522165ecf5a781d1fec85c18afd02312a6288314e302c23119bc932d161c1400",
+      "circuit": "Bridge Rectifier Routing Regression",
+      "ok": true,
+      "checks": {
+        "symbols_unchanged": true,
+        "pins_unchanged": true,
+        "flags_unchanged": true,
+        "iopins_unchanged": true,
+        "electrical_directives_unchanged": true,
+        "wire_coverage_unchanged": true,
+        "before_geometry_valid": true,
+        "after_geometry_valid": true,
+        "before_topology_matches_source": true,
+        "after_topology_matches_source": true,
+        "topology_unchanged": true
+      },
+      "expected_nets": {
+        "AC+": [
+          "D1.1",
+          "D3.2"
+        ],
+        "AC-": [
+          "D2.1",
+          "D4.2"
+        ],
+        "OUT+": [
+          "D1.2",
+          "D2.2",
+          "R1.1"
+        ],
+        "0": [
+          "D3.1",
+          "D4.1",
+          "R1.2"
+        ]
+      },
+      "before": {
+        "asc": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\before\\bridge_rectifier.asc",
+        "asc_sha256": "9c8fe66dd28fcc3993e97bcc4449c23fb572f3e955d60e0b1adc9692e5e33912",
+        "file_bytes": 1002,
+        "components": 5,
+        "wires": 18,
+        "sheet": [
+          1,
+          1200,
+          800
+        ],
+        "routing": {
+          "total_length": 1648,
+          "segment_count": 18,
+          "bend_count": 4,
+          "junction_count": 2,
+          "crossing_count": 0,
+          "terminal_pair_count": 8,
+          "evaluated_pair_count": 8,
+          "disconnected_pair_count": 0,
+          "coincident_pair_count": 0,
+          "detour_count": 0,
+          "detour_ratio": 1.1335427532795954,
+          "max_detour_ratio": 1.2222222222222223,
+          "bounding_box": [
+            224,
+            192,
+            736,
+            512
+          ],
+          "area": 163840,
+          "reference_length": 1456,
+          "routing_efficiency": 0.883495145631068
+        },
+        "circuit_bbox": {
+          "bounds": [
+            208,
+            192,
+            752,
+            512
+          ],
+          "width": 544,
+          "height": 320,
+          "area": 174080
+        },
+        "full_presentation_bbox": {
+          "bounds": [
+            16.0,
+            6.0,
+            779.0,
+            532.0
+          ],
+          "width": 763.0,
+          "height": 526.0,
+          "area": 401338.0
+        },
+        "labels": {
+          "flags": 4,
+          "ground_flags": 1,
+          "non_ground_flags": 3,
+          "text_records": 2,
+          "comments": 2,
+          "directives": 0,
+          "header_descriptions": 2,
+          "symbol_window_overrides": 0,
+          "renderer_visible_labels": 16,
+          "omitted_descriptions": 0
+        },
+        "wire_coverage_length": 1648,
+        "wire_coverage": {
+          "0": [
+            [
+              "h",
+              512,
+              224,
+              736
+            ],
+            [
+              "v",
+              224,
+              480,
+              512
+            ],
+            [
+              "v",
+              512,
+              480,
+              512
+            ],
+            [
+              "v",
+              736,
+              384,
+              512
+            ]
+          ],
+          "AC+": [
+            [
+              "v",
+              224,
+              288,
+              416
+            ]
+          ],
+          "AC-": [
+            [
+              "v",
+              512,
+              288,
+              416
+            ]
+          ],
+          "OUT+": [
+            [
+              "h",
+              192,
+              224,
+              736
+            ],
+            [
+              "v",
+              224,
+              192,
+              224
+            ],
+            [
+              "v",
+              512,
+              192,
+              224
+            ],
+            [
+              "v",
+              736,
+              192,
+              304
+            ]
+          ]
+        },
+        "symbols": [
+          {
+            "reference": "D1",
+            "symbol": "diode",
+            "position": [
+              240,
+              288
+            ],
+            "orientation": "R180",
+            "attributes": {
+              "InstName": "D1",
+              "Value": "1N4148"
+            }
+          },
+          {
+            "reference": "D2",
+            "symbol": "diode",
+            "position": [
+              528,
+              288
+            ],
+            "orientation": "R180",
+            "attributes": {
+              "InstName": "D2",
+              "Value": "1N4148"
+            }
+          },
+          {
+            "reference": "D3",
+            "symbol": "diode",
+            "position": [
+              240,
+              480
+            ],
+            "orientation": "R180",
+            "attributes": {
+              "InstName": "D3",
+              "Value": "1N4148"
+            }
+          },
+          {
+            "reference": "D4",
+            "symbol": "diode",
+            "position": [
+              528,
+              480
+            ],
+            "orientation": "R180",
+            "attributes": {
+              "InstName": "D4",
+              "Value": "1N4148"
+            }
+          },
+          {
+            "reference": "R1",
+            "symbol": "res",
+            "position": [
+              720,
+              288
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R1",
+              "Value": "1k"
+            }
+          }
+        ],
+        "pins": {
+          "D1.1": [
+            224,
+            288
+          ],
+          "D1.2": [
+            224,
+            224
+          ],
+          "D2.1": [
+            512,
+            288
+          ],
+          "D2.2": [
+            512,
+            224
+          ],
+          "D3.1": [
+            224,
+            480
+          ],
+          "D3.2": [
+            224,
+            416
+          ],
+          "D4.1": [
+            512,
+            480
+          ],
+          "D4.2": [
+            512,
+            416
+          ],
+          "R1.1": [
+            736,
+            304
+          ],
+          "R1.2": [
+            736,
+            384
+          ]
+        },
+        "flags": [
+          [
+            [
+              224,
+              320
+            ],
+            "AC+"
+          ],
+          [
+            [
+              224,
+              512
+            ],
+            "0"
+          ],
+          [
+            [
+              512,
+              320
+            ],
+            "AC-"
+          ],
+          [
+            [
+              736,
+              272
+            ],
+            "OUT+"
+          ]
+        ],
+        "iopins": [],
+        "electrical_directives": [],
+        "geometry_diagnostics": [],
+        "symbol_root": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym",
+        "symbols_used": [
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\diode.asy",
+            "sha256": "a7177f6cc9730376390e2b0f0a67de1050b6452aba3049351dcd64a68dfd0d70"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\res.asy",
+            "sha256": "228e75e841b1b239fbe8cea04c9ae86e84eac492faf88501fa21bbee88d7eb96"
+          }
+        ],
+        "presentation_estimator": {
+          "tool": "tools.render_asc",
+          "scale": 1.0,
+          "font": "C:\\WINDOWS\\Fonts\\segoeui.ttf",
+          "include_description": true,
+          "native_ltspice_bounds": false
+        },
+        "netlist": {
+          "file": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\before\\bridge_rectifier.net",
+          "sha256": "eb01238ff7ee5481aed9bb174f5255b3293dd8773c9c7560aaa0bbf927408ab8",
+          "verification": {
+            "ok": true,
+            "shorts": [],
+            "opens": [],
+            "missing_pins": [],
+            "unexpected_pins": []
+          },
+          "actual_pin_nodes": {
+            "D1.1": "AC+",
+            "D1.2": "OUT+",
+            "D2.1": "AC-",
+            "D2.2": "OUT+",
+            "D3.1": "0",
+            "D3.2": "AC+",
+            "D4.1": "0",
+            "D4.2": "AC-",
+            "R1.1": "OUT+",
+            "R1.2": "0"
+          }
+        }
+      },
+      "after": {
+        "asc": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\bridge_rectifier.asc",
+        "asc_sha256": "a495736983b47d9adc7958e6bbccff6437ea160aea8972251efcb6b6a49e25cf",
+        "file_bytes": 1213,
+        "components": 5,
+        "wires": 15,
+        "sheet": [
+          1,
+          752,
+          512
+        ],
+        "routing": {
+          "total_length": 1648,
+          "segment_count": 15,
+          "bend_count": 4,
+          "junction_count": 2,
+          "crossing_count": 0,
+          "terminal_pair_count": 8,
+          "evaluated_pair_count": 8,
+          "disconnected_pair_count": 0,
+          "coincident_pair_count": 0,
+          "detour_count": 0,
+          "detour_ratio": 1.1335427532795954,
+          "max_detour_ratio": 1.2222222222222223,
+          "bounding_box": [
+            224,
+            192,
+            736,
+            512
+          ],
+          "area": 163840,
+          "reference_length": 1456,
+          "routing_efficiency": 0.883495145631068
+        },
+        "circuit_bbox": {
+          "bounds": [
+            208,
+            192,
+            752,
+            512
+          ],
+          "width": 544,
+          "height": 320,
+          "area": 174080
+        },
+        "full_presentation_bbox": {
+          "bounds": [
+            118.0,
+            91.5,
+            768.5,
+            532.0
+          ],
+          "width": 650.5,
+          "height": 440.5,
+          "area": 286545.25
+        },
+        "labels": {
+          "flags": 4,
+          "ground_flags": 1,
+          "non_ground_flags": 3,
+          "text_records": 3,
+          "comments": 3,
+          "directives": 0,
+          "header_descriptions": 0,
+          "symbol_window_overrides": 10,
+          "renderer_visible_labels": 17,
+          "omitted_descriptions": 0
+        },
+        "wire_coverage_length": 1648,
+        "wire_coverage": {
+          "0": [
+            [
+              "h",
+              512,
+              224,
+              736
+            ],
+            [
+              "v",
+              224,
+              480,
+              512
+            ],
+            [
+              "v",
+              512,
+              480,
+              512
+            ],
+            [
+              "v",
+              736,
+              384,
+              512
+            ]
+          ],
+          "AC+": [
+            [
+              "v",
+              224,
+              288,
+              416
+            ]
+          ],
+          "AC-": [
+            [
+              "v",
+              512,
+              288,
+              416
+            ]
+          ],
+          "OUT+": [
+            [
+              "h",
+              192,
+              224,
+              736
+            ],
+            [
+              "v",
+              224,
+              192,
+              224
+            ],
+            [
+              "v",
+              512,
+              192,
+              224
+            ],
+            [
+              "v",
+              736,
+              192,
+              304
+            ]
+          ]
+        },
+        "symbols": [
+          {
+            "reference": "D1",
+            "symbol": "diode",
+            "position": [
+              240,
+              288
+            ],
+            "orientation": "R180",
+            "attributes": {
+              "InstName": "D1",
+              "Value": "1N4148"
+            }
+          },
+          {
+            "reference": "D2",
+            "symbol": "diode",
+            "position": [
+              528,
+              288
+            ],
+            "orientation": "R180",
+            "attributes": {
+              "InstName": "D2",
+              "Value": "1N4148"
+            }
+          },
+          {
+            "reference": "D3",
+            "symbol": "diode",
+            "position": [
+              240,
+              480
+            ],
+            "orientation": "R180",
+            "attributes": {
+              "InstName": "D3",
+              "Value": "1N4148"
+            }
+          },
+          {
+            "reference": "D4",
+            "symbol": "diode",
+            "position": [
+              528,
+              480
+            ],
+            "orientation": "R180",
+            "attributes": {
+              "InstName": "D4",
+              "Value": "1N4148"
+            }
+          },
+          {
+            "reference": "R1",
+            "symbol": "res",
+            "position": [
+              720,
+              288
+            ],
+            "orientation": "R0",
+            "attributes": {
+              "InstName": "R1",
+              "Value": "1k"
+            }
+          }
+        ],
+        "pins": {
+          "D1.1": [
+            224,
+            288
+          ],
+          "D1.2": [
+            224,
+            224
+          ],
+          "D2.1": [
+            512,
+            288
+          ],
+          "D2.2": [
+            512,
+            224
+          ],
+          "D3.1": [
+            224,
+            480
+          ],
+          "D3.2": [
+            224,
+            416
+          ],
+          "D4.1": [
+            512,
+            480
+          ],
+          "D4.2": [
+            512,
+            416
+          ],
+          "R1.1": [
+            736,
+            304
+          ],
+          "R1.2": [
+            736,
+            384
+          ]
+        },
+        "flags": [
+          [
+            [
+              224,
+              320
+            ],
+            "AC+"
+          ],
+          [
+            [
+              224,
+              512
+            ],
+            "0"
+          ],
+          [
+            [
+              512,
+              320
+            ],
+            "AC-"
+          ],
+          [
+            [
+              736,
+              272
+            ],
+            "OUT+"
+          ]
+        ],
+        "iopins": [],
+        "electrical_directives": [],
+        "geometry_diagnostics": [],
+        "symbol_root": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym",
+        "symbols_used": [
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\diode.asy",
+            "sha256": "a7177f6cc9730376390e2b0f0a67de1050b6452aba3049351dcd64a68dfd0d70"
+          },
+          {
+            "path": "C:\\Users\\ASUS\\AppData\\Local\\LTspice\\lib\\sym\\res.asy",
+            "sha256": "228e75e841b1b239fbe8cea04c9ae86e84eac492faf88501fa21bbee88d7eb96"
+          }
+        ],
+        "presentation_estimator": {
+          "tool": "tools.render_asc",
+          "scale": 1.0,
+          "font": "C:\\WINDOWS\\Fonts\\segoeui.ttf",
+          "include_description": true,
+          "native_ltspice_bounds": false
+        },
+        "netlist": {
+          "file": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\bridge_rectifier.net",
+          "sha256": "d83e6c1dc152174099dd2d991feef5e758a621be944ebfce7374e446db1ad816",
+          "verification": {
+            "ok": true,
+            "shorts": [],
+            "opens": [],
+            "missing_pins": [],
+            "unexpected_pins": []
+          },
+          "actual_pin_nodes": {
+            "D1.1": "AC+",
+            "D1.2": "OUT+",
+            "D2.1": "AC-",
+            "D2.2": "OUT+",
+            "D3.1": "0",
+            "D3.2": "AC+",
+            "D4.1": "0",
+            "D4.2": "AC-",
+            "R1.1": "OUT+",
+            "R1.2": "0"
+          }
+        }
+      },
+      "topology_comparison": {
+        "ok": true,
+        "shorts": [],
+        "opens": [],
+        "missing_pins": [],
+        "unexpected_pins": []
+      },
+      "delta": {
+        "circuit_bbox": {
+          "area": 0,
+          "height": 0,
+          "width": 0
+        },
+        "components": 0,
+        "file_bytes": 211,
+        "full_presentation_bbox": {
+          "area": -114792.75,
+          "height": -85.5,
+          "width": -112.5
+        },
+        "labels": {
+          "comments": 1,
+          "directives": 0,
+          "flags": 0,
+          "ground_flags": 0,
+          "header_descriptions": -2,
+          "non_ground_flags": 0,
+          "omitted_descriptions": 0,
+          "renderer_visible_labels": 1,
+          "symbol_window_overrides": 10,
+          "text_records": 1
+        },
+        "routing": {
+          "area": 0,
+          "bend_count": 0,
+          "coincident_pair_count": 0,
+          "crossing_count": 0,
+          "detour_count": 0,
+          "detour_ratio": 0.0,
+          "disconnected_pair_count": 0,
+          "evaluated_pair_count": 0,
+          "junction_count": 0,
+          "max_detour_ratio": 0.0,
+          "reference_length": 0,
+          "routing_efficiency": 0.0,
+          "segment_count": -3,
+          "terminal_pair_count": 0,
+          "total_length": 0
+        },
+        "wire_coverage_length": 0,
+        "wires": -3
+      }
+    }
+  ]
+}

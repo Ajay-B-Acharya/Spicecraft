@@ -1,0 +1,640 @@
+test_all_actual_templates_match_independent_explicit_partitions (test_connectivity.BundledSourceRegressionTests.test_all_actual_templates_match_independent_explicit_partitions) ... ok
+test_all_bundled_phase6_symbol_header_bytes_unchanged (test_connectivity.BundledSourceRegressionTests.test_all_bundled_phase6_symbol_header_bytes_unchanged) ... 
+  test_all_bundled_phase6_symbol_header_bytes_unchanged (test_connectivity.BundledSourceRegressionTests.test_all_bundled_phase6_symbol_header_bytes_unchanged) (filename='555_astable_multivibrator.json') ... FAIL
+  test_all_bundled_phase6_symbol_header_bytes_unchanged (test_connectivity.BundledSourceRegressionTests.test_all_bundled_phase6_symbol_header_bytes_unchanged) (filename='common_emitter_amplifier.json') ... FAIL
+  test_all_bundled_phase6_symbol_header_bytes_unchanged (test_connectivity.BundledSourceRegressionTests.test_all_bundled_phase6_symbol_header_bytes_unchanged) (filename='led_blinker.json') ... FAIL
+  test_all_bundled_phase6_symbol_header_bytes_unchanged (test_connectivity.BundledSourceRegressionTests.test_all_bundled_phase6_symbol_header_bytes_unchanged) (filename='rc_high_pass_filter.json') ... FAIL
+  test_all_bundled_phase6_symbol_header_bytes_unchanged (test_connectivity.BundledSourceRegressionTests.test_all_bundled_phase6_symbol_header_bytes_unchanged) (filename='rc_low_pass_filter.json') ... FAIL
+test_common_emitter_aliases_and_layout_change_preserve_partition (test_connectivity.BundledSourceRegressionTests.test_common_emitter_aliases_and_layout_change_preserve_partition) ... ok
+test_common_emitter_source_order_and_no_conventional_topology_repair (test_connectivity.BundledSourceRegressionTests.test_common_emitter_source_order_and_no_conventional_topology_repair) ... ok
+test_exporter_checks_produced_pins_against_source_model (test_connectivity.BundledSourceRegressionTests.test_exporter_checks_produced_pins_against_source_model) ... ok
+test_exporter_fails_before_placement_on_source_errors (test_connectivity.BundledSourceRegressionTests.test_exporter_fails_before_placement_on_source_errors) ... ok
+test_model_validation_does_not_claim_physical_short_free_asc (test_connectivity.BundledSourceRegressionTests.test_model_validation_does_not_claim_physical_short_free_asc) ... ok
+test_export_errors_use_existing_422_shape (test_connectivity.CircuitsApiLogicalValidationTests.test_export_errors_use_existing_422_shape) ... ASC export blocked for test-circuit: LTspice export failed with 1 error(s):
+
+Wire #1 (R1.1 -> R1.1) resolves to the same endpoint 'R1.1' [SELF_WIRE]
+Net: R1.1
+C:\Projects\Spice Craft\backend\tests\test_connectivity.py:591: DeprecationWarning: 'HTTP_422_UNPROCESSABLE_ENTITY' is deprecated. Use 'HTTP_422_UNPROCESSABLE_CONTENT' instead.
+  circuits.export_circuit_asc("test-circuit")
+ok
+test_put_allows_warnings_and_unwired_definition_pins (test_connectivity.CircuitsApiLogicalValidationTests.test_put_allows_warnings_and_unwired_definition_pins) ... ok
+test_put_rejects_logical_errors_before_repository_write (test_connectivity.CircuitsApiLogicalValidationTests.test_put_rejects_logical_errors_before_repository_write) ... C:\Projects\Spice Craft\backend\tests\test_connectivity.py:572: DeprecationWarning: 'HTTP_422_UNPROCESSABLE_ENTITY' is deprecated. Use 'HTTP_422_UNPROCESSABLE_CONTENT' instead.
+  circuits.update_circuit("test-circuit", self.api_payload(source))
+ok
+test_empty_circuit_and_unwired_definitions_are_valid (test_connectivity.ConnectivityBasicsTests.test_empty_circuit_and_unwired_definitions_are_valid) ... ok
+test_explicit_edges_only_no_component_body_union (test_connectivity.ConnectivityBasicsTests.test_explicit_edges_only_no_component_body_union) ... ok
+test_identity_and_transistor_numeric_aliases (test_connectivity.ConnectivityBasicsTests.test_identity_and_transistor_numeric_aliases) ... ok
+test_layout_fields_do_not_affect_partition_or_source (test_connectivity.ConnectivityBasicsTests.test_layout_fields_do_not_affect_partition_or_source) ... ok
+test_led_diode_capacitor_aliases_use_existing_definitions (test_connectivity.ConnectivityBasicsTests.test_led_diode_capacitor_aliases_use_existing_definitions) ... ok
+test_multipin_ne555_keeps_unwired_pins_separate (test_connectivity.ConnectivityBasicsTests.test_multipin_ne555_keeps_unwired_pins_separate) ... ok
+test_multiple_edges_referencing_one_pin_are_normal (test_connectivity.ConnectivityBasicsTests.test_multiple_edges_referencing_one_pin_are_normal) ... ok
+test_same_coordinates_never_union_distinct_pins (test_connectivity.ConnectivityBasicsTests.test_same_coordinates_never_union_distinct_pins) ... ok
+test_source_member_iteration_order_is_retained (test_connectivity.ConnectivityBasicsTests.test_source_member_iteration_order_is_retained) ... ok
+test_anonymous_name_never_collides_with_source_label (test_connectivity.ConnectivityLabelsAndTracingTests.test_anonymous_name_never_collides_with_source_label) ... ok
+test_canonical_special_semantics (test_connectivity.ConnectivityLabelsAndTracingTests.test_canonical_special_semantics) ... ok
+test_custom_labels_merge_only_exact_spelling_and_have_named_output (test_connectivity.ConnectivityLabelsAndTracingTests.test_custom_labels_merge_only_exact_spelling_and_have_named_output) ... ok
+test_debugger_reports_source_diagnostics_not_silent_skips (test_connectivity.ConnectivityLabelsAndTracingTests.test_debugger_reports_source_diagnostics_not_silent_skips) ... ok
+test_debugger_traces_named_nets_source_edges_and_pin_aliases (test_connectivity.ConnectivityLabelsAndTracingTests.test_debugger_traces_named_nets_source_edges_and_pin_aliases) ... ok
+test_explicit_power_ground_conflict_blocks_other_labels_warn (test_connectivity.ConnectivityLabelsAndTracingTests.test_explicit_power_ground_conflict_blocks_other_labels_warn) ... LTspice export of 'circuit' produced 1 geometry warning(s): CONFLICTING_NET_LABELS x1. Use generate_asc_with_diagnostics() for details.
+LTspice export of 'circuit' produced 1 geometry warning(s): CONFLICTING_NET_LABELS x1. Use generate_asc_with_diagnostics() for details.
+LTspice export of 'circuit' produced 1 geometry warning(s): CONFLICTING_NET_LABELS x1. Use generate_asc_with_diagnostics() for details.
+ok
+test_label_only_and_optional_mega_net_warnings_do_not_guess_topology (test_connectivity.ConnectivityLabelsAndTracingTests.test_label_only_and_optional_mega_net_warnings_do_not_guess_topology) ... ok
+test_special_pin_names_never_implicitly_join_labels (test_connectivity.ConnectivityLabelsAndTracingTests.test_special_pin_names_never_implicitly_join_labels) ... ok
+test_ambiguous_identity_endpoint_is_not_resolved (test_connectivity.ConnectivitySourceDiagnosticsTests.test_ambiguous_identity_endpoint_is_not_resolved) ... ok
+test_component_id_reference_collisions_never_overwrite_silently (test_connectivity.ConnectivitySourceDiagnosticsTests.test_component_id_reference_collisions_never_overwrite_silently) ... ok
+test_dual_wire_fields_canonical_equivalence_is_allowed (test_connectivity.ConnectivitySourceDiagnosticsTests.test_dual_wire_fields_canonical_equivalence_is_allowed) ... ok
+test_dual_wire_fields_disagreement_including_empty_is_error (test_connectivity.ConnectivitySourceDiagnosticsTests.test_dual_wire_fields_disagreement_including_empty_is_error) ... ok
+test_duplicate_wire_identity_warns_if_same_edge_errors_if_different (test_connectivity.ConnectivitySourceDiagnosticsTests.test_duplicate_wire_identity_warns_if_same_edge_errors_if_different) ... ok
+test_duplicate_wires_are_warnings_not_repeated_pins (test_connectivity.ConnectivitySourceDiagnosticsTests.test_duplicate_wires_are_warnings_not_repeated_pins) ... ok
+test_malformed_collections_are_diagnostics_not_crashes (test_connectivity.ConnectivitySourceDiagnosticsTests.test_malformed_collections_are_diagnostics_not_crashes) ... ok
+test_missing_invalid_and_empty_endpoints (test_connectivity.ConnectivitySourceDiagnosticsTests.test_missing_invalid_and_empty_endpoints) ... ok
+test_missing_or_malformed_component_identity (test_connectivity.ConnectivitySourceDiagnosticsTests.test_missing_or_malformed_component_identity) ... ok
+test_raw_canonical_and_special_self_wires_are_errors (test_connectivity.ConnectivitySourceDiagnosticsTests.test_raw_canonical_and_special_self_wires_are_errors) ... ok
+test_type_value_definition_disagreement_is_not_repaired (test_connectivity.ConnectivitySourceDiagnosticsTests.test_type_value_definition_disagreement_is_not_repaired) ... ok
+test_unknown_kind_warns_unwired_and_errors_when_wired (test_connectivity.ConnectivitySourceDiagnosticsTests.test_unknown_kind_warns_unwired_and_errors_when_wired) ... LTspice export of 'circuit' produced 1 geometry warning(s): UNKNOWN_COMPONENT_KIND x1. Use generate_asc_with_diagnostics() for details.
+ok
+test_duplicate_net_and_membership_mutations_are_errors (test_connectivity.ProducedNetValidationTests.test_duplicate_net_and_membership_mutations_are_errors) ... ok
+test_missing_expected_pin_is_floating_even_if_members_still_claim_it (test_connectivity.ProducedNetValidationTests.test_missing_expected_pin_is_floating_even_if_members_still_claim_it) ... ok
+test_moving_pin_detects_both_unexpected_and_floating (test_connectivity.ProducedNetValidationTests.test_moving_pin_detects_both_unexpected_and_floating) ... ok
+test_removed_net_merged_net_and_split_net_are_errors (test_connectivity.ProducedNetValidationTests.test_removed_net_merged_net_and_split_net_are_errors) ... ok
+test_removed_or_changed_labels_are_not_hidden (test_connectivity.ProducedNetValidationTests.test_removed_or_changed_labels_are_not_hidden) ... ok
+test_unexpected_pin_on_wrong_net_is_reported_with_source_net (test_connectivity.ProducedNetValidationTests.test_unexpected_pin_on_wrong_net_is_reported_with_source_net) ... ok
+test_unmodified_source_and_routed_memberships_validate (test_connectivity.ProducedNetValidationTests.test_unmodified_source_and_routed_memberships_validate) ... ok
+test_unwired_and_undefined_produced_pins_are_unexpected (test_connectivity.ProducedNetValidationTests.test_unwired_and_undefined_produced_pins_are_unexpected) ... ok
+test_all_bundled_circuits_export_without_special_text_nodes (test_ltspice_exporter.LtspiceExporterTests.test_all_bundled_circuits_export_without_special_text_nodes) ... ok
+test_common_emitter_amplifier_routes_output_and_bias_nodes (test_ltspice_exporter.LtspiceExporterTests.test_common_emitter_amplifier_routes_output_and_bias_nodes) ... ok
+test_led_blinker_uses_led_and_transistor_symbols (test_ltspice_exporter.LtspiceExporterTests.test_led_blinker_uses_led_and_transistor_symbols) ... ok
+test_rc_low_pass_filter_export_contains_special_nodes (test_ltspice_exporter.LtspiceExporterTests.test_rc_low_pass_filter_export_contains_special_nodes) ... ok
+test_explicit_executable_discovery (test_ltspice_netlist.InvocationTests.test_explicit_executable_discovery) ... ok
+test_failures_do_not_accept_stale_netlist (test_ltspice_netlist.InvocationTests.test_failures_do_not_accept_stale_netlist) ... ok
+test_runner_absolute_argument_timeout_and_artifact_isolation (test_ltspice_netlist.InvocationTests.test_runner_absolute_argument_timeout_and_artifact_isolation) ... ok
+test_device_nodes_substrate_prefix_aliases_and_continuations (test_ltspice_netlist.NetlistParserTests.test_device_nodes_substrate_prefix_aliases_and_continuations) ... ok
+test_ltspice_text_encodings (test_ltspice_netlist.NetlistParserTests.test_ltspice_text_encodings) ... ok
+test_parser_fails_closed_on_missing_duplicate_and_truncated_devices (test_ltspice_netlist.NetlistParserTests.test_parser_fails_closed_on_missing_duplicate_and_truncated_devices) ... ok
+test_stock_geometry_mismatch_and_duplicate_orders_are_errors (test_ltspice_netlist.NetlistParserTests.test_stock_geometry_mismatch_and_duplicate_orders_are_errors) ... ok
+test_subcircuit_name_aliases (test_ltspice_netlist.NetlistParserTests.test_subcircuit_name_aliases) ... ok
+test_equivalence_ignores_names_order_and_node_case (test_ltspice_netlist.PartitionTests.test_equivalence_ignores_names_order_and_node_case) ... ok
+test_opens_missing_and_unexpected_pins (test_ltspice_netlist.PartitionTests.test_opens_missing_and_unexpected_pins) ... ok
+test_short_is_not_a_successful_expected_source_match (test_ltspice_netlist.PartitionTests.test_short_is_not_a_successful_expected_source_match) ... ok
+test_actual_negative_common_emitter_baseline_reports_shorts (test_ltspice_netlist.RealLtspiceTests.test_actual_negative_common_emitter_baseline_reports_shorts) ... ok
+test_real_junction_semantics_matrix (test_ltspice_netlist.RealLtspiceTests.test_real_junction_semantics_matrix) ... ok
+test_real_ne555_value2_and_subcircuit_pin_order (test_ltspice_netlist.RealLtspiceTests.test_real_ne555_value2_and_subcircuit_pin_order) ... ok
+test_circuit_geometry_lists_every_component (test_pin_geometry.DebuggerTests.test_circuit_geometry_lists_every_component) ... ok
+test_connections_unify_pin_aliases (test_pin_geometry.DebuggerTests.test_connections_unify_pin_aliases) ... ok
+test_geometry_listing_for_transistor (test_pin_geometry.DebuggerTests.test_geometry_listing_for_transistor) ... ok
+test_geometry_listing_for_unknown_kind (test_pin_geometry.DebuggerTests.test_geometry_listing_for_unknown_kind) ... ok
+test_geometry_listing_for_unplaced_component (test_pin_geometry.DebuggerTests.test_geometry_listing_for_unplaced_component) ... ok
+test_all_bundled_circuits_have_structurally_valid_wires (test_pin_geometry.EndToEndExportTests.test_all_bundled_circuits_have_structurally_valid_wires) ... ok
+test_common_emitter_every_json_pin_lands_on_a_wire_endpoint (test_pin_geometry.EndToEndExportTests.test_common_emitter_every_json_pin_lands_on_a_wire_endpoint) ... ok
+test_common_emitter_has_no_error_diagnostics (test_pin_geometry.EndToEndExportTests.test_common_emitter_has_no_error_diagnostics) ... ok
+test_common_emitter_symbol_lines_use_library_orientation (test_pin_geometry.EndToEndExportTests.test_common_emitter_symbol_lines_use_library_orientation) ... FAIL
+test_every_coordinate_in_the_asc_is_on_the_grid (test_pin_geometry.EndToEndExportTests.test_every_coordinate_in_the_asc_is_on_the_grid) ... ok
+test_export_is_deterministic (test_pin_geometry.EndToEndExportTests.test_export_is_deterministic) ... ok
+test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers)
+The pin_maps path and the independent test path must agree. ... 
+  test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='Q1', pin='C')
+The pin_maps path and the independent test path must agree. ... FAIL
+  test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='Q1', pin='B')
+The pin_maps path and the independent test path must agree. ... FAIL
+  test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='Q1', pin='E')
+The pin_maps path and the independent test path must agree. ... FAIL
+  test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='R1', pin='1')
+The pin_maps path and the independent test path must agree. ... FAIL
+  test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='R1', pin='2')
+The pin_maps path and the independent test path must agree. ... FAIL
+  test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='R2', pin='1')
+The pin_maps path and the independent test path must agree. ... FAIL
+  test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='R2', pin='2')
+The pin_maps path and the independent test path must agree. ... FAIL
+  test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='R3', pin='1')
+The pin_maps path and the independent test path must agree. ... FAIL
+  test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='R3', pin='2')
+The pin_maps path and the independent test path must agree. ... FAIL
+  test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='C1', pin='1')
+The pin_maps path and the independent test path must agree. ... FAIL
+  test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='C1', pin='2')
+The pin_maps path and the independent test path must agree. ... FAIL
+  test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='C2', pin='1')
+The pin_maps path and the independent test path must agree. ... FAIL
+  test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='C2', pin='2')
+The pin_maps path and the independent test path must agree. ... FAIL
+test_flags_sit_on_a_wire_endpoint (test_pin_geometry.EndToEndExportTests.test_flags_sit_on_a_wire_endpoint) ... ok
+test_non_strict_export_returns_safe_text (test_pin_geometry.EndToEndExportTests.test_non_strict_export_returns_safe_text) ... ok
+test_rc_filters_pins_land_on_wire_endpoints (test_pin_geometry.EndToEndExportTests.test_rc_filters_pins_land_on_wire_endpoints) ... ok
+test_strict_mode_accepts_phase7_common_emitter_routing (test_pin_geometry.EndToEndExportTests.test_strict_mode_accepts_phase7_common_emitter_routing)
+Phase7 replaces the centroid routes that shorted five nets on ground. ... ok
+test_every_pin_of_every_kind_is_on_the_grid_at_every_orientation (test_pin_geometry.GridTests.test_every_pin_of_every_kind_is_on_the_grid_at_every_orientation) ... ok
+test_exporter_placement_is_on_grid (test_pin_geometry.GridTests.test_exporter_placement_is_on_grid) ... ok
+test_snap_basics (test_pin_geometry.GridTests.test_snap_basics) ... ok
+test_snap_is_idempotent (test_pin_geometry.GridTests.test_snap_is_idempotent) ... ok
+test_closed_orphan_island_is_not_mistaken_for_connected_net (test_pin_geometry.Phase7ValidatorTests.test_closed_orphan_island_is_not_mistaken_for_connected_net) ... ok
+test_flag_at_own_wire_interior_attaches_but_floating_flag_errors (test_pin_geometry.Phase7ValidatorTests.test_flag_at_own_wire_interior_attaches_but_floating_flag_errors) ... ok
+test_flag_on_foreign_wire_is_a_short (test_pin_geometry.Phase7ValidatorTests.test_flag_on_foreign_wire_is_a_short) ... ok
+test_foreign_wire_shared_endpoint_is_short_without_pin_there (test_pin_geometry.Phase7ValidatorTests.test_foreign_wire_shared_endpoint_is_short_without_pin_there) ... ok
+test_orientation_rejects_diagonal_and_zero_length (test_pin_geometry.Phase7ValidatorTests.test_orientation_rejects_diagonal_and_zero_length) ... ok
+test_unsplit_interior_crossing_does_not_repair_disconnected_same_net (test_pin_geometry.Phase7ValidatorTests.test_unsplit_interior_crossing_does_not_repair_disconnected_same_net) ... ok
+test_unsplit_interior_perpendicular_crossing_is_nonconductive (test_pin_geometry.Phase7ValidatorTests.test_unsplit_interior_perpendicular_crossing_is_nonconductive) ... ok
+test_unwired_reserved_pin_cannot_be_crossed_or_flagged (test_pin_geometry.Phase7ValidatorTests.test_unwired_reserved_pin_cannot_be_crossed_or_flagged) ... ok
+test_capacitor_pins_at_known_anchor (test_pin_geometry.ResistorOrientationTests.test_capacitor_pins_at_known_anchor) ... ok
+test_facing_matches_pin_direction_from_body (test_pin_geometry.ResistorOrientationTests.test_facing_matches_pin_direction_from_body)
+A pin must face away from the symbol body for every orientation. ... ok
+test_get_pin_coordinate_reads_the_placement_fields (test_pin_geometry.ResistorOrientationTests.test_get_pin_coordinate_reads_the_placement_fields) ... ok
+test_led_pins_at_known_anchor (test_pin_geometry.ResistorOrientationTests.test_led_pins_at_known_anchor) ... ok
+test_ne555_pins_at_known_anchor (test_pin_geometry.ResistorOrientationTests.test_ne555_pins_at_known_anchor) ... ok
+test_orientation_string (test_pin_geometry.ResistorOrientationTests.test_orientation_string) ... ok
+test_pin_facing_follows_rotation (test_pin_geometry.ResistorOrientationTests.test_pin_facing_follows_rotation) ... ok
+test_resistor_pins_at_every_orientation (test_pin_geometry.ResistorOrientationTests.test_resistor_pins_at_every_orientation) ... ok
+test_resolver_matches_independent_transform_for_every_kind (test_pin_geometry.ResistorOrientationTests.test_resolver_matches_independent_transform_for_every_kind) ... ok
+test_rotation_by_90_four_times_is_identity (test_pin_geometry.ResistorOrientationTests.test_rotation_by_90_four_times_is_identity) ... ok
+test_transistor_pins_at_known_anchor (test_pin_geometry.ResistorOrientationTests.test_transistor_pins_at_known_anchor) ... ok
+test_unknown_orientation_raises (test_pin_geometry.ResistorOrientationTests.test_unknown_orientation_raises) ... ok
+test_unknown_pin_raises (test_pin_geometry.ResistorOrientationTests.test_unknown_pin_raises) ... ok
+test_every_pin_is_inside_declared_bounds (test_pin_geometry.SymbolDefinitionTests.test_every_pin_is_inside_declared_bounds) ... ok
+test_relative_pin_coordinates_match_asy_files (test_pin_geometry.SymbolDefinitionTests.test_relative_pin_coordinates_match_asy_files) ... ok
+test_symbol_names (test_pin_geometry.SymbolDefinitionTests.test_symbol_names) ... ok
+test_symbol_names_are_not_duplicated_elsewhere (test_pin_geometry.SymbolDefinitionTests.test_symbol_names_are_not_duplicated_elsewhere) ... ok
+test_transistor_pins_are_named_not_numbered (test_pin_geometry.SymbolDefinitionTests.test_transistor_pins_are_named_not_numbered) ... ok
+test_clean_net_has_no_diagnostics (test_pin_geometry.ValidatorTests.test_clean_net_has_no_diagnostics) ... ok
+test_crossing_different_nets_is_a_short_warning (test_pin_geometry.ValidatorTests.test_crossing_different_nets_is_a_short_warning) ... ok
+test_dangling_stub_is_an_invalid_endpoint (test_pin_geometry.ValidatorTests.test_dangling_stub_is_an_invalid_endpoint) ... ok
+test_net_split_in_two_pieces (test_pin_geometry.ValidatorTests.test_net_split_in_two_pieces) ... ok
+test_off_grid_pin (test_pin_geometry.ValidatorTests.test_off_grid_pin) ... ok
+test_off_grid_vertex (test_pin_geometry.ValidatorTests.test_off_grid_vertex) ... ok
+test_two_nets_on_the_same_pin_coordinate_is_an_error (test_pin_geometry.ValidatorTests.test_two_nets_on_the_same_pin_coordinate_is_an_error) ... ok
+test_wire_passing_over_another_nets_pin (test_pin_geometry.ValidatorTests.test_wire_passing_over_another_nets_pin) ... ok
+test_wire_that_stops_short_of_a_pin (test_pin_geometry.ValidatorTests.test_wire_that_stops_short_of_a_pin) ... ok
+test_audit_can_revisit_existing_unsplit_crossing_pair (test_routing.CollisionDetectorTests.test_audit_can_revisit_existing_unsplit_crossing_pair) ... ok
+test_crossing_reservation_blocks_points_for_every_net (test_routing.CollisionDetectorTests.test_crossing_reservation_blocks_points_for_every_net) ... ok
+test_foreign_endpoint_touches_and_overlaps_are_never_safe_crossings (test_routing.CollisionDetectorTests.test_foreign_endpoint_touches_and_overlaps_are_never_safe_crossings) ... ok
+test_later_attachment_cannot_end_at_or_change_axis_through_crossing (test_routing.CollisionDetectorTests.test_later_attachment_cannot_end_at_or_change_axis_through_crossing) ... ok
+test_only_designated_exact_outward_lead_can_enter_its_owner (test_routing.CollisionDetectorTests.test_only_designated_exact_outward_lead_can_enter_its_owner) ... ok
+test_only_fallback_accepts_a_new_unsplit_x (test_routing.CollisionDetectorTests.test_only_fallback_accepts_a_new_unsplit_x) ... ok
+test_real_tree_attachment_avoids_projected_crossing_goal (test_routing.CollisionDetectorTests.test_real_tree_attachment_avoids_projected_crossing_goal) ... ok
+test_unused_pin_and_escape_corridor_are_reserved (test_routing.CollisionDetectorTests.test_unused_pin_and_escape_corridor_are_reserved) ... ok
+test_zero_diagonal_and_off_grid_candidates_are_rejected (test_routing.CollisionDetectorTests.test_zero_diagonal_and_off_grid_candidates_are_rejected) ... ok
+test_grid_budget_exhaustion_discards_completed_net_and_flag (test_routing.DirectRouterTests.test_grid_budget_exhaustion_discards_completed_net_and_flag) ... ok
+test_invalid_options_return_empty_diagnostic_result_without_search (test_routing.DirectRouterTests.test_invalid_options_return_empty_diagnostic_result_without_search) ... ok
+test_low_bend_candidate_detours_around_a_real_symbol (test_routing.DirectRouterTests.test_low_bend_candidate_detours_around_a_real_symbol) ... ok
+test_multi_bend_astar_detour_avoids_bodies_and_unused_pins (test_routing.DirectRouterTests.test_multi_bend_astar_detour_avoids_bodies_and_unused_pins) ... ok
+test_repeated_routes_are_deterministic_and_leave_inputs_unchanged (test_routing.DirectRouterTests.test_repeated_routes_are_deterministic_and_leave_inputs_unchanged) ... ok
+test_state_budget_exhaustion_discards_completed_net_and_flag (test_routing.DirectRouterTests.test_state_budget_exhaustion_discards_completed_net_and_flag) ... ok
+test_tiny_search_budgets_do_not_disable_safe_candidate_routes (test_routing.DirectRouterTests.test_tiny_search_budgets_do_not_disable_safe_candidate_routes) ... ok
+test_empty_and_zero_only_inputs_have_no_geometry (test_routing.SegmentNormalizationTests.test_empty_and_zero_only_inputs_have_no_geometry) ... ok
+test_foreign_x_remains_strictly_inside_both_unsplit_wires (test_routing.SegmentNormalizationTests.test_foreign_x_remains_strictly_inside_both_unsplit_wires) ... ok
+test_interior_terminals_and_escape_ports_remain_endpoints (test_routing.SegmentNormalizationTests.test_interior_terminals_and_escape_ports_remain_endpoints) ... ok
+test_normalization_is_deterministic_and_idempotent (test_routing.SegmentNormalizationTests.test_normalization_is_deterministic_and_idempotent) ... ok
+test_overlapping_collinear_segments_become_one_wire (test_routing.SegmentNormalizationTests.test_overlapping_collinear_segments_become_one_wire) ... ok
+test_path_compaction_removes_repeats_and_collinear_nodes_not_bends (test_routing.SegmentNormalizationTests.test_path_compaction_removes_repeats_and_collinear_nodes_not_bends) ... ok
+test_same_net_x_is_split_into_a_four_way_junction (test_routing.SegmentNormalizationTests.test_same_net_x_is_split_into_a_four_way_junction) ... ok
+test_t_attachment_splits_trunk_and_preserves_real_junction (test_routing.SegmentNormalizationTests.test_t_attachment_splits_trunk_and_preserves_real_junction) ... ok
+test_zero_duplicate_reversed_and_collinear_segments_are_removed (test_routing.SegmentNormalizationTests.test_zero_duplicate_reversed_and_collinear_segments_are_removed) ... ok
+test_bridge_rectifier_actual_ltspice_partition (test_routing_fixtures.RealLtspiceRoutingFixtureTests.test_bridge_rectifier_actual_ltspice_partition) ... ok
+test_voltage_divider_actual_ltspice_partition (test_routing_fixtures.RealLtspiceRoutingFixtureTests.test_voltage_divider_actual_ltspice_partition) ... ok
+test_bridge_rectifier_deterministic_asc (test_routing_fixtures.RoutingFixtureTests.test_bridge_rectifier_deterministic_asc) ... ok
+test_bridge_rectifier_input_immutability (test_routing_fixtures.RoutingFixtureTests.test_bridge_rectifier_input_immutability) ... ok
+test_bridge_rectifier_output_partition_and_geometry (test_routing_fixtures.RoutingFixtureTests.test_bridge_rectifier_output_partition_and_geometry) ... ok
+test_bridge_rectifier_source_partition (test_routing_fixtures.RoutingFixtureTests.test_bridge_rectifier_source_partition) ... ok
+test_voltage_divider_deterministic_asc (test_routing_fixtures.RoutingFixtureTests.test_voltage_divider_deterministic_asc) ... ok
+test_voltage_divider_input_immutability (test_routing_fixtures.RoutingFixtureTests.test_voltage_divider_input_immutability) ... ok
+test_voltage_divider_output_partition_and_geometry (test_routing_fixtures.RoutingFixtureTests.test_voltage_divider_output_partition_and_geometry) ... ok
+test_voltage_divider_source_partition (test_routing_fixtures.RoutingFixtureTests.test_voltage_divider_source_partition) ... ok
+test_all_five_actual_exports_match_complete_source_partition (test_routing_integration.RealLtspiceRoutingIntegrationTests.test_all_five_actual_exports_match_complete_source_partition) ... ok
+test_custom_flags_preserve_actual_node_names_and_pin_partition (test_routing_integration.RealLtspiceRoutingIntegrationTests.test_custom_flags_preserve_actual_node_names_and_pin_partition) ... ok
+test_all_templates_preserve_source_and_serialize_exact_router_geometry (test_routing_integration.RoutingIntegrationTests.test_all_templates_preserve_source_and_serialize_exact_router_geometry) ... ok
+test_casefold_label_collision_blocks_without_merging_source (test_routing_integration.RoutingIntegrationTests.test_casefold_label_collision_blocks_without_merging_source) ... ok
+test_custom_labels_are_canonical_route_flags_not_inferred_membership (test_routing_integration.RoutingIntegrationTests.test_custom_labels_are_canonical_route_flags_not_inferred_membership) ... ok
+test_debugger_reuses_exact_route_result_without_any_compute (test_routing_integration.RoutingIntegrationTests.test_debugger_reuses_exact_route_result_without_any_compute) ... FAIL
+test_empty_success_result_cannot_hide_missing_nets (test_routing_integration.RoutingIntegrationTests.test_empty_success_result_cannot_hide_missing_nets) ... ok
+test_flag_on_foreign_wire_blocks_export (test_routing_integration.RoutingIntegrationTests.test_flag_on_foreign_wire_blocks_export) ... ok
+test_injected_route_failure_never_returns_plausible_artifact_in_any_mode (test_routing_integration.RoutingIntegrationTests.test_injected_route_failure_never_returns_plausible_artifact_in_any_mode) ... ok
+test_missing_or_misnamed_flags_fail_without_inventing_label_position (test_routing_integration.RoutingIntegrationTests.test_missing_or_misnamed_flags_fail_without_inventing_label_position) ... ok
+test_nonorthogonal_and_zero_length_injected_routes_block_export (test_routing_integration.RoutingIntegrationTests.test_nonorthogonal_and_zero_length_injected_routes_block_export) ... ok
+test_reserved_unwired_pin_contact_blocks_default_export (test_routing_integration.RoutingIntegrationTests.test_reserved_unwired_pin_contact_blocks_default_export) ... ok
+test_router_cannot_mutate_logical_input_to_hide_a_merge (test_routing_integration.RoutingIntegrationTests.test_router_cannot_mutate_logical_input_to_hide_a_merge) ... ok
+test_router_short_warning_is_promoted_and_returns_empty_text (test_routing_integration.RoutingIntegrationTests.test_router_short_warning_is_promoted_and_returns_empty_text) ... ok
+test_same_net_label_aliases_emit_one_canonical_flag (test_routing_integration.RoutingIntegrationTests.test_same_net_label_aliases_emit_one_canonical_flag) ... ok
+test_unsafe_foreign_pin_contact_blocks_even_nonstrict (test_routing_integration.RoutingIntegrationTests.test_unsafe_foreign_pin_contact_blocks_even_nonstrict) ... ok
+test_wrong_routed_pin_coordinate_fails_symbol_consistency_gate (test_routing_integration.RoutingIntegrationTests.test_wrong_routed_pin_coordinate_fails_symbol_consistency_gate) ... ok
+test_coincident_duplicate_disconnected_and_singleton_pin_zero_cases (test_routing_metrics.RoutingMetricsTests.test_coincident_duplicate_disconnected_and_singleton_pin_zero_cases) ... ok
+test_detour_requires_strict_ratio_and_inclusive_excess_thresholds (test_routing_metrics.RoutingMetricsTests.test_detour_requires_strict_ratio_and_inclusive_excess_thresholds) ... ok
+test_diagonal_wire_is_rejected_not_reinterpreted_or_snapped (test_routing_metrics.RoutingMetricsTests.test_diagonal_wire_is_rejected_not_reinterpreted_or_snapped) ... ok
+test_efficiency_sums_per_net_references_not_global_envelope (test_routing_metrics.RoutingMetricsTests.test_efficiency_sums_per_net_references_not_global_envelope) ... ok
+test_empty_metrics_are_json_safe_and_explicitly_zero (test_routing_metrics.RoutingMetricsTests.test_empty_metrics_are_json_safe_and_explicitly_zero) ... ok
+test_flags_form_only_local_contacts_and_are_not_pair_endpoints (test_routing_metrics.RoutingMetricsTests.test_flags_form_only_local_contacts_and_are_not_pair_endpoints) ... ok
+test_foreign_route_never_supplies_shortcut_to_disconnected_net (test_routing_metrics.RoutingMetricsTests.test_foreign_route_never_supplies_shortcut_to_disconnected_net) ... ok
+test_foreign_unsplit_crossing_is_distinct_from_junction (test_routing_metrics.RoutingMetricsTests.test_foreign_unsplit_crossing_is_distinct_from_junction) ... ok
+test_hpwl_reference_remains_lower_bound_for_steiner_branch (test_routing_metrics.RoutingMetricsTests.test_hpwl_reference_remains_lower_bound_for_steiner_branch) ... ok
+test_interior_pins_are_graph_terminals_not_nearest_endpoints (test_routing_metrics.RoutingMetricsTests.test_interior_pins_are_graph_terminals_not_nearest_endpoints) ... ok
+test_iterables_order_and_endpoint_direction_are_deterministic_and_pure (test_routing_metrics.RoutingMetricsTests.test_iterables_order_and_endpoint_direction_are_deterministic_and_pure) ... ok
+test_l_shape_and_collinear_subdivisions_count_one_bend (test_routing_metrics.RoutingMetricsTests.test_l_shape_and_collinear_subdivisions_count_one_bend) ... ok
+test_multi_terminal_detour_ratio_uses_each_pair_not_net_length (test_routing_metrics.RoutingMetricsTests.test_multi_terminal_detour_ratio_uses_each_pair_not_net_length) ... ok
+test_partial_collinear_overlap_connects_using_union_distance (test_routing_metrics.RoutingMetricsTests.test_partial_collinear_overlap_connects_using_union_distance) ... ok
+test_same_net_unsplit_x_does_not_connect_four_pin_terminals (test_routing_metrics.RoutingMetricsTests.test_same_net_unsplit_x_does_not_connect_four_pin_terminals) ... ok
+test_shortest_path_beats_longer_cycle_and_ignores_dead_end_for_detours (test_routing_metrics.RoutingMetricsTests.test_shortest_path_beats_longer_cycle_and_ignores_dead_end_for_detours) ... ok
+test_straight_route_has_unit_efficiency_and_no_bends (test_routing_metrics.RoutingMetricsTests.test_straight_route_has_unit_efficiency_and_no_bends) ... ok
+test_unsplit_trunk_t_contact_is_one_junction_not_arbitrary_turns (test_routing_metrics.RoutingMetricsTests.test_unsplit_trunk_t_contact_is_one_junction_not_arbitrary_turns) ... ok
+test_wire_records_are_not_normalized_but_duplicate_graph_edges_are (test_routing_metrics.RoutingMetricsTests.test_wire_records_are_not_normalized_but_duplicate_graph_edges_are) ... ok
+test_zero_length_record_does_not_make_an_unsplit_x_conductive (test_routing_metrics.RoutingMetricsTests.test_zero_length_record_does_not_make_an_unsplit_x_conductive) ... ok
+test_bounds_include_symbol_artwork_not_only_pins_plus_all_routing_points (test_routing_metrics.SymbolOccupancyMetricsTests.test_bounds_include_symbol_artwork_not_only_pins_plus_all_routing_points) ... ok
+test_bounds_use_library_and_resolver_including_definition_anchor (test_routing_metrics.SymbolOccupancyMetricsTests.test_bounds_use_library_and_resolver_including_definition_anchor) ... ok
+test_resistor_bounds_all_orientations_and_explicit_mirror (test_routing_metrics.SymbolOccupancyMetricsTests.test_resistor_bounds_all_orientations_and_explicit_mirror) ... ok
+test_unknown_unplaced_and_bad_orientation_layouts_are_not_guessed (test_routing_metrics.SymbolOccupancyMetricsTests.test_unknown_unplaced_and_bad_orientation_layouts_are_not_guessed) ... ok
+
+======================================================================
+FAIL: test_all_bundled_phase6_symbol_header_bytes_unchanged (test_connectivity.BundledSourceRegressionTests.test_all_bundled_phase6_symbol_header_bytes_unchanged) (filename='555_astable_multivibrator.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_connectivity.py", line 498, in test_all_bundled_phase6_symbol_header_bytes_unchanged
+    self.assertEqual(hashlib.sha256(frozen.encode("utf-8")).hexdigest(), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '3b0650210204f926ab31ab9268e56f3ef2cb31c0a6bc32338eba4aaf41fee128' != '9f8ccab8f04ffaaee328013d37a2a026fa07207b135f0cdc00066288ab1a11dd'
+- 3b0650210204f926ab31ab9268e56f3ef2cb31c0a6bc32338eba4aaf41fee128
++ 9f8ccab8f04ffaaee328013d37a2a026fa07207b135f0cdc00066288ab1a11dd
+
+
+======================================================================
+FAIL: test_all_bundled_phase6_symbol_header_bytes_unchanged (test_connectivity.BundledSourceRegressionTests.test_all_bundled_phase6_symbol_header_bytes_unchanged) (filename='common_emitter_amplifier.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_connectivity.py", line 498, in test_all_bundled_phase6_symbol_header_bytes_unchanged
+    self.assertEqual(hashlib.sha256(frozen.encode("utf-8")).hexdigest(), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '3fbb63e515e889171b9a8caf0833ae0f6b499926fb21dd1109e391cba78d62a1' != 'e899404461d0e4d7d7e22d682fe9e85399612b37732a3c7fd9f6247d4c0c0c94'
+- 3fbb63e515e889171b9a8caf0833ae0f6b499926fb21dd1109e391cba78d62a1
++ e899404461d0e4d7d7e22d682fe9e85399612b37732a3c7fd9f6247d4c0c0c94
+
+
+======================================================================
+FAIL: test_all_bundled_phase6_symbol_header_bytes_unchanged (test_connectivity.BundledSourceRegressionTests.test_all_bundled_phase6_symbol_header_bytes_unchanged) (filename='led_blinker.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_connectivity.py", line 498, in test_all_bundled_phase6_symbol_header_bytes_unchanged
+    self.assertEqual(hashlib.sha256(frozen.encode("utf-8")).hexdigest(), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '357219c88b79848b8d826a007656827e8b12eaa06c22e7bb1371da377d75e5ee' != '5c81dad93d32b6690fe866d937d70e1530b4dac0ce4ab96b8ed42f1070d93df4'
+- 357219c88b79848b8d826a007656827e8b12eaa06c22e7bb1371da377d75e5ee
++ 5c81dad93d32b6690fe866d937d70e1530b4dac0ce4ab96b8ed42f1070d93df4
+
+
+======================================================================
+FAIL: test_all_bundled_phase6_symbol_header_bytes_unchanged (test_connectivity.BundledSourceRegressionTests.test_all_bundled_phase6_symbol_header_bytes_unchanged) (filename='rc_high_pass_filter.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_connectivity.py", line 498, in test_all_bundled_phase6_symbol_header_bytes_unchanged
+    self.assertEqual(hashlib.sha256(frozen.encode("utf-8")).hexdigest(), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '22e5830e467c4d7f8f0e007947999daea5b2c127c66cb225c524669cfaa52e92' != 'f4ca1f8e9dd7bfcdfca7513d7306b86874082c49d004d6d48e481ab20d4feeec'
+- 22e5830e467c4d7f8f0e007947999daea5b2c127c66cb225c524669cfaa52e92
++ f4ca1f8e9dd7bfcdfca7513d7306b86874082c49d004d6d48e481ab20d4feeec
+
+
+======================================================================
+FAIL: test_all_bundled_phase6_symbol_header_bytes_unchanged (test_connectivity.BundledSourceRegressionTests.test_all_bundled_phase6_symbol_header_bytes_unchanged) (filename='rc_low_pass_filter.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_connectivity.py", line 498, in test_all_bundled_phase6_symbol_header_bytes_unchanged
+    self.assertEqual(hashlib.sha256(frozen.encode("utf-8")).hexdigest(), expected)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '617deb5f7545bc53aecd88b39f666c3e197f7f3bd72f4a1b9721942a8dde333a' != '3353cc048bcb8c62ab116d972a7fb28dabaae7d35fb13cfe62b8e72f83612920'
+- 617deb5f7545bc53aecd88b39f666c3e197f7f3bd72f4a1b9721942a8dde333a
++ 3353cc048bcb8c62ab116d972a7fb28dabaae7d35fb13cfe62b8e72f83612920
+
+
+======================================================================
+FAIL: test_common_emitter_symbol_lines_use_library_orientation (test_pin_geometry.EndToEndExportTests.test_common_emitter_symbol_lines_use_library_orientation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_pin_geometry.py", line 630, in test_common_emitter_symbol_lines_use_library_orientation
+    self.assertTrue(all(s["orient"] == "R0" for s in symbols))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='Q1', pin='C')
+The pin_maps path and the independent test path must agree.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_pin_geometry.py", line 705, in test_exported_pin_positions_match_debugger_numbers
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        get_pin_coordinate(layout, pin.id),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        independent[(comp["reference"], pin.id)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: Tuples differ: (128, 128) != (512, 336)
+
+First differing element 0:
+128
+512
+
+- (128, 128)
++ (512, 336)
+
+======================================================================
+FAIL: test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='Q1', pin='B')
+The pin_maps path and the independent test path must agree.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_pin_geometry.py", line 705, in test_exported_pin_positions_match_debugger_numbers
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        get_pin_coordinate(layout, pin.id),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        independent[(comp["reference"], pin.id)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: Tuples differ: (64, 176) != (448, 384)
+
+First differing element 0:
+64
+448
+
+- (64, 176)
++ (448, 384)
+
+======================================================================
+FAIL: test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='Q1', pin='E')
+The pin_maps path and the independent test path must agree.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_pin_geometry.py", line 705, in test_exported_pin_positions_match_debugger_numbers
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        get_pin_coordinate(layout, pin.id),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        independent[(comp["reference"], pin.id)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: Tuples differ: (128, 224) != (512, 432)
+
+First differing element 0:
+128
+512
+
+- (128, 224)
++ (512, 432)
+
+======================================================================
+FAIL: test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='R1', pin='1')
+The pin_maps path and the independent test path must agree.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_pin_geometry.py", line 705, in test_exported_pin_positions_match_debugger_numbers
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        get_pin_coordinate(layout, pin.id),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        independent[(comp["reference"], pin.id)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: Tuples differ: (336, 144) != (240, 240)
+
+First differing element 0:
+336
+240
+
+- (336, 144)
++ (240, 240)
+
+======================================================================
+FAIL: test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='R1', pin='2')
+The pin_maps path and the independent test path must agree.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_pin_geometry.py", line 705, in test_exported_pin_positions_match_debugger_numbers
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        get_pin_coordinate(layout, pin.id),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        independent[(comp["reference"], pin.id)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: Tuples differ: (336, 224) != (240, 320)
+
+First differing element 0:
+336
+240
+
+- (336, 224)
++ (240, 320)
+
+======================================================================
+FAIL: test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='R2', pin='1')
+The pin_maps path and the independent test path must agree.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_pin_geometry.py", line 705, in test_exported_pin_positions_match_debugger_numbers
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        get_pin_coordinate(layout, pin.id),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        independent[(comp["reference"], pin.id)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: Tuples differ: (592, 144) != (240, 464)
+
+First differing element 0:
+592
+240
+
+- (592, 144)
++ (240, 464)
+
+======================================================================
+FAIL: test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='R2', pin='2')
+The pin_maps path and the independent test path must agree.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_pin_geometry.py", line 705, in test_exported_pin_positions_match_debugger_numbers
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        get_pin_coordinate(layout, pin.id),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        independent[(comp["reference"], pin.id)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: Tuples differ: (592, 224) != (240, 544)
+
+First differing element 0:
+592
+240
+
+- (592, 224)
++ (240, 544)
+
+======================================================================
+FAIL: test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='R3', pin='1')
+The pin_maps path and the independent test path must agree.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_pin_geometry.py", line 705, in test_exported_pin_positions_match_debugger_numbers
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        get_pin_coordinate(layout, pin.id),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        independent[(comp["reference"], pin.id)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: Tuples differ: (848, 144) != (512, 240)
+
+First differing element 0:
+848
+512
+
+- (848, 144)
++ (512, 240)
+
+======================================================================
+FAIL: test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='R3', pin='2')
+The pin_maps path and the independent test path must agree.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_pin_geometry.py", line 705, in test_exported_pin_positions_match_debugger_numbers
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        get_pin_coordinate(layout, pin.id),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        independent[(comp["reference"], pin.id)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: Tuples differ: (848, 224) != (512, 160)
+
+First differing element 0:
+848
+512
+
+- (848, 224)
++ (512, 160)
+
+======================================================================
+FAIL: test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='C1', pin='1')
+The pin_maps path and the independent test path must agree.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_pin_geometry.py", line 705, in test_exported_pin_positions_match_debugger_numbers
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        get_pin_coordinate(layout, pin.id),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        independent[(comp["reference"], pin.id)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: Tuples differ: (80, 384) != (512, 528)
+
+First differing element 0:
+80
+512
+
+- (80, 384)
++ (512, 528)
+
+======================================================================
+FAIL: test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='C1', pin='2')
+The pin_maps path and the independent test path must agree.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_pin_geometry.py", line 705, in test_exported_pin_positions_match_debugger_numbers
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        get_pin_coordinate(layout, pin.id),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        independent[(comp["reference"], pin.id)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: Tuples differ: (80, 448) != (512, 592)
+
+First differing element 0:
+80
+512
+
+- (80, 448)
++ (512, 592)
+
+======================================================================
+FAIL: test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='C2', pin='1')
+The pin_maps path and the independent test path must agree.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_pin_geometry.py", line 705, in test_exported_pin_positions_match_debugger_numbers
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        get_pin_coordinate(layout, pin.id),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        independent[(comp["reference"], pin.id)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: Tuples differ: (336, 384) != (672, 304)
+
+First differing element 0:
+336
+672
+
+- (336, 384)
++ (672, 304)
+
+======================================================================
+FAIL: test_exported_pin_positions_match_debugger_numbers (test_pin_geometry.EndToEndExportTests.test_exported_pin_positions_match_debugger_numbers) (component='C2', pin='2')
+The pin_maps path and the independent test path must agree.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_pin_geometry.py", line 705, in test_exported_pin_positions_match_debugger_numbers
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        get_pin_coordinate(layout, pin.id),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        independent[(comp["reference"], pin.id)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+AssertionError: Tuples differ: (336, 448) != (736, 304)
+
+First differing element 0:
+336
+736
+
+- (336, 448)
++ (736, 304)
+
+======================================================================
+FAIL: test_debugger_reuses_exact_route_result_without_any_compute (test_routing_integration.RoutingIntegrationTests.test_debugger_reuses_exact_route_result_without_any_compute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Projects\Spice Craft\backend\tests\test_routing_integration.py", line 96, in test_debugger_reuses_exact_route_result_without_any_compute
+    self.assertIn("nonconductive", text)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'nonconductive' not found in 'Routed Geometry\nNet VCC\n  Pin R1.1 -> (240, 240)\n  Pin R3.2 -> (512, 160)\n  FLAG (512, 128) VCC\n  WIRE (240, 128) -> (240, 208)\n  WIRE (240, 128) -> (512, 128)\n  WIRE (240, 208) -> (240, 240)\n  WIRE (512, 128) -> (512, 160)\nNet N1\n  Pin R1.2 -> (240, 320)\n  Pin Q1.B -> (448, 384)\n  Pin R2.1 -> (240, 464)\n  WIRE (240, 320) -> (240, 352)\n  WIRE (240, 352) -> (240, 384)\n  WIRE (240, 384) -> (240, 432)\n  WIRE (240, 384) -> (416, 384)\n  WIRE (240, 432) -> (240, 464)\n  WIRE (416, 384) -> (448, 384)\n  Junction (240, 384)\nNet 0\n  Pin R2.2 -> (240, 544)\n  Pin C1.2 -> (512, 592)\n  FLAG (512, 624) 0\n  WIRE (240, 544) -> (240, 576)\n  WIRE (240, 576) -> (240, 624)\n  WIRE (240, 624) -> (512, 624)\n  WIRE (512, 592) -> (512, 624)\nNet N2\n  Pin Q1.C -> (512, 336)\n  Pin R3.1 -> (512, 240)\n  Pin C2.1 -> (672, 304)\n  WIRE (512, 240) -> (512, 272)\n  WIRE (512, 272) -> (512, 304)\n  WIRE (512, 304) -> (512, 336)\n  WIRE (512, 304) -> (640, 304)\n  WIRE (640, 304) -> (672, 304)\n  Junction (512, 304)\nNet N3\n  Pin Q1.E -> (512, 432)\n  Pin C1.1 -> (512, 528)\n  WIRE (512, 432) -> (512, 464)\n  WIRE (512, 464) -> (512, 496)\n  WIRE (512, 496) -> (512, 528)\nNet VOUT\n  Pin C2.2 -> (736, 304)\n  FLAG (768, 304) VOUT\n  WIRE (736, 304) -> (768, 304)\nRouting Metrics\n  astar_searches: 0\n  astar_states: 0\n  budget_exhaustions: 0\n  candidate_paths: 7\n  collision_checks: 9\n  crossings: 0\n  failed_connections: 0\n  fallback_attempts: 0\n  length: 1536\n  order_attempts: 1\n  peak_grid_vertices: 0\n  planar_attempts: 1\n  segments: 23'
+
+----------------------------------------------------------------------
+Ran 196 tests in 30.601s
+
+FAILED (failures=20)
+LTspice negative baseline: short joins VCC, bias, collector, emitter, ground on 0
+LTspice junction unsplit_interior_x: R1.1=N001 R2.1=N002 joined=False
+LTspice junction endpoint_interior_t: R1.1=N001 R2.1=N001 joined=True
+LTspice junction shared_endpoints: R1.1=N001 R2.1=N001 joined=True
+LTspice junction collinear_overlap: R1.1=N001 R2.1=N001 joined=True
+LTspice junction foreign_pin_on_interior: R1.1=N001 R2.1=N001 joined=True
+LTspice junction foreign_flag_on_interior: R1.1=FOREIGN R2.1=FOREIGN joined=True
+LTspice junction same_flag_disconnected: R1.1=SAME R2.1=SAME joined=True
+LTspice junction split_interior_x_control: R1.1=N001 R2.1=N001 joined=True
+LTspice routing fixture bridge_rectifier.json: 10 pins, 4 nets, no shorts/opens
+LTspice routing fixture voltage_divider.json: 4 pins, 3 nets, no shorts/opens
+LTspice Phase7 common_emitter_amplifier.json: 13 pins, no shorts/opens, 0 safe crossings
+LTspice Phase7 555_astable_multivibrator.json: 14 pins, no shorts/opens, 0 safe crossings
+LTspice Phase7 led_blinker.json: 11 pins, no shorts/opens, 0 safe crossings
+LTspice Phase7 rc_low_pass_filter.json: 4 pins, no shorts/opens, 0 safe crossings
+LTspice Phase7 rc_high_pass_filter.json: 4 pins, no shorts/opens, 0 safe crossings

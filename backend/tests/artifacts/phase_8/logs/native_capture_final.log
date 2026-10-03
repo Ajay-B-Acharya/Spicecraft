@@ -1,0 +1,44 @@
+[
+  {
+    "source": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\555_astable_multivibrator.asc",
+    "status": "captured_not_visually_reviewed",
+    "screenshot": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after_native\\555_astable_multivibrator\\555_astable_multivibrator_ltspice.png",
+    "error": null
+  },
+  {
+    "source": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\bridge_rectifier.asc",
+    "status": "captured_not_visually_reviewed",
+    "screenshot": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after_native\\bridge_rectifier\\bridge_rectifier_ltspice.png",
+    "error": null
+  },
+  {
+    "source": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\common_emitter_amplifier.asc",
+    "status": "captured_not_visually_reviewed",
+    "screenshot": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after_native\\common_emitter_amplifier\\common_emitter_amplifier_ltspice.png",
+    "error": null
+  },
+  {
+    "source": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\led_blinker.asc",
+    "status": "captured_not_visually_reviewed",
+    "screenshot": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after_native\\led_blinker\\led_blinker_ltspice.png",
+    "error": null
+  },
+  {
+    "source": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\rc_high_pass_filter.asc",
+    "status": "captured_not_visually_reviewed",
+    "screenshot": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after_native\\rc_high_pass_filter\\rc_high_pass_filter_ltspice.png",
+    "error": null
+  },
+  {
+    "source": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\rc_low_pass_filter.asc",
+    "status": "captured_not_visually_reviewed",
+    "screenshot": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after_native\\rc_low_pass_filter\\rc_low_pass_filter_ltspice.png",
+    "error": null
+  },
+  {
+    "source": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after\\voltage_divider.asc",
+    "status": "captured_not_visually_reviewed",
+    "screenshot": "C:\\Projects\\Spice Craft\\backend\\tests\\artifacts\\phase_8\\after_native\\voltage_divider\\voltage_divider_ltspice.png",
+    "error": null
+  }
+]

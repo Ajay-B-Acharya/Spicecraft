@@ -79,6 +79,7 @@ class ExportDiagnostic:
     pin: str | None = None
     expected: Point | None = None
     actual: Point | None = None
+    circuit: str | None = None
 
     def format(self) -> str:
         lines = [f"{self.message} [{self.code}]"]
@@ -92,6 +93,8 @@ class ExportDiagnostic:
             lines.append(f"Expected: {self.expected}")
         if self.actual is not None:
             lines.append(f"Actual: {self.actual}")
+        if self.circuit is not None:
+            lines.append(f"Circuit: {self.circuit}")
         return "\n".join(lines)
 
     def __str__(self) -> str:  # pragma: no cover - trivial
@@ -179,8 +182,13 @@ def _check_net(net: NetGeometry) -> list[ExportDiagnostic]:
 
     segments: list[WireSegment] = []
     endpoints: Counter[Point] = Counter()
+    raw_vertices: set[Point] = set()
+    seen_edges: set[tuple[Point, Point]] = set()
+    duplicate_edges: set[tuple[Point, Point]] = set()
     for segment in net.segments:
-        if segment.net != net.name:
+        raw_vertices.update((segment.start, segment.end))
+        valid = segment.net == net.name
+        if not valid:
             found.append(ExportDiagnostic(
                 ERROR, "WIRE_NET_MISMATCH", "Wire ownership differs from its containing net",
                 net=net.name, actual=segment.start,
@@ -188,12 +196,28 @@ def _check_net(net: NetGeometry) -> list[ExportDiagnostic]:
         try:
             segment.orientation
         except ValueError as exc:
+            valid = False
             found.append(ExportDiagnostic(
                 ERROR, "ZERO_LENGTH_WIRE" if segment.start == segment.end else "NON_ORTHOGONAL_WIRE",
                 str(exc), net=net.name, actual=segment.start, expected=segment.end,
             ))
-        else:
-            segments.append(segment)
+        # Malformed records must not provide incidence, terminal attachment,
+        # T-junction support, or connectivity. Keep their vertices for errors.
+        if not valid or not all(
+            GridSystem.is_point_on_grid(p) for p in (segment.start, segment.end)
+        ):
+            continue
+        edge = tuple(sorted((segment.start, segment.end)))
+        if edge in seen_edges:
+            if edge not in duplicate_edges:
+                found.append(ExportDiagnostic(
+                    WARNING, "DUPLICATE_WIRE_SEGMENT", "Duplicate undirected wire segment",
+                    net=net.name, actual=edge[0], expected=edge[1],
+                ))
+                duplicate_edges.add(edge)
+            continue
+        seen_edges.add(edge)
+        segments.append(segment)
         endpoints[segment.start] += 1
         endpoints[segment.end] += 1
 
@@ -207,7 +231,7 @@ def _check_net(net: NetGeometry) -> list[ExportDiagnostic]:
                     actual=pin.point, expected=GridSystem.snap_point(pin.point),
                 )
             )
-    for point in sorted(set(endpoints) | flag_points):
+    for point in sorted(raw_vertices | flag_points):
         if not GridSystem.is_point_on_grid(point):
             found.append(
                 ExportDiagnostic(
@@ -216,14 +240,14 @@ def _check_net(net: NetGeometry) -> list[ExportDiagnostic]:
                 )
             )
 
-    # 2. Every wire endpoint must be a pin, a flag, or a junction (degree >= 2).
+    # 2. Degree counts distinct valid physical edges, not WIRE statements.
     unconnected_pins = [pin for pin in net.pins if pin.point not in endpoints]
-    for point, degree in sorted(endpoints.items()):
-        if degree >= 2 or point in terminals:
+    for point in sorted(raw_vertices):
+        if endpoints[point] >= 2 or point in terminals:
             continue
-        # LTspice connects a wire end that lands on the middle of another wire
-        # of the same net (a T-junction), so that is a valid endpoint too.
-        if any(_strictly_inside(point, s.start, s.end) for s in net.segments):
+        # LTspice connects a wire end that lands on the middle of another valid
+        # wire of the same net (a T-junction), so that is a valid endpoint too.
+        if any(_strictly_inside(point, s.start, s.end) for s in segments):
             continue
         candidates = unconnected_pins or net.pins
         nearest = min(candidates, key=lambda p: _manhattan(p.point, point), default=None)

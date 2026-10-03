@@ -1,5 +1,5 @@
 """
-Pin geometry regression tests (Phase 6).
+Pin geometry and frozen compact placement regression tests (Phase 7.5).
 
 The ground truth below is deliberately duplicated from the stock LTspice
 ``.asy`` files instead of imported from ``app.services.pin_maps``.  If both
@@ -32,12 +32,14 @@ from app.services.asc_validation import (  # noqa: E402
     WireSegment,
     validate_net_geometry,
 )
+from app.services.connectivity import build_connectivity  # noqa: E402
 from app.services.exporter_debugger import ExporterDebugger  # noqa: E402
 from app.services.grid_system import GridSystem  # noqa: E402
 from app.services.ltspice_exporter import (  # noqa: E402
     generate_asc,
     generate_asc_with_diagnostics,
     place_component,
+    place_components,
 )
 from app.services.pin_maps import (  # noqa: E402
     COMPONENT_LIBRARY,
@@ -45,7 +47,6 @@ from app.services.pin_maps import (  # noqa: E402
     PinResolver,
     canonical_pin_id,
     get_pin_coordinate,
-    resolve_symbol_name,
 )
 
 CIRCUITS_DIR = BACKEND_ROOT / "circuits"
@@ -80,6 +81,42 @@ KIND_BY_SYMBOL = {symbol: kind for kind, symbol in SYMBOLS.items()}
 
 ORIENTATIONS = ["R0", "R90", "R180", "R270", "M0", "M90", "M180", "M270"]
 
+# Transcribed from tests/artifacts/phase_8/before/*.asc, captured at the
+# Phase 7.5 checkpoint, NOT generated from the current exporter. Freeze actual
+# compact placement, identity and value, not WINDOW/TEXT/SHEET presentation.
+# Each record is (instance, symbol, x, y, orientation, value).
+PHASE75_SYMBOL_RECORDS = {
+    "555_astable_multivibrator.json": [
+        ("U1", "Misc\\NE555", 448, 336, "R0", "NE555"),
+        ("R1", "res", 752, 320, "R180", "1k"),
+        ("R2", "res", 720, 416, "R0", "10k"),
+        ("C1", "cap", 208, 448, "R0", "10uF"),
+    ],
+    "common_emitter_amplifier.json": [
+        ("Q1", "npn", 448, 336, "R0", "BC547"),
+        ("R1", "res", 224, 224, "R0", "100k"),
+        ("R2", "res", 224, 448, "R0", "10k"),
+        ("R3", "res", 528, 256, "R180", "1k"),
+        ("C1", "cap", 496, 528, "R0", "10uF"),
+        ("C2", "cap", 672, 320, "R270", "100uF"),
+    ],
+    "led_blinker.json": [
+        ("Q1", "npn", 448, 336, "R0", "BC547"),
+        ("R1", "res", 224, 224, "R0", "10k"),
+        ("R2", "res", 784, 464, "R0", "1k"),
+        ("C1", "cap", 224, 464, "R0", "10uF"),
+        ("D1", "led", 672, 320, "R270", "RED"),
+    ],
+    "rc_high_pass_filter.json": [
+        ("C1", "cap", 160, 208, "R270", "100nF"),
+        ("R1", "res", 304, 176, "R0", "1k"),
+    ],
+    "rc_low_pass_filter.json": [
+        ("R1", "res", 144, 208, "R270", "1k"),
+        ("C1", "cap", 320, 192, "R0", "100nF"),
+    ],
+}
+
 
 def reference_transform(x: int, y: int, orientation: str) -> tuple[int, int]:
     """Independent implementation of the LTspice orientation transform.
@@ -99,7 +136,7 @@ def reference_transform(x: int, y: int, orientation: str) -> tuple[int, int]:
 def parse_asc(asc: str):
     """Return ``(symbols, wires, flags)`` parsed from .asc text.
 
-    symbols: ``[{"symbol", "x", "y", "orient", "inst"}]``
+    symbols: ``[{"symbol", "x", "y", "orient", "inst", "value"}]``
     wires:   ``[((x1, y1), (x2, y2))]``
     flags:   ``[((x, y), name)]``
     """
@@ -118,10 +155,13 @@ def parse_asc(asc: str):
                     "y": int(parts[3]),
                     "orient": parts[4],
                     "inst": None,
+                    "value": None,
                 }
             )
         elif parts[0] == "SYMATTR" and parts[1] == "InstName" and symbols:
             symbols[-1]["inst"] = parts[2]
+        elif parts[0] == "SYMATTR" and parts[1] == "Value" and symbols:
+            symbols[-1]["value"] = line.split(maxsplit=2)[2]
         elif parts[0] == "WIRE":
             x1, y1, x2, y2 = map(int, parts[1:5])
             wires.append(((x1, y1), (x2, y2)))
@@ -624,12 +664,12 @@ class EndToEndExportTests(unittest.TestCase):
         # Q1.C are each referenced twice).
         self.assertEqual(checked, 15)
 
-    def test_common_emitter_symbol_lines_use_library_orientation(self) -> None:
-        asc = generate_asc(load_circuit("common_emitter_amplifier.json"))
-        symbols, _, _ = parse_asc(asc)
-        self.assertTrue(all(s["orient"] == "R0" for s in symbols))
+    def test_common_emitter_symbol_lines_match_phase75_placement(self) -> None:
+        filename = "common_emitter_amplifier.json"
+        symbols, _, _ = parse_asc(generate_asc(load_circuit(filename)))
         self.assertEqual(
-            {s["symbol"] for s in symbols}, {"npn", "res", "cap"}
+            sorted((s["inst"], s["symbol"], s["x"], s["y"], s["orient"]) for s in symbols),
+            sorted(record[:5] for record in PHASE75_SYMBOL_RECORDS[filename]),
         )
 
     def test_common_emitter_has_no_error_diagnostics(self) -> None:
@@ -690,22 +730,23 @@ class EndToEndExportTests(unittest.TestCase):
                 self.assertEqual(errors, [])
 
     def test_exported_pin_positions_match_debugger_numbers(self) -> None:
-        """The pin_maps path and the independent test path must agree."""
-        circuit = load_circuit("common_emitter_amplifier.json")
-        symbols, _, _ = parse_asc(generate_asc(circuit))
-        independent = pin_world_positions(symbols)
-        for idx, comp in enumerate(circuit["components"]):
-            _, layout = place_component(idx, comp)
-            kind = COMPONENT_LIBRARY[
-                next(k for k, d in COMPONENT_LIBRARY.items()
-                     if d.symbol == resolve_symbol_name(comp))
-            ]
-            for pin in kind.pins:
-                with self.subTest(component=comp["reference"], pin=pin.id):
-                    self.assertEqual(
-                        get_pin_coordinate(layout, pin.id),
-                        independent[(comp["reference"], pin.id)],
-                    )
+        """Shared bulk placement agrees with frozen placement + stock ASY offsets."""
+        for filename, records in PHASE75_SYMBOL_RECORDS.items():
+            with self.subTest(circuit=filename):
+                circuit = load_circuit(filename)
+                layouts = place_components(circuit["components"], build_connectivity(circuit))
+                symbols, _, _ = parse_asc(generate_asc(circuit))
+                frozen_symbols = [
+                    {"inst": ref, "symbol": symbol, "x": x, "y": y, "orient": orient}
+                    for ref, symbol, x, y, orient, _ in records
+                ]
+                # Neither expected placement nor pin IDs/offsets come from
+                # pin_maps, the layout algorithm, or today's exported symbols.
+                independent = pin_world_positions(frozen_symbols)
+                self.assertEqual(pin_world_positions(symbols), independent)
+                for (ref, pin_id), point in independent.items():
+                    with self.subTest(component=ref, pin=pin_id):
+                        self.assertEqual(get_pin_coordinate(layouts[ref], pin_id), point)
 
     def test_strict_mode_accepts_phase7_common_emitter_routing(self) -> None:
         """Phase7 replaces the centroid routes that shorted five nets on ground.

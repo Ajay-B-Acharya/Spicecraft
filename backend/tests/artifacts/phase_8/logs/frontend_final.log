@@ -1,0 +1,182 @@
+
+> my-project@0.1.0 test
+> node --test tests/*.test.cjs
+
+TAP version 13
+# Subtest: six components and named nets match the verified JSON topology
+ok 1 - six components and named nets match the verified JSON topology
+  ---
+  duration_ms: 17.0378
+  type: 'test'
+  ...
+# Subtest: placement is deterministic and follows transistor terminal relationships
+ok 2 - placement is deterministic and follows transistor terminal relationships
+  ---
+  duration_ms: 3.3377
+  type: 'test'
+  ...
+# Subtest: saved positions and semantic pin references preserve connectivity
+ok 3 - saved positions and semantic pin references preserve connectivity
+  ---
+  duration_ms: 1.0295
+  type: 'test'
+  ...
+# Subtest: resistor and capacitor connections use exact canonical pins
+ok 4 - resistor and capacitor connections use exact canonical pins
+  ---
+  duration_ms: 6.6038
+  type: 'test'
+  ...
+# Subtest: transistor base collector and emitter remain distinct nets
+ok 5 - transistor base collector and emitter remain distinct nets
+  ---
+  duration_ms: 17.7809
+  type: 'test'
+  ...
+# Subtest: multiple edges on a pin form one shared net without duplicate membership
+ok 6 - multiple edges on a pin form one shared net without duplicate membership
+  ---
+  duration_ms: 0.9283
+  type: 'test'
+  ...
+# Subtest: physical coincidence and arbitrary position changes do not merge logical nets
+ok 7 - physical coincidence and arbitrary position changes do not merge logical nets
+  ---
+  duration_ms: 1.0316
+  type: 'test'
+  ...
+# Subtest: missing component and undefined pin fail instead of inventing a connection
+ok 8 - missing component and undefined pin fail instead of inventing a connection
+  ---
+  duration_ms: 0.3268
+  type: 'test'
+  ...
+# Subtest: contradictory and empty endpoint representations fail
+ok 9 - contradictory and empty endpoint representations fail
+  ---
+  duration_ms: 0.5002
+  type: 'test'
+  ...
+# Subtest: equivalent endpoint fields canonicalize before comparison
+ok 10 - equivalent endpoint fields canonicalize before comparison
+  ---
+  duration_ms: 0.3723
+  type: 'test'
+  ...
+# Subtest: React Flow node and handle pairs preserve pin connectivity
+ok 11 - React Flow node and handle pairs preserve pin connectivity
+  ---
+  duration_ms: 0.4824
+  type: 'test'
+  ...
+# Subtest: endpoint object descriptive name does not override component and pin
+ok 12 - endpoint object descriptive name does not override component and pin
+  ---
+  duration_ms: 0.4787
+  type: 'test'
+  ...
+# Subtest: duplicate component IDs and ambiguous reference aliases are rejected
+ok 13 - duplicate component IDs and ambiguous reference aliases are rejected
+  ---
+  duration_ms: 0.5427
+  type: 'test'
+  ...
+# Subtest: generated references are local deterministic and reserve explicit IDs
+ok 14 - generated references are local deterministic and reserve explicit IDs
+  ---
+  duration_ms: 0.5805
+  type: 'test'
+  ...
+# Subtest: recognized explicit type is not overridden by model-looking value
+ok 15 - recognized explicit type is not overridden by model-looking value
+  ---
+  duration_ms: 0.1884
+  type: 'test'
+  ...
+# Subtest: ground aliases share identity and unrelated signal labels remain separate
+ok 16 - ground aliases share identity and unrelated signal labels remain separate
+  ---
+  duration_ms: 0.3676
+  type: 'test'
+  ...
+# Subtest: explicit supply ground mega-net is rejected without modifying the source
+ok 17 - explicit supply ground mega-net is rejected without modifying the source
+  ---
+  duration_ms: 0.2183
+  type: 'test'
+  ...
+# Subtest: valid one-pin external port is not an invalid singleton net
+ok 18 - valid one-pin external port is not an invalid singleton net
+  ---
+  duration_ms: 0.2438
+  type: 'test'
+  ...
+# Subtest: self-connections fail and repeated source pairs warn without duplicate pins
+ok 19 - self-connections fail and repeated source pairs warn without duplicate pins
+  ---
+  duration_ms: 0.381
+  type: 'test'
+  ...
+# Subtest: net IDs stay distinct from a user label matching an anonymous ID
+ok 20 - net IDs stay distinct from a user label matching an anonymous ID
+  ---
+  duration_ms: 0.2939
+  type: 'test'
+  ...
+# Subtest: mutated membership detects unexpected floating duplicate and merged pins
+ok 21 - mutated membership detects unexpected floating duplicate and merged pins
+  ---
+  duration_ms: 0.8728
+  type: 'test'
+  ...
+# Subtest: missing reciprocal pin.net and duplicate pin IDs fail validation
+ok 22 - missing reciprocal pin.net and duplicate pin IDs fail validation
+  ---
+  duration_ms: 0.2927
+  type: 'test'
+  ...
+# Subtest: malformed documents and collections report errors; an empty draft warns
+ok 23 - malformed documents and collections report errors; an empty draft warns
+  ---
+  duration_ms: 0.1727
+  type: 'test'
+  ...
+# Subtest: Common Emitter exactly preserves all six source-derived nets
+ok 24 - Common Emitter exactly preserves all six source-derived nets
+  ---
+  duration_ms: 0.4978
+  type: 'test'
+  ...
+# Subtest: all bundled templates compile with source limitations reported not repaired
+ok 25 - all bundled templates compile with source limitations reported not repaired
+  ---
+  duration_ms: 3.5511
+  type: 'test'
+  ...
+# Subtest: every adapter edge including labels resolves to its source net
+ok 26 - every adapter edge including labels resolves to its source net
+  ---
+  duration_ms: 4.6189
+  type: 'test'
+  ...
+# Subtest: invalid flow is returned with diagnostics rather than a misleading graph
+ok 27 - invalid flow is returned with diagnostics rather than a misleading graph
+  ---
+  duration_ms: 0.7175
+  type: 'test'
+  ...
+# Subtest: visual edge adapter rejects malformed and self edges without silently dropping them
+ok 28 - visual edge adapter rejects malformed and self edges without silently dropping them
+  ---
+  duration_ms: 0.4485
+  type: 'test'
+  ...
+1..28
+# tests 28
+# suites 0
+# pass 28
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1021.0321

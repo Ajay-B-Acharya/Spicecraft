@@ -1,0 +1,90 @@
+{
+  "circuit": "Common Emitter Amplifier",
+  "source_file": "common_emitter_amplifier.json",
+  "components": 6,
+  "expected_nets": {
+    "VCC": [
+      "R1.1",
+      "R3.2"
+    ],
+    "N1": [
+      "R1.2",
+      "Q1.B",
+      "R2.1"
+    ],
+    "0": [
+      "R2.2",
+      "C1.2"
+    ],
+    "N2": [
+      "Q1.C",
+      "R3.1",
+      "C2.1"
+    ],
+    "N3": [
+      "Q1.E",
+      "C1.1"
+    ],
+    "VOUT": [
+      "C2.2"
+    ]
+  },
+  "metrics": {
+    "candidate_paths": 7,
+    "astar_searches": 0,
+    "astar_states": 0,
+    "peak_grid_vertices": 0,
+    "collision_checks": 9,
+    "budget_exhaustions": 0,
+    "order_attempts": 1,
+    "failed_connections": 0,
+    "crossings": 0,
+    "segments": 14,
+    "length": 1536,
+    "planar_attempts": 1,
+    "fallback_attempts": 0
+  },
+  "junctions": {
+    "VCC": [],
+    "N1": [
+      [
+        240,
+        384
+      ]
+    ],
+    "0": [],
+    "N2": [
+      [
+        512,
+        304
+      ]
+    ],
+    "N3": [],
+    "VOUT": []
+  },
+  "crossings": [],
+  "diagnostics": [],
+  "deterministic": true,
+  "netlist_verification": {
+    "ok": true,
+    "shorts": [],
+    "opens": [],
+    "missing_pins": [],
+    "unexpected_pins": []
+  },
+  "actual_pin_nodes": {
+    "C1.1": "N003",
+    "C1.2": "0",
+    "C2.1": "N001",
+    "C2.2": "VOUT",
+    "Q1.C": "N001",
+    "Q1.B": "N002",
+    "Q1.E": "N003",
+    "R1.1": "VCC",
+    "R1.2": "N002",
+    "R2.1": "N002",
+    "R2.2": "0",
+    "R3.1": "N001",
+    "R3.2": "VCC"
+  }
+}

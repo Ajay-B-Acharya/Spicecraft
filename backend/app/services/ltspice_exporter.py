@@ -1,8 +1,9 @@
 """LTspice ASC serialization with source-only connectivity and Manhattan routing.
 
-Symbol definitions, placement, orientation, and headers retain Phase 6 geometry.
-The dedicated ``routing`` service owns all wires and label placement; coordinates
-never infer logical membership. Shared validation blocks unsafe conductive
+Symbol definitions, placement, and orientation retain the validated geometry.
+The dedicated ``routing`` service owns wire paths and electrical label anchors;
+export cleanup only removes redundant records and collinear subdivisions.
+Coordinates never infer logical membership. Shared validation blocks unsafe conductive
 contacts for ALL exports, including ``strict=False``. Unsplit perpendicular
 interior crossings are nonconductive, as verified with real LTspice netlisting.
 
@@ -15,7 +16,9 @@ returning an unsafe or only partially connected artifact.
 
 from __future__ import annotations
 
+from dataclasses import replace
 import logging
+import re
 from typing import Any
 
 from app.services.asc_validation import (
@@ -31,6 +34,8 @@ from app.services.connectivity import (
     component_identity,
     validate_connectivity,
 )
+from app.services.export_cleanup import clean_export_geometry
+from app.services.export_presentation import build_presentation
 from app.services.grid_system import GridSystem
 from app.services.routing import RoutingResult, route_nets
 from app.services.pin_maps import (
@@ -92,12 +97,53 @@ def _symbol_block(
     rotation: str,
     inst_name: str,
     value: str | None,
+    windows: list[str] | None = None,
 ) -> list[str]:
     lines = [f"SYMBOL {symbol} {x} {y} {rotation}"]
+    lines.extend(dict.fromkeys(windows or []))
     lines.append(f"SYMATTR InstName {inst_name}")
-    if value:
+    if value is not None and value != "":
         lines.append(f"SYMATTR Value {value}")
     return lines
+
+
+def _reference_key(reference: str) -> tuple:
+    return tuple((1, int(part)) if part.isdigit() else (0, part.casefold())
+                 for part in re.split(r"(\d+)", reference))
+
+
+def _record_diagnostics(connectivity, components) -> list[ExportDiagnostic]:
+    diagnostics = []
+    references: dict[str, str] = {}
+    for index, component in enumerate(components):
+        reference = component_identity(component, index)
+        key = reference.casefold()
+        if key in references:
+            diagnostics.append(ExportDiagnostic(
+                ERROR, "INSTANCE_NAME_COLLISION",
+                "Component references must be unique in case-insensitive LTspice",
+                component=reference,
+            ))
+        references[key] = reference
+        if not reference or any(character.isspace() or ord(character) < 32 for character in reference):
+            diagnostics.append(ExportDiagnostic(
+                ERROR, "INVALID_INSTANCE_NAME", "Component reference must be a single LTspice token",
+                component=reference,
+            ))
+        for attribute, value in (("Value", component.get("value")),
+                                 ("Symbol", resolve_symbol_name(component))):
+            if value is not None and any(character in str(value) for character in "\r\n\x00"):
+                diagnostics.append(ExportDiagnostic(
+                    ERROR, "INVALID_ATTRIBUTE", f"{attribute} contains an ASC record separator",
+                    component=reference,
+                ))
+    for group in connectivity.source_groups:
+        if group.labels and (not group.name or any(character.isspace() or ord(character) < 32
+                                                   for character in group.name)):
+            diagnostics.append(ExportDiagnostic(
+                ERROR, "INVALID_NET_LABEL", "Net label must be a single LTspice token", net=group.name,
+            ))
+    return diagnostics
 
 
 def _snap(value: float, grid: int = GridSystem.SIZE) -> int:
@@ -178,19 +224,17 @@ def _promote_shorts(diagnostics: list[ExportDiagnostic]) -> list[ExportDiagnosti
     """Unsafe LTspice conductive contacts block export in every mode."""
     promoted_codes = {"NET_SHORT", "WIRE_CROSSES_PIN"}
     return [
-        ExportDiagnostic(
-            ERROR, d.code, d.message, d.net, d.component, d.pin, d.expected, d.actual
-        )
+        replace(d, severity=ERROR)
         if d.severity == WARNING and d.code in promoted_codes
         else d
         for d in diagnostics
     ]
 
 
-def generate_asc_with_routing(
+def _generate_asc_with_routing(
     circuit: dict[str, Any], strict: bool = False
 ) -> tuple[str, list[ExportDiagnostic], RoutingResult | None]:
-    """Export once and expose the exact router result for inspection.
+    """Export once and expose the exact cleaned routing result for inspection.
 
     ``strict`` remains a compatibility argument: unsafe contacts are always
     errors. Blocking failures return empty ASC text, never a plausible partial
@@ -200,6 +244,10 @@ def generate_asc_with_routing(
     diagnostics = validate_connectivity(connectivity)
     # Fail before placement/routing; diagnostic mode never returns usable text
     # for logically invalid source and generate_asc raises AscExportError.
+    if any(d.severity == ERROR for d in diagnostics):
+        return "", diagnostics, None
+
+    diagnostics.extend(_record_diagnostics(connectivity, circuit.get("components", [])))
     if any(d.severity == ERROR for d in diagnostics):
         return "", diagnostics, None
 
@@ -223,37 +271,7 @@ def generate_asc_with_routing(
     name: str = str(circuit.get("name", "Circuit"))
     description: str = str(circuit.get("description", ""))
     components: list[dict[str, Any]] = circuit.get("components", [])
-    lines: list[str] = []
-
-    # ---- Header -----------------------------------------------------------
-    lines.append("Version 4")
-    lines.append("SHEET 1 1200 800")
-
-    # ---- Comment header ---------------------------------------------------
-    lines.append(_text_line(16, 16, name))
-    if description:
-        lines.append(_text_line(16, 48, description))
-
-    # ---- Components -------------------------------------------------------
     component_layouts = place_components(components, connectivity)
-
-    for idx, comp in enumerate(components):
-        inst_name = component_identity(comp, idx)
-        layout = component_layouts[inst_name]
-
-        value = comp.get("value")
-        value_str = str(value) if value is not None else None
-        anchor = layout["_ltspice_anchor"]
-        lines.extend(
-            _symbol_block(
-                layout["_ltspice_symbol"],
-                anchor[0],
-                anchor[1],
-                _symbol_orientation(layout),
-                inst_name,
-                value_str,
-            )
-        )
 
     # ---- Route immutable explicit memberships -----------------------------
     # Reserve ALL definition pins, including unwired singleton pins. Routing
@@ -307,9 +325,9 @@ def generate_asc_with_routing(
                 ERROR, "NET_FLAG_MISMATCH", "Routed flags do not match explicit source label presence",
                 net=net.name,
             ))
-    expected_flags = sorted((net.name, point, net.name)
-                            for net in net_geometries for point in net.flags)
-    actual_flags = sorted((flag.net, flag.point, flag.name) for flag in routed.flags)
+    expected_flags = {(net.name, point, net.name)
+                      for net in net_geometries for point in net.flags}
+    actual_flags = {(flag.net, flag.point, flag.name) for flag in routed.flags}
     if expected_flags != actual_flags:
         diagnostics.append(ExportDiagnostic(
             ERROR, "NET_FLAG_MISMATCH", "Router flags differ from canonical net geometry flags",
@@ -323,14 +341,50 @@ def generate_asc_with_routing(
     if any(d.severity == ERROR for d in diagnostics):
         return "", diagnostics, routed
 
-    # Serialize route-owned points only; never guess a hub, label location,
-    # membership, or replacement path. SYMBOL/header blocks above are unchanged.
-    for net in net_geometries:
-        for point in net.flags:
-            lines.append(_flag_line(point[0], point[1], net.name))
-        for segment in net.segments:
-            lines.append(_wire_line(*segment.start, *segment.end))
+    cleaned = clean_export_geometry(net_geometries)
+    diagnostics.extend(_promote_shorts(validate_net_geometry(cleaned, reserved_pins=reserved_pins)))
+    diagnostics.extend(validate_connectivity(connectivity, cleaned))
+    if any(d.severity == ERROR for d in diagnostics):
+        return "", diagnostics, routed
+    routed.net_geometries = cleaned
+    routed.flags = sorted(set(routed.flags), key=lambda flag: (flag.name, flag.point))
+    routed.metrics = dict(routed.metrics)
+    routed.metrics["segments"] = sum(len(net.segments) for net in cleaned)
+    routed.metrics["length"] = sum(abs(segment.start[0] - segment.end[0])
+                                    + abs(segment.start[1] - segment.end[1])
+                                    for net in cleaned for segment in net.segments)
+
+    presentation = build_presentation(component_layouts, cleaned, name, description)
+    lines = ["Version 4", presentation.sheet]
+    # Sort complete blocks after placement: input order still determines layout.
+    instances = [(component_identity(comp, index), comp) for index, comp in enumerate(components)]
+    for inst_name, comp in sorted(instances, key=lambda item: (_reference_key(item[0]), item[0])):
+        layout = component_layouts[inst_name]
+        value = comp.get("value")
+        lines.extend(_symbol_block(
+            layout["_ltspice_symbol"], *layout["_ltspice_anchor"], _symbol_orientation(layout),
+            inst_name, str(value) if value is not None else None,
+            presentation.windows.get(inst_name),
+        ))
+    segments = sorted((segment for net in cleaned for segment in net.segments),
+                      key=lambda segment: (segment.start, segment.end, segment.net))
+    lines.extend(_wire_line(*segment.start, *segment.end) for segment in segments)
+    flags = sorted({(net.name, point) for net in cleaned for point in net.flags})
+    lines.extend(_flag_line(*point, net) for net, point in flags)
+    lines.extend(dict.fromkeys(presentation.text))
     return "\n".join(lines) + "\n", diagnostics, routed
+
+
+def generate_asc_with_routing(
+    circuit: dict[str, Any], strict: bool = False
+) -> tuple[str, list[ExportDiagnostic], RoutingResult | None]:
+    """Return validated ASC, actionable circuit diagnostics, and serialized geometry."""
+    asc, diagnostics, routed = _generate_asc_with_routing(circuit, strict)
+    name = str(circuit.get("name", "Circuit")) if isinstance(circuit, dict) else "Circuit"
+    diagnostics = list(dict.fromkeys(replace(d, circuit=name) for d in diagnostics))
+    if routed is not None:
+        routed.diagnostics = list(dict.fromkeys(replace(d, circuit=name) for d in routed.diagnostics))
+    return asc, diagnostics, routed
 
 
 def generate_asc_with_diagnostics(

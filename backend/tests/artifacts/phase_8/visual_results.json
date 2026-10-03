@@ -1,0 +1,64 @@
+{
+  "method": "Direct image inspection of all seven final native LTspice screenshots",
+  "native_open_and_capture_verified": true,
+  "all_pass": true,
+  "scope": "Export presentation only; no simulation claim. Native automatic vertical net-label orientation retained.",
+  "circuits": [
+    {
+      "circuit": "common_emitter_amplifier",
+      "verdict": "pass",
+      "evidence": "Compact bias and collector paths preserved; horizontal C2 annotations; visible VCC, ground and both intentional junctions; no loops introduced.",
+      "native_screenshot": "backend\\tests\\artifacts\\phase_8\\after_native\\common_emitter_amplifier\\common_emitter_amplifier_ltspice.png",
+      "screenshot_sha256": "ef946531a0b89f02d33a81fa85a47802533c2ce7250ea48801caacf04ffac100",
+      "asc_sha256": "e02ac64d2721ef7f164c390808741ee625fbd2b63741c024eb64780f701abc7e"
+    },
+    {
+      "circuit": "rc_low_pass_filter",
+      "verdict": "pass",
+      "evidence": "Horizontal resistor labels and all VIN/VOUT/ground markers readable; metadata separate from the circuit.",
+      "native_screenshot": "backend\\tests\\artifacts\\phase_8\\after_native\\rc_low_pass_filter\\rc_low_pass_filter_ltspice.png",
+      "screenshot_sha256": "042956b907073691da5b72103123e973b6bcb6ac2db76fd1650ea30214641bcf",
+      "asc_sha256": "b51258c1379ca12df2c7068fa38ec2d27236691e888d189ed207aea15ed25452"
+    },
+    {
+      "circuit": "rc_high_pass_filter",
+      "verdict": "pass",
+      "evidence": "C1 labels below symbol, clear R1 annotations and VIN/VOUT/ground; no wire-label overlap.",
+      "native_screenshot": "backend\\tests\\artifacts\\phase_8\\after_native\\rc_high_pass_filter\\rc_high_pass_filter_ltspice.png",
+      "screenshot_sha256": "90db4c7e11576ac124941ff2451dbe38d645f3d016f9655227075408d4153e54",
+      "asc_sha256": "05e196daf204d5c8619edc9e7fc164f587319b3d20b0b7d902c4f33b9da58bcb"
+    },
+    {
+      "circuit": "voltage_divider",
+      "verdict": "pass",
+      "evidence": "Compact vertical chain, legible native vertical VIN/VOUT, metadata reduced to three readable lines.",
+      "native_screenshot": "backend\\tests\\artifacts\\phase_8\\after_native\\voltage_divider\\voltage_divider_ltspice.png",
+      "screenshot_sha256": "ccf4b57779ae5cfe3d306e41aca3aba1ae095802d412f1752b2251629a0ddeea",
+      "asc_sha256": "e0873791f013972c9f8e229a64f88fe1085a7c55f75d1773c1f9572162fc30b5"
+    },
+    {
+      "circuit": "bridge_rectifier",
+      "verdict": "pass",
+      "evidence": "All diode identities and values visible; AC+/AC-/OUT+ and ground remain distinct; two unobscured junctions.",
+      "native_screenshot": "backend\\tests\\artifacts\\phase_8\\after_native\\bridge_rectifier\\bridge_rectifier_ltspice.png",
+      "screenshot_sha256": "1102a3475e19957ea9273dd02788d2755b1b370fcceb1c39e2fc9bb4e9e0f4cb",
+      "asc_sha256": "a495736983b47d9adc7958e6bbccff6437ea160aea8972251efcb6b6a49e25cf"
+    },
+    {
+      "circuit": "555_astable_multivibrator",
+      "verdict": "pass",
+      "evidence": "Readable IC pin names, VCC, ground and component values; unchanged bottom/side routes and intentional singleton pins retained.",
+      "native_screenshot": "backend\\tests\\artifacts\\phase_8\\after_native\\555_astable_multivibrator\\555_astable_multivibrator_ltspice.png",
+      "screenshot_sha256": "ea40b5fafea8ad2de2864a60b0005310045f7fccee5132bf2b1c06d67c606f17",
+      "asc_sha256": "a035f6b1ff42bf84b9dadb7d323b76e64a161c4440802353792bf24c6c76a2e4"
+    },
+    {
+      "circuit": "led_blinker",
+      "verdict": "pass",
+      "evidence": "Clear LED/transistor identities, VCC and ground; emitter visibly unwired as intended by source.",
+      "native_screenshot": "backend\\tests\\artifacts\\phase_8\\after_native\\led_blinker\\led_blinker_ltspice.png",
+      "screenshot_sha256": "ad0c4e6193dbacfc8069d74a0cb2be6606067382bae89f934561fecae54cdd61",
+      "asc_sha256": "0aebf8c538fc3f2c15a9ab4b2fd70b789221d3dae5540267fe2557e4214533d1"
+    }
+  ]
+}
