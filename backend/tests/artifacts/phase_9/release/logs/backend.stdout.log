@@ -1,0 +1,16 @@
+LTspice negative baseline: short joins VCC, bias, collector, emitter, ground on 0
+LTspice junction unsplit_interior_x: R1.1=N001 R2.1=N002 joined=False
+LTspice junction endpoint_interior_t: R1.1=N001 R2.1=N001 joined=True
+LTspice junction shared_endpoints: R1.1=N001 R2.1=N001 joined=True
+LTspice junction collinear_overlap: R1.1=N001 R2.1=N001 joined=True
+LTspice junction foreign_pin_on_interior: R1.1=N001 R2.1=N001 joined=True
+LTspice junction foreign_flag_on_interior: R1.1=FOREIGN R2.1=FOREIGN joined=True
+LTspice junction same_flag_disconnected: R1.1=SAME R2.1=SAME joined=True
+LTspice junction split_interior_x_control: R1.1=N001 R2.1=N001 joined=True
+LTspice routing fixture bridge_rectifier.json: 10 pins, 4 nets, no shorts/opens
+LTspice routing fixture voltage_divider.json: 4 pins, 3 nets, no shorts/opens
+LTspice Phase7 common_emitter_amplifier.json: 13 pins, no shorts/opens, 0 safe crossings
+LTspice Phase7 555_astable_multivibrator.json: 14 pins, no shorts/opens, 0 safe crossings
+LTspice Phase7 led_blinker.json: 11 pins, no shorts/opens, 0 safe crossings
+LTspice Phase7 rc_low_pass_filter.json: 4 pins, no shorts/opens, 0 safe crossings
+LTspice Phase7 rc_high_pass_filter.json: 4 pins, no shorts/opens, 0 safe crossings

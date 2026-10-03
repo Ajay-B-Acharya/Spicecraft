@@ -6,6 +6,13 @@
     "build": "npm --prefix frontend run build",
     "start": "npm --prefix frontend run start",
     "lint": "npm --prefix frontend run lint",
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "python -B backend/tools/verify_project.py --backend-only",
+    "test:frontend": "npm --prefix frontend test",
+    "test:regression": "python -B backend/tools/run_regression.py --samples 3",
+    "test:export": "python -B backend/tools/run_regression.py --samples 3 --export-only",
+    "verify": "python -B backend/tools/verify_project.py",
+    "verify:full": "python -B backend/tools/verify_project.py --require-ltspice --visual",
     "dev:frontend": "npm --prefix frontend run dev",
     "dev:backend": "cd backend && uvicorn app.main:app --reload"
   }

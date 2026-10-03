@@ -1,0 +1,8 @@
+555 Astable Multivibrator: REVIEW {'compiler': 'PASS', 'electrical': 'PASS', 'routing': 'PASS', 'export': 'PASS', 'ltspice': 'PASS', 'visual': 'REVIEW'}
+Common Emitter Amplifier: REVIEW {'compiler': 'PASS', 'electrical': 'PASS', 'routing': 'PASS', 'export': 'PASS', 'ltspice': 'PASS', 'visual': 'REVIEW'}
+LED Blinker: REVIEW {'compiler': 'PASS', 'electrical': 'PASS', 'routing': 'PASS', 'export': 'PASS', 'ltspice': 'PASS', 'visual': 'REVIEW'}
+RC High Pass Filter: REVIEW {'compiler': 'PASS', 'electrical': 'PASS', 'routing': 'PASS', 'export': 'PASS', 'ltspice': 'PASS', 'visual': 'REVIEW'}
+RC Low Pass Filter: REVIEW {'compiler': 'PASS', 'electrical': 'PASS', 'routing': 'PASS', 'export': 'PASS', 'ltspice': 'PASS', 'visual': 'REVIEW'}
+Voltage Divider Routing Regression: REVIEW {'compiler': 'PASS', 'electrical': 'PASS', 'routing': 'PASS', 'export': 'PASS', 'ltspice': 'PASS', 'visual': 'REVIEW'}
+Bridge Rectifier Routing Regression: REVIEW {'compiler': 'PASS', 'electrical': 'PASS', 'routing': 'PASS', 'export': 'PASS', 'ltspice': 'PASS', 'visual': 'REVIEW'}
+Overall: REVIEW; reports: C:\Projects\Spice Craft\backend\tests\artifacts\phase_9\release\regression

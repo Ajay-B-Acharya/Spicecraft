@@ -1,0 +1,12 @@
+
+> test:export
+> python -B backend/tools/run_regression.py --samples 3 --export-only --require-ltspice --samples 2
+
+555 Astable Multivibrator: REVIEW {'compiler': 'REVIEW', 'electrical': 'PASS', 'routing': 'PASS', 'export': 'PASS', 'ltspice': 'PASS', 'visual': 'REVIEW'}
+Common Emitter Amplifier: REVIEW {'compiler': 'REVIEW', 'electrical': 'PASS', 'routing': 'PASS', 'export': 'PASS', 'ltspice': 'PASS', 'visual': 'REVIEW'}
+LED Blinker: REVIEW {'compiler': 'REVIEW', 'electrical': 'PASS', 'routing': 'PASS', 'export': 'PASS', 'ltspice': 'PASS', 'visual': 'REVIEW'}
+RC High Pass Filter: REVIEW {'compiler': 'REVIEW', 'electrical': 'PASS', 'routing': 'PASS', 'export': 'PASS', 'ltspice': 'PASS', 'visual': 'REVIEW'}
+RC Low Pass Filter: REVIEW {'compiler': 'REVIEW', 'electrical': 'PASS', 'routing': 'PASS', 'export': 'PASS', 'ltspice': 'PASS', 'visual': 'REVIEW'}
+Voltage Divider Routing Regression: REVIEW {'compiler': 'REVIEW', 'electrical': 'PASS', 'routing': 'PASS', 'export': 'PASS', 'ltspice': 'PASS', 'visual': 'REVIEW'}
+Bridge Rectifier Routing Regression: REVIEW {'compiler': 'REVIEW', 'electrical': 'PASS', 'routing': 'PASS', 'export': 'PASS', 'ltspice': 'PASS', 'visual': 'REVIEW'}
+Overall: REVIEW; reports: C:\Projects\Spice Craft\backend\tests\artifacts\export-validation\20261003T092001.669406Z-10308

@@ -1,0 +1,4 @@
+# Preserve byte-based native evidence and log provenance across checkouts.
+*.asc -text whitespace=cr-at-eol
+*.net -text whitespace=cr-at-eol
+*.log -text -whitespace

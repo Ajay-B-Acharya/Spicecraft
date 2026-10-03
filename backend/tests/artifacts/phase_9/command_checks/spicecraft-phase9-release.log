@@ -1,0 +1,15 @@
+
+> verify:full
+> python -B backend/tools/verify_project.py --require-ltspice --visual --output backend/tests/artifacts/phase_9/release --samples 5
+
+Overall: REVIEW
+Backend      PASS
+Frontend     PASS
+TypeScript   PASS
+Build        PASS
+Electrical   PASS
+Routing      PASS
+LTspice      PASS
+Visual       REVIEW
+JSON: C:\Projects\Spice Craft\backend\tests\artifacts\phase_9\release\verification_report.json
+Report: C:\Projects\Spice Craft\backend\tests\artifacts\phase_9\release\verification_report.md

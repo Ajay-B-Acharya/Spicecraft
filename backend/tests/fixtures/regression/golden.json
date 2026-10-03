@@ -1,0 +1,890 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "commit": "4b0f4d71a75e27152136df8f1b236adf74c2eba7",
+    "topology": "Existing independent TEMPLATE_PARTITIONS and EXPECTED_PARTITIONS; unwired singleton contracts preserved",
+    "policy": "Controlled semantic expectations; no automatic update from current exporter; review topology and metric changes separately"
+  },
+  "metric_thresholds": {
+    "total_length": {
+      "relative": 0.2,
+      "absolute": 64
+    },
+    "bend_count": {
+      "relative": 0.3,
+      "absolute": 2
+    },
+    "crossing_count": {
+      "relative": 0,
+      "absolute": 1
+    }
+  },
+  "library": {
+    "resistor": {
+      "symbol": "res",
+      "pins": [
+        {
+          "id": "1",
+          "name": "Pin 1",
+          "coordinate": [
+            16,
+            16
+          ],
+          "orientation": "up"
+        },
+        {
+          "id": "2",
+          "name": "Pin 2",
+          "coordinate": [
+            16,
+            96
+          ],
+          "orientation": "down"
+        }
+      ]
+    },
+    "capacitor": {
+      "symbol": "cap",
+      "pins": [
+        {
+          "id": "1",
+          "name": "Pin 1",
+          "coordinate": [
+            16,
+            0
+          ],
+          "orientation": "up"
+        },
+        {
+          "id": "2",
+          "name": "Pin 2",
+          "coordinate": [
+            16,
+            64
+          ],
+          "orientation": "down"
+        }
+      ]
+    },
+    "bc547": {
+      "symbol": "npn",
+      "pins": [
+        {
+          "id": "C",
+          "name": "Collector",
+          "coordinate": [
+            64,
+            0
+          ],
+          "orientation": "up"
+        },
+        {
+          "id": "B",
+          "name": "Base",
+          "coordinate": [
+            0,
+            48
+          ],
+          "orientation": "left"
+        },
+        {
+          "id": "E",
+          "name": "Emitter",
+          "coordinate": [
+            64,
+            96
+          ],
+          "orientation": "down"
+        }
+      ]
+    },
+    "led": {
+      "symbol": "led",
+      "pins": [
+        {
+          "id": "A",
+          "name": "Anode",
+          "coordinate": [
+            16,
+            0
+          ],
+          "orientation": "up"
+        },
+        {
+          "id": "K",
+          "name": "Cathode",
+          "coordinate": [
+            16,
+            64
+          ],
+          "orientation": "down"
+        }
+      ]
+    },
+    "ne555": {
+      "symbol": "Misc\\NE555",
+      "pins": [
+        {
+          "id": "1",
+          "name": "GND",
+          "coordinate": [
+            -112,
+            -96
+          ],
+          "orientation": "left"
+        },
+        {
+          "id": "2",
+          "name": "TRIG",
+          "coordinate": [
+            -112,
+            -32
+          ],
+          "orientation": "left"
+        },
+        {
+          "id": "3",
+          "name": "OUT",
+          "coordinate": [
+            -112,
+            32
+          ],
+          "orientation": "left"
+        },
+        {
+          "id": "4",
+          "name": "RESET",
+          "coordinate": [
+            -112,
+            96
+          ],
+          "orientation": "left"
+        },
+        {
+          "id": "5",
+          "name": "CTRL",
+          "coordinate": [
+            112,
+            96
+          ],
+          "orientation": "right"
+        },
+        {
+          "id": "6",
+          "name": "THR",
+          "coordinate": [
+            112,
+            32
+          ],
+          "orientation": "right"
+        },
+        {
+          "id": "7",
+          "name": "DIS",
+          "coordinate": [
+            112,
+            -32
+          ],
+          "orientation": "right"
+        },
+        {
+          "id": "8",
+          "name": "VCC",
+          "coordinate": [
+            112,
+            -96
+          ],
+          "orientation": "right"
+        }
+      ]
+    },
+    "diode": {
+      "symbol": "diode",
+      "pins": [
+        {
+          "id": "1",
+          "name": "Anode",
+          "coordinate": [
+            16,
+            0
+          ],
+          "orientation": "up"
+        },
+        {
+          "id": "2",
+          "name": "Cathode",
+          "coordinate": [
+            16,
+            64
+          ],
+          "orientation": "down"
+        }
+      ]
+    }
+  },
+  "circuits": [
+    {
+      "key": "555_astable_multivibrator",
+      "source": "backend/circuits/555_astable_multivibrator.json",
+      "source_sha256": "3b012a68b259e3bb85198771e3a7d698e4a9772bb0cafa56bbc18b094dcfe4f0",
+      "name": "555 Astable Multivibrator",
+      "components": {
+        "U1": {
+          "kind": "ne555",
+          "symbol": "Misc\\NE555",
+          "value": "NE555"
+        },
+        "R1": {
+          "kind": "resistor",
+          "symbol": "res",
+          "value": "1k"
+        },
+        "R2": {
+          "kind": "resistor",
+          "symbol": "res",
+          "value": "10k"
+        },
+        "C1": {
+          "kind": "capacitor",
+          "symbol": "cap",
+          "value": "10uF"
+        }
+      },
+      "topology": {
+        "VCC": [
+          "R1.2",
+          "U1.8"
+        ],
+        "0": [
+          "C1.2",
+          "U1.1"
+        ],
+        "N1": [
+          "C1.1",
+          "R2.2",
+          "U1.2",
+          "U1.6"
+        ],
+        "N2": [
+          "R1.1",
+          "R2.1",
+          "U1.7"
+        ],
+        "unwired:U1.5": [
+          "U1.5"
+        ],
+        "unwired:U1.4": [
+          "U1.4"
+        ],
+        "unwired:U1.3": [
+          "U1.3"
+        ]
+      },
+      "labels": {
+        "VCC": [
+          "VCC"
+        ],
+        "0": [
+          "GND"
+        ]
+      },
+      "required_pins": [
+        "C1.1",
+        "C1.2",
+        "R1.1",
+        "R1.2",
+        "R2.1",
+        "R2.2",
+        "U1.1",
+        "U1.2",
+        "U1.6",
+        "U1.7",
+        "U1.8"
+      ],
+      "optional_unwired_pins": [
+        "U1.3",
+        "U1.4",
+        "U1.5"
+      ],
+      "routing_metrics": {
+        "total_length": 2400,
+        "segment_count": 25,
+        "bend_count": 15,
+        "junction_count": 3,
+        "crossing_count": 0,
+        "terminal_pair_count": 11,
+        "evaluated_pair_count": 11,
+        "disconnected_pair_count": 0,
+        "coincident_pair_count": 0,
+        "detour_count": 3,
+        "detour_ratio": 1.5888833123282884,
+        "max_detour_ratio": 3.0,
+        "bounding_box": [
+          176,
+          192,
+          736,
+          560
+        ],
+        "area": 206080,
+        "reference_length": 1600,
+        "routing_efficiency": 0.6666666666666666
+      },
+      "visual_reference": "backend/tests/artifacts/phase_8/after_native/555_astable_multivibrator/555_astable_multivibrator_ltspice.png",
+      "visual_sha256": "ea40b5fafea8ad2de2864a60b0005310045f7fccee5132bf2b1c06d67c606f17",
+      "reference_asc": "backend/tests/artifacts/phase_8/after/555_astable_multivibrator.asc"
+    },
+    {
+      "key": "common_emitter_amplifier",
+      "source": "backend/circuits/common_emitter_amplifier.json",
+      "source_sha256": "0a1cc73d6c750a68a7485daefb522a3a30e7c7046b2b06f570fe9b0c741f6802",
+      "name": "Common Emitter Amplifier",
+      "components": {
+        "Q1": {
+          "kind": "bc547",
+          "symbol": "npn",
+          "value": "BC547"
+        },
+        "R1": {
+          "kind": "resistor",
+          "symbol": "res",
+          "value": "100k"
+        },
+        "R2": {
+          "kind": "resistor",
+          "symbol": "res",
+          "value": "10k"
+        },
+        "R3": {
+          "kind": "resistor",
+          "symbol": "res",
+          "value": "1k"
+        },
+        "C1": {
+          "kind": "capacitor",
+          "symbol": "cap",
+          "value": "10uF"
+        },
+        "C2": {
+          "kind": "capacitor",
+          "symbol": "cap",
+          "value": "100uF"
+        }
+      },
+      "topology": {
+        "VCC": [
+          "R1.1",
+          "R3.2"
+        ],
+        "N1": [
+          "Q1.B",
+          "R1.2",
+          "R2.1"
+        ],
+        "0": [
+          "C1.2",
+          "R2.2"
+        ],
+        "N2": [
+          "C2.1",
+          "Q1.C",
+          "R3.1"
+        ],
+        "N3": [
+          "C1.1",
+          "Q1.E"
+        ],
+        "VOUT": [
+          "C2.2"
+        ]
+      },
+      "labels": {
+        "VCC": [
+          "VCC"
+        ],
+        "0": [
+          "GND"
+        ],
+        "VOUT": [
+          "VOUT"
+        ]
+      },
+      "required_pins": [
+        "C1.1",
+        "C1.2",
+        "C2.1",
+        "C2.2",
+        "Q1.B",
+        "Q1.C",
+        "Q1.E",
+        "R1.1",
+        "R1.2",
+        "R2.1",
+        "R2.2",
+        "R3.1",
+        "R3.2"
+      ],
+      "optional_unwired_pins": [],
+      "routing_metrics": {
+        "total_length": 1536,
+        "segment_count": 14,
+        "bend_count": 4,
+        "junction_count": 2,
+        "crossing_count": 0,
+        "terminal_pair_count": 9,
+        "evaluated_pair_count": 9,
+        "disconnected_pair_count": 0,
+        "coincident_pair_count": 0,
+        "detour_count": 0,
+        "detour_ratio": 1.0424242424242425,
+        "max_detour_ratio": 1.2,
+        "bounding_box": [
+          240,
+          128,
+          768,
+          624
+        ],
+        "area": 261888,
+        "reference_length": 1376,
+        "routing_efficiency": 0.8958333333333334
+      },
+      "visual_reference": "backend/tests/artifacts/phase_8/after_native/common_emitter_amplifier/common_emitter_amplifier_ltspice.png",
+      "visual_sha256": "ef946531a0b89f02d33a81fa85a47802533c2ce7250ea48801caacf04ffac100",
+      "reference_asc": "backend/tests/artifacts/phase_8/after/common_emitter_amplifier.asc"
+    },
+    {
+      "key": "led_blinker",
+      "source": "backend/circuits/led_blinker.json",
+      "source_sha256": "5dde5356131a233a871d6568b4addea1f73f75f3f1a2125008f0ec27ede7b390",
+      "name": "LED Blinker",
+      "components": {
+        "Q1": {
+          "kind": "bc547",
+          "symbol": "npn",
+          "value": "BC547"
+        },
+        "R1": {
+          "kind": "resistor",
+          "symbol": "res",
+          "value": "10k"
+        },
+        "R2": {
+          "kind": "resistor",
+          "symbol": "res",
+          "value": "1k"
+        },
+        "C1": {
+          "kind": "capacitor",
+          "symbol": "cap",
+          "value": "10uF"
+        },
+        "D1": {
+          "kind": "led",
+          "symbol": "led",
+          "value": "RED"
+        }
+      },
+      "topology": {
+        "VCC": [
+          "R1.1"
+        ],
+        "N1": [
+          "C1.1",
+          "Q1.B",
+          "R1.2"
+        ],
+        "N2": [
+          "D1.A",
+          "Q1.C"
+        ],
+        "N3": [
+          "D1.K",
+          "R2.1"
+        ],
+        "0": [
+          "C1.2",
+          "R2.2"
+        ],
+        "unwired:Q1.E": [
+          "Q1.E"
+        ]
+      },
+      "labels": {
+        "VCC": [
+          "VCC"
+        ],
+        "0": [
+          "GND"
+        ]
+      },
+      "required_pins": [
+        "C1.1",
+        "C1.2",
+        "D1.A",
+        "D1.K",
+        "Q1.B",
+        "Q1.C",
+        "R1.1",
+        "R1.2",
+        "R2.1",
+        "R2.2"
+      ],
+      "optional_unwired_pins": [
+        "Q1.E"
+      ],
+      "routing_metrics": {
+        "total_length": 1472,
+        "segment_count": 13,
+        "bend_count": 6,
+        "junction_count": 1,
+        "crossing_count": 0,
+        "terminal_pair_count": 6,
+        "evaluated_pair_count": 6,
+        "disconnected_pair_count": 0,
+        "coincident_pair_count": 0,
+        "detour_count": 0,
+        "detour_ratio": 1.018018018018018,
+        "max_detour_ratio": 1.1081081081081081,
+        "bounding_box": [
+          240,
+          208,
+          800,
+          592
+        ],
+        "area": 215040,
+        "reference_length": 1376,
+        "routing_efficiency": 0.9347826086956522
+      },
+      "visual_reference": "backend/tests/artifacts/phase_8/after_native/led_blinker/led_blinker_ltspice.png",
+      "visual_sha256": "ad0c4e6193dbacfc8069d74a0cb2be6606067382bae89f934561fecae54cdd61",
+      "reference_asc": "backend/tests/artifacts/phase_8/after/led_blinker.asc"
+    },
+    {
+      "key": "rc_high_pass_filter",
+      "source": "backend/circuits/rc_high_pass_filter.json",
+      "source_sha256": "69737c83b8d23c00b05100a482758d384e6bba6e7d12fe9ccded74039cae86b0",
+      "name": "RC High Pass Filter",
+      "components": {
+        "C1": {
+          "kind": "capacitor",
+          "symbol": "cap",
+          "value": "100nF"
+        },
+        "R1": {
+          "kind": "resistor",
+          "symbol": "res",
+          "value": "1k"
+        }
+      },
+      "topology": {
+        "VIN": [
+          "C1.1"
+        ],
+        "VOUT": [
+          "C1.2",
+          "R1.1"
+        ],
+        "0": [
+          "R1.2"
+        ]
+      },
+      "labels": {
+        "VIN": [
+          "VIN"
+        ],
+        "VOUT": [
+          "VOUT"
+        ],
+        "0": [
+          "GND"
+        ]
+      },
+      "required_pins": [
+        "C1.1",
+        "C1.2",
+        "R1.1",
+        "R1.2"
+      ],
+      "optional_unwired_pins": [],
+      "routing_metrics": {
+        "total_length": 224,
+        "segment_count": 6,
+        "bend_count": 3,
+        "junction_count": 0,
+        "crossing_count": 0,
+        "terminal_pair_count": 1,
+        "evaluated_pair_count": 1,
+        "disconnected_pair_count": 0,
+        "coincident_pair_count": 0,
+        "detour_count": 1,
+        "detour_ratio": 1.6666666666666667,
+        "max_detour_ratio": 1.6666666666666667,
+        "bounding_box": [
+          128,
+          160,
+          320,
+          304
+        ],
+        "area": 27648,
+        "reference_length": 96,
+        "routing_efficiency": 0.42857142857142855
+      },
+      "visual_reference": "backend/tests/artifacts/phase_8/after_native/rc_high_pass_filter/rc_high_pass_filter_ltspice.png",
+      "visual_sha256": "90db4c7e11576ac124941ff2451dbe38d645f3d016f9655227075408d4153e54",
+      "reference_asc": "backend/tests/artifacts/phase_8/after/rc_high_pass_filter.asc"
+    },
+    {
+      "key": "rc_low_pass_filter",
+      "source": "backend/circuits/rc_low_pass_filter.json",
+      "source_sha256": "dfb83bd1db2ae2752c4bd07ebaf4c3c674574ad7df8758c694ba17ee702a28b1",
+      "name": "RC Low Pass Filter",
+      "components": {
+        "R1": {
+          "kind": "resistor",
+          "symbol": "res",
+          "value": "1k"
+        },
+        "C1": {
+          "kind": "capacitor",
+          "symbol": "cap",
+          "value": "100nF"
+        }
+      },
+      "topology": {
+        "VIN": [
+          "R1.1"
+        ],
+        "VOUT": [
+          "C1.1",
+          "R1.2"
+        ],
+        "0": [
+          "C1.2"
+        ]
+      },
+      "labels": {
+        "VIN": [
+          "VIN"
+        ],
+        "VOUT": [
+          "VOUT"
+        ],
+        "0": [
+          "GND"
+        ]
+      },
+      "required_pins": [
+        "C1.1",
+        "C1.2",
+        "R1.1",
+        "R1.2"
+      ],
+      "optional_unwired_pins": [],
+      "routing_metrics": {
+        "total_length": 224,
+        "segment_count": 6,
+        "bend_count": 3,
+        "junction_count": 0,
+        "crossing_count": 0,
+        "terminal_pair_count": 1,
+        "evaluated_pair_count": 1,
+        "disconnected_pair_count": 0,
+        "coincident_pair_count": 0,
+        "detour_count": 1,
+        "detour_ratio": 1.6666666666666667,
+        "max_detour_ratio": 1.6666666666666667,
+        "bounding_box": [
+          128,
+          160,
+          336,
+          288
+        ],
+        "area": 26624,
+        "reference_length": 96,
+        "routing_efficiency": 0.42857142857142855
+      },
+      "visual_reference": "backend/tests/artifacts/phase_8/after_native/rc_low_pass_filter/rc_low_pass_filter_ltspice.png",
+      "visual_sha256": "042956b907073691da5b72103123e973b6bcb6ac2db76fd1650ea30214641bcf",
+      "reference_asc": "backend/tests/artifacts/phase_8/after/rc_low_pass_filter.asc"
+    },
+    {
+      "key": "voltage_divider",
+      "source": "backend/tests/fixtures/routing/voltage_divider.json",
+      "source_sha256": "c93da3a6039246e75f9b1e00881fa4a408fe2d150a4d97445c0e463b73170ebe",
+      "name": "Voltage Divider Routing Regression",
+      "components": {
+        "R1": {
+          "kind": "resistor",
+          "symbol": "res",
+          "value": "10k"
+        },
+        "R2": {
+          "kind": "resistor",
+          "symbol": "res",
+          "value": "10k"
+        }
+      },
+      "topology": {
+        "VIN": [
+          "R1.1"
+        ],
+        "VOUT": [
+          "R1.2",
+          "R2.1"
+        ],
+        "0": [
+          "R2.2"
+        ]
+      },
+      "labels": {
+        "VIN": [
+          "VIN"
+        ],
+        "VOUT": [
+          "VOUT"
+        ],
+        "0": [
+          "GND"
+        ]
+      },
+      "required_pins": [
+        "R1.1",
+        "R1.2",
+        "R2.1",
+        "R2.2"
+      ],
+      "optional_unwired_pins": [],
+      "routing_metrics": {
+        "total_length": 160,
+        "segment_count": 4,
+        "bend_count": 0,
+        "junction_count": 0,
+        "crossing_count": 0,
+        "terminal_pair_count": 1,
+        "evaluated_pair_count": 1,
+        "disconnected_pair_count": 0,
+        "coincident_pair_count": 0,
+        "detour_count": 0,
+        "detour_ratio": 1.0,
+        "max_detour_ratio": 1.0,
+        "bounding_box": [
+          160,
+          160,
+          160,
+          480
+        ],
+        "area": 0,
+        "reference_length": 96,
+        "routing_efficiency": 0.6
+      },
+      "visual_reference": "backend/tests/artifacts/phase_8/after_native/voltage_divider/voltage_divider_ltspice.png",
+      "visual_sha256": "ccf4b57779ae5cfe3d306e41aca3aba1ae095802d412f1752b2251629a0ddeea",
+      "reference_asc": "backend/tests/artifacts/phase_8/after/voltage_divider.asc"
+    },
+    {
+      "key": "bridge_rectifier",
+      "source": "backend/tests/fixtures/routing/bridge_rectifier.json",
+      "source_sha256": "522165ecf5a781d1fec85c18afd02312a6288314e302c23119bc932d161c1400",
+      "name": "Bridge Rectifier Routing Regression",
+      "components": {
+        "D1": {
+          "kind": "diode",
+          "symbol": "diode",
+          "value": "1N4148"
+        },
+        "D2": {
+          "kind": "diode",
+          "symbol": "diode",
+          "value": "1N4148"
+        },
+        "D3": {
+          "kind": "diode",
+          "symbol": "diode",
+          "value": "1N4148"
+        },
+        "D4": {
+          "kind": "diode",
+          "symbol": "diode",
+          "value": "1N4148"
+        },
+        "R1": {
+          "kind": "resistor",
+          "symbol": "res",
+          "value": "1k"
+        }
+      },
+      "topology": {
+        "AC+": [
+          "D1.1",
+          "D3.2"
+        ],
+        "AC-": [
+          "D2.1",
+          "D4.2"
+        ],
+        "OUT+": [
+          "D1.2",
+          "D2.2",
+          "R1.1"
+        ],
+        "0": [
+          "D3.1",
+          "D4.1",
+          "R1.2"
+        ]
+      },
+      "labels": {
+        "AC+": [
+          "AC+"
+        ],
+        "AC-": [
+          "AC-"
+        ],
+        "OUT+": [
+          "OUT+"
+        ],
+        "0": [
+          "GND"
+        ]
+      },
+      "required_pins": [
+        "D1.1",
+        "D1.2",
+        "D2.1",
+        "D2.2",
+        "D3.1",
+        "D3.2",
+        "D4.1",
+        "D4.2",
+        "R1.1",
+        "R1.2"
+      ],
+      "optional_unwired_pins": [],
+      "routing_metrics": {
+        "total_length": 1648,
+        "segment_count": 15,
+        "bend_count": 4,
+        "junction_count": 2,
+        "crossing_count": 0,
+        "terminal_pair_count": 8,
+        "evaluated_pair_count": 8,
+        "disconnected_pair_count": 0,
+        "coincident_pair_count": 0,
+        "detour_count": 0,
+        "detour_ratio": 1.1335427532795954,
+        "max_detour_ratio": 1.2222222222222223,
+        "bounding_box": [
+          224,
+          192,
+          736,
+          512
+        ],
+        "area": 163840,
+        "reference_length": 1456,
+        "routing_efficiency": 0.883495145631068
+      },
+      "visual_reference": "backend/tests/artifacts/phase_8/after_native/bridge_rectifier/bridge_rectifier_ltspice.png",
+      "visual_sha256": "1102a3475e19957ea9273dd02788d2755b1b370fcceb1c39e2fc9bb4e9e0f4cb",
+      "reference_asc": "backend/tests/artifacts/phase_8/after/bridge_rectifier.asc"
+    }
+  ]
+}
