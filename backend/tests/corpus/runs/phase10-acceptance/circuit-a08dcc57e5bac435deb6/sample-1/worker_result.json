@@ -1,0 +1,231 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "2239df555726596ff0757ee3ba9c7cd56c7eefef9476dd5198dacb059de69e84",
+  "compiled_sha256": "48e8f67fabcca2373de0f353fb1085262492e0f784cead5c51bc91c542fd81cd",
+  "counts": {
+    "compiled": {
+      "components": 4,
+      "connections": 3,
+      "mapped_components": 4,
+      "nets": 2,
+      "pins": 8
+    },
+    "exported": {
+      "components": 4,
+      "flags": 2,
+      "pins": 8,
+      "wires": 4
+    },
+    "input": {
+      "components": 4,
+      "connections": 3,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 2,
+      "nets": 2,
+      "pins": 3,
+      "segments": 4
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R1; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R2; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R3; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R4; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R3 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R3.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R3.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R4.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "R1",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R1",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "backend_id": "R2",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R2",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "backend_id": "R3",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R3",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "backend_id": "R4",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R4",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    }
+  ],
+  "id": "circuit-a08dcc57e5bac435deb6",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 37,
+      "peak_rss_bytes": 84983808
+    }
+  },
+  "name": "test_routing.py:line:361",
+  "overall": "NOT_RUN",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "small",
+    "componentCount": 4,
+    "errorCount": 0,
+    "exportBytes": 609,
+    "iterations": {
+      "export": 0,
+      "final_validation": 2,
+      "input_validation": 0,
+      "layout": 12,
+      "net_building": 12,
+      "optimization": 28,
+      "pin_resolution": 0,
+      "post_export_validation": 0,
+      "routing": 93,
+      "routing_validation": 4,
+      "validation": 2
+    },
+    "netCount": 2,
+    "pinCount": 8,
+    "stagesMs": {
+      "export": 22.146,
+      "final_validation": 0.863,
+      "input_validation": 1.131,
+      "layout": 2.699,
+      "net_building": 0.285,
+      "optimization": 0.356,
+      "pin_resolution": 0.267,
+      "post_export_validation": 3.116,
+      "routing": 14.326,
+      "routing_validation": 1.084,
+      "validation": 0.166
+    },
+    "totalTimeMs": 46.568,
+    "warningCount": 0,
+    "wireCount": 4
+  },
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 1,
+    "collision_checks": 1,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 352,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 4
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 100.72940000009112,
+    "compiler_process_wall": 1872.5117000003593,
+    "compiler_reported": 24.19470000000001,
+    "connectivity_wall": 1.473700000133249,
+    "export_wall": 46.92429999977321,
+    "route_wall": 4.754000000502856,
+    "serialized_validation_wall": 3.5770000004049507
+  }
+}

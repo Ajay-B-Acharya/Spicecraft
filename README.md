@@ -45,6 +45,17 @@ Instead of drawing circuits from scratch, users can:
 * Recommend component values
 * Generate circuits from user requirements
 
+## Circuit pipeline and production hardening
+
+The current schematic pipeline includes canonical components and pins, electrical net validation, deterministic layout, bounded Manhattan routing, geometry optimization, transactional LTspice export, and post-serialization checks. Unsupported or invalid circuits fail with diagnostics rather than substituted components or partial exports.
+
+- [Architecture, support boundaries, resource limits, errors, and deployment guide](docs/PRODUCTION.md)
+- [How to add and verify a component](docs/ADDING_COMPONENTS.md)
+- [Regression, corpus, scalability, and browser testing](TESTING.md)
+- [Phase 10 audit, measured results, and remaining acceptance limitations](PHASE_10_PRODUCTION_REPORT.md)
+
+Circuit size is classified as small (1–20), medium (21–100), large (101–500), or extreme (501+). These categories are not scalability guarantees; consult the measured report. No live AI-provider integration or simulation is required by this phase.
+
 ## Tech Stack
 
 Frontend:
@@ -58,9 +69,10 @@ Backend:
 * FastAPI
 * Python
 
-Database:
+Persistence:
 
-* PostgreSQL
+* Circuit definitions currently use repository JSON files with atomic updates.
+* PostgreSQL remains a planned database integration.
 
 ## Project Structure
 

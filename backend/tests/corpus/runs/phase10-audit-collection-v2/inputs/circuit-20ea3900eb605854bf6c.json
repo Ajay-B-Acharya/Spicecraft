@@ -1,0 +1,14 @@
+{
+  "components": [
+    {
+      "reference": "V1",
+      "type": "voltage_source"
+    }
+  ],
+  "wires": [
+    {
+      "from": "V1.1",
+      "to": "GND"
+    }
+  ]
+}

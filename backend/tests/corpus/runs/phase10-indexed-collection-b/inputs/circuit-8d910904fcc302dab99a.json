@@ -1,0 +1,18 @@
+{
+  "components": [
+    {
+      "reference": "U1",
+      "type": "ne555"
+    },
+    {
+      "reference": "R1",
+      "type": "resistor"
+    }
+  ],
+  "wires": [
+    {
+      "from": "U1.VCC",
+      "to": "R1.1"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "56ab60811ae888404d92596a384d346136ee5dc8f07794839e46c899777db994",
+  "compiled_sha256": "963f5f23716cf1565c70ea808aac4a6bc24ec1f2d91c3f5b4cc84fde46a65627",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 1,
+      "mapped_components": 2,
+      "nets": 1,
+      "pins": 5
+    },
+    "exported": {
+      "components": 2,
+      "flags": 0,
+      "pins": 5,
+      "wires": 2
+    },
+    "input": {
+      "components": 2,
+      "connections": 1,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 0,
+      "nets": 1,
+      "pins": 2,
+      "segments": 4
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin Q1.C (collector) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin Q1.E (emitter) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "id": "circuit-28b386d1c7b60cbad303",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 9,
+      "peak_rss_bytes": 94752768
+    }
+  },
+  "name": "Test",
+  "overall": "NOT_RUN",
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 1,
+    "collision_checks": 2,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 288,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 2
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 25.57020000040211,
+    "compiler_process_wall": 824.8560000001817,
+    "compiler_reported": 9.438300000000027,
+    "connectivity_wall": 0.5109999992782832,
+    "export_wall": 10.943899999801943,
+    "route_wall": 1.292299999477109,
+    "serialized_validation_wall": 0.9734000004755217
+  }
+}

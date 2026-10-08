@@ -109,7 +109,7 @@ function isBiasNetwork(components: Component[], circuit: Circuit, analysis: Circ
 
     circuit.components.forEach((comp) => {
       if (comp.type === 'npn_transistor' || comp.type === 'pnp_transistor') {
-        const basePin = comp.pins.find((pin) => pin.id === 'base');
+        const basePin = comp.pins.find((pin) => pin.id === 'B');
 
         if (basePin && basePin.net && resistorNets.includes(basePin.net)) {
           connectedTransistors.add(comp.id);

@@ -14,6 +14,7 @@ from typing import Any
 
 from app.services.asc_validation import NetGeometry
 from app.services.grid_system import Point
+from app.services.production import checkpoint
 from app.services.pin_maps import COMPONENT_LIBRARY, PinResolver, resolve_component_kind
 from .geometry import manhattan, on_segment
 from .models import SafeCrossing
@@ -42,6 +43,7 @@ def _conductive_graph(net: NetGeometry) -> _Graph:
     vertices.update(net.flags)
     graph: _Graph = {point: {} for point in vertices}
     for segment in segments:
+        checkpoint(iterations=len(vertices))
         cuts = sorted(point for point in vertices if on_segment(point, segment.start, segment.end))
         for start, end in zip(cuts, cuts[1:]):
             distance = manhattan(start, end)
@@ -55,6 +57,7 @@ def _shortest_distances(graph: _Graph, start: Point) -> dict[Point, int]:
     distances = {start: 0}
     pending = [(0, start)]
     while pending:
+        checkpoint(iterations=1)
         distance, point = heappop(pending)
         if distance != distances[point]:
             continue
@@ -164,6 +167,7 @@ def measure_routing(
     occupied: list[Point] = []
 
     for net in net_geometries:
+        checkpoint(iterations=1, segments=segment_count + len(net.segments))
         segment_count += len(net.segments)
         total_length += sum(manhattan(segment.start, segment.end) for segment in net.segments)
         occupied.extend(point for segment in net.segments for point in (segment.start, segment.end))
@@ -184,6 +188,7 @@ def measure_routing(
         terminal_pair_count += len(pins) * (len(pins) - 1) // 2
         distance_cache: dict[Point, dict[Point, int]] = {}
         for index, source in enumerate(pins[:-1]):
+            checkpoint(iterations=len(pins) - index)
             if source.point not in distance_cache:
                 distance_cache[source.point] = _shortest_distances(graph, source.point)
             distances = distance_cache[source.point]

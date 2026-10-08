@@ -470,7 +470,12 @@ def resolve_component_kind(component: dict[str, Any]) -> str:
     raw_type = _stringify(component.get("type")).lower()
     raw_value = _stringify(component.get("value")).lower()
 
-    # Value-based override takes precedence (e.g. "BC547" -> "bc547")
+    if raw_type in {"ic", "transistor", "bjt"}:
+        expected = COMPONENT_KIND_ALIASES[raw_type]
+        model_kind = COMPONENT_KIND_ALIASES.get(raw_value)
+        return expected if not raw_value or model_kind == expected else raw_type
+
+    # Conflicting explicit type/value definitions are rejected by connectivity validation.
     if raw_value in COMPONENT_KIND_ALIASES:
         return COMPONENT_KIND_ALIASES[raw_value]
     if raw_type in COMPONENT_KIND_ALIASES:
@@ -482,7 +487,9 @@ def resolve_component_kind(component: dict[str, Any]) -> str:
 def resolve_symbol_name(component: dict[str, Any]) -> str:
     """Return the LTspice symbol name for a component dict."""
     kind = resolve_component_kind(component)
-    return SYMBOL_NAMES.get(kind, "res")
+    if kind not in SYMBOL_NAMES:
+        raise ValueError(f"Unsupported component kind '{kind}'; no symbol substitution is allowed")
+    return SYMBOL_NAMES[kind]
 
 
 def _normalize_pin_name(kind: str, pin: str) -> str:

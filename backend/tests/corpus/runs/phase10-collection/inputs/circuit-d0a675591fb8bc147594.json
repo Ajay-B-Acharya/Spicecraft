@@ -1,0 +1,8 @@
+{
+  "components": [
+    {
+      "type": "resistor"
+    }
+  ],
+  "wires": []
+}

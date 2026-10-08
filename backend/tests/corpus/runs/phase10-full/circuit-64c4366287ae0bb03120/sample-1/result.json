@@ -1,0 +1,99 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "3bc58b368d0fe5ce47423d4ca06b6cb64dfbab6f47a1b33bcde59691960a02b6",
+  "compiled_sha256": "561e15e878dbf3b27336a0897214800266146123a0209d9a0a400705bec1081b",
+  "counts": {
+    "compiled": {
+      "components": 1,
+      "connections": 0,
+      "mapped_components": 1,
+      "nets": 0,
+      "pins": 2
+    },
+    "exported": {
+      "components": 1,
+      "flags": 0,
+      "pins": 2,
+      "wires": 0
+    },
+    "input": {
+      "components": 1,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R1 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "evidence_directory": "circuit-64c4366287ae0bb03120/sample-1",
+  "failure_stage": null,
+  "failures": [],
+  "hash_seed": 0,
+  "id": "circuit-64c4366287ae0bb03120",
+  "implementation_sha256": "60f44913f21d569de19d97b10353d0b22f51e03f04db27f9c38204ed865fda52",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 9,
+      "peak_rss_bytes": 31547392
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 12,
+      "peak_rss_bytes": 93245440
+    }
+  },
+  "name": "test_export_polish.py:line:122",
+  "overall": "PASS",
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "length": 0,
+    "segments": 0
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "NOT_REQUIRED",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 539.6135999999387,
+    "backend_worker_wall": 15.359600000010687,
+    "compiler_process_wall": 730.4277000002912,
+    "compiler_reported": 10.91879999999992,
+    "connectivity_wall": 0.19860000065818895,
+    "export_wall": 4.088599999704456,
+    "serialized_validation_wall": 0.4791999999724794
+  },
+  "validation": "PASS"
+}

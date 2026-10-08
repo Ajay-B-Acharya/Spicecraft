@@ -10,6 +10,7 @@ from typing import Any
 
 from app.services.connectivity import ConnectivityModel
 from app.services.grid_system import GridSystem
+from app.services.production import checkpoint
 from app.services.pin_maps import COMPONENT_LIBRARY, PinResolver, resolve_component_kind
 
 
@@ -24,9 +25,14 @@ def _place(layout: dict, pin: str, point: tuple[int, int], rotation: str = "R0")
 
 
 def refine_layout(model: ConnectivityModel, layouts: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    checkpoint("layout")
     refs = list(model.components)
-    unique = {ref: dict(layouts[ref]) for ref in refs}
-    definitions = {ref: COMPONENT_LIBRARY.get(resolve_component_kind(unique[ref])) for ref in refs}
+    unique = {}
+    definitions = {}
+    for ref in refs:
+        checkpoint(iterations=1)
+        unique[ref] = dict(layouts[ref])
+        definitions[ref] = COMPONENT_LIBRARY.get(resolve_component_kind(unique[ref]))
     if not refs or any(definition is None for definition in definitions.values()):
         return layouts
     nets = {pin.key: net.name for net in model.nets for pin in net.pins}
@@ -144,6 +150,7 @@ def refine_layout(model: ConnectivityModel, layouts: dict[str, dict[str, Any]]) 
     # Preserve reference/id aliases in the existing layout contract.
     result = dict(layouts)
     for ref, layout in unique.items():
+        checkpoint(iterations=1)
         result[ref] = layout
         alias = str(layout.get("id", "")).strip()
         if alias:

@@ -1,0 +1,30 @@
+{
+  "components": [
+    {
+      "_ltspice_anchor": [
+        0,
+        0
+      ],
+      "reference": "R1",
+      "type": "resistor"
+    },
+    {
+      "_ltspice_anchor": [
+        0,
+        0
+      ],
+      "reference": "R2",
+      "type": "resistor"
+    }
+  ],
+  "wires": [
+    {
+      "from": "R1.1",
+      "to": "VIN"
+    },
+    {
+      "from": "R2.1",
+      "to": "VOUT"
+    }
+  ]
+}

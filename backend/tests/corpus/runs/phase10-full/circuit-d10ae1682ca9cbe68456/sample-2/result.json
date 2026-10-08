@@ -1,0 +1,72 @@
+{
+  "compiled_sha256": "bc4bf0ecc5c0cfb1f1bec47c63ac215dd0b71673eb6e2651828832860f60f81e",
+  "counts": {
+    "compiled": {
+      "components": 0,
+      "connections": 0,
+      "mapped_components": 0,
+      "nets": 0,
+      "pins": 0
+    },
+    "exported": null,
+    "input": {
+      "components": 0,
+      "connections": 1,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Normalization: Malformed wires at index 0; expected a record.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Circuit is empty: no components or connections.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "evidence_directory": "circuit-d10ae1682ca9cbe68456/sample-2",
+  "failure_stage": "compile",
+  "failures": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Normalization: Malformed wires at index 0; expected a record.",
+      "severity": "error",
+      "stage": "compiler"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-d10ae1682ca9cbe68456",
+  "implementation_sha256": "60f44913f21d569de19d97b10353d0b22f51e03f04db27f9c38204ed865fda52",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 21,
+      "peak_rss_bytes": 82800640
+    }
+  },
+  "name": "connectivity.test.cjs:line:157",
+  "overall": "INVALID",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "FAIL",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "invalid_or_unknown",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 773.6062000003585,
+    "compiler_reported": 4.29989999999998
+  },
+  "validation": "NOT_RUN"
+}

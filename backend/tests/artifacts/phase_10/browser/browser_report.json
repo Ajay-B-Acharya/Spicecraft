@@ -1,0 +1,128 @@
+{
+  "mode": "Real Chrome; isolated Firebase session and mocked API transport",
+  "checks": [
+    {
+      "name": "Circuit library loads authenticated test session",
+      "status": "PASS"
+    },
+    {
+      "name": "Library navigates to editor",
+      "status": "PASS"
+    },
+    {
+      "name": "Routing failure includes net, component and pin",
+      "status": "PASS"
+    },
+    {
+      "name": "unsupported export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "timeout export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "malformed export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "offline export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "Editing preserves draft and blocks export",
+      "status": "PASS"
+    },
+    {
+      "name": "Failed save keeps input and enables retry",
+      "status": "PASS"
+    },
+    {
+      "name": "Successful retry saves preserved draft",
+      "status": "PASS"
+    },
+    {
+      "name": "Export retry downloads file",
+      "status": "PASS"
+    },
+    {
+      "name": "Back navigation returns to library",
+      "status": "PASS"
+    },
+    {
+      "name": "Reloaded circuit retains saved value",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile error and retry visible",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile page has no horizontal document overflow",
+      "status": "PASS"
+    }
+  ],
+  "errors": [
+    "Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <MenuProvider scope={{Menu:[...], ...}} open={false} onOpenChange={function} content={null} ...>\n      <MenuProvider scope={{Menu:[...], ...}} onClose={function Menu.useCallback} isUsingKeyboardRef={{current:false}} ...>\n        <DropdownMenuTrigger asChild={true}>\n          <DropdownMenuTrigger data-slot=\"dropdown-m...\" asChild={true}>\n            <MenuAnchor asChild={true} __scopeMenu={{Menu:[...], ...}}>\n              <PopperAnchor __scopePopper={{Menu:[...], ...}} asChild={true} ref={null}>\n                <Primitive.div asChild={true} ref={function}>\n                  <Primitive.div.Slot ref={function}>\n                    <Primitive.div.SlotClone ref={function}>\n                      <Primitive.button type=\"button\" id=\"radix-_R_2...\" aria-haspopup=\"menu\" aria-expanded={false} ...>\n                        <Primitive.button.Slot type=\"button\" id=\"radix-_R_2...\" aria-haspopup=\"menu\" ...>\n                          <Primitive.button.SlotClone type=\"button\" id=\"radix-_R_2...\" aria-haspopup=\"menu\" ...>\n                            <button className=\"flex items...\" type=\"button\" id=\"radix-_R_2...\" aria-haspopup=\"menu\" ...>\n                              <div\n                                className=\"flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br fro...\"\n                              >\n+                               BT\n-                               U\n                              ...\n        ...\n\n    at throwOnHydrationMismatch (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:5466:11)\n    at prepareToHydrateHostInstance (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:5562:21)\n    at completeWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:12925:15)\n    at runWithFiberInDEV (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:987:30)\n    at completeUnitOfWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:19133:19)\n    at performUnitOfWork (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:19006:11)\n    at workLoopConcurrentByScheduler (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:18983:9)\n    at renderRootConcurrent (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:18965:15)\n    at performWorkOnRoot (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:17823:11)\n    at performWorkOnRootViaSchedulerTask (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:20472:7)\n    at MessagePort.performWorkUntilDeadline (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/scheduler/cjs/scheduler.development.js:45:48)"
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/circuits"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "PUT",
+      "path": "/circuits/browser-circuit"
+    },
+    {
+      "method": "PUT",
+      "path": "/circuits/browser-circuit"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/missing"
+    }
+  ],
+  "status": "FAIL",
+  "failure": "Error: Browser assertion timed out: document.body.innerText.includes(\"Circuit not found\"); page: New Circuit\nDashboard\nMy Projects\nSearch Circuits\nRecent Circuits\nFavorites\nWORKSPACE\nEditor\nAI Assistant\nExports\nDark Mode\nSpiceCraft\nToggle Sidebar\nNew Project\nBT\nBrowser Test\nBack to Search\nCircuit Not Found\n\nCircuit Not Found\n\nThis circuit may have been removed or the link may be incorrect.\n\nSearch Circuits\n    at wait (C:\\Projects\\Spice Craft\\frontend\\tools\\verify-production-browser.cjs:42:9)\n    at async check (C:\\Projects\\Spice Craft\\frontend\\tools\\verify-production-browser.cjs:46:3)\n    at async main (C:\\Projects\\Spice Craft\\frontend\\tools\\verify-production-browser.cjs:169:3)"
+}

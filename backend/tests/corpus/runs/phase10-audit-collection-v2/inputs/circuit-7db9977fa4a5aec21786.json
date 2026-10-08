@@ -1,0 +1,23 @@
+{
+  "components": [
+    {
+      "id": "transistor-id",
+      "reference": "Q1",
+      "type": "npn"
+    },
+    {
+      "reference": "R1",
+      "type": "res"
+    }
+  ],
+  "wires": [
+    {
+      "from": "transistor-id.2",
+      "to": "R1.PLUS"
+    },
+    {
+      "from": "Q1.BASE",
+      "to": "VIN"
+    }
+  ]
+}

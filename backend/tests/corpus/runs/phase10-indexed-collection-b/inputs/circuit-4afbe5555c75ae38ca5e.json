@@ -1,0 +1,16 @@
+{
+  "category": "",
+  "components": [
+    {
+      "id": "R1",
+      "type": "resistor",
+      "value": "1k",
+      "x": 1
+    }
+  ],
+  "description": "",
+  "id": "circuit",
+  "name": "Test",
+  "tags": [],
+  "wires": []
+}

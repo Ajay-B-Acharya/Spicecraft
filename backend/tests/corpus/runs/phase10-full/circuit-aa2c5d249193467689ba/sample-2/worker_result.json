@@ -1,0 +1,68 @@
+{
+  "compiled_sha256": "2000f9b6046f40bd8006bb7824d5c0d59169b3f3a1e8d05f9960d9682159b74a",
+  "counts": {
+    "compiled": {
+      "components": 1,
+      "connections": 1,
+      "mapped_components": 1,
+      "nets": 1,
+      "pins": 2
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 1,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin net-label:[\"N1\",\"OUT\"].2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "actual": null,
+      "circuit": "Test",
+      "code": "INVALID_COMPONENT_IDENTITY",
+      "component": null,
+      "expected": null,
+      "message": "Component reference must start with a letter and contain only letters, digits, _, $, or -",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "input_validation",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "id": "circuit-aa2c5d249193467689ba",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 25,
+      "peak_rss_bytes": 95547392
+    }
+  },
+  "name": "Test",
+  "overall": "NOT_RUN",
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "FAIL",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 14.608499999667401,
+    "compiler_process_wall": 1094.5097000003443,
+    "compiler_reported": 15.55759999999998,
+    "connectivity_wall": 0.5747000004703295,
+    "export_wall": 0.7826000000932254
+  }
+}

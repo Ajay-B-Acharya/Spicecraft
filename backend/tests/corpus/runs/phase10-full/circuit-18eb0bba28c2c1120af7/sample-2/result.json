@@ -1,0 +1,72 @@
+{
+  "compiled_sha256": "1ec14aeec63a04d2dcb9f245d423b1b13f4dfecf1bcf3c74b342d9952ca350b1",
+  "counts": {
+    "compiled": {
+      "components": 0,
+      "connections": 0,
+      "mapped_components": 0,
+      "nets": 0,
+      "pins": 0
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Normalization: Contradictory or malformed type on component U1.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Circuit is empty: no components or connections.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "evidence_directory": "circuit-18eb0bba28c2c1120af7/sample-2",
+  "failure_stage": "compile",
+  "failures": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Normalization: Contradictory or malformed type on component U1.",
+      "severity": "error",
+      "stage": "compiler"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-18eb0bba28c2c1120af7",
+  "implementation_sha256": "6e84c8dcd88ed008fb4962327c03cf869c0b8ea8fce6da9d836ad3e050481339",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 6,
+      "peak_rss_bytes": 83148800
+    }
+  },
+  "name": "Test",
+  "overall": "INVALID",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "FAIL",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "invalid_or_unknown",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 964.5072000002983,
+    "compiler_reported": 3.4688999999999623
+  },
+  "validation": "NOT_RUN"
+}

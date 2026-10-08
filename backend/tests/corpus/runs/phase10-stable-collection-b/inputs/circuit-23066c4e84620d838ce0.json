@@ -1,0 +1,17 @@
+{
+  "components": [
+    {
+      "id": "a",
+      "reference": "R1",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "A",
+      "reference": "R2",
+      "type": "resistor",
+      "value": "1k"
+    }
+  ],
+  "wires": []
+}

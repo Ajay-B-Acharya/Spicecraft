@@ -253,15 +253,23 @@ export class PinSystemDebugger {
 
   static findInvalidConnections(circuit: Circuit, edges: VisualEdgeLike[] = []): string[] {
     const errors = PinSystemDebugger.validateNets(circuit).errors.filter(message => /connection|source|pin|overlap|reciprocal/i.test(message));
+    const occupied = new Set(circuit.components.map(component => component.id));
+    const labelNodes = new Map<string, string>();
+    circuit.nets.forEach(net => (net.labels ?? []).forEach(label => {
+      const baseId = `net-label:${JSON.stringify([net.id, label])}`;
+      let id = baseId;
+      let suffix = 0;
+      while (occupied.has(id)) id = `${baseId}:${++suffix}`;
+      occupied.add(id);
+      labelNodes.set(id, net.id);
+    }));
     edges.forEach((edge, index) => {
       const description = edge.id ?? `#${index + 1}`;
       const endpoints = [[edge.source, edge.sourceHandle], [edge.target, edge.targetHandle]] as const;
       const memberships: string[][] = [];
       endpoints.forEach(([componentId, handle]) => {
-        if (componentId.startsWith('net-label:')) {
-          const labelNets = circuit.nets.filter(net => (net.labels ?? []).some(label =>
-            componentId === `net-label:${JSON.stringify([net.id, label])}`));
-          const ids = handle === 'net' ? labelNets.map(net => net.id) : [];
+        if (labelNodes.has(componentId)) {
+          const ids = handle === 'net' ? [labelNodes.get(componentId)!] : [];
           memberships.push(ids);
           if (ids.length !== 1) errors.push(`Edge ${description}: label handle ${componentId}.${handle ?? '<missing>'} does not identify one electrical net.`);
           return;

@@ -1,0 +1,237 @@
+{
+  "components": [
+    {
+      "reference": "R1",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R2",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R3",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R4",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R5",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R6",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R7",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R8",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R9",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R10",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R11",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R12",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R13",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R14",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R15",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R16",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R17",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R18",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R19",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R20",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R21",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R22",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R23",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R24",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R25",
+      "type": "resistor",
+      "value": "1k"
+    }
+  ],
+  "description": "Deterministic connected resistor network; 25 sections; no simulation source inserted.",
+  "name": "Repeated resistor sections (25 components)",
+  "wires": [
+    {
+      "from": "R1.1",
+      "to": "VIN"
+    },
+    {
+      "from": "R2.1",
+      "to": "R1.2"
+    },
+    {
+      "from": "R3.1",
+      "to": "R2.2"
+    },
+    {
+      "from": "R4.1",
+      "to": "R3.2"
+    },
+    {
+      "from": "R5.1",
+      "to": "R4.2"
+    },
+    {
+      "from": "R6.1",
+      "to": "R5.2"
+    },
+    {
+      "from": "R7.1",
+      "to": "R6.2"
+    },
+    {
+      "from": "R8.1",
+      "to": "R7.2"
+    },
+    {
+      "from": "R9.1",
+      "to": "R8.2"
+    },
+    {
+      "from": "R10.1",
+      "to": "R9.2"
+    },
+    {
+      "from": "R11.1",
+      "to": "R10.2"
+    },
+    {
+      "from": "R12.1",
+      "to": "R11.2"
+    },
+    {
+      "from": "R13.1",
+      "to": "R12.2"
+    },
+    {
+      "from": "R14.1",
+      "to": "R13.2"
+    },
+    {
+      "from": "R15.1",
+      "to": "R14.2"
+    },
+    {
+      "from": "R16.1",
+      "to": "R15.2"
+    },
+    {
+      "from": "R17.1",
+      "to": "R16.2"
+    },
+    {
+      "from": "R18.1",
+      "to": "R17.2"
+    },
+    {
+      "from": "R19.1",
+      "to": "R18.2"
+    },
+    {
+      "from": "R20.1",
+      "to": "R19.2"
+    },
+    {
+      "from": "R21.1",
+      "to": "R20.2"
+    },
+    {
+      "from": "R22.1",
+      "to": "R21.2"
+    },
+    {
+      "from": "R23.1",
+      "to": "R22.2"
+    },
+    {
+      "from": "R24.1",
+      "to": "R23.2"
+    },
+    {
+      "from": "R25.1",
+      "to": "R24.2"
+    },
+    {
+      "from": "R25.2",
+      "to": "GND"
+    }
+  ]
+}

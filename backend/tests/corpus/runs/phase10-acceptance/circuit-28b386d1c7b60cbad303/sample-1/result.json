@@ -1,0 +1,154 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "56ab60811ae888404d92596a384d346136ee5dc8f07794839e46c899777db994",
+  "compiled_sha256": "963f5f23716cf1565c70ea808aac4a6bc24ec1f2d91c3f5b4cc84fde46a65627",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 1,
+      "mapped_components": 2,
+      "nets": 1,
+      "pins": 5
+    },
+    "exported": {
+      "components": 2,
+      "flags": 0,
+      "pins": 5,
+      "wires": 2
+    },
+    "input": {
+      "components": 2,
+      "connections": 1,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 0,
+      "nets": 1,
+      "pins": 2,
+      "segments": 4
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin Q1.C (collector) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin Q1.E (emitter) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "evidence_directory": "circuit-28b386d1c7b60cbad303/sample-1",
+  "failure_stage": null,
+  "failures": [],
+  "hash_seed": 0,
+  "id": "circuit-28b386d1c7b60cbad303",
+  "implementation_sha256": "f4c25658dcec1a34f0271187fa040ae144f61b9a7b65db15d3d82dabf490dd33",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 10,
+      "peak_rss_bytes": 32059392
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 20,
+      "peak_rss_bytes": 84590592
+    }
+  },
+  "name": "Test",
+  "overall": "PASS",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "small",
+    "componentCount": 2,
+    "errorCount": 0,
+    "exportBytes": 315,
+    "iterations": {
+      "export": 0,
+      "final_validation": 1,
+      "input_validation": 0,
+      "layout": 6,
+      "net_building": 5,
+      "optimization": 48,
+      "pin_resolution": 0,
+      "post_export_validation": 0,
+      "routing": 88,
+      "routing_validation": 2,
+      "validation": 1
+    },
+    "netCount": 1,
+    "pinCount": 5,
+    "stagesMs": {
+      "export": 2.371,
+      "final_validation": 0.142,
+      "input_validation": 0.528,
+      "layout": 1.435,
+      "net_building": 0.123,
+      "optimization": 0.288,
+      "pin_resolution": 0.067,
+      "post_export_validation": 0.709,
+      "routing": 4.077,
+      "routing_validation": 0.209,
+      "validation": 0.068
+    },
+    "totalTimeMs": 10.057,
+    "warningCount": 0,
+    "wireCount": 2
+  },
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 1,
+    "collision_checks": 2,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 288,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 2
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 322.10769999983313,
+    "backend_worker_wall": 22.657400000753114,
+    "compiler_process_wall": 716.924199999994,
+    "compiler_reported": 10.114900000000034,
+    "connectivity_wall": 0.4166000007899129,
+    "export_wall": 10.22220000049856,
+    "route_wall": 0.9362999999211752,
+    "serialized_validation_wall": 0.8189000000129454
+  },
+  "validation": "PASS"
+}

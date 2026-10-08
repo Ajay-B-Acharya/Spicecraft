@@ -1,0 +1,84 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "03094b9f12f967acd5af2f0a3219d5f8349f278f81e2e93c9f6906074f57ff0d",
+  "compiled_sha256": "3f724563f05577a92538ff868c546df847481616adf8e1cea350b61d28e84c34",
+  "counts": {
+    "compiled": {
+      "components": 25,
+      "connections": 39,
+      "mapped_components": 25,
+      "nets": 14,
+      "pins": 50
+    },
+    "exported": {
+      "components": 25,
+      "flags": 3,
+      "pins": 50,
+      "wires": 146
+    },
+    "input": {
+      "components": 25,
+      "connections": 39,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 3,
+      "nets": 14,
+      "pins": 50,
+      "segments": 152
+    }
+  },
+  "diagnostics": [],
+  "id": "circuit-011da72b4d779fc1e919",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 21,
+      "peak_rss_bytes": 83664896
+    }
+  },
+  "name": "Repeated filter sections (25 components)",
+  "overall": "NOT_RUN",
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 36,
+    "astar_states": 49900,
+    "budget_exhaustions": 0,
+    "candidate_paths": 20592,
+    "collision_checks": 74641,
+    "crossings": 29,
+    "failed_connections": 4,
+    "fallback_attempts": 1,
+    "length": 24848,
+    "order_attempts": 5,
+    "peak_grid_vertices": 4320,
+    "planar_attempts": 4,
+    "segments": 146
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": true,
+  "timings_ms": {
+    "backend_worker_wall": 9958.03960000012,
+    "compiler_process_wall": 781.3145999998596,
+    "compiler_reported": 16.66229999999996,
+    "connectivity_wall": 1.9189000004189438,
+    "export_wall": 9839.55270000024,
+    "route_wall": 9411.622599999646,
+    "serialized_validation_wall": 101.73839999970369
+  }
+}

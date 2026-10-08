@@ -1,0 +1,72 @@
+{
+  "compiled_sha256": "8af1e9a430366b3748c9662d2f4a2bebd148ba8f53e810e23aba66df59ab34f1",
+  "counts": {
+    "compiled": {
+      "components": 0,
+      "connections": 0,
+      "mapped_components": 0,
+      "nets": 0,
+      "pins": 0
+    },
+    "exported": null,
+    "input": {
+      "components": 0,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Normalization: Malformed circuit JSON; provide a JSON object without trailing text.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Circuit is empty: no components or connections.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "evidence_directory": "circuit-ead1393f52f66e57cb4c/sample-1",
+  "failure_stage": "compile",
+  "failures": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Normalization: Malformed circuit JSON; provide a JSON object without trailing text.",
+      "severity": "error",
+      "stage": "compiler"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-ead1393f52f66e57cb4c",
+  "implementation_sha256": "60f44913f21d569de19d97b10353d0b22f51e03f04db27f9c38204ed865fda52",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 20,
+      "peak_rss_bytes": 83775488
+    }
+  },
+  "name": "hardening.test.cjs:line:118",
+  "overall": "INVALID",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "FAIL",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "invalid_or_unknown",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 699.7495000005074,
+    "compiler_reported": 3.552099999999996
+  },
+  "validation": "NOT_RUN"
+}

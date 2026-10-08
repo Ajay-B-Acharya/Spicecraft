@@ -1,0 +1,1020 @@
+{
+  "backend": {
+    "components": [
+      {
+        "id": "U1",
+        "reference": "U1",
+        "type": "ne555",
+        "value": "NE555"
+      },
+      {
+        "id": "R1",
+        "reference": "R1",
+        "type": "resistor",
+        "value": "1k"
+      },
+      {
+        "id": "R2",
+        "reference": "R2",
+        "type": "resistor",
+        "value": "10k"
+      },
+      {
+        "id": "C1",
+        "reference": "C1",
+        "type": "capacitor",
+        "value": "10uF"
+      }
+    ],
+    "description": "Classic 555 timer oscillator that generates a square wave output.",
+    "name": "555 Astable Multivibrator",
+    "wires": [
+      {
+        "from": "VCC",
+        "to": "U1.8"
+      },
+      {
+        "from": "U1.1",
+        "to": "GND"
+      },
+      {
+        "from": "U1.2",
+        "to": "U1.6"
+      },
+      {
+        "from": "U1.7",
+        "to": "R1.1"
+      },
+      {
+        "from": "R1.2",
+        "to": "VCC"
+      },
+      {
+        "from": "U1.7",
+        "to": "R2.1"
+      },
+      {
+        "from": "R2.2",
+        "to": "U1.2"
+      },
+      {
+        "from": "U1.6",
+        "to": "C1.1"
+      },
+      {
+        "from": "C1.2",
+        "to": "GND"
+      }
+    ]
+  },
+  "compiler_valid": true,
+  "components": [
+    {
+      "id": "U1",
+      "mirror": false,
+      "name": "U1",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "GND",
+          "net": "N2",
+          "x": -48,
+          "y": 48
+        },
+        {
+          "direction": "left",
+          "id": "2",
+          "name": "TRIG",
+          "net": "N3",
+          "x": -48,
+          "y": 16
+        },
+        {
+          "direction": "right",
+          "id": "3",
+          "name": "OUT",
+          "x": 48,
+          "y": 16
+        },
+        {
+          "direction": "left",
+          "id": "4",
+          "name": "RESET",
+          "x": -48,
+          "y": -48
+        },
+        {
+          "direction": "right",
+          "id": "5",
+          "name": "CTRL",
+          "x": 48,
+          "y": -16
+        },
+        {
+          "direction": "left",
+          "id": "6",
+          "name": "THR",
+          "net": "N3",
+          "x": -48,
+          "y": -16
+        },
+        {
+          "direction": "right",
+          "id": "7",
+          "name": "DIS",
+          "net": "N4",
+          "x": 48,
+          "y": -48
+        },
+        {
+          "direction": "right",
+          "id": "8",
+          "name": "VCC",
+          "net": "N1",
+          "x": 48,
+          "y": 48
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "prefix": "U",
+      "rotation": 0,
+      "symbol": "555timer",
+      "type": "ne555",
+      "value": "NE555"
+    },
+    {
+      "id": "R1",
+      "mirror": false,
+      "name": "R1",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N4",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N1",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 220,
+        "y": 0
+      },
+      "prefix": "R",
+      "rotation": 0,
+      "symbol": "res",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "R2",
+      "mirror": false,
+      "name": "R2",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N4",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N3",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 440,
+        "y": 0
+      },
+      "prefix": "R",
+      "rotation": 0,
+      "symbol": "res",
+      "type": "resistor",
+      "value": "10k"
+    },
+    {
+      "id": "C1",
+      "mirror": false,
+      "name": "C1",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N3",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N2",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 660,
+        "y": 0
+      },
+      "prefix": "C",
+      "rotation": 0,
+      "symbol": "cap",
+      "type": "capacitor",
+      "value": "10uF"
+    }
+  ],
+  "connections": [
+    {
+      "source": {
+        "componentId": "__label__:VCC",
+        "pinId": "label"
+      },
+      "sourceLabel": "VCC",
+      "target": {
+        "componentId": "U1",
+        "pinId": "8"
+      }
+    },
+    {
+      "source": {
+        "componentId": "U1",
+        "pinId": "1"
+      },
+      "target": {
+        "componentId": "__label__:GND",
+        "pinId": "label"
+      },
+      "targetLabel": "GND"
+    },
+    {
+      "source": {
+        "componentId": "U1",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "U1",
+        "pinId": "6"
+      }
+    },
+    {
+      "source": {
+        "componentId": "U1",
+        "pinId": "7"
+      },
+      "target": {
+        "componentId": "R1",
+        "pinId": "1"
+      }
+    },
+    {
+      "source": {
+        "componentId": "R1",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "__label__:VCC",
+        "pinId": "label"
+      },
+      "targetLabel": "VCC"
+    },
+    {
+      "source": {
+        "componentId": "U1",
+        "pinId": "7"
+      },
+      "target": {
+        "componentId": "R2",
+        "pinId": "1"
+      }
+    },
+    {
+      "source": {
+        "componentId": "R2",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "U1",
+        "pinId": "2"
+      }
+    },
+    {
+      "source": {
+        "componentId": "U1",
+        "pinId": "6"
+      },
+      "target": {
+        "componentId": "C1",
+        "pinId": "1"
+      }
+    },
+    {
+      "source": {
+        "componentId": "C1",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "__label__:GND",
+        "pinId": "label"
+      },
+      "targetLabel": "GND"
+    }
+  ],
+  "coordinate_note": "Frontend symbol-local coordinates are intentionally not LTspice ASY offsets; compare logical pin IDs, not physical offsets.",
+  "counts": {
+    "components": 4,
+    "connections": 9,
+    "mapped_components": 4,
+    "nets": 4,
+    "pins": 14
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin U1.3 (OUT) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin U1.4 (RESET) is floating/unconnected; RESET must be driven for reliable operation.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Optional pin U1.5 (CTRL) is unconnected; permitted.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "duration_ms": 13.746200000000044,
+  "identity_mapping": [
+    {
+      "backend_id": "U1",
+      "compiled_id": "U1",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 0,
+      "source_reference": "U1"
+    },
+    {
+      "backend_id": "R1",
+      "compiled_id": "R1",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 1,
+      "source_reference": "R1"
+    },
+    {
+      "backend_id": "R2",
+      "compiled_id": "R2",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 2,
+      "source_reference": "R2"
+    },
+    {
+      "backend_id": "C1",
+      "compiled_id": "C1",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 3,
+      "source_reference": "C1"
+    }
+  ],
+  "key": "circuit-538e2f8f2c4abf9ad2f9",
+  "metadata": {
+    "description": "Classic 555 timer oscillator that generates a square wave output.",
+    "name": "555 Astable Multivibrator"
+  },
+  "pin_definitions": [
+    {
+      "backend_type": "resistor",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "1k",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "orientation": "right",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "prefix": "R",
+      "shared_export": true,
+      "symbol": "res",
+      "type": "resistor"
+    },
+    {
+      "backend_type": "capacitor",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "100n",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "orientation": "right",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "prefix": "C",
+      "shared_export": true,
+      "symbol": "cap",
+      "type": "capacitor"
+    },
+    {
+      "backend_type": null,
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "10u",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "orientation": "right",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "prefix": "L",
+      "shared_export": false,
+      "symbol": "ind",
+      "type": "inductor"
+    },
+    {
+      "backend_type": "diode",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "1N4148",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "anode",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "cathode",
+          "orientation": "right",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "prefix": "D",
+      "shared_export": true,
+      "symbol": "diode",
+      "type": "diode"
+    },
+    {
+      "backend_type": "led",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "RED",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "A",
+          "name": "anode",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "K",
+          "name": "cathode",
+          "orientation": "right",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "prefix": "D",
+      "shared_export": true,
+      "symbol": "led",
+      "type": "led"
+    },
+    {
+      "backend_type": "transistor",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "2N3904",
+      "pin_count": 3,
+      "pins": [
+        {
+          "direction": "top",
+          "id": "C",
+          "name": "collector",
+          "orientation": "top",
+          "x": 0,
+          "y": -32
+        },
+        {
+          "direction": "left",
+          "id": "B",
+          "name": "base",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "bottom",
+          "id": "E",
+          "name": "emitter",
+          "orientation": "bottom",
+          "x": 0,
+          "y": 32
+        }
+      ],
+      "prefix": "Q",
+      "shared_export": true,
+      "symbol": "npn",
+      "type": "npn_transistor"
+    },
+    {
+      "backend_type": null,
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "2N3906",
+      "pin_count": 3,
+      "pins": [
+        {
+          "direction": "top",
+          "id": "C",
+          "name": "collector",
+          "orientation": "top",
+          "x": 0,
+          "y": -32
+        },
+        {
+          "direction": "left",
+          "id": "B",
+          "name": "base",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "bottom",
+          "id": "E",
+          "name": "emitter",
+          "orientation": "bottom",
+          "x": 0,
+          "y": 32
+        }
+      ],
+      "prefix": "Q",
+      "shared_export": false,
+      "symbol": "pnp",
+      "type": "pnp_transistor"
+    },
+    {
+      "backend_type": null,
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "5",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "top",
+          "id": "+",
+          "name": "positive",
+          "orientation": "top",
+          "x": 0,
+          "y": -32
+        },
+        {
+          "direction": "bottom",
+          "id": "-",
+          "name": "negative",
+          "orientation": "bottom",
+          "x": 0,
+          "y": 32
+        }
+      ],
+      "prefix": "V",
+      "shared_export": false,
+      "symbol": "voltage",
+      "type": "voltage_source"
+    },
+    {
+      "backend_type": null,
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "1m",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "top",
+          "id": "+",
+          "name": "positive",
+          "orientation": "top",
+          "x": 0,
+          "y": -32
+        },
+        {
+          "direction": "bottom",
+          "id": "-",
+          "name": "negative",
+          "orientation": "bottom",
+          "x": 0,
+          "y": 32
+        }
+      ],
+      "prefix": "I",
+      "shared_export": false,
+      "symbol": "current",
+      "type": "current_source"
+    },
+    {
+      "backend_type": null,
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "0",
+      "pin_count": 1,
+      "pins": [
+        {
+          "direction": "top",
+          "id": "0",
+          "name": "ground",
+          "orientation": "top",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "prefix": "GND",
+      "shared_export": false,
+      "symbol": "gnd",
+      "type": "ground"
+    },
+    {
+      "backend_type": "ne555",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "NE555",
+      "pin_count": 8,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "GND",
+          "orientation": "left",
+          "x": -48,
+          "y": 48
+        },
+        {
+          "direction": "left",
+          "id": "2",
+          "name": "TRIG",
+          "orientation": "left",
+          "x": -48,
+          "y": 16
+        },
+        {
+          "direction": "right",
+          "id": "3",
+          "name": "OUT",
+          "orientation": "right",
+          "x": 48,
+          "y": 16
+        },
+        {
+          "direction": "left",
+          "id": "4",
+          "name": "RESET",
+          "orientation": "left",
+          "x": -48,
+          "y": -48
+        },
+        {
+          "direction": "right",
+          "id": "5",
+          "name": "CTRL",
+          "orientation": "right",
+          "x": 48,
+          "y": -16
+        },
+        {
+          "direction": "left",
+          "id": "6",
+          "name": "THR",
+          "orientation": "left",
+          "x": -48,
+          "y": -16
+        },
+        {
+          "direction": "right",
+          "id": "7",
+          "name": "DIS",
+          "orientation": "right",
+          "x": 48,
+          "y": -48
+        },
+        {
+          "direction": "right",
+          "id": "8",
+          "name": "VCC",
+          "orientation": "right",
+          "x": 48,
+          "y": 48
+        }
+      ],
+      "prefix": "U",
+      "shared_export": true,
+      "symbol": "555timer",
+      "type": "ne555"
+    }
+  ],
+  "resolved_pins": [
+    {
+      "absoluteX": -48,
+      "absoluteY": 48,
+      "componentId": "U1",
+      "componentName": "U1",
+      "direction": "left",
+      "id": "1",
+      "name": "GND",
+      "net": "N2",
+      "x": -48,
+      "y": 48
+    },
+    {
+      "absoluteX": -48,
+      "absoluteY": 16,
+      "componentId": "U1",
+      "componentName": "U1",
+      "direction": "left",
+      "id": "2",
+      "name": "TRIG",
+      "net": "N3",
+      "x": -48,
+      "y": 16
+    },
+    {
+      "absoluteX": 48,
+      "absoluteY": 16,
+      "componentId": "U1",
+      "componentName": "U1",
+      "direction": "right",
+      "id": "3",
+      "name": "OUT",
+      "x": 48,
+      "y": 16
+    },
+    {
+      "absoluteX": -48,
+      "absoluteY": -48,
+      "componentId": "U1",
+      "componentName": "U1",
+      "direction": "left",
+      "id": "4",
+      "name": "RESET",
+      "x": -48,
+      "y": -48
+    },
+    {
+      "absoluteX": 48,
+      "absoluteY": -16,
+      "componentId": "U1",
+      "componentName": "U1",
+      "direction": "right",
+      "id": "5",
+      "name": "CTRL",
+      "x": 48,
+      "y": -16
+    },
+    {
+      "absoluteX": -48,
+      "absoluteY": -16,
+      "componentId": "U1",
+      "componentName": "U1",
+      "direction": "left",
+      "id": "6",
+      "name": "THR",
+      "net": "N3",
+      "x": -48,
+      "y": -16
+    },
+    {
+      "absoluteX": 48,
+      "absoluteY": -48,
+      "componentId": "U1",
+      "componentName": "U1",
+      "direction": "right",
+      "id": "7",
+      "name": "DIS",
+      "net": "N4",
+      "x": 48,
+      "y": -48
+    },
+    {
+      "absoluteX": 48,
+      "absoluteY": 48,
+      "componentId": "U1",
+      "componentName": "U1",
+      "direction": "right",
+      "id": "8",
+      "name": "VCC",
+      "net": "N1",
+      "x": 48,
+      "y": 48
+    },
+    {
+      "absoluteX": 188,
+      "absoluteY": 0,
+      "componentId": "R1",
+      "componentName": "R1",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N4",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 252,
+      "absoluteY": 0,
+      "componentId": "R1",
+      "componentName": "R1",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N1",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 408,
+      "absoluteY": 0,
+      "componentId": "R2",
+      "componentName": "R2",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N4",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 472,
+      "absoluteY": 0,
+      "componentId": "R2",
+      "componentName": "R2",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N3",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 628,
+      "absoluteY": 0,
+      "componentId": "C1",
+      "componentName": "C1",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N3",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 692,
+      "absoluteY": 0,
+      "componentId": "C1",
+      "componentName": "C1",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N2",
+      "x": 32,
+      "y": 0
+    }
+  ],
+  "topology": [
+    {
+      "compiled_pins": [
+        "R1.2",
+        "U1.8"
+      ],
+      "id": "N1",
+      "labels": [
+        "VCC"
+      ],
+      "name": "VCC",
+      "pins": [
+        "R1.2",
+        "U1.8"
+      ]
+    },
+    {
+      "compiled_pins": [
+        "C1.2",
+        "U1.1"
+      ],
+      "id": "N2",
+      "labels": [
+        "GND"
+      ],
+      "name": "GND",
+      "pins": [
+        "C1.2",
+        "U1.1"
+      ]
+    },
+    {
+      "compiled_pins": [
+        "C1.1",
+        "R2.2",
+        "U1.2",
+        "U1.6"
+      ],
+      "id": "N3",
+      "labels": [],
+      "name": "N3",
+      "pins": [
+        "C1.1",
+        "R2.2",
+        "U1.2",
+        "U1.6"
+      ]
+    },
+    {
+      "compiled_pins": [
+        "R1.1",
+        "R2.1",
+        "U1.7"
+      ],
+      "id": "N4",
+      "labels": [],
+      "name": "N4",
+      "pins": [
+        "R1.1",
+        "R2.1",
+        "U1.7"
+      ]
+    }
+  ],
+  "valid": true,
+  "value_drift": []
+}

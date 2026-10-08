@@ -1,0 +1,71 @@
+{
+  "cases": [
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'LM358' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "U1",
+              "source_index": 0,
+              "type": "LM358",
+              "value": "NE555"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "16771e4190255b558fc35d6ee44483478b6427c18bc167b6989230bafe145189",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-16771e4190255b558fc3",
+      "input": "inputs/circuit-16771e4190255b558fc3.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-16771e4190255b558fc3.json",
+      "name": "Test",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:108",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "16771e4190255b558fc35d6ee44483478b6427c18bc167b6989230bafe145189",
+      "synthetic": false
+    }
+  ],
+  "category": "unsupported",
+  "collection_root": "../../phase10-acceptance-collection",
+  "count": 1,
+  "schema_version": 1
+}

@@ -1,0 +1,124 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "05760e15950a272f44e22895146cf773217d050203ebb9b4035b9f8ea6a6624a",
+  "compiled_sha256": "c2af54d5e32391856a9e7385d17b50078138826fb992dcbb8d667c6c0714b945",
+  "counts": {
+    "compiled": {
+      "components": 1,
+      "connections": 0,
+      "mapped_components": 1,
+      "nets": 0,
+      "pins": 2
+    },
+    "exported": {
+      "components": 1,
+      "flags": 0,
+      "pins": 2,
+      "wires": 0
+    },
+    "input": {
+      "components": 1,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R1 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "id": "circuit-f21c0ec514e079021abd",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 32,
+      "peak_rss_bytes": 86106112
+    }
+  },
+  "name": "test_export_polish.py:line:122",
+  "overall": "NOT_RUN",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "small",
+    "componentCount": 1,
+    "errorCount": 0,
+    "exportBytes": 162,
+    "iterations": {
+      "export": 0,
+      "final_validation": 0,
+      "input_validation": 0,
+      "layout": 3,
+      "net_building": 1,
+      "optimization": 0,
+      "pin_resolution": 0,
+      "post_export_validation": 0,
+      "routing": 0,
+      "routing_validation": 0,
+      "validation": 0
+    },
+    "netCount": 0,
+    "pinCount": 2,
+    "stagesMs": {
+      "export": 3.711,
+      "final_validation": 0.084,
+      "input_validation": 0.72,
+      "layout": 2.332,
+      "net_building": 0.123,
+      "optimization": 0.025,
+      "pin_resolution": 0.165,
+      "post_export_validation": 1.712,
+      "routing": 0.037,
+      "routing_validation": 0.125,
+      "validation": 0.061
+    },
+    "totalTimeMs": 9.172,
+    "warningCount": 0,
+    "wireCount": 0
+  },
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "length": 0,
+    "segments": 0
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "NOT_REQUIRED",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 35.49049999946874,
+    "compiler_process_wall": 1523.9815000004455,
+    "compiler_reported": 14.442800000000034,
+    "connectivity_wall": 0.422499999331194,
+    "export_wall": 9.503900000709109,
+    "serialized_validation_wall": 1.0273999996570637
+  }
+}

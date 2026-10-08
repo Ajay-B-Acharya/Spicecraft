@@ -1,0 +1,109 @@
+{
+  "compiled_sha256": "2000f9b6046f40bd8006bb7824d5c0d59169b3f3a1e8d05f9960d9682159b74a",
+  "counts": {
+    "compiled": {
+      "components": 1,
+      "connections": 1,
+      "mapped_components": 1,
+      "nets": 1,
+      "pins": 2
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 1,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin net-label:[\"N1\",\"OUT\"].2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "actual": null,
+      "circuit": "Test",
+      "code": "INVALID_COMPONENT_IDENTITY",
+      "component": null,
+      "expected": null,
+      "message": "Component reference must start with a letter and contain only letters, digits, _, $, or -",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "input_validation",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "evidence_directory": "circuit-aa2c5d249193467689ba/sample-2",
+  "failure_stage": "export",
+  "failures": [
+    {
+      "actual": null,
+      "circuit": "Test",
+      "code": "INVALID_COMPONENT_IDENTITY",
+      "component": null,
+      "expected": null,
+      "message": "Component reference must start with a letter and contain only letters, digits, _, $, or -",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "input_validation",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-aa2c5d249193467689ba",
+  "implementation_sha256": "f4c25658dcec1a34f0271187fa040ae144f61b9a7b65db15d3d82dabf490dd33",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 15,
+      "peak_rss_bytes": 32243712
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 38,
+      "peak_rss_bytes": 86806528
+    }
+  },
+  "name": "Test",
+  "overall": "INVALID",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "small",
+    "componentCount": 1,
+    "errorCount": 1,
+    "iterations": {
+      "input_validation": 0
+    },
+    "stagesMs": {
+      "input_validation": 0.909
+    },
+    "totalTimeMs": 1.032,
+    "warningCount": 0
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "FAIL",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 709.1005000002042,
+    "backend_worker_wall": 18.74989999942045,
+    "compiler_process_wall": 1804.8695999996198,
+    "compiler_reported": 25.755299999999806,
+    "connectivity_wall": 0.7058999999571824,
+    "export_wall": 1.9081000000369386
+  },
+  "validation": "NOT_RUN"
+}

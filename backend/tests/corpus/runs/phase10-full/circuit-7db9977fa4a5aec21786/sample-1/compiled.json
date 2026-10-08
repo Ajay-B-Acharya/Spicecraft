@@ -1,0 +1,680 @@
+{
+  "backend": {
+    "components": [
+      {
+        "id": "Q1",
+        "reference": "Q1",
+        "type": "transistor",
+        "value": "2N3904"
+      },
+      {
+        "id": "R1",
+        "reference": "R1",
+        "type": "resistor",
+        "value": "1k"
+      }
+    ],
+    "wires": [
+      {
+        "from": "Q1.B",
+        "to": "R1.1"
+      },
+      {
+        "from": "Q1.B",
+        "to": "VIN"
+      }
+    ]
+  },
+  "compiler_valid": true,
+  "components": [
+    {
+      "id": "transistor-id",
+      "mirror": false,
+      "name": "transistor-id",
+      "pins": [
+        {
+          "direction": "top",
+          "id": "C",
+          "name": "collector",
+          "x": 0,
+          "y": -32
+        },
+        {
+          "direction": "left",
+          "id": "B",
+          "name": "base",
+          "net": "N1",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "bottom",
+          "id": "E",
+          "name": "emitter",
+          "x": 0,
+          "y": 32
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "prefix": "Q",
+      "rotation": 0,
+      "symbol": "npn",
+      "type": "npn_transistor",
+      "value": "2N3904"
+    },
+    {
+      "id": "R1",
+      "mirror": false,
+      "name": "R1",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N1",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 220,
+        "y": 0
+      },
+      "prefix": "R",
+      "rotation": 0,
+      "symbol": "res",
+      "type": "resistor",
+      "value": "1k"
+    }
+  ],
+  "connections": [
+    {
+      "source": {
+        "componentId": "transistor-id",
+        "pinId": "B"
+      },
+      "target": {
+        "componentId": "R1",
+        "pinId": "1"
+      }
+    },
+    {
+      "source": {
+        "componentId": "transistor-id",
+        "pinId": "B"
+      },
+      "target": {
+        "componentId": "__label__:VIN",
+        "pinId": "label"
+      },
+      "targetLabel": "VIN"
+    }
+  ],
+  "coordinate_note": "Frontend symbol-local coordinates are intentionally not LTspice ASY offsets; compare logical pin IDs, not physical offsets.",
+  "counts": {
+    "components": 2,
+    "connections": 2,
+    "mapped_components": 2,
+    "nets": 1,
+    "pins": 5
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component transistor-id; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R1; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin transistor-id.C (collector) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin transistor-id.E (emitter) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "Q1",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "transistor-id",
+      "compiled_value": "2N3904",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "backend_id": "R1",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R1",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    }
+  ],
+  "duration_ms": 10.038900000000012,
+  "identity_mapping": [
+    {
+      "backend_id": "Q1",
+      "compiled_id": "transistor-id",
+      "generated_by_compiler": false,
+      "source_id": "transistor-id",
+      "source_index": 0,
+      "source_reference": "Q1"
+    },
+    {
+      "backend_id": "R1",
+      "compiled_id": "R1",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 1,
+      "source_reference": "R1"
+    }
+  ],
+  "key": "circuit-7db9977fa4a5aec21786",
+  "metadata": {},
+  "pin_definitions": [
+    {
+      "backend_type": "resistor",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "1k",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "orientation": "right",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "prefix": "R",
+      "shared_export": true,
+      "symbol": "res",
+      "type": "resistor"
+    },
+    {
+      "backend_type": "capacitor",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "100n",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "orientation": "right",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "prefix": "C",
+      "shared_export": true,
+      "symbol": "cap",
+      "type": "capacitor"
+    },
+    {
+      "backend_type": null,
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "10u",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "orientation": "right",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "prefix": "L",
+      "shared_export": false,
+      "symbol": "ind",
+      "type": "inductor"
+    },
+    {
+      "backend_type": "diode",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "1N4148",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "anode",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "cathode",
+          "orientation": "right",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "prefix": "D",
+      "shared_export": true,
+      "symbol": "diode",
+      "type": "diode"
+    },
+    {
+      "backend_type": "led",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "RED",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "A",
+          "name": "anode",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "K",
+          "name": "cathode",
+          "orientation": "right",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "prefix": "D",
+      "shared_export": true,
+      "symbol": "led",
+      "type": "led"
+    },
+    {
+      "backend_type": "transistor",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "2N3904",
+      "pin_count": 3,
+      "pins": [
+        {
+          "direction": "top",
+          "id": "C",
+          "name": "collector",
+          "orientation": "top",
+          "x": 0,
+          "y": -32
+        },
+        {
+          "direction": "left",
+          "id": "B",
+          "name": "base",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "bottom",
+          "id": "E",
+          "name": "emitter",
+          "orientation": "bottom",
+          "x": 0,
+          "y": 32
+        }
+      ],
+      "prefix": "Q",
+      "shared_export": true,
+      "symbol": "npn",
+      "type": "npn_transistor"
+    },
+    {
+      "backend_type": null,
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "2N3906",
+      "pin_count": 3,
+      "pins": [
+        {
+          "direction": "top",
+          "id": "C",
+          "name": "collector",
+          "orientation": "top",
+          "x": 0,
+          "y": -32
+        },
+        {
+          "direction": "left",
+          "id": "B",
+          "name": "base",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "bottom",
+          "id": "E",
+          "name": "emitter",
+          "orientation": "bottom",
+          "x": 0,
+          "y": 32
+        }
+      ],
+      "prefix": "Q",
+      "shared_export": false,
+      "symbol": "pnp",
+      "type": "pnp_transistor"
+    },
+    {
+      "backend_type": null,
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "5",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "top",
+          "id": "+",
+          "name": "positive",
+          "orientation": "top",
+          "x": 0,
+          "y": -32
+        },
+        {
+          "direction": "bottom",
+          "id": "-",
+          "name": "negative",
+          "orientation": "bottom",
+          "x": 0,
+          "y": 32
+        }
+      ],
+      "prefix": "V",
+      "shared_export": false,
+      "symbol": "voltage",
+      "type": "voltage_source"
+    },
+    {
+      "backend_type": null,
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "1m",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "top",
+          "id": "+",
+          "name": "positive",
+          "orientation": "top",
+          "x": 0,
+          "y": -32
+        },
+        {
+          "direction": "bottom",
+          "id": "-",
+          "name": "negative",
+          "orientation": "bottom",
+          "x": 0,
+          "y": 32
+        }
+      ],
+      "prefix": "I",
+      "shared_export": false,
+      "symbol": "current",
+      "type": "current_source"
+    },
+    {
+      "backend_type": null,
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "0",
+      "pin_count": 1,
+      "pins": [
+        {
+          "direction": "top",
+          "id": "0",
+          "name": "ground",
+          "orientation": "top",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "prefix": "GND",
+      "shared_export": false,
+      "symbol": "gnd",
+      "type": "ground"
+    },
+    {
+      "backend_type": "ne555",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "NE555",
+      "pin_count": 8,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "GND",
+          "orientation": "left",
+          "x": -48,
+          "y": 48
+        },
+        {
+          "direction": "left",
+          "id": "2",
+          "name": "TRIG",
+          "orientation": "left",
+          "x": -48,
+          "y": 16
+        },
+        {
+          "direction": "right",
+          "id": "3",
+          "name": "OUT",
+          "orientation": "right",
+          "x": 48,
+          "y": 16
+        },
+        {
+          "direction": "left",
+          "id": "4",
+          "name": "RESET",
+          "orientation": "left",
+          "x": -48,
+          "y": -48
+        },
+        {
+          "direction": "right",
+          "id": "5",
+          "name": "CTRL",
+          "orientation": "right",
+          "x": 48,
+          "y": -16
+        },
+        {
+          "direction": "left",
+          "id": "6",
+          "name": "THR",
+          "orientation": "left",
+          "x": -48,
+          "y": -16
+        },
+        {
+          "direction": "right",
+          "id": "7",
+          "name": "DIS",
+          "orientation": "right",
+          "x": 48,
+          "y": -48
+        },
+        {
+          "direction": "right",
+          "id": "8",
+          "name": "VCC",
+          "orientation": "right",
+          "x": 48,
+          "y": 48
+        }
+      ],
+      "prefix": "U",
+      "shared_export": true,
+      "symbol": "555timer",
+      "type": "ne555"
+    }
+  ],
+  "resolved_pins": [
+    {
+      "absoluteX": 0,
+      "absoluteY": -32,
+      "componentId": "transistor-id",
+      "componentName": "transistor-id",
+      "direction": "top",
+      "id": "C",
+      "name": "collector",
+      "x": 0,
+      "y": -32
+    },
+    {
+      "absoluteX": -32,
+      "absoluteY": 0,
+      "componentId": "transistor-id",
+      "componentName": "transistor-id",
+      "direction": "left",
+      "id": "B",
+      "name": "base",
+      "net": "N1",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 0,
+      "absoluteY": 32,
+      "componentId": "transistor-id",
+      "componentName": "transistor-id",
+      "direction": "bottom",
+      "id": "E",
+      "name": "emitter",
+      "x": 0,
+      "y": 32
+    },
+    {
+      "absoluteX": 188,
+      "absoluteY": 0,
+      "componentId": "R1",
+      "componentName": "R1",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N1",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 252,
+      "absoluteY": 0,
+      "componentId": "R1",
+      "componentName": "R1",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "x": 32,
+      "y": 0
+    }
+  ],
+  "topology": [
+    {
+      "compiled_pins": [
+        "R1.1",
+        "transistor-id.B"
+      ],
+      "id": "N1",
+      "labels": [
+        "VIN"
+      ],
+      "name": "VIN",
+      "pins": [
+        "Q1.B",
+        "R1.1"
+      ]
+    }
+  ],
+  "valid": true,
+  "value_drift": [
+    {
+      "backend_id": "Q1",
+      "compiled_id": "transistor-id",
+      "compiled_value": "2N3904",
+      "reason": "compiler_default",
+      "source_present": false,
+      "source_value": null
+    },
+    {
+      "backend_id": "R1",
+      "compiled_id": "R1",
+      "compiled_value": "1k",
+      "reason": "compiler_default",
+      "source_present": false,
+      "source_value": null
+    }
+  ]
+}

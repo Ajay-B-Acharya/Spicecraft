@@ -1,0 +1,107 @@
+{
+  "compiled_sha256": "84fc3841bf31a464ae24bab7e7e2acd013280c6164e7fcbf42adab6306772552",
+  "counts": {
+    "compiled": {
+      "components": 1,
+      "connections": 0,
+      "mapped_components": 1,
+      "nets": 0,
+      "pins": 2
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R1 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "actual": null,
+      "circuit": "Circuit",
+      "code": "INVALID_ATTRIBUTE",
+      "component": "R1",
+      "expected": null,
+      "message": "Component value must not contain ASC record separators",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "input_validation",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "evidence_directory": "circuit-e6e89bec12710a6ec377/sample-1",
+  "failure_stage": "export",
+  "failures": [
+    {
+      "actual": null,
+      "circuit": "Circuit",
+      "code": "INVALID_ATTRIBUTE",
+      "component": "R1",
+      "expected": null,
+      "message": "Component value must not contain ASC record separators",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "input_validation",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-e6e89bec12710a6ec377",
+  "implementation_sha256": "60f44913f21d569de19d97b10353d0b22f51e03f04db27f9c38204ed865fda52",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 9,
+      "peak_rss_bytes": 32014336
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 19,
+      "peak_rss_bytes": 82251776
+    }
+  },
+  "name": "test_export_polish.py:line:117",
+  "overall": "FAIL",
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "FAIL",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 374.40799999967567,
+    "backend_worker_wall": 6.398900000021968,
+    "compiler_process_wall": 851.3755000003584,
+    "compiler_reported": 7.360000000000014,
+    "connectivity_wall": 0.20050000057381112,
+    "export_wall": 0.5310000005920301
+  },
+  "validation": "NOT_RUN"
+}

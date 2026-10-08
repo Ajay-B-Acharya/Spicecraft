@@ -1,0 +1,9 @@
+{
+  "components": [
+    {
+      "reference": "R1",
+      "type": "resistor",
+      "value": "10\u00b5F"
+    }
+  ]
+}

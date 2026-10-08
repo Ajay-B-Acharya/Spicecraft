@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from app.services.asc_validation import NetGeometry, Point, WireSegment
 from app.services.grid_system import GridSystem
+from app.services.production import checkpoint
 
 EdgeKey = tuple[str, Point, Point]
 
@@ -47,6 +48,7 @@ def _clean_net(net: NetGeometry, protected: set[Point]) -> NetGeometry:
         for segment in net.segments if segment.start != segment.end
     }
     while True:
+        checkpoint(iterations=1, segments=len(edges))
         ordered = sorted(edges)
         incidence: dict[Point, list[EdgeKey]] = {}
         for key in ordered:
@@ -58,6 +60,7 @@ def _clean_net(net: NetGeometry, protected: set[Point]) -> NetGeometry:
         # conductive junction endpoint. Do not split the longer edge instead.
         removable = None
         for key in ordered:
+            checkpoint(iterations=len(ordered))
             edge = edges[key]
             if not _valid(edge, net.name):
                 continue
@@ -130,6 +133,7 @@ def clean_export_geometry(nets: list[NetGeometry]) -> list[NetGeometry]:
     existing conductive T/X endpoint are protected. No new vertices or paths
     are introduced, so unrelated unsplit interior X crossings remain unsplit.
     """
+    checkpoint("optimization", segments=sum(len(net.segments) for net in nets))
     protected = {pin.point for net in nets for pin in net.pins}
     protected.update(point for net in nets for point in net.flags)
     segments = [segment for net in nets for segment in net.segments
@@ -139,6 +143,7 @@ def clean_export_geometry(nets: list[NetGeometry]) -> list[NetGeometry]:
     # junction into an unrelated unsplit X. Include foreign nets too, so this
     # helper cannot hide an existing cross-net contact if called on bad input.
     for segment in segments:
+        checkpoint(iterations=len(segments))
         for point in (segment.start, segment.end):
             if point not in protected and any(
                 not _collinear(segment, other) and _on_segment(point, other)

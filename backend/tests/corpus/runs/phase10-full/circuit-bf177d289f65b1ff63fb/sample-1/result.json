@@ -1,0 +1,97 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "f2b829de018d7802054a74f9ca71c64db8199ee338c59f33e8660c9372ac82f2",
+  "compiled_sha256": "d409eb8b367c54298c522df26908dc02e7ee926aca590fab634639fe1e37afa9",
+  "counts": {
+    "compiled": {
+      "components": 100,
+      "connections": 101,
+      "mapped_components": 100,
+      "nets": 101,
+      "pins": 200
+    },
+    "exported": {
+      "components": 100,
+      "flags": 2,
+      "pins": 200,
+      "wires": 449
+    },
+    "input": {
+      "components": 100,
+      "connections": 101,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 2,
+      "nets": 101,
+      "pins": 200,
+      "segments": 497
+    }
+  },
+  "diagnostics": [],
+  "evidence_directory": "circuit-bf177d289f65b1ff63fb/sample-1",
+  "failure_stage": null,
+  "failures": [],
+  "hash_seed": 0,
+  "id": "circuit-bf177d289f65b1ff63fb",
+  "implementation_sha256": "60f44913f21d569de19d97b10353d0b22f51e03f04db27f9c38204ed865fda52",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 219,
+      "peak_rss_bytes": 34467840
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 20,
+      "peak_rss_bytes": 85741568
+    }
+  },
+  "name": "Repeated resistor sections (100 components)",
+  "overall": "PASS",
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 1320,
+    "collision_checks": 1809,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 57520,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 449
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": true,
+  "timings_ms": {
+    "backend_process_wall": 6940.5805000005785,
+    "backend_worker_wall": 6599.201899999571,
+    "compiler_process_wall": 719.5443000000523,
+    "compiler_reported": 27.854000000000042,
+    "connectivity_wall": 8.82000000001426,
+    "export_wall": 5821.183599999131,
+    "route_wall": 1250.475799999549,
+    "serialized_validation_wall": 745.1795000006314
+  },
+  "validation": "PASS"
+}

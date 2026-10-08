@@ -1,0 +1,4652 @@
+{
+  "cases": [
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-0115ba888b0bdb79953e",
+      "input": "inputs/circuit-0115ba888b0bdb79953e.json",
+      "name": "test_connectivity.py:line:203",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:203",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:204",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "0115ba888b0bdb79953e12e08166d557c00b592803cf5028a0f53b18d522214d",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-01903988ebfae2fea322",
+      "input": "inputs/circuit-01903988ebfae2fea322.json",
+      "name": "test_connectivity.py:line:272",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:272",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "01903988ebfae2fea32229fc17db8b39035e26e0afef8493231e06fe25e2e079",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 0,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-03b15c4e1ce43adf6462",
+      "input": "inputs/circuit-03b15c4e1ce43adf6462.json",
+      "name": "test_regression_validation.py:line:34",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:34",
+          "source": "backend/tests/test_regression_validation.py"
+        }
+      ],
+      "sha256": "03b15c4e1ce43adf646283afdff137773950f23c699173d9934b2b79fdd3345c",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-059b92bfc59c1877b8ba",
+      "input": "inputs/circuit-059b92bfc59c1877b8ba.json",
+      "name": "connectivity.test.cjs:line:82",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:82",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "059b92bfc59c1877b8bab9ce78e1d3651f8c212f7615646395726dc5dceec5c9",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-05cc4d8b439735772811",
+      "input": "inputs/circuit-05cc4d8b439735772811.json",
+      "name": "connectivity.test.cjs:line:70",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:273",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:70",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "05cc4d8b439735772811abd6a24fc90b8acd2c5283217bcba0c71e7236c61c0e",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-066312efd75869b61593",
+      "input": "inputs/circuit-066312efd75869b61593.json",
+      "name": "test_connectivity.py:line:330",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:330",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "066312efd75869b615935bec237f99caafe694b5e105f812c8a72ee5888ab17f",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-06a9646eb15a387137e9",
+      "input": "inputs/circuit-06a9646eb15a387137e9.json",
+      "name": "test_connectivity.py:line:293",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:293",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:294",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "06a9646eb15a387137e9f01819540bfea14c6f1191fd4ff0e99a47e7d1baf04c",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-072945f94051edb70de7",
+      "input": "inputs/circuit-072945f94051edb70de7.json",
+      "name": "regressionBridge.test.cjs:line:116",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:116",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "072945f94051edb70de722b770bfc3cf70cf322877415a6bcc121bac53293215",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-0760e59cce48acb8205c",
+      "input": "inputs/circuit-0760e59cce48acb8205c.json",
+      "name": "test_connectivity.py:line:244",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:244",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "0760e59cce48acb8205ce7b72bb41fc9a9cf77f1e0aa259a0a87a2d07b25fa8d",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-07dd90d78111d83e93e3",
+      "input": "inputs/circuit-07dd90d78111d83e93e3.json",
+      "name": "test_connectivity.py:line:233",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:233",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "07dd90d78111d83e93e34000eb12c712e68249ee7034419e1325a760db66023b",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-0993c36910a455790abf",
+      "input": "inputs/circuit-0993c36910a455790abf.json",
+      "name": "connectivity.test.cjs:line:91",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:233",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:91",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "0993c36910a455790abf3fd1989565ca0c643f5e8833d0f733badedcab19388b",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-09c4a73bf0dc17a7d282",
+      "input": "inputs/circuit-09c4a73bf0dc17a7d282.json",
+      "name": "test_connectivity.py:line:272",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:272",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "09c4a73bf0dc17a7d2829bcc802ffc740f195cbef270f777ef1fa791a9b0b1fb",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-09f50ff5c79d74932cab",
+      "input": "inputs/circuit-09f50ff5c79d74932cab.json",
+      "name": "regressionBridge.test.cjs:line:261",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:261",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "09f50ff5c79d74932cabe2e9c22df09f3900d75185db850f8e2941e10ba8a963",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-0a558cbc4a4eb6f348fe",
+      "input": "inputs/circuit-0a558cbc4a4eb6f348fe.json",
+      "name": "test_connectivity.py:line:236",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:236",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:238",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:241",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "0a558cbc4a4eb6f348fe200bcd03e93fc7511c85a005132233d51330ba0d97ca",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-0ba4a3849088c94540b9",
+      "input": "inputs/circuit-0ba4a3849088c94540b9.json",
+      "name": "Inner",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:109",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "0ba4a3849088c94540b9b78d7a236fc1fa67caa002ad38de54bc315156ba7dd3",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-0c1969c5dea0503cf4d7",
+      "input": "inputs/circuit-0c1969c5dea0503cf4d7.json",
+      "name": "Blocked circuit",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:127",
+          "source": "backend/tests/test_pipeline_regression.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:130",
+          "source": "backend/tests/test_pipeline_regression.py"
+        }
+      ],
+      "sha256": "0c1969c5dea0503cf4d73e7078385ef08350b0504557da293a1de8bebf25e00b",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-0c4bee456753e9aa59cf",
+      "input": "inputs/circuit-0c4bee456753e9aa59cf.json",
+      "name": "test_pipeline_regression.py:line:116",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:116",
+          "source": "backend/tests/test_pipeline_regression.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:122",
+          "source": "backend/tests/test_pipeline_regression.py"
+        }
+      ],
+      "sha256": "0c4bee456753e9aa59cf56c86a89ca46755cc926b3f2f987b44184c24a540496",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-109763b282a39b94d088",
+      "input": "inputs/circuit-109763b282a39b94d088.json",
+      "name": "regressionBridge.test.cjs:line:296",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:296",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "109763b282a39b94d088853a112e15bbfa4561a57d38506d81619d634da78bf6",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 2,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-118cc2dbf76bf959fa3a",
+      "input": "inputs/circuit-118cc2dbf76bf959fa3a.json",
+      "name": "connectivity.test.cjs:line:113",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:113",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "118cc2dbf76bf959fa3af0053fac9b6b4f2502fab9c83c658122cc3e3596402e",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 6,
+        "connections": 10,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-11d9ab365454788650b6",
+      "input": "inputs/circuit-11d9ab365454788650b6.json",
+      "name": "Common Emitter Amplifier",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:72",
+          "source": "frontend/tests/circuitFlowAdapter.test.cjs"
+        }
+      ],
+      "sha256": "11d9ab365454788650b6ed6b751ae52d8cea54878a49862454ec0d06d7cda42f",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-1483fb1ede299a0e2cb5",
+      "input": "inputs/circuit-1483fb1ede299a0e2cb5.json",
+      "name": "test_connectivity.py:line:184",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:184",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:187",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:191",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "1483fb1ede299a0e2cb5558f6c325ae9d183b4e55926db8bfd9c986d182b5324",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 4,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-1484c39f48834263dceb",
+      "input": "inputs/circuit-1484c39f48834263dceb.json",
+      "name": "regressionBridge.test.cjs:line:205",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:205",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "1484c39f48834263dceb9976836a0fc75e047532d98b7826f736ce05341684ae",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-175f595ed421a1b96264",
+      "input": "inputs/circuit-175f595ed421a1b96264.json",
+      "name": "connectivity.test.cjs:line:62",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:62",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "175f595ed421a1b9626446aaf1144b42cea1460233d8ac1b4adac723357bb69b",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-178b4c854585834852ee",
+      "input": "inputs/circuit-178b4c854585834852ee.json",
+      "name": "regressionBridge.test.cjs:line:312",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:312",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "178b4c854585834852eec602ec5e6282187121471e6fb72887d0a3d31c0853ea",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-17c978b058e50543b74f",
+      "input": "inputs/circuit-17c978b058e50543b74f.json",
+      "name": "test_connectivity.py:line:184",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:184",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:187",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:191",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "17c978b058e50543b74f65b5acddc4b82e33bec9db7a6654d57eaa538d58d4bd",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 2,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-1a66ce249690f2b4bdea",
+      "input": "inputs/circuit-1a66ce249690f2b4bdea.json",
+      "name": "test_connectivity.py:line:267",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:267",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "1a66ce249690f2b4bdea3657e17371451df840767d006f468c87773ed8b4d33b",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-1a71b517910749c1d7a7",
+      "input": "inputs/circuit-1a71b517910749c1d7a7.json",
+      "name": "connectivity.test.cjs:line:81",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:81",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "1a71b517910749c1d7a7acb875712aa58538f23a442f8669bc2f26f247c29b09",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-1c1cb9e3f499d29a8acf",
+      "input": "inputs/circuit-1c1cb9e3f499d29a8acf.json",
+      "name": "test_connectivity.py:line:184",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:184",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:187",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:191",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "1c1cb9e3f499d29a8acf54f5acab8ff479f29fd8ef298ac5a41607b0964746a4",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-1f7080d89f1370b3ab52",
+      "input": "inputs/circuit-1f7080d89f1370b3ab52.json",
+      "name": "connectivity.test.cjs:line:61",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:273",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:61",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "1f7080d89f1370b3ab52a227a7241bd83de730238f3fa5fd9cdfc0ad78ea38a6",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-20ea3900eb605854bf6c",
+      "input": "inputs/circuit-20ea3900eb605854bf6c.json",
+      "name": "test_pipeline_regression.py:line:117",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:117",
+          "source": "backend/tests/test_pipeline_regression.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:122",
+          "source": "backend/tests/test_pipeline_regression.py"
+        }
+      ],
+      "sha256": "20ea3900eb605854bf6c1139100a706d9fe1135b2cdb6c0a26d6d109dc18dd56",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-218e625149f479cef6cf",
+      "input": "inputs/circuit-218e625149f479cef6cf.json",
+      "name": "test_export_polish.py:line:122",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:122",
+          "source": "backend/tests/test_export_polish.py"
+        }
+      ],
+      "sha256": "218e625149f479cef6cf4b4a5f3540fdb1f7c16b5d6d73b410c62ef55eef086a",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-23066c4e84620d838ce0",
+      "input": "inputs/circuit-23066c4e84620d838ce0.json",
+      "name": "regressionBridge.test.cjs:line:252",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:252",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "23066c4e84620d838ce01833466cca595d2e7e7bfea0daaf7dd42edb6f8743c7",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-2366ee1614b76256a58e",
+      "input": "inputs/circuit-2366ee1614b76256a58e.json",
+      "name": "test_connectivity.py:line:409",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:409",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "2366ee1614b76256a58e12b99213771aa75f178a6f8182a3a001a894e1ba723f",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": null,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-2470040b96f1d243e839",
+      "input": "inputs/circuit-2470040b96f1d243e839.json",
+      "name": "connectivity.test.cjs:line:156",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:156",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "2470040b96f1d243e839369b3a22e6fea05916099cd8fb43ee91f4f0bedce60f",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-27feaf23121146b82730",
+      "input": "inputs/circuit-27feaf23121146b82730.json",
+      "name": "regressionBridge.test.cjs:line:164",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:164",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "27feaf23121146b827306a42a575e05373a7cb81994f38197e86908cf539a1e1",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-29731ee04e0323e67fac",
+      "input": "inputs/circuit-29731ee04e0323e67fac.json",
+      "name": "test_pipeline_regression.py:line:114",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:114",
+          "source": "backend/tests/test_pipeline_regression.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:122",
+          "source": "backend/tests/test_pipeline_regression.py"
+        }
+      ],
+      "sha256": "29731ee04e0323e67fac9f7946925c42536b3a9b0f884f07039c4b7d8480fa95",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 3,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-2d7f499af635d0e71c5b",
+      "input": "inputs/circuit-2d7f499af635d0e71c5b.json",
+      "name": "test_connectivity.py:line:328",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:328",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "2d7f499af635d0e71c5b9398dc84d32e51b1552609926adcd10518e43cb910c7",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-2f22280e34592faa23b6",
+      "input": "inputs/circuit-2f22280e34592faa23b6.json",
+      "name": "test_connectivity.py:line:184",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:184",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:187",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:191",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "2f22280e34592faa23b606a9a86ac02d5c864669d6b345fcd57092d541729e57",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-31010fa8618ea40e6029",
+      "input": "inputs/circuit-31010fa8618ea40e6029.json",
+      "name": "test_export_polish.py:line:122",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:122",
+          "source": "backend/tests/test_export_polish.py"
+        }
+      ],
+      "sha256": "31010fa8618ea40e6029d038fc2cf43cf9d99313c625ceb3f8b885f7b29032d7",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-3337e6fd1fcd18293666",
+      "input": "inputs/circuit-3337e6fd1fcd18293666.json",
+      "name": "connectivity.test.cjs:line:70",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:70",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "3337e6fd1fcd182936665f95a35beaa27cf9c83f7f785afbc09f0ef698ee0e1a",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 4,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-3432f85025ca65479f4e",
+      "input": "inputs/circuit-3432f85025ca65479f4e.json",
+      "name": "Voltage Divider Routing Regression",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:46",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        },
+        {
+          "kind": "json",
+          "locator": "$",
+          "source": "backend/tests/fixtures/routing/voltage_divider.json"
+        }
+      ],
+      "sha256": "3432f85025ca65479f4ec42211141d4a2b7dd9e4f4790392176443b3cbbeaba2",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 5,
+        "connections": 7,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-3c4deb2d9c1d3c4d4f8b",
+      "input": "inputs/circuit-3c4deb2d9c1d3c4d4f8b.json",
+      "name": "LED Blinker",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:176",
+          "source": "frontend/tests/connectivity.test.cjs"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:46",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        },
+        {
+          "kind": "json",
+          "locator": "$",
+          "source": "backend/circuits/led_blinker.json"
+        }
+      ],
+      "sha256": "3c4deb2d9c1d3c4d4f8b87fda99fdbb98e921aa13c9d04bef2a54d4621781524",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-3fa119bf3a1dc74096a9",
+      "input": "inputs/circuit-3fa119bf3a1dc74096a9.json",
+      "name": "regressionBridge.test.cjs:line:261",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:261",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "3fa119bf3a1dc74096a90138173f2d8bbc571b578a2f5de70b4553856a203791",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-40f3e5a6fe13512c8065",
+      "input": "inputs/circuit-40f3e5a6fe13512c8065.json",
+      "name": "test_connectivity.py:line:244",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:244",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "40f3e5a6fe13512c8065767510816cbf25fe4bd2104f33449b267ab7474602d1",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 2,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-42f0738ac053a96df1fb",
+      "input": "inputs/circuit-42f0738ac053a96df1fb.json",
+      "name": "connectivity.test.cjs:line:123",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:123",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "42f0738ac053a96df1fb5b218a3470f5b7262550d126745a9388e6f16ffb7439",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 0,
+        "connections": null,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-440240615dcf4888bfee",
+      "input": "inputs/circuit-440240615dcf4888bfee.json",
+      "name": "test_connectivity.py:line:203",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:203",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:204",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "440240615dcf4888bfeeae3badd3e629ff164fecab3280eb39f8dad5776271bf",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 0,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-44136fa355b3678a1146",
+      "input": "inputs/circuit-44136fa355b3678a1146.json",
+      "name": "connectivity.test.cjs:line:158",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:158",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-4439a6734293bb87d5ef",
+      "input": "inputs/circuit-4439a6734293bb87d5ef.json",
+      "name": "test_regression_validation.py:line:346",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:346",
+          "source": "backend/tests/test_regression_validation.py"
+        }
+      ],
+      "sha256": "4439a6734293bb87d5ef95f65173ccb38d85f0ed2ffa4a61364e6415f2ce786a",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 3,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-495ad59c2666db9d2627",
+      "input": "inputs/circuit-495ad59c2666db9d2627.json",
+      "name": "test_connectivity.py:line:96",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:96",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "495ad59c2666db9d26273af58c16c660acd9544c1a9cbd9f7b3b449edf475624",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 3,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-4acb7b3adf42a1e4daba",
+      "input": "inputs/circuit-4acb7b3adf42a1e4daba.json",
+      "name": "test_connectivity.py:line:119",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:119",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:121",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "4acb7b3adf42a1e4daba4f14c545e43320744a7d02fea7d25ba5a9a2b5f3f0ec",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-4b181caefb37f0a82f7d",
+      "input": "inputs/circuit-4b181caefb37f0a82f7d.json",
+      "name": "regressionBridge.test.cjs:line:242",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:242",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "4b181caefb37f0a82f7da3db9a2b0311723972c8dfb6b86606a7372dfe438a68",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-4b246f400e7d2cab3c5d",
+      "input": "inputs/circuit-4b246f400e7d2cab3c5d.json",
+      "name": "regressionBridge.test.cjs:line:104",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:104",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "4b246f400e7d2cab3c5deb1177a6f34d11f7bae8e987c389797a695be5e6b9f1",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-4b606d8ac201c8cfefb6",
+      "input": "inputs/circuit-4b606d8ac201c8cfefb6.json",
+      "name": "Ambiguous refs",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:102",
+          "source": "backend/tests/test_export_polish.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:106",
+          "source": "backend/tests/test_export_polish.py"
+        }
+      ],
+      "sha256": "4b606d8ac201c8cfefb6e12327140ac3fc6ade4b0ae351c3b05d17a84eaa2ee3",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 2,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-4c7240d6ba3db86f6b03",
+      "input": "inputs/circuit-4c7240d6ba3db86f6b03.json",
+      "name": "test_connectivity.py:line:254",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:254",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "4c7240d6ba3db86f6b03837c911aee5d160d54d149566fe9e7572ef78de0949c",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-4d14d418dd8e463e5458",
+      "input": "inputs/circuit-4d14d418dd8e463e5458.json",
+      "name": "test_connectivity.py:line:344",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:344",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "4d14d418dd8e463e54580ef633f6037fd3502c98c47fbef30498f17dffc9106b",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-4f0d2acd28594cd56f28",
+      "input": "inputs/circuit-4f0d2acd28594cd56f28.json",
+      "name": "test_connectivity.py:line:251",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:251",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "4f0d2acd28594cd56f28c8171ef43fbf426591ec70ce90b0028b661644ec0399",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 0,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-4f53cda18c2baa0c0354",
+      "input": "inputs/circuit-4f53cda18c2baa0c0354.json",
+      "name": "test_connectivity.py:line:203",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:203",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:204",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-514fb198ed1c3c543e3a",
+      "input": "inputs/circuit-514fb198ed1c3c543e3a.json",
+      "name": "regressionBridge.test.cjs:line:164",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:164",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "514fb198ed1c3c543e3a90cfcdc75df9a4e188a67580e26266f2010bb9cea23a",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 2,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-527823f34ec2ad129642",
+      "input": "inputs/circuit-527823f34ec2ad129642.json",
+      "name": "connectivity.test.cjs:line:57",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:57",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "527823f34ec2ad129642c6635e75116e7b975c79f2a87382d2fd1947522afeb5",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 4,
+        "connections": 9,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-538e2f8f2c4abf9ad2f9",
+      "input": "inputs/circuit-538e2f8f2c4abf9ad2f9.json",
+      "name": "555 Astable Multivibrator",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:176",
+          "source": "frontend/tests/connectivity.test.cjs"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:46",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        },
+        {
+          "kind": "json",
+          "locator": "$",
+          "source": "backend/circuits/555_astable_multivibrator.json"
+        }
+      ],
+      "sha256": "538e2f8f2c4abf9ad2f9462e09e2469d8a8d649ce2c2beeed5a03623f9400a0f",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 6,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-547fdf6f2867f0df3f59",
+      "input": "inputs/circuit-547fdf6f2867f0df3f59.json",
+      "name": "Common Emitter Amplifier",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:193",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "547fdf6f2867f0df3f59fbbfd3de910de8cd52cd8e93b73c9605f26f07ad7774",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 3,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-561343fcc15e45de847a",
+      "input": "inputs/circuit-561343fcc15e45de847a.json",
+      "name": "connectivity.test.cjs:line:95",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:95",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "561343fcc15e45de847a0f2b63a2d7e341b78852a41eae00ddde5d2fa1add84c",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-57800739208985bab32d",
+      "input": "inputs/circuit-57800739208985bab32d.json",
+      "name": "test_connectivity.py:line:244",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:244",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "57800739208985bab32d4f062c65684a6c72462f13ea8d4c912b87429e00994d",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-5bf411d0700870d1dd0b",
+      "input": "inputs/circuit-5bf411d0700870d1dd0b.json",
+      "name": "test_connectivity.py:line:285",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:285",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "5bf411d0700870d1dd0be0b9ab32c363ca525fa21345ad4ffffc6315c1ac07ab",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-5c17722626a31909aee6",
+      "input": "inputs/circuit-5c17722626a31909aee6.json",
+      "name": "test_connectivity.py:line:285",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:285",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "5c17722626a31909aee6eba9c4ef7889ff8fa22f1905f501e6a7e9ab5a1600c5",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 4,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-5d43216779aacfa68c02",
+      "input": "inputs/circuit-5d43216779aacfa68c02.json",
+      "name": "connectivity.test.cjs:line:105",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:105",
+          "source": "frontend/tests/connectivity.test.cjs"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:136",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "5d43216779aacfa68c0201729d5f85bd4c4dd22ea38ad50ec42adb6e2627e116",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-5d4a4cef398a7b9ab1cb",
+      "input": "inputs/circuit-5d4a4cef398a7b9ab1cb.json",
+      "name": "Inner",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:109",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "5d4a4cef398a7b9ab1cb4cedb923b059786879c4862c0a178bc7d755530ae5d2",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-61d49cb3ec35ee6c13d3",
+      "input": "inputs/circuit-61d49cb3ec35ee6c13d3.json",
+      "name": "regressionBridge.test.cjs:line:164",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:164",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "61d49cb3ec35ee6c13d37c1c309aa2ead79ab71f12d267c7f041aecfa533dec9",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-64c4366287ae0bb03120",
+      "input": "inputs/circuit-64c4366287ae0bb03120.json",
+      "name": "test_export_polish.py:line:122",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:122",
+          "source": "backend/tests/test_export_polish.py"
+        }
+      ],
+      "sha256": "64c4366287ae0bb031208cc49234fe245909cedec6313231c4c53d1516f7255d",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-650c9fa5864be800715a",
+      "input": "inputs/circuit-650c9fa5864be800715a.json",
+      "name": "regressionBridge.test.cjs:line:151",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:151",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "650c9fa5864be800715ada0e1ac8644872553204ac78cabd5fb0eeeeda378f32",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-66c18c8da0d662896763",
+      "input": "inputs/circuit-66c18c8da0d662896763.json",
+      "name": "connectivity.test.cjs:line:117",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:117",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "66c18c8da0d6628967630c0181a98536f94fe3aefb5c692066ad60a4824edd3c",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-6bacc236b8a723492c4a",
+      "input": "inputs/circuit-6bacc236b8a723492c4a.json",
+      "name": "test_regression_validation.py:line:42",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:42",
+          "source": "backend/tests/test_regression_validation.py"
+        }
+      ],
+      "sha256": "6bacc236b8a723492c4ab91f304e27a0d34e5071c578681e1a6c992aa9bb2e7f",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 3,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-6e35c90c9194de5fe288",
+      "input": "inputs/circuit-6e35c90c9194de5fe288.json",
+      "name": "regressionBridge.test.cjs:line:220",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:220",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "6e35c90c9194de5fe288152c1a57981b3a4e5de66be376ddec95a12cd458e3d5",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 3,
+        "connections": 2,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-72173c03a45b93630a70",
+      "input": "inputs/circuit-72173c03a45b93630a70.json",
+      "name": "test_connectivity.py:line:101",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:101",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "72173c03a45b93630a705ca82fc3c196b17d037f22c8b3649b49dd3afe181222",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 0,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-74234e98afe7498fb5da",
+      "input": "inputs/circuit-74234e98afe7498fb5da.json",
+      "name": "test_connectivity.py:line:203",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:154",
+          "source": "frontend/tests/connectivity.test.cjs"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:273",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:203",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:204",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-7788b8e727d3b2f6f97d",
+      "input": "inputs/circuit-7788b8e727d3b2f6f97d.json",
+      "name": "test_connectivity.py:line:128",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:128",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:182",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:282",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "7788b8e727d3b2f6f97dfe0592af3aa6a648150fac91e33099ea01dc05c14d0d",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-7860dd8402d407013fe0",
+      "input": "inputs/circuit-7860dd8402d407013fe0.json",
+      "name": "regressionBridge.test.cjs:line:247",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:247",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "7860dd8402d407013fe045d5f3b54dc2ef155956a07308fb0359d8a3b8201720",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-79fd1deeca90b2ef8f61",
+      "input": "inputs/circuit-79fd1deeca90b2ef8f61.json",
+      "name": "connectivity.test.cjs:line:100",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:100",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "79fd1deeca90b2ef8f610c14f3b3661863599fd63f708715cfd4542e07d15dec",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 2,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-7c0a8699c38a3898403d",
+      "input": "inputs/circuit-7c0a8699c38a3898403d.json",
+      "name": "test_connectivity.py:line:142",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:142",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:144",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "7c0a8699c38a3898403dfc125a0cae8a634e76962988c01245a80e6c51205bc6",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 2,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-7db9977fa4a5aec21786",
+      "input": "inputs/circuit-7db9977fa4a5aec21786.json",
+      "name": "test_connectivity.py:line:111",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:111",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:113",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "7db9977fa4a5aec2178653dc55a4366fe07a22948ba7f31b65b4fda575e2b692",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-7e0dd67db0d5c6acc85d",
+      "input": "inputs/circuit-7e0dd67db0d5c6acc85d.json",
+      "name": "connectivity.test.cjs:line:38",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:38",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "7e0dd67db0d5c6acc85df1b997f3f99418683413a685385126e4238127f6d494",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 4,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-8336117f9954e8c058a7",
+      "input": "inputs/circuit-8336117f9954e8c058a7.json",
+      "name": "RC High Pass Filter",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:176",
+          "source": "frontend/tests/connectivity.test.cjs"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:46",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        },
+        {
+          "kind": "json",
+          "locator": "$",
+          "source": "backend/circuits/rc_high_pass_filter.json"
+        }
+      ],
+      "sha256": "8336117f9954e8c058a7c6846ce8b0adb86d372c162ec53674e32649a04fbf84",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 2,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-89632fe2ef449d0b7e4f",
+      "input": "inputs/circuit-89632fe2ef449d0b7e4f.json",
+      "name": "test_connectivity.py:line:265",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:265",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "89632fe2ef449d0b7e4f6660f73c481727c9071ffd1c08f07e26f32635a54b4e",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-8a097cc0885e0194db83",
+      "input": "inputs/circuit-8a097cc0885e0194db83.json",
+      "name": "test_connectivity.py:line:184",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:184",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:187",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:191",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "8a097cc0885e0194db8322c0fa73d24e3dcc3328021fc7a249a7bc97472d6eae",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-8ae8de8ce92bf0f11b6a",
+      "input": "inputs/circuit-8ae8de8ce92bf0f11b6a.json",
+      "name": "test_connectivity.py:line:222",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:222",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "8ae8de8ce92bf0f11b6ac4a921158b27f2343e2cea534615826d6c399aafb91a",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 2,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-8b9b59d84a5c6f0149b4",
+      "input": "inputs/circuit-8b9b59d84a5c6f0149b4.json",
+      "name": "regressionBridge.test.cjs:line:178",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:178",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "8b9b59d84a5c6f0149b4ffb3162245014d598e9cb7e03876d2e99e3b6f49cb59",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-8c69a40068622fa91a98",
+      "input": "inputs/circuit-8c69a40068622fa91a98.json",
+      "name": "test_connectivity.py:line:184",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:184",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:187",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:191",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "8c69a40068622fa91a98bf3aab4a364a68389d0b48a6fcebde61fbf0093acc35",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": null,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-8ca85f4323d18f614b38",
+      "input": "inputs/circuit-8ca85f4323d18f614b38.json",
+      "name": "regressionBridge.test.cjs:line:273",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:273",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "8ca85f4323d18f614b38a79e6408d0c486d867236ab14d9fdfa7a21031f8b699",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-8ca8f4bc59e746b3762d",
+      "input": "inputs/circuit-8ca8f4bc59e746b3762d.json",
+      "name": "test_connectivity.py:line:291",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:291",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "8ca8f4bc59e746b3762dec9e56ea4fe409e70b43e7e53687b128fa241e1b9b8e",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-8d910904fcc302dab99a",
+      "input": "inputs/circuit-8d910904fcc302dab99a.json",
+      "name": "test_connectivity.py:line:305",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:305",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "8d910904fcc302dab99a2a2ad5aa24e4afd88a6b44092da5ece82f45354d6de1",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 2,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-8e46c5523d099c7090e2",
+      "input": "inputs/circuit-8e46c5523d099c7090e2.json",
+      "name": "test_connectivity.py:line:333",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:333",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "8e46c5523d099c7090e2fa925615037df923ca91d5e13b7411437521889b385c",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 3,
+        "connections": 2,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-8f27083fa729f6ea01e2",
+      "input": "inputs/circuit-8f27083fa729f6ea01e2.json",
+      "name": "connectivity.test.cjs:line:49",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:49",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "8f27083fa729f6ea01e2b25ed08139250209ca810006b71bfdaad53f0d4a26b1",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 2,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-8fd2efaa9d3266ed2ad6",
+      "input": "inputs/circuit-8fd2efaa9d3266ed2ad6.json",
+      "name": "test_connectivity.py:line:339",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:339",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "8fd2efaa9d3266ed2ad6d0eb9ebe92491f1e347c53dae29ea62560401d9c955e",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 2,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-915d8f088f4fc5f3ee9f",
+      "input": "inputs/circuit-915d8f088f4fc5f3ee9f.json",
+      "name": "connectivity.test.cjs:line:129",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:129",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "915d8f088f4fc5f3ee9f5818408ffe6ca806ce2a017dfa11a6b5f124d62c20cd",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-9243ef5763d82292493f",
+      "input": "inputs/circuit-9243ef5763d82292493f.json",
+      "name": "test_pipeline_regression.py:line:115",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:115",
+          "source": "backend/tests/test_pipeline_regression.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:122",
+          "source": "backend/tests/test_pipeline_regression.py"
+        }
+      ],
+      "sha256": "9243ef5763d82292493f12ad30818b47ccb5bbc7066febc600e9a87ee89d9f91",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 5,
+        "connections": 10,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-937a53cf299d80a19bfe",
+      "input": "inputs/circuit-937a53cf299d80a19bfe.json",
+      "name": "Bridge Rectifier Routing Regression",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:46",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        },
+        {
+          "kind": "json",
+          "locator": "$",
+          "source": "backend/tests/fixtures/routing/bridge_rectifier.json"
+        }
+      ],
+      "sha256": "937a53cf299d80a19bfefdc0a3a7e0bf36914fd45e4d5feb6785bdf7e6475882",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-93e15d6ad595b7977e4d",
+      "input": "inputs/circuit-93e15d6ad595b7977e4d.json",
+      "name": "regressionBridge.test.cjs:line:164",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:164",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "93e15d6ad595b7977e4df72da72c594707972fefd81ef5ce707629ab068de24f",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 6,
+        "connections": 10,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-9667b08297f2c0c31332",
+      "input": "inputs/circuit-9667b08297f2c0c31332.json",
+      "name": "Common Emitter Amplifier",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:136",
+          "source": "frontend/tests/connectivity.test.cjs"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:31",
+          "source": "frontend/tests/circuitFlowAdapter.test.cjs"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:46",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        },
+        {
+          "kind": "json",
+          "locator": "$",
+          "source": "backend/circuits/common_emitter_amplifier.json"
+        }
+      ],
+      "sha256": "9667b08297f2c0c313322d327c283c7ceece43cf6093865a42ecb71586de1f60",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-9a28c82776ba5c353578",
+      "input": "inputs/circuit-9a28c82776ba5c353578.json",
+      "name": "test_connectivity.py:line:233",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:233",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "9a28c82776ba5c353578ad113e18f654fc7b01798a893c58683cdd8970c4007c",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-9db077e53545d23d643d",
+      "input": "inputs/circuit-9db077e53545d23d643d.json",
+      "name": "test_export_polish.py:line:122",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:122",
+          "source": "backend/tests/test_export_polish.py"
+        }
+      ],
+      "sha256": "9db077e53545d23d643db1e52891adaff5761a20a8e7ac48fda8de581ee15e7b",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-9f8f74a22a11b8ca0077",
+      "input": "inputs/circuit-9f8f74a22a11b8ca0077.json",
+      "name": "test_connectivity.py:line:272",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:272",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "9f8f74a22a11b8ca00770ddd0af47dae97813ba19d709c147b93b9b3f00f1ea2",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 2,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-a3dd4bcfee29e523898b",
+      "input": "inputs/circuit-a3dd4bcfee29e523898b.json",
+      "name": "connectivity.test.cjs:line:55",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:55",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "a3dd4bcfee29e523898b1cb61b50088c6fa1acf0eca63b74fc8cdf135cb352d7",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-a6ddc3ca6e6ba331b39f",
+      "input": "inputs/circuit-a6ddc3ca6e6ba331b39f.json",
+      "name": "regressionBridge.test.cjs:line:104",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:104",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "a6ddc3ca6e6ba331b39fac4859b533495fbc5d880d8e593dd410979ea7003d15",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-a77e3c336f4929d49967",
+      "input": "inputs/circuit-a77e3c336f4929d49967.json",
+      "name": "test_connectivity.py:line:184",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:184",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:187",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:191",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "a77e3c336f4929d49967b2a124252676c3ded94698a13c2f870270a99250972c",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-a8d3b622431f29efd0c4",
+      "input": "inputs/circuit-a8d3b622431f29efd0c4.json",
+      "name": "regressionBridge.test.cjs:line:356",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:356",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "a8d3b622431f29efd0c4791f7021bf0209b4fb755b381edfceee191873067ff6",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-ab96782069306a0e310d",
+      "input": "inputs/circuit-ab96782069306a0e310d.json",
+      "name": "test_pipeline_regression.py:line:113",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:113",
+          "source": "backend/tests/test_pipeline_regression.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:122",
+          "source": "backend/tests/test_pipeline_regression.py"
+        }
+      ],
+      "sha256": "ab96782069306a0e310def173ce60a8c35b0abaeefe63f5989b3655ad1cf30ec",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-ad9a8de607e94d599f38",
+      "input": "inputs/circuit-ad9a8de607e94d599f38.json",
+      "name": "connectivity.test.cjs:line:155",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:155",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "ad9a8de607e94d599f38bb13308a4f9eef12be39b812188c90fb33f62820b161",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 3,
+        "connections": 2,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-ada25d6e596c9e802c3b",
+      "input": "inputs/circuit-ada25d6e596c9e802c3b.json",
+      "name": "test_pin_geometry.py:line:817",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:817",
+          "source": "backend/tests/test_pin_geometry.py"
+        }
+      ],
+      "sha256": "ada25d6e596c9e802c3b37f89ef2ad0671e28cf922dfca3bdf314e6fdcde3a85",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-b0fe37561a3da3b53b88",
+      "input": "inputs/circuit-b0fe37561a3da3b53b88.json",
+      "name": "connectivity.test.cjs:line:73",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:73",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "b0fe37561a3da3b53b8851be45f9237652fb0a928c6433a0bfc614b23fb1b102",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-b3e3b950eb4a09e0e6b9",
+      "input": "inputs/circuit-b3e3b950eb4a09e0e6b9.json",
+      "name": "test_connectivity.py:line:214",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:214",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:215",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:217",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "b3e3b950eb4a09e0e6b97dacde2999b65f373e488abd9055de1c0a473a2aefd8",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-b44889fec36a8bd41c62",
+      "input": "inputs/circuit-b44889fec36a8bd41c62.json",
+      "name": "test_export_polish.py:line:122",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:122",
+          "source": "backend/tests/test_export_polish.py"
+        }
+      ],
+      "sha256": "b44889fec36a8bd41c62fc778acbf6bc61d769197dd60d337978972b264f919b",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-b7139aba076994560994",
+      "input": "inputs/circuit-b7139aba076994560994.json",
+      "name": "test_connectivity.py:line:218",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:218",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "b7139aba07699456099404a4f29853656e6ba69cee3b88ef210f41f665e0a0e2",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-ba91a59a637bb9d10af3",
+      "input": "inputs/circuit-ba91a59a637bb9d10af3.json",
+      "name": "test_export_polish.py:line:122",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:122",
+          "source": "backend/tests/test_export_polish.py"
+        }
+      ],
+      "sha256": "ba91a59a637bb9d10af38c12b51aecd75669050b4cc41f09ae707d8a7beb77b1",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 3,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-bef3e4c0d95e3d332c34",
+      "input": "inputs/circuit-bef3e4c0d95e3d332c34.json",
+      "name": "connectivity.test.cjs:line:44",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:44",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "bef3e4c0d95e3d332c34108ae24bd833c7ea1e46fc6f109208eabe963ed03287",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 4,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-c1873fce60feb2bc0d36",
+      "input": "inputs/circuit-c1873fce60feb2bc0d36.json",
+      "name": "RC Low Pass Filter",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:176",
+          "source": "frontend/tests/connectivity.test.cjs"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:46",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        },
+        {
+          "kind": "json",
+          "locator": "$",
+          "source": "backend/circuits/rc_low_pass_filter.json"
+        }
+      ],
+      "sha256": "c1873fce60feb2bc0d363aaecd33249b924608bb2e79d8a7aafca7c72beeacfd",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-c3cc7f5ed7ba5926bce3",
+      "input": "inputs/circuit-c3cc7f5ed7ba5926bce3.json",
+      "name": "test_export_polish.py:line:117",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:117",
+          "source": "backend/tests/test_export_polish.py"
+        }
+      ],
+      "sha256": "c3cc7f5ed7ba5926bce30041643035b5669dc09a4c991f277fcf14d883a4472e",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-c540b8a187282a67cf55",
+      "input": "inputs/circuit-c540b8a187282a67cf55.json",
+      "name": "regressionBridge.test.cjs:line:113",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:113",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "c540b8a187282a67cf555fc61cd2d3ea186469e55a03cba2b4dfad34c98305c8",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-c686f07a1b90328322b9",
+      "input": "inputs/circuit-c686f07a1b90328322b9.json",
+      "name": "regressionBridge.test.cjs:line:164",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:164",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "c686f07a1b90328322b91f77dbcff4372ff39ff0e9cf59158912e5afdc35ff2e",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 2,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-c70fa8d455dfba0f6950",
+      "input": "inputs/circuit-c70fa8d455dfba0f6950.json",
+      "name": "test_connectivity.py:line:262",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:262",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:582",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "c70fa8d455dfba0f695069f8e93ee344ba802b9e6df4299d26b83045ffcd643b",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-c969d1bdba2d5ac6e93a",
+      "input": "inputs/circuit-c969d1bdba2d5ac6e93a.json",
+      "name": "test_connectivity.py:line:285",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:285",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "c969d1bdba2d5ac6e93acbef896f73386fa66dd1079d5e0ec41f3351f372c939",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-cb08f0621ecabdb63c7f",
+      "input": "inputs/circuit-cb08f0621ecabdb63c7f.json",
+      "name": "connectivity.test.cjs:line:78",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:78",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "cb08f0621ecabdb63c7fbcc87f9403d77b0dec922f3a0919c0d30a8d98892464",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 3,
+        "connections": 3,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-ce1040c45b8e6c3bcbe8",
+      "input": "inputs/circuit-ce1040c45b8e6c3bcbe8.json",
+      "name": "test_connectivity.py:line:134",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:134",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "ce1040c45b8e6c3bcbe8c8eaf5dff697353fe36e1aa7a5422ae0f94625c09ca1",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-ce3077dee0ee193244ff",
+      "input": "inputs/circuit-ce3077dee0ee193244ff.json",
+      "name": "connectivity.test.cjs:line:102",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:102",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "ce3077dee0ee193244ff7ce1d5dcf768647b613974b910ac06d7507b0644e40a",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-d06dbe3c49c25059b57e",
+      "input": "inputs/circuit-d06dbe3c49c25059b57e.json",
+      "name": "connectivity.test.cjs:line:70",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:70",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "d06dbe3c49c25059b57e8d1d9e3b1998c77f946fef395e10507a227e08948991",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-d0a675591fb8bc147594",
+      "input": "inputs/circuit-d0a675591fb8bc147594.json",
+      "name": "test_connectivity.py:line:233",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:233",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "d0a675591fb8bc147594424d86cd6b05f009ab000fd72d07614017eedee25f75",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 0,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-d10ae1682ca9cbe68456",
+      "input": "inputs/circuit-d10ae1682ca9cbe68456.json",
+      "name": "connectivity.test.cjs:line:157",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:157",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "d10ae1682ca9cbe684566e79066e2293c76c8607429e60866a7bbd60c017e315",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 3,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-d30c8636537ac1fe7fa4",
+      "input": "inputs/circuit-d30c8636537ac1fe7fa4.json",
+      "name": "regressionBridge.test.cjs:line:126",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:126",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "d30c8636537ac1fe7fa43fb6e2cce4cb62b8fa0a8e8e8b40ba583079a5c426f1",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-d3b3536c74cb3c9adeea",
+      "input": "inputs/circuit-d3b3536c74cb3c9adeea.json",
+      "name": "connectivity.test.cjs:line:90",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:233",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:90",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "d3b3536c74cb3c9adeeab123a5699e2708fb639153aca37df669a08b62947f8a",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-d79cc631f6503a7ffce1",
+      "input": "inputs/circuit-d79cc631f6503a7ffce1.json",
+      "name": "test_connectivity.py:line:285",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:285",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "d79cc631f6503a7ffce15c57b4d35492a37379f8f44b626df94e540e2b6f3653",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-db377cdd6a61564fd8a0",
+      "input": "inputs/circuit-db377cdd6a61564fd8a0.json",
+      "name": "test_connectivity.py:line:184",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:184",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:187",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:191",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "db377cdd6a61564fd8a04abe6313c12ad495c8cb8fd88c357f9472fc58fe2020",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-df9bdf682ead6ffb9731",
+      "input": "inputs/circuit-df9bdf682ead6ffb9731.json",
+      "name": "regressionBridge.test.cjs:line:196",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:196",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "df9bdf682ead6ffb97315570498274bc3d6644f4726f364dcd87266e3e0213e6",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-e0a8bff21a49caa89e5b",
+      "input": "inputs/circuit-e0a8bff21a49caa89e5b.json",
+      "name": "connectivity.test.cjs:line:70",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:70",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "e0a8bff21a49caa89e5bc2dba5b3caed53018ee56a4ff71adb379048a4125f4c",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-e17d306037d74bf59fb3",
+      "input": "inputs/circuit-e17d306037d74bf59fb3.json",
+      "name": "test_connectivity.py:line:272",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:272",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "e17d306037d74bf59fb34295f80d6bd829dc5d973ea80a03c0181b60b0ecf2e4",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-e3abd2e84c8e5cbd85d2",
+      "input": "inputs/circuit-e3abd2e84c8e5cbd85d2.json",
+      "name": "connectivity.test.cjs:line:85",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:85",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "e3abd2e84c8e5cbd85d2b1b3e8148f1d106806b4ce4f84f024d8678804570910",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-e6e89bec12710a6ec377",
+      "input": "inputs/circuit-e6e89bec12710a6ec377.json",
+      "name": "test_export_polish.py:line:117",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:117",
+          "source": "backend/tests/test_export_polish.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:118",
+          "source": "backend/tests/test_pipeline_regression.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:122",
+          "source": "backend/tests/test_pipeline_regression.py"
+        }
+      ],
+      "sha256": "e6e89bec12710a6ec377c8b748135639ee6165a9aea608e42ca0d0a1549ed57d",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-e70a4fc48ce766624748",
+      "input": "inputs/circuit-e70a4fc48ce766624748.json",
+      "name": "test_connectivity.py:line:247",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:247",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:248",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:249",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "e70a4fc48ce76662474849da25b86f50083b023d494d00129c762bae6227c5e3",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 3,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-e70f65d9168b2c5a2645",
+      "input": "inputs/circuit-e70f65d9168b2c5a2645.json",
+      "name": "test_connectivity.py:line:161",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:161",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "e70f65d9168b2c5a26454d8abc51a9bd9e744c9a67ceb2fd56764c18d62ad9c8",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-e89c2974e9d23e4f26a3",
+      "input": "inputs/circuit-e89c2974e9d23e4f26a3.json",
+      "name": "test_connectivity.py:line:184",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:184",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:187",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:191",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "e89c2974e9d23e4f26a3a90631291656488af8563cecdf20def785283b713157",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-e89d291d6e5056b905d4",
+      "input": "inputs/circuit-e89d291d6e5056b905d4.json",
+      "name": "test_connectivity.py:line:214",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:214",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:215",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:217",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "e89d291d6e5056b905d40941ac980f69a753c0c2c4f271cd7a53533545fe691d",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-e9fb5b1dcf1dcfab24f6",
+      "input": "inputs/circuit-e9fb5b1dcf1dcfab24f6.json",
+      "name": "regressionBridge.test.cjs:line:233",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:233",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "e9fb5b1dcf1dcfab24f68e36eb2180cad0c71ed47421cf7b697a6868c8a1582a",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-eabbd754a05feaba15e2",
+      "input": "inputs/circuit-eabbd754a05feaba15e2.json",
+      "name": "regressionBridge.test.cjs:line:261",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:261",
+          "source": "frontend/tests/regressionBridge.test.cjs"
+        }
+      ],
+      "sha256": "eabbd754a05feaba15e243d66ddb3043d86b5532ab5a391c45ab76e3fb9808ee",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": null,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-ed73c3594d605fdd7406",
+      "input": "inputs/circuit-ed73c3594d605fdd7406.json",
+      "name": "test_connectivity.py:line:203",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:203",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:204",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "ed73c3594d605fdd74069fae4b889ce07a0b52393fe7e725ae9a590a552fd25e",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 1,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-f21c0ec514e079021abd",
+      "input": "inputs/circuit-f21c0ec514e079021abd.json",
+      "name": "test_export_polish.py:line:122",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:122",
+          "source": "backend/tests/test_export_polish.py"
+        }
+      ],
+      "sha256": "f21c0ec514e079021abd13f608fef1f910336ad1ee5d904b3b7ba75f9a1e991f",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-f27fc6b4ad6231ffb68b",
+      "input": "inputs/circuit-f27fc6b4ad6231ffb68b.json",
+      "name": "connectivity.test.cjs:line:38",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:38",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "f27fc6b4ad6231ffb68b3d8581e886fba3c3d672e3c2617eabc249da7ce42509",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 4,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-f90b1e513f005ba5fff2",
+      "input": "inputs/circuit-f90b1e513f005ba5fff2.json",
+      "name": "test_connectivity.py:line:299",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:299",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "f90b1e513f005ba5fff2d587b07bd447a76403a6b56761ad5b42c79866a8a7f3",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 0,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-fa50e06d005f449ebf1f",
+      "input": "inputs/circuit-fa50e06d005f449ebf1f.json",
+      "name": "test_connectivity.py:line:214",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:214",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:215",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:217",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "fa50e06d005f449ebf1f196ce768926c9741cef714c92ee16d125c559ea38cca",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 0,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-fb420c6210c600c96e2d",
+      "input": "inputs/circuit-fb420c6210c600c96e2d.json",
+      "name": "test_connectivity.py:line:203",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:203",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:204",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "fb420c6210c600c96e2daea9f8046cb23e994bb0720a40fecd1934ac9b8cff28",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-fddb1c1846acbeb11ff6",
+      "input": "inputs/circuit-fddb1c1846acbeb11ff6.json",
+      "name": "connectivity.test.cjs:line:122",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:122",
+          "source": "frontend/tests/connectivity.test.cjs"
+        }
+      ],
+      "sha256": "fddb1c1846acbeb11ff6b9e18c392660efe378595269ff401bdb51928eb5972f",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 2,
+        "connections": 1,
+        "nets": null,
+        "pins": null
+      },
+      "id": "circuit-ff5b2622d96773f43335",
+      "input": "inputs/circuit-ff5b2622d96773f43335.json",
+      "name": "test_connectivity.py:line:184",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:184",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:187",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:191",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:368",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:557",
+          "source": "backend/tests/test_connectivity.py"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:572",
+          "source": "backend/tests/test_connectivity.py"
+        }
+      ],
+      "sha256": "ff5b2622d96773f43335273ab2cf03453e76c3b9bfc5455d65a398181b31db79",
+      "support": "not_tested",
+      "synthetic": false,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 10,
+        "connections": 11,
+        "nets": null,
+        "pins": null
+      },
+      "family": "resistor",
+      "id": "circuit-487a1e171625615c17a0",
+      "input": "inputs/circuit-487a1e171625615c17a0.json",
+      "name": "Repeated resistor sections (10 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "resistor:10",
+          "source": "backend/tests/corpus/fixture_generator.py"
+        }
+      ],
+      "sha256": "487a1e171625615c17a039a0aa1a6b88847387dab6f8b3c1aa6db22d602c3891",
+      "support": "not_tested",
+      "synthetic": true,
+      "target_components": 10,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 10,
+        "connections": 16,
+        "nets": null,
+        "pins": null
+      },
+      "family": "filter",
+      "id": "circuit-d79639eaaa899c072620",
+      "input": "inputs/circuit-d79639eaaa899c072620.json",
+      "name": "Repeated filter sections (10 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "filter:10",
+          "source": "backend/tests/corpus/fixture_generator.py"
+        }
+      ],
+      "sha256": "d79639eaaa899c0726201689c1b4eba1b00ce74a5c34d233a851c26b9ece2e73",
+      "support": "not_tested",
+      "synthetic": true,
+      "target_components": 10,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 25,
+        "connections": 39,
+        "nets": null,
+        "pins": null
+      },
+      "family": "filter",
+      "id": "circuit-011da72b4d779fc1e919",
+      "input": "inputs/circuit-011da72b4d779fc1e919.json",
+      "name": "Repeated filter sections (25 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "filter:25",
+          "source": "backend/tests/corpus/fixture_generator.py"
+        }
+      ],
+      "sha256": "011da72b4d779fc1e919a2af97505e9993df2c06e9d178403bc19594575fcbf2",
+      "support": "not_tested",
+      "synthetic": true,
+      "target_components": 25,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 25,
+        "connections": 26,
+        "nets": null,
+        "pins": null
+      },
+      "family": "resistor",
+      "id": "circuit-ff1fd8b1b9cb2998f6df",
+      "input": "inputs/circuit-ff1fd8b1b9cb2998f6df.json",
+      "name": "Repeated resistor sections (25 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "resistor:25",
+          "source": "backend/tests/corpus/fixture_generator.py"
+        }
+      ],
+      "sha256": "ff1fd8b1b9cb2998f6df3c6b0bcadd2c671e81ab562e60e49a8f2c9b71c1f102",
+      "support": "not_tested",
+      "synthetic": true,
+      "target_components": 25,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 50,
+        "connections": 51,
+        "nets": null,
+        "pins": null
+      },
+      "family": "resistor",
+      "id": "circuit-6ceaf1a9d262db9531d6",
+      "input": "inputs/circuit-6ceaf1a9d262db9531d6.json",
+      "name": "Repeated resistor sections (50 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "resistor:50",
+          "source": "backend/tests/corpus/fixture_generator.py"
+        }
+      ],
+      "sha256": "6ceaf1a9d262db9531d68eb70e2a75a11c631ce2d8f1f100e7852d069c20a3c6",
+      "support": "not_tested",
+      "synthetic": true,
+      "target_components": 50,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 50,
+        "connections": 76,
+        "nets": null,
+        "pins": null
+      },
+      "family": "filter",
+      "id": "circuit-d1745c42a0d7260ca981",
+      "input": "inputs/circuit-d1745c42a0d7260ca981.json",
+      "name": "Repeated filter sections (50 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "filter:50",
+          "source": "backend/tests/corpus/fixture_generator.py"
+        }
+      ],
+      "sha256": "d1745c42a0d7260ca9810b6faaf7d663cba3dd4010109b51433459e240beb7cb",
+      "support": "not_tested",
+      "synthetic": true,
+      "target_components": 50,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 100,
+        "connections": 151,
+        "nets": null,
+        "pins": null
+      },
+      "family": "filter",
+      "id": "circuit-44dc9954c88aea4055f2",
+      "input": "inputs/circuit-44dc9954c88aea4055f2.json",
+      "name": "Repeated filter sections (100 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "filter:100",
+          "source": "backend/tests/corpus/fixture_generator.py"
+        }
+      ],
+      "sha256": "44dc9954c88aea4055f270420a7cd6d2a7df5470452e2aa1845bc63cb2c32ff7",
+      "support": "not_tested",
+      "synthetic": true,
+      "target_components": 100,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 100,
+        "connections": 101,
+        "nets": null,
+        "pins": null
+      },
+      "family": "resistor",
+      "id": "circuit-bf177d289f65b1ff63fb",
+      "input": "inputs/circuit-bf177d289f65b1ff63fb.json",
+      "name": "Repeated resistor sections (100 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "resistor:100",
+          "source": "backend/tests/corpus/fixture_generator.py"
+        }
+      ],
+      "sha256": "bf177d289f65b1ff63fb66f4e4c7a57cae810f9c516d73e40b0fd859fa285d5e",
+      "support": "not_tested",
+      "synthetic": true,
+      "target_components": 100,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 250,
+        "connections": 376,
+        "nets": null,
+        "pins": null
+      },
+      "family": "filter",
+      "id": "circuit-4bcd9f1440d1be5ced40",
+      "input": "inputs/circuit-4bcd9f1440d1be5ced40.json",
+      "name": "Repeated filter sections (250 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "filter:250",
+          "source": "backend/tests/corpus/fixture_generator.py"
+        }
+      ],
+      "sha256": "4bcd9f1440d1be5ced407f47666c59e6009e5ad753c6cf28c59aa4bb1e84dd00",
+      "support": "not_tested",
+      "synthetic": true,
+      "target_components": 250,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 250,
+        "connections": 251,
+        "nets": null,
+        "pins": null
+      },
+      "family": "resistor",
+      "id": "circuit-5eee04129d7baad3326a",
+      "input": "inputs/circuit-5eee04129d7baad3326a.json",
+      "name": "Repeated resistor sections (250 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "resistor:250",
+          "source": "backend/tests/corpus/fixture_generator.py"
+        }
+      ],
+      "sha256": "5eee04129d7baad3326a29d69ae8184f9b46dc8edc45a5cd99588033f54b5fe8",
+      "support": "not_tested",
+      "synthetic": true,
+      "target_components": 250,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 500,
+        "connections": 501,
+        "nets": null,
+        "pins": null
+      },
+      "family": "resistor",
+      "id": "circuit-55e763579a65517ae71f",
+      "input": "inputs/circuit-55e763579a65517ae71f.json",
+      "name": "Repeated resistor sections (500 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "resistor:500",
+          "source": "backend/tests/corpus/fixture_generator.py"
+        }
+      ],
+      "sha256": "55e763579a65517ae71f759e8dea0009d5e7a2cb7bbaee859b9c728b6a8fb041",
+      "support": "not_tested",
+      "synthetic": true,
+      "target_components": 500,
+      "validation": "not_tested"
+    },
+    {
+      "counts": {
+        "components": 500,
+        "connections": 751,
+        "nets": null,
+        "pins": null
+      },
+      "family": "filter",
+      "id": "circuit-a82f72ae9c7431e50765",
+      "input": "inputs/circuit-a82f72ae9c7431e50765.json",
+      "name": "Repeated filter sections (500 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "filter:500",
+          "source": "backend/tests/corpus/fixture_generator.py"
+        }
+      ],
+      "sha256": "a82f72ae9c7431e50765293f1e34ec768910e2979f446faa6778cc0da3c3d573",
+      "support": "not_tested",
+      "synthetic": true,
+      "target_components": 500,
+      "validation": "not_tested"
+    }
+  ],
+  "extraction": [
+    {
+      "captured": 0,
+      "source": "backend/example_crud.py",
+      "status": "complete",
+      "unresolved": []
+    },
+    {
+      "captured": 144,
+      "source": "backend/tests/test_connectivity.py",
+      "status": "partial",
+      "unresolved": [
+        {
+          "expression": "model",
+          "line": 98,
+          "reason": "Dynamic name: model"
+        },
+        {
+          "expression": "model",
+          "line": 124,
+          "reason": "Dynamic name: model"
+        },
+        {
+          "expression": "model",
+          "line": 131,
+          "reason": "Dynamic name: model"
+        },
+        {
+          "expression": "source",
+          "line": 152,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 157,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 158,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "circuit(edges=[(labels[0], 'R1.1'), ('R1.1', labels[1])])",
+          "line": 312,
+          "reason": "Dynamic name: labels"
+        },
+        {
+          "expression": "source",
+          "line": 314,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 323,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 325,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "model",
+          "line": 336,
+          "reason": "Dynamic name: model"
+        },
+        {
+          "expression": "load_circuit('common_emitter_amplifier.json')",
+          "line": 377,
+          "reason": "Dynamic expression: load_circuit('common_emitter_amplifier.json')"
+        },
+        {
+          "expression": "self.model",
+          "line": 380,
+          "reason": "Dynamic expression: self.model"
+        },
+        {
+          "expression": "self.model",
+          "line": 383,
+          "reason": "Dynamic expression: self.model"
+        },
+        {
+          "expression": "self.model",
+          "line": 387,
+          "reason": "Dynamic expression: self.model"
+        },
+        {
+          "expression": "self.model",
+          "line": 395,
+          "reason": "Dynamic expression: self.model"
+        },
+        {
+          "expression": "self.model",
+          "line": 404,
+          "reason": "Dynamic expression: self.model"
+        },
+        {
+          "expression": "model",
+          "line": 414,
+          "reason": "Dynamic name: model"
+        },
+        {
+          "expression": "self.model",
+          "line": 419,
+          "reason": "Dynamic expression: self.model"
+        },
+        {
+          "expression": "self.model",
+          "line": 422,
+          "reason": "Dynamic expression: self.model"
+        },
+        {
+          "expression": "self.model",
+          "line": 426,
+          "reason": "Dynamic expression: self.model"
+        },
+        {
+          "expression": "self.model",
+          "line": 432,
+          "reason": "Dynamic expression: self.model"
+        },
+        {
+          "expression": "self.model",
+          "line": 438,
+          "reason": "Dynamic expression: self.model"
+        },
+        {
+          "expression": "self.model",
+          "line": 440,
+          "reason": "Dynamic expression: self.model"
+        },
+        {
+          "expression": "source",
+          "line": 450,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "model",
+          "line": 452,
+          "reason": "Dynamic name: model"
+        },
+        {
+          "expression": "load_circuit('common_emitter_amplifier.json')",
+          "line": 456,
+          "reason": "Dynamic expression: load_circuit('common_emitter_amplifier.json')"
+        },
+        {
+          "expression": "source",
+          "line": 477,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 478,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 488,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 506,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 533,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 536,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 540,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 550,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "model",
+          "line": 552,
+          "reason": "Dynamic name: model"
+        }
+      ]
+    },
+    {
+      "captured": 0,
+      "source": "backend/tests/test_export_cleanup.py",
+      "status": "complete",
+      "unresolved": []
+    },
+    {
+      "captured": 20,
+      "source": "backend/tests/test_export_polish.py",
+      "status": "partial",
+      "unresolved": [
+        {
+          "expression": "source",
+          "line": 45,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 59,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 64,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 94,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 98,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 133,
+          "reason": "Dynamic name: source"
+        }
+      ]
+    },
+    {
+      "captured": 0,
+      "source": "backend/tests/test_export_polish_metrics.py",
+      "status": "complete",
+      "unresolved": []
+    },
+    {
+      "captured": 0,
+      "source": "backend/tests/test_export_presentation.py",
+      "status": "complete",
+      "unresolved": []
+    },
+    {
+      "captured": 0,
+      "source": "backend/tests/test_ltspice_exporter.py",
+      "status": "partial",
+      "unresolved": [
+        {
+          "expression": "self._load_circuit('rc_low_pass_filter.json')",
+          "line": 31,
+          "reason": "Dynamic expression: self._load_circuit('rc_low_pass_filter.json')"
+        },
+        {
+          "expression": "self._load_circuit('led_blinker.json')",
+          "line": 42,
+          "reason": "Dynamic expression: self._load_circuit('led_blinker.json')"
+        },
+        {
+          "expression": "self._load_circuit('common_emitter_amplifier.json')",
+          "line": 52,
+          "reason": "Dynamic expression: self._load_circuit('common_emitter_amplifier.json')"
+        },
+        {
+          "expression": "self._load_circuit(path.name)",
+          "line": 64,
+          "reason": "Dynamic expression: self._load_circuit(path.name)"
+        }
+      ]
+    },
+    {
+      "captured": 0,
+      "source": "backend/tests/test_ltspice_netlist.py",
+      "status": "complete",
+      "unresolved": []
+    },
+    {
+      "captured": 1,
+      "source": "backend/tests/test_pin_geometry.py",
+      "status": "partial",
+      "unresolved": [
+        {
+          "expression": "circuit",
+          "line": 638,
+          "reason": "Dynamic name: circuit"
+        },
+        {
+          "expression": "load_circuit(filename)",
+          "line": 669,
+          "reason": "Dynamic expression: load_circuit(filename)"
+        },
+        {
+          "expression": "load_circuit('common_emitter_amplifier.json')",
+          "line": 676,
+          "reason": "Dynamic expression: load_circuit('common_emitter_amplifier.json')"
+        },
+        {
+          "expression": "load_circuit(filename)",
+          "line": 685,
+          "reason": "Dynamic expression: load_circuit(filename)"
+        },
+        {
+          "expression": "load_circuit(path.name)",
+          "line": 695,
+          "reason": "Dynamic expression: load_circuit(path.name)"
+        },
+        {
+          "expression": "circuit",
+          "line": 706,
+          "reason": "Dynamic name: circuit"
+        },
+        {
+          "expression": "load_circuit(path.name)",
+          "line": 726,
+          "reason": "Dynamic expression: load_circuit(path.name)"
+        },
+        {
+          "expression": "circuit",
+          "line": 737,
+          "reason": "Dynamic name: circuit"
+        },
+        {
+          "expression": "circuit",
+          "line": 738,
+          "reason": "Dynamic name: circuit"
+        },
+        {
+          "expression": "circuit",
+          "line": 761,
+          "reason": "Dynamic name: circuit"
+        },
+        {
+          "expression": "circuit",
+          "line": 765,
+          "reason": "Dynamic name: circuit"
+        },
+        {
+          "expression": "load_circuit('common_emitter_amplifier.json')",
+          "line": 768,
+          "reason": "Dynamic expression: load_circuit('common_emitter_amplifier.json')"
+        },
+        {
+          "expression": "circuit",
+          "line": 773,
+          "reason": "Dynamic name: circuit"
+        }
+      ]
+    },
+    {
+      "captured": 14,
+      "source": "backend/tests/test_pipeline_regression.py",
+      "status": "partial",
+      "unresolved": [
+        {
+          "expression": "source",
+          "line": 144,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "value",
+          "line": 159,
+          "reason": "Dynamic name: value"
+        },
+        {
+          "expression": "value",
+          "line": 174,
+          "reason": "Dynamic name: value"
+        }
+      ]
+    },
+    {
+      "captured": 6,
+      "source": "backend/tests/test_regression_validation.py",
+      "status": "complete",
+      "unresolved": []
+    },
+    {
+      "captured": 0,
+      "source": "backend/tests/test_routing.py",
+      "status": "partial",
+      "unresolved": [
+        {
+          "expression": "placed_resistors({'R1': (0, 0)}, [('signal', 'R1.1')])",
+          "line": 220,
+          "reason": "Dynamic expression: {ref: {'type': 'resistor', '_ltspice_anchor': point, '_ltspice_rotation': 'R0'} for ref, point in pl"
+        },
+        {
+          "expression": "placed_resistors({'R1': (0, 0)}, [('signal', 'R1.1')])",
+          "line": 243,
+          "reason": "Dynamic expression: {ref: {'type': 'resistor', '_ltspice_anchor': point, '_ltspice_rotation': 'R0'} for ref, point in pl"
+        },
+        {
+          "expression": "model",
+          "line": 286,
+          "reason": "Dynamic name: model"
+        },
+        {
+          "expression": "detour_fixture(needs_search=False)",
+          "line": 322,
+          "reason": "Dynamic expression: {ref: {'type': 'resistor', '_ltspice_anchor': point, '_ltspice_rotation': 'R0'} for ref, point in pl"
+        },
+        {
+          "expression": "detour_fixture(needs_search=True)",
+          "line": 330,
+          "reason": "Dynamic expression: {ref: {'type': 'resistor', '_ltspice_anchor': point, '_ltspice_rotation': 'R0'} for ref, point in pl"
+        },
+        {
+          "expression": "detour_fixture(needs_search=True)",
+          "line": 346,
+          "reason": "Dynamic expression: {ref: {'type': 'resistor', '_ltspice_anchor': point, '_ltspice_rotation': 'R0'} for ref, point in pl"
+        },
+        {
+          "expression": "detour_fixture(needs_search=False)",
+          "line": 372,
+          "reason": "Dynamic expression: {ref: {'type': 'resistor', '_ltspice_anchor': point, '_ltspice_rotation': 'R0'} for ref, point in pl"
+        },
+        {
+          "expression": "detour_fixture(needs_search=True)",
+          "line": 379,
+          "reason": "Dynamic expression: {ref: {'type': 'resistor', '_ltspice_anchor': point, '_ltspice_rotation': 'R0'} for ref, point in pl"
+        },
+        {
+          "expression": "detour_fixture(needs_search=True)",
+          "line": 395,
+          "reason": "Dynamic expression: {ref: {'type': 'resistor', '_ltspice_anchor': point, '_ltspice_rotation': 'R0'} for ref, point in pl"
+        },
+        {
+          "expression": "reordered_source",
+          "line": 404,
+          "reason": "Dynamic name: reordered_source"
+        }
+      ]
+    },
+    {
+      "captured": 0,
+      "source": "backend/tests/test_routing_fixtures.py",
+      "status": "partial",
+      "unresolved": [
+        {
+          "expression": "source",
+          "line": 102,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "model",
+          "line": 104,
+          "reason": "Dynamic name: model"
+        },
+        {
+          "expression": "source",
+          "line": 118,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 122,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 131,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 133,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "load_fixture(filename)",
+          "line": 134,
+          "reason": "Dynamic expression: load_fixture(filename)"
+        },
+        {
+          "expression": "source",
+          "line": 139,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 140,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "model",
+          "line": 145,
+          "reason": "Dynamic name: model"
+        },
+        {
+          "expression": "source",
+          "line": 224,
+          "reason": "Dynamic name: source"
+        }
+      ]
+    },
+    {
+      "captured": 0,
+      "source": "backend/tests/test_routing_integration.py",
+      "status": "partial",
+      "unresolved": [
+        {
+          "expression": "source",
+          "line": 58,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 60,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "model",
+          "line": 65,
+          "reason": "Dynamic name: model"
+        },
+        {
+          "expression": "source",
+          "line": 87,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 108,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 118,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 121,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 126,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 130,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 141,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 145,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 148,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 153,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 161,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 169,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 177,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 184,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 197,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 205,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 209,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 215,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 222,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 226,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 230,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 238,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 244,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 252,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 259,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 287,
+          "reason": "Dynamic name: source"
+        },
+        {
+          "expression": "source",
+          "line": 305,
+          "reason": "Dynamic name: source"
+        }
+      ]
+    },
+    {
+      "captured": 0,
+      "source": "backend/tests/test_routing_metrics.py",
+      "status": "complete",
+      "unresolved": []
+    },
+    {
+      "captured": 0,
+      "source": "backend/tests/test_verification_command.py",
+      "status": "complete",
+      "unresolved": []
+    },
+    {
+      "capture_errors": [],
+      "captured": 2,
+      "returncode": 0,
+      "source": "frontend/tests/circuitFlowAdapter.test.cjs",
+      "status": "complete"
+    },
+    {
+      "capture_errors": [],
+      "captured": 39,
+      "returncode": 0,
+      "source": "frontend/tests/connectivity.test.cjs",
+      "status": "complete"
+    },
+    {
+      "capture_errors": [],
+      "captured": 41,
+      "returncode": 1,
+      "source": "frontend/tests/regressionBridge.test.cjs",
+      "status": "tests_failed"
+    }
+  ],
+  "inventory": "inventory.json",
+  "inventory_sha256": "41165afb70d0f8ffe6e6721d0454bcbb9212e6abb4c47a1cb1bf3b2b2595134b",
+  "limitations": [
+    "All repository source paths are inventoried; unresolved Python expressions are retained, not claimed as runnable circuits.",
+    "Frontend test inputs are observed at the real compiler boundary; post-compile mutation tests are evidence, not additional source circuits.",
+    "Counts of pins/nets and support/validation are unknown until the actual compiler runs.",
+    "Content-identical inputs are deduplicated without removing provenance; artifacts/dependencies are never promoted to circuits."
+  ],
+  "schema_version": 1,
+  "summary": {
+    "evidence_sources": 637,
+    "repository_cases": 149,
+    "synthetic_cases": 12,
+    "total_cases": 161
+  }
+}

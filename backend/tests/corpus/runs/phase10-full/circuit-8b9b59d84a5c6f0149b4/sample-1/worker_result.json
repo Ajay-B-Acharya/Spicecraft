@@ -1,0 +1,91 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "021534a017611da51ee3b72331cde137a373c80567f42b3b50aa74904fdd62fd",
+  "compiled_sha256": "27d2405a0ffb1c15c0cdf4cde6b0337a9e7748ca0cce98d5984572d6faf2011a",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 2,
+      "mapped_components": 2,
+      "nets": 2,
+      "pins": 4
+    },
+    "exported": {
+      "components": 2,
+      "flags": 1,
+      "pins": 4,
+      "wires": 2
+    },
+    "input": {
+      "components": 2,
+      "connections": 2,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 1,
+      "nets": 2,
+      "pins": 3,
+      "segments": 4
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin node-b.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "id": "circuit-8b9b59d84a5c6f0149b4",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 15,
+      "peak_rss_bytes": 95940608
+    }
+  },
+  "name": "regressionBridge.test.cjs:line:175",
+  "overall": "NOT_RUN",
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 1,
+    "collision_checks": 1,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 128,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 2
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 29.639899999892805,
+    "compiler_process_wall": 714.810700000271,
+    "compiler_reported": 12.717699999999923,
+    "connectivity_wall": 0.47360000007756753,
+    "export_wall": 12.549300000500807,
+    "route_wall": 1.3257999999041203,
+    "serialized_validation_wall": 0.8166999996319646
+  }
+}

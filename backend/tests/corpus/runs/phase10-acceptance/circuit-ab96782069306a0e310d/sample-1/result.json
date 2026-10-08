@@ -1,0 +1,90 @@
+{
+  "compiled_sha256": "4a32ffeaebc2fb59f122d54ec7e1d0a7baeaf48fa327d589d272a6b472f43ac2",
+  "counts": {
+    "compiled": {
+      "components": 0,
+      "connections": 0,
+      "mapped_components": 0,
+      "nets": 0,
+      "pins": 0
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 1,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Unknown component type 'unknown' on component X1.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Wire #1 references missing component X1 on its source endpoint.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component X1; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Circuit is empty: no components or connections.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "evidence_directory": "circuit-ab96782069306a0e310d/sample-1",
+  "failure_stage": "compile",
+  "failures": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Unknown component type 'unknown' on component X1.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Wire #1 references missing component X1 on its source endpoint.",
+      "severity": "error",
+      "stage": "compiler"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-ab96782069306a0e310d",
+  "implementation_sha256": "f4c25658dcec1a34f0271187fa040ae144f61b9a7b65db15d3d82dabf490dd33",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 39,
+      "peak_rss_bytes": 85020672
+    }
+  },
+  "name": "test_pipeline_regression.py:line:113",
+  "overall": "UNSUPPORTED",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "FAIL",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "unsupported",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 2557.7202000004036,
+    "compiler_reported": 17.17370000000028
+  },
+  "validation": "NOT_RUN"
+}

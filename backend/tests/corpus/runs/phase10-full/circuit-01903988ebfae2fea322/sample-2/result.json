@@ -1,0 +1,147 @@
+{
+  "compiled_sha256": "ba9280bfb64a683856f25a625fa012a30f61c4d999647c7ecbab83b0789a08c2",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 1,
+      "mapped_components": 2,
+      "nets": 1,
+      "pins": 4
+    },
+    "exported": null,
+    "input": {
+      "components": 2,
+      "connections": 1,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Connection #1 is a self-connection to the same endpoint.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R1; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R2; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Net N1 (PWR) has no connected component pins.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R1 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R2 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "R1",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R1",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "backend_id": "R2",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R2",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    }
+  ],
+  "evidence_directory": "circuit-01903988ebfae2fea322/sample-2",
+  "failure_stage": "compile",
+  "failures": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Connection #1 is a self-connection to the same endpoint.",
+      "severity": "error",
+      "stage": "compiler"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-01903988ebfae2fea322",
+  "implementation_changed_sources": [
+    "frontend/lib/circuit/layout/LayoutDebugger.ts"
+  ],
+  "implementation_sha256": "bf722dede313a6e22f0801255137ad1ffb17cc9806982640e64ee765d5daca8c",
+  "implementation_stable": false,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 7,
+      "peak_rss_bytes": 95444992
+    }
+  },
+  "name": "test_connectivity.py:line:273",
+  "overall": "INVALID",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "FAIL",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "invalid_or_unknown",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 1056.9284999992306,
+    "compiler_reported": 10.81740000000002
+  },
+  "validation": "NOT_RUN"
+}

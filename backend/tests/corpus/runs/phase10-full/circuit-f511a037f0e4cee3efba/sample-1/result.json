@@ -1,0 +1,72 @@
+{
+  "compiled_sha256": "69e10bd97e47a224dcd00759e5ee6e50b00f907f6ef83e0eadcecda57ac971ff",
+  "counts": {
+    "compiled": {
+      "components": 0,
+      "connections": 0,
+      "mapped_components": 0,
+      "nets": 0,
+      "pins": 0
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Missing component type for component U1.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Circuit is empty: no components or connections.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "evidence_directory": "circuit-f511a037f0e4cee3efba/sample-1",
+  "failure_stage": "compile",
+  "failures": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Missing component type for component U1.",
+      "severity": "error",
+      "stage": "compiler"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-f511a037f0e4cee3efba",
+  "implementation_sha256": "60f44913f21d569de19d97b10353d0b22f51e03f04db27f9c38204ed865fda52",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 21,
+      "peak_rss_bytes": 86487040
+    }
+  },
+  "name": "Test",
+  "overall": "INVALID",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "FAIL",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "invalid_or_unknown",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 715.1251000004777,
+    "compiler_reported": 5.715000000000032
+  },
+  "validation": "NOT_RUN"
+}

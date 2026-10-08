@@ -1,0 +1,34 @@
+{
+  "components": [
+    {
+      "reference": "R1",
+      "type": "resistor"
+    },
+    {
+      "reference": "R2",
+      "type": "resistor"
+    },
+    {
+      "reference": "R3",
+      "type": "resistor"
+    },
+    {
+      "reference": "R4",
+      "type": "resistor"
+    }
+  ],
+  "wires": [
+    {
+      "from": "control",
+      "to": "R4.1"
+    },
+    {
+      "from": "signal",
+      "to": "R1.1"
+    },
+    {
+      "from": "signal",
+      "to": "R2.1"
+    }
+  ]
+}

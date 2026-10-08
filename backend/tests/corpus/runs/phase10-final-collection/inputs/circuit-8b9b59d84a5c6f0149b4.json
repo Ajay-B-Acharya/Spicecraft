@@ -1,0 +1,26 @@
+{
+  "components": [
+    {
+      "id": "node-a",
+      "reference": "R1",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "node-b",
+      "reference": "R2",
+      "type": "resistor",
+      "value": "1k"
+    }
+  ],
+  "wires": [
+    {
+      "from": "node-a.2",
+      "to": "R2.1"
+    },
+    {
+      "from": "R1.1",
+      "to": "ground"
+    }
+  ]
+}

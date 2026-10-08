@@ -1,0 +1,184 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "9afc4437084d26b33ea83b216f968ed5efed000b27fb9e50ea34d17afb100983",
+  "compiled_sha256": "9ed0bfaafdb73f4a7fa5444e19248f0e63e4d7f06a4da1466419a6367276df27",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 2,
+      "mapped_components": 2,
+      "nets": 2,
+      "pins": 4
+    },
+    "exported": {
+      "components": 2,
+      "flags": 2,
+      "pins": 4,
+      "wires": 2
+    },
+    "input": {
+      "components": 2,
+      "connections": 2,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 2,
+      "nets": 2,
+      "pins": 2,
+      "segments": 2
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R1; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R2; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "R1",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R1",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "backend_id": "R2",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R2",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    }
+  ],
+  "evidence_directory": "circuit-b47c63cdb040faf52fa1/sample-1",
+  "failure_stage": null,
+  "failures": [],
+  "hash_seed": 0,
+  "id": "circuit-b47c63cdb040faf52fa1",
+  "implementation_sha256": "f4c25658dcec1a34f0271187fa040ae144f61b9a7b65db15d3d82dabf490dd33",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 18,
+      "peak_rss_bytes": 32309248
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 35,
+      "peak_rss_bytes": 86528000
+    }
+  },
+  "name": "test_routing.py:line:476",
+  "overall": "PASS",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "small",
+    "componentCount": 2,
+    "errorCount": 0,
+    "exportBytes": 343,
+    "iterations": {
+      "export": 0,
+      "final_validation": 2,
+      "input_validation": 0,
+      "layout": 6,
+      "net_building": 8,
+      "optimization": 8,
+      "pin_resolution": 0,
+      "post_export_validation": 0,
+      "routing": 27,
+      "routing_validation": 4,
+      "validation": 2
+    },
+    "netCount": 2,
+    "pinCount": 4,
+    "stagesMs": {
+      "export": 10.298,
+      "final_validation": 0.415,
+      "input_validation": 1.152,
+      "layout": 2.56,
+      "net_building": 0.246,
+      "optimization": 0.198,
+      "pin_resolution": 0.233,
+      "post_export_validation": 2.486,
+      "routing": 11.672,
+      "routing_validation": 0.665,
+      "validation": 0.135
+    },
+    "totalTimeMs": 30.19,
+    "warningCount": 0,
+    "wireCount": 2
+  },
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 0,
+    "collision_checks": 0,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 64,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 2
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 853.4836999997424,
+    "backend_worker_wall": 75.07259999965754,
+    "compiler_process_wall": 1648.761999999806,
+    "compiler_reported": 33.2197000000001,
+    "connectivity_wall": 2.583299999969313,
+    "export_wall": 30.54690000044502,
+    "route_wall": 2.1091000007800176,
+    "serialized_validation_wall": 2.40620000022318
+  },
+  "validation": "PASS"
+}

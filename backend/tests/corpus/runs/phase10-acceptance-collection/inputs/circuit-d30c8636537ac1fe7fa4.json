@@ -1,0 +1,44 @@
+{
+  "components": [
+    {
+      "id": "part",
+      "reference": "Q1",
+      "type": "transistor",
+      "value": "BC547"
+    },
+    {
+      "id": "R1",
+      "reference": "R1",
+      "type": "resistor",
+      "value": "1k"
+    }
+  ],
+  "wires": [
+    {
+      "from": {
+        "componentId": "part",
+        "name": "descriptive only",
+        "pinId": "base"
+      },
+      "to": {
+        "componentId": "R1",
+        "pinId": "right"
+      }
+    },
+    {
+      "source": "part",
+      "sourceHandle": "3",
+      "target": "R1",
+      "targetHandle": "1"
+    },
+    {
+      "from": {
+        "componentId": "part",
+        "pinId": "collector"
+      },
+      "to": {
+        "label": "out"
+      }
+    }
+  ]
+}

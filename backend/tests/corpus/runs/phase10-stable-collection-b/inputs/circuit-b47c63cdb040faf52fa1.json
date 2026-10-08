@@ -1,0 +1,22 @@
+{
+  "components": [
+    {
+      "reference": "R1",
+      "type": "resistor"
+    },
+    {
+      "reference": "R2",
+      "type": "resistor"
+    }
+  ],
+  "wires": [
+    {
+      "from": "one",
+      "to": "R1.1"
+    },
+    {
+      "from": "two",
+      "to": "R2.1"
+    }
+  ]
+}

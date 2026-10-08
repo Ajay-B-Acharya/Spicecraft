@@ -1,0 +1,126 @@
+{
+  "compiled_sha256": "e00bd1e1868f65950e4056426801c59f1aa1ae51624611589767fa7cd65cc111",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 0,
+      "mapped_components": 2,
+      "nets": 0,
+      "pins": 4
+    },
+    "exported": null,
+    "input": {
+      "components": 2,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Ambiguous component alias/ID collision: R1.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component a is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin a.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin a.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component b is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin b.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin b.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "R1",
+      "code": "INSTANCE_NAME_COLLISION",
+      "compiled_id": "b",
+      "generated_by_compiler": false,
+      "message": "Backend references R1 and R1 collide in case-insensitive LTspice.",
+      "severity": "error",
+      "source_id": "b",
+      "source_index": 1,
+      "source_reference": "R1",
+      "stage": "bridge"
+    }
+  ],
+  "evidence_directory": "circuit-0993c36910a455790abf/sample-1",
+  "failure_stage": "compile",
+  "failures": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Ambiguous component alias/ID collision: R1.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "R1",
+      "code": "INSTANCE_NAME_COLLISION",
+      "compiled_id": "b",
+      "generated_by_compiler": false,
+      "message": "Backend references R1 and R1 collide in case-insensitive LTspice.",
+      "severity": "error",
+      "source_id": "b",
+      "source_index": 1,
+      "source_reference": "R1",
+      "stage": "bridge"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-0993c36910a455790abf",
+  "implementation_sha256": "ba9d6cd0e9c5582bbd367853e984e89989394d78021eb7cd648a485d76140adb",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 21,
+      "peak_rss_bytes": 89235456
+    }
+  },
+  "name": "connectivity.test.cjs:line:91",
+  "overall": "INVALID",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "FAIL",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "invalid_or_unknown",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 993.5205000001588,
+    "compiler_reported": 13.545799999999986
+  },
+  "validation": "NOT_RUN"
+}

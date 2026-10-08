@@ -234,7 +234,7 @@ function DashboardSidebar() {
 
 function DashboardTopbar() {
   const router = useRouter();
-  const [user, setUser] = useState<User | null>(auth.currentUser);
+  const [user, setUser] = useState<User | null>(null);
   const [fallbackUser, setFallbackUser] = useState<{
     name?: string;
     email?: string;

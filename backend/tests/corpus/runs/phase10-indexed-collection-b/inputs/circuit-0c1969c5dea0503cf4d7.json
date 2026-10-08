@@ -1,0 +1,15 @@
+{
+  "components": [
+    {
+      "reference": "R1",
+      "type": "resistor"
+    }
+  ],
+  "name": "Blocked circuit",
+  "wires": [
+    {
+      "from": "R1.1",
+      "to": "VIN"
+    }
+  ]
+}

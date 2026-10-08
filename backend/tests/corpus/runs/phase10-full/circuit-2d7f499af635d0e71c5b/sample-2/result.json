@@ -1,0 +1,131 @@
+{
+  "compiled_sha256": "936035a1d1d6b53897239b9bcf46229bad79fe6f35042b37a7fa099257e38709",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 3,
+      "mapped_components": 2,
+      "nets": 2,
+      "pins": 4
+    },
+    "exported": null,
+    "input": {
+      "components": 2,
+      "connections": 3,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R1; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R2; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "R1",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R1",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "backend_id": "R2",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R2",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "actual": null,
+      "circuit": "Circuit",
+      "code": "NET_LABEL_COLLISION",
+      "component": null,
+      "expected": null,
+      "message": "Distinct source nets have case-insensitively identical LTspice FLAG names",
+      "net": "bias / BIAS",
+      "pin": null,
+      "pipeline_stage": "validation",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "evidence_directory": "circuit-2d7f499af635d0e71c5b/sample-2",
+  "failure_stage": "export",
+  "failures": [
+    {
+      "actual": null,
+      "circuit": "Circuit",
+      "code": "NET_LABEL_COLLISION",
+      "component": null,
+      "expected": null,
+      "message": "Distinct source nets have case-insensitively identical LTspice FLAG names",
+      "net": "bias / BIAS",
+      "pin": null,
+      "pipeline_stage": "validation",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-2d7f499af635d0e71c5b",
+  "implementation_sha256": "d003d69974f4aa70a8b0ac0e2f02b85242218c1cd25a90bf997beeaffc4b5635",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 8,
+      "peak_rss_bytes": 31842304
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 11,
+      "peak_rss_bytes": 93675520
+    }
+  },
+  "name": "test_connectivity.py:line:329",
+  "overall": "FAIL",
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "FAIL",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 347.49790000023495,
+    "backend_worker_wall": 5.516700000043784,
+    "compiler_process_wall": 816.2171000003582,
+    "compiler_reported": 10.291299999999978,
+    "connectivity_wall": 0.35040000057051657,
+    "export_wall": 0.7114999998520943
+  },
+  "validation": "NOT_RUN"
+}

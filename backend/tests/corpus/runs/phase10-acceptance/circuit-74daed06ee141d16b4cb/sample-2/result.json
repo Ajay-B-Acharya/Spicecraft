@@ -1,0 +1,155 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "2e5e0ae35d9f9626afb6d9f9d68939b905691c113163cac1a7fbb84c4951001f",
+  "compiled_sha256": "4c7f7f070334049eda646c21d14fd31bb47da5b3f5d64ac989bf8fb15f7e1efc",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 0,
+      "mapped_components": 2,
+      "nets": 0,
+      "pins": 4
+    },
+    "exported": {
+      "components": 2,
+      "flags": 0,
+      "pins": 4,
+      "wires": 0
+    },
+    "input": {
+      "components": 2,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R1 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R2 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "evidence_directory": "circuit-74daed06ee141d16b4cb/sample-2",
+  "failure_stage": null,
+  "failures": [],
+  "hash_seed": 1,
+  "id": "circuit-74daed06ee141d16b4cb",
+  "implementation_sha256": "f4c25658dcec1a34f0271187fa040ae144f61b9a7b65db15d3d82dabf490dd33",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 15,
+      "peak_rss_bytes": 32100352
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 32,
+      "peak_rss_bytes": 84746240
+    }
+  },
+  "name": "Test",
+  "overall": "PASS",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "small",
+    "componentCount": 2,
+    "errorCount": 0,
+    "exportBytes": 268,
+    "iterations": {
+      "export": 0,
+      "final_validation": 0,
+      "input_validation": 0,
+      "layout": 6,
+      "net_building": 2,
+      "optimization": 0,
+      "pin_resolution": 0,
+      "post_export_validation": 0,
+      "routing": 0,
+      "routing_validation": 0,
+      "validation": 0
+    },
+    "netCount": 0,
+    "pinCount": 4,
+    "stagesMs": {
+      "export": 5.405,
+      "final_validation": 0.165,
+      "input_validation": 1.01,
+      "layout": 2.256,
+      "net_building": 0.119,
+      "optimization": 0.025,
+      "pin_resolution": 0.195,
+      "post_export_validation": 3.079,
+      "routing": 0.034,
+      "routing_validation": 0.182,
+      "validation": 0.077
+    },
+    "totalTimeMs": 12.677,
+    "warningCount": 0,
+    "wireCount": 0
+  },
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "length": 0,
+    "segments": 0
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "NOT_REQUIRED",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 678.8375999994969,
+    "backend_worker_wall": 40.02970000055939,
+    "compiler_process_wall": 1610.0996999994095,
+    "compiler_reported": 15.84310000000005,
+    "connectivity_wall": 0.5131000007168041,
+    "export_wall": 13.053599999693688,
+    "serialized_validation_wall": 1.8389999995633843
+  },
+  "validation": "PASS"
+}

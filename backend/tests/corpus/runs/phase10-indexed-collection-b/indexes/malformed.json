@@ -1,0 +1,819 @@
+{
+  "cases": [
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 1,
+            "unsupported": 0
+          },
+          "coverage": "partial",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [
+            {
+              "evidence": [],
+              "reason": "no_attributable_evidence",
+              "source_index": 0
+            }
+          ],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "non_object_component",
+        "observed_input_sha256": "0115ba888b0bdb79953e12e08166d557c00b592803cf5028a0f53b18d522214d",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-0115ba888b0bdb79953e",
+      "input": "inputs/circuit-0115ba888b0bdb79953e.json",
+      "input_path": "../inputs/circuit-0115ba888b0bdb79953e.json",
+      "name": "test_connectivity.py:line:204",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:204",
+          "source": "backend/tests/test_connectivity.py",
+          "source_sha256": "2379295c3da4a13871df8fe7d14843960f7190f2c6c850126623d5c651d223ba"
+        }
+      ],
+      "sha256": "0115ba888b0bdb79953e12e08166d557c00b592803cf5028a0f53b18d522214d",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "regression",
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "unknown",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": 0,
+        "input_integrity": "match",
+        "input_structure": "empty_components",
+        "observed_input_sha256": "03b15c4e1ce43adf646283afdff137773950f23c699173d9934b2b79fdd3345c",
+        "schema_version": 1,
+        "size_class": "unknown"
+      },
+      "id": "circuit-03b15c4e1ce43adf6462",
+      "input": "inputs/circuit-03b15c4e1ce43adf6462.json",
+      "input_path": "../inputs/circuit-03b15c4e1ce43adf6462.json",
+      "name": "test_production.py:line:31",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:31",
+          "source": "backend/tests/test_production.py",
+          "source_sha256": "ae760793a7b8c20034a301c87dd977e7bd562d4f0dc520d1080503618a72d447"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:34",
+          "source": "backend/tests/test_regression_validation.py",
+          "source_sha256": "f5b63db318deafc4afc14ab90965cfd1130623b752aba10b3d73d3be6b257ac1"
+        }
+      ],
+      "sha256": "03b15c4e1ce43adf646283afdff137773950f23c699173d9934b2b79fdd3345c",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "regression",
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "unknown",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": null,
+        "input_integrity": "match",
+        "input_structure": "missing_or_non_array_components",
+        "observed_input_sha256": "2470040b96f1d243e839369b3a22e6fea05916099cd8fb43ee91f4f0bedce60f",
+        "schema_version": 1,
+        "size_class": "unknown"
+      },
+      "id": "circuit-2470040b96f1d243e839",
+      "input": "inputs/circuit-2470040b96f1d243e839.json",
+      "input_path": "../inputs/circuit-2470040b96f1d243e839.json",
+      "name": "connectivity.test.cjs:line:156",
+      "origins": [
+        {
+          "kind": "frontend_data_expression",
+          "locator": "line:156",
+          "source": "frontend/tests/connectivity.test.cjs",
+          "source_sha256": "a06dc944b5889ee008c5a63be217d1f4a6e3d7e26344c952a3ca37d4cefebcd9"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:156",
+          "source": "frontend/tests/connectivity.test.cjs",
+          "source_sha256": "a06dc944b5889ee008c5a63be217d1f4a6e3d7e26344c952a3ca37d4cefebcd9"
+        }
+      ],
+      "sha256": "2470040b96f1d243e839369b3a22e6fea05916099cd8fb43ee91f4f0bedce60f",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "regression",
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "unknown",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": null,
+        "input_integrity": "match",
+        "input_structure": "missing_or_non_array_components",
+        "observed_input_sha256": "440240615dcf4888bfeeae3badd3e629ff164fecab3280eb39f8dad5776271bf",
+        "schema_version": 1,
+        "size_class": "unknown"
+      },
+      "id": "circuit-440240615dcf4888bfee",
+      "input": "inputs/circuit-440240615dcf4888bfee.json",
+      "input_path": "../inputs/circuit-440240615dcf4888bfee.json",
+      "name": "test_connectivity.py:line:204",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:204",
+          "source": "backend/tests/test_connectivity.py",
+          "source_sha256": "2379295c3da4a13871df8fe7d14843960f7190f2c6c850126623d5c651d223ba"
+        }
+      ],
+      "sha256": "440240615dcf4888bfeeae3badd3e629ff164fecab3280eb39f8dad5776271bf",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "regression",
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "unknown",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": null,
+        "input_integrity": "match",
+        "input_structure": "missing_or_non_array_components",
+        "observed_input_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "schema_version": 1,
+        "size_class": "unknown"
+      },
+      "id": "circuit-44136fa355b3678a1146",
+      "input": "inputs/circuit-44136fa355b3678a1146.json",
+      "input_path": "../inputs/circuit-44136fa355b3678a1146.json",
+      "name": "connectivity.test.cjs:line:158",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:158",
+          "source": "frontend/tests/connectivity.test.cjs",
+          "source_sha256": "a06dc944b5889ee008c5a63be217d1f4a6e3d7e26344c952a3ca37d4cefebcd9"
+        }
+      ],
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "regression",
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "unknown",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": null,
+        "input_integrity": "match",
+        "input_structure": "non_object_input",
+        "observed_input_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "schema_version": 1,
+        "size_class": "unknown"
+      },
+      "id": "circuit-4f53cda18c2baa0c0354",
+      "input": "inputs/circuit-4f53cda18c2baa0c0354.json",
+      "input_path": "../inputs/circuit-4f53cda18c2baa0c0354.json",
+      "name": "test_connectivity.py:line:204",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:204",
+          "source": "backend/tests/test_connectivity.py",
+          "source_sha256": "2379295c3da4a13871df8fe7d14843960f7190f2c6c850126623d5c651d223ba"
+        }
+      ],
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "unknown",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": null,
+        "input_integrity": "match",
+        "input_structure": "missing_or_non_array_components",
+        "observed_input_sha256": "594e1339ccaadcba8920ec76d1d1acca4ad7b4a8a7ae10e0fec4a8eb009c6fc7",
+        "schema_version": 1,
+        "size_class": "unknown"
+      },
+      "id": "circuit-594e1339ccaadcba8920",
+      "input": "inputs/circuit-594e1339ccaadcba8920.json",
+      "input_path": "../inputs/circuit-594e1339ccaadcba8920.json",
+      "name": "export_polish_report.py:line:37",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:37",
+          "source": "backend/tools/export_polish_report.py",
+          "source_sha256": "0ed8938af9975a1995a02a3f9fc379eb8269db9485b8197c2575ea8cc59a7ab7"
+        }
+      ],
+      "sha256": "594e1339ccaadcba8920ec76d1d1acca4ad7b4a8a7ae10e0fec4a8eb009c6fc7",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "regression",
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "unknown",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": null,
+        "input_integrity": "match",
+        "input_structure": "non_object_input",
+        "observed_input_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "schema_version": 1,
+        "size_class": "unknown"
+      },
+      "id": "circuit-74234e98afe7498fb5da",
+      "input": "inputs/circuit-74234e98afe7498fb5da.json",
+      "input_path": "../inputs/circuit-74234e98afe7498fb5da.json",
+      "name": "test_connectivity.py:line:204",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:154",
+          "source": "frontend/tests/connectivity.test.cjs",
+          "source_sha256": "a06dc944b5889ee008c5a63be217d1f4a6e3d7e26344c952a3ca37d4cefebcd9"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:278",
+          "source": "frontend/tests/regressionBridge.test.cjs",
+          "source_sha256": "0a9a1a0f3ca84d0af0694054623a3c2929da9445a3aa88c9ae78ca689edecb40"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:204",
+          "source": "backend/tests/test_connectivity.py",
+          "source_sha256": "2379295c3da4a13871df8fe7d14843960f7190f2c6c850126623d5c651d223ba"
+        }
+      ],
+      "sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "regression",
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "unknown",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": null,
+        "input_integrity": "match",
+        "input_structure": "invalid_json_string",
+        "observed_input_sha256": "817c1c103d58c049ece79afeafcf00bd83be01c55855cefac0be9fa74b99c6d2",
+        "schema_version": 1,
+        "size_class": "unknown"
+      },
+      "id": "circuit-817c1c103d58c049ece7",
+      "input": "inputs/circuit-817c1c103d58c049ece7.json",
+      "input_path": "../inputs/circuit-817c1c103d58c049ece7.json",
+      "name": "hardening.test.cjs:line:119",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:119",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "sha256": "817c1c103d58c049ece79afeafcf00bd83be01c55855cefac0be9fa74b99c6d2",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "regression",
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "unknown",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": null,
+        "input_integrity": "match",
+        "input_structure": "missing_or_non_array_components",
+        "observed_input_sha256": "81ec37413acabfef7e77a9efe1f5294168f8cbe60911df721f1b78660f8cb948",
+        "schema_version": 1,
+        "size_class": "unknown"
+      },
+      "id": "circuit-81ec37413acabfef7e77",
+      "input": "inputs/circuit-81ec37413acabfef7e77.json",
+      "input_path": "../inputs/circuit-81ec37413acabfef7e77.json",
+      "name": "hardening.test.cjs:line:121",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:121",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "sha256": "81ec37413acabfef7e77a9efe1f5294168f8cbe60911df721f1b78660f8cb948",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "regression",
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "unknown",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": null,
+        "input_integrity": "match",
+        "input_structure": "missing_or_non_array_components",
+        "observed_input_sha256": "8ca85f4323d18f614b38a79e6408d0c486d867236ab14d9fdfa7a21031f8b699",
+        "schema_version": 1,
+        "size_class": "unknown"
+      },
+      "id": "circuit-8ca85f4323d18f614b38",
+      "input": "inputs/circuit-8ca85f4323d18f614b38.json",
+      "input_path": "../inputs/circuit-8ca85f4323d18f614b38.json",
+      "name": "regressionBridge.test.cjs:line:278",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:278",
+          "source": "frontend/tests/regressionBridge.test.cjs",
+          "source_sha256": "0a9a1a0f3ca84d0af0694054623a3c2929da9445a3aa88c9ae78ca689edecb40"
+        }
+      ],
+      "sha256": "8ca85f4323d18f614b38a79e6408d0c486d867236ab14d9fdfa7a21031f8b699",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 1,
+            "unsupported": 0
+          },
+          "coverage": "partial",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [
+            {
+              "evidence": [],
+              "reason": "no_attributable_evidence",
+              "source_index": 0
+            }
+          ],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "non_object_component",
+        "observed_input_sha256": "ad9a8de607e94d599f38bb13308a4f9eef12be39b812188c90fb33f62820b161",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-ad9a8de607e94d599f38",
+      "input": "inputs/circuit-ad9a8de607e94d599f38.json",
+      "input_path": "../inputs/circuit-ad9a8de607e94d599f38.json",
+      "name": "connectivity.test.cjs:line:155",
+      "origins": [
+        {
+          "kind": "frontend_data_expression",
+          "locator": "line:155",
+          "source": "frontend/tests/connectivity.test.cjs",
+          "source_sha256": "a06dc944b5889ee008c5a63be217d1f4a6e3d7e26344c952a3ca37d4cefebcd9"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:155",
+          "source": "frontend/tests/connectivity.test.cjs",
+          "source_sha256": "a06dc944b5889ee008c5a63be217d1f4a6e3d7e26344c952a3ca37d4cefebcd9"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:278",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "sha256": "ad9a8de607e94d599f38bb13308a4f9eef12be39b812188c90fb33f62820b161",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "regression",
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "unknown",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": null,
+        "input_integrity": "match",
+        "input_structure": "non_object_input",
+        "observed_input_sha256": "b3283bf184bb082f364b8537776bc6b15fce2ff9f9acb3fb11ae87da394bfd4b",
+        "schema_version": 1,
+        "size_class": "unknown"
+      },
+      "id": "circuit-b3283bf184bb082f364b",
+      "input": "inputs/circuit-b3283bf184bb082f364b.json",
+      "input_path": "../inputs/circuit-b3283bf184bb082f364b.json",
+      "name": "hardening.test.cjs:line:119",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:119",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "sha256": "b3283bf184bb082f364b8537776bc6b15fce2ff9f9acb3fb11ae87da394bfd4b",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "regression",
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "unknown",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": null,
+        "input_integrity": "match",
+        "input_structure": "invalid_json_string",
+        "observed_input_sha256": "b5e3053c0dfc519c105696c701a570f77654a5da4d6811cd3ac7567b023b300a",
+        "schema_version": 1,
+        "size_class": "unknown"
+      },
+      "id": "circuit-b5e3053c0dfc519c1056",
+      "input": "inputs/circuit-b5e3053c0dfc519c1056.json",
+      "input_path": "../inputs/circuit-b5e3053c0dfc519c1056.json",
+      "name": "hardening.test.cjs:line:119",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:119",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "sha256": "b5e3053c0dfc519c105696c701a570f77654a5da4d6811cd3ac7567b023b300a",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "regression",
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "unknown",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": 0,
+        "input_integrity": "match",
+        "input_structure": "empty_components",
+        "observed_input_sha256": "d10ae1682ca9cbe684566e79066e2293c76c8607429e60866a7bbd60c017e315",
+        "schema_version": 1,
+        "size_class": "unknown"
+      },
+      "id": "circuit-d10ae1682ca9cbe68456",
+      "input": "inputs/circuit-d10ae1682ca9cbe68456.json",
+      "input_path": "../inputs/circuit-d10ae1682ca9cbe68456.json",
+      "name": "connectivity.test.cjs:line:157",
+      "origins": [
+        {
+          "kind": "frontend_data_expression",
+          "locator": "line:157",
+          "source": "frontend/tests/connectivity.test.cjs",
+          "source_sha256": "a06dc944b5889ee008c5a63be217d1f4a6e3d7e26344c952a3ca37d4cefebcd9"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:157",
+          "source": "frontend/tests/connectivity.test.cjs",
+          "source_sha256": "a06dc944b5889ee008c5a63be217d1f4a6e3d7e26344c952a3ca37d4cefebcd9"
+        }
+      ],
+      "sha256": "d10ae1682ca9cbe684566e79066e2293c76c8607429e60866a7bbd60c017e315",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "regression",
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "unknown",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": null,
+        "input_integrity": "match",
+        "input_structure": "invalid_json_string",
+        "observed_input_sha256": "ead1393f52f66e57cb4c5b7b1f4cadef83d8869de74f30b84a2fbc490dc35215",
+        "schema_version": 1,
+        "size_class": "unknown"
+      },
+      "id": "circuit-ead1393f52f66e57cb4c",
+      "input": "inputs/circuit-ead1393f52f66e57cb4c.json",
+      "input_path": "../inputs/circuit-ead1393f52f66e57cb4c.json",
+      "name": "hardening.test.cjs:line:119",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:119",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "sha256": "ead1393f52f66e57cb4c5b7b1f4cadef83d8869de74f30b84a2fbc490dc35215",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "regression",
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "unknown",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": null,
+        "input_integrity": "match",
+        "input_structure": "missing_or_non_array_components",
+        "observed_input_sha256": "ed73c3594d605fdd74069fae4b889ce07a0b52393fe7e725ae9a590a552fd25e",
+        "schema_version": 1,
+        "size_class": "unknown"
+      },
+      "id": "circuit-ed73c3594d605fdd7406",
+      "input": "inputs/circuit-ed73c3594d605fdd7406.json",
+      "input_path": "../inputs/circuit-ed73c3594d605fdd7406.json",
+      "name": "test_connectivity.py:line:204",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:204",
+          "source": "backend/tests/test_connectivity.py",
+          "source_sha256": "2379295c3da4a13871df8fe7d14843960f7190f2c6c850126623d5c651d223ba"
+        }
+      ],
+      "sha256": "ed73c3594d605fdd74069fae4b889ce07a0b52393fe7e725ae9a590a552fd25e",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "regression",
+          "malformed"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "unknown",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": null,
+        "input_integrity": "match",
+        "input_structure": "missing_or_non_array_components",
+        "observed_input_sha256": "fb420c6210c600c96e2daea9f8046cb23e994bb0720a40fecd1934ac9b8cff28",
+        "schema_version": 1,
+        "size_class": "unknown"
+      },
+      "id": "circuit-fb420c6210c600c96e2d",
+      "input": "inputs/circuit-fb420c6210c600c96e2d.json",
+      "input_path": "../inputs/circuit-fb420c6210c600c96e2d.json",
+      "name": "test_connectivity.py:line:204",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:204",
+          "source": "backend/tests/test_connectivity.py",
+          "source_sha256": "2379295c3da4a13871df8fe7d14843960f7190f2c6c850126623d5c651d223ba"
+        }
+      ],
+      "sha256": "fb420c6210c600c96e2daea9f8046cb23e994bb0720a40fecd1934ac9b8cff28",
+      "synthetic": false
+    }
+  ],
+  "category": "malformed",
+  "collection_root": "..",
+  "count": 18,
+  "schema_version": 1
+}

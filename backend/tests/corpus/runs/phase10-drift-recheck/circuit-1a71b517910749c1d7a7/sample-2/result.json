@@ -1,0 +1,102 @@
+{
+  "compiled_sha256": "abe559688a746c7526ad23e1d4ae50e5db2a12b150ba4dffc771bc35e9378498",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 0,
+      "mapped_components": 2,
+      "nets": 0,
+      "pins": 4
+    },
+    "exported": null,
+    "input": {
+      "components": 2,
+      "connections": 1,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Wire #1 has contradictory or invalid pin fields for R1 on its source endpoint.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R1 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R2 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "evidence_directory": "circuit-1a71b517910749c1d7a7/sample-2",
+  "failure_stage": "compile",
+  "failures": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Wire #1 has contradictory or invalid pin fields for R1 on its source endpoint.",
+      "severity": "error",
+      "stage": "compiler"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-1a71b517910749c1d7a7",
+  "implementation_sha256": "3682277e9bde63e6f9f4ecc043473f501849f45992ed39f5badd7da1c56141c6",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 17,
+      "peak_rss_bytes": 85221376
+    }
+  },
+  "name": "connectivity.test.cjs:line:81",
+  "overall": "INVALID",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "FAIL",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "invalid_or_unknown",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 550.3644999989774,
+    "compiler_reported": 8.217299999999966
+  },
+  "validation": "NOT_RUN"
+}

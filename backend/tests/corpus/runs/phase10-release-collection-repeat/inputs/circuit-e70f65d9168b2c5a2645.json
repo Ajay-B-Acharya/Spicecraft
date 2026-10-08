@@ -1,0 +1,26 @@
+{
+  "components": [
+    {
+      "reference": "R1",
+      "type": "resistor"
+    },
+    {
+      "reference": "R2",
+      "type": "resistor"
+    }
+  ],
+  "wires": [
+    {
+      "from": "R2.2",
+      "to": "GND"
+    },
+    {
+      "from": "VIN",
+      "to": "R1.1"
+    },
+    {
+      "from": "R1.2",
+      "to": "R2.1"
+    }
+  ]
+}

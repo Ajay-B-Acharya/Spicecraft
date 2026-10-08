@@ -1,4 +1,6 @@
 import { api } from './api';
+import { ApiError } from './apiError';
+import { CircuitCompiler } from './circuit/engine/CircuitCompiler';
 
 export interface CircuitNode {
   [key: string]: unknown;
@@ -11,8 +13,8 @@ export interface CircuitComponent extends CircuitNode {
 }
 
 export interface CircuitWire extends CircuitNode {
-  source: string;
-  destination: string;
+  source?: unknown;
+  destination?: unknown;
 }
 
 export interface Circuit {
@@ -40,11 +42,7 @@ function serializeComponent(component: CircuitComponent): CircuitNode {
 }
 
 function serializeWire(wire: CircuitWire): CircuitNode {
-  return {
-    ...wire,
-    from: toDisplayString(wire.from ?? wire.source, wire.source),
-    to: toDisplayString(wire.to ?? wire.destination, wire.destination),
-  };
+  return { ...wire };
 }
 
 function toDisplayString(value: unknown, fallback = '-'): string {
@@ -53,27 +51,26 @@ function toDisplayString(value: unknown, fallback = '-'): string {
   return fallback;
 }
 
-function normalizeComponent(component: CircuitNode, index: number): CircuitComponent {
+function normalizeComponent(component: CircuitNode, generatedId: string): CircuitComponent {
   return {
     ...component,
-    id: toDisplayString(component.id ?? component.reference ?? component.name, `C${index + 1}`),
+    id: generatedId,
     type: toDisplayString(component.type ?? component.component_type ?? component.kind),
     value:
       component.value === null || component.value === undefined
         ? null
-        : toDisplayString(component.value),
-  };
-}
-
-function normalizeWire(wire: CircuitNode): CircuitWire {
-  return {
-    ...wire,
-    source: toDisplayString('source' in wire ? wire.source : wire.from ?? wire.start, ''),
-    destination: toDisplayString('destination' in wire ? wire.destination : wire.target ?? wire.to ?? wire.end, ''),
+        : String(component.value),
   };
 }
 
 function normalizeCircuit(circuit: CircuitApiShape): Circuit {
+  if (!circuit || !Array.isArray(circuit.components) || !Array.isArray(circuit.wires)) {
+    throw new ApiError('The API returned an invalid circuit document; components and wires must be arrays.', 502);
+  }
+  const compiled = CircuitCompiler.compile(circuit);
+  if (!compiled.validation.valid) {
+    throw new ApiError(`The API returned an invalid circuit.\n${compiled.validation.errors.join('\n')}`, 502, compiled.validation);
+  }
   const tags = Array.isArray(circuit.tags)
     ? circuit.tags.map((tag) => toDisplayString(tag)).filter((tag) => tag !== '-')
     : [];
@@ -84,25 +81,26 @@ function normalizeCircuit(circuit: CircuitApiShape): Circuit {
     description: toDisplayString(circuit.description, 'No description available.'),
     category: toDisplayString(circuit.category, 'Uncategorized'),
     tags,
-    components: Array.isArray(circuit.components)
-      ? circuit.components.map(normalizeComponent)
-      : [],
-    wires: Array.isArray(circuit.wires) ? circuit.wires.map(normalizeWire) : [],
+    components: circuit.components.map((component, index) => normalizeComponent(component, compiled.components[index].id)),
+    wires: circuit.wires.map(wire => ({ ...wire })),
   };
 }
 
 export const circuitService = {
   async getCircuits(): Promise<Circuit[]> {
     const data = await api.get<CircuitApiShape[]>('/circuits');
+    if (!Array.isArray(data)) throw new ApiError('The API returned an invalid circuit list.', 502);
     return data.map(normalizeCircuit);
   },
 
   async getCircuit(id: string): Promise<Circuit> {
-    const data = await api.get<CircuitApiShape>(`/circuits/${id}`);
+    const data = await api.get<CircuitApiShape>(`/circuits/${encodeURIComponent(id)}`);
     return normalizeCircuit(data);
   },
 
   async updateCircuit(id: string, circuit: Circuit): Promise<Circuit> {
+    const validation = CircuitCompiler.compile(circuit).validation;
+    if (!validation.valid) throw new ApiError(`Cannot save an invalid circuit.\n${validation.errors.join('\n')}`, 422, validation);
     const payload = {
       id: circuit.id,
       name: circuit.name,
@@ -113,7 +111,7 @@ export const circuitService = {
       wires: circuit.wires.map(serializeWire),
     };
 
-    const data = await api.put<CircuitApiShape>(`/circuits/${id}`, payload);
+    const data = await api.put<CircuitApiShape>(`/circuits/${encodeURIComponent(id)}`, payload);
     return normalizeCircuit(data);
   },
 };

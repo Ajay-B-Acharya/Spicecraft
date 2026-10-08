@@ -1,0 +1,72 @@
+{
+  "compiled_sha256": "2be768b61d070a3b37f813d2d3512574a6bdd273024fc4040ea1d216df4fc063",
+  "counts": {
+    "compiled": {
+      "components": 0,
+      "connections": 0,
+      "mapped_components": 0,
+      "nets": 0,
+      "pins": 0
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Unknown component type 'constructor' on component U1.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Circuit is empty: no components or connections.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "evidence_directory": "circuit-8812fde960848c5546f2/sample-1",
+  "failure_stage": "compile",
+  "failures": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Unknown component type 'constructor' on component U1.",
+      "severity": "error",
+      "stage": "compiler"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-8812fde960848c5546f2",
+  "implementation_sha256": "f4c25658dcec1a34f0271187fa040ae144f61b9a7b65db15d3d82dabf490dd33",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 33,
+      "peak_rss_bytes": 85311488
+    }
+  },
+  "name": "Test",
+  "overall": "UNSUPPORTED",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "FAIL",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "unsupported",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 1614.196699999411,
+    "compiler_reported": 17.407200000000103
+  },
+  "validation": "NOT_RUN"
+}

@@ -1,0 +1,15 @@
+{
+  "category": "",
+  "components": [
+    {
+      "id": "U1",
+      "type": [],
+      "value": "BC547"
+    }
+  ],
+  "description": "",
+  "id": "circuit",
+  "name": "Test",
+  "tags": [],
+  "wires": []
+}

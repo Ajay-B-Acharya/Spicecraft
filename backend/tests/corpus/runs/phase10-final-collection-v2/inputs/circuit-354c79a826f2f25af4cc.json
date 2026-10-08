@@ -1,0 +1,1 @@
+"```json\n{\"id\":\"circuit\",\"name\":\"Test\",\"description\":\"\",\"category\":\"\",\"tags\":[],\"components\":[{\"id\":\"R1\",\"type\":\"resistor\",\"value\":\"1k\"},{\"id\":\"R2\",\"type\":\"resistor\",\"value\":\"1k\"}],\"wires\":[]}\n```"

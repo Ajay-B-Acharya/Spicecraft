@@ -61,7 +61,7 @@ export class ComponentLibrary {
       prefix: definition.prefix,
       rotation: options.rotation ?? definition.defaultRotation,
       mirror: options.mirror,
-      position: options.position ?? { x: 0, y: 0 },
+      position: options.position ? { ...options.position } : { x: 0, y: 0 },
       pins: clonePins(definition.pins),
     };
   }

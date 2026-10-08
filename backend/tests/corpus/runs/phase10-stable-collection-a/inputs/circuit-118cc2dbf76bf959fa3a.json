@@ -1,0 +1,26 @@
+{
+  "components": [
+    {
+      "id": "R1",
+      "reference": "R1",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "R2",
+      "reference": "R2",
+      "type": "resistor",
+      "value": "1k"
+    }
+  ],
+  "wires": [
+    {
+      "from": "VCC",
+      "to": "R1.1"
+    },
+    {
+      "from": "R1.1",
+      "to": "GND"
+    }
+  ]
+}

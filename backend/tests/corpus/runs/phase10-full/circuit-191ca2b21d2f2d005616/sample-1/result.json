@@ -1,0 +1,78 @@
+{
+  "compiled_sha256": "050c02cbc8be73b464288702e090d858703bdc1e9b1b746c040514ea8729114c",
+  "counts": {
+    "compiled": {
+      "components": 0,
+      "connections": 0,
+      "mapped_components": 0,
+      "nets": 0,
+      "pins": 0
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Unknown component type 'unsupported' on component U1.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component U1; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Circuit is empty: no components or connections.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "evidence_directory": "circuit-191ca2b21d2f2d005616/sample-1",
+  "failure_stage": "compile",
+  "failures": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Unknown component type 'unsupported' on component U1.",
+      "severity": "error",
+      "stage": "compiler"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-191ca2b21d2f2d005616",
+  "implementation_sha256": "6e84c8dcd88ed008fb4962327c03cf869c0b8ea8fce6da9d836ad3e050481339",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 7,
+      "peak_rss_bytes": 94461952
+    }
+  },
+  "name": "Test",
+  "overall": "INVALID",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "FAIL",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "invalid_or_unknown",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 947.7932999998302,
+    "compiler_reported": 3.690399999999954
+  },
+  "validation": "NOT_RUN"
+}

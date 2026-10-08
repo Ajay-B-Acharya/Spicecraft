@@ -32,9 +32,9 @@ export default function CircuitDetailPage() {
   const {
     circuit: editableCircuit,
     hasUnsavedChanges,
-    resetDraft,
     saveChanges,
     saving,
+    saveError,
     updateComponentValue,
     connectPins,
     updateComponentPosition,
@@ -74,10 +74,7 @@ export default function CircuitDetailPage() {
   }, [router]);
 
   const handleSaveChanges = async () => {
-    const updatedCircuit = await saveChanges();
-    if (updatedCircuit) {
-      resetDraft(updatedCircuit);
-    }
+    await saveChanges();
   };
 
   return (
@@ -102,6 +99,7 @@ export default function CircuitDetailPage() {
               hasUnsavedChanges={hasUnsavedChanges}
               onSave={handleSaveChanges}
               saving={saving}
+              saveError={saveError}
             />
           ) : null}
         </div>

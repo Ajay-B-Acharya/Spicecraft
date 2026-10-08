@@ -1,0 +1,23 @@
+Circuit corpus report
+Cases: 4; attempts: 8
+Case status: {"INVALID":2,"PASS":1,"UNSUPPORTED":1}
+Successful cases by stage: {"bridge":1,"compile":2,"connectivity":1,"export":1,"route":0,"serialized_validation":1}
+
+ID | name | outcome | input components | compile / route / export / serialized
+circuit-028d64605f0d82fbf036 | Test | PASS | 500 | PASS / NOT_REQUIRED / PASS / PASS
+circuit-09f50ff5c79d74932cab | regressionBridge.test.cjs:line:261 | INVALID | 1 | PASS / NOT_RUN / NOT_RUN / NOT_RUN
+circuit-16771e4190255b558fc3 | Test | UNSUPPORTED | 1 | FAIL / NOT_RUN / NOT_RUN / NOT_RUN
+circuit-1a71b517910749c1d7a7 | connectivity.test.cjs:line:81 | INVALID | 2 | FAIL / NOT_RUN / NOT_RUN / NOT_RUN
+
+Limitations:
+All repository source paths are inventoried; unresolved Python expressions are retained, not claimed as runnable circuits.
+Frontend test inputs are observed at the real compiler boundary; post-compile mutation tests are evidence, not additional source circuits.
+Counts of pins/nets and support/validation are unknown until the actual compiler runs.
+Content-identical inputs are deduplicated without removing provenance; artifacts/dependencies are never promoted to circuits.
+Static expressions are conservative snapshots, not proof that a test branch executes; dynamic/non-JSON/accessor/cyclic inputs remain unresolved evidence.
+Timeout applies separately to compiler and backend processes; each attempt is isolated.
+Export wall time includes routing; stage measurements overlap and must not be summed.
+Native LTspice, simulation and browser rendering are not measured.
+Memory is the maximum observed OS resident memory: Windows child-tree working set (including venv launchers), Linux child VmHWM; 20ms sampling can miss short-lived peaks and excludes the harness.
+Each repeated backend sample uses a distinct PYTHONHASHSEED; implementation changes invalidate determinism comparisons.
+A successful frontend compile is not a successful shared bridge, route, export or serialized validation.

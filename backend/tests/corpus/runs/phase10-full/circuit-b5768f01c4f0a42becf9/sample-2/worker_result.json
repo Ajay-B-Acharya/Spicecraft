@@ -1,0 +1,142 @@
+{
+  "compiled_sha256": "2578b1442b74694a2981c3619766ec6d5b1f1262dc40f76dc3518fbe6c5f486b",
+  "counts": {
+    "compiled": {
+      "components": 1,
+      "connections": 0,
+      "mapped_components": 1,
+      "nets": 0,
+      "pins": 3
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component U1; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component U1 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin U1.C (collector) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin U1.B (base) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin U1.E (emitter) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "U1",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "U1",
+      "compiled_value": "2N3904",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": true,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "UNSUPPORTED_COMPONENT",
+      "component": "U1",
+      "expected": null,
+      "message": "Component is not currently supported by SpiceCraft; no symbol substitution is allowed",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "input_validation",
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": "U1.B",
+      "circuit": "test_component_support_boundaries.py:line:16",
+      "code": "UNEXPECTED_PIN",
+      "component": "U1",
+      "error": "Remove or account for the unexpected canonical pin",
+      "expected": null,
+      "net": null,
+      "pin": "B",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": "U1.C",
+      "circuit": "test_component_support_boundaries.py:line:16",
+      "code": "UNEXPECTED_PIN",
+      "component": "U1",
+      "error": "Remove or account for the unexpected canonical pin",
+      "expected": null,
+      "net": null,
+      "pin": "C",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": "U1.E",
+      "circuit": "test_component_support_boundaries.py:line:16",
+      "code": "UNEXPECTED_PIN",
+      "component": "U1",
+      "error": "Remove or account for the unexpected canonical pin",
+      "expected": null,
+      "net": null,
+      "pin": "E",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    }
+  ],
+  "id": "circuit-b5768f01c4f0a42becf9",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 5,
+      "peak_rss_bytes": 76337152
+    }
+  },
+  "name": "test_component_support_boundaries.py:line:16",
+  "overall": "NOT_RUN",
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "FAIL",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 3.669100000479375,
+    "compiler_process_wall": 1529.7143999996479,
+    "compiler_reported": 5.800299999999993,
+    "connectivity_wall": 0.26870000056078425
+  }
+}

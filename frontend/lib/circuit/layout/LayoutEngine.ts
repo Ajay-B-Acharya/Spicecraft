@@ -9,7 +9,10 @@
  */
 import { Circuit } from "../models/Circuit";
 import { Component } from "../models/Component";
-import { ComponentGrouping } from "./ComponentGrouping";
+import { CIRCUIT_INPUT_LIMITS } from "../engine/CircuitBuilder";
+import { CircuitValidator } from "../engine/CircuitValidator";
+import { resolvePins } from "../engine/PinResolver";
+import type { CircuitValidationResult } from "../types";
 import { Grid } from "./Grid";
 import { LayoutAnalyzer } from "./LayoutAnalyzer";
 import { OrientationStrategy } from "./OrientationStrategy";
@@ -111,6 +114,7 @@ function applyLayoutToCircuit(
   return {
     ...circuit,
     components: updatedComponents,
+    ...('resolvedPins' in circuit ? { resolvedPins: updatedComponents.flatMap(resolvePins) } : {}),
   };
 }
 
@@ -120,8 +124,8 @@ export class LayoutEngine {
   private readonly optimizer: PositionOptimizer;
 
   constructor(config: LayoutConfig = DEFAULT_LAYOUT_CONFIG) {
-    this.config = config;
-    this.grid = new Grid(config.grid);
+    this.config = { ...config, grid: { ...config.grid } };
+    this.grid = new Grid(this.config.grid);
     this.optimizer = new PositionOptimizer();
   }
 
@@ -131,8 +135,36 @@ export class LayoutEngine {
   }
 
   computeLayout(circuit: Circuit): LayoutResult {
+    if (circuit.components.length > CIRCUIT_INPUT_LIMITS.components ||
+        circuit.nets.length > CIRCUIT_INPUT_LIMITS.wires ||
+        (circuit.connections?.length ?? 0) > CIRCUIT_INPUT_LIMITS.wires ||
+        circuit.components.reduce((total, component) => total + component.pins.length, 0) > CIRCUIT_INPUT_LIMITS.pins ||
+        circuit.nets.reduce((total, net) => total + net.pins.length + (net.labels?.length ?? 0), 0) > CIRCUIT_INPUT_LIMITS.wires * 2) {
+      throw new Error('Circuit exceeds layout size limits.');
+    }
+    const previous = 'validation' in circuit ? circuit.validation as CircuitValidationResult : undefined;
+    if (previous && (!previous.valid || previous.errors.length > 0)) {
+      throw new Error(`Cannot lay out an invalid circuit: ${previous.errors.join('; ')}`);
+    }
+    const validation = CircuitValidator.validate(circuit);
+    if (!validation.valid) throw new Error(`Cannot lay out an invalid circuit: ${validation.errors.join('; ')}`);
+    if (circuit.components.some(component => !Number.isFinite(component.rotation) ||
+        !Number.isFinite(component.position.x) || !Number.isFinite(component.position.y) ||
+        Math.abs(component.position.x) > CIRCUIT_INPUT_LIMITS.coordinate ||
+        Math.abs(component.position.y) > CIRCUIT_INPUT_LIMITS.coordinate)) {
+      throw new Error('Circuit contains invalid layout geometry.');
+    }
+    if (this.config.preserveUserPositions) {
+      const placements = new Map<string, PlacementResult>(circuit.components.map(component => [component.id, {
+        componentId: component.id,
+        gridPosition: this.grid.toGrid(component.position),
+        absolutePosition: { ...component.position },
+        rotation: component.rotation,
+        mirror: component.mirror ?? false,
+      }]));
+      return { placements, bounds: computeBounds(placements), gridBounds: computeGridBounds(placements) };
+    }
     const analysis = LayoutAnalyzer.analyze(circuit);
-    const groups = ComponentGrouping.detectGroups(circuit, analysis);
     const hints = PlacementStrategy.generateHints(circuit, analysis);
     let gridPlacements = PlacementStrategy.computePlacements(
       circuit,

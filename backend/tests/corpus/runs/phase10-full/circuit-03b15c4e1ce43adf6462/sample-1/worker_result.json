@@ -1,0 +1,68 @@
+{
+  "compiled_sha256": "defab4e3401335e94a5de333a955fbf50b3b3e8e66144d5c523c207f0989002c",
+  "counts": {
+    "compiled": {
+      "components": 0,
+      "connections": 0,
+      "mapped_components": 0,
+      "nets": 0,
+      "pins": 0
+    },
+    "exported": null,
+    "input": {
+      "components": 0,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Circuit is empty: no components or connections.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "actual": null,
+      "circuit": "Circuit",
+      "code": "INVALID_COMPONENTS",
+      "component": null,
+      "expected": null,
+      "message": "Circuit must contain a nonempty components list",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "input_validation",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "id": "circuit-03b15c4e1ce43adf6462",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 8,
+      "peak_rss_bytes": 81518592
+    }
+  },
+  "name": "test_production.py:line:31",
+  "overall": "NOT_RUN",
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "FAIL",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 5.906200000026729,
+    "compiler_process_wall": 711.9431000000986,
+    "compiler_reported": 2.4931000000000267,
+    "connectivity_wall": 0.0808000004326459,
+    "export_wall": 0.35320000006322516
+  }
+}

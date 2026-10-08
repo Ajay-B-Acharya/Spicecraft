@@ -1,0 +1,15 @@
+{
+  "status": "REVIEW",
+  "component_count": 100,
+  "native_opened": true,
+  "installed_symbol_render": "resistor-100.png",
+  "render_dimensions": [1800, 12300],
+  "native_screenshot": "capture/circuit/circuit_ltspice.png",
+  "inspected_crops": ["render-top.png", "render-middle.png", "render-bottom.png"],
+  "observations": [
+    "Top, middle and bottom rendered sections have separated component bodies and readable references/values at local scale; orthogonal chains meet the displayed resistor pins.",
+    "The native full-schematic view is a very tall narrow four-column layout with substantial side whitespace; labels are unreadable at fit-to-window scale and the bottom content reaches the viewport edge.",
+    "This verifies opening and local presentation evidence, not acceptance of compact or convenient large-schematic usability.",
+    "Independent native netlisting passed; visual usability remains REVIEW rather than PASS."
+  ]
+}

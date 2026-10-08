@@ -1,0 +1,321 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "49675c703d31313c263fa7b1984b5d6ea2349ab932966abda57abcadb16c6bfc",
+  "compiled_sha256": "3f0329c32a9296f1c698148d61e5d44c9a73494acfdbf57af2092b9ac3fb3020",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 2,
+      "mapped_components": 2,
+      "nets": 2,
+      "pins": 4
+    },
+    "exported": {
+      "components": 2,
+      "flags": 0,
+      "pins": 4,
+      "wires": 3
+    },
+    "input": {
+      "components": 2,
+      "connections": 2,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 0,
+      "nets": 1,
+      "pins": 2,
+      "segments": 3
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R1; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R2; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Net N2 (a) has no connected component pins.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "R1",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R1",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "backend_id": "R2",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R2",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "CONFLICTING_NET_LABELS",
+      "component": null,
+      "expected": null,
+      "message": "Explicit source wires [2] join distinct labels ['a', 'b']; source connectivity is retained, not repaired",
+      "net": "a",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "warning",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "LABEL_ONLY_NET",
+      "component": null,
+      "expected": null,
+      "message": "Explicit net has labels but no component pins; no ASC geometry can be emitted",
+      "net": "a",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "warning",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "CONFLICTING_NET_LABELS",
+      "component": null,
+      "expected": null,
+      "message": "Explicit source wires [2] join distinct labels ['a', 'b']; source connectivity is retained, not repaired",
+      "net": "a",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "warning",
+      "stage": "route"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "LABEL_ONLY_NET",
+      "component": null,
+      "expected": null,
+      "message": "Explicit net has labels but no component pins; no ASC geometry can be emitted",
+      "net": "a",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "warning",
+      "stage": "route"
+    },
+    {
+      "actual": null,
+      "circuit": "Circuit",
+      "code": "CONFLICTING_NET_LABELS",
+      "component": null,
+      "expected": null,
+      "message": "Explicit source wires [2] join distinct labels ['a', 'b']; source connectivity is retained, not repaired",
+      "net": "a",
+      "pin": null,
+      "pipeline_stage": "post_export_validation",
+      "severity": "warning",
+      "stage": "export"
+    },
+    {
+      "actual": null,
+      "circuit": "Circuit",
+      "code": "LABEL_ONLY_NET",
+      "component": null,
+      "expected": null,
+      "message": "Explicit net has labels but no component pins; no ASC geometry can be emitted",
+      "net": "a",
+      "pin": null,
+      "pipeline_stage": "post_export_validation",
+      "severity": "warning",
+      "stage": "export"
+    },
+    {
+      "actual": null,
+      "circuit": "test_connectivity.py:line:340",
+      "code": "CONFLICTING_NET_LABELS",
+      "component": null,
+      "error": "Explicit source wires [2] join distinct labels ['a', 'b']; source connectivity is retained, not repaired",
+      "expected": null,
+      "net": "a",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "serialized_validation"
+    },
+    {
+      "actual": null,
+      "circuit": "test_connectivity.py:line:340",
+      "code": "LABEL_ONLY_NET",
+      "component": null,
+      "error": "Explicit net has labels but no component pins; no ASC geometry can be emitted",
+      "expected": null,
+      "net": "a",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "serialized_validation"
+    }
+  ],
+  "evidence_directory": "circuit-8fd2efaa9d3266ed2ad6/sample-1",
+  "failure_stage": "serialized_validation",
+  "failures": [
+    {
+      "actual": null,
+      "circuit": "test_connectivity.py:line:340",
+      "code": "CONFLICTING_NET_LABELS",
+      "component": null,
+      "error": "Explicit source wires [2] join distinct labels ['a', 'b']; source connectivity is retained, not repaired",
+      "expected": null,
+      "net": "a",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "serialized_validation"
+    },
+    {
+      "actual": null,
+      "circuit": "test_connectivity.py:line:340",
+      "code": "LABEL_ONLY_NET",
+      "component": null,
+      "error": "Explicit net has labels but no component pins; no ASC geometry can be emitted",
+      "expected": null,
+      "net": "a",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "serialized_validation"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-8fd2efaa9d3266ed2ad6",
+  "implementation_sha256": "f4c25658dcec1a34f0271187fa040ae144f61b9a7b65db15d3d82dabf490dd33",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 17,
+      "peak_rss_bytes": 32194560
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 33,
+      "peak_rss_bytes": 84541440
+    }
+  },
+  "name": "test_connectivity.py:line:340",
+  "overall": "FAIL",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "small",
+    "componentCount": 2,
+    "errorCount": 0,
+    "exportBytes": 330,
+    "iterations": {
+      "export": 0,
+      "final_validation": 1,
+      "input_validation": 0,
+      "layout": 6,
+      "net_building": 10,
+      "optimization": 19,
+      "pin_resolution": 0,
+      "post_export_validation": 0,
+      "routing": 65,
+      "routing_validation": 3,
+      "validation": 2
+    },
+    "netCount": 2,
+    "pinCount": 4,
+    "stagesMs": {
+      "export": 8.642,
+      "final_validation": 0.338,
+      "input_validation": 1.087,
+      "layout": 2.734,
+      "net_building": 0.35,
+      "optimization": 0.295,
+      "pin_resolution": 0.219,
+      "post_export_validation": 2.332,
+      "routing": 9.942,
+      "routing_validation": 0.525,
+      "validation": 0.177
+    },
+    "totalTimeMs": 26.933,
+    "warningCount": 2,
+    "wireCount": 3
+  },
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 1,
+    "collision_checks": 1,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 320,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 3
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "FAIL"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 886.9700000004741,
+    "backend_worker_wall": 55.585400000381924,
+    "compiler_process_wall": 1738.6036999996577,
+    "compiler_reported": 24.030899999999974,
+    "connectivity_wall": 1.0518999997657374,
+    "export_wall": 27.750299999752315,
+    "route_wall": 2.430100000310631,
+    "serialized_validation_wall": 1.886000000013155
+  },
+  "validation": "FAIL"
+}

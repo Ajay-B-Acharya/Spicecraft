@@ -1,0 +1,184 @@
+{
+  "compiled_sha256": "c7ef3bc5255baf188788ed902394883a75cb94d3fd739ec2a004de03d40706cb",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 1,
+      "mapped_components": 0,
+      "nets": 1,
+      "pins": 4
+    },
+    "exported": null,
+    "input": {
+      "components": 2,
+      "connections": 1,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate component ID detected: R2.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate resolved pin identity R2.1.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate resolved pin identity R2.2.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R2; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "AMBIGUOUS_SOURCE_IDENTITY",
+      "compiled_id": "R2",
+      "message": "Compiled identity R2 must map to exactly one source component.",
+      "severity": "error",
+      "stage": "bridge"
+    },
+    {
+      "code": "DUPLICATE_COMPILED_ID",
+      "compiled_id": "R2",
+      "message": "Compiled identity R2 is ambiguous.",
+      "severity": "error",
+      "stage": "bridge"
+    },
+    {
+      "code": "AMBIGUOUS_SOURCE_IDENTITY",
+      "compiled_id": "R2",
+      "message": "Compiled identity R2 must map to exactly one source component.",
+      "severity": "error",
+      "stage": "bridge"
+    },
+    {
+      "code": "UNMAPPED_COMPILED_REFERENCE",
+      "endpoint": {
+        "componentId": "R2",
+        "pinId": "1"
+      },
+      "message": "Unmapped compiled reference at connection 0 source.",
+      "severity": "error",
+      "stage": "bridge"
+    },
+    {
+      "code": "UNMAPPED_COMPILED_REFERENCE",
+      "endpoint": {
+        "componentId": "R2",
+        "pinId": "1"
+      },
+      "message": "Unmapped compiled reference at net N1.",
+      "severity": "error",
+      "stage": "bridge"
+    }
+  ],
+  "evidence_directory": "circuit-8ae8de8ce92bf0f11b6a/sample-1",
+  "failure_stage": "compile",
+  "failures": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate component ID detected: R2.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate resolved pin identity R2.1.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate resolved pin identity R2.2.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "AMBIGUOUS_SOURCE_IDENTITY",
+      "compiled_id": "R2",
+      "message": "Compiled identity R2 must map to exactly one source component.",
+      "severity": "error",
+      "stage": "bridge"
+    },
+    {
+      "code": "DUPLICATE_COMPILED_ID",
+      "compiled_id": "R2",
+      "message": "Compiled identity R2 is ambiguous.",
+      "severity": "error",
+      "stage": "bridge"
+    },
+    {
+      "code": "AMBIGUOUS_SOURCE_IDENTITY",
+      "compiled_id": "R2",
+      "message": "Compiled identity R2 must map to exactly one source component.",
+      "severity": "error",
+      "stage": "bridge"
+    },
+    {
+      "code": "UNMAPPED_COMPILED_REFERENCE",
+      "endpoint": {
+        "componentId": "R2",
+        "pinId": "1"
+      },
+      "message": "Unmapped compiled reference at connection 0 source.",
+      "severity": "error",
+      "stage": "bridge"
+    },
+    {
+      "code": "UNMAPPED_COMPILED_REFERENCE",
+      "endpoint": {
+        "componentId": "R2",
+        "pinId": "1"
+      },
+      "message": "Unmapped compiled reference at net N1.",
+      "severity": "error",
+      "stage": "bridge"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-8ae8de8ce92bf0f11b6a",
+  "implementation_sha256": "f4c25658dcec1a34f0271187fa040ae144f61b9a7b65db15d3d82dabf490dd33",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 34,
+      "peak_rss_bytes": 85893120
+    }
+  },
+  "name": "test_connectivity.py:line:222",
+  "overall": "INVALID",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "FAIL",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "invalid_or_unknown",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 1626.1704999997164,
+    "compiler_reported": 26.30670000000009
+  },
+  "validation": "NOT_RUN"
+}

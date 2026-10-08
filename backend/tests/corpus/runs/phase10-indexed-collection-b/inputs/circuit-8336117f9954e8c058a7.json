@@ -1,0 +1,43 @@
+{
+  "category": "Filters",
+  "components": [
+    {
+      "reference": "C1",
+      "type": "capacitor",
+      "value": "100nF"
+    },
+    {
+      "reference": "R1",
+      "type": "resistor",
+      "value": "1k"
+    }
+  ],
+  "description": "First-order RC filter that passes high frequencies and attenuates low frequencies.",
+  "id": "rc-high-pass-filter",
+  "name": "RC High Pass Filter",
+  "tags": [
+    "rc",
+    "filter",
+    "high-pass",
+    "passive",
+    "analog"
+  ],
+  "wires": [
+    {
+      "from": "VIN",
+      "to": "C1.1"
+    },
+    {
+      "from": "C1.2",
+      "to": "VOUT"
+    },
+    {
+      "from": "C1.2",
+      "to": "R1.1"
+    },
+    {
+      "from": "R1.2",
+      "to": "GND"
+    }
+  ]
+}

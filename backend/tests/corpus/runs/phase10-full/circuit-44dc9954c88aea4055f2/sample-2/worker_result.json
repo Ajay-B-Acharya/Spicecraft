@@ -1,0 +1,62 @@
+{
+  "compiled_sha256": "642403a006ecf94517a9a110d8142ba1de0042784bdc798de1039c1208d4a91b",
+  "counts": {
+    "compiled": {
+      "components": 100,
+      "connections": 151,
+      "mapped_components": 100,
+      "nets": 52,
+      "pins": 200
+    },
+    "exported": null,
+    "input": {
+      "components": 100,
+      "connections": 151,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "actual": null,
+      "circuit": "Repeated filter sections (100 components)",
+      "code": "PIPELINE_TIMEOUT",
+      "component": null,
+      "expected": null,
+      "message": "routing exceeded its execution budget (10 seconds stage / 30 seconds total)",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "routing",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "id": "circuit-44dc9954c88aea4055f2",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 21,
+      "peak_rss_bytes": 86958080
+    }
+  },
+  "name": "Repeated filter sections (100 components)",
+  "overall": "NOT_RUN",
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "FAIL",
+    "route": "RUNNING",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": true,
+  "timings_ms": {
+    "backend_worker_wall": 10046.847700000399,
+    "compiler_process_wall": 762.2176999993826,
+    "compiler_reported": 27.85379999999998,
+    "connectivity_wall": 10.495399999854271,
+    "export_wall": 10023.105600000235
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "compiled_sha256": "63eb8fa8851936b53d0586d3f582f33c4c599e542561d2229fd5e03b474773ef",
+  "counts": {
+    "compiled": {
+      "components": 0,
+      "connections": 0,
+      "mapped_components": 0,
+      "nets": 0,
+      "pins": 0
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Unknown component type 'LM358' on component U1.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Circuit is empty: no components or connections.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "evidence_directory": "circuit-16771e4190255b558fc3/sample-1",
+  "failure_stage": "compile",
+  "failures": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Unknown component type 'LM358' on component U1.",
+      "severity": "error",
+      "stage": "compiler"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-16771e4190255b558fc3",
+  "implementation_sha256": "3682277e9bde63e6f9f4ecc043473f501849f45992ed39f5badd7da1c56141c6",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 17,
+      "peak_rss_bytes": 84369408
+    }
+  },
+  "name": "Test",
+  "overall": "UNSUPPORTED",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "FAIL",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "unsupported",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 548.6180000007153,
+    "compiler_reported": 4.941599999999994
+  },
+  "validation": "NOT_RUN"
+}

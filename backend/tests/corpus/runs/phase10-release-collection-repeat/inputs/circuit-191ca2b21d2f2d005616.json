@@ -1,0 +1,14 @@
+{
+  "category": "",
+  "components": [
+    {
+      "id": "U1",
+      "type": "unsupported"
+    }
+  ],
+  "description": "",
+  "id": "circuit",
+  "name": "Test",
+  "tags": [],
+  "wires": []
+}

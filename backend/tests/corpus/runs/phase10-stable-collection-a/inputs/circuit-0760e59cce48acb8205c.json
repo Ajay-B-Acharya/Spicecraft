@@ -1,0 +1,10 @@
+{
+  "components": [
+    {
+      "reference": "X1",
+      "type": "transistor",
+      "value": "BC547"
+    }
+  ],
+  "wires": []
+}

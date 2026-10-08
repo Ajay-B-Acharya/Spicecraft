@@ -261,7 +261,12 @@ test('backend token restrictions reject ambiguous dotted or whitespace reference
     const result = compileCircuit(circuit([], [{ ...component('node'), reference }]));
     assert.equal(result.valid, false);
     assert.equal(result.backend, null);
-    assert.ok(hasCode(result, 'INVALID_BACKEND_IDENTITY'));
+    if (reference.includes('\u0001')) {
+      assert.equal(result.compiler_valid, false);
+      assert.ok(hasCode(result, 'COMPILER_ERROR'));
+    } else {
+      assert.ok(hasCode(result, 'INVALID_BACKEND_IDENTITY'));
+    }
   }
   const label = compileCircuit(circuit([{ from: 'R1.1', to: { label: 'signal.with.dot' } }]));
   assert.equal(label.backend, null);
@@ -278,15 +283,15 @@ test('missing references and malformed circuits never yield a partial export', (
 });
 
 test('bridge reads wires only inside the actual compiler, then exports its canonical connections', () => {
-  // The getter fails if the bridge consults source wires after compilation.
-  const input = circuit([{ from: 'R1.left', to: 'ground' }]);
+  // Observe reads without introducing accessor properties into the JSON input.
   const actualCompile = CircuitCompiler.compile;
   let compiled = false;
-  const wires = input.wires;
-  Object.defineProperty(input, 'wires', { get() {
-    assert.equal(compiled, false, 'bridge must not re-read source wires');
-    return wires;
-  } });
+  const input = new Proxy(circuit([{ from: 'R1.left', to: 'ground' }]), {
+    get(target, property, receiver) {
+      if (property === 'wires') assert.equal(compiled, false, 'bridge must not re-read source wires');
+      return Reflect.get(target, property, receiver);
+    },
+  });
   CircuitCompiler.compile = source => {
     const result = actualCompile.call(CircuitCompiler, source);
     compiled = true;

@@ -1,0 +1,10 @@
+{
+  "components": [
+    {
+      "reference": "X1",
+      "type": "ic",
+      "value": "NE555"
+    }
+  ],
+  "wires": []
+}

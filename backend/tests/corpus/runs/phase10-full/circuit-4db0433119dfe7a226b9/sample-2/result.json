@@ -1,0 +1,98 @@
+{
+  "compiled_sha256": "d67cd5a5ade5236ab24254eacb43dc38d54c2dc26431d746378e866422cab452",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 1,
+      "mapped_components": 2,
+      "nets": 1,
+      "pins": 4
+    },
+    "exported": null,
+    "input": {
+      "components": 2,
+      "connections": 1,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R2 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "INVALID_COMPILED_LABEL",
+      "endpoint": {
+        "componentId": "__label__:signal.with.dot",
+        "pinId": "label"
+      },
+      "message": "Compiled label cannot be exported unambiguously at connection 0 target.",
+      "severity": "error",
+      "stage": "bridge"
+    }
+  ],
+  "evidence_directory": "circuit-4db0433119dfe7a226b9/sample-2",
+  "failure_stage": "bridge",
+  "failures": [
+    {
+      "code": "INVALID_COMPILED_LABEL",
+      "endpoint": {
+        "componentId": "__label__:signal.with.dot",
+        "pinId": "label"
+      },
+      "message": "Compiled label cannot be exported unambiguously at connection 0 target.",
+      "severity": "error",
+      "stage": "bridge"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-4db0433119dfe7a226b9",
+  "implementation_sha256": "d003d69974f4aa70a8b0ac0e2f02b85242218c1cd25a90bf997beeaffc4b5635",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 15,
+      "peak_rss_bytes": 96329728
+    }
+  },
+  "name": "regressionBridge.test.cjs:line:271",
+  "overall": "INVALID",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "PASS",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "invalid_or_unknown",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 782.3578999996244,
+    "compiler_reported": 14.605800000000045
+  },
+  "validation": "NOT_RUN"
+}

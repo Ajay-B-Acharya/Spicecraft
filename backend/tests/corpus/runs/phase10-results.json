@@ -1,0 +1,2049 @@
+{
+  "benchmarks": [
+    {
+      "compiled_counts": [
+        {
+          "components": 10,
+          "connections": 16,
+          "mapped_components": 10,
+          "nets": 7,
+          "pins": 20
+        },
+        {
+          "components": 10,
+          "connections": 16,
+          "mapped_components": 10,
+          "nets": 7,
+          "pins": 20
+        }
+      ],
+      "components": 10,
+      "deterministic_asc": true,
+      "failure_codes": [],
+      "failure_stages": [],
+      "family": "filter",
+      "id": "circuit-d79639eaaa899c072620",
+      "implementation_stable": true,
+      "median_backend_ms": 1674.552699999822,
+      "median_compiler_ms": 767.5493500000812,
+      "overall": "PASS",
+      "peak_backend_rss_bytes": 33714176,
+      "peak_compiler_rss_bytes": 83263488,
+      "prior_full_run_outcome": "PASS"
+    },
+    {
+      "compiled_counts": [
+        {
+          "components": 10,
+          "connections": 11,
+          "mapped_components": 10,
+          "nets": 11,
+          "pins": 20
+        },
+        {
+          "components": 10,
+          "connections": 11,
+          "mapped_components": 10,
+          "nets": 11,
+          "pins": 20
+        }
+      ],
+      "components": 10,
+      "deterministic_asc": true,
+      "failure_codes": [],
+      "failure_stages": [],
+      "family": "resistor",
+      "id": "circuit-487a1e171625615c17a0",
+      "implementation_stable": true,
+      "median_backend_ms": 669.2530499994973,
+      "median_compiler_ms": 758.3073499999955,
+      "overall": "PASS",
+      "peak_backend_rss_bytes": 32591872,
+      "peak_compiler_rss_bytes": 82341888,
+      "prior_full_run_outcome": "PASS"
+    },
+    {
+      "compiled_counts": [
+        {
+          "components": 25,
+          "connections": 39,
+          "mapped_components": 25,
+          "nets": 14,
+          "pins": 50
+        },
+        {
+          "components": 25,
+          "connections": 39,
+          "mapped_components": 25,
+          "nets": 14,
+          "pins": 50
+        }
+      ],
+      "components": 25,
+      "deterministic_asc": null,
+      "failure_codes": [
+        "PIPELINE_TIMEOUT"
+      ],
+      "failure_stages": [
+        "route"
+      ],
+      "family": "filter",
+      "id": "circuit-011da72b4d779fc1e919",
+      "implementation_stable": true,
+      "median_backend_ms": 10581.441299999824,
+      "median_compiler_ms": 742.8861499997765,
+      "overall": "FAIL",
+      "peak_backend_rss_bytes": 34676736,
+      "peak_compiler_rss_bytes": 83165184,
+      "prior_full_run_outcome": "PASS"
+    },
+    {
+      "compiled_counts": [
+        {
+          "components": 25,
+          "connections": 26,
+          "mapped_components": 25,
+          "nets": 26,
+          "pins": 50
+        },
+        {
+          "components": 25,
+          "connections": 26,
+          "mapped_components": 25,
+          "nets": 26,
+          "pins": 50
+        }
+      ],
+      "components": 25,
+      "deterministic_asc": true,
+      "failure_codes": [],
+      "failure_stages": [],
+      "family": "resistor",
+      "id": "circuit-ff1fd8b1b9cb2998f6df",
+      "implementation_stable": true,
+      "median_backend_ms": 838.2004999994024,
+      "median_compiler_ms": 815.3440500004763,
+      "overall": "PASS",
+      "peak_backend_rss_bytes": 33013760,
+      "peak_compiler_rss_bytes": 85372928,
+      "prior_full_run_outcome": "PASS"
+    },
+    {
+      "compiled_counts": [
+        {
+          "components": 50,
+          "connections": 76,
+          "mapped_components": 50,
+          "nets": 27,
+          "pins": 100
+        },
+        {
+          "components": 50,
+          "connections": 76,
+          "mapped_components": 50,
+          "nets": 27,
+          "pins": 100
+        }
+      ],
+      "components": 50,
+      "deterministic_asc": null,
+      "failure_codes": [
+        "PIPELINE_TIMEOUT"
+      ],
+      "failure_stages": [
+        "route"
+      ],
+      "family": "filter",
+      "id": "circuit-d1745c42a0d7260ca981",
+      "implementation_stable": true,
+      "median_backend_ms": 11024.805199999719,
+      "median_compiler_ms": 664.1610499996204,
+      "overall": "FAIL",
+      "peak_backend_rss_bytes": 37101568,
+      "peak_compiler_rss_bytes": 81047552,
+      "prior_full_run_outcome": "FAIL"
+    },
+    {
+      "compiled_counts": [
+        {
+          "components": 50,
+          "connections": 51,
+          "mapped_components": 50,
+          "nets": 51,
+          "pins": 100
+        },
+        {
+          "components": 50,
+          "connections": 51,
+          "mapped_components": 50,
+          "nets": 51,
+          "pins": 100
+        }
+      ],
+      "components": 50,
+      "deterministic_asc": true,
+      "failure_codes": [],
+      "failure_stages": [],
+      "family": "resistor",
+      "id": "circuit-6ceaf1a9d262db9531d6",
+      "implementation_stable": true,
+      "median_backend_ms": 2408.1273499996314,
+      "median_compiler_ms": 924.2299999996249,
+      "overall": "PASS",
+      "peak_backend_rss_bytes": 33812480,
+      "peak_compiler_rss_bytes": 85573632,
+      "prior_full_run_outcome": "PASS"
+    },
+    {
+      "compiled_counts": [
+        {
+          "components": 100,
+          "connections": 151,
+          "mapped_components": 100,
+          "nets": 52,
+          "pins": 200
+        },
+        {
+          "components": 100,
+          "connections": 151,
+          "mapped_components": 100,
+          "nets": 52,
+          "pins": 200
+        }
+      ],
+      "components": 100,
+      "deterministic_asc": null,
+      "failure_codes": [
+        "PIPELINE_TIMEOUT"
+      ],
+      "failure_stages": [
+        "route"
+      ],
+      "family": "filter",
+      "id": "circuit-44dc9954c88aea4055f2",
+      "implementation_stable": true,
+      "median_backend_ms": 11786.550000000261,
+      "median_compiler_ms": 1937.1305499998925,
+      "overall": "FAIL",
+      "peak_backend_rss_bytes": 39157760,
+      "peak_compiler_rss_bytes": 87552000,
+      "prior_full_run_outcome": "FAIL"
+    },
+    {
+      "compiled_counts": [
+        {
+          "components": 100,
+          "connections": 101,
+          "mapped_components": 100,
+          "nets": 101,
+          "pins": 200
+        },
+        {
+          "components": 100,
+          "connections": 101,
+          "mapped_components": 100,
+          "nets": 101,
+          "pins": 200
+        }
+      ],
+      "components": 100,
+      "deterministic_asc": null,
+      "failure_codes": [
+        "BACKEND_TIMEOUT"
+      ],
+      "failure_stages": [
+        "export"
+      ],
+      "family": "resistor",
+      "id": "circuit-bf177d289f65b1ff63fb",
+      "implementation_stable": true,
+      "median_backend_ms": 30635.840899999494,
+      "median_compiler_ms": 1610.1136000002043,
+      "overall": "FAIL",
+      "peak_backend_rss_bytes": 34418688,
+      "peak_compiler_rss_bytes": 85499904,
+      "prior_full_run_outcome": "PASS"
+    },
+    {
+      "compiled_counts": [
+        {
+          "components": 250,
+          "connections": 376,
+          "mapped_components": 250,
+          "nets": 127,
+          "pins": 500
+        },
+        {
+          "components": 250,
+          "connections": 376,
+          "mapped_components": 250,
+          "nets": 127,
+          "pins": 500
+        }
+      ],
+      "components": 250,
+      "deterministic_asc": null,
+      "failure_codes": [
+        "PIPELINE_TIMEOUT"
+      ],
+      "failure_stages": [
+        "route"
+      ],
+      "family": "filter",
+      "id": "circuit-4bcd9f1440d1be5ced40",
+      "implementation_stable": true,
+      "median_backend_ms": 11359.067400000185,
+      "median_compiler_ms": 1886.229749999984,
+      "overall": "FAIL",
+      "peak_backend_rss_bytes": 40366080,
+      "peak_compiler_rss_bytes": 87887872,
+      "prior_full_run_outcome": "FAIL"
+    },
+    {
+      "compiled_counts": [
+        {
+          "components": 250,
+          "connections": 251,
+          "mapped_components": 250,
+          "nets": 251,
+          "pins": 500
+        },
+        {
+          "components": 250,
+          "connections": 251,
+          "mapped_components": 250,
+          "nets": 251,
+          "pins": 500
+        }
+      ],
+      "components": 250,
+      "deterministic_asc": null,
+      "failure_codes": [
+        "PIPELINE_TIMEOUT"
+      ],
+      "failure_stages": [
+        "route"
+      ],
+      "family": "resistor",
+      "id": "circuit-5eee04129d7baad3326a",
+      "implementation_stable": true,
+      "median_backend_ms": 11259.438300000056,
+      "median_compiler_ms": 1647.2960000000967,
+      "overall": "FAIL",
+      "peak_backend_rss_bytes": 35999744,
+      "peak_compiler_rss_bytes": 85266432,
+      "prior_full_run_outcome": "FAIL"
+    },
+    {
+      "compiled_counts": [
+        {
+          "components": 500,
+          "connections": 751,
+          "mapped_components": 500,
+          "nets": 252,
+          "pins": 1000
+        },
+        {
+          "components": 500,
+          "connections": 751,
+          "mapped_components": 500,
+          "nets": 252,
+          "pins": 1000
+        }
+      ],
+      "components": 500,
+      "deterministic_asc": null,
+      "failure_codes": [
+        "PIPELINE_TIMEOUT"
+      ],
+      "failure_stages": [
+        "route"
+      ],
+      "family": "filter",
+      "id": "circuit-a82f72ae9c7431e50765",
+      "implementation_stable": true,
+      "median_backend_ms": 11200.3373499997,
+      "median_compiler_ms": 1924.910550000277,
+      "overall": "FAIL",
+      "peak_backend_rss_bytes": 48852992,
+      "peak_compiler_rss_bytes": 95322112,
+      "prior_full_run_outcome": "FAIL"
+    },
+    {
+      "compiled_counts": [
+        {
+          "components": 500,
+          "connections": 501,
+          "mapped_components": 500,
+          "nets": 501,
+          "pins": 1000
+        },
+        {
+          "components": 500,
+          "connections": 501,
+          "mapped_components": 500,
+          "nets": 501,
+          "pins": 1000
+        }
+      ],
+      "components": 500,
+      "deterministic_asc": null,
+      "failure_codes": [
+        "PIPELINE_TIMEOUT"
+      ],
+      "failure_stages": [
+        "route"
+      ],
+      "family": "resistor",
+      "id": "circuit-55e763579a65517ae71f",
+      "implementation_stable": true,
+      "median_backend_ms": 11202.581949999967,
+      "median_compiler_ms": 1881.9859499999438,
+      "overall": "FAIL",
+      "peak_backend_rss_bytes": 39182336,
+      "peak_compiler_rss_bytes": 95744000,
+      "prior_full_run_outcome": "FAIL"
+    }
+  ],
+  "collection": {
+    "catalog_identical": true,
+    "catalog_sha256": [
+      "a40892ef93c68919a9e60b46e33cc9f5a1bef387044ed83a495da278509e7b93",
+      "a40892ef93c68919a9e60b46e33cc9f5a1bef387044ed83a495da278509e7b93"
+    ],
+    "collections": [
+      "backend\\tests\\corpus\\runs\\phase10-stable-collection-a",
+      "backend\\tests\\corpus\\runs\\phase10-stable-collection-b"
+    ],
+    "earlier_cases_retained_in_full_run": [
+      "circuit-0f00b179c9a4adb24090",
+      "circuit-b5768f01c4f0a42becf9"
+    ],
+    "inputs_identical": true,
+    "new_cases_since_full_snapshot": [],
+    "summary": {
+      "evidence_sources": 773,
+      "extraction_status": {
+        "complete": 215,
+        "partial": 28
+      },
+      "origins": 494,
+      "origins_by_kind": {
+        "frontend_data_expression": 59,
+        "frontend_runtime": 190,
+        "json": 7,
+        "python_data_expression": 226,
+        "synthetic": 12
+      },
+      "repository_cases": 233,
+      "runtime_capture_errors": 6,
+      "source_files_with_collected_cases": 22,
+      "synthetic_cases": 12,
+      "total_cases": 245,
+      "unresolved_expressions": 84
+    }
+  },
+  "commands": [
+    "backend\\venv\\Scripts\\python.exe -m pytest backend/tests/test_circuit_corpus.py -q --junitxml=backend/tests/corpus/runs/phase10-unit-tests-complete.xml",
+    "backend\\venv\\Scripts\\python.exe backend/tools/circuit_corpus.py collect-circuits --output backend/tests/corpus/runs/phase10-release-collection --timeout 30",
+    "backend\\venv\\Scripts\\python.exe backend/tools/circuit_corpus.py test-corpus --catalog backend/tests/corpus/runs/phase10-release-collection/catalog.json --output backend/tests/corpus/runs/phase10-full --samples 2 --timeout 30",
+    "collect-circuits repeated with outputs phase10-release-collection-repeat, phase10-stable-collection-a, phase10-stable-collection-b",
+    "test_corpus(catalog=phase10-release-collection/catalog.json, output=phase10-stable-recheck, samples=2, timeout=30, ids=all 12 synthetic plus all 7 implementation-drift cases; 16 unique IDs)"
+  ],
+  "environment": {
+    "node": "v22.18.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "full_run": {
+    "attempts": 494,
+    "cases": 247,
+    "command_wall_seconds_including_collection": 1420.58,
+    "exit_code": 1,
+    "original_summary": {
+      "attempt_status": {
+        "FAIL": 62,
+        "INVALID": 244,
+        "PASS": 170,
+        "UNSUPPORTED": 18
+      },
+      "attempts": 494,
+      "case_status": {
+        "FAIL": 31,
+        "INVALID": 122,
+        "PASS": 85,
+        "UNSUPPORTED": 9
+      },
+      "cases": 247,
+      "determinism_status": {
+        "IMPLEMENTATION_CHANGED": 7,
+        "OBSERVED": 240
+      },
+      "failure_codes": {
+        "AMBIGUOUS_SOURCE_IDENTITY": 20,
+        "BACKEND_TIMEOUT": 4,
+        "BLOCKED_PIN_ESCAPE": 12,
+        "COMPILER_ERROR": 248,
+        "CONFLICTING_COMPONENT_DEFINITION": 6,
+        "CONFLICTING_NET_LABELS": 8,
+        "DUPLICATE_COMPILED_ID": 10,
+        "DUPLICATE_WIRE": 6,
+        "INSTANCE_NAME_COLLISION": 10,
+        "INVALID_ATTRIBUTE": 2,
+        "INVALID_BACKEND_IDENTITY": 8,
+        "INVALID_COMPILED_LABEL": 4,
+        "INVALID_COMPONENTS": 4,
+        "INVALID_COMPONENT_IDENTITY": 2,
+        "LABEL_ONLY_NET": 2,
+        "MISSING_PIN": 24,
+        "NET_LABEL_COLLISION": 2,
+        "NO_SAFE_ROUTE": 4,
+        "PIPELINE_TIMEOUT": 12,
+        "UNEXPECTED_PIN": 32,
+        "UNMAPPED_COMPILED_REFERENCE": 4,
+        "UNMAPPED_SOURCE_IDENTITY": 4,
+        "UNRESOLVED_PIN": 6,
+        "UNSUPPORTED_COMPONENT": 8,
+        "UNSUPPORTED_SHARED_EXPORT_KIND": 18
+      },
+      "failure_stages": {
+        "bridge": 38,
+        "compile": 224,
+        "connectivity": 14,
+        "export": 26,
+        "route": 8,
+        "serialized_validation": 14
+      },
+      "successful_attempts_by_stage": {
+        "bridge": 232,
+        "compile": 270,
+        "connectivity": 218,
+        "export": 184,
+        "route": 146,
+        "serialized_validation": 170
+      },
+      "successful_cases_by_stage": {
+        "bridge": 116,
+        "compile": 135,
+        "connectivity": 109,
+        "export": 92,
+        "route": 73,
+        "serialized_validation": 85
+      }
+    },
+    "report": "phase10-full/corpus_report.json",
+    "reviewed_catalog": "phase10-full/reviewed_catalog.json",
+    "reviewed_report": "phase10-full/reviewed_report.json",
+    "reviewed_summary": {
+      "attempt_status": {
+        "FAIL": 44,
+        "INVALID": 212,
+        "PASS": 170,
+        "UNSUPPORTED": 68
+      },
+      "attempts": 494,
+      "case_status": {
+        "FAIL": 22,
+        "INVALID": 106,
+        "PASS": 85,
+        "UNSUPPORTED": 34
+      },
+      "cases": 247,
+      "determinism_status": {
+        "IMPLEMENTATION_CHANGED": 7,
+        "OBSERVED": 240
+      },
+      "failure_codes": {
+        "AMBIGUOUS_SOURCE_IDENTITY": 20,
+        "BACKEND_TIMEOUT": 4,
+        "BLOCKED_PIN_ESCAPE": 12,
+        "COMPILER_ERROR": 248,
+        "CONFLICTING_COMPONENT_DEFINITION": 6,
+        "CONFLICTING_NET_LABELS": 8,
+        "DUPLICATE_COMPILED_ID": 10,
+        "DUPLICATE_WIRE": 6,
+        "INSTANCE_NAME_COLLISION": 10,
+        "INVALID_ATTRIBUTE": 2,
+        "INVALID_BACKEND_IDENTITY": 8,
+        "INVALID_COMPILED_LABEL": 4,
+        "INVALID_COMPONENTS": 4,
+        "INVALID_COMPONENT_IDENTITY": 2,
+        "LABEL_ONLY_NET": 2,
+        "MISSING_PIN": 24,
+        "NET_LABEL_COLLISION": 2,
+        "NO_SAFE_ROUTE": 4,
+        "PIPELINE_TIMEOUT": 12,
+        "UNEXPECTED_PIN": 32,
+        "UNMAPPED_COMPILED_REFERENCE": 4,
+        "UNMAPPED_SOURCE_IDENTITY": 4,
+        "UNRESOLVED_PIN": 6,
+        "UNSUPPORTED_COMPONENT": 8,
+        "UNSUPPORTED_SHARED_EXPORT_KIND": 18
+      },
+      "failure_stages": {
+        "bridge": 38,
+        "compile": 224,
+        "connectivity": 14,
+        "export": 14,
+        "route": 20,
+        "serialized_validation": 14
+      },
+      "successful_attempts_by_stage": {
+        "bridge": 232,
+        "compile": 270,
+        "connectivity": 218,
+        "export": 184,
+        "route": 146,
+        "serialized_validation": 170
+      },
+      "successful_cases_by_stage": {
+        "bridge": 116,
+        "compile": 135,
+        "connectivity": 109,
+        "export": 92,
+        "route": 73,
+        "serialized_validation": 85
+      }
+    }
+  },
+  "latest_case_evidence": [
+    {
+      "id": "circuit-0115ba888b0bdb79953e",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-01903988ebfae2fea322",
+      "overall": "INVALID",
+      "report": "phase10-stable-recheck/corpus_report.json"
+    },
+    {
+      "id": "circuit-028d64605f0d82fbf036",
+      "overall": "FAIL",
+      "report": "phase10-stable-recheck/corpus_report.json"
+    },
+    {
+      "id": "circuit-03b15c4e1ce43adf6462",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-059b92bfc59c1877b8ba",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-05cc4d8b439735772811",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-066312efd75869b61593",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-06a9646eb15a387137e9",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-072945f94051edb70de7",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-0760e59cce48acb8205c",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-07dd90d78111d83e93e3",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-0930750b08cb227ec4c0",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-09609bb822e0c72ea5d4",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-0993c36910a455790abf",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-09c4a73bf0dc17a7d282",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-09f50ff5c79d74932cab",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-0a558cbc4a4eb6f348fe",
+      "overall": "FAIL",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-0a8220c632a6a2b94105",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-0ba4a3849088c94540b9",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-0c1969c5dea0503cf4d7",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-0c4bee456753e9aa59cf",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-0dd593fedb688fbb7b2d",
+      "overall": "FAIL",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-0f00b179c9a4adb24090",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-109763b282a39b94d088",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-1126f4d9ab968a5844fa",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-118cc2dbf76bf959fa3a",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-11d43159df6d8d990adc",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-11d9ab365454788650b6",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-12b0bc244921f893ccf9",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-1483fb1ede299a0e2cb5",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-1484c39f48834263dceb",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-16771e4190255b558fc3",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-175f595ed421a1b96264",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-178b4c854585834852ee",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-17c978b058e50543b74f",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-18eb0bba28c2c1120af7",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-191ca2b21d2f2d005616",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-1a71b517910749c1d7a7",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-1c1cb9e3f499d29a8acf",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-1d02f28ac4b12d3b95d5",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-1f7080d89f1370b3ab52",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-20ea3900eb605854bf6c",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-218e625149f479cef6cf",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-21a636a285c9988bb016",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-23066c4e84620d838ce0",
+      "overall": "PASS",
+      "report": "phase10-stable-recheck/corpus_report.json"
+    },
+    {
+      "id": "circuit-2366ee1614b76256a58e",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-2470040b96f1d243e839",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-24bafed30e3b55a469d9",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-27feaf23121146b82730",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-28b386d1c7b60cbad303",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-29731ee04e0323e67fac",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-2d089e4d2c979c27c20b",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-2d7f499af635d0e71c5b",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-2d9a0916473ac7f02801",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-2f22280e34592faa23b6",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-31010fa8618ea40e6029",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-3337e6fd1fcd18293666",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-3432f85025ca65479f4e",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-354c79a826f2f25af4cc",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-3c4deb2d9c1d3c4d4f8b",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-3c707fd2cbb172df3a93",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-3c8c2d1b46bbcda8371d",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-3fa119bf3a1dc74096a9",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-40f3e5a6fe13512c8065",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-42f0738ac053a96df1fb",
+      "overall": "FAIL",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-4386b152c692f2744b45",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-439ccb6d4e50ddd4936b",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-440240615dcf4888bfee",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-44136fa355b3678a1146",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-4439a6734293bb87d5ef",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-4948e5f50781d4ea66a3",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-495ad59c2666db9d2627",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-4acb7b3adf42a1e4daba",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-4afbe5555c75ae38ca5e",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-4b181caefb37f0a82f7d",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-4b246f400e7d2cab3c5d",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-4b606d8ac201c8cfefb6",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-4c7240d6ba3db86f6b03",
+      "overall": "FAIL",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-4d14d418dd8e463e5458",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-4db0433119dfe7a226b9",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-4f0d2acd28594cd56f28",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-4f53cda18c2baa0c0354",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-4fa7ce48b1ee6eecb6a5",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-4fc1256e0b400e5aec88",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-514fb198ed1c3c543e3a",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-527823f34ec2ad129642",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-531f8a28b226d49b52e6",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-538e2f8f2c4abf9ad2f9",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-543f702d0dcb12897945",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-547fdf6f2867f0df3f59",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-561343fcc15e45de847a",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-57800739208985bab32d",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-594e1339ccaadcba8920",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-5adfe6fd024ea0a8885c",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-5bd0a24d2dba815a326c",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-5bf411d0700870d1dd0b",
+      "overall": "INVALID",
+      "report": "phase10-stable-recheck/corpus_report.json"
+    },
+    {
+      "id": "circuit-5c17722626a31909aee6",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-5d3e6ebd71b77842f42d",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-5d43216779aacfa68c02",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-5d4a4cef398a7b9ab1cb",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-61d49cb3ec35ee6c13d3",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-6328860f7adab082790c",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-64c4366287ae0bb03120",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-650c9fa5864be800715a",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-66c18c8da0d662896763",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-67635628be75e2ae1c9c",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-6bacc236b8a723492c4a",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-6e35c90c9194de5fe288",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-71010c8f22b3754a72be",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-72173c03a45b93630a70",
+      "overall": "FAIL",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-7344baf2bb9a8d887dae",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-73e909ed8e861cba1b97",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-74234e98afe7498fb5da",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-74daed06ee141d16b4cb",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-7788b8e727d3b2f6f97d",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-7860dd8402d407013fe0",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-78eaf20340b3e669ed1d",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-79fd1deeca90b2ef8f61",
+      "overall": "FAIL",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-7b8175604702793762ef",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-7c0a8699c38a3898403d",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-7c4b65ea31631148fff8",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-7db9977fa4a5aec21786",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-7e0dd67db0d5c6acc85d",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-7e626debb39bd191c29e",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-817c1c103d58c049ece7",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-81c6444add963075e25f",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-81ec37413acabfef7e77",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-8336117f9954e8c058a7",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-83be75b29f6fb0ef9c58",
+      "overall": "FAIL",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-8812fde960848c5546f2",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-8a097cc0885e0194db83",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-8ae8de8ce92bf0f11b6a",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-8b9b59d84a5c6f0149b4",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-8c69a40068622fa91a98",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-8ca85f4323d18f614b38",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-8ca8f4bc59e746b3762d",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-8d910904fcc302dab99a",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-8e46c5523d099c7090e2",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-8f27083fa729f6ea01e2",
+      "overall": "FAIL",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-8fd2efaa9d3266ed2ad6",
+      "overall": "FAIL",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-915d8f088f4fc5f3ee9f",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-9243ef5763d82292493f",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-937a53cf299d80a19bfe",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-93e15d6ad595b7977e4d",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-9667b08297f2c0c31332",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-99500527279cdaba1930",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-9a28c82776ba5c353578",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-9a9bdef134526177d9fa",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-9d5c9990e1dd54a83112",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-9db077e53545d23d643d",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-9e2e1ced384dc86cd404",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-9f8f74a22a11b8ca0077",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-a03127880e4fd310acf2",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-a08dcc57e5bac435deb6",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-a3dd4bcfee29e523898b",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-a4f8d9197f5d204fb97d",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-a6ddc3ca6e6ba331b39f",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-a77e3c336f4929d49967",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-a7aabd1ba3f8ba6931f7",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-a8d3b622431f29efd0c4",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-aa2c5d249193467689ba",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-ab203b84adc3280125b2",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-ab96782069306a0e310d",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-ac50acbbe336b55a4fa6",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-ad9a8de607e94d599f38",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-ada25d6e596c9e802c3b",
+      "overall": "FAIL",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-b0fe37561a3da3b53b88",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-b11e8facd4d140cc1633",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-b3283bf184bb082f364b",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-b3e3b950eb4a09e0e6b9",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-b44889fec36a8bd41c62",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-b47c63cdb040faf52fa1",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-b5768f01c4f0a42becf9",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-b5e3053c0dfc519c1056",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-b68b39d2b1f1cce18609",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-b7139aba076994560994",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-ba91a59a637bb9d10af3",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-bbd907fe8b0da97d9051",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-bef3e4c0d95e3d332c34",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-c0c9b5da14184d92feb4",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-c139bafdc5a07ba94d79",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-c1873fce60feb2bc0d36",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-c3cc7f5ed7ba5926bce3",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-c540b8a187282a67cf55",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-c686f07a1b90328322b9",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-c70fa8d455dfba0f6950",
+      "overall": "FAIL",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-c74ddc3e8afdda37cd56",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-c969d1bdba2d5ac6e93a",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-ca19b40a56fa8f141b93",
+      "overall": "FAIL",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-cb08f0621ecabdb63c7f",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-ccebc5aebe8bb555502b",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-cde3524b29b7ff905b22",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-ce1040c45b8e6c3bcbe8",
+      "overall": "FAIL",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-ce3077dee0ee193244ff",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-d06dbe3c49c25059b57e",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-d0a675591fb8bc147594",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-d10ae1682ca9cbe68456",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-d1c1a52b508e6d3e931c",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-d30c8636537ac1fe7fa4",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-d33a953ddb979098bb84",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-d3b3536c74cb3c9adeea",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-d621e90b9ac86375709c",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-d79cc631f6503a7ffce1",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-d8e8907d585233eac4d0",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-d8f96adb2962ad5ba9ec",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-db377cdd6a61564fd8a0",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-dca0ec77c98a3bf7fa94",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-df9bdf682ead6ffb9731",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-e0065951b5398022cde6",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-e0a8bff21a49caa89e5b",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-e150829c70c8fbeedb7d",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-e17d306037d74bf59fb3",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-e3abd2e84c8e5cbd85d2",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-e53a7e3f9ad60a806df0",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-e6e89bec12710a6ec377",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-e70a4fc48ce766624748",
+      "overall": "UNSUPPORTED",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-e70f65d9168b2c5a2645",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-e89c2974e9d23e4f26a3",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-e89d291d6e5056b905d4",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-e949db5feb93ffbe0ac2",
+      "overall": "FAIL",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-e9fb5b1dcf1dcfab24f6",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-eabbd754a05feaba15e2",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-ead1393f52f66e57cb4c",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-ed73c3594d605fdd7406",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-f21c0ec514e079021abd",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-f27fc6b4ad6231ffb68b",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-f2b91ea1243440df2645",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-f3fda1406733a47f5c25",
+      "overall": "FAIL",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-f511a037f0e4cee3efba",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-f90b1e513f005ba5fff2",
+      "overall": "PASS",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-fa50e06d005f449ebf1f",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-fb420c6210c600c96e2d",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-fddb1c1846acbeb11ff6",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-fe40af3f98b26ab38791",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-ff5b2622d96773f43335",
+      "overall": "INVALID",
+      "report": "phase10-full/reviewed_report.json"
+    },
+    {
+      "id": "circuit-487a1e171625615c17a0",
+      "overall": "PASS",
+      "report": "phase10-stable-recheck/corpus_report.json"
+    },
+    {
+      "id": "circuit-d79639eaaa899c072620",
+      "overall": "PASS",
+      "report": "phase10-stable-recheck/corpus_report.json"
+    },
+    {
+      "id": "circuit-011da72b4d779fc1e919",
+      "overall": "FAIL",
+      "report": "phase10-stable-recheck/corpus_report.json"
+    },
+    {
+      "id": "circuit-ff1fd8b1b9cb2998f6df",
+      "overall": "PASS",
+      "report": "phase10-stable-recheck/corpus_report.json"
+    },
+    {
+      "id": "circuit-6ceaf1a9d262db9531d6",
+      "overall": "PASS",
+      "report": "phase10-stable-recheck/corpus_report.json"
+    },
+    {
+      "id": "circuit-d1745c42a0d7260ca981",
+      "overall": "FAIL",
+      "report": "phase10-stable-recheck/corpus_report.json"
+    },
+    {
+      "id": "circuit-44dc9954c88aea4055f2",
+      "overall": "FAIL",
+      "report": "phase10-stable-recheck/corpus_report.json"
+    },
+    {
+      "id": "circuit-bf177d289f65b1ff63fb",
+      "overall": "FAIL",
+      "report": "phase10-stable-recheck/corpus_report.json"
+    },
+    {
+      "id": "circuit-4bcd9f1440d1be5ced40",
+      "overall": "FAIL",
+      "report": "phase10-stable-recheck/corpus_report.json"
+    },
+    {
+      "id": "circuit-5eee04129d7baad3326a",
+      "overall": "FAIL",
+      "report": "phase10-stable-recheck/corpus_report.json"
+    },
+    {
+      "id": "circuit-55e763579a65517ae71f",
+      "overall": "FAIL",
+      "report": "phase10-stable-recheck/corpus_report.json"
+    },
+    {
+      "id": "circuit-a82f72ae9c7431e50765",
+      "overall": "FAIL",
+      "report": "phase10-stable-recheck/corpus_report.json"
+    }
+  ],
+  "latest_evidence_summary": {
+    "attempt_status": {
+      "FAIL": 48,
+      "INVALID": 212,
+      "PASS": 166,
+      "UNSUPPORTED": 68
+    },
+    "attempts": 494,
+    "case_status": {
+      "FAIL": 24,
+      "INVALID": 106,
+      "PASS": 83,
+      "UNSUPPORTED": 34
+    },
+    "cases": 247,
+    "determinism_status": {
+      "OBSERVED": 247
+    },
+    "failure_codes": {
+      "AMBIGUOUS_SOURCE_IDENTITY": 20,
+      "BACKEND_TIMEOUT": 4,
+      "BLOCKED_PIN_ESCAPE": 12,
+      "COMPILER_ERROR": 248,
+      "CONFLICTING_COMPONENT_DEFINITION": 6,
+      "CONFLICTING_NET_LABELS": 8,
+      "DUPLICATE_COMPILED_ID": 10,
+      "DUPLICATE_WIRE": 6,
+      "INSTANCE_NAME_COLLISION": 10,
+      "INVALID_ATTRIBUTE": 2,
+      "INVALID_BACKEND_IDENTITY": 8,
+      "INVALID_COMPILED_LABEL": 4,
+      "INVALID_COMPONENTS": 4,
+      "INVALID_COMPONENT_IDENTITY": 2,
+      "LABEL_ONLY_NET": 2,
+      "MISSING_PIN": 24,
+      "NET_LABEL_COLLISION": 2,
+      "NO_SAFE_ROUTE": 4,
+      "PIPELINE_TIMEOUT": 30,
+      "UNEXPECTED_PIN": 32,
+      "UNMAPPED_COMPILED_REFERENCE": 4,
+      "UNMAPPED_SOURCE_IDENTITY": 4,
+      "UNRESOLVED_PIN": 6,
+      "UNSUPPORTED_COMPONENT": 8,
+      "UNSUPPORTED_SHARED_EXPORT_KIND": 18
+    },
+    "failure_stages": {
+      "bridge": 38,
+      "compile": 224,
+      "connectivity": 14,
+      "export": 14,
+      "route": 24,
+      "serialized_validation": 14
+    },
+    "successful_attempts_by_stage": {
+      "bridge": 232,
+      "compile": 270,
+      "connectivity": 218,
+      "export": 180,
+      "route": 142,
+      "serialized_validation": 166
+    },
+    "successful_cases_by_stage": {
+      "bridge": 116,
+      "compile": 135,
+      "connectivity": 109,
+      "export": 90,
+      "route": 71,
+      "serialized_validation": 83
+    }
+  },
+  "limits_and_gaps": [
+    "30-second hard deadline per compiler/backend process; routing has its own configured 10-second budget. No circuit was thinned to meet a deadline.",
+    "84 conservative static expressions and six non-JSON/accessor/cyclic runtime snapshots remain explicitly unresolved; inventories catalog their locations.",
+    "All 245 circuits in the stabilized source inventory were exercised; two earlier circuits remain retained and tested, for 247 total.",
+    "Original controller classifications are preserved. Reviewed results only reclassify stored rejection diagnostics and close interrupted stage states; no PASS was added by review.",
+    "Latest evidence selects actual rechecks for 16 cases, not a fresh full-corpus run at one immutable implementation revision. Each latest case has two samples with stable implementation hashes.",
+    "25-component RC and 100-component resistor benchmarks passed earlier but failed the recheck; size capacity is budget/load-sensitive and must not be declared robust.",
+    "Memory is sampled Windows child-tree working set every 20ms, excluding the harness; brief peaks can be missed. Measurements reflect concurrent work, not an idle dedicated performance host.",
+    "Native LTspice, simulation and browser rendering are not part of this corpus run. PASS requires compiler, bridge, backend connectivity, required routing, export and independent serialized checks.",
+    "Direct-router fixtures are snapshot as source circuits and run through normal layout; this does not replay every original test placement, injected fault or assertion."
+  ],
+  "original_json_results": [
+    {
+      "id": "circuit-3432f85025ca65479f4e",
+      "name": "Voltage Divider Routing Regression",
+      "overall": "PASS"
+    },
+    {
+      "id": "circuit-3c4deb2d9c1d3c4d4f8b",
+      "name": "LED Blinker",
+      "overall": "PASS"
+    },
+    {
+      "id": "circuit-538e2f8f2c4abf9ad2f9",
+      "name": "555 Astable Multivibrator",
+      "overall": "PASS"
+    },
+    {
+      "id": "circuit-8336117f9954e8c058a7",
+      "name": "RC High Pass Filter",
+      "overall": "PASS"
+    },
+    {
+      "id": "circuit-937a53cf299d80a19bfe",
+      "name": "Bridge Rectifier Routing Regression",
+      "overall": "PASS"
+    },
+    {
+      "id": "circuit-9667b08297f2c0c31332",
+      "name": "Common Emitter Amplifier",
+      "overall": "PASS"
+    },
+    {
+      "id": "circuit-c1873fce60feb2bc0d36",
+      "name": "RC Low Pass Filter",
+      "overall": "PASS"
+    }
+  ],
+  "outcome_changes_on_recheck": [
+    {
+      "id": "circuit-011da72b4d779fc1e919",
+      "latest": "FAIL",
+      "previous": "PASS"
+    },
+    {
+      "id": "circuit-bf177d289f65b1ff63fb",
+      "latest": "FAIL",
+      "previous": "PASS"
+    }
+  ],
+  "recheck": {
+    "command_wall_seconds": 424.71,
+    "exit_code": 1,
+    "ids": [
+      "circuit-01903988ebfae2fea322",
+      "circuit-028d64605f0d82fbf036",
+      "circuit-23066c4e84620d838ce0",
+      "circuit-5bf411d0700870d1dd0b",
+      "circuit-487a1e171625615c17a0",
+      "circuit-d79639eaaa899c072620",
+      "circuit-011da72b4d779fc1e919",
+      "circuit-ff1fd8b1b9cb2998f6df",
+      "circuit-6ceaf1a9d262db9531d6",
+      "circuit-d1745c42a0d7260ca981",
+      "circuit-44dc9954c88aea4055f2",
+      "circuit-bf177d289f65b1ff63fb",
+      "circuit-4bcd9f1440d1be5ced40",
+      "circuit-5eee04129d7baad3326a",
+      "circuit-55e763579a65517ae71f",
+      "circuit-a82f72ae9c7431e50765"
+    ],
+    "report": "phase10-stable-recheck/corpus_report.json",
+    "summary": {
+      "attempt_status": {
+        "FAIL": 18,
+        "INVALID": 4,
+        "PASS": 10
+      },
+      "attempts": 32,
+      "case_status": {
+        "FAIL": 9,
+        "INVALID": 2,
+        "PASS": 5
+      },
+      "cases": 16,
+      "determinism_status": {
+        "OBSERVED": 16
+      },
+      "failure_codes": {
+        "BACKEND_TIMEOUT": 4,
+        "COMPILER_ERROR": 4,
+        "PIPELINE_TIMEOUT": 28
+      },
+      "failure_stages": {
+        "compile": 4,
+        "export": 4,
+        "route": 14
+      },
+      "successful_attempts_by_stage": {
+        "bridge": 28,
+        "compile": 28,
+        "connectivity": 28,
+        "export": 10,
+        "route": 10,
+        "serialized_validation": 10
+      },
+      "successful_cases_by_stage": {
+        "bridge": 14,
+        "compile": 14,
+        "connectivity": 14,
+        "export": 5,
+        "route": 5,
+        "serialized_validation": 5
+      }
+    }
+  },
+  "schema_version": 1,
+  "total_executed_attempts": 526,
+  "unit_tests": {
+    "passed": 22,
+    "report": "phase10-unit-tests-complete.xml",
+    "subtests_passed": 18
+  }
+}

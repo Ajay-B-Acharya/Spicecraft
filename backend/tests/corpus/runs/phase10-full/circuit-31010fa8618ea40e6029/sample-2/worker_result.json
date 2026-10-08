@@ -1,0 +1,86 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "40db627e282f1a1705b7cfa475809625f5ebfef7bd0e322479cc058783d7c8bd",
+  "compiled_sha256": "236a576192208ee003fafd680115d31afa1bae3d93d19570093f9da52b69979b",
+  "counts": {
+    "compiled": {
+      "components": 1,
+      "connections": 0,
+      "mapped_components": 1,
+      "nets": 0,
+      "pins": 2
+    },
+    "exported": {
+      "components": 1,
+      "flags": 0,
+      "pins": 2,
+      "wires": 0
+    },
+    "input": {
+      "components": 1,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R1 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "id": "circuit-31010fa8618ea40e6029",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 11,
+      "peak_rss_bytes": 98201600
+    }
+  },
+  "name": "test_export_polish.py:line:122",
+  "overall": "NOT_RUN",
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "length": 0,
+    "segments": 0
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "NOT_REQUIRED",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 13.707399999475456,
+    "compiler_process_wall": 527.1790000006149,
+    "compiler_reported": 4.32469999999995,
+    "connectivity_wall": 0.15419999999721767,
+    "export_wall": 3.4486999993532663,
+    "serialized_validation_wall": 0.5013999998482177
+  }
+}

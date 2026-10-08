@@ -1,0 +1,10 @@
+{
+  "components": [
+    {
+      "id": "U1",
+      "type": "ic",
+      "value": "LM358"
+    }
+  ],
+  "wires": []
+}

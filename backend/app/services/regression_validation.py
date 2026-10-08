@@ -25,7 +25,6 @@ from app.services.grid_system import GridSystem
 from app.services.pin_maps import COMPONENT_LIBRARY, PinResolver
 from app.services.routing.geometry import CollisionDetector, box_contains, intersection, on_segment, prepare_problem
 from app.services.routing.models import RoutingOptions
-from tools.verify_ltspice import compare_partitions
 
 
 _INTEGER = re.compile(r"[+-]?[0-9]+\Z")
@@ -127,7 +126,9 @@ def parse_asc_semantics(text: str, circuit: str = "", *, require_headers: bool =
         if len(fields) != count:
             raise _Syntax("MALFORMED_RECORD", "Use " + syntax, syntax)
 
+    from app.services.production import checkpoint
     for number, raw in enumerate(text.splitlines(), 1):
+        checkpoint()
         fields = raw.split()
         if not fields:
             continue
@@ -334,6 +335,8 @@ def compare_topology(expected, actual, *, preserve_labels: bool = False,
     comparison checks each electrical label's pin membership, including empty
     named nets; it never treats mere equal group names as connectivity.
     """
+    from tools.verify_ltspice import compare_partitions
+
     try:
         left, right = _groups(expected), _groups(actual)
         pin_nodes = {pin: f"node-{index}" for index, pins in enumerate(right.values()) for pin in pins}

@@ -18,6 +18,7 @@ from dataclasses import dataclass, field
 from typing import Any, Iterable
 
 from app.services.asc_validation import ERROR, WARNING, ExportDiagnostic
+from app.services.production import checkpoint, current_execution
 from app.services.pin_maps import (
     COMPONENT_KIND_ALIASES,
     COMPONENT_LIBRARY,
@@ -203,6 +204,7 @@ def build_connectivity(
         raw_wires = []
 
     for index, raw in enumerate(raw_components):
+        checkpoint(iterations=1)
         if not isinstance(raw, dict):
             diagnostics.append(ExportDiagnostic(ERROR, "INVALID_COMPONENT", f"Component #{index + 1} must be an object"))
             continue
@@ -229,7 +231,7 @@ def build_connectivity(
             diagnostics.append(ExportDiagnostic(ERROR, "CONFLICTING_COMPONENT_DEFINITION", f"Type '{raw.get('type')}' defines {type_kind}, but value '{raw.get('value')}' defines {value_kind}; no definition was changed", component=inst))
         definition = COMPONENT_LIBRARY.get(resolve_component_kind(raw))
         if definition is None:
-            diagnostics.append(ExportDiagnostic(WARNING, "UNKNOWN_COMPONENT_KIND", "Unknown component kind; exported as a generic 'res' symbol and its pins cannot be wired", component=inst))
+            diagnostics.append(ExportDiagnostic(ERROR, "UNSUPPORTED_COMPONENT", "Component is not currently supported by SpiceCraft; no symbol substitution is allowed", component=inst, stage="input_validation"))
         else:
             for pin in definition.pins:
                 key = f"{inst}.{pin.id}"
@@ -286,6 +288,7 @@ def build_connectivity(
     edges: dict[frozenset[str], int] = {}
     wire_ids: dict[str, tuple[frozenset[str], int]] = {}
     for index, wire in enumerate(raw_wires, 1):
+        checkpoint(iterations=1)
         if not isinstance(wire, dict):
             diagnostics.append(ExportDiagnostic(ERROR, "INVALID_WIRE", f"Wire #{index} must be an object"))
             continue
@@ -312,11 +315,19 @@ def build_connectivity(
         wires.append(SourceWire(index, src, dst, raw_src, raw_dst, identity))
         uf.union(src, dst)
 
+    wire_indices_by_root: dict[str, list[int]] = {}
+    for wire in wires:
+        checkpoint(iterations=1)
+        wire_indices_by_root.setdefault(uf.find(wire.source), []).append(wire.index)
     nets: list[LogicalNet] = []
     anonymous = 0
     reserved_labels = {node for node in uf._parent if node not in pin_refs}
     used_names: set[str] = set()
     for members in uf.groups():
+        checkpoint(iterations=1)
+        execution = current_execution()
+        if execution is not None:
+            execution.require('nets', len(nets) + 1)
         pins = [pin_refs[node] for node in members if node in pin_refs]
         labels = [node for node in members if node not in pin_refs]
         specials = [node for node in labels if node in SPECIAL_NODE_ORDER]
@@ -333,7 +344,7 @@ def build_connectivity(
         else:
             name = f"label-group-{len(nets) + 1}"
         used_names.add(name)
-        wire_indices = [wire.index for wire in wires if wire.source in members]
+        wire_indices = wire_indices_by_root[uf.find(members[0])]
         net = LogicalNet(name, members, pins, labels, special, wire_indices)
         nets.append(net)
         if len(labels) > 1:
@@ -346,6 +357,7 @@ def build_connectivity(
 
     # Annotate edge diagnostics with the final source net's stable display name.
     for position, diagnostic in enumerate(diagnostics):
+        checkpoint(iterations=1)
         if diagnostic.net is not None:
             continue
         indices = [wire.index for wire in wires if diagnostic.message.startswith(f"Wire #{wire.index} ")]
@@ -377,6 +389,7 @@ def validate_connectivity(
     seen_names: set[str] = set()
     actual_owners: dict[str, list[str]] = {}
     for net in actual_nets:
+        checkpoint(iterations=1)
         name = net.name
         if name in seen_names:
             found.append(ExportDiagnostic(ERROR, "DUPLICATE_NET", "Produced net name is repeated", net=name))

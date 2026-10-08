@@ -1,0 +1,75 @@
+{
+  "basis": "Geometry-only graph of already-validated serialized wires and flags; unsplit interior X crossings remain unjoined. No electrical partitions or device-body connections inferred.",
+  "cases": [
+    {
+      "bend_count": 32,
+      "bounding_box": [
+        80,
+        112,
+        848,
+        768
+      ],
+      "components": 10,
+      "family": "resistor",
+      "id": "circuit-487a1e171625615c17a0",
+      "junction_count": 0,
+      "segment_count": 43
+    },
+    {
+      "bend_count": 35,
+      "bounding_box": [
+        32,
+        80,
+        912,
+        784
+      ],
+      "components": 10,
+      "family": "filter",
+      "id": "circuit-d79639eaaa899c072620",
+      "junction_count": 7,
+      "segment_count": 56
+    },
+    {
+      "bend_count": 84,
+      "bounding_box": [
+        80,
+        112,
+        848,
+        1792
+      ],
+      "components": 25,
+      "family": "resistor",
+      "id": "circuit-ff1fd8b1b9cb2998f6df",
+      "junction_count": 0,
+      "segment_count": 110
+    },
+    {
+      "bend_count": 172,
+      "bounding_box": [
+        80,
+        112,
+        848,
+        3328
+      ],
+      "components": 50,
+      "family": "resistor",
+      "id": "circuit-6ceaf1a9d262db9531d6",
+      "junction_count": 0,
+      "segment_count": 223
+    },
+    {
+      "bend_count": 348,
+      "bounding_box": [
+        80,
+        112,
+        848,
+        6400
+      ],
+      "components": 100,
+      "family": "resistor",
+      "id": "circuit-bf177d289f65b1ff63fb",
+      "junction_count": 0,
+      "segment_count": 449
+    }
+  ]
+}

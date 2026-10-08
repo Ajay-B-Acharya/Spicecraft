@@ -1,0 +1,191 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "85dba015f79223726000ed751aa209309f2dcabcb59452b92947580742255c99",
+  "compiled_sha256": "7169bb7a0a9779fc4da85f3836f18367286f142480f362a6b6be8e2e587cb9cf",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 2,
+      "mapped_components": 2,
+      "nets": 1,
+      "pins": 4
+    },
+    "exported": {
+      "components": 2,
+      "flags": 0,
+      "pins": 4,
+      "wires": 5
+    },
+    "input": {
+      "components": 2,
+      "connections": 2,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 0,
+      "nets": 1,
+      "pins": 2,
+      "segments": 5
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R1; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R2; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Duplicate source connection #2.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "R1",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R1",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "backend_id": "R2",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R2",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "DUPLICATE_WIRE",
+      "component": null,
+      "expected": null,
+      "message": "Wire #2 duplicates wire #1 after alias resolution",
+      "net": "N1",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "warning",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "DUPLICATE_WIRE",
+      "component": null,
+      "expected": null,
+      "message": "Wire #2 duplicates wire #1 after alias resolution",
+      "net": "N1",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "warning",
+      "stage": "route"
+    },
+    {
+      "actual": null,
+      "circuit": "Circuit",
+      "code": "DUPLICATE_WIRE",
+      "component": null,
+      "expected": null,
+      "message": "Wire #2 duplicates wire #1 after alias resolution",
+      "net": "N1",
+      "pin": null,
+      "pipeline_stage": "post_export_validation",
+      "severity": "warning",
+      "stage": "export"
+    },
+    {
+      "actual": null,
+      "circuit": "test_connectivity.py:line:255",
+      "code": "DUPLICATE_WIRE",
+      "component": null,
+      "error": "Wire #2 duplicates wire #1 after alias resolution",
+      "expected": null,
+      "net": "N1",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "serialized_validation"
+    }
+  ],
+  "id": "circuit-4c7240d6ba3db86f6b03",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 15,
+      "peak_rss_bytes": 93626368
+    }
+  },
+  "name": "test_connectivity.py:line:255",
+  "overall": "NOT_RUN",
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 8,
+    "collision_checks": 11,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 464,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 5
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "FAIL"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 21.07609999984561,
+    "compiler_process_wall": 681.5578000005189,
+    "compiler_reported": 8.718499999999949,
+    "connectivity_wall": 0.36699999964184826,
+    "export_wall": 10.489299999790092,
+    "route_wall": 0.8350999996764585,
+    "serialized_validation_wall": 0.8422999999311287
+  }
+}

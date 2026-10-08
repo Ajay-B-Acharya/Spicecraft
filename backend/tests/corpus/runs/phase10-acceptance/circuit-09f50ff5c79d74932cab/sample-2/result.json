@@ -1,0 +1,96 @@
+{
+  "compiled_sha256": "7d334b3a189e6b321d2e6d1ee3b6c3605793de0f78e000d83253d6e44071197d",
+  "counts": {
+    "compiled": {
+      "components": 1,
+      "connections": 0,
+      "mapped_components": 1,
+      "nets": 0,
+      "pins": 2
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component node is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin node.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin node.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "R 1",
+      "code": "INVALID_BACKEND_IDENTITY",
+      "compiled_id": "node",
+      "generated_by_compiler": false,
+      "message": "Backend identity \"R 1\" cannot be represented as an unambiguous Component.Pin token.",
+      "severity": "error",
+      "source_id": "node",
+      "source_index": 0,
+      "source_reference": "R 1",
+      "stage": "bridge"
+    }
+  ],
+  "evidence_directory": "circuit-09f50ff5c79d74932cab/sample-2",
+  "failure_stage": "bridge",
+  "failures": [
+    {
+      "backend_id": "R 1",
+      "code": "INVALID_BACKEND_IDENTITY",
+      "compiled_id": "node",
+      "generated_by_compiler": false,
+      "message": "Backend identity \"R 1\" cannot be represented as an unambiguous Component.Pin token.",
+      "severity": "error",
+      "source_id": "node",
+      "source_index": 0,
+      "source_reference": "R 1",
+      "stage": "bridge"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-09f50ff5c79d74932cab",
+  "implementation_sha256": "d44b5d13ff81cee32d13245644dd5445eab9ca7d5a428296672dabc6b1629b73",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 18,
+      "peak_rss_bytes": 85250048
+    }
+  },
+  "name": "regressionBridge.test.cjs:line:261",
+  "overall": "INVALID",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "PASS",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "invalid_or_unknown",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 651.0324000000764,
+    "compiler_reported": 5.2531999999999925
+  },
+  "validation": "NOT_RUN"
+}

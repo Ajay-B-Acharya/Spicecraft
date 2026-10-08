@@ -1,0 +1,10 @@
+{
+  "components": [
+    {
+      "reference": "U1",
+      "type": "ic",
+      "value": null
+    }
+  ],
+  "wires": []
+}

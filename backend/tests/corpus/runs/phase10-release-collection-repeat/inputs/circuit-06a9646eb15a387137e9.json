@@ -1,0 +1,17 @@
+{
+  "components": [
+    {
+      "id": "q-id",
+      "reference": "Q1",
+      "type": "transistor"
+    }
+  ],
+  "wires": [
+    {
+      "destination": "in",
+      "from": "Q1.base",
+      "source": "q-id.2",
+      "to": "VIN"
+    }
+  ]
+}

@@ -1,0 +1,2261 @@
+{
+  "cases": [
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 1,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "complete",
+          "supported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "Q1",
+                  "backend_type": "transistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "q-id",
+                  "compiled_type": "npn_transistor",
+                  "status": "supported"
+                }
+              ],
+              "id": "q-id",
+              "reference": "Q1",
+              "source_index": 0,
+              "type": "transistor"
+            }
+          ],
+          "unattributed_diagnostics": [
+            {
+              "actual": null,
+              "circuit": null,
+              "code": "UNSUPPORTED_COMPONENT",
+              "component": "Q1",
+              "expected": null,
+              "message": "Component is not currently supported by SpiceCraft; no symbol substitution is allowed",
+              "net": null,
+              "pin": null,
+              "pipeline_stage": "input_validation",
+              "severity": "error",
+              "stage": "connectivity"
+            }
+          ],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "06a9646eb15a387137e9f01819540bfea14c6f1191fd4ff0e99a47e7d1baf04c",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-06a9646eb15a387137e9",
+      "input": "inputs/circuit-06a9646eb15a387137e9.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-06a9646eb15a387137e9.json",
+      "name": "test_connectivity.py:line:294",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:294",
+          "source": "backend/tests/test_connectivity.py",
+          "source_sha256": "2379295c3da4a13871df8fe7d14843960f7190f2c6c850126623d5c651d223ba"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:295",
+          "source": "backend/tests/test_connectivity.py",
+          "source_sha256": "2379295c3da4a13871df8fe7d14843960f7190f2c6c850126623d5c651d223ba"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "06a9646eb15a387137e9f01819540bfea14c6f1191fd4ff0e99a47e7d1baf04c",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'LM358' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "U1",
+              "source_index": 0,
+              "type": "LM358",
+              "value": "resistor"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "0930750b08cb227ec4c0d5506784b9d57d6e333fd7fcef13e72974bc6a52e457",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-0930750b08cb227ec4c0",
+      "input": "inputs/circuit-0930750b08cb227ec4c0.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-0930750b08cb227ec4c0.json",
+      "name": "Test",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:108",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "0930750b08cb227ec4c0d5506784b9d57d6e333fd7fcef13e72974bc6a52e457",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type '__proto__' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "U1",
+              "source_index": 0,
+              "type": "__proto__",
+              "value": "NE555"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "1126f4d9ab968a5844fa429b49b088dfccdbf8987068810eccb2d694fa624350",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-1126f4d9ab968a5844fa",
+      "input": "inputs/circuit-1126f4d9ab968a5844fa.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-1126f4d9ab968a5844fa.json",
+      "name": "Test",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:108",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "1126f4d9ab968a5844fa429b49b088dfccdbf8987068810eccb2d694fa624350",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'LM358' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "U1",
+              "source_index": 0,
+              "type": "LM358",
+              "value": "NE555"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "16771e4190255b558fc35d6ee44483478b6427c18bc167b6989230bafe145189",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-16771e4190255b558fc3",
+      "input": "inputs/circuit-16771e4190255b558fc3.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-16771e4190255b558fc3.json",
+      "name": "Test",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:108",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "16771e4190255b558fc35d6ee44483478b6427c18bc167b6989230bafe145189",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'unsupported' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "U1",
+              "source_index": 0,
+              "type": "unsupported"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "191ca2b21d2f2d005616d2c45b0cd44df7a1fd6ada7785c736ba90781ffd9e40",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-191ca2b21d2f2d005616",
+      "input": "inputs/circuit-191ca2b21d2f2d005616.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-191ca2b21d2f2d005616.json",
+      "name": "Test",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:295",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "191ca2b21d2f2d005616d2c45b0cd44df7a1fd6ada7785c736ba90781ffd9e40",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'mosfet' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "U1",
+              "source_index": 0,
+              "type": "mosfet",
+              "value": "BC547"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "1d02f28ac4b12d3b95d508ffb6851b8153929d22b8763be8715154331c512fd1",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-1d02f28ac4b12d3b95d5",
+      "input": "inputs/circuit-1d02f28ac4b12d3b95d5.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-1d02f28ac4b12d3b95d5.json",
+      "name": "Test",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:108",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "1d02f28ac4b12d3b95d508ffb6851b8153929d22b8763be8715154331c512fd1",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "V1",
+                  "backend_type": null,
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "V1",
+                  "compiled_type": "voltage_source",
+                  "status": "unsupported"
+                },
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "UNSUPPORTED_SHARED_EXPORT_KIND",
+                    "compiled_id": "V1",
+                    "frontend_type": "voltage_source",
+                    "message": "Frontend kind voltage_source is not supported by the shared backend export; no fallback component is permitted.",
+                    "severity": "error",
+                    "stage": "bridge"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "reference": "V1",
+              "source_index": 0,
+              "type": "voltage_source"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "20ea3900eb605854bf6c1139100a706d9fe1135b2cdb6c0a26d6d109dc18dd56",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-20ea3900eb605854bf6c",
+      "input": "inputs/circuit-20ea3900eb605854bf6c.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-20ea3900eb605854bf6c.json",
+      "name": "test_pipeline_regression.py:line:117",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:117",
+          "source": "backend/tests/test_pipeline_regression.py",
+          "source_sha256": "f10e74092c091d426a083334096f2f525b9d3ef3268a8312fa897611130e035d"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:122",
+          "source": "backend/tests/test_pipeline_regression.py",
+          "source_sha256": "f10e74092c091d426a083334096f2f525b9d3ef3268a8312fa897611130e035d"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "20ea3900eb605854bf6c1139100a706d9fe1135b2cdb6c0a26d6d109dc18dd56",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "X1",
+                  "backend_type": null,
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "X1",
+                  "compiled_type": "voltage_source",
+                  "status": "unsupported"
+                },
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "UNSUPPORTED_SHARED_EXPORT_KIND",
+                    "compiled_id": "X1",
+                    "frontend_type": "voltage_source",
+                    "message": "Frontend kind voltage_source is not supported by the shared backend export; no fallback component is permitted.",
+                    "severity": "error",
+                    "stage": "bridge"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "X1",
+              "reference": "X1",
+              "source_index": 0,
+              "type": "voltage",
+              "value": "1k"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "27feaf23121146b827306a42a575e05373a7cb81994f38197e86908cf539a1e1",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-27feaf23121146b82730",
+      "input": "inputs/circuit-27feaf23121146b82730.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-27feaf23121146b82730.json",
+      "name": "regressionBridge.test.cjs:line:164",
+      "origins": [
+        {
+          "kind": "frontend_data_expression",
+          "locator": "line:164",
+          "source": "frontend/tests/regressionBridge.test.cjs",
+          "source_sha256": "0a9a1a0f3ca84d0af0694054623a3c2929da9445a3aa88c9ae78ca689edecb40"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:164",
+          "source": "frontend/tests/regressionBridge.test.cjs",
+          "source_sha256": "0a9a1a0f3ca84d0af0694054623a3c2929da9445a3aa88c9ae78ca689edecb40"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "27feaf23121146b827306a42a575e05373a7cb81994f38197e86908cf539a1e1",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "U1",
+                  "backend_type": null,
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "U1",
+                  "compiled_type": "pnp_transistor",
+                  "status": "unsupported"
+                },
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "UNSUPPORTED_SHARED_EXPORT_KIND",
+                    "compiled_id": "U1",
+                    "frontend_type": "pnp_transistor",
+                    "message": "Frontend kind pnp_transistor is not supported by the shared backend export; no fallback component is permitted.",
+                    "severity": "error",
+                    "stage": "bridge"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "reference": "U1",
+              "source_index": 0,
+              "type": "bjt",
+              "value": "BC557"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "4386b152c692f2744b45339f2e4a192feca7f12a72921dedb2e68328cc76c67b",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-4386b152c692f2744b45",
+      "input": "inputs/circuit-4386b152c692f2744b45.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-4386b152c692f2744b45.json",
+      "name": "test_component_support_boundaries.py:line:16",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:16",
+          "source": "backend/tests/test_component_support_boundaries.py",
+          "source_sha256": "158a01bddfe948d2ebc33877bace897e241cc37df9ede6ca7cd774698587807a"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:17",
+          "source": "backend/tests/test_component_support_boundaries.py",
+          "source_sha256": "158a01bddfe948d2ebc33877bace897e241cc37df9ede6ca7cd774698587807a"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "4386b152c692f2744b45339f2e4a192feca7f12a72921dedb2e68328cc76c67b",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'unknown' on component X1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "reference": "X1",
+              "source_index": 0,
+              "type": "unknown"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "4f0d2acd28594cd56f28c8171ef43fbf426591ec70ce90b0028b661644ec0399",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-4f0d2acd28594cd56f28",
+      "input": "inputs/circuit-4f0d2acd28594cd56f28.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-4f0d2acd28594cd56f28.json",
+      "name": "test_connectivity.py:line:252",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:252",
+          "source": "backend/tests/test_connectivity.py",
+          "source_sha256": "2379295c3da4a13871df8fe7d14843960f7190f2c6c850126623d5c651d223ba"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "4f0d2acd28594cd56f28c8171ef43fbf426591ec70ce90b0028b661644ec0399",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "U1",
+                  "backend_type": null,
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "U1",
+                  "compiled_type": "pnp_transistor",
+                  "status": "unsupported"
+                },
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "UNSUPPORTED_SHARED_EXPORT_KIND",
+                    "compiled_id": "U1",
+                    "frontend_type": "pnp_transistor",
+                    "message": "Frontend kind pnp_transistor is not supported by the shared backend export; no fallback component is permitted.",
+                    "severity": "error",
+                    "stage": "bridge"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "reference": "U1",
+              "source_index": 0,
+              "type": "transistor",
+              "value": "PNP"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "4fc1256e0b400e5aec883f729223edc9dd95844c9397e9d1e6ba515d2e50420a",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-4fc1256e0b400e5aec88",
+      "input": "inputs/circuit-4fc1256e0b400e5aec88.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-4fc1256e0b400e5aec88.json",
+      "name": "test_component_support_boundaries.py:line:16",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:16",
+          "source": "backend/tests/test_component_support_boundaries.py",
+          "source_sha256": "158a01bddfe948d2ebc33877bace897e241cc37df9ede6ca7cd774698587807a"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:17",
+          "source": "backend/tests/test_component_support_boundaries.py",
+          "source_sha256": "158a01bddfe948d2ebc33877bace897e241cc37df9ede6ca7cd774698587807a"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "4fc1256e0b400e5aec883f729223edc9dd95844c9397e9d1e6ba515d2e50420a",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "X1",
+                  "backend_type": null,
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "X1",
+                  "compiled_type": "pnp_transistor",
+                  "status": "unsupported"
+                },
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "UNSUPPORTED_SHARED_EXPORT_KIND",
+                    "compiled_id": "X1",
+                    "frontend_type": "pnp_transistor",
+                    "message": "Frontend kind pnp_transistor is not supported by the shared backend export; no fallback component is permitted.",
+                    "severity": "error",
+                    "stage": "bridge"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "X1",
+              "reference": "X1",
+              "source_index": 0,
+              "type": "pnp",
+              "value": "1k"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "514fb198ed1c3c543e3a90cfcdc75df9a4e188a67580e26266f2010bb9cea23a",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-514fb198ed1c3c543e3a",
+      "input": "inputs/circuit-514fb198ed1c3c543e3a.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-514fb198ed1c3c543e3a.json",
+      "name": "regressionBridge.test.cjs:line:164",
+      "origins": [
+        {
+          "kind": "frontend_data_expression",
+          "locator": "line:164",
+          "source": "frontend/tests/regressionBridge.test.cjs",
+          "source_sha256": "0a9a1a0f3ca84d0af0694054623a3c2929da9445a3aa88c9ae78ca689edecb40"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:164",
+          "source": "frontend/tests/regressionBridge.test.cjs",
+          "source_sha256": "0a9a1a0f3ca84d0af0694054623a3c2929da9445a3aa88c9ae78ca689edecb40"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "514fb198ed1c3c543e3a90cfcdc75df9a4e188a67580e26266f2010bb9cea23a",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'constructor' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "U1",
+              "source_index": 0,
+              "type": "constructor",
+              "value": "resistor"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "531f8a28b226d49b52e676cb90ff97a59191eddc703bbd07d44c8015fbc6c36d",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-531f8a28b226d49b52e6",
+      "input": "inputs/circuit-531f8a28b226d49b52e6.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-531f8a28b226d49b52e6.json",
+      "name": "Test",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:108",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "531f8a28b226d49b52e676cb90ff97a59191eddc703bbd07d44c8015fbc6c36d",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "X1",
+                  "backend_type": null,
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "X1",
+                  "compiled_type": "ground",
+                  "status": "unsupported"
+                },
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "UNSUPPORTED_SHARED_EXPORT_KIND",
+                    "compiled_id": "X1",
+                    "frontend_type": "ground",
+                    "message": "Frontend kind ground is not supported by the shared backend export; no fallback component is permitted.",
+                    "severity": "error",
+                    "stage": "bridge"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "X1",
+              "reference": "X1",
+              "source_index": 0,
+              "type": "ground",
+              "value": "1k"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "61d49cb3ec35ee6c13d37c1c309aa2ead79ab71f12d267c7f041aecfa533dec9",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-61d49cb3ec35ee6c13d3",
+      "input": "inputs/circuit-61d49cb3ec35ee6c13d3.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-61d49cb3ec35ee6c13d3.json",
+      "name": "regressionBridge.test.cjs:line:164",
+      "origins": [
+        {
+          "kind": "frontend_data_expression",
+          "locator": "line:164",
+          "source": "frontend/tests/regressionBridge.test.cjs",
+          "source_sha256": "0a9a1a0f3ca84d0af0694054623a3c2929da9445a3aa88c9ae78ca689edecb40"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:164",
+          "source": "frontend/tests/regressionBridge.test.cjs",
+          "source_sha256": "0a9a1a0f3ca84d0af0694054623a3c2929da9445a3aa88c9ae78ca689edecb40"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "61d49cb3ec35ee6c13d37c1c309aa2ead79ab71f12d267c7f041aecfa533dec9",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'ic' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "U1",
+              "source_index": 0,
+              "type": "ic",
+              "value": "LM358"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "73e909ed8e861cba1b975b1b9adca9f55135b49b8e2ec2c019597969e647f76f",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-73e909ed8e861cba1b97",
+      "input": "inputs/circuit-73e909ed8e861cba1b97.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-73e909ed8e861cba1b97.json",
+      "name": "Test",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:169",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "73e909ed8e861cba1b975b1b9adca9f55135b49b8e2ec2c019597969e647f76f",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 2,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "complete",
+          "supported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "Q1",
+                  "backend_type": "transistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "transistor-id",
+                  "compiled_type": "npn_transistor",
+                  "status": "supported"
+                }
+              ],
+              "id": "transistor-id",
+              "reference": "Q1",
+              "source_index": 0,
+              "type": "npn"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R1",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R1",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R1",
+              "source_index": 1,
+              "type": "res"
+            }
+          ],
+          "unattributed_diagnostics": [
+            {
+              "actual": null,
+              "circuit": null,
+              "code": "UNSUPPORTED_COMPONENT",
+              "component": "Q1",
+              "expected": null,
+              "message": "Component is not currently supported by SpiceCraft; no symbol substitution is allowed",
+              "net": null,
+              "pin": null,
+              "pipeline_stage": "input_validation",
+              "severity": "error",
+              "stage": "connectivity"
+            }
+          ],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": 2,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "7db9977fa4a5aec2178653dc55a4366fe07a22948ba7f31b65b4fda575e2b692",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-7db9977fa4a5aec21786",
+      "input": "inputs/circuit-7db9977fa4a5aec21786.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-7db9977fa4a5aec21786.json",
+      "name": "test_connectivity.py:line:111",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:111",
+          "source": "backend/tests/test_connectivity.py",
+          "source_sha256": "2379295c3da4a13871df8fe7d14843960f7190f2c6c850126623d5c651d223ba"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:113",
+          "source": "backend/tests/test_connectivity.py",
+          "source_sha256": "2379295c3da4a13871df8fe7d14843960f7190f2c6c850126623d5c651d223ba"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "7db9977fa4a5aec2178653dc55a4366fe07a22948ba7f31b65b4fda575e2b692",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'constructor' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "U1",
+              "source_index": 0,
+              "type": "constructor",
+              "value": "NE555"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "8812fde960848c5546f2763b6edb3acc6e6b7c8779af4258733d7c06cd1a1124",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-8812fde960848c5546f2",
+      "input": "inputs/circuit-8812fde960848c5546f2.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-8812fde960848c5546f2.json",
+      "name": "Test",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:108",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "8812fde960848c5546f2763b6edb3acc6e6b7c8779af4258733d7c06cd1a1124",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 1,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "complete",
+          "supported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "Q1",
+                  "backend_type": "transistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "q-id",
+                  "compiled_type": "npn_transistor",
+                  "status": "supported"
+                }
+              ],
+              "id": "q-id",
+              "reference": "Q1",
+              "source_index": 0,
+              "type": "transistor"
+            }
+          ],
+          "unattributed_diagnostics": [
+            {
+              "actual": null,
+              "circuit": null,
+              "code": "UNSUPPORTED_COMPONENT",
+              "component": "Q1",
+              "expected": null,
+              "message": "Component is not currently supported by SpiceCraft; no symbol substitution is allowed",
+              "net": null,
+              "pin": null,
+              "pipeline_stage": "input_validation",
+              "severity": "error",
+              "stage": "connectivity"
+            }
+          ],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "8ca8f4bc59e746b3762dec9e56ea4fe409e70b43e7e53687b128fa241e1b9b8e",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-8ca8f4bc59e746b3762d",
+      "input": "inputs/circuit-8ca8f4bc59e746b3762d.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-8ca8f4bc59e746b3762d.json",
+      "name": "test_connectivity.py:line:292",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:292",
+          "source": "backend/tests/test_connectivity.py",
+          "source_sha256": "2379295c3da4a13871df8fe7d14843960f7190f2c6c850126623d5c651d223ba"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "8ca8f4bc59e746b3762dec9e56ea4fe409e70b43e7e53687b128fa241e1b9b8e",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "X1",
+                  "backend_type": null,
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "X1",
+                  "compiled_type": "current_source",
+                  "status": "unsupported"
+                },
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "UNSUPPORTED_SHARED_EXPORT_KIND",
+                    "compiled_id": "X1",
+                    "frontend_type": "current_source",
+                    "message": "Frontend kind current_source is not supported by the shared backend export; no fallback component is permitted.",
+                    "severity": "error",
+                    "stage": "bridge"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "X1",
+              "reference": "X1",
+              "source_index": 0,
+              "type": "current",
+              "value": "1k"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "93e15d6ad595b7977e4df72da72c594707972fefd81ef5ce707629ab068de24f",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-93e15d6ad595b7977e4d",
+      "input": "inputs/circuit-93e15d6ad595b7977e4d.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-93e15d6ad595b7977e4d.json",
+      "name": "regressionBridge.test.cjs:line:164",
+      "origins": [
+        {
+          "kind": "frontend_data_expression",
+          "locator": "line:164",
+          "source": "frontend/tests/regressionBridge.test.cjs",
+          "source_sha256": "0a9a1a0f3ca84d0af0694054623a3c2929da9445a3aa88c9ae78ca689edecb40"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:164",
+          "source": "frontend/tests/regressionBridge.test.cjs",
+          "source_sha256": "0a9a1a0f3ca84d0af0694054623a3c2929da9445a3aa88c9ae78ca689edecb40"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "93e15d6ad595b7977e4df72da72c594707972fefd81ef5ce707629ab068de24f",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'constructor' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "U1",
+              "source_index": 0,
+              "type": "constructor",
+              "value": "BC547"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "a03127880e4fd310acf26175f13f9b2863fa115746805a23dd41aff93b489792",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-a03127880e4fd310acf2",
+      "input": "inputs/circuit-a03127880e4fd310acf2.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-a03127880e4fd310acf2.json",
+      "name": "Test",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:108",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "a03127880e4fd310acf26175f13f9b2863fa115746805a23dd41aff93b489792",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'ic' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "reference": "U1",
+              "source_index": 0,
+              "type": "ic",
+              "value": "resistor"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "a7aabd1ba3f8ba6931f73656416a71e6a425d6773a19aade86275f041d318101",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-a7aabd1ba3f8ba6931f7",
+      "input": "inputs/circuit-a7aabd1ba3f8ba6931f7.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-a7aabd1ba3f8ba6931f7.json",
+      "name": "test_component_support_boundaries.py:line:16",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:16",
+          "source": "backend/tests/test_component_support_boundaries.py",
+          "source_sha256": "158a01bddfe948d2ebc33877bace897e241cc37df9ede6ca7cd774698587807a"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:17",
+          "source": "backend/tests/test_component_support_boundaries.py",
+          "source_sha256": "158a01bddfe948d2ebc33877bace897e241cc37df9ede6ca7cd774698587807a"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "a7aabd1ba3f8ba6931f73656416a71e6a425d6773a19aade86275f041d318101",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'unknown' on component X1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "reference": "X1",
+              "source_index": 0,
+              "type": "unknown"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "ab96782069306a0e310def173ce60a8c35b0abaeefe63f5989b3655ad1cf30ec",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-ab96782069306a0e310d",
+      "input": "inputs/circuit-ab96782069306a0e310d.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-ab96782069306a0e310d.json",
+      "name": "test_pipeline_regression.py:line:113",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:113",
+          "source": "backend/tests/test_pipeline_regression.py",
+          "source_sha256": "f10e74092c091d426a083334096f2f525b9d3ef3268a8312fa897611130e035d"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:122",
+          "source": "backend/tests/test_pipeline_regression.py",
+          "source_sha256": "f10e74092c091d426a083334096f2f525b9d3ef3268a8312fa897611130e035d"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "ab96782069306a0e310def173ce60a8c35b0abaeefe63f5989b3655ad1cf30ec",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "Q1",
+                  "backend_type": null,
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "Q1",
+                  "compiled_type": "pnp_transistor",
+                  "status": "unsupported"
+                },
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "UNSUPPORTED_SHARED_EXPORT_KIND",
+                    "compiled_id": "Q1",
+                    "frontend_type": "pnp_transistor",
+                    "message": "Frontend kind pnp_transistor is not supported by the shared backend export; no fallback component is permitted.",
+                    "severity": "error",
+                    "stage": "bridge"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "Q1",
+              "source_index": 0,
+              "type": "bjt",
+              "value": "2N3906"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "ac50acbbe336b55a4fa616ded3d2a35fa56eb7ebe24d2b6a917eef7ce3c4d93a",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-ac50acbbe336b55a4fa6",
+      "input": "inputs/circuit-ac50acbbe336b55a4fa6.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-ac50acbbe336b55a4fa6.json",
+      "name": "Test",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:113",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "ac50acbbe336b55a4fa616ded3d2a35fa56eb7ebe24d2b6a917eef7ce3c4d93a",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type '__proto__' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "U1",
+              "source_index": 0,
+              "type": "__proto__",
+              "value": "resistor"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "b11e8facd4d140cc1633758dc8d33084aa6fa34e56a37bd35ab4e987cd1f86ee",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-b11e8facd4d140cc1633",
+      "input": "inputs/circuit-b11e8facd4d140cc1633.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-b11e8facd4d140cc1633.json",
+      "name": "Test",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:108",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "b11e8facd4d140cc1633758dc8d33084aa6fa34e56a37bd35ab4e987cd1f86ee",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "X1",
+                  "backend_type": null,
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "X1",
+                  "compiled_type": "inductor",
+                  "status": "unsupported"
+                },
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "UNSUPPORTED_SHARED_EXPORT_KIND",
+                    "compiled_id": "X1",
+                    "frontend_type": "inductor",
+                    "message": "Frontend kind inductor is not supported by the shared backend export; no fallback component is permitted.",
+                    "severity": "error",
+                    "stage": "bridge"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "X1",
+              "reference": "X1",
+              "source_index": 0,
+              "type": "inductor",
+              "value": "1k"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "c686f07a1b90328322b91f77dbcff4372ff39ff0e9cf59158912e5afdc35ff2e",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-c686f07a1b90328322b9",
+      "input": "inputs/circuit-c686f07a1b90328322b9.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-c686f07a1b90328322b9.json",
+      "name": "regressionBridge.test.cjs:line:164",
+      "origins": [
+        {
+          "kind": "frontend_data_expression",
+          "locator": "line:164",
+          "source": "frontend/tests/regressionBridge.test.cjs",
+          "source_sha256": "0a9a1a0f3ca84d0af0694054623a3c2929da9445a3aa88c9ae78ca689edecb40"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:164",
+          "source": "frontend/tests/regressionBridge.test.cjs",
+          "source_sha256": "0a9a1a0f3ca84d0af0694054623a3c2929da9445a3aa88c9ae78ca689edecb40"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "c686f07a1b90328322b91f77dbcff4372ff39ff0e9cf59158912e5afdc35ff2e",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'LM358' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "U1",
+              "source_index": 0,
+              "type": "LM358",
+              "value": "BC547"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "ccebc5aebe8bb555502b96a2d58bb6cfeb07014fe6c5a2d2ae0a8763c903d8ad",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-ccebc5aebe8bb555502b",
+      "input": "inputs/circuit-ccebc5aebe8bb555502b.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-ccebc5aebe8bb555502b.json",
+      "name": "Test",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:108",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "ccebc5aebe8bb555502b96a2d58bb6cfeb07014fe6c5a2d2ae0a8763c903d8ad",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'mosfet' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "U1",
+              "source_index": 0,
+              "type": "mosfet",
+              "value": "resistor"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "cde3524b29b7ff905b22200dd0d60b32d1c958e9aa035079f4a78735eac9de88",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-cde3524b29b7ff905b22",
+      "input": "inputs/circuit-cde3524b29b7ff905b22.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-cde3524b29b7ff905b22.json",
+      "name": "Test",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:108",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "cde3524b29b7ff905b22200dd0d60b32d1c958e9aa035079f4a78735eac9de88",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'ic' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "U1",
+              "source_index": 0,
+              "type": "ic",
+              "value": "LM358"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "ce3077dee0ee193244ff7ce1d5dcf768647b613974b910ac06d7507b0644e40a",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-ce3077dee0ee193244ff",
+      "input": "inputs/circuit-ce3077dee0ee193244ff.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-ce3077dee0ee193244ff.json",
+      "name": "connectivity.test.cjs:line:102",
+      "origins": [
+        {
+          "kind": "frontend_data_expression",
+          "locator": "line:102",
+          "source": "frontend/tests/connectivity.test.cjs",
+          "source_sha256": "a06dc944b5889ee008c5a63be217d1f4a6e3d7e26344c952a3ca37d4cefebcd9"
+        },
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:102",
+          "source": "frontend/tests/connectivity.test.cjs",
+          "source_sha256": "a06dc944b5889ee008c5a63be217d1f4a6e3d7e26344c952a3ca37d4cefebcd9"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "ce3077dee0ee193244ff7ce1d5dcf768647b613974b910ac06d7507b0644e40a",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'mosfet' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "U1",
+              "source_index": 0,
+              "type": "mosfet",
+              "value": "NE555"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "d8e8907d585233eac4d064352148343c5f84ce101b82695b2ca762c292f91fc9",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-d8e8907d585233eac4d0",
+      "input": "inputs/circuit-d8e8907d585233eac4d0.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-d8e8907d585233eac4d0.json",
+      "name": "Test",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:108",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "d8e8907d585233eac4d064352148343c5f84ce101b82695b2ca762c292f91fc9",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'ic' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "reference": "U1",
+              "source_index": 0,
+              "type": "ic",
+              "value": "LM358"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "dca0ec77c98a3bf7fa94d4e2d2001e7f84ccd217b5b5bff3c6064becd8a22038",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-dca0ec77c98a3bf7fa94",
+      "input": "inputs/circuit-dca0ec77c98a3bf7fa94.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-dca0ec77c98a3bf7fa94.json",
+      "name": "test_component_support_boundaries.py:line:16",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:16",
+          "source": "backend/tests/test_component_support_boundaries.py",
+          "source_sha256": "158a01bddfe948d2ebc33877bace897e241cc37df9ede6ca7cd774698587807a"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:17",
+          "source": "backend/tests/test_component_support_boundaries.py",
+          "source_sha256": "158a01bddfe948d2ebc33877bace897e241cc37df9ede6ca7cd774698587807a"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "dca0ec77c98a3bf7fa94d4e2d2001e7f84ccd217b5b5bff3c6064becd8a22038",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type '__proto__' on component U1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "id": "U1",
+              "source_index": 0,
+              "type": "__proto__",
+              "value": "BC547"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "e0065951b5398022cde685c0bde9db49b96272b1b27bab80a42795f1bb9676e9",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-e0065951b5398022cde6",
+      "input": "inputs/circuit-e0065951b5398022cde6.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-e0065951b5398022cde6.json",
+      "name": "Test",
+      "origins": [
+        {
+          "kind": "frontend_runtime",
+          "locator": "line:108",
+          "source": "frontend/tests/hardening.test.cjs",
+          "source_sha256": "b38f6b6f88912df7f71e305736e629d1b6eed5204c30b4419e1b36fa2c4368e6"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "e0065951b5398022cde685c0bde9db49b96272b1b27bab80a42795f1bb9676e9",
+      "synthetic": false
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "small",
+          "regression",
+          "unsupported"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 0,
+            "unknown": 0,
+            "unsupported": 1
+          },
+          "coverage": "complete",
+          "supported": [],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": [
+            {
+              "evidence": [
+                {
+                  "basis": "diagnostic",
+                  "diagnostic": {
+                    "code": "COMPILER_ERROR",
+                    "message": "Unknown component type 'unknown' on component X1.",
+                    "severity": "error",
+                    "stage": "compiler"
+                  },
+                  "status": "unsupported"
+                }
+              ],
+              "reference": "X1",
+              "source_index": 0,
+              "type": "unknown"
+            }
+          ]
+        },
+        "evidence_issues": [],
+        "input_component_count": 1,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "e70a4fc48ce76662474849da25b86f50083b023d494d00129c762bae6227c5e3",
+        "schema_version": 1,
+        "size_class": "small"
+      },
+      "id": "circuit-e70a4fc48ce766624748",
+      "input": "inputs/circuit-e70a4fc48ce766624748.json",
+      "input_path": "../../phase10-acceptance-collection/inputs/circuit-e70a4fc48ce766624748.json",
+      "name": "test_connectivity.py:line:247",
+      "origins": [
+        {
+          "kind": "python_data_expression",
+          "locator": "line:247",
+          "source": "backend/tests/test_connectivity.py",
+          "source_sha256": "2379295c3da4a13871df8fe7d14843960f7190f2c6c850126623d5c651d223ba"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:248",
+          "source": "backend/tests/test_connectivity.py",
+          "source_sha256": "2379295c3da4a13871df8fe7d14843960f7190f2c6c850126623d5c651d223ba"
+        },
+        {
+          "kind": "python_data_expression",
+          "locator": "line:250",
+          "source": "backend/tests/test_connectivity.py",
+          "source_sha256": "2379295c3da4a13871df8fe7d14843960f7190f2c6c850126623d5c651d223ba"
+        }
+      ],
+      "overall": "UNSUPPORTED",
+      "sha256": "e70a4fc48ce76662474849da25b86f50083b023d494d00129c762bae6227c5e3",
+      "synthetic": false
+    }
+  ],
+  "category": "unsupported",
+  "collection_root": "../../phase10-acceptance-collection",
+  "count": 32,
+  "schema_version": 1
+}

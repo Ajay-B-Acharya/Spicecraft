@@ -1,0 +1,84 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "f2b829de018d7802054a74f9ca71c64db8199ee338c59f33e8660c9372ac82f2",
+  "compiled_sha256": "d409eb8b367c54298c522df26908dc02e7ee926aca590fab634639fe1e37afa9",
+  "counts": {
+    "compiled": {
+      "components": 100,
+      "connections": 101,
+      "mapped_components": 100,
+      "nets": 101,
+      "pins": 200
+    },
+    "exported": {
+      "components": 100,
+      "flags": 2,
+      "pins": 200,
+      "wires": 449
+    },
+    "input": {
+      "components": 100,
+      "connections": 101,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 2,
+      "nets": 101,
+      "pins": 200,
+      "segments": 497
+    }
+  },
+  "diagnostics": [],
+  "id": "circuit-bf177d289f65b1ff63fb",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 21,
+      "peak_rss_bytes": 86114304
+    }
+  },
+  "name": "Repeated resistor sections (100 components)",
+  "overall": "NOT_RUN",
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 1320,
+    "collision_checks": 1809,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 57520,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 449
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": true,
+  "timings_ms": {
+    "backend_worker_wall": 6870.099899999332,
+    "compiler_process_wall": 752.4286000007123,
+    "compiler_reported": 21.896600000000035,
+    "connectivity_wall": 10.07359999948676,
+    "export_wall": 6106.975600000624,
+    "route_wall": 1216.7900999993435,
+    "serialized_validation_wall": 736.7179000002579
+  }
+}

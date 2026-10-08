@@ -1,0 +1,172 @@
+{
+  "compiled_sha256": "5863d40ae573a26b6cbe19a10b64042cfbf663b222a6a5e73c3e113ed64b2436",
+  "counts": {
+    "compiled": {
+      "components": 3,
+      "connections": 2,
+      "mapped_components": 3,
+      "nets": 1,
+      "pins": 7
+    },
+    "exported": null,
+    "input": {
+      "components": 3,
+      "connections": 2,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 0,
+      "nets": 0,
+      "pins": 0,
+      "segments": 0
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin Q1.C (collector) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin Q1.E (emitter) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "actual": [
+        448,
+        464
+      ],
+      "circuit": null,
+      "code": "BLOCKED_PIN_ESCAPE",
+      "component": "R2",
+      "expected": null,
+      "message": "Exact outward pin escape is blocked by a component or foreign pin corridor",
+      "net": "N1",
+      "pin": "1",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "route"
+    },
+    {
+      "actual": [
+        448,
+        464
+      ],
+      "circuit": "Circuit",
+      "code": "BLOCKED_PIN_ESCAPE",
+      "component": "R2",
+      "expected": null,
+      "message": "Exact outward pin escape is blocked by a component or foreign pin corridor",
+      "net": "N1",
+      "pin": "1",
+      "pipeline_stage": "routing",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "evidence_directory": "circuit-ada25d6e596c9e802c3b/sample-1",
+  "failure_stage": "route",
+  "failures": [
+    {
+      "actual": [
+        448,
+        464
+      ],
+      "circuit": null,
+      "code": "BLOCKED_PIN_ESCAPE",
+      "component": "R2",
+      "expected": null,
+      "message": "Exact outward pin escape is blocked by a component or foreign pin corridor",
+      "net": "N1",
+      "pin": "1",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "route"
+    },
+    {
+      "actual": [
+        448,
+        464
+      ],
+      "circuit": "Circuit",
+      "code": "BLOCKED_PIN_ESCAPE",
+      "component": "R2",
+      "expected": null,
+      "message": "Exact outward pin escape is blocked by a component or foreign pin corridor",
+      "net": "N1",
+      "pin": "1",
+      "pipeline_stage": "routing",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-ada25d6e596c9e802c3b",
+  "implementation_sha256": "60f44913f21d569de19d97b10353d0b22f51e03f04db27f9c38204ed865fda52",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 6,
+      "peak_rss_bytes": 31911936
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 7,
+      "peak_rss_bytes": 98017280
+    }
+  },
+  "name": "test_pin_geometry.py:line:817",
+  "overall": "FAIL",
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 0,
+    "collision_checks": 0,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 0,
+    "order_attempts": 0,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 0,
+    "segments": 0
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "FAIL",
+    "route": "FAIL",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 465.90199999991455,
+    "backend_worker_wall": 22.487899999759975,
+    "compiler_process_wall": 769.8813999995764,
+    "compiler_reported": 11.956000000000017,
+    "connectivity_wall": 0.5587000005107257,
+    "export_wall": 8.229199999732373,
+    "route_wall": 0.6460000004153699
+  },
+  "validation": "NOT_RUN"
+}

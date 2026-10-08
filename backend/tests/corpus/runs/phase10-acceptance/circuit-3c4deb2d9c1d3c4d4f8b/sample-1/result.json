@@ -1,0 +1,142 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "7f2985e1296b29bfddaf3e535f5f0f854200e5cc4b6bbcb08fcec40a354189c0",
+  "compiled_sha256": "362a184fc783a377b65cd50f1f8e2bf8892870728935bce405769a345603cc05",
+  "counts": {
+    "compiled": {
+      "components": 5,
+      "connections": 7,
+      "mapped_components": 5,
+      "nets": 5,
+      "pins": 11
+    },
+    "exported": {
+      "components": 5,
+      "flags": 2,
+      "pins": 11,
+      "wires": 13
+    },
+    "input": {
+      "components": 5,
+      "connections": 7,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 2,
+      "nets": 5,
+      "pins": 10,
+      "segments": 18
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin Q1.E (emitter) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "evidence_directory": "circuit-3c4deb2d9c1d3c4d4f8b/sample-1",
+  "failure_stage": null,
+  "failures": [],
+  "hash_seed": 0,
+  "id": "circuit-3c4deb2d9c1d3c4d4f8b",
+  "implementation_sha256": "f4c25658dcec1a34f0271187fa040ae144f61b9a7b65db15d3d82dabf490dd33",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 11,
+      "peak_rss_bytes": 32374784
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 20,
+      "peak_rss_bytes": 85020672
+    }
+  },
+  "name": "LED Blinker",
+  "overall": "PASS",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "small",
+    "componentCount": 5,
+    "errorCount": 0,
+    "exportBytes": 1032,
+    "iterations": {
+      "export": 0,
+      "final_validation": 5,
+      "input_validation": 0,
+      "layout": 15,
+      "net_building": 24,
+      "optimization": 475,
+      "pin_resolution": 0,
+      "post_export_validation": 0,
+      "routing": 615,
+      "routing_validation": 10,
+      "validation": 5
+    },
+    "netCount": 5,
+    "pinCount": 11,
+    "stagesMs": {
+      "export": 13.071,
+      "final_validation": 0.594,
+      "input_validation": 0.944,
+      "layout": 1.346,
+      "net_building": 0.307,
+      "optimization": 0.551,
+      "pin_resolution": 0.094,
+      "post_export_validation": 1.006,
+      "routing": 9.428,
+      "routing_validation": 0.989,
+      "validation": 0.144
+    },
+    "totalTimeMs": 28.519,
+    "warningCount": 0,
+    "wireCount": 13
+  },
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 5,
+    "collision_checks": 7,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 1472,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 13
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 346.3659999997617,
+    "backend_worker_wall": 43.087199999717996,
+    "compiler_process_wall": 759.0241000007154,
+    "compiler_reported": 13.167699999999968,
+    "connectivity_wall": 0.6164999995235121,
+    "export_wall": 28.684700000667362,
+    "route_wall": 6.114299999353534,
+    "serialized_validation_wall": 3.292700000201876
+  },
+  "validation": "PASS"
+}

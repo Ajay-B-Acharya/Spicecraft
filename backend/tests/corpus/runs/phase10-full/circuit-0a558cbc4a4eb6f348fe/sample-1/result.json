@@ -1,0 +1,236 @@
+{
+  "compiled_sha256": "4ba79b5958f0e68db17983cd213e476a86fb0dcc7a5b70406e1472d346d465ac",
+  "counts": {
+    "compiled": {
+      "components": 1,
+      "connections": 0,
+      "mapped_components": 1,
+      "nets": 0,
+      "pins": 2
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R1 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "CONFLICTING_COMPONENT_DEFINITION",
+      "component": "R1",
+      "expected": null,
+      "message": "Type 'resistor' defines resistor, but value 'BC547' defines bc547; no definition was changed",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "test_connectivity.py:line:236",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.B",
+      "net": null,
+      "pin": "B",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "test_connectivity.py:line:236",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.C",
+      "net": null,
+      "pin": "C",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "test_connectivity.py:line:236",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.E",
+      "net": null,
+      "pin": "E",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": "R1.1",
+      "circuit": "test_connectivity.py:line:236",
+      "code": "UNEXPECTED_PIN",
+      "component": "R1",
+      "error": "Remove or account for the unexpected canonical pin",
+      "expected": null,
+      "net": null,
+      "pin": "1",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": "R1.2",
+      "circuit": "test_connectivity.py:line:236",
+      "code": "UNEXPECTED_PIN",
+      "component": "R1",
+      "error": "Remove or account for the unexpected canonical pin",
+      "expected": null,
+      "net": null,
+      "pin": "2",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    }
+  ],
+  "evidence_directory": "circuit-0a558cbc4a4eb6f348fe/sample-1",
+  "failure_stage": "connectivity",
+  "failures": [
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "CONFLICTING_COMPONENT_DEFINITION",
+      "component": "R1",
+      "expected": null,
+      "message": "Type 'resistor' defines resistor, but value 'BC547' defines bc547; no definition was changed",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "test_connectivity.py:line:236",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.B",
+      "net": null,
+      "pin": "B",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "test_connectivity.py:line:236",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.C",
+      "net": null,
+      "pin": "C",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "test_connectivity.py:line:236",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.E",
+      "net": null,
+      "pin": "E",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": "R1.1",
+      "circuit": "test_connectivity.py:line:236",
+      "code": "UNEXPECTED_PIN",
+      "component": "R1",
+      "error": "Remove or account for the unexpected canonical pin",
+      "expected": null,
+      "net": null,
+      "pin": "1",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": "R1.2",
+      "circuit": "test_connectivity.py:line:236",
+      "code": "UNEXPECTED_PIN",
+      "component": "R1",
+      "error": "Remove or account for the unexpected canonical pin",
+      "expected": null,
+      "net": null,
+      "pin": "2",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-0a558cbc4a4eb6f348fe",
+  "implementation_sha256": "6e84c8dcd88ed008fb4962327c03cf869c0b8ea8fce6da9d836ad3e050481339",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 9,
+      "peak_rss_bytes": 31895552
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 16,
+      "peak_rss_bytes": 95789056
+    }
+  },
+  "name": "test_connectivity.py:line:236",
+  "overall": "FAIL",
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "FAIL",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 302.68680000062886,
+    "backend_worker_wall": 3.367699999216711,
+    "compiler_process_wall": 732.2444000001269,
+    "compiler_reported": 7.550200000000018,
+    "connectivity_wall": 0.2423999994789483
+  },
+  "validation": "NOT_RUN"
+}

@@ -29,6 +29,7 @@ from typing import Any
 
 from app.services.asc_validation import NetGeometry
 from app.services.pin_maps import COMPONENT_LIBRARY, PinResolver, resolve_component_kind
+from app.services.production import checkpoint
 
 Bounds = tuple[int, int, int, int]
 Point = tuple[int, int]
@@ -104,8 +105,10 @@ def _expand(box: Bounds, amount: int) -> Bounds:
 
 
 def _overlap(a: Bounds, b: Bounds) -> int:
-    return (max(0, min(a[2], b[2]) - max(a[0], b[0]))
-            * max(0, min(a[3], b[3]) - max(a[1], b[1])))
+    if a[2] <= b[0] or b[2] <= a[0] or a[3] <= b[1] or b[3] <= a[1]:
+        return 0
+    return ((min(a[2], b[2]) - max(a[0], b[0]))
+            * (min(a[3], b[3]) - max(a[1], b[1])))
 
 
 def _inverse_offset(point: Point, degrees: int, mirrored: bool) -> Point:
@@ -211,6 +214,7 @@ def _choose_windows(symbol: _Symbol, obstacles: list[tuple[Bounds, int]]) -> lis
                           ((x0 + x1 - width) // 2 + shift, y0 - gap - stack_height),
                           ((x0 + x1 - width) // 2 + shift, y1 + gap))
                 for left, top in starts:
+                    checkpoint()
                     cx = _ceil(left + width // 2)
                     cy = _ceil(top + height // 2)
                     windows = []

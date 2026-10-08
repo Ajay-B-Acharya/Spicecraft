@@ -1,0 +1,38 @@
+{
+  "catalog_identical": true,
+  "catalog_sha256": [
+    "a40892ef93c68919a9e60b46e33cc9f5a1bef387044ed83a495da278509e7b93",
+    "a40892ef93c68919a9e60b46e33cc9f5a1bef387044ed83a495da278509e7b93"
+  ],
+  "collections": [
+    "backend\\tests\\corpus\\runs\\phase10-stable-collection-a",
+    "backend\\tests\\corpus\\runs\\phase10-stable-collection-b"
+  ],
+  "earlier_cases_retained_in_full_run": [
+    "circuit-0f00b179c9a4adb24090",
+    "circuit-b5768f01c4f0a42becf9"
+  ],
+  "inputs_identical": true,
+  "new_cases_since_full_snapshot": [],
+  "summary": {
+    "evidence_sources": 773,
+    "extraction_status": {
+      "complete": 215,
+      "partial": 28
+    },
+    "origins": 494,
+    "origins_by_kind": {
+      "frontend_data_expression": 59,
+      "frontend_runtime": 190,
+      "json": 7,
+      "python_data_expression": 226,
+      "synthetic": 12
+    },
+    "repository_cases": 233,
+    "runtime_capture_errors": 6,
+    "source_files_with_collected_cases": 22,
+    "synthetic_cases": 12,
+    "total_cases": 245,
+    "unresolved_expressions": 84
+  }
+}

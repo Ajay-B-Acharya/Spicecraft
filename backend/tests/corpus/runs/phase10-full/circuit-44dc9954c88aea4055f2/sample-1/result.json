@@ -1,0 +1,89 @@
+{
+  "compiled_sha256": "642403a006ecf94517a9a110d8142ba1de0042784bdc798de1039c1208d4a91b",
+  "counts": {
+    "compiled": {
+      "components": 100,
+      "connections": 151,
+      "mapped_components": 100,
+      "nets": 52,
+      "pins": 200
+    },
+    "exported": null,
+    "input": {
+      "components": 100,
+      "connections": 151,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "actual": null,
+      "circuit": "Repeated filter sections (100 components)",
+      "code": "PIPELINE_TIMEOUT",
+      "component": null,
+      "expected": null,
+      "message": "routing exceeded its execution budget (10 seconds stage / 30 seconds total)",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "routing",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "evidence_directory": "circuit-44dc9954c88aea4055f2/sample-1",
+  "failure_stage": "export",
+  "failures": [
+    {
+      "actual": null,
+      "circuit": "Repeated filter sections (100 components)",
+      "code": "PIPELINE_TIMEOUT",
+      "component": null,
+      "expected": null,
+      "message": "routing exceeded its execution budget (10 seconds stage / 30 seconds total)",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "routing",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-44dc9954c88aea4055f2",
+  "implementation_sha256": "60f44913f21d569de19d97b10353d0b22f51e03f04db27f9c38204ed865fda52",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 324,
+      "peak_rss_bytes": 46587904
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 21,
+      "peak_rss_bytes": 83738624
+    }
+  },
+  "name": "Repeated filter sections (100 components)",
+  "overall": "FAIL",
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "FAIL",
+    "route": "RUNNING",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": true,
+  "timings_ms": {
+    "backend_process_wall": 10393.363999999565,
+    "backend_worker_wall": 10039.780800000699,
+    "compiler_process_wall": 789.8405000005368,
+    "compiler_reported": 24.357799999999997,
+    "connectivity_wall": 6.183599999530998,
+    "export_wall": 10026.27129999928
+  },
+  "validation": "NOT_RUN"
+}

@@ -1,0 +1,150 @@
+{
+  "compiled_sha256": "3bfcd19ef27fe46aa458aa4066a67931972d8e69696b9a83fc51610e8120bd14",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 0,
+      "mapped_components": 0,
+      "nets": 0,
+      "pins": 4
+    },
+    "exported": null,
+    "input": {
+      "components": 2,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate component ID detected: R1.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate resolved pin identity R1.1.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate resolved pin identity R1.2.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R1 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "AMBIGUOUS_SOURCE_IDENTITY",
+      "compiled_id": "R1",
+      "message": "Compiled identity R1 must map to exactly one source component.",
+      "severity": "error",
+      "stage": "bridge"
+    },
+    {
+      "code": "DUPLICATE_COMPILED_ID",
+      "compiled_id": "R1",
+      "message": "Compiled identity R1 is ambiguous.",
+      "severity": "error",
+      "stage": "bridge"
+    },
+    {
+      "code": "AMBIGUOUS_SOURCE_IDENTITY",
+      "compiled_id": "R1",
+      "message": "Compiled identity R1 must map to exactly one source component.",
+      "severity": "error",
+      "stage": "bridge"
+    }
+  ],
+  "evidence_directory": "circuit-d3b3536c74cb3c9adeea/sample-1",
+  "failure_stage": "compile",
+  "failures": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate component ID detected: R1.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate resolved pin identity R1.1.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate resolved pin identity R1.2.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "AMBIGUOUS_SOURCE_IDENTITY",
+      "compiled_id": "R1",
+      "message": "Compiled identity R1 must map to exactly one source component.",
+      "severity": "error",
+      "stage": "bridge"
+    },
+    {
+      "code": "DUPLICATE_COMPILED_ID",
+      "compiled_id": "R1",
+      "message": "Compiled identity R1 is ambiguous.",
+      "severity": "error",
+      "stage": "bridge"
+    },
+    {
+      "code": "AMBIGUOUS_SOURCE_IDENTITY",
+      "compiled_id": "R1",
+      "message": "Compiled identity R1 must map to exactly one source component.",
+      "severity": "error",
+      "stage": "bridge"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-d3b3536c74cb3c9adeea",
+  "implementation_sha256": "f4c25658dcec1a34f0271187fa040ae144f61b9a7b65db15d3d82dabf490dd33",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 39,
+      "peak_rss_bytes": 84566016
+    }
+  },
+  "name": "connectivity.test.cjs:line:90",
+  "overall": "INVALID",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "FAIL",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "invalid_or_unknown",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 1855.9095999999045,
+    "compiler_reported": 11.91599999999994
+  },
+  "validation": "NOT_RUN"
+}

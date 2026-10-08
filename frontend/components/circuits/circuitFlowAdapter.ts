@@ -12,7 +12,15 @@ export function buildCircuitFlow(circuit: Circuit): { nodes: Node[]; edges: Edge
   const compiled = CircuitCompiler.compile(circuit);
   if (!compiled.validation.valid) return { nodes: [], edges: [], validation: compiled.validation };
   const positions = new Map<string, { x: number; y: number }>();
-  const netsFor = (id: string) => compiled.nets.filter(net => net.pins.some(pin => pin.componentId === id));
+  const netsByComponent = new Map<string, typeof compiled.nets>();
+  compiled.nets.forEach(net => {
+    new Set(net.pins.map(pin => pin.componentId)).forEach(id => {
+      const nets = netsByComponent.get(id) ?? [];
+      nets.push(net);
+      netsByComponent.set(id, nets);
+    });
+  });
+  const netsFor = (id: string) => netsByComponent.get(id) ?? [];
   const hasLabel = (id: string, pattern: RegExp) => netsFor(id).some(net =>
     [net.name ?? '', ...(net.labels ?? [])].some(label => pattern.test(label)),
   );
@@ -56,8 +64,7 @@ export function buildCircuitFlow(circuit: Circuit): { nodes: Node[]; edges: Edge
     return {
       id: component.id,
       type: 'unified',
-      position: typeof x === 'number' && Number.isFinite(x) && typeof y === 'number' && Number.isFinite(y)
-        ? { x, y } : positions.get(component.id)!,
+      position: x !== undefined && y !== undefined ? { ...component.position } : positions.get(component.id)!,
       data: { reference: component.id, value: component.value, type: component.type, componentType: component.type },
     };
   });
@@ -70,21 +77,32 @@ export function buildCircuitFlow(circuit: Circuit): { nodes: Node[]; edges: Edge
       deletable: false,
     });
   };
+  const nodeIds = new Set(nodes.map(node => node.id));
+  const nodePositions = new Map(nodes.map(node => [node.id, node.position]));
+  let maxX = Math.max(80, ...nodes.map(node => node.position.x));
+  let maxY = Math.max(80, ...nodes.map(node => node.position.y));
   compiled.nets.forEach((net, index) => {
     const pins = net.pins; // Compiler validation guarantees every endpoint exists.
+    const anchorX = pins.map(pin => nodePositions.get(pin.componentId)?.x).find(x => x !== undefined) ?? 80;
     for (let i = 1; i < pins.length; i++) {
       connect(pins[0].componentId, pins[0].pinId, pins[i].componentId, pins[i].pinId, net.id);
     }
     (net.labels ?? []).forEach((label, labelIndex) => {
-      const id = `net-label:${JSON.stringify([net.id, label])}`;
+      const baseId = `net-label:${JSON.stringify([net.id, label])}`;
+      let id = baseId;
+      let suffix = 0;
+      while (nodeIds.has(id)) id = `${baseId}:${++suffix}`;
+      nodeIds.add(id);
       const ground = /^(GND|GROUND|0)$/i.test(label);
       const supply = /^(VCC|VDD|VEE|V\+|V-)$/i.test(label);
-      const xs = nodes.filter(node => pins.some(pin => pin.componentId === node.id)).map(node => node.position.x);
-      const maxY = Math.max(80, ...nodes.map(node => node.position.y));
-      nodes.push({ id, type: 'unified', position: {
-        x: supply || ground ? (xs[0] ?? 80) + labelIndex * STEP_X : Math.max(80, ...nodes.map(node => node.position.x)) + STEP_X,
+      const position = {
+        x: supply || ground ? anchorX + labelIndex * STEP_X : maxX + STEP_X,
         y: supply ? 0 : ground ? maxY + STEP_Y : STEP_Y * (index + 1),
-      }, data: { reference: label, netLabel: true }, draggable: false });
+      };
+      maxX = Math.max(maxX, position.x);
+      maxY = Math.max(maxY, position.y);
+      nodes.push({ id, type: 'unified', position,
+        data: { reference: label, netLabel: true }, draggable: false });
       if (pins[0]) connect(id, 'net', pins[0].componentId, pins[0].pinId, net.id);
     });
   });

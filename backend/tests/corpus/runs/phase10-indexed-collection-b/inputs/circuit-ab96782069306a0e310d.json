@@ -1,0 +1,14 @@
+{
+  "components": [
+    {
+      "reference": "X1",
+      "type": "unknown"
+    }
+  ],
+  "wires": [
+    {
+      "from": "X1.1",
+      "to": "VCC"
+    }
+  ]
+}

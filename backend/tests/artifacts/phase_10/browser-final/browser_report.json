@@ -1,0 +1,8 @@
+{
+  "mode": "Real Chrome; isolated Firebase session and mocked API transport",
+  "checks": [],
+  "errors": [],
+  "requests": [],
+  "status": "FAIL",
+  "failure": "Error: Browser assertion timed out: document.body.innerText.includes(\"RC Low Pass Filter\"); page: S\nWelcome Back\n\nSign in to continue to SpiceCraft\n\nRemember me\nForgot password?\nSign In\nor\nG\nSign in with Google\n\nDon't have an account? Sign up\n    at wait (C:\\Projects\\Spice Craft\\frontend\\tools\\verify-production-browser.cjs:42:9)\n    at async check (C:\\Projects\\Spice Craft\\frontend\\tools\\verify-production-browser.cjs:46:3)\n    at async main (C:\\Projects\\Spice Craft\\frontend\\tools\\verify-production-browser.cjs:136:3)"
+}

@@ -9,6 +9,7 @@ interface Props {
   hasUnsavedChanges: boolean;
   onSave: () => Promise<void> | void;
   saving: boolean;
+  saveError?: string | null;
 }
 
 export function CircuitEditorActions({
@@ -17,6 +18,7 @@ export function CircuitEditorActions({
   hasUnsavedChanges,
   onSave,
   saving,
+  saveError,
 }: Props) {
   return (
     <div className="flex flex-col gap-3 sm:items-end">
@@ -29,15 +31,16 @@ export function CircuitEditorActions({
           {hasUnsavedChanges ? 'Unsaved Changes' : 'All Changes Saved'}
         </Badge>
 
-        <ExportLTspiceButton circuitId={circuitId} circuitName={circuitName} />
+        <ExportLTspiceButton circuitId={circuitId} circuitName={circuitName} disabled={hasUnsavedChanges || saving} />
 
         <Button onClick={onSave} disabled={!hasUnsavedChanges || saving}>
           <Save className="mr-2 h-4 w-4" />
-          {saving ? 'Saving...' : 'Save Changes'}
+          {saving ? 'Saving...' : saveError ? 'Retry save' : 'Save Changes'}
         </Button>
       </div>
+      {saveError ? <p role="alert" className="max-w-xl whitespace-pre-wrap break-words text-sm text-rose-400">{saveError}</p> : null}
       <p className="text-sm text-muted-foreground">
-        Component value edits stay local until saved.
+        Edits stay local until saved. Save changes before exporting.
       </p>
     </div>
   );

@@ -1,21 +1,30 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { toast } from 'sonner';
 import {
   circuitService,
   type Circuit,
-  type CircuitComponent,
 } from '@/lib/circuitService';
 
 export function useCircuitEditor(circuit: Circuit | null) {
   const [savedCircuit, setSavedCircuit] = useState<Circuit | null>(circuit);
   const [draft, setDraft] = useState<Circuit | null>(circuit);
   const [saving, setSaving] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
+  const saveInFlight = useRef(false);
+  const sourceRevision = useRef(0);
+  const savedRef = useRef(savedCircuit);
+  savedRef.current = savedCircuit;
 
   useEffect(() => {
+    sourceRevision.current++;
+    const previous = savedRef.current;
     setSavedCircuit(circuit);
-    setDraft(circuit);
+    setDraft(current => current && circuit && current.id === circuit.id &&
+      JSON.stringify(current) !== JSON.stringify(previous) ? current : circuit);
+    setSaveError(null);
+    return () => { sourceRevision.current++; };
   }, [circuit]);
 
   const hasUnsavedChanges =
@@ -66,31 +75,44 @@ export function useCircuitEditor(circuit: Circuit | null) {
   };
 
   const saveChanges = async (): Promise<Circuit | null> => {
+    if (saveInFlight.current) return null;
     if (!draft || !hasUnsavedChanges) return draft;
+    const revision = sourceRevision.current;
+    const submitted = draft;
 
     try {
+      saveInFlight.current = true;
       setSaving(true);
-      const updatedCircuit = await circuitService.updateCircuit(draft.id, draft);
+      setSaveError(null);
+      const updatedCircuit = await circuitService.updateCircuit(submitted.id, submitted);
+      if (revision !== sourceRevision.current) return null;
       setSavedCircuit(updatedCircuit);
-      setDraft(updatedCircuit);
+      setDraft(current => current === submitted ? updatedCircuit : current);
       toast.success('Circuit saved');
       return updatedCircuit;
     } catch (err) {
-      toast.error(err instanceof Error ? err.message : 'Failed to save circuit');
+      if (revision !== sourceRevision.current) return null;
+      const message = err instanceof Error ? err.message : 'Failed to save circuit';
+      setSaveError(message);
+      toast.error(message);
       return null;
     } finally {
+      saveInFlight.current = false;
       setSaving(false);
     }
   };
 
   const resetDraft = (nextCircuit: Circuit) => {
+    sourceRevision.current++;
     setSavedCircuit(nextCircuit);
     setDraft(nextCircuit);
+    setSaveError(null);
   };
 
   return {
     circuit: draft,
     saving,
+    saveError,
     hasUnsavedChanges,
     updateComponentValue,
     connectPins,

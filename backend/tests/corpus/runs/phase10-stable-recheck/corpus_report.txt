@@ -1,0 +1,35 @@
+Circuit corpus report
+Cases: 16; attempts: 32
+Case status: {"FAIL":9,"INVALID":2,"PASS":5}
+Successful cases by stage: {"bridge":14,"compile":14,"connectivity":14,"export":5,"route":5,"serialized_validation":5}
+
+ID | name | outcome | input components | compile / route / export / serialized
+circuit-01903988ebfae2fea322 | test_connectivity.py:line:273 | INVALID | 2 | FAIL / NOT_RUN / NOT_RUN / NOT_RUN
+circuit-028d64605f0d82fbf036 | Test | FAIL | 500 | PASS / NOT_RUN / TIMEOUT / NOT_RUN
+circuit-23066c4e84620d838ce0 | regressionBridge.test.cjs:line:252 | PASS | 2 | PASS / NOT_REQUIRED / PASS / PASS
+circuit-5bf411d0700870d1dd0b | test_connectivity.py:line:286 | INVALID | 2 | FAIL / NOT_RUN / NOT_RUN / NOT_RUN
+circuit-487a1e171625615c17a0 | Repeated resistor sections (10 components) | PASS | 10 | PASS / PASS / PASS / PASS
+circuit-d79639eaaa899c072620 | Repeated filter sections (10 components) | PASS | 10 | PASS / PASS / PASS / PASS
+circuit-011da72b4d779fc1e919 | Repeated filter sections (25 components) | FAIL | 25 | PASS / TIMEOUT / FAIL / NOT_RUN
+circuit-ff1fd8b1b9cb2998f6df | Repeated resistor sections (25 components) | PASS | 25 | PASS / PASS / PASS / PASS
+circuit-6ceaf1a9d262db9531d6 | Repeated resistor sections (50 components) | PASS | 50 | PASS / PASS / PASS / PASS
+circuit-d1745c42a0d7260ca981 | Repeated filter sections (50 components) | FAIL | 50 | PASS / TIMEOUT / FAIL / NOT_RUN
+circuit-44dc9954c88aea4055f2 | Repeated filter sections (100 components) | FAIL | 100 | PASS / TIMEOUT / FAIL / NOT_RUN
+circuit-bf177d289f65b1ff63fb | Repeated resistor sections (100 components) | FAIL | 100 | PASS / PASS / TIMEOUT / NOT_RUN
+circuit-4bcd9f1440d1be5ced40 | Repeated filter sections (250 components) | FAIL | 250 | PASS / TIMEOUT / FAIL / NOT_RUN
+circuit-5eee04129d7baad3326a | Repeated resistor sections (250 components) | FAIL | 250 | PASS / TIMEOUT / FAIL / NOT_RUN
+circuit-55e763579a65517ae71f | Repeated resistor sections (500 components) | FAIL | 500 | PASS / TIMEOUT / FAIL / NOT_RUN
+circuit-a82f72ae9c7431e50765 | Repeated filter sections (500 components) | FAIL | 500 | PASS / TIMEOUT / FAIL / NOT_RUN
+
+Limitations:
+All repository source paths are inventoried; unresolved Python expressions are retained, not claimed as runnable circuits.
+Frontend test inputs are observed at the real compiler boundary; post-compile mutation tests are evidence, not additional source circuits.
+Counts of pins/nets and support/validation are unknown until the actual compiler runs.
+Content-identical inputs are deduplicated without removing provenance; artifacts/dependencies are never promoted to circuits.
+Static expressions are conservative snapshots, not proof that a test branch executes; dynamic/non-JSON/accessor/cyclic inputs remain unresolved evidence.
+Timeout applies separately to compiler and backend processes; each attempt is isolated.
+Export wall time includes routing; stage measurements overlap and must not be summed.
+Native LTspice, simulation and browser rendering are not measured.
+Memory is the maximum observed OS resident memory: Windows child-tree working set (including venv launchers), Linux child VmHWM; 20ms sampling can miss short-lived peaks and excludes the harness.
+Each repeated backend sample uses a distinct PYTHONHASHSEED; implementation changes invalidate determinism comparisons.
+A successful frontend compile is not a successful shared bridge, route, export or serialized validation.

@@ -1,0 +1,9 @@
+{
+  "components": [
+    {
+      "reference": "X1",
+      "type": "unknown"
+    }
+  ],
+  "wires": []
+}

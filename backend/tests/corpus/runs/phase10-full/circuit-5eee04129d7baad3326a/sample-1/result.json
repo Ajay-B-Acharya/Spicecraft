@@ -1,0 +1,97 @@
+{
+  "compiled_sha256": "2a5172d52f56a55a99eaa846eaafeee3587075d9025cb7f56dee7f660be5a03a",
+  "counts": {
+    "compiled": {
+      "components": 250,
+      "connections": 251,
+      "mapped_components": 250,
+      "nets": 251,
+      "pins": 500
+    },
+    "exported": null,
+    "input": {
+      "components": 250,
+      "connections": 251,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 2,
+      "nets": 251,
+      "pins": 500,
+      "segments": 1247
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "BACKEND_TIMEOUT",
+      "error": "Deadline 30.0s exceeded",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "evidence_directory": "circuit-5eee04129d7baad3326a/sample-1",
+  "failure_stage": "export",
+  "failures": [
+    {
+      "code": "BACKEND_TIMEOUT",
+      "error": "Deadline 30.0s exceeded",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-5eee04129d7baad3326a",
+  "implementation_changed_sources": [
+    "backend/tools/circuit_corpus.py"
+  ],
+  "implementation_sha256": "7667f4b68e2ad5891f94fb7bc6998d34dec0d9b71f193445da01e91c958cedad",
+  "implementation_stable": false,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 959,
+      "peak_rss_bytes": 37040128
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 21,
+      "peak_rss_bytes": 88391680
+    }
+  },
+  "name": "Repeated resistor sections (250 components)",
+  "overall": "FAIL",
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 3354,
+    "collision_checks": 4598,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 145360,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 1247
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "TIMEOUT",
+    "route": "PASS",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": true,
+  "timings_ms": {
+    "backend_process_wall": 30239.867199999935,
+    "compiler_process_wall": 746.9111999998859,
+    "compiler_reported": 45.56269999999995,
+    "connectivity_wall": 44.202400000358466,
+    "route_wall": 8178.025999999591
+  },
+  "validation": "NOT_RUN"
+}

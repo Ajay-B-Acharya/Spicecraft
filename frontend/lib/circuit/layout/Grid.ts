@@ -8,16 +8,34 @@
 import { GridConfig, GridPosition } from './LayoutTypes';
 
 export class Grid {
-  constructor(private readonly config: GridConfig) {}
+  private readonly config: GridConfig;
+
+  constructor(config: GridConfig) {
+    for (const [name, value] of Object.entries(config)) {
+      if (value !== undefined && (!Number.isFinite(value) || Math.abs(value) > 1_000_000)) {
+        throw new Error(`Invalid grid ${name}.`);
+      }
+    }
+    if (!(config.spacingX > 0) || !(config.spacingY > 0) ||
+        !Number.isFinite(config.marginX) || !Number.isFinite(config.marginY)) {
+      throw new Error('Grid spacing must be positive and margins must be finite.');
+    }
+    this.config = { ...config };
+  }
 
   toAbsolute(gridPosition: GridPosition): { x: number; y: number } {
     const originX = this.config.originX ?? 0;
     const originY = this.config.originY ?? 0;
 
-    return {
+    const position = {
       x: originX + this.config.marginX + gridPosition.col * this.config.spacingX,
       y: originY + this.config.marginY + gridPosition.row * this.config.spacingY,
     };
+    if (!Number.isFinite(position.x) || !Number.isFinite(position.y) ||
+        Math.abs(position.x) > 1_000_000 || Math.abs(position.y) > 1_000_000) {
+      throw new Error('Grid position exceeds the coordinate limit.');
+    }
+    return position;
   }
 
   toGrid(absolutePosition: { x: number; y: number }): GridPosition {
@@ -25,7 +43,9 @@ export class Grid {
     const originY = this.config.originY ?? 0;
     const col = Math.round((absolutePosition.x - originX - this.config.marginX) / this.config.spacingX);
     const row = Math.round((absolutePosition.y - originY - this.config.marginY) / this.config.spacingY);
-
+    if (!Number.isSafeInteger(col) || !Number.isSafeInteger(row)) {
+      throw new Error('Grid indices exceed the safe integer range.');
+    }
     return { col, row };
   }
 
@@ -35,7 +55,7 @@ export class Grid {
 
   distance(left: GridPosition, right: GridPosition): number {
     const dx = right.col - left.col;
-    const dy = right.row - right.row;
+    const dy = right.row - left.row;
 
     return Math.sqrt(dx * dx + dy * dy);
   }

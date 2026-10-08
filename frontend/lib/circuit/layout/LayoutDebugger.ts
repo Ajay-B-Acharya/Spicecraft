@@ -61,6 +61,13 @@ export class LayoutDebugger {
   static formatGrid(circuit: Circuit, layoutResult: LayoutResult): string {
     const { gridBounds } = layoutResult;
     const cellWidth = 6;
+    const rows = gridBounds.maxRow - gridBounds.minRow + 1;
+    const cols = gridBounds.maxCol - gridBounds.minCol + 1;
+    if (![gridBounds.minRow, gridBounds.maxRow, gridBounds.minCol, gridBounds.maxCol, rows, cols].every(Number.isSafeInteger) ||
+        rows < 1 || cols < 1 || rows > 200 || cols > 200 || rows * cols > 10_000 ||
+        gridBounds.rows !== rows || gridBounds.cols !== cols) {
+      return 'ASCII grid omitted: invalid bounds or visualization exceeds 10,000 cells (200 per axis).';
+    }
     const grid: string[][] = [];
 
     for (let row = gridBounds.minRow; row <= gridBounds.maxRow; row++) {

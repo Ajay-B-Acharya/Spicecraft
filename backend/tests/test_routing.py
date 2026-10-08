@@ -8,10 +8,12 @@ from __future__ import annotations
 from collections import Counter
 import copy
 from dataclasses import replace
+import hashlib
 from itertools import permutations
 from pathlib import Path
 import sys
 import unittest
+from unittest.mock import patch
 
 BACKEND_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(BACKEND_ROOT))
@@ -19,6 +21,7 @@ sys.path.insert(0, str(BACKEND_ROOT))
 from app.services.asc_validation import ERROR, PinPoint, WireSegment, validate_net_geometry
 from app.services.connectivity import build_connectivity, validate_connectivity
 from app.services.grid_system import GridSystem
+from app.services.production import Execution, PipelineError, PipelineLimits, execution_context
 from app.services.routing.geometry import CollisionDetector, hits_box, intersection, on_segment, prepare_problem
 from app.services.routing.models import RoutingOptions, RoutingProblem, SafeCrossing
 from app.services.routing.optimizer import normalize_segments, path_segments
@@ -46,6 +49,23 @@ def detour_fixture(*, needs_search: bool):
     # completed net and flag, not merely an empty initial attempt.
     return placed_resistors(placements, [("control", control_pin),
                                         ("signal", "R1.1"), ("signal", "R2.1")])
+
+
+def repeated_filter_cells(count: int):
+    components, wires, layouts = [], [], {}
+    for index in range(count):
+        x, y = (index % 8) * 512, (index // 8) * 512
+        resistor, capacitor = f"R{index + 1}", f"C{index + 1}"
+        components.extend([{"reference": resistor, "type": "resistor"},
+                           {"reference": capacitor, "type": "capacitor"}])
+        wires.extend({"from": start, "to": end} for start, end in [
+            (f"IN{index}", resistor + ".1"), (resistor + ".2", capacitor + ".1"),
+            (capacitor + ".2", f"RET{index}"),
+        ])
+        layouts[resistor] = {"type": "resistor", "_ltspice_anchor": (x, y), "_ltspice_rotation": "R270"}
+        layouts[capacitor] = {"type": "capacitor", "_ltspice_anchor": (x + 192, y + 64), "_ltspice_rotation": "R0"}
+    source = {"components": components, "wires": wires}
+    return source, build_connectivity(source), layouts
 
 
 class SegmentNormalizationTests(unittest.TestCase):
@@ -256,6 +276,17 @@ class CollisionDetectorTests(unittest.TestCase):
                 self.assertEqual(detector.segment_allowed(segment, [], (), allow_crossings=False,
                                                           escape_pin=key), (False, []))
 
+    def test_immutable_pin_corridors_are_reused_per_detector(self) -> None:
+        _, model, layouts = placed_resistors({"R1": (0, 0)}, [("signal", "R1.1")])
+        problem, diagnostics = prepare_problem(model, layouts, RoutingOptions())
+        self.assertEqual(diagnostics, [])
+        detector = CollisionDetector(problem)
+        safe = WireSegment("signal", (0, 128), (0, 160))
+        with patch("app.services.routing.geometry.WireSegment", side_effect=AssertionError("corridor rebuilt")):
+            for _ in range(3):
+                self.assertEqual(detector.segment_allowed(safe, [], (), allow_crossings=False), (True, []))
+        self.assertEqual(len(detector.corridors), len(problem.pins))
+
     def test_zero_diagonal_and_off_grid_candidates_are_rejected(self) -> None:
         for segment in [WireSegment("A", (0, 0), (0, 0)),
                         WireSegment("A", (0, 0), (16, 16)),
@@ -348,6 +379,9 @@ class DirectRouterTests(unittest.TestCase):
         options = replace(self.options, envelope_margins=(64, 128), **{budget: 1})
         result = route_nets(model, layouts, options=options)
         self.assert_empty_failure(result, "ROUTING_SEARCH_LIMIT")
+        failure = result.diagnostics[0]
+        self.assertEqual((failure.net, failure.component, failure.pin), ("signal", "R2", "1"))
+        self.assertIn("R2.1", failure.message)
         self.assertEqual(result.metrics["order_attempts"], 1)
         self.assertEqual(result.metrics["planar_attempts"], 1)
         self.assertEqual(result.metrics["fallback_attempts"], 0)
@@ -403,6 +437,72 @@ class DirectRouterTests(unittest.TestCase):
         reordered_source["components"].reverse()
         self.assertEqual(route_nets(build_connectivity(reordered_source), layouts, options=self.options), expected)
         self.assertEqual((source, model, layouts), before)
+
+
+class RoutingScalabilityTests(unittest.TestCase):
+    def test_repeated_filters_preserve_baseline_geometry_and_inputs(self) -> None:
+        source, model, layouts = repeated_filter_cells(32)
+        before = copy.deepcopy((source, model, layouts))
+        result = route_nets(model, layouts)
+        self.assertTrue(result.ok, result.diagnostics)
+        digest = hashlib.sha256(repr((result.net_geometries, result.flags, result.crossings)).encode()).hexdigest()
+        self.assertEqual(digest, "d8209f06e1f985d3804bc1ed347b23e03cf5c8cc99ee3890568ea854b9284264")
+        self.assertEqual(result.metrics["segments"], 192)
+        self.assertEqual((source, model, layouts), before)
+
+    def test_shared_resistor_bus_preserves_baseline_geometry(self) -> None:
+        for count, expected in [(8, "8b6fcd93db0595e03abb41bfb93c24e8f435de4590d1cd292a88fbdd7b2d611e"),
+                                (16, "548dd2d3182537f967a95d1ee4bcec37da7104c6dad5bd3bc1f24da7b1e4e912")]:
+            with self.subTest(count=count):
+                edges = [(endpoint, target) for index in range(count) for endpoint, target in [
+                    ("BUS", f"R{index + 1}.1"), (f"R{index + 1}.2", f"OUT{index}")]]
+                _, model, layouts = placed_resistors({f"R{i + 1}": (i * 192, 0) for i in range(count)}, edges)
+                result = route_nets(model, layouts)
+                self.assertTrue(result.ok, result.diagnostics)
+                digest = hashlib.sha256(repr((result.net_geometries, result.flags, result.crossings)).encode()).hexdigest()
+                self.assertEqual(digest, expected)
+
+    def test_routing_iteration_budget_propagates_without_partial_result(self) -> None:
+        _, model, layouts = detour_fixture(needs_search=True)
+        execution = Execution(PipelineLimits(max_routing_iterations=1))
+        with self.assertRaises(PipelineError) as caught:
+            with execution_context(execution), execution.measure("routing"):
+                route_nets(model, layouts)
+        self.assertEqual(caught.exception.diagnostics[0].code, "RESOURCE_LIMIT")
+        self.assertEqual(caught.exception.stage, "routing")
+        self.assertTrue(route_nets(model, layouts).ok)
+
+    def test_segment_budget_applies_to_singleton_nets_too(self) -> None:
+        _, model, layouts = placed_resistors({"R1": (0, 0), "R2": (384, 0)},
+                                             [("one", "R1.1"), ("two", "R2.1")])
+        execution = Execution(PipelineLimits(max_routing_segments=1))
+        with self.assertRaises(PipelineError):
+            with execution_context(execution), execution.measure("routing"):
+                route_nets(model, layouts)
+
+    def test_cleanup_normalization_layout_and_metrics_are_interruptible(self) -> None:
+        from app.services.asc_validation import NetGeometry
+        from app.services.export_cleanup import clean_export_geometry
+        from app.services.routing.metrics import measure_routing
+        from app.services.schematic_layout import refine_layout
+
+        segments = [WireSegment("N", (i * 16, 0), ((i + 1) * 16, 0)) for i in range(8)]
+        net = NetGeometry("N", segments=segments)
+        _, model, layouts = repeated_filter_cells(4)
+        calls = [
+            ("routing", lambda: normalize_segments(segments, set(), set())),
+            ("optimization", lambda: clean_export_geometry([net])),
+            ("layout", lambda: refine_layout(model, layouts)),
+            ("optimization", lambda: measure_routing([net])),
+        ]
+        for stage, call in calls:
+            with self.subTest(stage=stage, call=call):
+                execution = Execution(PipelineLimits(max_layout_iterations=1, max_routing_iterations=1,
+                                                     max_optimization_iterations=1))
+                with self.assertRaises(PipelineError):
+                    with execution_context(execution), execution.measure(stage):
+                        call()
+        self.assertEqual(net.segments, segments)
 
 
 if __name__ == "__main__":

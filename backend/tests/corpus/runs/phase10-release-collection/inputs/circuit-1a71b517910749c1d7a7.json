@@ -1,0 +1,24 @@
+{
+  "components": [
+    {
+      "id": "R1",
+      "reference": "R1",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "R2",
+      "reference": "R2",
+      "type": "resistor",
+      "value": "1k"
+    }
+  ],
+  "wires": [
+    {
+      "source": "R1",
+      "sourceHandle": "9",
+      "target": "R2",
+      "targetHandle": "1"
+    }
+  ]
+}

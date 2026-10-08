@@ -39,10 +39,7 @@ const ACTIVE_TYPES = new Set([
 const PASSIVE_TYPES = new Set(["resistor", "capacitor", "inductor", "diode"]);
 
 function normalizeLabel(label: string): string {
-  return label
-    .trim()
-    .toUpperCase()
-    .replace(/[^A-Z0-9]/g, "");
+  return label.trim().toUpperCase();
 }
 
 function isLabelMatch(label: string, referenceSet: Set<string>): boolean {

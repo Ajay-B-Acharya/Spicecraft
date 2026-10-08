@@ -139,12 +139,12 @@ export class PlacementStrategy {
               analysis.componentAnalyses.get(component.id)?.connectedNets.includes(net),
             );
 
-            const hasBase = component.pins.some((pin) => pin.id === 'base' && sharedNets.includes(pin.net ?? ''));
+            const hasBase = component.pins.some((pin) => pin.id === 'B' && sharedNets.includes(pin.net ?? ''));
             const hasCollector = component.pins.some(
-              (pin) => pin.id === 'collector' && sharedNets.includes(pin.net ?? ''),
+              (pin) => pin.id === 'C' && sharedNets.includes(pin.net ?? ''),
             );
             const hasEmitter = component.pins.some(
-              (pin) => pin.id === 'emitter' && sharedNets.includes(pin.net ?? ''),
+              (pin) => pin.id === 'E' && sharedNets.includes(pin.net ?? ''),
             );
 
             if (hasBase) {
@@ -234,28 +234,15 @@ export class PlacementStrategy {
     const sortedHints = [...hints].sort((left, right) => right.weight - left.weight);
 
     sortedHints.forEach((hint) => {
+      if (placements.has(hint.componentId)) return;
       let position: GridPosition = {
         col: hint.preferredCol ?? 0,
         row: hint.preferredRow ?? 0,
       };
 
       const key = (pos: GridPosition) => `${pos.col},${pos.row}`;
-      let attempts = 0;
-      const maxAttempts = 100;
-
-      while (occupied.has(key(position)) && attempts < maxAttempts) {
-        position = {
-          col: position.col + 1,
-          row: position.row,
-        };
-        attempts++;
-      }
-
-      if (attempts >= maxAttempts) {
-        position = {
-          col: placements.size % 5,
-          row: Math.floor(placements.size / 5) + 1,
-        };
+      while (occupied.has(key(position))) {
+        position = { col: position.col + 1, row: position.row };
       }
 
       placements.set(hint.componentId, position);
@@ -270,15 +257,8 @@ export class PlacementStrategy {
         };
 
         const key = (pos: GridPosition) => `${pos.col},${pos.row}`;
-        let attempts = 0;
-        const maxAttempts = 100;
-
-        while (occupied.has(key(position)) && attempts < maxAttempts) {
-          position = {
-            col: position.col + 1,
-            row: position.row,
-          };
-          attempts++;
+        while (occupied.has(key(position))) {
+          position = { col: position.col + 1, row: position.row };
         }
 
         placements.set(component.id, position);

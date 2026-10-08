@@ -243,10 +243,11 @@ class ConnectivitySourceDiagnosticsTests(unittest.TestCase):
             with self.subTest(kind=kind):
                 self.assertEqual(build_connectivity(circuit([component("X1", kind, value=value)])).diagnostics, [])
 
-    def test_unknown_kind_warns_unwired_and_errors_when_wired(self) -> None:
+    def test_unknown_kind_is_rejected_unwired_and_wired(self) -> None:
         source = circuit([component("X1", "unknown")])
-        self.assertEqual(codes(build_connectivity(source).diagnostics), {"UNKNOWN_COMPONENT_KIND"})
-        self.assertIn("SYMBOL res", generate_asc(source))
+        self.assertEqual(codes(build_connectivity(source).diagnostics, ERROR), {"UNSUPPORTED_COMPONENT"})
+        with self.assertRaises(AscExportError):
+            generate_asc(source)
         source["wires"] = [{"from": "X1.1", "to": "GND"}]
         self.assertIn("UNRESOLVED_PIN", codes(build_connectivity(source).diagnostics, ERROR))
 
@@ -574,27 +575,31 @@ class CircuitsApiLogicalValidationTests(unittest.TestCase):
             with self.assertRaises(HTTPException) as ctx:
                 circuits.update_circuit("test-circuit", self.api_payload(source))
         self.assertEqual(ctx.exception.status_code, 422)
-        self.assertIn("UNRESOLVED_PIN", "\n".join(ctx.exception.detail))
+        self.assertIn("UNRESOLVED_PIN", {d["code"] for d in ctx.exception.detail["diagnostics"]})
+        self.assertFalse(ctx.exception.detail["retryable"])
         save.assert_not_called()
 
     def test_put_allows_warnings_and_unwired_definition_pins(self) -> None:
         from app.routers import circuits
         source = circuit(edges=[("R1.1", "VIN"), ("IN", "R1.A")])
-        with patch.object(circuits.repository, "get_circuit_by_id", return_value={"id": "test-circuit"}), patch.object(circuits.repository, "update_circuit", return_value={"id": "test-circuit"}) as save:
-            result = circuits.update_circuit("test-circuit", self.api_payload(source))
-        self.assertEqual(result, {"id": "test-circuit"})
+        payload = self.api_payload(source)
+        with patch.object(circuits.repository, "get_circuit_by_id", return_value={"id": "test-circuit"}), patch.object(circuits.repository, "update_circuit", return_value=payload.model_dump(mode="json")) as save:
+            result = circuits.update_circuit("test-circuit", payload)
+        self.assertEqual(result.model_dump(mode="json"), payload.model_dump(mode="json"))
         save.assert_called_once()
         self.assertEqual(save.call_args.args[1]["wires"], source["wires"])
 
-    def test_export_errors_use_existing_422_shape(self) -> None:
+    def test_export_errors_use_structured_422_shape(self) -> None:
         from fastapi import HTTPException
         from app.routers import circuits
         with patch.object(circuits.repository, "get_circuit_by_id", return_value=circuit(edges=[("R1.1", "R1.1")])):
             with self.assertRaises(HTTPException) as ctx:
                 circuits.export_circuit_asc("test-circuit")
         self.assertEqual(ctx.exception.status_code, 422)
-        self.assertIsInstance(ctx.exception.detail, list)
-        self.assertIn("SELF_WIRE", "\n".join(ctx.exception.detail))
+        self.assertIsInstance(ctx.exception.detail, dict)
+        self.assertIn("SELF_WIRE", {d["code"] for d in ctx.exception.detail["diagnostics"]})
+        self.assertEqual(ctx.exception.detail["stage"], "validation")
+        self.assertFalse(ctx.exception.detail["retryable"])
 
 
 if __name__ == "__main__":

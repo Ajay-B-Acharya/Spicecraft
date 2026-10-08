@@ -1,0 +1,116 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "602db80d03d8b7e2535374f85d9e9b8843b1ab976150ae05bdf79a00fa93864d",
+  "compiled_sha256": "4c94cc455cbb3132c8dbbe731f9026b49ae829148d07509e3ab452524ac1e52c",
+  "counts": {
+    "compiled": {
+      "components": 4,
+      "connections": 9,
+      "mapped_components": 4,
+      "nets": 4,
+      "pins": 14
+    },
+    "exported": {
+      "components": 4,
+      "flags": 2,
+      "pins": 14,
+      "wires": 25
+    },
+    "input": {
+      "components": 4,
+      "connections": 9,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 2,
+      "nets": 4,
+      "pins": 11,
+      "segments": 29
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin U1.3 (OUT) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin U1.4 (RESET) is floating/unconnected; RESET must be driven for reliable operation.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Optional pin U1.5 (CTRL) is unconnected; permitted.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "evidence_directory": "circuit-538e2f8f2c4abf9ad2f9/sample-2",
+  "failure_stage": null,
+  "failures": [],
+  "hash_seed": 1,
+  "id": "circuit-538e2f8f2c4abf9ad2f9",
+  "implementation_sha256": "d003d69974f4aa70a8b0ac0e2f02b85242218c1cd25a90bf997beeaffc4b5635",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 8,
+      "peak_rss_bytes": 32301056
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 12,
+      "peak_rss_bytes": 93536256
+    }
+  },
+  "name": "555 Astable Multivibrator",
+  "overall": "PASS",
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 1,
+    "astar_states": 142,
+    "budget_exhaustions": 0,
+    "candidate_paths": 254,
+    "collision_checks": 500,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 2400,
+    "order_attempts": 1,
+    "peak_grid_vertices": 575,
+    "planar_attempts": 1,
+    "segments": 25
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 359.6847999997408,
+    "backend_worker_wall": 73.40610000028391,
+    "compiler_process_wall": 645.0025999993159,
+    "compiler_reported": 11.206699999999955,
+    "connectivity_wall": 0.5541999998968095,
+    "export_wall": 52.39419999998063,
+    "route_wall": 28.400300000612333,
+    "serialized_validation_wall": 5.016600000089966
+  },
+  "validation": "PASS"
+}

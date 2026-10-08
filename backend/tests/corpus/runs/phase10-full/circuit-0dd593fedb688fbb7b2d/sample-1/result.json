@@ -1,0 +1,262 @@
+{
+  "compiled_sha256": "699977803c4a10ad80445dd8fff5a571143514dd79599ce8901cacd86b4a5e0e",
+  "counts": {
+    "compiled": {
+      "components": 1,
+      "connections": 0,
+      "mapped_components": 1,
+      "nets": 0,
+      "pins": 2
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R1 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "CONFLICTING_COMPONENT_DEFINITION",
+      "component": "R1",
+      "expected": null,
+      "message": "Type 'resistor' defines resistor, but value 'NE555' defines ne555; no definition was changed",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "Test",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.3",
+      "net": null,
+      "pin": "3",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "Test",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.4",
+      "net": null,
+      "pin": "4",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "Test",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.5",
+      "net": null,
+      "pin": "5",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "Test",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.6",
+      "net": null,
+      "pin": "6",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "Test",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.7",
+      "net": null,
+      "pin": "7",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "Test",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.8",
+      "net": null,
+      "pin": "8",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    }
+  ],
+  "evidence_directory": "circuit-0dd593fedb688fbb7b2d/sample-1",
+  "failure_stage": "connectivity",
+  "failures": [
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "CONFLICTING_COMPONENT_DEFINITION",
+      "component": "R1",
+      "expected": null,
+      "message": "Type 'resistor' defines resistor, but value 'NE555' defines ne555; no definition was changed",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "Test",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.3",
+      "net": null,
+      "pin": "3",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "Test",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.4",
+      "net": null,
+      "pin": "4",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "Test",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.5",
+      "net": null,
+      "pin": "5",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "Test",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.6",
+      "net": null,
+      "pin": "6",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "Test",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.7",
+      "net": null,
+      "pin": "7",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": "Test",
+      "code": "MISSING_PIN",
+      "component": "R1",
+      "error": "Restore the missing canonical pin",
+      "expected": "R1.8",
+      "net": null,
+      "pin": "8",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-0dd593fedb688fbb7b2d",
+  "implementation_sha256": "6e84c8dcd88ed008fb4962327c03cf869c0b8ea8fce6da9d836ad3e050481339",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 5,
+      "peak_rss_bytes": 31739904
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 14,
+      "peak_rss_bytes": 98648064
+    }
+  },
+  "name": "Test",
+  "overall": "FAIL",
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "FAIL",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 440.35950000034063,
+    "backend_worker_wall": 3.714100000252074,
+    "compiler_process_wall": 701.0036000001492,
+    "compiler_reported": 4.514599999999973,
+    "connectivity_wall": 0.32019999980548164
+  },
+  "validation": "NOT_RUN"
+}

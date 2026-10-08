@@ -11,6 +11,7 @@ from typing import Mapping, Any
 from app.services.asc_validation import ERROR, ExportDiagnostic, PinPoint, WireSegment
 from app.services.connectivity import ConnectivityModel
 from app.services.grid_system import GridSystem, Point
+from app.services.production import checkpoint
 from app.services.pin_maps import COMPONENT_LIBRARY, PinResolver, PinOrientation, resolve_component_kind
 from .models import ComponentObstacle, RoutingOptions, RoutingPin, RoutingProblem, SafeCrossing
 
@@ -80,6 +81,7 @@ def prepare_problem(connectivity: ConnectivityModel, layouts: Mapping[str, Mappi
     owner = {pin.key: net.name for net in connectivity.nets for pin in net.pins}
     unique = {str(comp.get("_inst_name", key)): comp for key, comp in connectivity.components.items()}
     for reference in sorted(unique):
+        checkpoint(iterations=1)
         layout = layouts.get(reference)
         if layout is None:
             diagnostics.append(ExportDiagnostic(ERROR, "MISSING_LAYOUT", "Component has no placed layout", component=reference))
@@ -139,9 +141,13 @@ class CollisionDetector:
     """One policy for candidates, visibility edges, optimization and audit."""
     def __init__(self, problem: RoutingProblem):
         self.problem = problem
+        # Placed pin corridors are immutable for this detector's lifetime.
+        self.corridors = tuple((pin, WireSegment("@reserved", pin.point, pin.escape))
+                               for pin in problem.pins.values())
 
     def point_allowed(self, point: Point, net: str, occupied: list[WireSegment],
                       crossings: tuple[SafeCrossing, ...] | list[SafeCrossing]) -> bool:
+        checkpoint(iterations=1)
         if any(c.point == point for c in crossings):
             return False
         if any(box_contains(o.expanded, point) for o in self.problem.obstacles):
@@ -154,6 +160,7 @@ class CollisionDetector:
     def segment_allowed(self, segment: WireSegment, occupied: list[WireSegment],
                         crossings: tuple[SafeCrossing, ...] | list[SafeCrossing], *,
                         allow_crossings: bool, escape_pin: str | None = None) -> tuple[bool, list[SafeCrossing]]:
+        checkpoint(iterations=1)
         if segment.start == segment.end:
             return False, []
         if segment.start[0] != segment.end[0] and segment.start[1] != segment.end[1]:
@@ -169,11 +176,10 @@ class CollisionDetector:
                     and on_segment(segment.end, designated.point, designated.escape)):
                 continue
             return False, []
-        for pin in self.problem.pins.values():
+        for pin, corridor in self.corridors:
             if pin is designated:
                 continue
             if pin.net is None or pin.net != segment.net:
-                corridor = WireSegment("@reserved", pin.point, pin.escape)
                 if intersection(segment, corridor)[0] != "none":
                     return False, []
         for crossing in crossings:

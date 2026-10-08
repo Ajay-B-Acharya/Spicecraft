@@ -1,0 +1,10 @@
+{
+  "components": [
+    {
+      "id": "q-id",
+      "reference": "Q1",
+      "type": "transistor"
+    }
+  ],
+  "wires": []
+}

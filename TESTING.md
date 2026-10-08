@@ -65,4 +65,49 @@ After that explicit review, `tools.verify_project.refresh_report(verification_ou
 
 See `backend/tests/fixtures/regression/README.md` for controlled golden-update policy. No ASC byte equality is required against historical snapshots; repeatability for the same current input is still tested.
 
-Six backend kinds are covered: resistor, capacitor, diode, LED, BC547/NPN, and NE555. Ground/VCC/custom labels are validated electrical labels. Frontend-only inductor, PNP, voltage/current sources, and ground components are explicitly rejected by the shared-export adapter and listed as unsupported backend coverage. No simulation, live AI-provider integration, or large-fixture scalability is claimed.
+Six backend kinds are covered: resistor, capacitor, diode, LED, BC547/NPN, and NE555. Ground/VCC/custom labels are validated electrical labels. Frontend-only inductor, PNP, voltage/current sources, and ground components are explicitly rejected by the shared-export adapter and listed as unsupported backend coverage. No simulation or live AI-provider integration is claimed. The Phase 10 corpus and profiling commands below measure larger inputs separately; see the current report rather than extrapolating from the seven Phase 9 fixtures.
+
+## Phase 10 corpus collection and scalability
+
+Use the installed backend environment. From the repository root on Windows:
+
+```powershell
+backend/venv/Scripts/python.exe -B backend/tools/circuit_corpus.py collect-circuits --output backend/tests/corpus/runs/collection
+backend/venv/Scripts/python.exe -B backend/tools/circuit_corpus.py test-corpus --catalog backend/tests/corpus/runs/collection/catalog.json --output backend/tests/corpus/runs/test --samples 2 --timeout 30
+```
+
+The equivalent module entry point from `backend/` is `python -B -m tools.circuit_corpus collect-circuits` or `python -B -m tools.circuit_corpus test-corpus --catalog <catalog.json>`. On other systems, substitute the existing backend Python environment executable. Output folders must be new or empty; omit `--output` for fresh timestamped directories. Preserve the printed path for the next command.
+
+Collection inventories source files first, snapshots extractable JSON/Python/TypeScript/documentation inputs without modifying originals, and keeps provenance and unresolved expressions. Identical content is deduplicated, not counted as multiple designs. Existing generated artifacts are inventoried as evidence rather than inflated into original circuits. Conservative static snapshots do not imply that a test branch actually executes; dynamic/non-JSON cases remain explicit unresolved evidence.
+
+By default, collection also adds twelve explicitly marked, deterministic scale cases: connected series-resistor networks and cascaded RC filters at exactly 10, 25, 50, 100, 250, and 500 components. These are repeated meaningful structures, not random designs. `--no-synthetic` collects repository inputs only.
+
+Testing uses the actual TypeScript compiler and bridge, backend connectivity, layout, exact pin resolution, routing, optimization, export, and independent serialized electrical checks. Each circuit runs in isolated compiler/backend processes with a deadline. Reports preserve stage success and diagnostics; compiled, routed, serialized, and fully validated are separate counts. Negative cases and legitimate routing failures are retained. Non-PASS circuit outcomes produce a nonzero command exit rather than being silently skipped. This is different from unit tests, where an expected rejection can pass its assertion.
+
+Each collection contains `inventory.json`, `catalog.json`, `inputs/<circuit-id>.json`, extraction evidence, and `indexes/`. The category index files are `small.json`, `medium.json`, `large.json`, `extreme.json`, `regression.json`, `unsupported.json`, `malformed.json`, and `failing.json`, plus `all.json`. These overlapping views reference the original collected snapshots rather than copying or rewriting topology. Execution adds `validated_catalog.json`, `corpus_report.json` / `.txt`, and per-case/per-sample compiler, backend, diagnostics, and successful ASC evidence. Unknown or untested component eligibility stays explicitly unknown; supported/unsupported lists describe observed compiler/shared-export kind eligibility, not complete backend model or circuit validity.
+
+Native LTspice and browser rendering are separate gates; corpus success alone does not prove either. Repeated samples check deterministic artifacts only when implementation hashes remain stable. Do not edit pipeline code while producing final benchmark evidence.
+
+## Profiling and memory retention
+
+```powershell
+backend/venv/Scripts/python.exe -B backend/tools/profile_pipeline.py backend/circuits/common_emitter_amplifier.json --output backend/tests/artifacts/profile-run --samples 5 --memory-samples 20
+```
+
+This records uninstrumented per-stage backend timings, a separate cumulative-call profile, repeated ASC hashes, source immutability, and a warmed single-process `tracemalloc` retention series after garbage collection. Tracing changes runtime and measures Python allocation, not whole-process resident memory. The corpus records child-process resident-memory observations separately. Neither measurement is a long-duration leak proof.
+
+## Browser recovery checks
+
+Start the existing webpack development server, then run the installed Chrome checks:
+
+```powershell
+npm --prefix frontend run dev -- --hostname 127.0.0.1
+# In a second terminal:
+node frontend/tools/verify-production-browser.cjs backend/tests/artifacts/browser-run
+```
+
+The script uses Node's native WebSocket support and the Chrome DevTools Protocol, with no browser-package installation. Set `CHROME_PATH` to an installed Chrome executable and `BROWSER_TEST_URL` if the app is not at `http://127.0.0.1:3000`. It uses the existing public Firebase API configuration from `frontend/.env.local`, seeds an isolated temporary browser session, blocks external network requests, and mocks API transport. No live authentication credential is submitted and no backend circuit file is edited.
+
+Checks include click-through library navigation, structured export errors, unsupported/timeout/gateway/offline states, editing, failed-save draft retention, retry, download, saved-value reload, mobile overflow, unsupported source rejection, missing/empty/library-error states, shared project/source pages, and surrounding routes. Runtime exceptions, including hydration mismatches, fail the test. Reports and screenshots remain in the output directory. This verifies browser behavior against controlled responses; live Firebase and persisted HTTP round trips remain separate deployment checks.
+
+See [Phase 10 results](PHASE_10_PRODUCTION_REPORT.md), [production operation](docs/PRODUCTION.md), and [component development](docs/ADDING_COMPONENTS.md).

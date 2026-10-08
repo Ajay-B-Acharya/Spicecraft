@@ -1,0 +1,36 @@
+{
+  "components": [
+    {
+      "id": "R1",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "reference": "R1",
+      "rotation": 90,
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "R2",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "reference": "R2",
+      "rotation": 90,
+      "type": "resistor",
+      "value": "1k"
+    }
+  ],
+  "wires": [
+    {
+      "from": "R1.1",
+      "to": "VIN"
+    },
+    {
+      "from": "R2.1",
+      "to": "OUT"
+    }
+  ]
+}

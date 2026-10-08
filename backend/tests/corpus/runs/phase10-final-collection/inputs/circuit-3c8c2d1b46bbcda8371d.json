@@ -1,0 +1,15 @@
+{
+  "category": "",
+  "components": [
+    {
+      "id": "U1",
+      "type": false,
+      "value": "resistor"
+    }
+  ],
+  "description": "",
+  "id": "circuit",
+  "name": "Test",
+  "tags": [],
+  "wires": []
+}

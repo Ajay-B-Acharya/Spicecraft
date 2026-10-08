@@ -1,0 +1,289 @@
+{
+  "components": [
+    {
+      "reference": "R1",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C1",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R2",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C2",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R3",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C3",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R4",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C4",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R5",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C5",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R6",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C6",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R7",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C7",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R8",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C8",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R9",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C9",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R10",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C10",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R11",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C11",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R12",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C12",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "RLOAD",
+      "type": "resistor",
+      "value": "10k"
+    }
+  ],
+  "description": "Deterministic connected filter network; 12 sections; no simulation source inserted.",
+  "name": "Repeated filter sections (25 components)",
+  "wires": [
+    {
+      "from": "R1.1",
+      "to": "VIN"
+    },
+    {
+      "from": "R1.2",
+      "to": "C1.1"
+    },
+    {
+      "from": "C1.2",
+      "to": "GND"
+    },
+    {
+      "from": "R2.1",
+      "to": "R1.2"
+    },
+    {
+      "from": "R2.2",
+      "to": "C2.1"
+    },
+    {
+      "from": "C2.2",
+      "to": "GND"
+    },
+    {
+      "from": "R3.1",
+      "to": "R2.2"
+    },
+    {
+      "from": "R3.2",
+      "to": "C3.1"
+    },
+    {
+      "from": "C3.2",
+      "to": "GND"
+    },
+    {
+      "from": "R4.1",
+      "to": "R3.2"
+    },
+    {
+      "from": "R4.2",
+      "to": "C4.1"
+    },
+    {
+      "from": "C4.2",
+      "to": "GND"
+    },
+    {
+      "from": "R5.1",
+      "to": "R4.2"
+    },
+    {
+      "from": "R5.2",
+      "to": "C5.1"
+    },
+    {
+      "from": "C5.2",
+      "to": "GND"
+    },
+    {
+      "from": "R6.1",
+      "to": "R5.2"
+    },
+    {
+      "from": "R6.2",
+      "to": "C6.1"
+    },
+    {
+      "from": "C6.2",
+      "to": "GND"
+    },
+    {
+      "from": "R7.1",
+      "to": "R6.2"
+    },
+    {
+      "from": "R7.2",
+      "to": "C7.1"
+    },
+    {
+      "from": "C7.2",
+      "to": "GND"
+    },
+    {
+      "from": "R8.1",
+      "to": "R7.2"
+    },
+    {
+      "from": "R8.2",
+      "to": "C8.1"
+    },
+    {
+      "from": "C8.2",
+      "to": "GND"
+    },
+    {
+      "from": "R9.1",
+      "to": "R8.2"
+    },
+    {
+      "from": "R9.2",
+      "to": "C9.1"
+    },
+    {
+      "from": "C9.2",
+      "to": "GND"
+    },
+    {
+      "from": "R10.1",
+      "to": "R9.2"
+    },
+    {
+      "from": "R10.2",
+      "to": "C10.1"
+    },
+    {
+      "from": "C10.2",
+      "to": "GND"
+    },
+    {
+      "from": "R11.1",
+      "to": "R10.2"
+    },
+    {
+      "from": "R11.2",
+      "to": "C11.1"
+    },
+    {
+      "from": "C11.2",
+      "to": "GND"
+    },
+    {
+      "from": "R12.1",
+      "to": "R11.2"
+    },
+    {
+      "from": "R12.2",
+      "to": "C12.1"
+    },
+    {
+      "from": "C12.2",
+      "to": "GND"
+    },
+    {
+      "from": "RLOAD.1",
+      "to": "R12.2"
+    },
+    {
+      "from": "RLOAD.2",
+      "to": "GND"
+    },
+    {
+      "from": "R12.2",
+      "to": "VOUT"
+    }
+  ]
+}

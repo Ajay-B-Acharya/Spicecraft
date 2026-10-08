@@ -1,0 +1,10 @@
+{
+  "components": [
+    {
+      "reference": "R1",
+      "type": "resistor",
+      "value": "BC547"
+    }
+  ],
+  "wires": []
+}

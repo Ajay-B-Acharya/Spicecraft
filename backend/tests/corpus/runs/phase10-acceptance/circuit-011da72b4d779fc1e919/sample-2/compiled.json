@@ -1,0 +1,2958 @@
+{
+  "backend": {
+    "components": [
+      {
+        "id": "R1",
+        "reference": "R1",
+        "type": "resistor",
+        "value": "1k"
+      },
+      {
+        "id": "C1",
+        "reference": "C1",
+        "type": "capacitor",
+        "value": "100n"
+      },
+      {
+        "id": "R2",
+        "reference": "R2",
+        "type": "resistor",
+        "value": "1k"
+      },
+      {
+        "id": "C2",
+        "reference": "C2",
+        "type": "capacitor",
+        "value": "100n"
+      },
+      {
+        "id": "R3",
+        "reference": "R3",
+        "type": "resistor",
+        "value": "1k"
+      },
+      {
+        "id": "C3",
+        "reference": "C3",
+        "type": "capacitor",
+        "value": "100n"
+      },
+      {
+        "id": "R4",
+        "reference": "R4",
+        "type": "resistor",
+        "value": "1k"
+      },
+      {
+        "id": "C4",
+        "reference": "C4",
+        "type": "capacitor",
+        "value": "100n"
+      },
+      {
+        "id": "R5",
+        "reference": "R5",
+        "type": "resistor",
+        "value": "1k"
+      },
+      {
+        "id": "C5",
+        "reference": "C5",
+        "type": "capacitor",
+        "value": "100n"
+      },
+      {
+        "id": "R6",
+        "reference": "R6",
+        "type": "resistor",
+        "value": "1k"
+      },
+      {
+        "id": "C6",
+        "reference": "C6",
+        "type": "capacitor",
+        "value": "100n"
+      },
+      {
+        "id": "R7",
+        "reference": "R7",
+        "type": "resistor",
+        "value": "1k"
+      },
+      {
+        "id": "C7",
+        "reference": "C7",
+        "type": "capacitor",
+        "value": "100n"
+      },
+      {
+        "id": "R8",
+        "reference": "R8",
+        "type": "resistor",
+        "value": "1k"
+      },
+      {
+        "id": "C8",
+        "reference": "C8",
+        "type": "capacitor",
+        "value": "100n"
+      },
+      {
+        "id": "R9",
+        "reference": "R9",
+        "type": "resistor",
+        "value": "1k"
+      },
+      {
+        "id": "C9",
+        "reference": "C9",
+        "type": "capacitor",
+        "value": "100n"
+      },
+      {
+        "id": "R10",
+        "reference": "R10",
+        "type": "resistor",
+        "value": "1k"
+      },
+      {
+        "id": "C10",
+        "reference": "C10",
+        "type": "capacitor",
+        "value": "100n"
+      },
+      {
+        "id": "R11",
+        "reference": "R11",
+        "type": "resistor",
+        "value": "1k"
+      },
+      {
+        "id": "C11",
+        "reference": "C11",
+        "type": "capacitor",
+        "value": "100n"
+      },
+      {
+        "id": "R12",
+        "reference": "R12",
+        "type": "resistor",
+        "value": "1k"
+      },
+      {
+        "id": "C12",
+        "reference": "C12",
+        "type": "capacitor",
+        "value": "100n"
+      },
+      {
+        "id": "RLOAD",
+        "reference": "RLOAD",
+        "type": "resistor",
+        "value": "10k"
+      }
+    ],
+    "description": "Deterministic connected filter network; 12 sections; no simulation source inserted.",
+    "name": "Repeated filter sections (25 components)",
+    "wires": [
+      {
+        "from": "R1.1",
+        "to": "VIN"
+      },
+      {
+        "from": "R1.2",
+        "to": "C1.1"
+      },
+      {
+        "from": "C1.2",
+        "to": "GND"
+      },
+      {
+        "from": "R2.1",
+        "to": "R1.2"
+      },
+      {
+        "from": "R2.2",
+        "to": "C2.1"
+      },
+      {
+        "from": "C2.2",
+        "to": "GND"
+      },
+      {
+        "from": "R3.1",
+        "to": "R2.2"
+      },
+      {
+        "from": "R3.2",
+        "to": "C3.1"
+      },
+      {
+        "from": "C3.2",
+        "to": "GND"
+      },
+      {
+        "from": "R4.1",
+        "to": "R3.2"
+      },
+      {
+        "from": "R4.2",
+        "to": "C4.1"
+      },
+      {
+        "from": "C4.2",
+        "to": "GND"
+      },
+      {
+        "from": "R5.1",
+        "to": "R4.2"
+      },
+      {
+        "from": "R5.2",
+        "to": "C5.1"
+      },
+      {
+        "from": "C5.2",
+        "to": "GND"
+      },
+      {
+        "from": "R6.1",
+        "to": "R5.2"
+      },
+      {
+        "from": "R6.2",
+        "to": "C6.1"
+      },
+      {
+        "from": "C6.2",
+        "to": "GND"
+      },
+      {
+        "from": "R7.1",
+        "to": "R6.2"
+      },
+      {
+        "from": "R7.2",
+        "to": "C7.1"
+      },
+      {
+        "from": "C7.2",
+        "to": "GND"
+      },
+      {
+        "from": "R8.1",
+        "to": "R7.2"
+      },
+      {
+        "from": "R8.2",
+        "to": "C8.1"
+      },
+      {
+        "from": "C8.2",
+        "to": "GND"
+      },
+      {
+        "from": "R9.1",
+        "to": "R8.2"
+      },
+      {
+        "from": "R9.2",
+        "to": "C9.1"
+      },
+      {
+        "from": "C9.2",
+        "to": "GND"
+      },
+      {
+        "from": "R10.1",
+        "to": "R9.2"
+      },
+      {
+        "from": "R10.2",
+        "to": "C10.1"
+      },
+      {
+        "from": "C10.2",
+        "to": "GND"
+      },
+      {
+        "from": "R11.1",
+        "to": "R10.2"
+      },
+      {
+        "from": "R11.2",
+        "to": "C11.1"
+      },
+      {
+        "from": "C11.2",
+        "to": "GND"
+      },
+      {
+        "from": "R12.1",
+        "to": "R11.2"
+      },
+      {
+        "from": "R12.2",
+        "to": "C12.1"
+      },
+      {
+        "from": "C12.2",
+        "to": "GND"
+      },
+      {
+        "from": "RLOAD.1",
+        "to": "R12.2"
+      },
+      {
+        "from": "RLOAD.2",
+        "to": "GND"
+      },
+      {
+        "from": "R12.2",
+        "to": "VOUT"
+      }
+    ]
+  },
+  "compiler_valid": true,
+  "components": [
+    {
+      "id": "R1",
+      "mirror": false,
+      "name": "R1",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N1",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N2",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "prefix": "R",
+      "rotation": 0,
+      "symbol": "res",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "C1",
+      "mirror": false,
+      "name": "C1",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N2",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N3",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 220,
+        "y": 0
+      },
+      "prefix": "C",
+      "rotation": 0,
+      "symbol": "cap",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "id": "R2",
+      "mirror": false,
+      "name": "R2",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N2",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N4",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 440,
+        "y": 0
+      },
+      "prefix": "R",
+      "rotation": 0,
+      "symbol": "res",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "C2",
+      "mirror": false,
+      "name": "C2",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N4",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N3",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 660,
+        "y": 0
+      },
+      "prefix": "C",
+      "rotation": 0,
+      "symbol": "cap",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "id": "R3",
+      "mirror": false,
+      "name": "R3",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N4",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N5",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 160
+      },
+      "prefix": "R",
+      "rotation": 0,
+      "symbol": "res",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "C3",
+      "mirror": false,
+      "name": "C3",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N5",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N3",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 220,
+        "y": 160
+      },
+      "prefix": "C",
+      "rotation": 0,
+      "symbol": "cap",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "id": "R4",
+      "mirror": false,
+      "name": "R4",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N5",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N6",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 440,
+        "y": 160
+      },
+      "prefix": "R",
+      "rotation": 0,
+      "symbol": "res",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "C4",
+      "mirror": false,
+      "name": "C4",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N6",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N3",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 660,
+        "y": 160
+      },
+      "prefix": "C",
+      "rotation": 0,
+      "symbol": "cap",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "id": "R5",
+      "mirror": false,
+      "name": "R5",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N6",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N7",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 320
+      },
+      "prefix": "R",
+      "rotation": 0,
+      "symbol": "res",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "C5",
+      "mirror": false,
+      "name": "C5",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N7",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N3",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 220,
+        "y": 320
+      },
+      "prefix": "C",
+      "rotation": 0,
+      "symbol": "cap",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "id": "R6",
+      "mirror": false,
+      "name": "R6",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N7",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N8",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 440,
+        "y": 320
+      },
+      "prefix": "R",
+      "rotation": 0,
+      "symbol": "res",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "C6",
+      "mirror": false,
+      "name": "C6",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N8",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N3",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 660,
+        "y": 320
+      },
+      "prefix": "C",
+      "rotation": 0,
+      "symbol": "cap",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "id": "R7",
+      "mirror": false,
+      "name": "R7",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N8",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N9",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 480
+      },
+      "prefix": "R",
+      "rotation": 0,
+      "symbol": "res",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "C7",
+      "mirror": false,
+      "name": "C7",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N9",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N3",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 220,
+        "y": 480
+      },
+      "prefix": "C",
+      "rotation": 0,
+      "symbol": "cap",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "id": "R8",
+      "mirror": false,
+      "name": "R8",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N9",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N10",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 440,
+        "y": 480
+      },
+      "prefix": "R",
+      "rotation": 0,
+      "symbol": "res",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "C8",
+      "mirror": false,
+      "name": "C8",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N10",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N3",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 660,
+        "y": 480
+      },
+      "prefix": "C",
+      "rotation": 0,
+      "symbol": "cap",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "id": "R9",
+      "mirror": false,
+      "name": "R9",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N10",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N11",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 640
+      },
+      "prefix": "R",
+      "rotation": 0,
+      "symbol": "res",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "C9",
+      "mirror": false,
+      "name": "C9",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N11",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N3",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 220,
+        "y": 640
+      },
+      "prefix": "C",
+      "rotation": 0,
+      "symbol": "cap",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "id": "R10",
+      "mirror": false,
+      "name": "R10",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N11",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N12",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 440,
+        "y": 640
+      },
+      "prefix": "R",
+      "rotation": 0,
+      "symbol": "res",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "C10",
+      "mirror": false,
+      "name": "C10",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N12",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N3",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 660,
+        "y": 640
+      },
+      "prefix": "C",
+      "rotation": 0,
+      "symbol": "cap",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "id": "R11",
+      "mirror": false,
+      "name": "R11",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N12",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N13",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 800
+      },
+      "prefix": "R",
+      "rotation": 0,
+      "symbol": "res",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "C11",
+      "mirror": false,
+      "name": "C11",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N13",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N3",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 220,
+        "y": 800
+      },
+      "prefix": "C",
+      "rotation": 0,
+      "symbol": "cap",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "id": "R12",
+      "mirror": false,
+      "name": "R12",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N13",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N14",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 440,
+        "y": 800
+      },
+      "prefix": "R",
+      "rotation": 0,
+      "symbol": "res",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "C12",
+      "mirror": false,
+      "name": "C12",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N14",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N3",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 660,
+        "y": 800
+      },
+      "prefix": "C",
+      "rotation": 0,
+      "symbol": "cap",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "id": "RLOAD",
+      "mirror": false,
+      "name": "RLOAD",
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "net": "N14",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "net": "N3",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 960
+      },
+      "prefix": "R",
+      "rotation": 0,
+      "symbol": "res",
+      "type": "resistor",
+      "value": "10k"
+    }
+  ],
+  "connections": [
+    {
+      "source": {
+        "componentId": "R1",
+        "pinId": "1"
+      },
+      "target": {
+        "componentId": "__label__:VIN",
+        "pinId": "label"
+      },
+      "targetLabel": "VIN"
+    },
+    {
+      "source": {
+        "componentId": "R1",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "C1",
+        "pinId": "1"
+      }
+    },
+    {
+      "source": {
+        "componentId": "C1",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "__label__:GND",
+        "pinId": "label"
+      },
+      "targetLabel": "GND"
+    },
+    {
+      "source": {
+        "componentId": "R2",
+        "pinId": "1"
+      },
+      "target": {
+        "componentId": "R1",
+        "pinId": "2"
+      }
+    },
+    {
+      "source": {
+        "componentId": "R2",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "C2",
+        "pinId": "1"
+      }
+    },
+    {
+      "source": {
+        "componentId": "C2",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "__label__:GND",
+        "pinId": "label"
+      },
+      "targetLabel": "GND"
+    },
+    {
+      "source": {
+        "componentId": "R3",
+        "pinId": "1"
+      },
+      "target": {
+        "componentId": "R2",
+        "pinId": "2"
+      }
+    },
+    {
+      "source": {
+        "componentId": "R3",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "C3",
+        "pinId": "1"
+      }
+    },
+    {
+      "source": {
+        "componentId": "C3",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "__label__:GND",
+        "pinId": "label"
+      },
+      "targetLabel": "GND"
+    },
+    {
+      "source": {
+        "componentId": "R4",
+        "pinId": "1"
+      },
+      "target": {
+        "componentId": "R3",
+        "pinId": "2"
+      }
+    },
+    {
+      "source": {
+        "componentId": "R4",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "C4",
+        "pinId": "1"
+      }
+    },
+    {
+      "source": {
+        "componentId": "C4",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "__label__:GND",
+        "pinId": "label"
+      },
+      "targetLabel": "GND"
+    },
+    {
+      "source": {
+        "componentId": "R5",
+        "pinId": "1"
+      },
+      "target": {
+        "componentId": "R4",
+        "pinId": "2"
+      }
+    },
+    {
+      "source": {
+        "componentId": "R5",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "C5",
+        "pinId": "1"
+      }
+    },
+    {
+      "source": {
+        "componentId": "C5",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "__label__:GND",
+        "pinId": "label"
+      },
+      "targetLabel": "GND"
+    },
+    {
+      "source": {
+        "componentId": "R6",
+        "pinId": "1"
+      },
+      "target": {
+        "componentId": "R5",
+        "pinId": "2"
+      }
+    },
+    {
+      "source": {
+        "componentId": "R6",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "C6",
+        "pinId": "1"
+      }
+    },
+    {
+      "source": {
+        "componentId": "C6",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "__label__:GND",
+        "pinId": "label"
+      },
+      "targetLabel": "GND"
+    },
+    {
+      "source": {
+        "componentId": "R7",
+        "pinId": "1"
+      },
+      "target": {
+        "componentId": "R6",
+        "pinId": "2"
+      }
+    },
+    {
+      "source": {
+        "componentId": "R7",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "C7",
+        "pinId": "1"
+      }
+    },
+    {
+      "source": {
+        "componentId": "C7",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "__label__:GND",
+        "pinId": "label"
+      },
+      "targetLabel": "GND"
+    },
+    {
+      "source": {
+        "componentId": "R8",
+        "pinId": "1"
+      },
+      "target": {
+        "componentId": "R7",
+        "pinId": "2"
+      }
+    },
+    {
+      "source": {
+        "componentId": "R8",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "C8",
+        "pinId": "1"
+      }
+    },
+    {
+      "source": {
+        "componentId": "C8",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "__label__:GND",
+        "pinId": "label"
+      },
+      "targetLabel": "GND"
+    },
+    {
+      "source": {
+        "componentId": "R9",
+        "pinId": "1"
+      },
+      "target": {
+        "componentId": "R8",
+        "pinId": "2"
+      }
+    },
+    {
+      "source": {
+        "componentId": "R9",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "C9",
+        "pinId": "1"
+      }
+    },
+    {
+      "source": {
+        "componentId": "C9",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "__label__:GND",
+        "pinId": "label"
+      },
+      "targetLabel": "GND"
+    },
+    {
+      "source": {
+        "componentId": "R10",
+        "pinId": "1"
+      },
+      "target": {
+        "componentId": "R9",
+        "pinId": "2"
+      }
+    },
+    {
+      "source": {
+        "componentId": "R10",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "C10",
+        "pinId": "1"
+      }
+    },
+    {
+      "source": {
+        "componentId": "C10",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "__label__:GND",
+        "pinId": "label"
+      },
+      "targetLabel": "GND"
+    },
+    {
+      "source": {
+        "componentId": "R11",
+        "pinId": "1"
+      },
+      "target": {
+        "componentId": "R10",
+        "pinId": "2"
+      }
+    },
+    {
+      "source": {
+        "componentId": "R11",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "C11",
+        "pinId": "1"
+      }
+    },
+    {
+      "source": {
+        "componentId": "C11",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "__label__:GND",
+        "pinId": "label"
+      },
+      "targetLabel": "GND"
+    },
+    {
+      "source": {
+        "componentId": "R12",
+        "pinId": "1"
+      },
+      "target": {
+        "componentId": "R11",
+        "pinId": "2"
+      }
+    },
+    {
+      "source": {
+        "componentId": "R12",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "C12",
+        "pinId": "1"
+      }
+    },
+    {
+      "source": {
+        "componentId": "C12",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "__label__:GND",
+        "pinId": "label"
+      },
+      "targetLabel": "GND"
+    },
+    {
+      "source": {
+        "componentId": "RLOAD",
+        "pinId": "1"
+      },
+      "target": {
+        "componentId": "R12",
+        "pinId": "2"
+      }
+    },
+    {
+      "source": {
+        "componentId": "RLOAD",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "__label__:GND",
+        "pinId": "label"
+      },
+      "targetLabel": "GND"
+    },
+    {
+      "source": {
+        "componentId": "R12",
+        "pinId": "2"
+      },
+      "target": {
+        "componentId": "__label__:VOUT",
+        "pinId": "label"
+      },
+      "targetLabel": "VOUT"
+    }
+  ],
+  "coordinate_note": "Frontend symbol-local coordinates are intentionally not LTspice ASY offsets; compare logical pin IDs, not physical offsets.",
+  "counts": {
+    "components": 25,
+    "connections": 39,
+    "mapped_components": 25,
+    "nets": 14,
+    "pins": 50
+  },
+  "diagnostics": [],
+  "duration_ms": 31.89280000000008,
+  "identity_mapping": [
+    {
+      "backend_id": "R1",
+      "compiled_id": "R1",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 0,
+      "source_reference": "R1"
+    },
+    {
+      "backend_id": "C1",
+      "compiled_id": "C1",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 1,
+      "source_reference": "C1"
+    },
+    {
+      "backend_id": "R2",
+      "compiled_id": "R2",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 2,
+      "source_reference": "R2"
+    },
+    {
+      "backend_id": "C2",
+      "compiled_id": "C2",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 3,
+      "source_reference": "C2"
+    },
+    {
+      "backend_id": "R3",
+      "compiled_id": "R3",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 4,
+      "source_reference": "R3"
+    },
+    {
+      "backend_id": "C3",
+      "compiled_id": "C3",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 5,
+      "source_reference": "C3"
+    },
+    {
+      "backend_id": "R4",
+      "compiled_id": "R4",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 6,
+      "source_reference": "R4"
+    },
+    {
+      "backend_id": "C4",
+      "compiled_id": "C4",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 7,
+      "source_reference": "C4"
+    },
+    {
+      "backend_id": "R5",
+      "compiled_id": "R5",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 8,
+      "source_reference": "R5"
+    },
+    {
+      "backend_id": "C5",
+      "compiled_id": "C5",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 9,
+      "source_reference": "C5"
+    },
+    {
+      "backend_id": "R6",
+      "compiled_id": "R6",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 10,
+      "source_reference": "R6"
+    },
+    {
+      "backend_id": "C6",
+      "compiled_id": "C6",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 11,
+      "source_reference": "C6"
+    },
+    {
+      "backend_id": "R7",
+      "compiled_id": "R7",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 12,
+      "source_reference": "R7"
+    },
+    {
+      "backend_id": "C7",
+      "compiled_id": "C7",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 13,
+      "source_reference": "C7"
+    },
+    {
+      "backend_id": "R8",
+      "compiled_id": "R8",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 14,
+      "source_reference": "R8"
+    },
+    {
+      "backend_id": "C8",
+      "compiled_id": "C8",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 15,
+      "source_reference": "C8"
+    },
+    {
+      "backend_id": "R9",
+      "compiled_id": "R9",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 16,
+      "source_reference": "R9"
+    },
+    {
+      "backend_id": "C9",
+      "compiled_id": "C9",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 17,
+      "source_reference": "C9"
+    },
+    {
+      "backend_id": "R10",
+      "compiled_id": "R10",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 18,
+      "source_reference": "R10"
+    },
+    {
+      "backend_id": "C10",
+      "compiled_id": "C10",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 19,
+      "source_reference": "C10"
+    },
+    {
+      "backend_id": "R11",
+      "compiled_id": "R11",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 20,
+      "source_reference": "R11"
+    },
+    {
+      "backend_id": "C11",
+      "compiled_id": "C11",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 21,
+      "source_reference": "C11"
+    },
+    {
+      "backend_id": "R12",
+      "compiled_id": "R12",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 22,
+      "source_reference": "R12"
+    },
+    {
+      "backend_id": "C12",
+      "compiled_id": "C12",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 23,
+      "source_reference": "C12"
+    },
+    {
+      "backend_id": "RLOAD",
+      "compiled_id": "RLOAD",
+      "generated_by_compiler": false,
+      "source_id": null,
+      "source_index": 24,
+      "source_reference": "RLOAD"
+    }
+  ],
+  "key": "circuit-011da72b4d779fc1e919",
+  "metadata": {
+    "description": "Deterministic connected filter network; 12 sections; no simulation source inserted.",
+    "name": "Repeated filter sections (25 components)"
+  },
+  "pin_definitions": [
+    {
+      "backend_type": "resistor",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "1k",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "orientation": "right",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "prefix": "R",
+      "shared_export": true,
+      "symbol": "res",
+      "type": "resistor"
+    },
+    {
+      "backend_type": "capacitor",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "100n",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "orientation": "right",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "prefix": "C",
+      "shared_export": true,
+      "symbol": "cap",
+      "type": "capacitor"
+    },
+    {
+      "backend_type": null,
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "10u",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "left",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "right",
+          "orientation": "right",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "prefix": "L",
+      "shared_export": false,
+      "symbol": "ind",
+      "type": "inductor"
+    },
+    {
+      "backend_type": "diode",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "1N4148",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "anode",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "2",
+          "name": "cathode",
+          "orientation": "right",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "prefix": "D",
+      "shared_export": true,
+      "symbol": "diode",
+      "type": "diode"
+    },
+    {
+      "backend_type": "led",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "RED",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "A",
+          "name": "anode",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "right",
+          "id": "K",
+          "name": "cathode",
+          "orientation": "right",
+          "x": 32,
+          "y": 0
+        }
+      ],
+      "prefix": "D",
+      "shared_export": true,
+      "symbol": "led",
+      "type": "led"
+    },
+    {
+      "backend_type": "transistor",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "2N3904",
+      "pin_count": 3,
+      "pins": [
+        {
+          "direction": "top",
+          "id": "C",
+          "name": "collector",
+          "orientation": "top",
+          "x": 0,
+          "y": -32
+        },
+        {
+          "direction": "left",
+          "id": "B",
+          "name": "base",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "bottom",
+          "id": "E",
+          "name": "emitter",
+          "orientation": "bottom",
+          "x": 0,
+          "y": 32
+        }
+      ],
+      "prefix": "Q",
+      "shared_export": true,
+      "symbol": "npn",
+      "type": "npn_transistor"
+    },
+    {
+      "backend_type": null,
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "2N3906",
+      "pin_count": 3,
+      "pins": [
+        {
+          "direction": "top",
+          "id": "C",
+          "name": "collector",
+          "orientation": "top",
+          "x": 0,
+          "y": -32
+        },
+        {
+          "direction": "left",
+          "id": "B",
+          "name": "base",
+          "orientation": "left",
+          "x": -32,
+          "y": 0
+        },
+        {
+          "direction": "bottom",
+          "id": "E",
+          "name": "emitter",
+          "orientation": "bottom",
+          "x": 0,
+          "y": 32
+        }
+      ],
+      "prefix": "Q",
+      "shared_export": false,
+      "symbol": "pnp",
+      "type": "pnp_transistor"
+    },
+    {
+      "backend_type": null,
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "5",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "top",
+          "id": "+",
+          "name": "positive",
+          "orientation": "top",
+          "x": 0,
+          "y": -32
+        },
+        {
+          "direction": "bottom",
+          "id": "-",
+          "name": "negative",
+          "orientation": "bottom",
+          "x": 0,
+          "y": 32
+        }
+      ],
+      "prefix": "V",
+      "shared_export": false,
+      "symbol": "voltage",
+      "type": "voltage_source"
+    },
+    {
+      "backend_type": null,
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "1m",
+      "pin_count": 2,
+      "pins": [
+        {
+          "direction": "top",
+          "id": "+",
+          "name": "positive",
+          "orientation": "top",
+          "x": 0,
+          "y": -32
+        },
+        {
+          "direction": "bottom",
+          "id": "-",
+          "name": "negative",
+          "orientation": "bottom",
+          "x": 0,
+          "y": 32
+        }
+      ],
+      "prefix": "I",
+      "shared_export": false,
+      "symbol": "current",
+      "type": "current_source"
+    },
+    {
+      "backend_type": null,
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "0",
+      "pin_count": 1,
+      "pins": [
+        {
+          "direction": "top",
+          "id": "0",
+          "name": "ground",
+          "orientation": "top",
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "prefix": "GND",
+      "shared_export": false,
+      "symbol": "gnd",
+      "type": "ground"
+    },
+    {
+      "backend_type": "ne555",
+      "coordinate_space": "frontend_symbol_local",
+      "defaultRotation": 0,
+      "defaultValue": "NE555",
+      "pin_count": 8,
+      "pins": [
+        {
+          "direction": "left",
+          "id": "1",
+          "name": "GND",
+          "orientation": "left",
+          "x": -48,
+          "y": 48
+        },
+        {
+          "direction": "left",
+          "id": "2",
+          "name": "TRIG",
+          "orientation": "left",
+          "x": -48,
+          "y": 16
+        },
+        {
+          "direction": "right",
+          "id": "3",
+          "name": "OUT",
+          "orientation": "right",
+          "x": 48,
+          "y": 16
+        },
+        {
+          "direction": "left",
+          "id": "4",
+          "name": "RESET",
+          "orientation": "left",
+          "x": -48,
+          "y": -48
+        },
+        {
+          "direction": "right",
+          "id": "5",
+          "name": "CTRL",
+          "orientation": "right",
+          "x": 48,
+          "y": -16
+        },
+        {
+          "direction": "left",
+          "id": "6",
+          "name": "THR",
+          "orientation": "left",
+          "x": -48,
+          "y": -16
+        },
+        {
+          "direction": "right",
+          "id": "7",
+          "name": "DIS",
+          "orientation": "right",
+          "x": 48,
+          "y": -48
+        },
+        {
+          "direction": "right",
+          "id": "8",
+          "name": "VCC",
+          "orientation": "right",
+          "x": 48,
+          "y": 48
+        }
+      ],
+      "prefix": "U",
+      "shared_export": true,
+      "symbol": "555timer",
+      "type": "ne555"
+    }
+  ],
+  "resolved_pins": [
+    {
+      "absoluteX": -32,
+      "absoluteY": 0,
+      "componentId": "R1",
+      "componentName": "R1",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N1",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 32,
+      "absoluteY": 0,
+      "componentId": "R1",
+      "componentName": "R1",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N2",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 188,
+      "absoluteY": 0,
+      "componentId": "C1",
+      "componentName": "C1",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N2",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 252,
+      "absoluteY": 0,
+      "componentId": "C1",
+      "componentName": "C1",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N3",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 408,
+      "absoluteY": 0,
+      "componentId": "R2",
+      "componentName": "R2",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N2",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 472,
+      "absoluteY": 0,
+      "componentId": "R2",
+      "componentName": "R2",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N4",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 628,
+      "absoluteY": 0,
+      "componentId": "C2",
+      "componentName": "C2",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N4",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 692,
+      "absoluteY": 0,
+      "componentId": "C2",
+      "componentName": "C2",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N3",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": -32,
+      "absoluteY": 160,
+      "componentId": "R3",
+      "componentName": "R3",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N4",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 32,
+      "absoluteY": 160,
+      "componentId": "R3",
+      "componentName": "R3",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N5",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 188,
+      "absoluteY": 160,
+      "componentId": "C3",
+      "componentName": "C3",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N5",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 252,
+      "absoluteY": 160,
+      "componentId": "C3",
+      "componentName": "C3",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N3",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 408,
+      "absoluteY": 160,
+      "componentId": "R4",
+      "componentName": "R4",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N5",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 472,
+      "absoluteY": 160,
+      "componentId": "R4",
+      "componentName": "R4",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N6",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 628,
+      "absoluteY": 160,
+      "componentId": "C4",
+      "componentName": "C4",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N6",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 692,
+      "absoluteY": 160,
+      "componentId": "C4",
+      "componentName": "C4",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N3",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": -32,
+      "absoluteY": 320,
+      "componentId": "R5",
+      "componentName": "R5",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N6",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 32,
+      "absoluteY": 320,
+      "componentId": "R5",
+      "componentName": "R5",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N7",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 188,
+      "absoluteY": 320,
+      "componentId": "C5",
+      "componentName": "C5",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N7",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 252,
+      "absoluteY": 320,
+      "componentId": "C5",
+      "componentName": "C5",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N3",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 408,
+      "absoluteY": 320,
+      "componentId": "R6",
+      "componentName": "R6",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N7",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 472,
+      "absoluteY": 320,
+      "componentId": "R6",
+      "componentName": "R6",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N8",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 628,
+      "absoluteY": 320,
+      "componentId": "C6",
+      "componentName": "C6",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N8",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 692,
+      "absoluteY": 320,
+      "componentId": "C6",
+      "componentName": "C6",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N3",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": -32,
+      "absoluteY": 480,
+      "componentId": "R7",
+      "componentName": "R7",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N8",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 32,
+      "absoluteY": 480,
+      "componentId": "R7",
+      "componentName": "R7",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N9",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 188,
+      "absoluteY": 480,
+      "componentId": "C7",
+      "componentName": "C7",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N9",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 252,
+      "absoluteY": 480,
+      "componentId": "C7",
+      "componentName": "C7",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N3",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 408,
+      "absoluteY": 480,
+      "componentId": "R8",
+      "componentName": "R8",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N9",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 472,
+      "absoluteY": 480,
+      "componentId": "R8",
+      "componentName": "R8",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N10",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 628,
+      "absoluteY": 480,
+      "componentId": "C8",
+      "componentName": "C8",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N10",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 692,
+      "absoluteY": 480,
+      "componentId": "C8",
+      "componentName": "C8",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N3",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": -32,
+      "absoluteY": 640,
+      "componentId": "R9",
+      "componentName": "R9",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N10",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 32,
+      "absoluteY": 640,
+      "componentId": "R9",
+      "componentName": "R9",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N11",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 188,
+      "absoluteY": 640,
+      "componentId": "C9",
+      "componentName": "C9",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N11",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 252,
+      "absoluteY": 640,
+      "componentId": "C9",
+      "componentName": "C9",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N3",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 408,
+      "absoluteY": 640,
+      "componentId": "R10",
+      "componentName": "R10",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N11",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 472,
+      "absoluteY": 640,
+      "componentId": "R10",
+      "componentName": "R10",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N12",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 628,
+      "absoluteY": 640,
+      "componentId": "C10",
+      "componentName": "C10",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N12",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 692,
+      "absoluteY": 640,
+      "componentId": "C10",
+      "componentName": "C10",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N3",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": -32,
+      "absoluteY": 800,
+      "componentId": "R11",
+      "componentName": "R11",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N12",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 32,
+      "absoluteY": 800,
+      "componentId": "R11",
+      "componentName": "R11",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N13",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 188,
+      "absoluteY": 800,
+      "componentId": "C11",
+      "componentName": "C11",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N13",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 252,
+      "absoluteY": 800,
+      "componentId": "C11",
+      "componentName": "C11",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N3",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 408,
+      "absoluteY": 800,
+      "componentId": "R12",
+      "componentName": "R12",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N13",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 472,
+      "absoluteY": 800,
+      "componentId": "R12",
+      "componentName": "R12",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N14",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": 628,
+      "absoluteY": 800,
+      "componentId": "C12",
+      "componentName": "C12",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N14",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 692,
+      "absoluteY": 800,
+      "componentId": "C12",
+      "componentName": "C12",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N3",
+      "x": 32,
+      "y": 0
+    },
+    {
+      "absoluteX": -32,
+      "absoluteY": 960,
+      "componentId": "RLOAD",
+      "componentName": "RLOAD",
+      "direction": "left",
+      "id": "1",
+      "name": "left",
+      "net": "N14",
+      "x": -32,
+      "y": 0
+    },
+    {
+      "absoluteX": 32,
+      "absoluteY": 960,
+      "componentId": "RLOAD",
+      "componentName": "RLOAD",
+      "direction": "right",
+      "id": "2",
+      "name": "right",
+      "net": "N3",
+      "x": 32,
+      "y": 0
+    }
+  ],
+  "topology": [
+    {
+      "compiled_pins": [
+        "R1.1"
+      ],
+      "id": "N1",
+      "labels": [
+        "VIN"
+      ],
+      "name": "VIN",
+      "pins": [
+        "R1.1"
+      ]
+    },
+    {
+      "compiled_pins": [
+        "C1.1",
+        "R1.2",
+        "R2.1"
+      ],
+      "id": "N2",
+      "labels": [],
+      "name": "N2",
+      "pins": [
+        "C1.1",
+        "R1.2",
+        "R2.1"
+      ]
+    },
+    {
+      "compiled_pins": [
+        "C1.2",
+        "C10.2",
+        "C11.2",
+        "C12.2",
+        "C2.2",
+        "C3.2",
+        "C4.2",
+        "C5.2",
+        "C6.2",
+        "C7.2",
+        "C8.2",
+        "C9.2",
+        "RLOAD.2"
+      ],
+      "id": "N3",
+      "labels": [
+        "GND"
+      ],
+      "name": "GND",
+      "pins": [
+        "C1.2",
+        "C10.2",
+        "C11.2",
+        "C12.2",
+        "C2.2",
+        "C3.2",
+        "C4.2",
+        "C5.2",
+        "C6.2",
+        "C7.2",
+        "C8.2",
+        "C9.2",
+        "RLOAD.2"
+      ]
+    },
+    {
+      "compiled_pins": [
+        "C2.1",
+        "R2.2",
+        "R3.1"
+      ],
+      "id": "N4",
+      "labels": [],
+      "name": "N4",
+      "pins": [
+        "C2.1",
+        "R2.2",
+        "R3.1"
+      ]
+    },
+    {
+      "compiled_pins": [
+        "C3.1",
+        "R3.2",
+        "R4.1"
+      ],
+      "id": "N5",
+      "labels": [],
+      "name": "N5",
+      "pins": [
+        "C3.1",
+        "R3.2",
+        "R4.1"
+      ]
+    },
+    {
+      "compiled_pins": [
+        "C4.1",
+        "R4.2",
+        "R5.1"
+      ],
+      "id": "N6",
+      "labels": [],
+      "name": "N6",
+      "pins": [
+        "C4.1",
+        "R4.2",
+        "R5.1"
+      ]
+    },
+    {
+      "compiled_pins": [
+        "C5.1",
+        "R5.2",
+        "R6.1"
+      ],
+      "id": "N7",
+      "labels": [],
+      "name": "N7",
+      "pins": [
+        "C5.1",
+        "R5.2",
+        "R6.1"
+      ]
+    },
+    {
+      "compiled_pins": [
+        "C6.1",
+        "R6.2",
+        "R7.1"
+      ],
+      "id": "N8",
+      "labels": [],
+      "name": "N8",
+      "pins": [
+        "C6.1",
+        "R6.2",
+        "R7.1"
+      ]
+    },
+    {
+      "compiled_pins": [
+        "C7.1",
+        "R7.2",
+        "R8.1"
+      ],
+      "id": "N9",
+      "labels": [],
+      "name": "N9",
+      "pins": [
+        "C7.1",
+        "R7.2",
+        "R8.1"
+      ]
+    },
+    {
+      "compiled_pins": [
+        "C8.1",
+        "R8.2",
+        "R9.1"
+      ],
+      "id": "N10",
+      "labels": [],
+      "name": "N10",
+      "pins": [
+        "C8.1",
+        "R8.2",
+        "R9.1"
+      ]
+    },
+    {
+      "compiled_pins": [
+        "C9.1",
+        "R10.1",
+        "R9.2"
+      ],
+      "id": "N11",
+      "labels": [],
+      "name": "N11",
+      "pins": [
+        "C9.1",
+        "R10.1",
+        "R9.2"
+      ]
+    },
+    {
+      "compiled_pins": [
+        "C10.1",
+        "R10.2",
+        "R11.1"
+      ],
+      "id": "N12",
+      "labels": [],
+      "name": "N12",
+      "pins": [
+        "C10.1",
+        "R10.2",
+        "R11.1"
+      ]
+    },
+    {
+      "compiled_pins": [
+        "C11.1",
+        "R11.2",
+        "R12.1"
+      ],
+      "id": "N13",
+      "labels": [],
+      "name": "N13",
+      "pins": [
+        "C11.1",
+        "R11.2",
+        "R12.1"
+      ]
+    },
+    {
+      "compiled_pins": [
+        "C12.1",
+        "R12.2",
+        "RLOAD.1"
+      ],
+      "id": "N14",
+      "labels": [
+        "VOUT"
+      ],
+      "name": "VOUT",
+      "pins": [
+        "C12.1",
+        "R12.2",
+        "RLOAD.1"
+      ]
+    }
+  ],
+  "valid": true,
+  "value_drift": []
+}

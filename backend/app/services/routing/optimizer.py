@@ -5,30 +5,36 @@ from collections import Counter
 
 from app.services.asc_validation import WireSegment
 from app.services.grid_system import Point
+from app.services.production import checkpoint
 from .geometry import axis, intersection, manhattan, on_segment
 
 
 def normalize_segments(segments: list[WireSegment], protected: set[Point],
                        crossing_points: set[Point]) -> tuple[list[WireSegment], tuple[Point, ...]]:
+    checkpoint(segments=len(segments))
     if not segments:
         return [], ()
     net = segments[0].net
     vertices = {p for s in segments for p in (s.start, s.end)} | protected
     for i, a in enumerate(segments):
+        checkpoint(iterations=len(segments) - i)
         for b in segments[i + 1:]:
             kind, point = intersection(a, b)
             if kind in ("cross", "touch") and point not in crossing_points:
                 vertices.add(point)
     pieces: set[tuple[Point, Point]] = set()
     for segment in segments:
+        checkpoint(iterations=len(vertices))
         cuts = sorted({segment.start, segment.end} | {
             p for p in vertices if p not in crossing_points and on_segment(p, segment.start, segment.end)
         })
         for start, end in zip(cuts, cuts[1:]):
             if start != end:
                 pieces.add((start, end))
+                checkpoint(segments=len(pieces))
     # Merge only a collinear degree-two vertex, never a protected terminal/port.
     while True:
+        checkpoint(iterations=len(pieces), segments=len(pieces))
         incidence: dict[Point, list[tuple[Point, Point]]] = {}
         for piece in sorted(pieces):
             for point in piece:

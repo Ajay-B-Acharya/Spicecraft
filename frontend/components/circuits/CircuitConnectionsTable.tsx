@@ -11,6 +11,11 @@ interface Props {
   wires: CircuitWire[];
 }
 
+function endpointText(value: unknown, handle: unknown): string {
+  const text = typeof value === 'string' || typeof value === 'number' ? String(value) : JSON.stringify(value) ?? '';
+  return typeof handle === 'string' ? `${text} (${handle})` : text;
+}
+
 export function CircuitConnectionsTable({ wires }: Props) {
   return (
     <Card>
@@ -33,8 +38,8 @@ export function CircuitConnectionsTable({ wires }: Props) {
               <tbody className="divide-y">
                 {wires.map((wire, index) => (
                   <tr key={`${wire.source}-${wire.destination}-${index}`} className="bg-background/40">
-                    <td className="px-4 py-3 font-medium">{wire.source}</td>
-                    <td className="px-4 py-3 text-muted-foreground">{wire.destination}</td>
+                    <td className="px-4 py-3 font-medium">{endpointText(wire.source ?? wire.from ?? wire.start, wire.sourceHandle)}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{endpointText(wire.destination ?? wire.target ?? wire.to ?? wire.end, wire.targetHandle)}</td>
                   </tr>
                 ))}
               </tbody>

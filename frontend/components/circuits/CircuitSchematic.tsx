@@ -37,8 +37,8 @@ export function CircuitSchematic({ circuit, onConnectPins, onPositionChange }: C
   const isValidConnection = (connection: Connection | Edge) => Boolean(
     connection.sourceHandle && connection.targetHandle &&
     !(connection.source === connection.target && connection.sourceHandle === connection.targetHandle) &&
-    !nodes.find(node => node.id === connection.source)?.data.netLabel &&
-    !nodes.find(node => node.id === connection.target)?.data.netLabel,
+    nodes.some(node => node.id === connection.source && !node.data.netLabel) &&
+    nodes.some(node => node.id === connection.target && !node.data.netLabel),
   );
 
   return (

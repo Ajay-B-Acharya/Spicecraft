@@ -1,0 +1,162 @@
+{
+  "compiled_sha256": "68119730e726dbf9b77068f59b7f4668226f548930351c14e07a32b38b0af88e",
+  "counts": {
+    "compiled": {
+      "components": 3,
+      "connections": 2,
+      "mapped_components": 3,
+      "nets": 1,
+      "pins": 7
+    },
+    "exported": null,
+    "input": {
+      "components": 3,
+      "connections": 2,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 0,
+      "nets": 0,
+      "pins": 0,
+      "segments": 0
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R1; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R2; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin Q1.C (collector) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin Q1.E (emitter) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "R1",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R1",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "backend_id": "R2",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R2",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "actual": [
+        448,
+        464
+      ],
+      "circuit": null,
+      "code": "BLOCKED_PIN_ESCAPE",
+      "component": "R2",
+      "expected": null,
+      "message": "Exact outward pin escape is blocked by a component or foreign pin corridor",
+      "net": "N1",
+      "pin": "1",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "route"
+    },
+    {
+      "actual": [
+        448,
+        464
+      ],
+      "circuit": "Circuit",
+      "code": "BLOCKED_PIN_ESCAPE",
+      "component": "R2",
+      "expected": null,
+      "message": "Exact outward pin escape is blocked by a component or foreign pin corridor",
+      "net": "N1",
+      "pin": "1",
+      "pipeline_stage": "routing",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "id": "circuit-72173c03a45b93630a70",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 14,
+      "peak_rss_bytes": 85254144
+    }
+  },
+  "name": "test_connectivity.py:line:101",
+  "overall": "NOT_RUN",
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 0,
+    "collision_checks": 0,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 0,
+    "order_attempts": 0,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 0,
+    "segments": 0
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "FAIL",
+    "route": "FAIL",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 18.112900000232912,
+    "compiler_process_wall": 696.118199999546,
+    "compiler_reported": 13.284600000000069,
+    "connectivity_wall": 0.5190000001675799,
+    "export_wall": 6.667200000265439,
+    "route_wall": 0.41819999933068175
+  }
+}

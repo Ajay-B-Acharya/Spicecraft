@@ -25,19 +25,13 @@ class DisjointSet {
   find(item: string): string {
     this.add(item);
 
-    const parent = this.parent.get(item);
-
-    if (!parent) {
-      return item;
+    let root = item;
+    while (this.parent.get(root) !== root) root = this.parent.get(root)!;
+    while (item !== root) {
+      const next = this.parent.get(item)!;
+      this.parent.set(item, root);
+      item = next;
     }
-
-    if (parent === item) {
-      return item;
-    }
-
-    const root = this.find(parent);
-    this.parent.set(item, root);
-
     return root;
   }
 

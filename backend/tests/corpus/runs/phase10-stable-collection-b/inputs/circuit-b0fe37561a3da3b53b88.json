@@ -1,0 +1,18 @@
+{
+  "components": [
+    {
+      "id": "Q1",
+      "reference": "Q1",
+      "type": "transistor",
+      "value": "BC547"
+    }
+  ],
+  "wires": [
+    {
+      "destination": "VIN",
+      "from": "Q1.base",
+      "source": "Q1.2",
+      "to": "IN"
+    }
+  ]
+}

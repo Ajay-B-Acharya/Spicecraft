@@ -46,6 +46,12 @@ from app.services.pin_maps import (
     resolve_symbol_name,
 )
 
+from app.services.production import (
+    Execution, PipelineLimits, checkpoint, current_execution, execution_context, log_report,
+)
+from app.services.input_safety import validate_input
+from app.services.export_safety import validate_serialized_export
+
 logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
@@ -195,6 +201,7 @@ def place_components(components: list[dict[str, Any]], connectivity=None) -> dic
     """Placement step on its own: ``{inst_name: layout}`` (also keyed by ``id``)."""
     layouts: dict[str, dict[str, Any]] = {}
     for idx, comp in enumerate(components):
+        checkpoint(iterations=1)
         inst_name, layout = place_component(idx, comp)
         layouts[inst_name] = layout
         comp_id = str(comp.get("id", "")).strip()
@@ -240,7 +247,12 @@ def _generate_asc_with_routing(
     errors. Blocking failures return empty ASC text, never a plausible partial
     schematic; the routed object and all diagnostics remain inspectable.
     """
+    execution = current_execution()
+    execution.transition("net_building")
     connectivity = build_connectivity(circuit)
+    execution.counts["netCount"] = len(connectivity.nets)
+    execution.require("nets", len(connectivity.nets))
+    execution.transition("validation")
     diagnostics = validate_connectivity(connectivity)
     # Fail before placement/routing; diagnostic mode never returns usable text
     # for logically invalid source and generate_asc raises AscExportError.
@@ -271,7 +283,9 @@ def _generate_asc_with_routing(
     name: str = str(circuit.get("name", "Circuit"))
     description: str = str(circuit.get("description", ""))
     components: list[dict[str, Any]] = circuit.get("components", [])
+    execution.transition("layout")
     component_layouts = place_components(components, connectivity)
+    execution.transition("pin_resolution")
 
     # ---- Route immutable explicit memberships -----------------------------
     # Reserve ALL definition pins, including unwired singleton pins. Routing
@@ -289,10 +303,9 @@ def _generate_asc_with_routing(
     if any(d.severity == ERROR for d in diagnostics):
         return "", diagnostics, None
 
+    execution.transition("routing")
     try:
-        # A completely unwired schematic needs no geometry. Preserve Phase6's
-        # warning-only generic symbol serialization in that case; unknown
-        # symbols still cannot be substituted as obstacles in an active route.
+        # Unwired supported components still retain their verified symbols.
         routed = (route_nets(connectivity, component_layouts)
                   if any(group.pins for group in connectivity.source_groups)
                   else RoutingResult())
@@ -302,6 +315,8 @@ def _generate_asc_with_routing(
     if any(d.severity == ERROR for d in diagnostics):
         return "", diagnostics, routed
 
+    execution.require("routing_segments", sum(len(net.segments) for net in routed.net_geometries))
+    execution.transition("routing_validation")
     net_geometries = routed.net_geometries
     # Check both the router's input model and output against captured source;
     # mutable logical lists must never redefine the immutable source partition.
@@ -341,7 +356,9 @@ def _generate_asc_with_routing(
     if any(d.severity == ERROR for d in diagnostics):
         return "", diagnostics, routed
 
+    execution.transition("optimization")
     cleaned = clean_export_geometry(net_geometries)
+    execution.transition("final_validation")
     diagnostics.extend(_promote_shorts(validate_net_geometry(cleaned, reserved_pins=reserved_pins)))
     diagnostics.extend(validate_connectivity(connectivity, cleaned))
     if any(d.severity == ERROR for d in diagnostics):
@@ -354,6 +371,7 @@ def _generate_asc_with_routing(
                                     + abs(segment.start[1] - segment.end[1])
                                     for net in cleaned for segment in net.segments)
 
+    execution.transition("export")
     presentation = build_presentation(component_layouts, cleaned, name, description)
     lines = ["Version 4", presentation.sheet]
     # Sort complete blocks after placement: input order still determines layout.
@@ -372,18 +390,48 @@ def _generate_asc_with_routing(
     flags = sorted({(net.name, point) for net in cleaned for point in net.flags})
     lines.extend(_flag_line(*point, net) for net, point in flags)
     lines.extend(dict.fromkeys(presentation.text))
-    return "\n".join(lines) + "\n", diagnostics, routed
+    text = "\n".join(lines) + "\n"
+    execution.require("export_bytes", len(text.encode("utf-8")))
+    execution.counts["wireCount"] = len(segments)
+    execution.counts["exportBytes"] = len(text.encode("utf-8"))
+    execution.transition("post_export_validation")
+    diagnostics.extend(validate_serialized_export(text, component_layouts, cleaned, instances))
+    if any(d.severity == ERROR for d in diagnostics):
+        return "", diagnostics, routed
+    return text, diagnostics, routed
 
 
 def generate_asc_with_routing(
-    circuit: dict[str, Any], strict: bool = False
+    circuit: dict[str, Any], strict: bool = False, *, limits: PipelineLimits | None = None,
+    metrics: dict | None = None, debug: bool = False,
 ) -> tuple[str, list[ExportDiagnostic], RoutingResult | None]:
-    """Return validated ASC, actionable circuit diagnostics, and serialized geometry."""
-    asc, diagnostics, routed = _generate_asc_with_routing(circuit, strict)
-    name = str(circuit.get("name", "Circuit")) if isinstance(circuit, dict) else "Circuit"
-    diagnostics = list(dict.fromkeys(replace(d, circuit=name) for d in diagnostics))
+    """Run an atomic bounded export; metrics are request-local and optional."""
+    execution = Execution(limits or PipelineLimits.from_environment(), debug=debug)
+    asc, diagnostics, routed = "", [], None
+    with execution_context(execution):
+        try:
+            validate_input(circuit, execution)
+            execution.circuit_id = str(circuit.get("id", ""))
+            log_report("pipeline_start", execution.report())
+            asc, diagnostics, routed = _generate_asc_with_routing(circuit, strict)
+            execution.check()
+        except AscExportError as exc:
+            asc, diagnostics, routed = "", list(exc.diagnostics), None
+        finally:
+            from time import perf_counter
+            execution.timings[execution.stage] = execution.timings.get(execution.stage, 0.0) + (perf_counter() - execution.stage_started) * 1000
+    name = circuit.get("name", "Circuit") if isinstance(circuit, dict) else "Circuit"
+    name = name if isinstance(name, str) and len(name) <= execution.limits.max_string_length else "Circuit"
+    diagnostics = list(dict.fromkeys(replace(d, circuit=name, stage=d.stage or execution.stage) for d in diagnostics))
     if routed is not None:
-        routed.diagnostics = list(dict.fromkeys(replace(d, circuit=name) for d in routed.diagnostics))
+        routed.diagnostics = list(dict.fromkeys(replace(d, circuit=name, stage=d.stage or "routing") for d in routed.diagnostics))
+    report = execution.report(diagnostics)
+    if metrics is not None:
+        metrics.update(report)
+    log_report("pipeline_failed" if any(d.severity == ERROR for d in diagnostics) else "pipeline_complete", report)
+    if debug:
+        for diagnostic in diagnostics:
+            logger.debug("%s", diagnostic.format())
     return asc, diagnostics, routed
 
 

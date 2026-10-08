@@ -1,0 +1,10 @@
+{
+  "components": [
+    {
+      "reference": "U1",
+      "type": "bjt",
+      "value": "BC557"
+    }
+  ],
+  "wires": []
+}

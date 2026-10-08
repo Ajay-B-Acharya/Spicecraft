@@ -1,0 +1,54 @@
+{
+  "reviewer": "Supercharge AI image inspection",
+  "circuits": [
+    {
+      "key": "555_astable_multivibrator",
+      "status": "PASS",
+      "evidence": "Inspected current native capture against the upper baseline: U1 and its eight pins remain visible; R1/R2 and C1 labels do not overlap bodies; three junctions and the lower ground return are visible without cropping. The source's unconnected OUT/RST/CV pins remain unconnected; this is presentation acceptance, not oscillator simulation.",
+      "asc_sha256": "602db80d03d8b7e2535374f85d9e9b8843b1ab976150ae05bdf79a00fa93864d",
+      "native_sha256": "6a432c8fe3f05b188acc7999c6e5e775d1eaed8c039ac171f0b3111294697b58"
+    },
+    {
+      "key": "common_emitter_amplifier",
+      "status": "PASS",
+      "evidence": "Inspected both native captures: left bias divider, upper VCC, Q1, output coupling capacitor and VOUT, and lower capacitor/ground remain clearly separated. Two junctions and all six component/value labels are readable; no new crossing or crop is visible.",
+      "asc_sha256": "df9d1d6f410f021f78208970fa8283d51d3f8b943dfc0bcd6a3b7c5fea6ef6b7",
+      "native_sha256": "c07ebbf963d42a8bf318ec112edf8765f072f3557d23b19d3d47386c4574d808"
+    },
+    {
+      "key": "led_blinker",
+      "status": "PASS",
+      "evidence": "Inspected both native captures: five component labels remain readable; the Q1 collector-to-LED path and right R2/ground return are clear. The open emitter is present in the source and has not been silently connected. Title/description and ground fit the viewport.",
+      "asc_sha256": "7f2985e1296b29bfddaf3e535f5f0f854200e5cc4b6bbcb08fcec40a354189c0",
+      "native_sha256": "b86fbb9ceef44e4ed379f86fb476bfa868ba6c121a2778754fd6b789c350d8ed"
+    },
+    {
+      "key": "rc_high_pass_filter",
+      "status": "PASS",
+      "evidence": "Inspected native comparison: VIN reaches the series C1, VOUT sits above the R1 branch, and the lower ground and both value labels are visible. Current export preserves the compact orthogonal path with no label/body overlap or cropping.",
+      "asc_sha256": "adc6a47d32e323054196018e7fd487c7bfec806c6d98f47ae064b7b463a8b051",
+      "native_sha256": "6741916d6b8a31dba9e00137eebbb2bc00cac4a780348cd5d3a36b6a7dfd926a"
+    },
+    {
+      "key": "rc_low_pass_filter",
+      "status": "PASS",
+      "evidence": "Inspected native comparison: horizontal R1 from VIN and vertical C1 to ground remain separated, VOUT is clearly above the elbow, and title/description/value labels fit without obscuring wires or symbols.",
+      "asc_sha256": "a764d84a5123d6d5e839af4d4f84309f8cbf8c514983d7b6e8e9695ba3410a31",
+      "native_sha256": "042956b907073691da5b72103123e973b6bcb6ac2db76fd1650ea30214641bcf"
+    },
+    {
+      "key": "voltage_divider",
+      "status": "PASS",
+      "evidence": "Inspected native comparison: R1 and R2 remain vertically aligned; VIN and VOUT occupy separate wire portions; ground and both 10k values are readable, with no detours, overlap, or cropped schematic content.",
+      "asc_sha256": "a53d9d4b323fcaba07971bb80d9a9966316e57ce905b97d0b042d559b6ccf084",
+      "native_sha256": "84922f7f6115a12cdc578f40536af12206f78513ce620bf380a91172ea9d7269"
+    },
+    {
+      "key": "bridge_rectifier",
+      "status": "PASS",
+      "evidence": "Inspected native comparison: both diode columns, AC+/AC- labels, right-hand load and OUT+, and the two intended junctions remain visible. Orthogonal top/bottom buses do not cross symbol bodies; all references/values and the description fit.",
+      "asc_sha256": "4d81b2ea1aa3825ba01b528c7f4109e2056efdc3c6fd0e096fe8ca1cf5a40ac8",
+      "native_sha256": "f5ee245a03b0a0412ff9073393230fbe89b36df3d8c421120d22e7bf28df954b"
+    }
+  ]
+}

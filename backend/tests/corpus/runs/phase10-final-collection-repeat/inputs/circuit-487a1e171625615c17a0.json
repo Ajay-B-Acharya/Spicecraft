@@ -1,0 +1,102 @@
+{
+  "components": [
+    {
+      "reference": "R1",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R2",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R3",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R4",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R5",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R6",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R7",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R8",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R9",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "R10",
+      "type": "resistor",
+      "value": "1k"
+    }
+  ],
+  "description": "Deterministic connected resistor network; 10 sections; no simulation source inserted.",
+  "name": "Repeated resistor sections (10 components)",
+  "wires": [
+    {
+      "from": "R1.1",
+      "to": "VIN"
+    },
+    {
+      "from": "R2.1",
+      "to": "R1.2"
+    },
+    {
+      "from": "R3.1",
+      "to": "R2.2"
+    },
+    {
+      "from": "R4.1",
+      "to": "R3.2"
+    },
+    {
+      "from": "R5.1",
+      "to": "R4.2"
+    },
+    {
+      "from": "R6.1",
+      "to": "R5.2"
+    },
+    {
+      "from": "R7.1",
+      "to": "R6.2"
+    },
+    {
+      "from": "R8.1",
+      "to": "R7.2"
+    },
+    {
+      "from": "R9.1",
+      "to": "R8.2"
+    },
+    {
+      "from": "R10.1",
+      "to": "R9.2"
+    },
+    {
+      "from": "R10.2",
+      "to": "GND"
+    }
+  ]
+}

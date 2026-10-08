@@ -1,0 +1,11 @@
+{
+  "components": [
+    {
+      "id": "node",
+      "reference": "R\u00011",
+      "type": "resistor",
+      "value": "1k"
+    }
+  ],
+  "wires": []
+}

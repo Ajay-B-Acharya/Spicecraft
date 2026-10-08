@@ -1,0 +1,67 @@
+{
+  "compiled_sha256": "2a5172d52f56a55a99eaa846eaafeee3587075d9025cb7f56dee7f660be5a03a",
+  "counts": {
+    "compiled": {
+      "components": 250,
+      "connections": 251,
+      "mapped_components": 250,
+      "nets": 251,
+      "pins": 500
+    },
+    "exported": null,
+    "input": {
+      "components": 250,
+      "connections": 251,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 2,
+      "nets": 251,
+      "pins": 500,
+      "segments": 1247
+    }
+  },
+  "diagnostics": [],
+  "id": "circuit-5eee04129d7baad3326a",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 21,
+      "peak_rss_bytes": 88391680
+    }
+  },
+  "name": "Repeated resistor sections (250 components)",
+  "overall": "NOT_RUN",
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 3354,
+    "collision_checks": 4598,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 145360,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 1247
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "RUNNING",
+    "route": "PASS",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": true,
+  "timings_ms": {
+    "compiler_process_wall": 746.9111999998859,
+    "compiler_reported": 45.56269999999995,
+    "connectivity_wall": 44.202400000358466,
+    "route_wall": 8178.025999999591
+  }
+}

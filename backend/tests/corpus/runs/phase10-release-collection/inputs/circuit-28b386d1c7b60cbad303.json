@@ -1,0 +1,25 @@
+{
+  "category": "",
+  "components": [
+    {
+      "id": "R1",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "Q1",
+      "type": "npn",
+      "value": "BC547"
+    }
+  ],
+  "description": "",
+  "id": "circuit",
+  "name": "Test",
+  "tags": [],
+  "wires": [
+    {
+      "from": "R1.1",
+      "to": "Q1.B"
+    }
+  ]
+}

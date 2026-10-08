@@ -1,0 +1,94 @@
+{
+  "compiled_sha256": "d409eb8b367c54298c522df26908dc02e7ee926aca590fab634639fe1e37afa9",
+  "counts": {
+    "compiled": {
+      "components": 100,
+      "connections": 101,
+      "mapped_components": 100,
+      "nets": 101,
+      "pins": 200
+    },
+    "exported": null,
+    "input": {
+      "components": 100,
+      "connections": 101,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 2,
+      "nets": 101,
+      "pins": 200,
+      "segments": 497
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "BACKEND_TIMEOUT",
+      "error": "Deadline 30s exceeded",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "evidence_directory": "circuit-bf177d289f65b1ff63fb/sample-1",
+  "failure_stage": "export",
+  "failures": [
+    {
+      "code": "BACKEND_TIMEOUT",
+      "error": "Deadline 30s exceeded",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-bf177d289f65b1ff63fb",
+  "implementation_sha256": "f4c25658dcec1a34f0271187fa040ae144f61b9a7b65db15d3d82dabf490dd33",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 315,
+      "peak_rss_bytes": 34418688
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 20,
+      "peak_rss_bytes": 83484672
+    }
+  },
+  "name": "Repeated resistor sections (100 components)",
+  "overall": "FAIL",
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 1320,
+    "collision_checks": 1809,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 57520,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 497
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "TIMEOUT",
+    "route": "PASS",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": true,
+  "timings_ms": {
+    "backend_process_wall": 30719.141299999137,
+    "compiler_process_wall": 1565.5389000003197,
+    "compiler_reported": 59.82420000000002,
+    "connectivity_wall": 24.916399999710848,
+    "route_wall": 8101.328200000353
+  },
+  "validation": "NOT_RUN"
+}

@@ -1,0 +1,155 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "8cb0778fc2a9267a211eeed505fe18e719eff18208076ee079e3c29f5a558486",
+  "compiled_sha256": "b011a7b67d6ed756da0b8b2e44606daee872597bb5689063d69c1b45f84f12d8",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 2,
+      "mapped_components": 2,
+      "nets": 1,
+      "pins": 4
+    },
+    "exported": {
+      "components": 2,
+      "flags": 0,
+      "pins": 4,
+      "wires": 5
+    },
+    "input": {
+      "components": 2,
+      "connections": 2,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 0,
+      "nets": 1,
+      "pins": 2,
+      "segments": 5
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Duplicate source connection #2.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "DUPLICATE_WIRE",
+      "component": null,
+      "expected": null,
+      "message": "Wire #2 duplicates wire #1 after alias resolution",
+      "net": "N1",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "warning",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "DUPLICATE_WIRE",
+      "component": null,
+      "expected": null,
+      "message": "Wire #2 duplicates wire #1 after alias resolution",
+      "net": "N1",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "warning",
+      "stage": "route"
+    },
+    {
+      "actual": null,
+      "circuit": "Circuit",
+      "code": "DUPLICATE_WIRE",
+      "component": null,
+      "expected": null,
+      "message": "Wire #2 duplicates wire #1 after alias resolution",
+      "net": "N1",
+      "pin": null,
+      "pipeline_stage": "post_export_validation",
+      "severity": "warning",
+      "stage": "export"
+    },
+    {
+      "actual": null,
+      "circuit": "connectivity.test.cjs:line:123",
+      "code": "DUPLICATE_WIRE",
+      "component": null,
+      "error": "Wire #2 duplicates wire #1 after alias resolution",
+      "expected": null,
+      "net": "N1",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "serialized_validation"
+    }
+  ],
+  "id": "circuit-42f0738ac053a96df1fb",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 16,
+      "peak_rss_bytes": 95567872
+    }
+  },
+  "name": "connectivity.test.cjs:line:123",
+  "overall": "NOT_RUN",
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 8,
+    "collision_checks": 11,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 464,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 5
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "FAIL"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 27.585299999373092,
+    "compiler_process_wall": 776.7116000004535,
+    "compiler_reported": 9.47479999999996,
+    "connectivity_wall": 0.47560000075463904,
+    "export_wall": 12.050599999383849,
+    "route_wall": 1.6150999999808846,
+    "serialized_validation_wall": 0.8084999999482534
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "196f29020d388a64c609ca343d2c1bc246ef5d89360dbc3eb3a646ec27b9e318",
+  "compiled_sha256": "abf4e8eb1f4e9b41a3653e0cdd026ddbd77f8cb961998193233e98a71bc459e2",
+  "counts": {
+    "compiled": {
+      "components": 1,
+      "connections": 3,
+      "mapped_components": 1,
+      "nets": 3,
+      "pins": 8
+    },
+    "exported": {
+      "components": 1,
+      "flags": 2,
+      "pins": 8,
+      "wires": 7
+    },
+    "input": {
+      "components": 1,
+      "connections": 3,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 2,
+      "nets": 3,
+      "pins": 4,
+      "segments": 9
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin U1.3 (OUT) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin U1.4 (RESET) is floating/unconnected; RESET must be driven for reliable operation.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Optional pin U1.5 (CTRL) is unconnected; permitted.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin U1.7 (DIS) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "evidence_directory": "circuit-4acb7b3adf42a1e4daba/sample-1",
+  "failure_stage": null,
+  "failures": [],
+  "hash_seed": 0,
+  "id": "circuit-4acb7b3adf42a1e4daba",
+  "implementation_sha256": "d003d69974f4aa70a8b0ac0e2f02b85242218c1cd25a90bf997beeaffc4b5635",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 8,
+      "peak_rss_bytes": 32141312
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 12,
+      "peak_rss_bytes": 86560768
+    }
+  },
+  "name": "test_connectivity.py:line:119",
+  "overall": "PASS",
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 1,
+    "astar_states": 146,
+    "budget_exhaustions": 0,
+    "candidate_paths": 30,
+    "collision_checks": 232,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 800,
+    "order_attempts": 1,
+    "peak_grid_vertices": 192,
+    "planar_attempts": 1,
+    "segments": 7
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 406.65309999985766,
+    "backend_worker_wall": 42.260199999873294,
+    "compiler_process_wall": 702.8374999999869,
+    "compiler_reported": 9.287400000000048,
+    "connectivity_wall": 0.4186999994999496,
+    "export_wall": 25.798800000302435,
+    "route_wall": 12.802100000044447,
+    "serialized_validation_wall": 1.5298999996957718
+  },
+  "validation": "PASS"
+}

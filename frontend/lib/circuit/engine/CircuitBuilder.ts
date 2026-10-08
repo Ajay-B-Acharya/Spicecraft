@@ -61,7 +61,7 @@ function toText(value: unknown): string | undefined {
     return normalized.length > 0 ? normalized : undefined;
   }
 
-  if (typeof value === 'number' || typeof value === 'boolean') {
+  if (typeof value === 'number' && Number.isFinite(value)) {
     return String(value);
   }
 
@@ -73,7 +73,7 @@ function toNumber(value: unknown): number | undefined {
     return value;
   }
 
-  if (typeof value === 'string') {
+  if (typeof value === 'string' && /^[+-]?(?:\d+\.?\d*|\.\d+)(?:e[+-]?\d+)?$/i.test(value.trim())) {
     const parsed = Number(value.trim());
     return Number.isFinite(parsed) ? parsed : undefined;
   }
@@ -101,12 +101,55 @@ function toBoolean(value: unknown): boolean | undefined {
   return undefined;
 }
 
-function emptyValidation(): CircuitValidationResult {
-  return {
-    valid: true,
-    warnings: [],
-    errors: [],
+export const CIRCUIT_INPUT_LIMITS = {
+  characters: 2_000_000, entries: 50_000, depth: 32, components: 500, pins: 4_000, wires: 2_000,
+  identifier: 256, coordinate: 1_000_000,
+} as const;
+
+function prepareSource(source: unknown): unknown {
+  if (typeof source === 'string') {
+    if (source.length > CIRCUIT_INPUT_LIMITS.characters) throw new Error('Circuit JSON exceeds the input size limit.');
+    const text = source.trim().replace(/^```(?:json)?\s*\n([\s\S]*?)\n```$/i, '$1');
+    try { source = JSON.parse(text); }
+    catch { throw new Error('Malformed circuit JSON; provide a JSON object without trailing text.'); }
+  }
+  let entries = 0;
+  let characters = 0;
+  const ancestors = new Set<object>();
+  const visit = (value: unknown, depth: number): void => {
+    if (++entries > CIRCUIT_INPUT_LIMITS.entries || depth > CIRCUIT_INPUT_LIMITS.depth) {
+      throw new Error('Circuit input exceeds the nesting or entry limit.');
+    }
+    if (typeof value === 'string') characters += value.length;
+    else if (typeof value === 'number' && !Number.isFinite(value)) throw new Error('Circuit input contains a non-finite number.');
+    else if (value !== null && typeof value === 'object') {
+      if (ancestors.has(value)) throw new Error('Circuit input contains a cyclic object reference.');
+      if (!Array.isArray(value) && ![Object.prototype, null].includes(Object.getPrototypeOf(value))) {
+        throw new Error('Circuit input must contain only JSON records and arrays.');
+      }
+      if (Array.isArray(value) && value.length > CIRCUIT_INPUT_LIMITS.entries) {
+        throw new Error('Circuit input exceeds the entry limit.');
+      }
+      ancestors.add(value);
+      for (const key of Object.getOwnPropertyNames(value)) {
+        characters += key.length;
+        const descriptor = Object.getOwnPropertyDescriptor(value, key)!;
+        if (!('value' in descriptor)) throw new Error('Circuit input cannot contain accessor properties.');
+        visit(descriptor.value, depth + 1);
+      }
+      ancestors.delete(value);
+    } else if (value !== null && !['string', 'number', 'boolean', 'undefined'].includes(typeof value)) {
+      throw new Error('Circuit input contains a non-JSON value.');
+    }
+    if (characters > CIRCUIT_INPUT_LIMITS.characters) throw new Error('Circuit input exceeds the input size limit.');
   };
+  visit(source, 0);
+  return source;
+}
+
+function failedBuild(message: string): CircuitBuildResult {
+  const validation: CircuitValidationResult = { valid: false, warnings: [], errors: [`Normalization: ${message}`] };
+  return { circuit: { components: [], nets: [], connections: [], resolvedPins: [], validation }, validationSeed: validation };
 }
 
 function componentPosition(rawComponent: Record<string, unknown>, index: number): { x: number; y: number } {
@@ -137,8 +180,8 @@ function componentRotation(rawComponent: Record<string, unknown>): number {
     return 0;
   }
 
-  const match = rotationText.match(/-?\d+/);
-  return match ? Number(match[0]) : 0;
+  const match = rotationText.match(/^R([+-]?\d+(?:\.\d+)?)$/i);
+  return match ? Number(match[1]) : 0;
 }
 
 function normalizeComponentType(rawType?: string, rawValue?: string): string | undefined {
@@ -194,12 +237,8 @@ function normalizeComponentType(rawType?: string, rawValue?: string): string | u
     '555timer': 'ne555',
   };
 
-  if (typeKey && aliases[typeKey]) {
+  if (typeKey && Object.prototype.hasOwnProperty.call(aliases, typeKey)) {
     return aliases[typeKey];
-  }
-
-  if (!typeKey && valueKey && aliases[valueKey]) {
-    return aliases[valueKey];
   }
 
   return typeKey;
@@ -406,7 +445,18 @@ function parseEndpointReference(
   wireDescription: string,
   endpointRole: 'source' | 'target',
 ): EndpointReference | undefined {
+  const validToken = (value: unknown): boolean => {
+    const token = toText(value);
+    return !!token && token.length <= CIRCUIT_INPUT_LIMITS.identifier && !/[\x00-\x1f\x7f]/.test(token) &&
+      (typeof value === 'string' || (typeof value === 'number' && Number.isSafeInteger(value)));
+  };
   if (isRecord(rawEndpoint)) {
+    const identityFields = ['componentId', 'component', 'reference', 'id', 'pinId', 'pin', 'handle', 'label', 'net'];
+    if (identityFields.some(field => field in rawEndpoint && !validToken(rawEndpoint[field])) ||
+        ('name' in rawEndpoint && !identityFields.some(field => field in rawEndpoint) && !validToken(rawEndpoint.name))) {
+      errors.push(`Wire ${wireDescription} has an invalid or oversized ${endpointRole} endpoint identity.`);
+      return undefined;
+    }
     const componentFields = ['componentId', 'component', 'reference', 'id'];
     const pinFields = ['pinId', 'pin', 'handle'];
     const componentIds = componentFields.filter(field => field in rawEndpoint).map(field => toText(rawEndpoint[field]));
@@ -471,6 +521,11 @@ function parseEndpointReference(
   }
 
   const separatorIndex = text.indexOf('.');
+  if (separatorIndex < 0 ? !validToken(rawEndpoint) :
+      !validToken(text.slice(0, separatorIndex)) || !validToken(text.slice(separatorIndex + 1))) {
+    errors.push(`Wire ${wireDescription} has an invalid or oversized ${endpointRole} endpoint identity.`);
+    return undefined;
+  }
 
   if (separatorIndex >= 0) {
     const componentId = text.slice(0, separatorIndex).trim();
@@ -583,7 +638,7 @@ function extractLabels(net: Net, labelsByIdentity: Map<string, Set<string>>): Ne
   });
 
   const uniqueLabels = Array.from(new Set(labels));
-  const sortedLabels = [...uniqueLabels].sort((left, right) => left.localeCompare(right));
+  const sortedLabels = [...uniqueLabels].sort();
 
   return {
     ...net,
@@ -620,7 +675,29 @@ export class CircuitBuilder {
   }
 
   static buildDetailed(source: unknown): CircuitBuildResult {
+    try { source = prepareSource(source); }
+    catch (error) { return failedBuild(error instanceof Error ? error.message : 'Invalid circuit input.'); }
+    if (!isRecord(source)) return failedBuild('Circuit input must be a record.');
+    if ('circuit' in source && !isRecord(source.circuit)) return failedBuild('Circuit wrapper must contain a record.');
+    if ('data' in source && (!isRecord(source.data) || ('circuit' in source.data && !isRecord(source.data.circuit)))) {
+      return failedBuild('Circuit data wrapper must contain a record.');
+    }
     const root = extractRoot(source);
+    for (const fields of [['components', 'nodes'], ['wires', 'connections', 'edges']]) {
+      const present = fields.filter(key => key in root);
+      for (const field of present) {
+        const entries = root[field];
+        if (!Array.isArray(entries)) return failedBuild(`Circuit ${field} must be an array.`);
+        const limit = fields[0] === 'components' ? CIRCUIT_INPUT_LIMITS.components : CIRCUIT_INPUT_LIMITS.wires;
+        if (entries.length > limit) return failedBuild(`Circuit ${field} exceeds the limit of ${limit}.`);
+        for (let index = 0; index < entries.length; index++) {
+          if (!isRecord(entries[index])) return failedBuild(`Malformed ${field} at index ${index}; expected a record.`);
+        }
+      }
+      if (present.some(field => JSON.stringify(root[field]) !== JSON.stringify(root[present[0]]))) {
+        return failedBuild(`Contradictory circuit collections: ${present.join(', ')}.`);
+      }
+    }
     const componentInputs = readComponents(root).map(normalizeComponentInput);
     const wireInputs = readWires(root).map(normalizeWireInput);
     const warnings: string[] = [];
@@ -631,13 +708,52 @@ export class CircuitBuilder {
     const reservedIds = new Set(componentInputs.map(input => input.reference).filter((id): id is string => !!id));
     const localCounters = new Map<string, number>();
     const rawComponents = readComponents(root);
-    if (!isRecord(source)) errors.push('Circuit input must be a record.');
-    for (const [kind, fields] of [['component', ['components', 'nodes']], ['wire', ['wires', 'connections', 'edges']]] as const) {
-      const field = fields.find(key => key in root);
-      if (field && !Array.isArray(root[field])) errors.push(`Circuit ${field} must be an array.`);
-      if (field && Array.isArray(root[field])) (root[field] as unknown[]).forEach((entry, index) => {
-        if (!isRecord(entry)) errors.push(`Malformed ${kind} at index ${index}; expected a record.`);
-      });
+    const validIdentity = (value: unknown): boolean => {
+      const text = toText(value);
+      return !!text && (typeof value === 'string' || (typeof value === 'number' && Number.isSafeInteger(value))) &&
+        text.length <= CIRCUIT_INPUT_LIMITS.identifier && !/[\x00-\x1f\x7f]/.test(text);
+    };
+    for (const [index, raw] of rawComponents.entries()) {
+      const description = toText(raw.id) ?? toText(raw.reference) ?? `#${index + 1}`;
+      for (const field of ['id', 'reference', 'name']) {
+        if (field in raw && !validIdentity(raw[field])) return failedBuild(`Invalid ${field} on component ${description}.`);
+      }
+      const types = ['type', 'component_type', 'kind'].filter(field => field in raw);
+      if (types.some(field => typeof raw[field] !== 'string' || !validIdentity(raw[field])) ||
+          new Set(types.map(field => normalizeComponentType(toText(raw[field]), toText(raw.value)))).size > 1) {
+        return failedBuild(`Contradictory or malformed type on component ${description}.`);
+      }
+      if ('position' in raw && !isRecord(raw.position)) return failedBuild(`Invalid position on component ${description}.`);
+      const position = isRecord(raw.position) ? raw.position : {};
+      if (('x' in raw || 'x' in position) !== ('y' in raw || 'y' in position)) {
+        return failedBuild(`Incomplete position on component ${description}.`);
+      }
+      for (const field of ['x', 'y']) {
+        for (const record of [raw, position]) {
+          if (field in record && (toNumber(record[field]) === undefined || Math.abs(toNumber(record[field])!) > CIRCUIT_INPUT_LIMITS.coordinate)) {
+            return failedBuild(`Invalid or out-of-range ${field} on component ${description}.`);
+          }
+        }
+        if (field in raw && field in position && toNumber(raw[field]) !== toNumber(position[field])) {
+          return failedBuild(`Contradictory ${field} coordinates on component ${description}.`);
+        }
+      }
+      if ('rotation' in raw && (toNumber(raw.rotation) === undefined &&
+          !(typeof raw.rotation === 'string' && /^R[+-]?\d+(?:\.\d+)?$/i.test(raw.rotation.trim())) ||
+          Math.abs(componentRotation(raw)) > CIRCUIT_INPUT_LIMITS.coordinate)) {
+        return failedBuild(`Invalid rotation on component ${description}.`);
+      }
+      if ('mirror' in raw && toBoolean(raw.mirror) === undefined) return failedBuild(`Invalid mirror on component ${description}.`);
+      if (raw.value != null && typeof raw.value !== 'string' && typeof raw.value !== 'number') {
+        return failedBuild(`Invalid value on component ${description}.`);
+      }
+    }
+    const wireIds = new Set<string>();
+    for (const wire of wireInputs) {
+      if ('id' in wire.raw && (!validIdentity(wire.raw.id) || wireIds.has(wire.id!))) {
+        return failedBuild(`Invalid or duplicate wire ID at index ${wire.rawIndex}.`);
+      }
+      if (wire.id) wireIds.add(wire.id);
     }
     if (componentInputs.length === 0 && wireInputs.length === 0) warnings.push('Circuit is empty: no components or connections.');
 

@@ -1,0 +1,11 @@
+{
+  "source_evidence": "backend\\tests\\corpus\\runs\\phase10-full\\circuit-bf177d289f65b1ff63fb\\sample-1",
+  "component_count": 100,
+  "result": {
+    "ok": true,
+    "shorts": [],
+    "opens": [],
+    "missing_pins": [],
+    "unexpected_pins": []
+  }
+}

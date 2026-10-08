@@ -1,0 +1,15 @@
+{
+  "category": "",
+  "components": [
+    {
+      "id": "U1",
+      "type": "__proto__",
+      "value": "NE555"
+    }
+  ],
+  "description": "",
+  "id": "circuit",
+  "name": "Test",
+  "tags": [],
+  "wires": []
+}

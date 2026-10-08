@@ -1,0 +1,224 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "e315bea3eee8a6505505db2f09fa5c1e0eb04afad68de6661aa8d36c5f56bdb8",
+  "compiled_sha256": "f238ae9550fd6fa384d45ca17d6d346765bbe74bd00657dbcfcc8f5928d7cc9c",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 2,
+      "mapped_components": 2,
+      "nets": 1,
+      "pins": 4
+    },
+    "exported": {
+      "components": 2,
+      "flags": 1,
+      "pins": 4,
+      "wires": 1
+    },
+    "input": {
+      "components": 2,
+      "connections": 2,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 1,
+      "nets": 1,
+      "pins": 1,
+      "segments": 1
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R1; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R2; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R2 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "R1",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R1",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "backend_id": "R2",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R2",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "CONFLICTING_NET_LABELS",
+      "component": null,
+      "expected": null,
+      "message": "Explicit source wires [1, 2] join distinct labels ['VCC', 'VOUT']; source connectivity is retained, not repaired",
+      "net": "VCC",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "warning",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "CONFLICTING_NET_LABELS",
+      "component": null,
+      "expected": null,
+      "message": "Explicit source wires [1, 2] join distinct labels ['VCC', 'VOUT']; source connectivity is retained, not repaired",
+      "net": "VCC",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "warning",
+      "stage": "route"
+    },
+    {
+      "actual": null,
+      "circuit": "Circuit",
+      "code": "CONFLICTING_NET_LABELS",
+      "component": null,
+      "expected": null,
+      "message": "Explicit source wires [1, 2] join distinct labels ['VCC', 'VOUT']; source connectivity is retained, not repaired",
+      "net": "VCC",
+      "pin": null,
+      "pipeline_stage": "post_export_validation",
+      "severity": "warning",
+      "stage": "export"
+    },
+    {
+      "actual": null,
+      "circuit": "test_connectivity.py:line:313",
+      "code": "CONFLICTING_NET_LABELS",
+      "component": null,
+      "error": "Explicit source wires [1, 2] join distinct labels ['VCC', 'VOUT']; source connectivity is retained, not repaired",
+      "expected": null,
+      "net": "VCC",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "serialized_validation"
+    }
+  ],
+  "evidence_directory": "circuit-83be75b29f6fb0ef9c58/sample-2",
+  "failure_stage": "serialized_validation",
+  "failures": [
+    {
+      "actual": null,
+      "circuit": "test_connectivity.py:line:313",
+      "code": "CONFLICTING_NET_LABELS",
+      "component": null,
+      "error": "Explicit source wires [1, 2] join distinct labels ['VCC', 'VOUT']; source connectivity is retained, not repaired",
+      "expected": null,
+      "net": "VCC",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "serialized_validation"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-83be75b29f6fb0ef9c58",
+  "implementation_sha256": "60f44913f21d569de19d97b10353d0b22f51e03f04db27f9c38204ed865fda52",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 8,
+      "peak_rss_bytes": 32301056
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 15,
+      "peak_rss_bytes": 95387648
+    }
+  },
+  "name": "test_connectivity.py:line:313",
+  "overall": "FAIL",
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 0,
+    "collision_checks": 0,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 32,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 1
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "FAIL"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 401.83150000029855,
+    "backend_worker_wall": 33.64239999973506,
+    "compiler_process_wall": 691.1350000000311,
+    "compiler_reported": 11.98440000000005,
+    "connectivity_wall": 0.4283999996914645,
+    "export_wall": 13.457600000037928,
+    "route_wall": 0.6853999993836624,
+    "serialized_validation_wall": 3.739300000233925
+  },
+  "validation": "FAIL"
+}

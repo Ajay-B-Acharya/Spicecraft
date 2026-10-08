@@ -1,0 +1,94 @@
+{
+  "compiled_sha256": "7a25d146f369a55a6356c1ee12dbbabda3e07c587d0d4eec88a885dbb736751b",
+  "counts": {
+    "compiled": {
+      "components": 1,
+      "connections": 1,
+      "mapped_components": 1,
+      "nets": 1,
+      "pins": 2
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 1,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component V1; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin V1.- (negative) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "UNSUPPORTED_SHARED_EXPORT_KIND",
+      "compiled_id": "V1",
+      "frontend_type": "voltage_source",
+      "message": "Frontend kind voltage_source is not supported by the shared backend export; no fallback component is permitted.",
+      "severity": "error",
+      "stage": "bridge"
+    },
+    {
+      "backend_id": "V1",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "V1",
+      "compiled_value": "5",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    }
+  ],
+  "evidence_directory": "circuit-20ea3900eb605854bf6c/sample-2",
+  "failure_stage": "bridge",
+  "failures": [
+    {
+      "code": "UNSUPPORTED_SHARED_EXPORT_KIND",
+      "compiled_id": "V1",
+      "frontend_type": "voltage_source",
+      "message": "Frontend kind voltage_source is not supported by the shared backend export; no fallback component is permitted.",
+      "severity": "error",
+      "stage": "bridge"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-20ea3900eb605854bf6c",
+  "implementation_sha256": "6e84c8dcd88ed008fb4962327c03cf869c0b8ea8fce6da9d836ad3e050481339",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 7,
+      "peak_rss_bytes": 88940544
+    }
+  },
+  "name": "test_pipeline_regression.py:line:117",
+  "overall": "UNSUPPORTED",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "PASS",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "unsupported",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 742.6127999997334,
+    "compiler_reported": 8.972500000000025
+  },
+  "validation": "NOT_RUN"
+}

@@ -1,0 +1,15 @@
+{
+  "category": "",
+  "components": [
+    {
+      "id": "U1",
+      "type": "ic",
+      "value": "LM358"
+    }
+  ],
+  "description": "",
+  "id": "circuit",
+  "name": "Test",
+  "tags": [],
+  "wires": []
+}

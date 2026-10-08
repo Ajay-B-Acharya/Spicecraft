@@ -80,6 +80,7 @@ class ExportDiagnostic:
     expected: Point | None = None
     actual: Point | None = None
     circuit: str | None = None
+    stage: str | None = None
 
     def format(self) -> str:
         lines = [f"{self.message} [{self.code}]"]
@@ -95,6 +96,8 @@ class ExportDiagnostic:
             lines.append(f"Actual: {self.actual}")
         if self.circuit is not None:
             lines.append(f"Circuit: {self.circuit}")
+        if self.stage is not None:
+            lines.append(f"Stage: {self.stage}")
         return "\n".join(lines)
 
     def __str__(self) -> str:  # pragma: no cover - trivial
@@ -293,7 +296,9 @@ def _check_net(net: NetGeometry) -> list[ExportDiagnostic]:
     for segment in segments:
         sets.union(segment.start, segment.end)
     vertices = {p for s in segments for p in (s.start, s.end)} | terminals
+    from app.services.production import checkpoint
     for point in sorted(vertices):
+        checkpoint()
         sets.find(point)
         for segment in segments:
             if _on_segment(point, segment.start, segment.end):
@@ -343,11 +348,14 @@ def _check_between_nets(nets: Sequence[NetGeometry]) -> list[ExportDiagnostic]:
                 ("collision", point), actual=point, net=", ".join(sorted(names)),
             )
 
+    from app.services.production import checkpoint
     for a in nets:
         for b in nets:
+            checkpoint()
             if a is b:
                 continue
             for seg in a.segments:
+                checkpoint()
                 # Another net's pin/flag touching this wire.
                 for pin in b.pins:
                     if _on_segment(pin.point, seg.start, seg.end):

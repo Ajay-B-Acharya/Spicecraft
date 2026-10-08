@@ -36,15 +36,11 @@ class RemoveOverlapsPass implements OptimizationPass {
 
     sortedComponents.forEach(({ component, position }) => {
       let currentPosition = position;
-      let attempts = 0;
-      const maxAttempts = 100;
-
-      while (occupied.has(key(currentPosition)) && attempts < maxAttempts) {
+      while (occupied.has(key(currentPosition))) {
         currentPosition = {
           col: currentPosition.col + 1,
           row: currentPosition.row,
         };
-        attempts++;
       }
 
       optimized.set(component.id, currentPosition);

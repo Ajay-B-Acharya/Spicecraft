@@ -1,0 +1,17 @@
+{
+  "components": [
+    {
+      "id": "node1",
+      "reference": "Q1",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "node2",
+      "reference": "q1",
+      "type": "resistor",
+      "value": "1k"
+    }
+  ],
+  "wires": []
+}

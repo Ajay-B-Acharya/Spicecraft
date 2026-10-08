@@ -1,0 +1,88 @@
+{
+  "compiled_sha256": "b1bc24b490a0b1bdf39a1561b18639feb02a808dac2196247c4a762eb3079e7e",
+  "counts": {
+    "compiled": {
+      "components": 500,
+      "connections": 751,
+      "mapped_components": 500,
+      "nets": 252,
+      "pins": 1000
+    },
+    "exported": null,
+    "input": {
+      "components": 500,
+      "connections": 751,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "actual": null,
+      "circuit": "Repeated filter sections (500 components)",
+      "code": "PIPELINE_TIMEOUT",
+      "component": null,
+      "expected": null,
+      "message": "routing exceeded its execution budget (10 seconds stage / 30 seconds total)",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "routing",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "id": "circuit-a82f72ae9c7431e50765",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 22,
+      "peak_rss_bytes": 94748672
+    }
+  },
+  "name": "Repeated filter sections (500 components)",
+  "overall": "NOT_RUN",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "large",
+    "componentCount": 500,
+    "errorCount": 1,
+    "iterations": {
+      "input_validation": 0,
+      "layout": 1500,
+      "net_building": 2254,
+      "pin_resolution": 0,
+      "routing": 544755,
+      "validation": 252
+    },
+    "netCount": 252,
+    "pinCount": 1000,
+    "stagesMs": {
+      "input_validation": 101.601,
+      "layout": 29.413,
+      "net_building": 27.364,
+      "pin_resolution": 13.432,
+      "routing": 10006.366,
+      "validation": 6.671
+    },
+    "totalTimeMs": 10184.93,
+    "warningCount": 0
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "FAIL",
+    "route": "RUNNING",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": true,
+  "timings_ms": {
+    "backend_worker_wall": 10300.56869999953,
+    "compiler_process_wall": 878.7399000002551,
+    "compiler_reported": 65.04039999999998,
+    "connectivity_wall": 101.58659999979136,
+    "export_wall": 10185.309399999824
+  }
+}

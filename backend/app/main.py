@@ -2,8 +2,11 @@ import logging
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.exceptions import RequestValidationError
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.routers import circuits, circuit_sources, projects, search
+from app.request_limits import CircuitRequestLimits, circuit_http_error, circuit_validation_error
 
 logging.basicConfig(
     level=logging.INFO,
@@ -16,6 +19,9 @@ app = FastAPI(
     version="1.0.0",
 )
 
+app.add_exception_handler(RequestValidationError, circuit_validation_error)
+app.add_exception_handler(StarletteHTTPException, circuit_http_error)
+app.add_middleware(CircuitRequestLimits)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],

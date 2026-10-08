@@ -1,0 +1,9 @@
+{
+  "components": [
+    {
+      "reference": "R1 R2",
+      "type": "resistor",
+      "value": "1k"
+    }
+  ]
+}

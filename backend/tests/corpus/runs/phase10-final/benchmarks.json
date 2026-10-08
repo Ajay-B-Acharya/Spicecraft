@@ -1,0 +1,1304 @@
+[
+  {
+    "components": 10,
+    "counts": [
+      {
+        "compiled": {
+          "components": 10,
+          "connections": 11,
+          "mapped_components": 10,
+          "nets": 11,
+          "pins": 20
+        },
+        "exported": {
+          "components": 10,
+          "flags": 2,
+          "pins": 20,
+          "wires": 43
+        },
+        "input": {
+          "components": 10,
+          "connections": 11,
+          "nets": null,
+          "pins": null
+        },
+        "routed": {
+          "flags": 2,
+          "nets": 11,
+          "pins": 20,
+          "segments": 47
+        }
+      },
+      {
+        "compiled": {
+          "components": 10,
+          "connections": 11,
+          "mapped_components": 10,
+          "nets": 11,
+          "pins": 20
+        },
+        "exported": {
+          "components": 10,
+          "flags": 2,
+          "pins": 20,
+          "wires": 43
+        },
+        "input": {
+          "components": 10,
+          "connections": 11,
+          "nets": null,
+          "pins": null
+        },
+        "routed": {
+          "flags": 2,
+          "nets": 11,
+          "pins": 20,
+          "segments": 47
+        }
+      }
+    ],
+    "deterministic_asc": true,
+    "family": "resistor",
+    "id": "circuit-487a1e171625615c17a0",
+    "memory": {
+      "backend": 32641024,
+      "compiler": 84865024
+    },
+    "overall": "PASS",
+    "pipeline_stage_medians_ms": {
+      "export": 100.1945,
+      "final_validation": 9.878,
+      "input_validation": 2.835,
+      "layout": 2.5635000000000003,
+      "net_building": 0.8200000000000001,
+      "optimization": 4.164,
+      "pin_resolution": 0.44100000000000006,
+      "post_export_validation": 3.894,
+      "routing": 48.0815,
+      "routing_validation": 12.3385,
+      "validation": 0.424
+    },
+    "routing_metrics": [
+      {
+        "astar_searches": 0,
+        "astar_states": 0,
+        "budget_exhaustions": 0,
+        "candidate_paths": 114,
+        "collision_checks": 158,
+        "crossings": 0,
+        "failed_connections": 0,
+        "fallback_attempts": 0,
+        "length": 5200,
+        "order_attempts": 1,
+        "peak_grid_vertices": 0,
+        "planar_attempts": 1,
+        "segments": 43
+      },
+      {
+        "astar_searches": 0,
+        "astar_states": 0,
+        "budget_exhaustions": 0,
+        "candidate_paths": 114,
+        "collision_checks": 158,
+        "crossings": 0,
+        "failed_connections": 0,
+        "fallback_attempts": 0,
+        "length": 5200,
+        "order_attempts": 1,
+        "peak_grid_vertices": 0,
+        "planar_attempts": 1,
+        "segments": 43
+      }
+    ],
+    "stages": [
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "PASS",
+        "route": "PASS",
+        "serialized_validation": "PASS"
+      },
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "PASS",
+        "route": "PASS",
+        "serialized_validation": "PASS"
+      }
+    ],
+    "timings_ms": {
+      "backend_process_wall": 892.0427499997459,
+      "backend_worker_wall": 236.48694999974396,
+      "compiler_process_wall": 1590.8436500003518,
+      "compiler_reported": 29.422100000000114,
+      "connectivity_wall": 2.058649999980844,
+      "export_wall": 186.0159000002568,
+      "route_wall": 40.883600000142906,
+      "serialized_validation_wall": 23.44630000015968
+    }
+  },
+  {
+    "components": 10,
+    "counts": [
+      {
+        "compiled": {
+          "components": 10,
+          "connections": 16,
+          "mapped_components": 10,
+          "nets": 7,
+          "pins": 20
+        },
+        "exported": {
+          "components": 10,
+          "flags": 3,
+          "pins": 20,
+          "wires": 56
+        },
+        "input": {
+          "components": 10,
+          "connections": 16,
+          "nets": null,
+          "pins": null
+        },
+        "routed": {
+          "flags": 3,
+          "nets": 7,
+          "pins": 20,
+          "segments": 61
+        }
+      },
+      {
+        "compiled": {
+          "components": 10,
+          "connections": 16,
+          "mapped_components": 10,
+          "nets": 7,
+          "pins": 20
+        },
+        "exported": {
+          "components": 10,
+          "flags": 3,
+          "pins": 20,
+          "wires": 56
+        },
+        "input": {
+          "components": 10,
+          "connections": 16,
+          "nets": null,
+          "pins": null
+        },
+        "routed": {
+          "flags": 3,
+          "nets": 7,
+          "pins": 20,
+          "segments": 61
+        }
+      }
+    ],
+    "deterministic_asc": true,
+    "family": "filter",
+    "id": "circuit-d79639eaaa899c072620",
+    "memory": {
+      "backend": 33726464,
+      "compiler": 84467712
+    },
+    "overall": "PASS",
+    "pipeline_stage_medians_ms": {
+      "export": 135.6185,
+      "final_validation": 16.3455,
+      "input_validation": 4.5145,
+      "layout": 2.8335,
+      "net_building": 0.9724999999999999,
+      "optimization": 10.296,
+      "pin_resolution": 0.5329999999999999,
+      "post_export_validation": 4.6575,
+      "routing": 2479.1865,
+      "routing_validation": 19.242,
+      "validation": 0.39
+    },
+    "routing_metrics": [
+      {
+        "astar_searches": 20,
+        "astar_states": 12231,
+        "budget_exhaustions": 0,
+        "candidate_paths": 2367,
+        "collision_checks": 15872,
+        "crossings": 3,
+        "failed_connections": 4,
+        "fallback_attempts": 1,
+        "length": 9232,
+        "order_attempts": 5,
+        "peak_grid_vertices": 1575,
+        "planar_attempts": 4,
+        "segments": 56
+      },
+      {
+        "astar_searches": 20,
+        "astar_states": 12231,
+        "budget_exhaustions": 0,
+        "candidate_paths": 2367,
+        "collision_checks": 15872,
+        "crossings": 3,
+        "failed_connections": 4,
+        "fallback_attempts": 1,
+        "length": 9232,
+        "order_attempts": 5,
+        "peak_grid_vertices": 1575,
+        "planar_attempts": 4,
+        "segments": 56
+      }
+    ],
+    "stages": [
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "PASS",
+        "route": "PASS",
+        "serialized_validation": "PASS"
+      },
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "PASS",
+        "route": "PASS",
+        "serialized_validation": "PASS"
+      }
+    ],
+    "timings_ms": {
+      "backend_process_wall": 3357.3238500002844,
+      "backend_worker_wall": 2739.095900000393,
+      "compiler_process_wall": 1521.860999999717,
+      "compiler_reported": 33.95915000000002,
+      "connectivity_wall": 1.5143499999794585,
+      "export_wall": 2675.043750000441,
+      "route_wall": 2471.7038999997385,
+      "serialized_validation_wall": 36.13055000005261
+    }
+  },
+  {
+    "components": 25,
+    "counts": [
+      {
+        "compiled": {
+          "components": 25,
+          "connections": 39,
+          "mapped_components": 25,
+          "nets": 14,
+          "pins": 50
+        },
+        "exported": null,
+        "input": {
+          "components": 25,
+          "connections": 39,
+          "nets": null,
+          "pins": null
+        },
+        "routed": null
+      },
+      {
+        "compiled": {
+          "components": 25,
+          "connections": 39,
+          "mapped_components": 25,
+          "nets": 14,
+          "pins": 50
+        },
+        "exported": null,
+        "input": {
+          "components": 25,
+          "connections": 39,
+          "nets": null,
+          "pins": null
+        },
+        "routed": null
+      }
+    ],
+    "deterministic_asc": null,
+    "family": "filter",
+    "id": "circuit-011da72b4d779fc1e919",
+    "memory": {
+      "backend": 34873344,
+      "compiler": 87744512
+    },
+    "overall": "FAIL",
+    "pipeline_stage_medians_ms": {
+      "input_validation": 7.6515,
+      "layout": 3.5515,
+      "net_building": 2.787,
+      "pin_resolution": 1.0635,
+      "routing": 10009.52,
+      "validation": 0.9484999999999999
+    },
+    "routing_metrics": [
+      null,
+      null
+    ],
+    "stages": [
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "FAIL",
+        "route": "TIMEOUT",
+        "serialized_validation": "NOT_RUN"
+      },
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "FAIL",
+        "route": "TIMEOUT",
+        "serialized_validation": "NOT_RUN"
+      }
+    ],
+    "timings_ms": {
+      "backend_process_wall": 10711.106999999629,
+      "backend_worker_wall": 10046.223250000367,
+      "compiler_process_wall": 1639.3152000000555,
+      "compiler_reported": 30.283450000000016,
+      "connectivity_wall": 3.272200000083103,
+      "export_wall": 10026.290999999674,
+      "route_wall": 9996.429799999987
+    }
+  },
+  {
+    "components": 25,
+    "counts": [
+      {
+        "compiled": {
+          "components": 25,
+          "connections": 26,
+          "mapped_components": 25,
+          "nets": 26,
+          "pins": 50
+        },
+        "exported": {
+          "components": 25,
+          "flags": 2,
+          "pins": 50,
+          "wires": 110
+        },
+        "input": {
+          "components": 25,
+          "connections": 26,
+          "nets": null,
+          "pins": null
+        },
+        "routed": {
+          "flags": 2,
+          "nets": 26,
+          "pins": 50,
+          "segments": 121
+        }
+      },
+      {
+        "compiled": {
+          "components": 25,
+          "connections": 26,
+          "mapped_components": 25,
+          "nets": 26,
+          "pins": 50
+        },
+        "exported": {
+          "components": 25,
+          "flags": 2,
+          "pins": 50,
+          "wires": 110
+        },
+        "input": {
+          "components": 25,
+          "connections": 26,
+          "nets": null,
+          "pins": null
+        },
+        "routed": {
+          "flags": 2,
+          "nets": 26,
+          "pins": 50,
+          "segments": 121
+        }
+      }
+    ],
+    "deterministic_asc": true,
+    "family": "resistor",
+    "id": "circuit-ff1fd8b1b9cb2998f6df",
+    "memory": {
+      "backend": 32931840,
+      "compiler": 87248896
+    },
+    "overall": "PASS",
+    "pipeline_stage_medians_ms": {
+      "export": 592.885,
+      "final_validation": 61.3425,
+      "input_validation": 6.506500000000001,
+      "layout": 2.904,
+      "net_building": 1.9329999999999998,
+      "optimization": 13.564,
+      "pin_resolution": 0.956,
+      "post_export_validation": 9.851500000000001,
+      "routing": 220.358,
+      "routing_validation": 79.99100000000001,
+      "validation": 0.6995
+    },
+    "routing_metrics": [
+      {
+        "astar_searches": 0,
+        "astar_states": 0,
+        "budget_exhaustions": 0,
+        "candidate_paths": 298,
+        "collision_checks": 408,
+        "crossings": 0,
+        "failed_connections": 0,
+        "fallback_attempts": 0,
+        "length": 14080,
+        "order_attempts": 1,
+        "peak_grid_vertices": 0,
+        "planar_attempts": 1,
+        "segments": 110
+      },
+      {
+        "astar_searches": 0,
+        "astar_states": 0,
+        "budget_exhaustions": 0,
+        "candidate_paths": 298,
+        "collision_checks": 408,
+        "crossings": 0,
+        "failed_connections": 0,
+        "fallback_attempts": 0,
+        "length": 14080,
+        "order_attempts": 1,
+        "peak_grid_vertices": 0,
+        "planar_attempts": 1,
+        "segments": 110
+      }
+    ],
+    "stages": [
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "PASS",
+        "route": "PASS",
+        "serialized_validation": "PASS"
+      },
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "PASS",
+        "route": "PASS",
+        "serialized_validation": "PASS"
+      }
+    ],
+    "timings_ms": {
+      "backend_process_wall": 1795.9850500005814,
+      "backend_worker_wall": 1130.7675999996718,
+      "compiler_process_wall": 1653.3975499996814,
+      "compiler_reported": 31.674000000000092,
+      "connectivity_wall": 3.8460000000668515,
+      "export_wall": 991.4845999996942,
+      "route_wall": 212.43390000017826,
+      "serialized_validation_wall": 109.49294999954873
+    }
+  },
+  {
+    "components": 50,
+    "counts": [
+      {
+        "compiled": {
+          "components": 50,
+          "connections": 51,
+          "mapped_components": 50,
+          "nets": 51,
+          "pins": 100
+        },
+        "exported": {
+          "components": 50,
+          "flags": 2,
+          "pins": 100,
+          "wires": 223
+        },
+        "input": {
+          "components": 50,
+          "connections": 51,
+          "nets": null,
+          "pins": null
+        },
+        "routed": {
+          "flags": 2,
+          "nets": 51,
+          "pins": 100,
+          "segments": 247
+        }
+      },
+      {
+        "compiled": {
+          "components": 50,
+          "connections": 51,
+          "mapped_components": 50,
+          "nets": 51,
+          "pins": 100
+        },
+        "exported": {
+          "components": 50,
+          "flags": 2,
+          "pins": 100,
+          "wires": 223
+        },
+        "input": {
+          "components": 50,
+          "connections": 51,
+          "nets": null,
+          "pins": null
+        },
+        "routed": {
+          "flags": 2,
+          "nets": 51,
+          "pins": 100,
+          "segments": 247
+        }
+      }
+    ],
+    "deterministic_asc": true,
+    "family": "resistor",
+    "id": "circuit-6ceaf1a9d262db9531d6",
+    "memory": {
+      "backend": 33705984,
+      "compiler": 86077440
+    },
+    "overall": "PASS",
+    "pipeline_stage_medians_ms": {
+      "export": 2251.9575,
+      "final_validation": 253.53699999999998,
+      "input_validation": 11.815000000000001,
+      "layout": 3.6980000000000004,
+      "net_building": 3.869,
+      "optimization": 47.1475,
+      "pin_resolution": 1.2945,
+      "post_export_validation": 11.341000000000001,
+      "routing": 797.4105,
+      "routing_validation": 290.5855,
+      "validation": 1.6265
+    },
+    "routing_metrics": [
+      {
+        "astar_searches": 0,
+        "astar_states": 0,
+        "budget_exhaustions": 0,
+        "candidate_paths": 654,
+        "collision_checks": 898,
+        "crossings": 0,
+        "failed_connections": 0,
+        "fallback_attempts": 0,
+        "length": 28560,
+        "order_attempts": 1,
+        "peak_grid_vertices": 0,
+        "planar_attempts": 1,
+        "segments": 223
+      },
+      {
+        "astar_searches": 0,
+        "astar_states": 0,
+        "budget_exhaustions": 0,
+        "candidate_paths": 654,
+        "collision_checks": 898,
+        "crossings": 0,
+        "failed_connections": 0,
+        "fallback_attempts": 0,
+        "length": 28560,
+        "order_attempts": 1,
+        "peak_grid_vertices": 0,
+        "planar_attempts": 1,
+        "segments": 223
+      }
+    ],
+    "stages": [
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "PASS",
+        "route": "PASS",
+        "serialized_validation": "PASS"
+      },
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "PASS",
+        "route": "PASS",
+        "serialized_validation": "PASS"
+      }
+    ],
+    "timings_ms": {
+      "backend_process_wall": 4769.813449999674,
+      "backend_worker_wall": 4146.892999999636,
+      "compiler_process_wall": 1539.9919999999838,
+      "compiler_reported": 36.084749999999985,
+      "connectivity_wall": 7.146749999719759,
+      "export_wall": 3674.6838500002923,
+      "route_wall": 789.650900000197,
+      "serialized_validation_wall": 438.93530000013925
+    }
+  },
+  {
+    "components": 50,
+    "counts": [
+      {
+        "compiled": {
+          "components": 50,
+          "connections": 76,
+          "mapped_components": 50,
+          "nets": 27,
+          "pins": 100
+        },
+        "exported": null,
+        "input": {
+          "components": 50,
+          "connections": 76,
+          "nets": null,
+          "pins": null
+        },
+        "routed": null
+      },
+      {
+        "compiled": {
+          "components": 50,
+          "connections": 76,
+          "mapped_components": 50,
+          "nets": 27,
+          "pins": 100
+        },
+        "exported": null,
+        "input": {
+          "components": 50,
+          "connections": 76,
+          "nets": null,
+          "pins": null
+        },
+        "routed": null
+      }
+    ],
+    "deterministic_asc": null,
+    "family": "filter",
+    "id": "circuit-d1745c42a0d7260ca981",
+    "memory": {
+      "backend": 37019648,
+      "compiler": 84905984
+    },
+    "overall": "FAIL",
+    "pipeline_stage_medians_ms": {
+      "input_validation": 13.61,
+      "layout": 4.050000000000001,
+      "net_building": 3.3354999999999997,
+      "pin_resolution": 1.9500000000000002,
+      "routing": 10010.072,
+      "validation": 1.268
+    },
+    "routing_metrics": [
+      null,
+      null
+    ],
+    "stages": [
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "FAIL",
+        "route": "TIMEOUT",
+        "serialized_validation": "NOT_RUN"
+      },
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "FAIL",
+        "route": "TIMEOUT",
+        "serialized_validation": "NOT_RUN"
+      }
+    ],
+    "timings_ms": {
+      "backend_process_wall": 10685.008800000105,
+      "backend_worker_wall": 10058.378249999805,
+      "compiler_process_wall": 1546.7230499994002,
+      "compiler_reported": 38.58850000000007,
+      "connectivity_wall": 6.507349999992584,
+      "export_wall": 10035.100349999993,
+      "route_wall": 9996.538599999894
+    }
+  },
+  {
+    "components": 100,
+    "counts": [
+      {
+        "compiled": {
+          "components": 100,
+          "connections": 151,
+          "mapped_components": 100,
+          "nets": 52,
+          "pins": 200
+        },
+        "exported": null,
+        "input": {
+          "components": 100,
+          "connections": 151,
+          "nets": null,
+          "pins": null
+        },
+        "routed": null
+      },
+      {
+        "compiled": {
+          "components": 100,
+          "connections": 151,
+          "mapped_components": 100,
+          "nets": 52,
+          "pins": 200
+        },
+        "exported": null,
+        "input": {
+          "components": 100,
+          "connections": 151,
+          "nets": null,
+          "pins": null
+        },
+        "routed": null
+      }
+    ],
+    "deterministic_asc": null,
+    "family": "filter",
+    "id": "circuit-44dc9954c88aea4055f2",
+    "memory": {
+      "backend": 43433984,
+      "compiler": 86945792
+    },
+    "overall": "FAIL",
+    "pipeline_stage_medians_ms": {
+      "input_validation": 21.709,
+      "layout": 4.656000000000001,
+      "net_building": 6.4035,
+      "pin_resolution": 3.1550000000000002,
+      "routing": 10011.177500000002,
+      "validation": 1.76
+    },
+    "routing_metrics": [
+      null,
+      null
+    ],
+    "stages": [
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "FAIL",
+        "route": "TIMEOUT",
+        "serialized_validation": "NOT_RUN"
+      },
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "FAIL",
+        "route": "TIMEOUT",
+        "serialized_validation": "NOT_RUN"
+      }
+    ],
+    "timings_ms": {
+      "backend_process_wall": 10723.294299999907,
+      "backend_worker_wall": 10079.43430000023,
+      "compiler_process_wall": 1603.0072999997174,
+      "compiler_reported": 49.0372000000001,
+      "connectivity_wall": 14.835599999969418,
+      "export_wall": 10049.68800000006,
+      "route_wall": 9996.446099999957
+    }
+  },
+  {
+    "components": 100,
+    "counts": [
+      {
+        "compiled": {
+          "components": 100,
+          "connections": 101,
+          "mapped_components": 100,
+          "nets": 101,
+          "pins": 200
+        },
+        "exported": {
+          "components": 100,
+          "flags": 2,
+          "pins": 200,
+          "wires": 449
+        },
+        "input": {
+          "components": 100,
+          "connections": 101,
+          "nets": null,
+          "pins": null
+        },
+        "routed": {
+          "flags": 2,
+          "nets": 101,
+          "pins": 200,
+          "segments": 497
+        }
+      },
+      {
+        "compiled": {
+          "components": 100,
+          "connections": 101,
+          "mapped_components": 100,
+          "nets": 101,
+          "pins": 200
+        },
+        "exported": {
+          "components": 100,
+          "flags": 2,
+          "pins": 200,
+          "wires": 449
+        },
+        "input": {
+          "components": 100,
+          "connections": 101,
+          "nets": null,
+          "pins": null
+        },
+        "routed": {
+          "flags": 2,
+          "nets": 101,
+          "pins": 200,
+          "segments": 497
+        }
+      }
+    ],
+    "deterministic_asc": true,
+    "family": "resistor",
+    "id": "circuit-bf177d289f65b1ff63fb",
+    "memory": {
+      "backend": 35250176,
+      "compiler": 87760896
+    },
+    "overall": "PASS",
+    "pipeline_stage_medians_ms": {
+      "export": 10302.2375,
+      "final_validation": 1202.891,
+      "input_validation": 21.6005,
+      "layout": 7.9510000000000005,
+      "net_building": 5.5935,
+      "optimization": 195.3825,
+      "pin_resolution": 3.209,
+      "post_export_validation": 31.893500000000003,
+      "routing": 3334.9955,
+      "routing_validation": 1573.4295000000002,
+      "validation": 2.5949999999999998
+    },
+    "routing_metrics": [
+      {
+        "astar_searches": 0,
+        "astar_states": 0,
+        "budget_exhaustions": 0,
+        "candidate_paths": 1320,
+        "collision_checks": 1809,
+        "crossings": 0,
+        "failed_connections": 0,
+        "fallback_attempts": 0,
+        "length": 57520,
+        "order_attempts": 1,
+        "peak_grid_vertices": 0,
+        "planar_attempts": 1,
+        "segments": 449
+      },
+      {
+        "astar_searches": 0,
+        "astar_states": 0,
+        "budget_exhaustions": 0,
+        "candidate_paths": 1320,
+        "collision_checks": 1809,
+        "crossings": 0,
+        "failed_connections": 0,
+        "fallback_attempts": 0,
+        "length": 57520,
+        "order_attempts": 1,
+        "peak_grid_vertices": 0,
+        "planar_attempts": 1,
+        "segments": 449
+      }
+    ],
+    "stages": [
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "PASS",
+        "route": "PASS",
+        "serialized_validation": "PASS"
+      },
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "PASS",
+        "route": "PASS",
+        "serialized_validation": "PASS"
+      }
+    ],
+    "timings_ms": {
+      "backend_process_wall": 19304.33154999946,
+      "backend_worker_wall": 18623.914349999723,
+      "compiler_process_wall": 1618.8828999997895,
+      "compiler_reported": 46.46600000000001,
+      "connectivity_wall": 18.475649999800225,
+      "export_wall": 16682.252900000094,
+      "route_wall": 3326.440950000233,
+      "serialized_validation_wall": 1892.341849999866
+    }
+  },
+  {
+    "components": 250,
+    "counts": [
+      {
+        "compiled": {
+          "components": 250,
+          "connections": 376,
+          "mapped_components": 250,
+          "nets": 127,
+          "pins": 500
+        },
+        "exported": null,
+        "input": {
+          "components": 250,
+          "connections": 376,
+          "nets": null,
+          "pins": null
+        },
+        "routed": null
+      },
+      {
+        "compiled": {
+          "components": 250,
+          "connections": 376,
+          "mapped_components": 250,
+          "nets": 127,
+          "pins": 500
+        },
+        "exported": null,
+        "input": {
+          "components": 250,
+          "connections": 376,
+          "nets": null,
+          "pins": null
+        },
+        "routed": null
+      }
+    ],
+    "deterministic_asc": null,
+    "family": "filter",
+    "id": "circuit-4bcd9f1440d1be5ced40",
+    "memory": {
+      "backend": 46411776,
+      "compiler": 87928832
+    },
+    "overall": "FAIL",
+    "pipeline_stage_medians_ms": {
+      "input_validation": 50.449,
+      "layout": 6.545999999999999,
+      "net_building": 17.7235,
+      "pin_resolution": 5.8645,
+      "routing": 10012.983499999998,
+      "validation": 4.2055
+    },
+    "routing_metrics": [
+      null,
+      null
+    ],
+    "stages": [
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "FAIL",
+        "route": "TIMEOUT",
+        "serialized_validation": "NOT_RUN"
+      },
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "FAIL",
+        "route": "TIMEOUT",
+        "serialized_validation": "NOT_RUN"
+      }
+    ],
+    "timings_ms": {
+      "backend_process_wall": 10818.633899999895,
+      "backend_worker_wall": 10150.792550000006,
+      "compiler_process_wall": 1581.4873499998612,
+      "compiler_reported": 72.49340000000007,
+      "connectivity_wall": 36.943950000022596,
+      "export_wall": 10098.713450000105,
+      "route_wall": 9996.63455000018
+    }
+  },
+  {
+    "components": 250,
+    "counts": [
+      {
+        "compiled": {
+          "components": 250,
+          "connections": 251,
+          "mapped_components": 250,
+          "nets": 251,
+          "pins": 500
+        },
+        "exported": null,
+        "input": {
+          "components": 250,
+          "connections": 251,
+          "nets": null,
+          "pins": null
+        },
+        "routed": null
+      },
+      {
+        "compiled": {
+          "components": 250,
+          "connections": 251,
+          "mapped_components": 250,
+          "nets": 251,
+          "pins": 500
+        },
+        "exported": null,
+        "input": {
+          "components": 250,
+          "connections": 251,
+          "nets": null,
+          "pins": null
+        },
+        "routed": null
+      }
+    ],
+    "deterministic_asc": null,
+    "family": "resistor",
+    "id": "circuit-5eee04129d7baad3326a",
+    "memory": {
+      "backend": 36421632,
+      "compiler": 87887872
+    },
+    "overall": "FAIL",
+    "pipeline_stage_medians_ms": {
+      "input_validation": 50.664,
+      "layout": 8.077,
+      "net_building": 15.090499999999999,
+      "pin_resolution": 8.462,
+      "routing": 10013.624,
+      "validation": 5.2245
+    },
+    "routing_metrics": [
+      null,
+      null
+    ],
+    "stages": [
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "FAIL",
+        "route": "TIMEOUT",
+        "serialized_validation": "NOT_RUN"
+      },
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "FAIL",
+        "route": "TIMEOUT",
+        "serialized_validation": "NOT_RUN"
+      }
+    ],
+    "timings_ms": {
+      "backend_process_wall": 10921.804099999918,
+      "backend_worker_wall": 10198.775800000021,
+      "compiler_process_wall": 1691.5347000003749,
+      "compiler_reported": 70.61400000000003,
+      "connectivity_wall": 76.89695000044594,
+      "export_wall": 10102.094399999714,
+      "route_wall": 9996.656599999824
+    }
+  },
+  {
+    "components": 500,
+    "counts": [
+      {
+        "compiled": {
+          "components": 500,
+          "connections": 501,
+          "mapped_components": 500,
+          "nets": 501,
+          "pins": 1000
+        },
+        "exported": null,
+        "input": {
+          "components": 500,
+          "connections": 501,
+          "nets": null,
+          "pins": null
+        },
+        "routed": null
+      },
+      {
+        "compiled": {
+          "components": 500,
+          "connections": 501,
+          "mapped_components": 500,
+          "nets": 501,
+          "pins": 1000
+        },
+        "exported": null,
+        "input": {
+          "components": 500,
+          "connections": 501,
+          "nets": null,
+          "pins": null
+        },
+        "routed": null
+      }
+    ],
+    "deterministic_asc": null,
+    "family": "resistor",
+    "id": "circuit-55e763579a65517ae71f",
+    "memory": {
+      "backend": 39038976,
+      "compiler": 94519296
+    },
+    "overall": "FAIL",
+    "pipeline_stage_medians_ms": {
+      "input_validation": 80.7885,
+      "layout": 12.401,
+      "net_building": 25.3275,
+      "pin_resolution": 12.3905,
+      "routing": 10066.869999999999,
+      "validation": 12.722999999999999
+    },
+    "routing_metrics": [
+      null,
+      null
+    ],
+    "stages": [
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "FAIL",
+        "route": "TIMEOUT",
+        "serialized_validation": "NOT_RUN"
+      },
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "FAIL",
+        "route": "TIMEOUT",
+        "serialized_validation": "NOT_RUN"
+      }
+    ],
+    "timings_ms": {
+      "backend_process_wall": 11233.967600001051,
+      "backend_worker_wall": 10457.640499999798,
+      "compiler_process_wall": 1656.7312000006496,
+      "compiler_reported": 102.41755,
+      "connectivity_wall": 222.83574999983102,
+      "export_wall": 10213.64044999973,
+      "route_wall": 9999.630150001394
+    }
+  },
+  {
+    "components": 500,
+    "counts": [
+      {
+        "compiled": {
+          "components": 500,
+          "connections": 751,
+          "mapped_components": 500,
+          "nets": 252,
+          "pins": 1000
+        },
+        "exported": null,
+        "input": {
+          "components": 500,
+          "connections": 751,
+          "nets": null,
+          "pins": null
+        },
+        "routed": null
+      },
+      {
+        "compiled": {
+          "components": 500,
+          "connections": 751,
+          "mapped_components": 500,
+          "nets": 252,
+          "pins": 1000
+        },
+        "exported": null,
+        "input": {
+          "components": 500,
+          "connections": 751,
+          "nets": null,
+          "pins": null
+        },
+        "routed": null
+      }
+    ],
+    "deterministic_asc": null,
+    "family": "filter",
+    "id": "circuit-a82f72ae9c7431e50765",
+    "memory": {
+      "backend": 50356224,
+      "compiler": 96792576
+    },
+    "overall": "FAIL",
+    "pipeline_stage_medians_ms": {
+      "input_validation": 107.72399999999999,
+      "layout": 15.831999999999999,
+      "net_building": 39.3995,
+      "pin_resolution": 13.6995,
+      "routing": 10016.777999999998,
+      "validation": 8.419
+    },
+    "routing_metrics": [
+      null,
+      null
+    ],
+    "stages": [
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "FAIL",
+        "route": "TIMEOUT",
+        "serialized_validation": "NOT_RUN"
+      },
+      {
+        "bridge": "PASS",
+        "compile": "PASS",
+        "connectivity": "PASS",
+        "export": "FAIL",
+        "route": "TIMEOUT",
+        "serialized_validation": "NOT_RUN"
+      }
+    ],
+    "timings_ms": {
+      "backend_process_wall": 10971.16935000031,
+      "backend_worker_wall": 10323.160500000085,
+      "compiler_process_wall": 1646.2735999994038,
+      "compiler_reported": 118.21855000000005,
+      "connectivity_wall": 105.51629999918077,
+      "export_wall": 10202.664649998951,
+      "route_wall": 9996.591850000186
+    }
+  }
+]

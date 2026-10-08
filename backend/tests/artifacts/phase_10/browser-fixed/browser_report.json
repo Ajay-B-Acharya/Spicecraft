@@ -1,0 +1,126 @@
+{
+  "mode": "Real Chrome; isolated Firebase session and mocked API transport",
+  "checks": [
+    {
+      "name": "Circuit library loads authenticated test session",
+      "status": "PASS"
+    },
+    {
+      "name": "Library navigates to editor",
+      "status": "PASS"
+    },
+    {
+      "name": "Routing failure includes net, component and pin",
+      "status": "PASS"
+    },
+    {
+      "name": "unsupported export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "timeout export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "malformed export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "offline export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "Editing preserves draft and blocks export",
+      "status": "PASS"
+    },
+    {
+      "name": "Failed save keeps input and enables retry",
+      "status": "PASS"
+    },
+    {
+      "name": "Successful retry saves preserved draft",
+      "status": "PASS"
+    },
+    {
+      "name": "Export retry downloads file",
+      "status": "PASS"
+    },
+    {
+      "name": "Back navigation returns to library",
+      "status": "PASS"
+    },
+    {
+      "name": "Reloaded circuit retains saved value",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile error and retry visible",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile page has no horizontal document overflow",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/circuits"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "PUT",
+      "path": "/circuits/browser-circuit"
+    },
+    {
+      "method": "PUT",
+      "path": "/circuits/browser-circuit"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/unsupported"
+    }
+  ],
+  "status": "FAIL",
+  "failure": "Error: Browser assertion timed out: document.body.innerText.includes(\"Invalid topology: schematic suppressed\") && document.body.innerText.includes(\"LM358\") && document.querySelectorAll('.react-flow__node').length === 0; page: New Circuit\nDashboard\nMy Projects\nSearch Circuits\nRecent Circuits\nFavorites\nWORKSPACE\nEditor\nAI Assistant\nExports\nDark Mode\nSpiceCraft\nToggle Sidebar\nNew Project\nBT\nBrowser Test\nBack to Search\nCircuit Not Found\n\nUnable to load circuit\n\nThe API returned an invalid circuit. Unknown component type 'LM358' on component U1.\n\nRetry\n    at wait (C:\\Projects\\Spice Craft\\frontend\\tools\\verify-production-browser.cjs:42:9)\n    at async check (C:\\Projects\\Spice Craft\\frontend\\tools\\verify-production-browser.cjs:46:3)\n    at async main (C:\\Projects\\Spice Craft\\frontend\\tools\\verify-production-browser.cjs:170:3)"
+}

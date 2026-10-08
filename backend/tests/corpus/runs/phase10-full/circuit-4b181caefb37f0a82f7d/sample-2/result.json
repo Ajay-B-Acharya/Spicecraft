@@ -1,0 +1,114 @@
+{
+  "compiled_sha256": "b032b51255edc1928695b46f5411f6b0f01cd31f5be4910f82c8c07dd5252bd7",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 0,
+      "mapped_components": 2,
+      "nets": 0,
+      "pins": 4
+    },
+    "exported": null,
+    "input": {
+      "components": 2,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R1 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component r1 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin r1.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin r1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "r1",
+      "code": "INSTANCE_NAME_COLLISION",
+      "compiled_id": "r1",
+      "generated_by_compiler": false,
+      "message": "Backend references R1 and r1 collide in case-insensitive LTspice.",
+      "severity": "error",
+      "source_id": "r1",
+      "source_index": 1,
+      "source_reference": "r1",
+      "stage": "bridge"
+    }
+  ],
+  "evidence_directory": "circuit-4b181caefb37f0a82f7d/sample-2",
+  "failure_stage": "bridge",
+  "failures": [
+    {
+      "backend_id": "r1",
+      "code": "INSTANCE_NAME_COLLISION",
+      "compiled_id": "r1",
+      "generated_by_compiler": false,
+      "message": "Backend references R1 and r1 collide in case-insensitive LTspice.",
+      "severity": "error",
+      "source_id": "r1",
+      "source_index": 1,
+      "source_reference": "r1",
+      "stage": "bridge"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-4b181caefb37f0a82f7d",
+  "implementation_sha256": "d003d69974f4aa70a8b0ac0e2f02b85242218c1cd25a90bf997beeaffc4b5635",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 14,
+      "peak_rss_bytes": 90165248
+    }
+  },
+  "name": "regressionBridge.test.cjs:line:242",
+  "overall": "INVALID",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "PASS",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "invalid_or_unknown",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 745.545900000252,
+    "compiler_reported": 6.711900000000014
+  },
+  "validation": "NOT_RUN"
+}

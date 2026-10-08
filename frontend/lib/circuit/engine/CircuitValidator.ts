@@ -29,6 +29,9 @@ export class CircuitValidator {
 
     circuit.components.forEach(component => {
       if (!hasText(component.id)) errors.push('Missing component reference.');
+      if (!Number.isFinite(component.position?.x) || !Number.isFinite(component.position?.y) || !Number.isFinite(component.rotation)) {
+        errors.push(`Component ${component.id} has non-finite position or rotation.`);
+      }
       if (componentsById.has(component.id)) errors.push(`Duplicate component ID detected: ${component.id}.`);
       else componentsById.set(component.id, component);
       const definition = componentLibrary.getDefinition(component.type);
@@ -39,6 +42,7 @@ export class CircuitValidator {
       component.pins.forEach(pin => {
         const key = endpointKey({ componentId: component.id, pinId: pin.id });
         if (!hasText(pin.id)) errors.push(`Missing pin identity on component ${component.id}.`);
+        if (!Number.isFinite(pin.x) || !Number.isFinite(pin.y)) errors.push(`Pin ${component.id}.${pin.id} has non-finite local geometry.`);
         if (ids.has(pin.id)) errors.push(`Duplicate pin identity ${component.id}.${pin.id}.`);
         ids.add(pin.id);
         if (definition && !definition.pins.some(expected => expected.id === pin.id)) {
@@ -110,6 +114,9 @@ export class CircuitValidator {
       const seen = new Set<string>();
       (circuit.resolvedPins as ResolvedPinLike[]).forEach(pin => {
         const key = endpointKey({ componentId: pin.componentId, pinId: pin.id });
+        if (!Number.isFinite(pin.absoluteX) || !Number.isFinite(pin.absoluteY)) {
+          errors.push(`Resolved pin ${pin.componentId}.${pin.id} has non-finite geometry.`);
+        }
         if (seen.has(key)) errors.push(`Duplicate resolved pin identity ${pin.componentId}.${pin.id}.`);
         seen.add(key);
         const definition = pinsByKey.get(key);

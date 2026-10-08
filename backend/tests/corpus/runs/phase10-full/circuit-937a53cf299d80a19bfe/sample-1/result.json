@@ -1,0 +1,97 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "4d81b2ea1aa3825ba01b528c7f4109e2056efdc3c6fd0e096fe8ca1cf5a40ac8",
+  "compiled_sha256": "ecc0abdc7bab5545fb8c71a91eb759445998cc0f2f9db18ed11bcdf1220db237",
+  "counts": {
+    "compiled": {
+      "components": 5,
+      "connections": 10,
+      "mapped_components": 5,
+      "nets": 4,
+      "pins": 10
+    },
+    "exported": {
+      "components": 5,
+      "flags": 4,
+      "pins": 10,
+      "wires": 15
+    },
+    "input": {
+      "components": 5,
+      "connections": 10,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 4,
+      "nets": 4,
+      "pins": 10,
+      "segments": 18
+    }
+  },
+  "diagnostics": [],
+  "evidence_directory": "circuit-937a53cf299d80a19bfe/sample-1",
+  "failure_stage": null,
+  "failures": [],
+  "hash_seed": 0,
+  "id": "circuit-937a53cf299d80a19bfe",
+  "implementation_sha256": "60f44913f21d569de19d97b10353d0b22f51e03f04db27f9c38204ed865fda52",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 9,
+      "peak_rss_bytes": 32374784
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 14,
+      "peak_rss_bytes": 95326208
+    }
+  },
+  "name": "Bridge Rectifier Routing Regression",
+  "overall": "PASS",
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 11,
+    "collision_checks": 13,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 1648,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 15
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 408.45809999973426,
+    "backend_worker_wall": 55.149900000287744,
+    "compiler_process_wall": 1179.5523000000685,
+    "compiler_reported": 18.093999999999937,
+    "connectivity_wall": 0.9112999996432336,
+    "export_wall": 37.907300000370014,
+    "route_wall": 7.773899999847345,
+    "serialized_validation_wall": 4.152800000156276
+  },
+  "validation": "PASS"
+}

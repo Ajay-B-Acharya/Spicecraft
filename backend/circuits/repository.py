@@ -1,5 +1,7 @@
 import json
+import os
 from pathlib import Path
+import tempfile
 from typing import Any
 
 
@@ -39,11 +41,21 @@ class CircuitRepository:
         if not circuit_path:
             return None
 
-        with circuit_path.open("w", encoding="utf-8") as file:
-            json.dump(circuit_data, file, indent=2)
-            file.write("\n")
+        temporary = None
+        try:
+            with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=circuit_path.parent,
+                                             prefix=".circuit-", suffix=".tmp", delete=False) as file:
+                temporary = Path(file.name)
+                json.dump(circuit_data, file, indent=2, allow_nan=False)
+                file.write("\n")
+                file.flush()
+                os.fsync(file.fileno())
+            os.replace(temporary, circuit_path)
+        finally:
+            if temporary is not None:
+                temporary.unlink(missing_ok=True)
 
-        return self._load_circuit_file(circuit_path)
+        return circuit_data
 
     def search_circuits(self, query: str) -> list[dict[str, Any]]:
         normalized_query = query.strip().lower()

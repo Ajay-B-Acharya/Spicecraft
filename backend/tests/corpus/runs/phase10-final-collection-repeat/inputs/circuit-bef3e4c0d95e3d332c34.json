@@ -1,0 +1,30 @@
+{
+  "components": [
+    {
+      "id": "R1",
+      "reference": "R1",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "Q1",
+      "reference": "Q1",
+      "type": "transistor",
+      "value": "BC547"
+    }
+  ],
+  "wires": [
+    {
+      "from": "R1.1",
+      "to": "Q1.base"
+    },
+    {
+      "from": "R1.2",
+      "to": "Q1.1"
+    },
+    {
+      "from": "Q1.emitter",
+      "to": "GND"
+    }
+  ]
+}

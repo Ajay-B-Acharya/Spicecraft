@@ -1,0 +1,142 @@
+{
+  "compiled_sha256": "0f742a5a0c5ef49fd970a08d68d5692b5cac5f8f6c4e74874c51294cc723ddf2",
+  "counts": {
+    "compiled": {
+      "components": 250,
+      "connections": 376,
+      "mapped_components": 250,
+      "nets": 127,
+      "pins": 500
+    },
+    "exported": null,
+    "input": {
+      "components": 250,
+      "connections": 376,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "actual": null,
+      "circuit": "",
+      "code": "PIPELINE_TIMEOUT",
+      "component": null,
+      "expected": null,
+      "message": "routing exceeded its execution budget (10 seconds stage / 30 seconds total)",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "routing",
+      "severity": "error",
+      "stage": "route"
+    },
+    {
+      "actual": null,
+      "circuit": "Repeated filter sections (250 components)",
+      "code": "PIPELINE_TIMEOUT",
+      "component": null,
+      "expected": null,
+      "message": "routing exceeded its execution budget (10 seconds stage / 30 seconds total)",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "routing",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "evidence_directory": "circuit-4bcd9f1440d1be5ced40/sample-2",
+  "failure_stage": "route",
+  "failures": [
+    {
+      "actual": null,
+      "circuit": "",
+      "code": "PIPELINE_TIMEOUT",
+      "component": null,
+      "expected": null,
+      "message": "routing exceeded its execution budget (10 seconds stage / 30 seconds total)",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "routing",
+      "severity": "error",
+      "stage": "route"
+    },
+    {
+      "actual": null,
+      "circuit": "Repeated filter sections (250 components)",
+      "code": "PIPELINE_TIMEOUT",
+      "component": null,
+      "expected": null,
+      "message": "routing exceeded its execution budget (10 seconds stage / 30 seconds total)",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "routing",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-4bcd9f1440d1be5ced40",
+  "implementation_sha256": "f4c25658dcec1a34f0271187fa040ae144f61b9a7b65db15d3d82dabf490dd33",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 75,
+      "peak_rss_bytes": 39538688
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 16,
+      "peak_rss_bytes": 87887872
+    }
+  },
+  "name": "Repeated filter sections (250 components)",
+  "overall": "FAIL",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "large",
+    "componentCount": 250,
+    "errorCount": 1,
+    "iterations": {
+      "input_validation": 0,
+      "layout": 750,
+      "net_building": 1129,
+      "pin_resolution": 0,
+      "routing": 121977,
+      "validation": 127
+    },
+    "netCount": 127,
+    "pinCount": 500,
+    "stagesMs": {
+      "input_validation": 70.937,
+      "layout": 10.48,
+      "net_building": 22.783,
+      "pin_resolution": 6.186,
+      "routing": 10065.409,
+      "validation": 7.061
+    },
+    "totalTimeMs": 10183.002,
+    "warningCount": 0
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "FAIL",
+    "route": "TIMEOUT",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": true,
+  "timings_ms": {
+    "backend_process_wall": 11379.973000000064,
+    "backend_worker_wall": 10389.594500000385,
+    "compiler_process_wall": 1952.223000000231,
+    "compiler_reported": 82.51880000000006,
+    "connectivity_wall": 111.10630000075616,
+    "export_wall": 10198.842300000251,
+    "route_wall": 10014.624200000071
+  },
+  "validation": "NOT_RUN"
+}

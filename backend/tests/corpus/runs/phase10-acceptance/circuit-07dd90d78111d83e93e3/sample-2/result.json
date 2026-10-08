@@ -1,0 +1,114 @@
+{
+  "compiled_sha256": "3784b332fbcc71a528ba6888c3ff2297609787c12259b8eb015bafa6c107a4ab",
+  "counts": {
+    "compiled": {
+      "components": 1,
+      "connections": 0,
+      "mapped_components": 1,
+      "nets": 0,
+      "pins": 2
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component bad.ref; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component bad.ref is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin bad.ref.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin bad.ref.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "bad.ref",
+      "code": "INVALID_BACKEND_IDENTITY",
+      "compiled_id": "bad.ref",
+      "generated_by_compiler": false,
+      "message": "Backend identity \"bad.ref\" cannot be represented as an unambiguous Component.Pin token.",
+      "severity": "error",
+      "source_id": null,
+      "source_index": 0,
+      "source_reference": "bad.ref",
+      "stage": "bridge"
+    },
+    {
+      "backend_id": "bad.ref",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "bad.ref",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    }
+  ],
+  "evidence_directory": "circuit-07dd90d78111d83e93e3/sample-2",
+  "failure_stage": "bridge",
+  "failures": [
+    {
+      "backend_id": "bad.ref",
+      "code": "INVALID_BACKEND_IDENTITY",
+      "compiled_id": "bad.ref",
+      "generated_by_compiler": false,
+      "message": "Backend identity \"bad.ref\" cannot be represented as an unambiguous Component.Pin token.",
+      "severity": "error",
+      "source_id": null,
+      "source_index": 0,
+      "source_reference": "bad.ref",
+      "stage": "bridge"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-07dd90d78111d83e93e3",
+  "implementation_sha256": "7c7d0befb6ae6ac0117c7da685da985140708b92f1e230d4e556dd91974c7c1c",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 23,
+      "peak_rss_bytes": 86724608
+    }
+  },
+  "name": "test_connectivity.py:line:233",
+  "overall": "INVALID",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "PASS",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "invalid_or_unknown",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 895.1206000001548,
+    "compiler_reported": 15.8673
+  },
+  "validation": "NOT_RUN"
+}

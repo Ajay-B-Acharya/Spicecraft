@@ -1,0 +1,84 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "f1468a8c82376c73e86f8f51702de6b457539177c9eedcba86c69efb6817369d",
+  "compiled_sha256": "205e3c5d520a6efbc5d1165ba22fd39b14ec5009e4ad94824cdd94c835728ba5",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 4,
+      "mapped_components": 2,
+      "nets": 3,
+      "pins": 4
+    },
+    "exported": {
+      "components": 2,
+      "flags": 3,
+      "pins": 4,
+      "wires": 4
+    },
+    "input": {
+      "components": 2,
+      "connections": 4,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 3,
+      "nets": 3,
+      "pins": 4,
+      "segments": 5
+    }
+  },
+  "diagnostics": [],
+  "id": "circuit-5d43216779aacfa68c02",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 11,
+      "peak_rss_bytes": 95662080
+    }
+  },
+  "name": "connectivity.test.cjs:line:105",
+  "overall": "NOT_RUN",
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 1,
+    "collision_checks": 1,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 160,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 4
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 39.12639999998646,
+    "compiler_process_wall": 618.0371000000378,
+    "compiler_reported": 10.623000000000047,
+    "connectivity_wall": 0.557400000616326,
+    "export_wall": 15.829799999664829,
+    "route_wall": 1.9879000001310487,
+    "serialized_validation_wall": 1.2907000000268454
+  }
+}

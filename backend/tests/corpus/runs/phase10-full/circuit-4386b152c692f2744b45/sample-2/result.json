@@ -1,0 +1,94 @@
+{
+  "compiled_sha256": "f3a7e672bc43d19cfcfa2319503655eddaa1a405d9e94e9d0bb104bb9075e1b0",
+  "counts": {
+    "compiled": {
+      "components": 1,
+      "connections": 0,
+      "mapped_components": 1,
+      "nets": 0,
+      "pins": 3
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component U1 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin U1.C (collector) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin U1.B (base) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin U1.E (emitter) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "UNSUPPORTED_SHARED_EXPORT_KIND",
+      "compiled_id": "U1",
+      "frontend_type": "pnp_transistor",
+      "message": "Frontend kind pnp_transistor is not supported by the shared backend export; no fallback component is permitted.",
+      "severity": "error",
+      "stage": "bridge"
+    }
+  ],
+  "evidence_directory": "circuit-4386b152c692f2744b45/sample-2",
+  "failure_stage": "bridge",
+  "failures": [
+    {
+      "code": "UNSUPPORTED_SHARED_EXPORT_KIND",
+      "compiled_id": "U1",
+      "frontend_type": "pnp_transistor",
+      "message": "Frontend kind pnp_transistor is not supported by the shared backend export; no fallback component is permitted.",
+      "severity": "error",
+      "stage": "bridge"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-4386b152c692f2744b45",
+  "implementation_sha256": "d003d69974f4aa70a8b0ac0e2f02b85242218c1cd25a90bf997beeaffc4b5635",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 16,
+      "peak_rss_bytes": 96403456
+    }
+  },
+  "name": "test_component_support_boundaries.py:line:16",
+  "overall": "UNSUPPORTED",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "PASS",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "unsupported",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 839.9724000000788,
+    "compiler_reported": 8.8125
+  },
+  "validation": "NOT_RUN"
+}

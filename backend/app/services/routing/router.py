@@ -14,6 +14,7 @@ from typing import Any, Mapping
 from app.services.asc_validation import ERROR, ExportDiagnostic, NetGeometry, WireSegment, validate_net_geometry
 from app.services.connectivity import ConnectivityModel, validate_connectivity
 from app.services.grid_system import GridSystem, Point
+from app.services.production import checkpoint
 from .geometry import CollisionDetector, axis, manhattan, on_segment, prepare_problem
 from .models import RoutedFlag, RoutingOptions, RoutingProblem, RoutingResult, SafeCrossing
 from .optimizer import normalize_segments, path_segments
@@ -29,6 +30,7 @@ class _Router:
         self.options = problem.options
         self.detector = CollisionDetector(problem)
         self.metrics = metrics
+        self.failures: list[ExportDiagnostic] = []
 
     def _accept(self, segments: list[WireSegment], occupied: list[WireSegment],
                 crossings: list[SafeCrossing], fallback: bool) -> list[SafeCrossing] | None:
@@ -90,12 +92,14 @@ class _Router:
             variants.extend([start, (x, start[1]), (x, goal[1]), goal] for x in xs)
             variants.extend([start, (start[0], y), (goal[0], y), goal] for y in ys)
             for points in variants:
+                checkpoint(iterations=1)
                 segments = path_segments(net, points)
                 if any(s.start[0] != s.end[0] and s.start[1] != s.end[1] for s in segments):
                     continue
                 candidates.append((max(0, len(segments) - 1), sum(manhattan(s.start, s.end) for s in segments), tuple(points)))
         best = None
         for bends, length, points in sorted(set(candidates)):
+            checkpoint(iterations=1)
             self.metrics["candidate_paths"] += 1
             segments = path_segments(net, list(points))
             accepted = self._accept(segments, occupied, crossings, fallback)
@@ -149,6 +153,7 @@ class _Router:
         heap = [(0, distance(start), 0, origin)]
         expanded = 0
         while heap:
+            checkpoint(iterations=1)
             crosses, _, cost, state = heapq.heappop(heap)
             if costs.get(state) != (crosses, cost):
                 continue
@@ -202,6 +207,7 @@ class _Router:
         junctions = {}
         flags: list[RoutedFlag] = []
         for net in nets:
+            checkpoint(iterations=1, segments=len(occupied))
             net_pins = [self.problem.pins[p.key] for p in net.pins]
             if not net_pins:
                 continue
@@ -210,10 +216,16 @@ class _Router:
             tree = [WireSegment(net.name, root.point, root.escape)]
             ports = {root.escape}
             while remaining:
+                checkpoint(iterations=1, segments=len(occupied) + len(tree))
                 pin = min(remaining, key=lambda p: (min(manhattan(p.escape, q) for q in ports), p.escape, p.key))
+                exhausted = self.metrics["budget_exhaustions"]
                 answer = self.connect(net.name, pin.escape, tree, occupied + tree, crossings, fallback)
                 if answer is None:
                     self.metrics["failed_connections"] += 1
+                    code = "ROUTING_SEARCH_LIMIT" if self.metrics["budget_exhaustions"] > exhausted else "NO_SAFE_ROUTE"
+                    self.failures.append(ExportDiagnostic(
+                        ERROR, code, f"Cannot connect {pin.key} to net {net.name} within the fixed-placement routing budgets",
+                        net=net.name, component=pin.terminal.component, pin=pin.terminal.pin, actual=pin.point))
                     return None
                 branches, crossings = answer
                 tree.extend(branches)
@@ -228,6 +240,9 @@ class _Router:
                 # and leaves wires connected without label-assisted islands.
                 candidates = [p for p in ports if self.detector.point_allowed(p, net.name, occupied, crossings)]
                 if not candidates:
+                    self.failures.append(ExportDiagnostic(
+                        ERROR, "NO_SAFE_ROUTE", f"No safe flag attachment for net {net.name}",
+                        net=net.name, component=root.terminal.component, pin=root.terminal.pin, actual=root.point))
                     return None
                 def flag_score(p: Point) -> tuple:
                     spacing = self.options.label_spacing
@@ -242,6 +257,7 @@ class _Router:
             geometries.append(geometry)
             junctions[net.name] = net_junctions
             occupied.extend(tree)
+            checkpoint(segments=len(occupied))
         # Preserve logical source order in the externally visible result.
         return RoutingResult(geometries, junctions, [], self.metrics, flags, tuple(sorted(set(crossings), key=lambda c: (c.point, c.nets))))
 
@@ -275,12 +291,20 @@ def route_nets(connectivity: ConnectivityModel, layouts: Mapping[str, Mapping[st
     canonical RoutedFlag records. Every error returns EMPTY geometry/flags;
     callers must not serialize any failed intermediate attempt.
     """
+    checkpoint("routing")
     options = options or RoutingOptions()
     diagnostics = validate_connectivity(connectivity)
     metrics = {key: 0 for key in ("candidate_paths", "astar_searches", "astar_states", "peak_grid_vertices",
                                  "collision_checks", "budget_exhaustions", "order_attempts", "failed_connections",
                                  "crossings", "segments", "length", "planar_attempts", "fallback_attempts")}
-    if options.clearance < 0 or options.clearance % GridSystem.SIZE or options.label_spacing < 0 or options.label_spacing % GridSystem.SIZE or not options.envelope_margins or any(m <= 0 or m % GridSystem.SIZE for m in options.envelope_margins) or min(options.max_grid_vertices, options.max_search_states, options.max_order_attempts) <= 0 or options.bend_penalty < 0:
+    integer_options = (options.clearance, options.label_spacing, options.bend_penalty,
+                       options.max_grid_vertices, options.max_search_states, options.max_order_attempts)
+    valid_types = (all(isinstance(value, int) and not isinstance(value, bool) for value in integer_options)
+                   and isinstance(options.allow_crossings, bool)
+                   and isinstance(options.envelope_margins, (tuple, list))
+                   and all(isinstance(value, int) and not isinstance(value, bool)
+                           for value in options.envelope_margins))
+    if not valid_types or options.clearance < 0 or options.clearance % GridSystem.SIZE or options.label_spacing < 0 or options.label_spacing % GridSystem.SIZE or not options.envelope_margins or any(m <= 0 or m % GridSystem.SIZE for m in options.envelope_margins) or min(options.max_grid_vertices, options.max_search_states, options.max_order_attempts) <= 0 or options.bend_penalty < 0:
         diagnostics.append(ExportDiagnostic(ERROR, "INVALID_ROUTING_OPTIONS", "Routing clearances/margins must be grid aligned; search budgets positive"))
     if any(d.severity == ERROR for d in diagnostics):
         return RoutingResult(diagnostics=diagnostics, metrics=metrics)
@@ -299,6 +323,7 @@ def route_nets(connectivity: ConnectivityModel, layouts: Mapping[str, Mapping[st
     orders = [order for order in orders if not (tuple(n.name for n in order) in seen or seen.add(tuple(n.name for n in order)))]
     for fallback in ([False, True] if options.allow_crossings else [False]):
         for order in orders[:options.max_order_attempts]:
+            checkpoint(iterations=1)
             metrics["order_attempts"] += 1
             metrics["fallback_attempts" if fallback else "planar_attempts"] += 1
             result = router.run_order(order, fallback)
@@ -307,6 +332,7 @@ def route_nets(connectivity: ConnectivityModel, layouts: Mapping[str, Mapping[st
             audited = _audit(result, problem, connectivity)
             if any(d.severity == ERROR for d in audited):
                 # Never fall through with unsafe intermediate geometry.
+                router.failures.extend(d for d in audited if d.severity == ERROR)
                 continue
             result.net_geometries.sort(key=lambda n: next(i for i, net in enumerate(connectivity.nets) if net.name == n.name))
             result.flags.sort(key=lambda f: (f.net, f.point))
@@ -315,6 +341,10 @@ def route_nets(connectivity: ConnectivityModel, layouts: Mapping[str, Mapping[st
             metrics["segments"] = sum(len(n.segments) for n in result.net_geometries)
             metrics["length"] = sum(manhattan(s.start, s.end) for n in result.net_geometries for s in n.segments)
             return result
-    code = "ROUTING_SEARCH_LIMIT" if metrics["budget_exhaustions"] else "NO_SAFE_ROUTE"
-    diagnostics.append(ExportDiagnostic(ERROR, code, "No safe route found within deterministic net-order and visibility search budgets; fixed placement was not changed"))
+    for failure in router.failures:
+        if failure not in diagnostics:
+            diagnostics.append(failure)
+    if not router.failures:
+        code = "ROUTING_SEARCH_LIMIT" if metrics["budget_exhaustions"] else "NO_SAFE_ROUTE"
+        diagnostics.append(ExportDiagnostic(ERROR, code, "No safe route found within deterministic net-order and visibility search budgets; fixed placement was not changed"))
     return RoutingResult(diagnostics=diagnostics, metrics=metrics)
