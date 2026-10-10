@@ -1,0 +1,27 @@
+{
+  "components": [
+    {
+      "id": "part",
+      "mirror": true,
+      "position": {
+        "x": 15,
+        "y": 30
+      },
+      "reference": "R1",
+      "rotation": 90,
+      "type": "resistor",
+      "value": "1k"
+    }
+  ],
+  "wires": [
+    {
+      "from": {
+        "componentId": "part",
+        "pinId": "left"
+      },
+      "to": {
+        "net": "0"
+      }
+    }
+  ]
+}

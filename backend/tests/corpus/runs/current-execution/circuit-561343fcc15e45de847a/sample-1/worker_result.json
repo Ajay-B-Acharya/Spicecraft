@@ -1,0 +1,172 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "3406ae5f4936e17082308c3c8df0d82fb71f9792e55ec4212772742272894820",
+  "compiled_sha256": "8a22f1577e2fe08c1c73279090512707a760cb04d640f4fc3f06350587449150",
+  "counts": {
+    "compiled": {
+      "components": 3,
+      "connections": 0,
+      "mapped_components": 3,
+      "nets": 0,
+      "pins": 6
+    },
+    "exported": {
+      "components": 3,
+      "flags": 0,
+      "pins": 6,
+      "wires": 0
+    },
+    "input": {
+      "components": 3,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing reference for component at index 1; generated reference will be used.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing reference for component at index 2; generated reference will be used.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R1 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R2 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R3 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R3.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R3.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "id": "circuit-561343fcc15e45de847a",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 12,
+      "peak_rss_bytes": 85884928
+    }
+  },
+  "name": "connectivity.test.cjs:line:94",
+  "overall": "NOT_RUN",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "small",
+    "componentCount": 3,
+    "errorCount": 0,
+    "exportBytes": 380,
+    "iterations": {
+      "export": 0,
+      "final_validation": 0,
+      "input_validation": 0,
+      "layout": 9,
+      "net_building": 3,
+      "optimization": 0,
+      "pin_resolution": 0,
+      "post_export_validation": 0,
+      "routing": 0,
+      "routing_validation": 0,
+      "validation": 0
+    },
+    "netCount": 0,
+    "pinCount": 6,
+    "stagesMs": {
+      "export": 1.767,
+      "final_validation": 0.039,
+      "input_validation": 0.281,
+      "layout": 0.719,
+      "net_building": 0.034,
+      "optimization": 0.01,
+      "pin_resolution": 0.065,
+      "post_export_validation": 0.758,
+      "routing": 0.011,
+      "routing_validation": 0.062,
+      "validation": 0.022
+    },
+    "totalTimeMs": 3.794,
+    "warningCount": 0,
+    "wireCount": 0
+  },
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "length": 0,
+    "segments": 0
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "NOT_REQUIRED",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 11.229899999307236,
+    "compiler_process_wall": 508.75570000062,
+    "compiler_reported": 6.826700000000017,
+    "connectivity_wall": 0.17800000023271423,
+    "export_wall": 3.904399999555608,
+    "serialized_validation_wall": 0.553599999875587
+  }
+}

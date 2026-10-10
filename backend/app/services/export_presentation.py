@@ -33,6 +33,8 @@ from app.services.production import checkpoint
 
 Bounds = tuple[int, int, int, int]
 Point = tuple[int, int]
+_WINDOW_GAPS = (8, 24, 48, 80)
+_WINDOW_SHIFTS = (0, -32, 32, -64, 64)
 
 
 @dataclass(frozen=True)
@@ -189,6 +191,18 @@ def _net_boxes(nets: list[NetGeometry]) -> tuple[list[Bounds], list[tuple[Bounds
     return bounds, obstacles
 
 
+def _nearby_obstacles(symbol: _Symbol, obstacles: list[tuple[Bounds, int]]) -> list[tuple[Bounds, int]]:
+    """Retain every obstacle that can overlap any enumerated label candidate."""
+    extents = [[_text_extent(label, size) for _, label in symbol.labels] for size in (2, 1)]
+    width = max(w for sizes in extents for w, _ in sizes)
+    height = max(sizes[0][1] + pitch * (len(sizes) - 1)
+                 for sizes, pitch in zip(extents, (32, 24)))
+    # Maximum gap + displacement + rounding, including either side of the body.
+    envelope = _expand(symbol.bounds, max(width, height) + max(_WINDOW_GAPS)
+                       + max(abs(shift) for shift in _WINDOW_SHIFTS) + 8)
+    return [(box, weight) for box, weight in obstacles if _overlap(envelope, box)]
+
+
 def _choose_windows(symbol: _Symbol, obstacles: list[tuple[Bounds, int]]) -> list[_Window]:
     """Score fixed, finite candidates; collisions outrank compactness/font size.
 
@@ -206,8 +220,8 @@ def _choose_windows(symbol: _Symbol, obstacles: list[tuple[Bounds, int]]) -> lis
         height = extents[0][1]
         pitch = 32 if size == 2 else 24
         stack_height = height + pitch * (len(extents) - 1)
-        for gap in (8, 24, 48, 80):
-            for shift in (0, -32, 32, -64, 64):
+        for gap in _WINDOW_GAPS:
+            for shift in _WINDOW_SHIFTS:
                 # These are top-left corners of the complete stacked block.
                 starts = ((x1 + gap, (y0 + y1 - stack_height) // 2 + shift),
                           (x0 - gap - width, (y0 + y1 - stack_height) // 2 + shift),
@@ -274,7 +288,7 @@ def build_presentation(
     boxes.extend(net_boxes)
     windows: dict[str, list[str]] = {}
     for symbol in symbols:
-        chosen = _choose_windows(symbol, obstacles)
+        chosen = _choose_windows(symbol, _nearby_obstacles(symbol, obstacles))
         records = []
         justification = "VCenter" if symbol.degrees % 180 else "Center"
         for window in chosen:

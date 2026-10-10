@@ -84,7 +84,9 @@ By default, collection also adds twelve explicitly marked, deterministic scale c
 
 Testing uses the actual TypeScript compiler and bridge, backend connectivity, layout, exact pin resolution, routing, optimization, export, and independent serialized electrical checks. Each circuit runs in isolated compiler/backend processes with a deadline. Reports preserve stage success and diagnostics; compiled, routed, serialized, and fully validated are separate counts. Negative cases and legitimate routing failures are retained. Non-PASS circuit outcomes produce a nonzero command exit rather than being silently skipped. This is different from unit tests, where an expected rejection can pass its assertion.
 
-Each collection contains `inventory.json`, `catalog.json`, `inputs/<circuit-id>.json`, extraction evidence, and `indexes/`. The category index files are `small.json`, `medium.json`, `large.json`, `extreme.json`, `regression.json`, `unsupported.json`, `malformed.json`, and `failing.json`, plus `all.json`. These overlapping views reference the original collected snapshots rather than copying or rewriting topology. Execution adds `validated_catalog.json`, `corpus_report.json` / `.txt`, and per-case/per-sample compiler, backend, diagnostics, and successful ASC evidence. Unknown or untested component eligibility stays explicitly unknown; supported/unsupported lists describe observed compiler/shared-export kind eligibility, not complete backend model or circuit validity.
+Corpus sample counts are bounded to 1–100 and worker timeouts must be finite and positive. Catalog IDs must be unique safe directory names; escaping/missing/corrupted input files remain explicit per-case failures. Untrusted or mismatched compiled evidence cannot supply component-support claims. Invocation records include only recognized pipeline resource settings, not arbitrary environment secrets. Non-JSON documentation fences are recorded as unresolved rather than counted as processed circuits.
+
+Each collection contains `inventory.json`, `catalog.json`, `inputs/<circuit-id>.json`, extraction evidence, `invocation.json`, and `indexes/`. The category index files are `small.json`, `medium.json`, `large.json`, `extreme.json`, `regression.json`, `unsupported.json`, `malformed.json`, and `failing.json`, plus `all.json`. These overlapping views reference the original collected snapshots rather than copying or rewriting topology. Execution adds `validated_catalog.json`, `corpus_report.json` / `.txt`, and per-case/per-sample compiler, backend, diagnostics, and successful ASC evidence. Unknown or untested component eligibility stays explicitly unknown; supported/unsupported lists describe observed compiler/shared-export kind eligibility, not complete backend model or circuit validity.
 
 Native LTspice and browser rendering are separate gates; corpus success alone does not prove either. Repeated samples check deterministic artifacts only when implementation hashes remain stable. Do not edit pipeline code while producing final benchmark evidence.
 
@@ -95,6 +97,14 @@ backend/venv/Scripts/python.exe -B backend/tools/profile_pipeline.py backend/cir
 ```
 
 This records uninstrumented per-stage backend timings, a separate cumulative-call profile, repeated ASC hashes, source immutability, and a warmed single-process `tracemalloc` retention series after garbage collection. Tracing changes runtime and measures Python allocation, not whole-process resident memory. The corpus records child-process resident-memory observations separately. Neither measurement is a long-duration leak proof.
+
+For an exact-output comparison of the measured label-placement optimization:
+
+```powershell
+backend/venv/Scripts/python.exe -B backend/tools/benchmark_presentation.py backend/circuits/common_emitter_amplifier.json --output backend/tests/artifacts/presentation-benchmark --samples 3
+```
+
+This runs the complete backend export in alternating exhaustive/filtered modes, preserving the same candidate scoring, and records hashes, per-stage timings, failures, and medians. Supply a collected resistor-chain JSON to measure larger layouts. It is a development-only benchmark; the production exporter always uses the bounded candidate-envelope filter.
 
 ## Browser recovery checks
 
@@ -110,4 +120,4 @@ The script uses Node's native WebSocket support and the Chrome DevTools Protocol
 
 Checks include click-through library navigation, structured export errors, unsupported/timeout/gateway/offline states, editing, failed-save draft retention, retry, download, saved-value reload, mobile overflow, unsupported source rejection, missing/empty/library-error states, shared project/source pages, and surrounding routes. Runtime exceptions, including hydration mismatches, fail the test. Reports and screenshots remain in the output directory. This verifies browser behavior against controlled responses; live Firebase and persisted HTTP round trips remain separate deployment checks.
 
-See [Phase 10 results](PHASE_10_PRODUCTION_REPORT.md), [production operation](docs/PRODUCTION.md), and [component development](docs/ADDING_COMPONENTS.md).
+See [Current Phase 10 results](PHASE_10_CURRENT_REPORT.md), [production operation](docs/PRODUCTION.md), and [component development](docs/ADDING_COMPONENTS.md).

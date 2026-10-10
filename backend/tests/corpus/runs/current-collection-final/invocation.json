@@ -1,0 +1,43 @@
+{
+  "argv": [
+    "C:\\Projects\\Spice Craft\\backend\\venv\\Scripts\\python.exe",
+    "C:\\Projects\\Spice Craft\\backend\\tools\\circuit_corpus.py",
+    "collect-circuits",
+    "--output",
+    "backend/tests/corpus/runs/current-collection-final",
+    "--timeout",
+    "30"
+  ],
+  "cwd": "C:\\Projects\\Spice Craft",
+  "pipeline_environment": {},
+  "started_utc": "2026-10-10T14:01:12.902118+00:00",
+  "summary": {
+    "candidate_sources_without_extractor": [],
+    "evidence_sources": 970,
+    "extraction_status": {
+      "complete": 227,
+      "partial": 43
+    },
+    "inventory_by_kind": {
+      "corpus_tooling": 6,
+      "excluded_directory": 20,
+      "generated_evidence": 657,
+      "source": 287
+    },
+    "origins": 494,
+    "origins_by_kind": {
+      "frontend_data_expression": 59,
+      "frontend_runtime": 190,
+      "json": 7,
+      "python_data_expression": 226,
+      "synthetic": 12
+    },
+    "repository_cases": 233,
+    "runtime_capture_errors": 6,
+    "source_files_with_collected_cases": 22,
+    "synthetic_cases": 12,
+    "total_cases": 245,
+    "unresolved_expressions": 111
+  },
+  "wall_ms": 11833.182999999735
+}

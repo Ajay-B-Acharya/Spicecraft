@@ -224,11 +224,14 @@ class CircuitAPITests(unittest.TestCase):
         self.url = '/circuits/' + self.circuit['id']
 
     def test_valid_save_reaches_repository(self):
+        self.circuit['metadata'] = {'author': 'Preserved author', 'revision': 3}
         with patch.object(self.routes.repository, 'get_circuit_by_id', return_value=self.circuit), \
                 patch.object(self.routes.repository, 'update_circuit', return_value=self.circuit) as update:
             response = self.client.put(self.url, json=self.circuit)
         self.assertEqual(200, response.status_code, response.text)
         update.assert_called_once()
+        self.assertEqual(self.circuit['metadata'], update.call_args.args[1]['metadata'])
+        self.assertEqual(self.circuit['metadata'], response.json()['metadata'])
 
     def test_request_validation_is_structured_without_input_echo(self):
         for body in (b'{broken', b'{}', b'{"components":NaN}'):
@@ -292,6 +295,41 @@ class CircuitAPITests(unittest.TestCase):
             response = self.client.get(self.url)
         self.assertEqual(404, response.status_code)
         self.assertFalse(response.json()['detail']['retryable'])
+
+    def test_list_and_detail_response_contract(self):
+        self.circuit['metadata'] = {'author': 'Preserved author', 'revision': 3}
+        with patch.object(self.routes.repository, 'get_all_circuits', return_value=[self.circuit]), \
+                patch.object(self.routes.repository, 'get_circuit_by_id', return_value=self.circuit):
+            listing = self.client.get('/circuits')
+            detail = self.client.get(self.url)
+        self.assertEqual(200, listing.status_code)
+        self.assertEqual(200, detail.status_code)
+        self.assertEqual([detail.json()], listing.json())
+        self.assertEqual(self.circuit['metadata'], detail.json()['metadata'])
+
+    def test_successful_export_has_valid_download_contract(self):
+        circuit = copy.deepcopy(self.circuit)
+        circuit['name'] = 'Unsafe / filename " ' + 'x' * 200
+        with patch.object(self.routes.repository, 'get_circuit_by_id', return_value=circuit):
+            response = self.client.get(self.url + '/export/asc')
+        self.assertEqual(200, response.status_code, response.text)
+        self.assertEqual('application/octet-stream', response.headers['content-type'])
+        self.assertTrue(response.text.startswith('Version 4\nSHEET '))
+        self.assertRegex(response.headers['content-disposition'], r'^attachment; filename="[A-Za-z0-9_-]{1,120}\.asc"$')
+
+    def test_id_mismatch_never_writes(self):
+        with patch.object(self.routes.repository, 'update_circuit') as update:
+            response = self.client.put('/circuits/different', json=self.circuit)
+        self.assertEqual(400, response.status_code)
+        self.assertEqual('CIRCUIT_ID_MISMATCH', response.json()['detail']['code'])
+        update.assert_not_called()
+
+    def test_validation_diagnostics_include_safe_field_location(self):
+        response = self.client.put(self.url, json={})
+        self.assertEqual(422, response.status_code)
+        diagnostics = response.json()['detail']['diagnostics']
+        self.assertTrue(any(d['location'] == ['body', 'components'] for d in diagnostics))
+        self.assertTrue(all('input' not in d for d in diagnostics))
 
 
 class RequestBodyTests(unittest.IsolatedAsyncioTestCase):

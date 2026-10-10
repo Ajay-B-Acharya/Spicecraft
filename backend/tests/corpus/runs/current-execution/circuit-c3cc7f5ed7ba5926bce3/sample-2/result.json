@@ -1,0 +1,96 @@
+{
+  "compiled_sha256": "35f8c29a193b5353fb0ec6ca3f32df2f453b8fcd9a7e33af746f24c7970e5e9d",
+  "counts": {
+    "compiled": {
+      "components": 1,
+      "connections": 0,
+      "mapped_components": 1,
+      "nets": 0,
+      "pins": 2
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": null,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R1 R2 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1 R2.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1 R2.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "R1 R2",
+      "code": "INVALID_BACKEND_IDENTITY",
+      "compiled_id": "R1 R2",
+      "generated_by_compiler": false,
+      "message": "Backend identity \"R1 R2\" cannot be represented as an unambiguous Component.Pin token.",
+      "severity": "error",
+      "source_id": null,
+      "source_index": 0,
+      "source_reference": "R1 R2",
+      "stage": "bridge"
+    }
+  ],
+  "evidence_directory": "circuit-c3cc7f5ed7ba5926bce3/sample-2",
+  "failure_stage": "bridge",
+  "failures": [
+    {
+      "backend_id": "R1 R2",
+      "code": "INVALID_BACKEND_IDENTITY",
+      "compiled_id": "R1 R2",
+      "generated_by_compiler": false,
+      "message": "Backend identity \"R1 R2\" cannot be represented as an unambiguous Component.Pin token.",
+      "severity": "error",
+      "source_id": null,
+      "source_index": 0,
+      "source_reference": "R1 R2",
+      "stage": "bridge"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-c3cc7f5ed7ba5926bce3",
+  "implementation_sha256": "64012f11da6471eec0a9e3a12e9d69fc7f0fad62162229e8b2c6e14ed3c8c4d0",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 12,
+      "peak_rss_bytes": 87343104
+    }
+  },
+  "name": "test_export_polish.py:line:117",
+  "overall": "INVALID",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "PASS",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "invalid_or_unknown",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 493.07580000004236,
+    "compiler_reported": 6.768300000000011
+  },
+  "validation": "NOT_RUN"
+}

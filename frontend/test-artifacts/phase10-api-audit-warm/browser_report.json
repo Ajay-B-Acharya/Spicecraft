@@ -1,0 +1,249 @@
+{
+  "mode": "Real Chrome; isolated Firebase session and mocked API transport",
+  "checks": [
+    {
+      "name": "Circuit library loads authenticated test session",
+      "status": "PASS"
+    },
+    {
+      "name": "Library navigates to editor",
+      "status": "PASS"
+    },
+    {
+      "name": "Routing failure includes net, component and pin",
+      "status": "PASS"
+    },
+    {
+      "name": "unsupported export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "timeout export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "malformed export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "offline export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid-success export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "Editing preserves draft and blocks export",
+      "status": "PASS"
+    },
+    {
+      "name": "Failed save keeps input and enables retry",
+      "status": "PASS"
+    },
+    {
+      "name": "Successful retry saves preserved draft",
+      "status": "PASS"
+    },
+    {
+      "name": "Export retry downloads file",
+      "status": "PASS"
+    },
+    {
+      "name": "Back navigation returns to library",
+      "status": "PASS"
+    },
+    {
+      "name": "Reloaded circuit retains saved value",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile error and retry visible",
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile page has no horizontal document overflow",
+      "status": "PASS"
+    },
+    {
+      "name": "Unsupported source suppresses schematic rather than substituting a component",
+      "status": "PASS"
+    },
+    {
+      "name": "Missing route displays not-found state",
+      "status": "PASS"
+    },
+    {
+      "name": "Shared API library failure is readable",
+      "status": "PASS"
+    },
+    {
+      "name": "Library retry supports empty state",
+      "status": "PASS"
+    },
+    {
+      "name": "Shared API dashboard projects still load",
+      "status": "PASS"
+    },
+    {
+      "name": "Failed project creation preserves form input",
+      "status": "PASS"
+    },
+    {
+      "name": "Explicit project retry adds the saved project",
+      "status": "PASS"
+    },
+    {
+      "name": "Shared API project and source data still load",
+      "status": "PASS"
+    },
+    {
+      "name": "Failed source creation preserves form input",
+      "status": "PASS"
+    },
+    {
+      "name": "Explicit source retry adds the saved source",
+      "status": "PASS"
+    },
+    {
+      "name": "Failed source deletion retains row and permits retry",
+      "status": "PASS"
+    },
+    {
+      "name": "Explicit source delete retry removes only the saved row",
+      "status": "PASS"
+    },
+    {
+      "name": "Surrounding route /editor remains accessible",
+      "status": "PASS"
+    },
+    {
+      "name": "Surrounding route /exports remains accessible",
+      "status": "PASS"
+    },
+    {
+      "name": "Surrounding route /favorites remains accessible",
+      "status": "PASS"
+    },
+    {
+      "name": "Surrounding route /assistant remains accessible",
+      "status": "PASS"
+    },
+    {
+      "name": "Successful download exists on disk (mock ASC transport)",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/circuits"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "PUT",
+      "path": "/circuits/browser-circuit"
+    },
+    {
+      "method": "PUT",
+      "path": "/circuits/browser-circuit"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/unsupported"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/missing"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits"
+    },
+    {
+      "method": "GET",
+      "path": "/projects"
+    },
+    {
+      "method": "POST",
+      "path": "/projects"
+    },
+    {
+      "method": "POST",
+      "path": "/projects"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/browser-project/sources"
+    },
+    {
+      "method": "GET",
+      "path": "/projects/browser-project"
+    },
+    {
+      "method": "POST",
+      "path": "/projects/browser-project/sources"
+    },
+    {
+      "method": "POST",
+      "path": "/projects/browser-project/sources"
+    },
+    {
+      "method": "DELETE",
+      "path": "/sources/created-source"
+    },
+    {
+      "method": "DELETE",
+      "path": "/sources/created-source"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,285 @@
+{
+  "source": "backend\\tests\\corpus\\runs\\audit-20261010-baseline\\inputs\\circuit-bf177d289f65b1ff63fb.json",
+  "source_sha256": "8c80506a41b000cac8c0f300bed7214016577b6897b538cfd3f1e40c5a5b599e",
+  "samples": [
+    {
+      "mode": "exhaustive",
+      "sample": 1,
+      "metrics": {
+        "circuitId": "",
+        "componentCount": 100,
+        "pinCount": 200,
+        "netCount": 101,
+        "wireCount": 449,
+        "exportBytes": 21346,
+        "classification": "medium",
+        "stagesMs": {
+          "input_validation": 4.096,
+          "net_building": 1.721,
+          "validation": 0.676,
+          "layout": 1.284,
+          "pin_resolution": 0.681,
+          "routing": 829.751,
+          "routing_validation": 311.873,
+          "optimization": 45.995,
+          "final_validation": 255.142,
+          "export": 2711.877,
+          "post_export_validation": 8.768
+        },
+        "totalTimeMs": 4171.908,
+        "warningCount": 0,
+        "errorCount": 0,
+        "iterations": {
+          "input_validation": 0,
+          "net_building": 403,
+          "validation": 101,
+          "layout": 300,
+          "pin_resolution": 0,
+          "routing": 33918,
+          "routing_validation": 202,
+          "optimization": 250235,
+          "final_validation": 101,
+          "export": 0,
+          "post_export_validation": 0
+        }
+      },
+      "asc_sha256": "f2b829de018d7802054a74f9ca71c64db8199ee338c59f33e8660c9372ac82f2",
+      "errors": []
+    },
+    {
+      "mode": "filtered",
+      "sample": 1,
+      "metrics": {
+        "circuitId": "",
+        "componentCount": 100,
+        "pinCount": 200,
+        "netCount": 101,
+        "wireCount": 449,
+        "exportBytes": 21346,
+        "classification": "medium",
+        "stagesMs": {
+          "input_validation": 4.137,
+          "net_building": 1.459,
+          "validation": 0.639,
+          "layout": 0.575,
+          "pin_resolution": 0.681,
+          "routing": 1245.009,
+          "routing_validation": 507.405,
+          "optimization": 59.278,
+          "final_validation": 392.699,
+          "export": 236.768,
+          "post_export_validation": 13.507
+        },
+        "totalTimeMs": 2462.202,
+        "warningCount": 0,
+        "errorCount": 0,
+        "iterations": {
+          "input_validation": 0,
+          "net_building": 403,
+          "validation": 101,
+          "layout": 300,
+          "pin_resolution": 0,
+          "routing": 33918,
+          "routing_validation": 202,
+          "optimization": 250235,
+          "final_validation": 101,
+          "export": 0,
+          "post_export_validation": 0
+        }
+      },
+      "asc_sha256": "f2b829de018d7802054a74f9ca71c64db8199ee338c59f33e8660c9372ac82f2",
+      "errors": []
+    },
+    {
+      "mode": "exhaustive",
+      "sample": 2,
+      "metrics": {
+        "circuitId": "",
+        "componentCount": 100,
+        "pinCount": 200,
+        "netCount": 101,
+        "wireCount": 449,
+        "exportBytes": 21346,
+        "classification": "medium",
+        "stagesMs": {
+          "input_validation": 7.187,
+          "net_building": 2.971,
+          "validation": 1.246,
+          "layout": 0.947,
+          "pin_resolution": 1.498,
+          "routing": 1128.12,
+          "routing_validation": 407.524,
+          "optimization": 53.781,
+          "final_validation": 301.73,
+          "export": 3452.734,
+          "post_export_validation": 6.392
+        },
+        "totalTimeMs": 5364.158,
+        "warningCount": 0,
+        "errorCount": 0,
+        "iterations": {
+          "input_validation": 0,
+          "net_building": 403,
+          "validation": 101,
+          "layout": 300,
+          "pin_resolution": 0,
+          "routing": 33918,
+          "routing_validation": 202,
+          "optimization": 250235,
+          "final_validation": 101,
+          "export": 0,
+          "post_export_validation": 0
+        }
+      },
+      "asc_sha256": "f2b829de018d7802054a74f9ca71c64db8199ee338c59f33e8660c9372ac82f2",
+      "errors": []
+    },
+    {
+      "mode": "filtered",
+      "sample": 2,
+      "metrics": {
+        "circuitId": "",
+        "componentCount": 100,
+        "pinCount": 200,
+        "netCount": 101,
+        "wireCount": 449,
+        "exportBytes": 21346,
+        "classification": "medium",
+        "stagesMs": {
+          "input_validation": 7.961,
+          "net_building": 3.06,
+          "validation": 1.316,
+          "layout": 1.043,
+          "pin_resolution": 1.416,
+          "routing": 1149.081,
+          "routing_validation": 349.671,
+          "optimization": 48.178,
+          "final_validation": 316.207,
+          "export": 233.331,
+          "post_export_validation": 14.591
+        },
+        "totalTimeMs": 2125.89,
+        "warningCount": 0,
+        "errorCount": 0,
+        "iterations": {
+          "input_validation": 0,
+          "net_building": 403,
+          "validation": 101,
+          "layout": 300,
+          "pin_resolution": 0,
+          "routing": 33918,
+          "routing_validation": 202,
+          "optimization": 250235,
+          "final_validation": 101,
+          "export": 0,
+          "post_export_validation": 0
+        }
+      },
+      "asc_sha256": "f2b829de018d7802054a74f9ca71c64db8199ee338c59f33e8660c9372ac82f2",
+      "errors": []
+    },
+    {
+      "mode": "exhaustive",
+      "sample": 3,
+      "metrics": {
+        "circuitId": "",
+        "componentCount": 100,
+        "pinCount": 200,
+        "netCount": 101,
+        "wireCount": 449,
+        "exportBytes": 21346,
+        "classification": "medium",
+        "stagesMs": {
+          "input_validation": 7.3,
+          "net_building": 3.781,
+          "validation": 1.366,
+          "layout": 0.99,
+          "pin_resolution": 1.439,
+          "routing": 1173.046,
+          "routing_validation": 445.483,
+          "optimization": 66.767,
+          "final_validation": 308.141,
+          "export": 3102.72,
+          "post_export_validation": 6.345
+        },
+        "totalTimeMs": 5117.403,
+        "warningCount": 0,
+        "errorCount": 0,
+        "iterations": {
+          "input_validation": 0,
+          "net_building": 403,
+          "validation": 101,
+          "layout": 300,
+          "pin_resolution": 0,
+          "routing": 33918,
+          "routing_validation": 202,
+          "optimization": 250235,
+          "final_validation": 101,
+          "export": 0,
+          "post_export_validation": 0
+        }
+      },
+      "asc_sha256": "f2b829de018d7802054a74f9ca71c64db8199ee338c59f33e8660c9372ac82f2",
+      "errors": []
+    },
+    {
+      "mode": "filtered",
+      "sample": 3,
+      "metrics": {
+        "circuitId": "",
+        "componentCount": 100,
+        "pinCount": 200,
+        "netCount": 101,
+        "wireCount": 449,
+        "exportBytes": 21346,
+        "classification": "medium",
+        "stagesMs": {
+          "input_validation": 7.258,
+          "net_building": 2.196,
+          "validation": 0.843,
+          "layout": 0.631,
+          "pin_resolution": 0.679,
+          "routing": 935.045,
+          "routing_validation": 353.153,
+          "optimization": 47.985,
+          "final_validation": 278.27,
+          "export": 155.795,
+          "post_export_validation": 6.289
+        },
+        "totalTimeMs": 1788.177,
+        "warningCount": 0,
+        "errorCount": 0,
+        "iterations": {
+          "input_validation": 0,
+          "net_building": 403,
+          "validation": 101,
+          "layout": 300,
+          "pin_resolution": 0,
+          "routing": 33918,
+          "routing_validation": 202,
+          "optimization": 250235,
+          "final_validation": 101,
+          "export": 0,
+          "post_export_validation": 0
+        }
+      },
+      "asc_sha256": "f2b829de018d7802054a74f9ca71c64db8199ee338c59f33e8660c9372ac82f2",
+      "errors": []
+    }
+  ],
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "limitations": "Backend source export only; timings include validation, not compiler startup or native LTspice.",
+  "source_unchanged": true,
+  "identical_asc": true,
+  "status": "PASS",
+  "medians_ms": {
+    "exhaustive": {
+      "total": 5117.403,
+      "export": 3102.72
+    },
+    "filtered": {
+      "total": 2125.89,
+      "export": 233.331
+    }
+  }
+}

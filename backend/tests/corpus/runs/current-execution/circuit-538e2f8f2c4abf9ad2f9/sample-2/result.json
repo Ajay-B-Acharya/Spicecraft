@@ -1,0 +1,154 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "602db80d03d8b7e2535374f85d9e9b8843b1ab976150ae05bdf79a00fa93864d",
+  "compiled_sha256": "4c94cc455cbb3132c8dbbe731f9026b49ae829148d07509e3ab452524ac1e52c",
+  "counts": {
+    "compiled": {
+      "components": 4,
+      "connections": 9,
+      "mapped_components": 4,
+      "nets": 4,
+      "pins": 14
+    },
+    "exported": {
+      "components": 4,
+      "flags": 2,
+      "pins": 14,
+      "wires": 25
+    },
+    "input": {
+      "components": 4,
+      "connections": 9,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 2,
+      "nets": 4,
+      "pins": 11,
+      "segments": 29
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin U1.3 (OUT) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin U1.4 (RESET) is floating/unconnected; RESET must be driven for reliable operation.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Optional pin U1.5 (CTRL) is unconnected; permitted.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "evidence_directory": "circuit-538e2f8f2c4abf9ad2f9/sample-2",
+  "failure_stage": null,
+  "failures": [],
+  "hash_seed": 1,
+  "id": "circuit-538e2f8f2c4abf9ad2f9",
+  "implementation_sha256": "64012f11da6471eec0a9e3a12e9d69fc7f0fad62162229e8b2c6e14ed3c8c4d0",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 7,
+      "peak_rss_bytes": 33169408
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 12,
+      "peak_rss_bytes": 84762624
+    }
+  },
+  "name": "555 Astable Multivibrator",
+  "overall": "PASS",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "small",
+    "componentCount": 4,
+    "errorCount": 0,
+    "exportBytes": 1165,
+    "iterations": {
+      "export": 0,
+      "final_validation": 4,
+      "input_validation": 0,
+      "layout": 12,
+      "net_building": 26,
+      "optimization": 1476,
+      "pin_resolution": 0,
+      "post_export_validation": 0,
+      "routing": 3136,
+      "routing_validation": 8,
+      "validation": 4
+    },
+    "netCount": 4,
+    "pinCount": 14,
+    "stagesMs": {
+      "export": 9.355,
+      "final_validation": 1.245,
+      "input_validation": 0.936,
+      "layout": 1.138,
+      "net_building": 0.622,
+      "optimization": 2.168,
+      "pin_resolution": 0.18,
+      "post_export_validation": 1.241,
+      "routing": 27.683,
+      "routing_validation": 1.438,
+      "validation": 0.128
+    },
+    "totalTimeMs": 46.207,
+    "warningCount": 0,
+    "wireCount": 25
+  },
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 1,
+    "astar_states": 142,
+    "budget_exhaustions": 0,
+    "candidate_paths": 254,
+    "collision_checks": 500,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 2400,
+    "order_attempts": 1,
+    "peak_grid_vertices": 575,
+    "planar_attempts": 1,
+    "segments": 25
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 316.5023999999903,
+    "backend_worker_wall": 60.42189999971015,
+    "compiler_process_wall": 523.408300000483,
+    "compiler_reported": 9.77030000000002,
+    "connectivity_wall": 0.5321000007825205,
+    "export_wall": 46.359700000721205,
+    "route_wall": 23.43730000029609,
+    "serialized_validation_wall": 2.8814000006605056
+  },
+  "validation": "PASS"
+}

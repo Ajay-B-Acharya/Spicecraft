@@ -76,6 +76,7 @@ function normalizeCircuit(circuit: CircuitApiShape): Circuit {
     : [];
 
   return {
+    ...circuit,
     id: toDisplayString(circuit.id, ''),
     name: toDisplayString(circuit.name, 'Untitled Circuit'),
     description: toDisplayString(circuit.description, 'No description available.'),
@@ -102,6 +103,7 @@ export const circuitService = {
     const validation = CircuitCompiler.compile(circuit).validation;
     if (!validation.valid) throw new ApiError(`Cannot save an invalid circuit.\n${validation.errors.join('\n')}`, 422, validation);
     const payload = {
+      ...circuit,
       id: circuit.id,
       name: circuit.name,
       description: circuit.description,

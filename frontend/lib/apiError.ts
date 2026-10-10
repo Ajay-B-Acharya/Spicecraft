@@ -36,7 +36,8 @@ export function formatApiDetail(detail: unknown, depth = 0): string {
       const item = text(value[field]).slice(0, 256);
       if (item) lines.push(`${field[0].toUpperCase()}${field.slice(1)}: ${item}`);
     }
-    if (Array.isArray(value.loc)) lines.push(`Field: ${value.loc.slice(0, 32).map(item => text(item).slice(0, 256)).filter(Boolean).join('.')}`);
+    const location = value.loc ?? value.location;
+    if (Array.isArray(location)) lines.push(`Field: ${location.slice(0, 32).map(item => text(item).slice(0, 256)).filter(Boolean).join('.')}`);
     for (const field of ['diagnostics', 'errors', 'detail']) {
       if (value[field] !== undefined) {
         const nested = render(value[field], level + 1);
@@ -75,9 +76,9 @@ export async function apiRequest<T>(
     if (!response.ok) throw await responseError(response);
     return await consume(response);
   } catch (error) {
-    if (error instanceof ApiError) throw error;
     if (init.signal?.aborted) throw new ApiError('Request cancelled. Your input is preserved.', 0);
     if (controller.signal.aborted) throw new ApiError('Request timed out. Your input is preserved; check the saved state before retrying.', 408, null, true);
+    if (error instanceof ApiError) throw error;
     if (error instanceof TypeError) throw new ApiError('Unable to reach the API. Your input is preserved; check your connection and retry.', 0, null, true);
     if (error instanceof SyntaxError) throw new ApiError('The API returned malformed JSON. Your input is preserved; retry the request.', 502, null, true);
     throw error;

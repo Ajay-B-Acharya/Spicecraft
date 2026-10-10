@@ -1,0 +1,9 @@
+{
+  "components": [
+    {
+      "reference": "bad.ref",
+      "type": "resistor"
+    }
+  ],
+  "wires": []
+}

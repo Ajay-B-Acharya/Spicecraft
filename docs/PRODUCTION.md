@@ -1,6 +1,6 @@
 # Production pipeline and operating guide
 
-Phase 10 strengthens the existing engines. It does not add simulation or a live AI provider. Measured evidence and acceptance limitations are recorded in [the Phase 10 report](../PHASE_10_PRODUCTION_REPORT.md); historical Phase 9 results are not current test evidence.
+Phase 10 strengthens the existing engines. It does not add simulation or a live AI provider. Measured evidence and acceptance limitations are recorded in [the current Phase 10 report](../PHASE_10_CURRENT_REPORT.md); historical Phase 9 results are not current test evidence.
 
 ## Architecture and actual boundaries
 
@@ -124,6 +124,10 @@ Diagnostic fields include `code`, `message`, `stage`, `circuit`, `component`, `p
 
 Duplicate electrical identities are rejected when references are ambiguous; a potentially recoverable spelling conflict is not permission to guess endpoints. Missing wires may represent intentionally unwired components; explicit malformed connectivity is rejected.
 
+Recoverable source warnings retain their severity through independent routing validation. Unsafe conductive contacts (`NET_SHORT`, `WIRE_CROSSES_PIN`) always remain fatal. Explicitly connected label aliases are reduced to the existing canonical net name; label-only groups without component pins produce a warning and no drawing. This preserves component-pin connectivity, not every source label spelling.
+
+Circuit extension metadata survives API load/save round trips. The download client rejects non-ASC content types and malformed headers even on HTTP 200; this is an additional transport guard, not a replacement for backend semantic validation.
+
 The editor keeps a failed save's draft, shows diagnostic text, and supports explicit retry. Export is disabled while changes are unsaved or saving. Network requests are bounded and are not automatically replayed: a timed-out write may have completed on the server. Check saved state before retrying a write.
 
 ## Logging and debugging
@@ -131,6 +135,8 @@ The editor keeps a failed save's draft, shows diagnostic text, and supports expl
 The backend emits structured JSON pipeline events with circuit ID, size classification, component/pin/net/wire counts when available, per-stage milliseconds, total milliseconds, iteration counters, and warning/error counts. Standard Python logging supplies INFO/WARNING/ERROR/DEBUG levels. Normal pipeline events contain counts and timings, not full circuit JSON. Detailed diagnostics are available through errors and explicit debug logging. Failure events must remain visible; enabling production mode never disables electrical validation.
 
 Production export does not invoke native screenshot capture, rendering, circuit-corpus discovery, visual analysis, or filesystem debug dumps. Debug/benchmark tools are explicit commands. Static symbol definitions and per-detector immutable pin corridors can be reused safely; whole mutable circuit/net/route state is request-local. No cross-request topology cache is introduced.
+
+Label placement filters obstacles against a conservative envelope containing every candidate window before running the unchanged weighted overlap score. The envelope uses the same gap/displacement settings as candidate generation; obstacle order and tie-breaking remain unchanged. This request-local filtering stores no topology cache. `backend/tools/benchmark_presentation.py` compares exhaustive and filtered full exports and records exact ASC hashes.
 
 Timing overhead, profiling, native LTspice startup, image capture, and frontend process startup are different measurements. Read report definitions before comparing totals; per-stage parent/child timers may be inclusive and should not be summed blindly.
 

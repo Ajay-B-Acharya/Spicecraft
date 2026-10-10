@@ -1,0 +1,122 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "73f925e5841db678f835bbf2bcd196d7fde551aa0e8aec9a28640058617eb130",
+  "compiled_sha256": "82fd9776dcff2cda07e1e408fe131f98ea92ddf24444c4cc4ba6fa907bf80a49",
+  "counts": {
+    "compiled": {
+      "components": 10,
+      "connections": 11,
+      "mapped_components": 10,
+      "nets": 11,
+      "pins": 20
+    },
+    "exported": {
+      "components": 10,
+      "flags": 2,
+      "pins": 20,
+      "wires": 43
+    },
+    "input": {
+      "components": 10,
+      "connections": 11,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 2,
+      "nets": 11,
+      "pins": 20,
+      "segments": 47
+    }
+  },
+  "diagnostics": [],
+  "id": "circuit-487a1e171625615c17a0",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 13,
+      "peak_rss_bytes": 85823488
+    }
+  },
+  "name": "Repeated resistor sections (10 components)",
+  "overall": "NOT_RUN",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "small",
+    "componentCount": 10,
+    "errorCount": 0,
+    "exportBytes": 2218,
+    "iterations": {
+      "export": 0,
+      "final_validation": 11,
+      "input_validation": 0,
+      "layout": 30,
+      "net_building": 43,
+      "optimization": 2501,
+      "pin_resolution": 0,
+      "post_export_validation": 0,
+      "routing": 1389,
+      "routing_validation": 22,
+      "validation": 11
+    },
+    "netCount": 11,
+    "pinCount": 20,
+    "stagesMs": {
+      "export": 18.476,
+      "final_validation": 5.243,
+      "input_validation": 0.996,
+      "layout": 2.008,
+      "net_building": 0.609,
+      "optimization": 1.256,
+      "pin_resolution": 0.14,
+      "post_export_validation": 1.619,
+      "routing": 21.371,
+      "routing_validation": 4.552,
+      "validation": 1.591
+    },
+    "totalTimeMs": 57.903,
+    "warningCount": 0,
+    "wireCount": 43
+  },
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 114,
+    "collision_checks": 158,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 5200,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 43
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": true,
+  "timings_ms": {
+    "backend_worker_wall": 77.52079999954731,
+    "compiler_process_wall": 572.2717999997258,
+    "compiler_reported": 15.61420000000004,
+    "connectivity_wall": 1.049599999532802,
+    "export_wall": 58.029800000440446,
+    "route_wall": 17.329900000731868,
+    "serialized_validation_wall": 6.979300000239164
+  }
+}

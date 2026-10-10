@@ -1,0 +1,134 @@
+{
+  "argv": [
+    "C:\\Projects\\Spice Craft\\backend\\venv\\Scripts\\python.exe",
+    "C:\\Projects\\Spice Craft\\backend\\tools\\circuit_corpus.py",
+    "test-corpus",
+    "--catalog",
+    "backend/tests/corpus/runs/current-collection-final/catalog.json",
+    "--output",
+    "backend/tests/corpus/runs/current-execution",
+    "--samples",
+    "2",
+    "--timeout",
+    "30"
+  ],
+  "cwd": "C:\\Projects\\Spice Craft",
+  "pipeline_environment": {},
+  "started_utc": "2026-10-10T14:03:24.528415+00:00",
+  "summary": {
+    "attempt_status": {
+      "FAIL": 27,
+      "INVALID": 212,
+      "PASS": 187,
+      "UNSUPPORTED": 64
+    },
+    "attempt_status_by_stage": {
+      "bridge": {
+        "FAIL": 260,
+        "PASS": 230
+      },
+      "compile": {
+        "FAIL": 222,
+        "PASS": 268
+      },
+      "connectivity": {
+        "FAIL": 12,
+        "NOT_RUN": 260,
+        "PASS": 218
+      },
+      "export": {
+        "FAIL": 31,
+        "NOT_RUN": 272,
+        "PASS": 187
+      },
+      "route": {
+        "FAIL": 8,
+        "NOT_REQUIRED": 42,
+        "NOT_RUN": 282,
+        "PASS": 145,
+        "TIMEOUT": 13
+      },
+      "serialized_validation": {
+        "NOT_RUN": 303,
+        "PASS": 187
+      }
+    },
+    "attempted_cases_by_stage": {
+      "bridge": 245,
+      "compile": 245,
+      "connectivity": 115,
+      "export": 109,
+      "route": 83,
+      "serialized_validation": 94
+    },
+    "attempts": 490,
+    "case_status": {
+      "FAIL": 14,
+      "INVALID": 106,
+      "PASS": 93,
+      "UNSUPPORTED": 32
+    },
+    "cases": 245,
+    "determinism_status": {
+      "DIFFERENT": 1,
+      "OBSERVED": 244
+    },
+    "failure_codes": {
+      "AMBIGUOUS_SOURCE_IDENTITY": 20,
+      "BLOCKED_PIN_ESCAPE": 12,
+      "COMPILER_ERROR": 246,
+      "CONFLICTING_COMPONENT_DEFINITION": 6,
+      "DUPLICATE_COMPILED_ID": 10,
+      "INSTANCE_NAME_COLLISION": 10,
+      "INVALID_ATTRIBUTE": 2,
+      "INVALID_BACKEND_IDENTITY": 8,
+      "INVALID_COMPILED_LABEL": 4,
+      "INVALID_COMPONENTS": 4,
+      "INVALID_COMPONENT_IDENTITY": 2,
+      "MISSING_PIN": 24,
+      "NET_LABEL_COLLISION": 2,
+      "NO_SAFE_ROUTE": 4,
+      "PIPELINE_TIMEOUT": 26,
+      "UNEXPECTED_PIN": 26,
+      "UNMAPPED_COMPILED_REFERENCE": 4,
+      "UNMAPPED_SOURCE_IDENTITY": 4,
+      "UNRESOLVED_PIN": 6,
+      "UNSUPPORTED_COMPONENT": 6,
+      "UNSUPPORTED_SHARED_EXPORT_KIND": 18
+    },
+    "failure_stages": {
+      "bridge": 38,
+      "compile": 222,
+      "connectivity": 12,
+      "export": 10,
+      "route": 21
+    },
+    "largest_attempted_input_components": 501,
+    "largest_successful_input_components": 500,
+    "largest_successful_input_components_by_stage": {
+      "bridge": 500,
+      "compile": 500,
+      "connectivity": 500,
+      "export": 500,
+      "route": 250,
+      "serialized_validation": 500
+    },
+    "successful_attempts_by_stage": {
+      "bridge": 230,
+      "compile": 268,
+      "connectivity": 218,
+      "export": 187,
+      "route": 145,
+      "serialized_validation": 187
+    },
+    "successful_cases_by_stage": {
+      "bridge": 115,
+      "compile": 134,
+      "connectivity": 109,
+      "export": 93,
+      "route": 72,
+      "serialized_validation": 93
+    }
+  },
+  "wall_ms": 1102369.7998999995
+}

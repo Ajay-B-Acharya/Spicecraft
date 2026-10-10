@@ -74,6 +74,36 @@ class CorpusInventoryTests(unittest.TestCase):
             self.assertEqual(catalog["summary"]["repository_cases"], 0)
             self.assertEqual(catalog["extraction"][0]["status"], "invalid_json")
 
+    def test_string_envelopes_and_missing_counts_are_not_fabricated(self):
+        source = {"components": [{"type": "resistor", "reference": "R1"}], "wires": []}
+        for value in (source, {"circuit": source}, {"data": {"circuit": source}},
+                      json.dumps(source), "```json\n" + json.dumps(source) + "\n```"):
+            with self.subTest(value=value):
+                self.assertEqual(1, corpus.input_counts(value)["components"])
+                self.assertEqual(0, corpus.input_counts(value)["connections"])
+        self.assertIsNone(corpus.input_counts({})["components"])
+        self.assertIsNone(corpus.input_counts({"components": "invalid"})["components"])
+        self.assertEqual(1, corpus.input_counts({"components": None, "nodes": [None]})["components"])
+
+    def test_malformed_component_arrays_are_preserved_in_json_collection(self):
+        for value in ({"components": "invalid"}, {"nodes": None}):
+            with self.subTest(value=value):
+                self.assertEqual([("$", value)], list(corpus.json_circuits(value)))
+
+    def test_component_path_aliases_are_not_circuit_definitions(self):
+        config = {"aliases": {"components": "@/components", "utils": "@/lib/utils"}}
+        self.assertEqual([], list(corpus.json_circuits(config)))
+
+    def test_unparsed_documentation_is_reported(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "repository"
+            root.mkdir()
+            (root / "example.md").write_text('```json\n{"components": broken}\n```', encoding="utf-8")
+            _, catalog = corpus.collect_circuits(Path(directory) / "collected", root=root, include_synthetic=False)
+            self.assertEqual(0, catalog["summary"]["repository_cases"])
+            self.assertEqual(1, catalog["summary"]["unresolved_expressions"])
+            self.assertEqual("partial", catalog["extraction"][0]["status"])
+
     def test_nonempty_output_is_never_overwritten(self):
         with tempfile.TemporaryDirectory() as directory:
             sentinel = Path(directory) / "sentinel.json"
@@ -238,6 +268,35 @@ class CorpusExecutionTests(unittest.TestCase):
                 result["diagnostics"] = [{"severity": "error", "code": code, "pipeline_stage": stage}]
                 self.assertEqual(corpus.classify_rejection(result), "FAIL")
 
+    def test_invalid_budgets_reject_before_subprocess_or_catalog_read(self):
+        for timeout in (0, -1, float("nan"), float("inf"), True):
+            with self.subTest(timeout=timeout), patch.object(corpus.subprocess, "Popen") as process:
+                with self.assertRaises(ValueError):
+                    corpus.run_process([sys.executable], timeout=timeout)
+                process.assert_not_called()
+                with self.assertRaises(ValueError):
+                    corpus.test_corpus("missing.json", timeout=timeout)
+        for samples in (0, 101, 1.5, True):
+            with self.subTest(samples=samples), self.assertRaises(ValueError):
+                corpus.test_corpus("missing.json", samples=samples)
+
+    def test_unsafe_or_duplicate_catalog_ids_cannot_write_outside_output(self):
+        for identities in (("../escape",), ("CON",), ("a/b",), ("A", "a")):
+            with self.subTest(identities=identities), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                corpus.write_json(root / "catalog.json", {"schema_version": corpus.SCHEMA_VERSION,
+                    "cases": [{"id": identity} for identity in identities]})
+                with self.assertRaises(ValueError):
+                    corpus.test_corpus(root / "catalog.json", root / "run")
+                self.assertFalse((root / "run").exists())
+                self.assertFalse((root / "escape").exists())
+
+    def test_environment_evidence_only_contains_known_resource_settings(self):
+        with patch.dict(corpus.os.environ, {"SPICECRAFT_MAX_COMPONENTS": "100", "SPICECRAFT_SECRET": "private"}):
+            settings = corpus.pipeline_environment()
+        self.assertEqual("100", settings["SPICECRAFT_MAX_COMPONENTS"])
+        self.assertNotIn("SPICECRAFT_SECRET", settings)
+
     def test_timeout_terminates_subprocess(self):
         result = corpus.run_process([sys.executable, "-c", "import time; time.sleep(30)"], timeout=0.1)
         self.assertTrue(result["timeout"])
@@ -275,6 +334,31 @@ class CorpusExecutionTests(unittest.TestCase):
             process.assert_not_called()
             self.assertEqual(result["overall"], "FAIL")
             self.assertEqual(result["diagnostics"][0]["code"], "INPUT_DIGEST_MISMATCH")
+
+    def test_unavailable_or_escaping_input_is_a_preserved_case_failure(self):
+        for contents in (None, "{broken", '{"components": NaN}'):
+            with self.subTest(contents=contents), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                case = self.case({"components": []}, root)
+                path = root / "input.json"
+                if contents is None:
+                    path.unlink()
+                else:
+                    path.write_text(contents)
+                with patch.object(corpus, "run_process") as process:
+                    result = corpus.run_case(case, root, root / "run")
+                process.assert_not_called()
+                self.assertEqual("FAIL", result["overall"])
+                self.assertEqual("INPUT_UNAVAILABLE", result["diagnostics"][0]["code"])
+                self.assertEqual("input", result["failure_stage"])
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            case = self.case({"components": []}, root)
+            case["input"] = "../outside.json"
+            with patch.object(corpus, "run_process") as process:
+                result = corpus.run_case(case, root, root / "run")
+            process.assert_not_called()
+            self.assertEqual("INPUT_UNAVAILABLE", result["diagnostics"][0]["code"])
 
     def test_handled_routing_timeout_cannot_leave_a_running_stage(self):
         result = {"stages": dict.fromkeys(corpus.STAGES, "NOT_RUN") | {"route": "RUNNING", "export": "FAIL"},

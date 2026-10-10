@@ -1,0 +1,5869 @@
+{
+  "cases": [
+    {
+      "catalog_metadata": {
+        "categories": [
+          "medium",
+          "failing"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 25,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "complete",
+          "supported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "R1",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R1",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R1",
+              "source_index": 0,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C1",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C1",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C1",
+              "source_index": 1,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R2",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R2",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R2",
+              "source_index": 2,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C2",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C2",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C2",
+              "source_index": 3,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R3",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R3",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R3",
+              "source_index": 4,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C3",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C3",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C3",
+              "source_index": 5,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R4",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R4",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R4",
+              "source_index": 6,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C4",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C4",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C4",
+              "source_index": 7,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R5",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R5",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R5",
+              "source_index": 8,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C5",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C5",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C5",
+              "source_index": 9,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R6",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R6",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R6",
+              "source_index": 10,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C6",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C6",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C6",
+              "source_index": 11,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R7",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R7",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R7",
+              "source_index": 12,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C7",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C7",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C7",
+              "source_index": 13,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R8",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R8",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R8",
+              "source_index": 14,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C8",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C8",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C8",
+              "source_index": 15,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R9",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R9",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R9",
+              "source_index": 16,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C9",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C9",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C9",
+              "source_index": 17,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R10",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R10",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R10",
+              "source_index": 18,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C10",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C10",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C10",
+              "source_index": 19,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R11",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R11",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R11",
+              "source_index": 20,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C11",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C11",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C11",
+              "source_index": 21,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R12",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R12",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R12",
+              "source_index": 22,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C12",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C12",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C12",
+              "source_index": 23,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "RLOAD",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "RLOAD",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "RLOAD",
+              "source_index": 24,
+              "type": "resistor",
+              "value": "10k"
+            }
+          ],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": 25,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "011da72b4d779fc1e919a2af97505e9993df2c06e9d178403bc19594575fcbf2",
+        "schema_version": 1,
+        "size_class": "medium"
+      },
+      "id": "circuit-011da72b4d779fc1e919",
+      "input": "inputs/circuit-011da72b4d779fc1e919.json",
+      "input_path": "../../current-collection-final/inputs/circuit-011da72b4d779fc1e919.json",
+      "name": "Repeated filter sections (25 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "filter:25",
+          "source": "backend/tests/corpus/fixture_generator.py",
+          "source_sha256": null
+        }
+      ],
+      "overall": "FAIL",
+      "sha256": "011da72b4d779fc1e919a2af97505e9993df2c06e9d178403bc19594575fcbf2",
+      "synthetic": true
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "medium",
+          "failing"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 100,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "complete",
+          "supported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "R1",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R1",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R1",
+              "source_index": 0,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C1",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C1",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C1",
+              "source_index": 1,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R2",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R2",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R2",
+              "source_index": 2,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C2",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C2",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C2",
+              "source_index": 3,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R3",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R3",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R3",
+              "source_index": 4,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C3",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C3",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C3",
+              "source_index": 5,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R4",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R4",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R4",
+              "source_index": 6,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C4",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C4",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C4",
+              "source_index": 7,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R5",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R5",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R5",
+              "source_index": 8,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C5",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C5",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C5",
+              "source_index": 9,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R6",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R6",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R6",
+              "source_index": 10,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C6",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C6",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C6",
+              "source_index": 11,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R7",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R7",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R7",
+              "source_index": 12,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C7",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C7",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C7",
+              "source_index": 13,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R8",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R8",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R8",
+              "source_index": 14,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C8",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C8",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C8",
+              "source_index": 15,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R9",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R9",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R9",
+              "source_index": 16,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C9",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C9",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C9",
+              "source_index": 17,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R10",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R10",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R10",
+              "source_index": 18,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C10",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C10",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C10",
+              "source_index": 19,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R11",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R11",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R11",
+              "source_index": 20,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C11",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C11",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C11",
+              "source_index": 21,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R12",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R12",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R12",
+              "source_index": 22,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C12",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C12",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C12",
+              "source_index": 23,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R13",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R13",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R13",
+              "source_index": 24,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C13",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C13",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C13",
+              "source_index": 25,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R14",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R14",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R14",
+              "source_index": 26,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C14",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C14",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C14",
+              "source_index": 27,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R15",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R15",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R15",
+              "source_index": 28,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C15",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C15",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C15",
+              "source_index": 29,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R16",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R16",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R16",
+              "source_index": 30,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C16",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C16",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C16",
+              "source_index": 31,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R17",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R17",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R17",
+              "source_index": 32,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C17",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C17",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C17",
+              "source_index": 33,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R18",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R18",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R18",
+              "source_index": 34,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C18",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C18",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C18",
+              "source_index": 35,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R19",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R19",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R19",
+              "source_index": 36,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C19",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C19",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C19",
+              "source_index": 37,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R20",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R20",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R20",
+              "source_index": 38,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C20",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C20",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C20",
+              "source_index": 39,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R21",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R21",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R21",
+              "source_index": 40,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C21",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C21",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C21",
+              "source_index": 41,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R22",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R22",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R22",
+              "source_index": 42,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C22",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C22",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C22",
+              "source_index": 43,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R23",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R23",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R23",
+              "source_index": 44,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C23",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C23",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C23",
+              "source_index": 45,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R24",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R24",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R24",
+              "source_index": 46,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C24",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C24",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C24",
+              "source_index": 47,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R25",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R25",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R25",
+              "source_index": 48,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C25",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C25",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C25",
+              "source_index": 49,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R26",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R26",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R26",
+              "source_index": 50,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C26",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C26",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C26",
+              "source_index": 51,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R27",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R27",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R27",
+              "source_index": 52,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C27",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C27",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C27",
+              "source_index": 53,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R28",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R28",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R28",
+              "source_index": 54,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C28",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C28",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C28",
+              "source_index": 55,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R29",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R29",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R29",
+              "source_index": 56,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C29",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C29",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C29",
+              "source_index": 57,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R30",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R30",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R30",
+              "source_index": 58,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C30",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C30",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C30",
+              "source_index": 59,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R31",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R31",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R31",
+              "source_index": 60,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C31",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C31",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C31",
+              "source_index": 61,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R32",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R32",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R32",
+              "source_index": 62,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C32",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C32",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C32",
+              "source_index": 63,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R33",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R33",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R33",
+              "source_index": 64,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C33",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C33",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C33",
+              "source_index": 65,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R34",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R34",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R34",
+              "source_index": 66,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C34",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C34",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C34",
+              "source_index": 67,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R35",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R35",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R35",
+              "source_index": 68,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C35",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C35",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C35",
+              "source_index": 69,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R36",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R36",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R36",
+              "source_index": 70,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C36",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C36",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C36",
+              "source_index": 71,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R37",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R37",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R37",
+              "source_index": 72,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C37",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C37",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C37",
+              "source_index": 73,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R38",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R38",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R38",
+              "source_index": 74,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C38",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C38",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C38",
+              "source_index": 75,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R39",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R39",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R39",
+              "source_index": 76,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C39",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C39",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C39",
+              "source_index": 77,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R40",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R40",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R40",
+              "source_index": 78,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C40",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C40",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C40",
+              "source_index": 79,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R41",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R41",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R41",
+              "source_index": 80,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C41",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C41",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C41",
+              "source_index": 81,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R42",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R42",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R42",
+              "source_index": 82,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C42",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C42",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C42",
+              "source_index": 83,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R43",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R43",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R43",
+              "source_index": 84,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C43",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C43",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C43",
+              "source_index": 85,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R44",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R44",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R44",
+              "source_index": 86,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C44",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C44",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C44",
+              "source_index": 87,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R45",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R45",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R45",
+              "source_index": 88,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C45",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C45",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C45",
+              "source_index": 89,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R46",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R46",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R46",
+              "source_index": 90,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C46",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C46",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C46",
+              "source_index": 91,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R47",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R47",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R47",
+              "source_index": 92,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C47",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C47",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C47",
+              "source_index": 93,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R48",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R48",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R48",
+              "source_index": 94,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C48",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C48",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C48",
+              "source_index": 95,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R49",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R49",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R49",
+              "source_index": 96,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C49",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C49",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C49",
+              "source_index": 97,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R50",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R50",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R50",
+              "source_index": 98,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C50",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C50",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C50",
+              "source_index": 99,
+              "type": "capacitor",
+              "value": "100n"
+            }
+          ],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": 100,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "44dc9954c88aea4055f270420a7cd6d2a7df5470452e2aa1845bc63cb2c32ff7",
+        "schema_version": 1,
+        "size_class": "medium"
+      },
+      "id": "circuit-44dc9954c88aea4055f2",
+      "input": "inputs/circuit-44dc9954c88aea4055f2.json",
+      "input_path": "../../current-collection-final/inputs/circuit-44dc9954c88aea4055f2.json",
+      "name": "Repeated filter sections (100 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "filter:100",
+          "source": "backend/tests/corpus/fixture_generator.py",
+          "source_sha256": null
+        }
+      ],
+      "overall": "FAIL",
+      "sha256": "44dc9954c88aea4055f270420a7cd6d2a7df5470452e2aa1845bc63cb2c32ff7",
+      "synthetic": true
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "medium"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 50,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "complete",
+          "supported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "R1",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R1",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R1",
+              "source_index": 0,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R2",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R2",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R2",
+              "source_index": 1,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R3",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R3",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R3",
+              "source_index": 2,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R4",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R4",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R4",
+              "source_index": 3,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R5",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R5",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R5",
+              "source_index": 4,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R6",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R6",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R6",
+              "source_index": 5,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R7",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R7",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R7",
+              "source_index": 6,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R8",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R8",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R8",
+              "source_index": 7,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R9",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R9",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R9",
+              "source_index": 8,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R10",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R10",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R10",
+              "source_index": 9,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R11",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R11",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R11",
+              "source_index": 10,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R12",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R12",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R12",
+              "source_index": 11,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R13",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R13",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R13",
+              "source_index": 12,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R14",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R14",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R14",
+              "source_index": 13,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R15",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R15",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R15",
+              "source_index": 14,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R16",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R16",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R16",
+              "source_index": 15,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R17",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R17",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R17",
+              "source_index": 16,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R18",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R18",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R18",
+              "source_index": 17,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R19",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R19",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R19",
+              "source_index": 18,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R20",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R20",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R20",
+              "source_index": 19,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R21",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R21",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R21",
+              "source_index": 20,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R22",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R22",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R22",
+              "source_index": 21,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R23",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R23",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R23",
+              "source_index": 22,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R24",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R24",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R24",
+              "source_index": 23,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R25",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R25",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R25",
+              "source_index": 24,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R26",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R26",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R26",
+              "source_index": 25,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R27",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R27",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R27",
+              "source_index": 26,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R28",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R28",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R28",
+              "source_index": 27,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R29",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R29",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R29",
+              "source_index": 28,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R30",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R30",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R30",
+              "source_index": 29,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R31",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R31",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R31",
+              "source_index": 30,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R32",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R32",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R32",
+              "source_index": 31,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R33",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R33",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R33",
+              "source_index": 32,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R34",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R34",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R34",
+              "source_index": 33,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R35",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R35",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R35",
+              "source_index": 34,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R36",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R36",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R36",
+              "source_index": 35,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R37",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R37",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R37",
+              "source_index": 36,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R38",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R38",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R38",
+              "source_index": 37,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R39",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R39",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R39",
+              "source_index": 38,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R40",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R40",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R40",
+              "source_index": 39,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R41",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R41",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R41",
+              "source_index": 40,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R42",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R42",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R42",
+              "source_index": 41,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R43",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R43",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R43",
+              "source_index": 42,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R44",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R44",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R44",
+              "source_index": 43,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R45",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R45",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R45",
+              "source_index": 44,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R46",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R46",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R46",
+              "source_index": 45,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R47",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R47",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R47",
+              "source_index": 46,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R48",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R48",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R48",
+              "source_index": 47,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R49",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R49",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R49",
+              "source_index": 48,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R50",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R50",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R50",
+              "source_index": 49,
+              "type": "resistor",
+              "value": "1k"
+            }
+          ],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": 50,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "6ceaf1a9d262db9531d68eb70e2a75a11c631ce2d8f1f100e7852d069c20a3c6",
+        "schema_version": 1,
+        "size_class": "medium"
+      },
+      "id": "circuit-6ceaf1a9d262db9531d6",
+      "input": "inputs/circuit-6ceaf1a9d262db9531d6.json",
+      "input_path": "../../current-collection-final/inputs/circuit-6ceaf1a9d262db9531d6.json",
+      "name": "Repeated resistor sections (50 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "resistor:50",
+          "source": "backend/tests/corpus/fixture_generator.py",
+          "source_sha256": null
+        }
+      ],
+      "overall": "PASS",
+      "sha256": "6ceaf1a9d262db9531d68eb70e2a75a11c631ce2d8f1f100e7852d069c20a3c6",
+      "synthetic": true
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "medium"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 100,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "complete",
+          "supported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "R1",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R1",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R1",
+              "source_index": 0,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R2",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R2",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R2",
+              "source_index": 1,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R3",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R3",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R3",
+              "source_index": 2,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R4",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R4",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R4",
+              "source_index": 3,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R5",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R5",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R5",
+              "source_index": 4,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R6",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R6",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R6",
+              "source_index": 5,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R7",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R7",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R7",
+              "source_index": 6,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R8",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R8",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R8",
+              "source_index": 7,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R9",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R9",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R9",
+              "source_index": 8,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R10",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R10",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R10",
+              "source_index": 9,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R11",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R11",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R11",
+              "source_index": 10,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R12",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R12",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R12",
+              "source_index": 11,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R13",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R13",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R13",
+              "source_index": 12,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R14",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R14",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R14",
+              "source_index": 13,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R15",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R15",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R15",
+              "source_index": 14,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R16",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R16",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R16",
+              "source_index": 15,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R17",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R17",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R17",
+              "source_index": 16,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R18",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R18",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R18",
+              "source_index": 17,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R19",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R19",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R19",
+              "source_index": 18,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R20",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R20",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R20",
+              "source_index": 19,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R21",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R21",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R21",
+              "source_index": 20,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R22",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R22",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R22",
+              "source_index": 21,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R23",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R23",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R23",
+              "source_index": 22,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R24",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R24",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R24",
+              "source_index": 23,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R25",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R25",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R25",
+              "source_index": 24,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R26",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R26",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R26",
+              "source_index": 25,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R27",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R27",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R27",
+              "source_index": 26,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R28",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R28",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R28",
+              "source_index": 27,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R29",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R29",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R29",
+              "source_index": 28,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R30",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R30",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R30",
+              "source_index": 29,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R31",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R31",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R31",
+              "source_index": 30,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R32",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R32",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R32",
+              "source_index": 31,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R33",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R33",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R33",
+              "source_index": 32,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R34",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R34",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R34",
+              "source_index": 33,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R35",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R35",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R35",
+              "source_index": 34,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R36",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R36",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R36",
+              "source_index": 35,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R37",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R37",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R37",
+              "source_index": 36,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R38",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R38",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R38",
+              "source_index": 37,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R39",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R39",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R39",
+              "source_index": 38,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R40",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R40",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R40",
+              "source_index": 39,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R41",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R41",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R41",
+              "source_index": 40,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R42",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R42",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R42",
+              "source_index": 41,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R43",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R43",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R43",
+              "source_index": 42,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R44",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R44",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R44",
+              "source_index": 43,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R45",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R45",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R45",
+              "source_index": 44,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R46",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R46",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R46",
+              "source_index": 45,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R47",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R47",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R47",
+              "source_index": 46,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R48",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R48",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R48",
+              "source_index": 47,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R49",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R49",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R49",
+              "source_index": 48,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R50",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R50",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R50",
+              "source_index": 49,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R51",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R51",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R51",
+              "source_index": 50,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R52",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R52",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R52",
+              "source_index": 51,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R53",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R53",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R53",
+              "source_index": 52,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R54",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R54",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R54",
+              "source_index": 53,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R55",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R55",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R55",
+              "source_index": 54,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R56",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R56",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R56",
+              "source_index": 55,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R57",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R57",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R57",
+              "source_index": 56,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R58",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R58",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R58",
+              "source_index": 57,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R59",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R59",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R59",
+              "source_index": 58,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R60",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R60",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R60",
+              "source_index": 59,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R61",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R61",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R61",
+              "source_index": 60,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R62",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R62",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R62",
+              "source_index": 61,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R63",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R63",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R63",
+              "source_index": 62,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R64",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R64",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R64",
+              "source_index": 63,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R65",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R65",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R65",
+              "source_index": 64,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R66",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R66",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R66",
+              "source_index": 65,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R67",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R67",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R67",
+              "source_index": 66,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R68",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R68",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R68",
+              "source_index": 67,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R69",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R69",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R69",
+              "source_index": 68,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R70",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R70",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R70",
+              "source_index": 69,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R71",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R71",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R71",
+              "source_index": 70,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R72",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R72",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R72",
+              "source_index": 71,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R73",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R73",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R73",
+              "source_index": 72,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R74",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R74",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R74",
+              "source_index": 73,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R75",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R75",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R75",
+              "source_index": 74,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R76",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R76",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R76",
+              "source_index": 75,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R77",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R77",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R77",
+              "source_index": 76,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R78",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R78",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R78",
+              "source_index": 77,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R79",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R79",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R79",
+              "source_index": 78,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R80",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R80",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R80",
+              "source_index": 79,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R81",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R81",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R81",
+              "source_index": 80,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R82",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R82",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R82",
+              "source_index": 81,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R83",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R83",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R83",
+              "source_index": 82,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R84",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R84",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R84",
+              "source_index": 83,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R85",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R85",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R85",
+              "source_index": 84,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R86",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R86",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R86",
+              "source_index": 85,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R87",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R87",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R87",
+              "source_index": 86,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R88",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R88",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R88",
+              "source_index": 87,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R89",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R89",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R89",
+              "source_index": 88,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R90",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R90",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R90",
+              "source_index": 89,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R91",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R91",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R91",
+              "source_index": 90,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R92",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R92",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R92",
+              "source_index": 91,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R93",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R93",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R93",
+              "source_index": 92,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R94",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R94",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R94",
+              "source_index": 93,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R95",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R95",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R95",
+              "source_index": 94,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R96",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R96",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R96",
+              "source_index": 95,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R97",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R97",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R97",
+              "source_index": 96,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R98",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R98",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R98",
+              "source_index": 97,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R99",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R99",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R99",
+              "source_index": 98,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R100",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R100",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R100",
+              "source_index": 99,
+              "type": "resistor",
+              "value": "1k"
+            }
+          ],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": 100,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "bf177d289f65b1ff63fb66f4e4c7a57cae810f9c516d73e40b0fd859fa285d5e",
+        "schema_version": 1,
+        "size_class": "medium"
+      },
+      "id": "circuit-bf177d289f65b1ff63fb",
+      "input": "inputs/circuit-bf177d289f65b1ff63fb.json",
+      "input_path": "../../current-collection-final/inputs/circuit-bf177d289f65b1ff63fb.json",
+      "name": "Repeated resistor sections (100 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "resistor:100",
+          "source": "backend/tests/corpus/fixture_generator.py",
+          "source_sha256": null
+        }
+      ],
+      "overall": "PASS",
+      "sha256": "bf177d289f65b1ff63fb66f4e4c7a57cae810f9c516d73e40b0fd859fa285d5e",
+      "synthetic": true
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "medium",
+          "failing"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 50,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "complete",
+          "supported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "R1",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R1",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R1",
+              "source_index": 0,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C1",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C1",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C1",
+              "source_index": 1,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R2",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R2",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R2",
+              "source_index": 2,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C2",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C2",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C2",
+              "source_index": 3,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R3",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R3",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R3",
+              "source_index": 4,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C3",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C3",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C3",
+              "source_index": 5,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R4",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R4",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R4",
+              "source_index": 6,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C4",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C4",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C4",
+              "source_index": 7,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R5",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R5",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R5",
+              "source_index": 8,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C5",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C5",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C5",
+              "source_index": 9,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R6",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R6",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R6",
+              "source_index": 10,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C6",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C6",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C6",
+              "source_index": 11,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R7",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R7",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R7",
+              "source_index": 12,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C7",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C7",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C7",
+              "source_index": 13,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R8",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R8",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R8",
+              "source_index": 14,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C8",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C8",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C8",
+              "source_index": 15,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R9",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R9",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R9",
+              "source_index": 16,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C9",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C9",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C9",
+              "source_index": 17,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R10",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R10",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R10",
+              "source_index": 18,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C10",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C10",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C10",
+              "source_index": 19,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R11",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R11",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R11",
+              "source_index": 20,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C11",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C11",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C11",
+              "source_index": 21,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R12",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R12",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R12",
+              "source_index": 22,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C12",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C12",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C12",
+              "source_index": 23,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R13",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R13",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R13",
+              "source_index": 24,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C13",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C13",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C13",
+              "source_index": 25,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R14",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R14",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R14",
+              "source_index": 26,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C14",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C14",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C14",
+              "source_index": 27,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R15",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R15",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R15",
+              "source_index": 28,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C15",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C15",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C15",
+              "source_index": 29,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R16",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R16",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R16",
+              "source_index": 30,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C16",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C16",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C16",
+              "source_index": 31,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R17",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R17",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R17",
+              "source_index": 32,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C17",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C17",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C17",
+              "source_index": 33,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R18",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R18",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R18",
+              "source_index": 34,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C18",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C18",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C18",
+              "source_index": 35,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R19",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R19",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R19",
+              "source_index": 36,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C19",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C19",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C19",
+              "source_index": 37,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R20",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R20",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R20",
+              "source_index": 38,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C20",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C20",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C20",
+              "source_index": 39,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R21",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R21",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R21",
+              "source_index": 40,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C21",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C21",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C21",
+              "source_index": 41,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R22",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R22",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R22",
+              "source_index": 42,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C22",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C22",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C22",
+              "source_index": 43,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R23",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R23",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R23",
+              "source_index": 44,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C23",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C23",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C23",
+              "source_index": 45,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R24",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R24",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R24",
+              "source_index": 46,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C24",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C24",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C24",
+              "source_index": 47,
+              "type": "capacitor",
+              "value": "100n"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R25",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R25",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R25",
+              "source_index": 48,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "C25",
+                  "backend_type": "capacitor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "C25",
+                  "compiled_type": "capacitor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "C25",
+              "source_index": 49,
+              "type": "capacitor",
+              "value": "100n"
+            }
+          ],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": 50,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "d1745c42a0d7260ca9810b6faaf7d663cba3dd4010109b51433459e240beb7cb",
+        "schema_version": 1,
+        "size_class": "medium"
+      },
+      "id": "circuit-d1745c42a0d7260ca981",
+      "input": "inputs/circuit-d1745c42a0d7260ca981.json",
+      "input_path": "../../current-collection-final/inputs/circuit-d1745c42a0d7260ca981.json",
+      "name": "Repeated filter sections (50 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "filter:50",
+          "source": "backend/tests/corpus/fixture_generator.py",
+          "source_sha256": null
+        }
+      ],
+      "overall": "FAIL",
+      "sha256": "d1745c42a0d7260ca9810b6faaf7d663cba3dd4010109b51433459e240beb7cb",
+      "synthetic": true
+    },
+    {
+      "catalog_metadata": {
+        "categories": [
+          "medium"
+        ],
+        "component_support": {
+          "boundary": "frontend_compiler_and_shared_export_kind",
+          "counts": {
+            "supported": 25,
+            "unknown": 0,
+            "unsupported": 0
+          },
+          "coverage": "complete",
+          "supported": [
+            {
+              "evidence": [
+                {
+                  "backend_id": "R1",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R1",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R1",
+              "source_index": 0,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R2",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R2",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R2",
+              "source_index": 1,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R3",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R3",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R3",
+              "source_index": 2,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R4",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R4",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R4",
+              "source_index": 3,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R5",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R5",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R5",
+              "source_index": 4,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R6",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R6",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R6",
+              "source_index": 5,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R7",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R7",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R7",
+              "source_index": 6,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R8",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R8",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R8",
+              "source_index": 7,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R9",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R9",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R9",
+              "source_index": 8,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R10",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R10",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R10",
+              "source_index": 9,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R11",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R11",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R11",
+              "source_index": 10,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R12",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R12",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R12",
+              "source_index": 11,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R13",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R13",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R13",
+              "source_index": 12,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R14",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R14",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R14",
+              "source_index": 13,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R15",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R15",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R15",
+              "source_index": 14,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R16",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R16",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R16",
+              "source_index": 15,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R17",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R17",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R17",
+              "source_index": 16,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R18",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R18",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R18",
+              "source_index": 17,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R19",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R19",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R19",
+              "source_index": 18,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R20",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R20",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R20",
+              "source_index": 19,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R21",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R21",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R21",
+              "source_index": 20,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R22",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R22",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R22",
+              "source_index": 21,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R23",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R23",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R23",
+              "source_index": 22,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R24",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R24",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R24",
+              "source_index": 23,
+              "type": "resistor",
+              "value": "1k"
+            },
+            {
+              "evidence": [
+                {
+                  "backend_id": "R25",
+                  "backend_type": "resistor",
+                  "basis": "compiled.pin_definitions.shared_export",
+                  "compiled_id": "R25",
+                  "compiled_type": "resistor",
+                  "status": "supported"
+                }
+              ],
+              "reference": "R25",
+              "source_index": 24,
+              "type": "resistor",
+              "value": "1k"
+            }
+          ],
+          "unattributed_diagnostics": [],
+          "unknown": [],
+          "unsupported": []
+        },
+        "evidence_issues": [],
+        "input_component_count": 25,
+        "input_integrity": "match",
+        "input_structure": "observed",
+        "observed_input_sha256": "ff1fd8b1b9cb2998f6df3c6b0bcadd2c671e81ab562e60e49a8f2c9b71c1f102",
+        "schema_version": 1,
+        "size_class": "medium"
+      },
+      "id": "circuit-ff1fd8b1b9cb2998f6df",
+      "input": "inputs/circuit-ff1fd8b1b9cb2998f6df.json",
+      "input_path": "../../current-collection-final/inputs/circuit-ff1fd8b1b9cb2998f6df.json",
+      "name": "Repeated resistor sections (25 components)",
+      "origins": [
+        {
+          "kind": "synthetic",
+          "locator": "resistor:25",
+          "source": "backend/tests/corpus/fixture_generator.py",
+          "source_sha256": null
+        }
+      ],
+      "overall": "PASS",
+      "sha256": "ff1fd8b1b9cb2998f6df3c6b0bcadd2c671e81ab562e60e49a8f2c9b71c1f102",
+      "synthetic": true
+    }
+  ],
+  "category": "medium",
+  "collection_root": "../../current-collection-final",
+  "count": 6,
+  "schema_version": 1
+}

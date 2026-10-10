@@ -1,0 +1,129 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "90f1db154cc8abd6086cbc97ce616d0ff5fc07b41334fd488ff6945193e3f632",
+  "compiled_sha256": "487571491912c983660ce18ef59e26ede13a4781273061f7ca581bb320ab5dee",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 3,
+      "mapped_components": 2,
+      "nets": 3,
+      "pins": 5
+    },
+    "exported": {
+      "components": 2,
+      "flags": 1,
+      "pins": 5,
+      "wires": 6
+    },
+    "input": {
+      "components": 2,
+      "connections": 3,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 1,
+      "nets": 3,
+      "pins": 5,
+      "segments": 9
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Transistor part.E has no evident DC emitter return to GND/VCC through explicit resistive/inductive paths; capacitors do not provide a DC return.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "id": "circuit-d30c8636537ac1fe7fa4",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 12,
+      "peak_rss_bytes": 85741568
+    }
+  },
+  "name": "regressionBridge.test.cjs:line:121",
+  "overall": "NOT_RUN",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "small",
+    "componentCount": 2,
+    "errorCount": 0,
+    "exportBytes": 420,
+    "iterations": {
+      "export": 0,
+      "final_validation": 3,
+      "input_validation": 0,
+      "layout": 6,
+      "net_building": 11,
+      "optimization": 142,
+      "pin_resolution": 0,
+      "post_export_validation": 0,
+      "routing": 188,
+      "routing_validation": 6,
+      "validation": 3
+    },
+    "netCount": 3,
+    "pinCount": 5,
+    "stagesMs": {
+      "export": 2.298,
+      "final_validation": 0.166,
+      "input_validation": 0.724,
+      "layout": 1.465,
+      "net_building": 0.221,
+      "optimization": 0.221,
+      "pin_resolution": 0.052,
+      "post_export_validation": 1.185,
+      "routing": 4.364,
+      "routing_validation": 0.311,
+      "validation": 0.105
+    },
+    "totalTimeMs": 11.161,
+    "warningCount": 0,
+    "wireCount": 6
+  },
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 5,
+    "collision_checks": 7,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 768,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 6
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 21.905499999775202,
+    "compiler_process_wall": 547.8871000004801,
+    "compiler_reported": 11.742199999999968,
+    "connectivity_wall": 0.4693000000770553,
+    "export_wall": 11.425900000176625,
+    "route_wall": 1.8280999993294245,
+    "serialized_validation_wall": 1.3662000001204433
+  }
+}

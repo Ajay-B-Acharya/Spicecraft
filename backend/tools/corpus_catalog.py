@@ -162,7 +162,9 @@ def component_support(components, observations=()):
 
 def _read_json(path):
     try:
-        return json.loads(Path(path).read_text(encoding="utf-8-sig")), None
+        value = json.loads(Path(path).read_text(encoding="utf-8-sig"))
+        _canonical(value)
+        return value, None
     except OSError:
         return None, "unreadable_file"
     except (ValueError, UnicodeError):
@@ -185,6 +187,7 @@ def _observations(entry, evidence_root, case_id):
         samples = [entry]
     for sample in samples:
         compiled = None
+        trusted = True
         directory = sample.get("evidence_directory")
         if evidence_root is not None and directory:
             try:
@@ -193,14 +196,16 @@ def _observations(entry, evidence_root, case_id):
             except ValueError:
                 error = "invalid_evidence_path"
             if error:
+                trusted = False
                 issues.append(error)
             elif not isinstance(compiled, dict) or compiled.get("key") != case_id:
-                compiled = None
+                trusted = False
                 issues.append("compiled_identity_mismatch")
             elif sample.get("compiled_sha256") and _digest({key: value for key, value in compiled.items() if key != "duration_ms"}) != sample["compiled_sha256"]:
-                compiled = None
+                trusted = False
                 issues.append("compiled_digest_mismatch")
-        observations.append({"compiled": compiled, "diagnostics": sample.get("diagnostics", [])})
+        observations.append({"compiled": compiled if trusted else None,
+                             "diagnostics": sample.get("diagnostics", []) if trusted else []})
     return observations, sorted(set(issues))
 
 

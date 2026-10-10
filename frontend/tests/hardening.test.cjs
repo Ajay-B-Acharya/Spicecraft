@@ -283,12 +283,14 @@ test('API normalization rejects malformed types/collections and preserves object
     { from: { componentId: 'R1', pinId: '2' }, to: { componentId: 'R2', pinId: '1' } },
     { source: 'R1', sourceHandle: '2', target: 'R2', targetHandle: '1' },
   ]) {
-    data = source(undefined, [wire]);
+    data = { ...source(undefined, [wire]), metadata: { author: 'Preserved author', revision: 3 } };
     const result = await circuitService.getCircuit('a/b');
+    assert.deepEqual(result.metadata, data.metadata);
     assert.equal(requested, '/circuits/a%2Fb');
     assert.deepEqual(result.wires, [wire]);
     await circuitService.updateCircuit('a/b', result);
     assert.deepEqual(sent.wires, [wire]);
+    assert.deepEqual(sent.metadata, data.metadata);
     assert.deepEqual(compile(result).nets, compile(data).nets);
   }
   sent = undefined;
@@ -350,7 +352,7 @@ test('export download cleanup removes its anchor and releases the blob URL even 
       './firebase': { auth: { currentUser: { getIdToken: async () => 'token' } } },
       './apiError': { apiRequest: async (url, _init, consume) => {
         requestUrl = url;
-        return consume(new Response('Version 4'));
+        return consume(new Response('Version 4\nSHEET 1 880 680\n', { headers: { 'content-type': 'application/octet-stream' } }));
       } },
     });
     await assert.rejects(ltspiceExportService.exportAsc('a/b', 'circuit'), /download blocked/);
@@ -449,5 +451,145 @@ test('fetch races, refresh errors and sign-out cannot restore stale circuit stat
   auth.currentUser = null; authListener(null);
   requests[3].resolve({ ...source(), id: 'second' }); await pending;
   assert.equal(harness.render().circuit, null);
+  harness.unmount();
+});
+
+test('backend request-validation locations remain visible', () => {
+  assert.match(formatApiDetail({ diagnostics: [{ message: 'Field required', location: ['body', 'components', 0, 'type'] }] }), /Field: body.components.0.type/);
+});
+
+test('aborted error-body reads retain timeout and cancellation semantics', async () => {
+  const original = global.fetch;
+  try {
+    global.fetch = async (_url, init) => new Response(new ReadableStream({
+      start(controller) {
+        init.signal.addEventListener('abort', () => controller.error(new DOMException('Aborted', 'AbortError')), { once: true });
+      },
+    }), { status: 422 });
+    await assert.rejects(apiRequest('/x', {}, r => r.json(), 5), error => error.status === 408 && error.retryable);
+    const controller = new AbortController();
+    const pending = apiRequest('/x', { signal: controller.signal }, r => r.json());
+    controller.abort();
+    await assert.rejects(pending, error => error.status === 0 && /cancelled/.test(error.message));
+  } finally { global.fetch = original; }
+});
+
+test('successful HTTP error pages and malformed ASC never create downloads', async () => {
+  const original = global.fetch;
+  const create = URL.createObjectURL;
+  let downloads = 0;
+  try {
+    URL.createObjectURL = () => { downloads++; return 'blob:test'; };
+    const { ltspiceExportService } = mockedModule('lib/ltspiceExportService.ts', {
+      './firebase': { auth: { currentUser: { getIdToken: async () => 'token' } } },
+    });
+    for (const [type, body] of [['text/html', '<html>Sign in</html>'], ['application/json', '{}'], ['application/octet-stream', ''], ['text/plain', 'Version 4\nnot a schematic']]) {
+      global.fetch = async () => new Response(body, { headers: { 'content-type': type } });
+      await assert.rejects(ltspiceExportService.exportAsc('circuit', 'test'), error => error instanceof ApiError && error.status === 502);
+    }
+    assert.equal(downloads, 0);
+  } finally { global.fetch = original; URL.createObjectURL = create; }
+});
+
+test('project reads and mutations cannot restore data after sign-out or overwrite a newer fetch', async () => {
+  const requests = [], create = deferred();
+  let listener;
+  const auth = { currentUser: { uid: 'first' } };
+  const harness = hookHarness('hooks/useProjects.ts', 'useProjects', {
+    '@/lib/firebase': { auth },
+    'firebase/auth': { onAuthStateChanged: (_auth, next) => { listener = next; next(auth.currentUser); return () => {}; } },
+    '@/lib/projectService': { projectService: {
+      getProjects: () => { const request = deferred(); requests.push(request); return request.promise; },
+      createProject: () => create.promise,
+    } },
+  });
+  let state = harness.render();
+  const refresh = state.fetchProjects();
+  requests[1].resolve([{ id: 'new' }]); await refresh;
+  requests[0].resolve([{ id: 'old' }]); await Promise.resolve();
+  state = harness.render();
+  assert.deepEqual(state.projects, [{ id: 'new' }]);
+  const mutation = state.createProject({ name: 'Private project' });
+  const stale = state.fetchProjects();
+  auth.currentUser = null; listener(null);
+  create.resolve({ id: 'private' }); requests[2].resolve([{ id: 'private' }]);
+  await Promise.all([mutation, stale]);
+  state = harness.render();
+  assert.deepEqual(state.projects, []);
+  assert.equal(state.loading, false);
+  assert.equal(state.error, null);
+  harness.unmount();
+});
+
+test('project and source update/delete hooks apply successful results and discard stale mutation responses', async () => {
+  for (const kind of ['Project', 'Source']) {
+    const isProject = kind === 'Project';
+    const listKey = isProject ? 'projects' : 'sources';
+    const modulePath = isProject ? '@/lib/projectService' : '@/lib/circuitSourceService';
+    const serviceName = isProject ? 'projectService' : 'circuitSourceService';
+    const hookName = isProject ? 'useProjects' : 'useCircuitSources';
+    const requests = [];
+    let listener;
+    const auth = { currentUser: { uid: 'user' } };
+    const service = {
+      [isProject ? 'getProjects' : 'getSources']: async () => [{ id: 'row', title: 'Original' }],
+      [`update${kind}`]: () => { const request = deferred(); requests.push(request); return request.promise; },
+      [`delete${kind}`]: () => { const request = deferred(); requests.push(request); return request.promise; },
+    };
+    const harness = hookHarness(`hooks/${hookName}.ts`, hookName, {
+      '@/lib/firebase': { auth },
+      'firebase/auth': { onAuthStateChanged: (_auth, next) => { listener = next; next(auth.currentUser); return () => {}; } },
+      [modulePath]: { [serviceName]: service },
+    });
+    harness.render('project'); await Promise.resolve();
+    let state = harness.render();
+    const update = state[`update${kind}`]('row', { title: 'Updated' });
+    requests[0].resolve({ id: 'row', title: 'Updated' }); await update;
+    state = harness.render();
+    assert.equal(state[listKey][0].title, 'Updated');
+    const deletion = state[`delete${kind}`]('row');
+    requests[1].resolve(); await deletion;
+    state = harness.render();
+    assert.deepEqual(state[listKey], []);
+    const stale = state[`update${kind}`]('row', { title: 'Private' });
+    auth.currentUser = null; listener(null);
+    requests[2].resolve({ id: 'row', title: 'Private' }); await stale;
+    assert.deepEqual(harness.render()[listKey], []);
+    harness.unmount();
+  }
+});
+
+test('source requests are isolated by project and failed mutations retain existing rows', async () => {
+  const requests = [], mutation = deferred(), deletion = deferred();
+  let listener;
+  const auth = { currentUser: { uid: 'user' } };
+  const harness = hookHarness('hooks/useCircuitSources.ts', 'useCircuitSources', {
+    '@/lib/firebase': { auth },
+    'firebase/auth': { onAuthStateChanged: (_auth, next) => { listener = next; next(auth.currentUser); return () => {}; } },
+    '@/lib/circuitSourceService': { circuitSourceService: {
+      getSources: () => { const request = deferred(); requests.push(request); return request.promise; },
+      createSource: () => mutation.promise,
+      deleteSource: () => deletion.promise,
+    } },
+  });
+  harness.render('first');
+  harness.render('second');
+  requests[1].resolve([{ id: 'second-source' }]); await Promise.resolve();
+  requests[0].resolve([{ id: 'first-source' }]); await Promise.resolve();
+  let state = harness.render();
+  assert.deepEqual(state.sources, [{ id: 'second-source' }]);
+  const remove = state.deleteSource('second-source');
+  assert.deepEqual(harness.render().sources, [{ id: 'second-source' }]);
+  deletion.reject(new ApiError('Delete failed', 503));
+  await assert.rejects(remove, /Delete failed/);
+  state = harness.render();
+  assert.deepEqual(state.sources, [{ id: 'second-source' }]);
+  const create = state.createSource({ title: 'Private source' });
+  auth.currentUser = null; listener(null);
+  mutation.resolve({ id: 'private' }); await create;
+  state = harness.render();
+  assert.deepEqual(state.sources, []);
+  assert.equal(state.error, null);
+  assert.equal(state.loading, false);
   harness.unmount();
 });

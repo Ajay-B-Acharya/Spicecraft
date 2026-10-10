@@ -1,0 +1,11 @@
+{
+  "components": [
+    {
+      "id": "X1",
+      "reference": "X1",
+      "type": "current",
+      "value": "1k"
+    }
+  ],
+  "wires": []
+}

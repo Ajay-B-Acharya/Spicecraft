@@ -1,0 +1,156 @@
+{
+  "compiled_sha256": "7325e4d676c9007d89b8aa9e4ce5cb8581d4f0d12f6a547b97a3c77010666a2b",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 0,
+      "mapped_components": 0,
+      "nets": 0,
+      "pins": 4
+    },
+    "exported": null,
+    "input": {
+      "components": 2,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate component ID detected: R2.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate resolved pin identity R2.1.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate resolved pin identity R2.2.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R2; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R2 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "AMBIGUOUS_SOURCE_IDENTITY",
+      "compiled_id": "R2",
+      "message": "Compiled identity R2 must map to exactly one source component.",
+      "severity": "error",
+      "stage": "bridge"
+    },
+    {
+      "code": "DUPLICATE_COMPILED_ID",
+      "compiled_id": "R2",
+      "message": "Compiled identity R2 is ambiguous.",
+      "severity": "error",
+      "stage": "bridge"
+    },
+    {
+      "code": "AMBIGUOUS_SOURCE_IDENTITY",
+      "compiled_id": "R2",
+      "message": "Compiled identity R2 must map to exactly one source component.",
+      "severity": "error",
+      "stage": "bridge"
+    }
+  ],
+  "evidence_directory": "circuit-fa50e06d005f449ebf1f/sample-1",
+  "failure_stage": "compile",
+  "failures": [
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate component ID detected: R2.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate resolved pin identity R2.1.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_ERROR",
+      "message": "Duplicate resolved pin identity R2.2.",
+      "severity": "error",
+      "stage": "compiler"
+    },
+    {
+      "code": "AMBIGUOUS_SOURCE_IDENTITY",
+      "compiled_id": "R2",
+      "message": "Compiled identity R2 must map to exactly one source component.",
+      "severity": "error",
+      "stage": "bridge"
+    },
+    {
+      "code": "DUPLICATE_COMPILED_ID",
+      "compiled_id": "R2",
+      "message": "Compiled identity R2 is ambiguous.",
+      "severity": "error",
+      "stage": "bridge"
+    },
+    {
+      "code": "AMBIGUOUS_SOURCE_IDENTITY",
+      "compiled_id": "R2",
+      "message": "Compiled identity R2 must map to exactly one source component.",
+      "severity": "error",
+      "stage": "bridge"
+    }
+  ],
+  "hash_seed": 0,
+  "id": "circuit-fa50e06d005f449ebf1f",
+  "implementation_sha256": "64012f11da6471eec0a9e3a12e9d69fc7f0fad62162229e8b2c6e14ed3c8c4d0",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 12,
+      "peak_rss_bytes": 85569536
+    }
+  },
+  "name": "test_connectivity.py:line:214",
+  "overall": "INVALID",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "FAIL",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "invalid_or_unknown",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 496.7730999997002,
+    "compiler_reported": 5.878399999999999
+  },
+  "validation": "NOT_RUN"
+}

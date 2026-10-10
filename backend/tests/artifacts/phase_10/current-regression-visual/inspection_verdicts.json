@@ -1,0 +1,9 @@
+{
+  "555_astable_multivibrator": {"status": "PASS", "evidence": "Inspected current native screenshot: NE555 labels and external components are legible; wires meet visible pin ends, ground and supply labels remain clear, and the intentionally unwired OUT/RST/CV pins remain visibly open. No component or title cropping observed."},
+  "common_emitter_amplifier": {"status": "PASS", "evidence": "Inspected current native screenshot: separated bias branch, transistor, emitter capacitor and output branch; component values, VCC and VOUT remain legible; no body/label overlap or cropped component observed."},
+  "led_blinker": {"status": "PASS", "evidence": "Inspected current native screenshot: LED and resistor branch, base junction and ground return are clear; the source-unwired emitter remains open rather than being repaired; title and values are readable without overlaps."},
+  "rc_high_pass_filter": {"status": "PASS", "evidence": "Inspected current native screenshot: horizontal capacitor and vertical resistor remain separated; VIN/VOUT and ground are distinct; labels and complete schematic are visible."},
+  "rc_low_pass_filter": {"status": "PASS", "evidence": "Inspected current native screenshot: resistor and capacitor leads are clear, VIN/VOUT and ground are legible, and title and all symbols remain within the drawing view."},
+  "voltage_divider": {"status": "PASS", "evidence": "Inspected current native screenshot: two vertical resistors and the midpoint VOUT are clearly separated; native vertical flag text does not overlap component values; complete ground return is visible."},
+  "bridge_rectifier": {"status": "PASS", "evidence": "Inspected current native screenshot: four diode branches and load are separated, AC+/AC-/OUT+ labels remain distinct, intended rail junctions are visible, and no component or title is cropped."}
+}

@@ -1,0 +1,16 @@
+{
+  "components": [
+    {
+      "reference": "R1",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "r1",
+      "type": "resistor",
+      "value": "2k"
+    }
+  ],
+  "name": "Ambiguous refs",
+  "wires": []
+}

@@ -97,6 +97,13 @@ class CatalogTests(CatalogFixture, unittest.TestCase):
         self.assertIn("malformed", result["cases"][1]["catalog_metadata"]["categories"])
         self.assertNotIn("malformed", result["cases"][0]["catalog_metadata"]["categories"])
 
+    def test_nonfinite_json_remains_unavailable_evidence(self):
+        case = self.source({"components": []})
+        (self.collection / case["input"]).write_text('{"components": NaN}', encoding="utf-8")
+        metadata = self.enrich([case])["cases"][0]["catalog_metadata"]
+        self.assertEqual("unavailable", metadata["input_integrity"])
+        self.assertTrue(metadata["evidence_issues"])
+
     def test_input_digest_mismatch_never_attributes_old_diagnostics(self):
         case = self.source({"components": [{"id": "U1", "type": "mystery"}]})
         case["sha256"] = "old-digest"
@@ -295,7 +302,7 @@ class RealEvidenceTests(CatalogFixture, unittest.TestCase):
             modified["cases"][0]["samples"][0].update(change)
             metadata = self.enrich(cases, report=modified, evidence_root=evidence)["cases"][0]["catalog_metadata"]
             self.assertIn(error, metadata["evidence_issues"])
-            self.assertEqual(metadata["component_support"]["counts"]["supported"], 0)
+            self.assertEqual(metadata["component_support"]["counts"], {"supported": 0, "unsupported": 0, "unknown": 2})
 
 
 if __name__ == "__main__":

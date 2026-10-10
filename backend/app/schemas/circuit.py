@@ -32,4 +32,4 @@ class CircuitResponse(BaseModel):
     components: list[dict[str, Any]]
     wires: list[dict[str, Any]]
 
-    model_config = ConfigDict(from_attributes=True)
+    model_config = ConfigDict(from_attributes=True, extra="allow")

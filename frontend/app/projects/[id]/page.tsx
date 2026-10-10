@@ -22,14 +22,21 @@ export default function ProjectPage() {
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout> | undefined;
+    let revision = 0;
+    setProject(null);
+    setProjectLoading(true);
 
     const unsubscribe = onAuthStateChanged(auth, (user) => {
+      const current = ++revision;
+      setProject(null);
+      setProjectLoading(Boolean(user));
+      if (timer) clearTimeout(timer);
       if (user) {
         projectService
           .getProject(id)
-          .then(setProject)
-          .catch(() => setProject(null))
-          .finally(() => setProjectLoading(false));
+          .then((data) => { if (current === revision) setProject(data); })
+          .catch(() => { if (current === revision) setProject(null); })
+          .finally(() => { if (current === revision) setProjectLoading(false); });
       } else {
         setProjectLoading(false);
         timer = setTimeout(() => {
@@ -41,6 +48,7 @@ export default function ProjectPage() {
     });
 
     return () => {
+      revision++;
       unsubscribe();
       if (timer) clearTimeout(timer);
     };

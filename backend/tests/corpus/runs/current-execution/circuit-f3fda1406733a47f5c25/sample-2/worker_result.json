@@ -1,0 +1,235 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "322544ea34e83052d14e0ded2fbf98d6b5a0e07f85c959abd4ccced8bedfccb9",
+  "compiled_sha256": "8457d4c7d4ac244c533a0647bc574bd25a9620436e16a3cd33ff57100cfb7131",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 2,
+      "mapped_components": 2,
+      "nets": 1,
+      "pins": 4
+    },
+    "exported": {
+      "components": 2,
+      "flags": 1,
+      "pins": 4,
+      "wires": 1
+    },
+    "input": {
+      "components": 2,
+      "connections": 2,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 1,
+      "nets": 1,
+      "pins": 1,
+      "segments": 1
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R1; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component R2; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component R2 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "R1",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R1",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "backend_id": "R2",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "R2",
+      "compiled_value": "1k",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "CONFLICTING_NET_LABELS",
+      "component": null,
+      "expected": null,
+      "message": "Explicit source wires [1, 2] join distinct labels ['VIN', 'VOUT']; source connectivity is retained, not repaired",
+      "net": "VIN",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "warning",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "CONFLICTING_NET_LABELS",
+      "component": null,
+      "expected": null,
+      "message": "Explicit source wires [1, 2] join distinct labels ['VIN', 'VOUT']; source connectivity is retained, not repaired",
+      "net": "VIN",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "warning",
+      "stage": "route"
+    },
+    {
+      "actual": null,
+      "circuit": "Circuit",
+      "code": "CONFLICTING_NET_LABELS",
+      "component": null,
+      "expected": null,
+      "message": "Explicit source wires [1, 2] join distinct labels ['VIN', 'VOUT']; source connectivity is retained, not repaired",
+      "net": "VIN",
+      "pin": null,
+      "pipeline_stage": "post_export_validation",
+      "severity": "warning",
+      "stage": "export"
+    },
+    {
+      "actual": null,
+      "circuit": "test_connectivity.py:line:313",
+      "code": "CONFLICTING_NET_LABELS",
+      "component": null,
+      "error": "Explicit source wires [1, 2] join distinct labels ['VIN', 'VOUT']; source connectivity is retained, not repaired",
+      "expected": null,
+      "net": "VIN",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "warning",
+      "stage": "serialized_validation"
+    }
+  ],
+  "id": "circuit-f3fda1406733a47f5c25",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 23,
+      "peak_rss_bytes": 82284544
+    }
+  },
+  "name": "test_connectivity.py:line:313",
+  "overall": "NOT_RUN",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "small",
+    "componentCount": 2,
+    "errorCount": 0,
+    "exportBytes": 305,
+    "iterations": {
+      "export": 0,
+      "final_validation": 1,
+      "input_validation": 0,
+      "layout": 6,
+      "net_building": 8,
+      "optimization": 3,
+      "pin_resolution": 0,
+      "post_export_validation": 0,
+      "routing": 17,
+      "routing_validation": 2,
+      "validation": 1
+    },
+    "netCount": 1,
+    "pinCount": 4,
+    "stagesMs": {
+      "export": 4.38,
+      "final_validation": 1.073,
+      "input_validation": 0.643,
+      "layout": 2.349,
+      "net_building": 0.182,
+      "optimization": 0.156,
+      "pin_resolution": 0.125,
+      "post_export_validation": 1.339,
+      "routing": 10.818,
+      "routing_validation": 0.419,
+      "validation": 0.094
+    },
+    "totalTimeMs": 21.736,
+    "warningCount": 1,
+    "wireCount": 1
+  },
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 0,
+    "collision_checks": 0,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 32,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 1
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 51.856400000360736,
+    "compiler_process_wall": 1140.1326000004701,
+    "compiler_reported": 38.89529999999991,
+    "connectivity_wall": 0.5968999994365731,
+    "export_wall": 22.199600000021746,
+    "route_wall": 0.9688999998616055,
+    "serialized_validation_wall": 1.2872999996034196
+  }
+}

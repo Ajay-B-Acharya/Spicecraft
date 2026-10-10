@@ -1,0 +1,35 @@
+{
+  "components": [
+    {
+      "reference": "R1",
+      "type": "resistor",
+      "value": "10k"
+    },
+    {
+      "reference": "R2",
+      "type": "resistor",
+      "value": "10k"
+    }
+  ],
+  "description": "Two-resistor voltage divider; test fixture, not a bundled template.",
+  "id": "routing-fixture-voltage-divider",
+  "name": "Voltage Divider Routing Regression",
+  "wires": [
+    {
+      "from": "VIN",
+      "to": "R1.1"
+    },
+    {
+      "from": "R1.2",
+      "to": "R2.1"
+    },
+    {
+      "from": "R1.2",
+      "to": "VOUT"
+    },
+    {
+      "from": "R2.2",
+      "to": "GND"
+    }
+  ]
+}

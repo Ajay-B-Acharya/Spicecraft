@@ -446,6 +446,32 @@ class GeometryAuditTests(unittest.TestCase):
         self.assertEqual(issues[0]["circuit"], "geometry")
         json.dumps(issues, allow_nan=False)
 
+    def test_source_warning_severity_is_preserved_but_shorts_are_fatal(self):
+        for code, severity in (("DUPLICATE_WIRE", "warning"),
+                               ("CONFLICTING_NET_LABELS", "warning"),
+                               ("LABEL_ONLY_NET", "warning"),
+                               ("NET_SHORT", "error"),
+                               ("WIRE_CROSSES_PIN", "error")):
+            with self.subTest(code=code):
+                issue = ExportDiagnostic("warning", code, "Upstream diagnostic", net="N1")
+                issues = self.audit(RoutingResult(diagnostics=[issue]))
+                self.assertEqual(1, len(issues))
+                self.assertEqual(severity, issues[0]["severity"])
+                self.assertEqual("N1", issues[0]["net"])
+
+    def test_duplicate_source_wire_passes_real_export_and_independent_audit(self):
+        from app.services.ltspice_exporter import generate_asc_with_routing, place_components
+        source = json.loads((BACKEND_ROOT / "circuits/rc_low_pass_filter.json").read_text())
+        source["wires"].append(copy.deepcopy(source["wires"][0]))
+        original = copy.deepcopy(source)
+        text, diagnostics, routed = generate_asc_with_routing(source)
+        self.assertTrue(text, diagnostics)
+        model = build_connectivity(source)
+        issues = validate_routing(model, place_components(source["components"], model), routed)
+        self.assertFalse([issue for issue in issues if issue["severity"] == "error"], issues)
+        self.assertIn("DUPLICATE_WIRE", codes(issues))
+        self.assertEqual(original, source)
+
     def test_no_pillow_or_exporter_import_dependency(self):
         program = ("import sys; sys.path.insert(0, " + repr(str(BACKEND_ROOT)) + "); "
                    "import app.services.regression_validation; "

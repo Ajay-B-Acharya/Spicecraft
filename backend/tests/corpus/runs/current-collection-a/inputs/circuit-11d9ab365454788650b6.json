@@ -1,0 +1,117 @@
+{
+  "category": "Amplifiers",
+  "components": [
+    {
+      "id": "Q1",
+      "position": {
+        "x": 450,
+        "y": 300
+      },
+      "reference": "Q1",
+      "type": "transistor",
+      "value": "BC547"
+    },
+    {
+      "id": "R1",
+      "reference": "R1",
+      "type": "resistor",
+      "value": "100k"
+    },
+    {
+      "id": "R2",
+      "reference": "R2",
+      "type": "resistor",
+      "value": "10k"
+    },
+    {
+      "id": "R3",
+      "reference": "R3",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "C1",
+      "reference": "C1",
+      "type": "capacitor",
+      "value": "10uF"
+    },
+    {
+      "id": "C2",
+      "reference": "C2",
+      "type": "capacitor",
+      "value": "100uF"
+    }
+  ],
+  "description": "Basic single-stage common emitter amplifier for small-signal audio and sensor circuits.",
+  "id": "common-emitter-amplifier",
+  "name": "Common Emitter Amplifier",
+  "tags": [
+    "amplifier",
+    "transistor",
+    "common-emitter",
+    "analog",
+    "small-signal"
+  ],
+  "wires": [
+    {
+      "destination": "R1.1",
+      "from": "VCC",
+      "source": "VCC",
+      "to": "R1.1"
+    },
+    {
+      "destination": "Q1.B",
+      "from": "R1.2",
+      "source": "R1.2",
+      "to": "Q1.B"
+    },
+    {
+      "destination": "R2.1",
+      "from": "Q1.base",
+      "source": "Q1.base",
+      "to": "R2.1"
+    },
+    {
+      "destination": "GND",
+      "from": "R2.2",
+      "source": "R2.2",
+      "to": "GND"
+    },
+    {
+      "destination": "R3.1",
+      "from": "Q1.C",
+      "source": "Q1.C",
+      "to": "R3.1"
+    },
+    {
+      "destination": "VCC",
+      "from": "R3.2",
+      "source": "R3.2",
+      "to": "VCC"
+    },
+    {
+      "destination": "C1.1",
+      "from": "Q1.E",
+      "source": "Q1.E",
+      "to": "C1.1"
+    },
+    {
+      "destination": "GND",
+      "from": "C1.2",
+      "source": "C1.2",
+      "to": "GND"
+    },
+    {
+      "destination": "C2.1",
+      "from": "Q1.C",
+      "source": "Q1.C",
+      "to": "C2.1"
+    },
+    {
+      "destination": "OUT",
+      "from": "C2.2",
+      "source": "C2.2",
+      "to": "OUT"
+    }
+  ]
+}

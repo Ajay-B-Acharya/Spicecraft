@@ -1,0 +1,29 @@
+{
+  "data": {
+    "circuit": {
+      "components": [
+        {
+          "id": "R1",
+          "reference": "R1",
+          "type": "resistor",
+          "value": "1k"
+        },
+        {
+          "id": "R2",
+          "reference": "R2",
+          "type": "resistor",
+          "value": "1k"
+        }
+      ],
+      "description": "",
+      "name": "Inner",
+      "wires": [
+        {
+          "from": "R1.2",
+          "to": "R2.1"
+        }
+      ]
+    }
+  },
+  "name": "Outer"
+}

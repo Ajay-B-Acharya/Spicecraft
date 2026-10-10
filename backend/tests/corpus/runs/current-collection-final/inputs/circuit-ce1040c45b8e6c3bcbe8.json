@@ -1,0 +1,30 @@
+{
+  "components": [
+    {
+      "reference": "D1",
+      "type": "led"
+    },
+    {
+      "reference": "D2",
+      "type": "diode"
+    },
+    {
+      "reference": "C1",
+      "type": "cap"
+    }
+  ],
+  "wires": [
+    {
+      "from": "D1.ANODE",
+      "to": "D2.A"
+    },
+    {
+      "from": "D2.2",
+      "to": "C1.K"
+    },
+    {
+      "from": "D1.2",
+      "to": "C1.LEFT"
+    }
+  ]
+}

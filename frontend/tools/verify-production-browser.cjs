@@ -17,6 +17,8 @@ const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'spicecraft-browser-'));
 let chrome, socket, serial = 0;
 const pending = new Map();
 let exportMode = 'routing', saveMode = 'fail', listMode = 'ok';
+let projectCreateMode = 'fail', sourceCreateMode = 'fail', sourceDeleteMode = 'fail';
+let createdProject = null, createdSource = null;
 let circuit = { ...JSON.parse(fs.readFileSync(path.join(root, 'backend/circuits/rc_low_pass_filter.json'), 'utf8')), id: 'browser-circuit' };
 const project = { id: 'browser-project', name: 'Browser project', description: 'Isolated browser verification', firebase_uid: 'browser-user', created_at: '2026-01-01T00:00:00Z' };
 const source = { id: 'browser-source', project_id: project.id, title: 'Browser source', source_name: 'Fixture', source_url: null, image_url: null, created_at: project.created_at };
@@ -39,7 +41,7 @@ async function wait(expression, timeout = 60000) {
     if (await evaluate(expression)) return;
     await delay(100);
   }
-  throw new Error(`Browser assertion timed out: ${expression}; page: ${await evaluate('document.body.innerText.slice(0, 2500)')}`);
+  throw new Error(`Browser assertion timed out: ${expression}; URL: ${await evaluate('location.href')}; page: ${await evaluate('document.body.innerText.slice(0, 2500)')}`);
 }
 const hasText = text => `document.body.innerText.includes(${JSON.stringify(text)})`;
 async function check(name, expression) {
@@ -80,6 +82,7 @@ async function intercept(event) {
     if (url.pathname === '/circuits/unsupported') return fulfill(200, { ...circuit, id: 'unsupported', components: [{ id: 'U1', reference: 'U1', type: 'LM358', value: 'LM358' }], wires: [] });
     if (url.pathname.endsWith('/export/asc')) {
       if (exportMode === 'success') return fulfill(200, 'Version 4\nSHEET 1 880 680\n', 'application/octet-stream');
+      if (exportMode === 'invalid-success') return fulfill(200, '<html>Gateway sign-in page</html>', 'text/html');
       if (exportMode === 'offline') return send('Fetch.failRequest', { requestId, errorReason: 'InternetDisconnected' });
       if (exportMode === 'malformed') return fulfill(502, '<html>gateway failed</html>', 'text/html');
       const timeout = exportMode === 'timeout';
@@ -93,9 +96,28 @@ async function intercept(event) {
       }
       return fulfill(200, circuit);
     }
-    if (url.pathname === '/projects') return fulfill(200, [project]);
+    if (url.pathname === '/projects') {
+      if (request.method === 'POST') {
+        if (projectCreateMode === 'fail') return fulfill(503, { detail: { message: 'Project save temporarily unavailable', retryable: true } });
+        createdProject = { ...project, ...JSON.parse(request.postData), id: 'created-project' };
+        return fulfill(201, createdProject);
+      }
+      return fulfill(200, [project, ...(createdProject ? [createdProject] : [])]);
+    }
     if (url.pathname === '/projects/browser-project') return fulfill(200, project);
-    if (url.pathname === '/projects/browser-project/sources') return fulfill(200, [source]);
+    if (url.pathname === '/projects/browser-project/sources') {
+      if (request.method === 'POST') {
+        if (sourceCreateMode === 'fail') return fulfill(503, { detail: { message: 'Source save temporarily unavailable', retryable: true } });
+        createdSource = { ...source, ...JSON.parse(request.postData), id: 'created-source' };
+        return fulfill(201, createdSource);
+      }
+      return fulfill(200, [source, ...(createdSource ? [createdSource] : [])]);
+    }
+    if (url.pathname === '/sources/created-source' && request.method === 'DELETE') {
+      if (sourceDeleteMode === 'fail') return fulfill(503, { detail: 'Source delete temporarily unavailable' });
+      createdSource = null;
+      return fulfill(204, '');
+    }
     return fulfill(404, { detail: 'Unknown browser test API route' });
   }
   // External Firebase/analytics calls never leave the isolated test browser.
@@ -144,7 +166,7 @@ async function main() {
   await click('Export LTspice (.asc)');
   await check('Routing failure includes net, component and pin', `${hasText('No valid collision-free route found')} && ${hasText('Net: N7')} && ${hasText('Pin: 1')}`);
   await screenshot('desktop-routing-error');
-  for (const [mode, expected] of [['unsupported', 'LM358'], ['timeout', 'Routing exceeded'], ['malformed', 'HTTP 502'], ['offline', 'Unable to reach the API']]) {
+  for (const [mode, expected] of [['unsupported', 'LM358'], ['timeout', 'Routing exceeded'], ['malformed', 'HTTP 502'], ['offline', 'Unable to reach the API'], ['invalid-success', 'invalid ASC download']]) {
     exportMode = mode;
     await click('Retry export');
     await check(`${mode} export remains retryable with useful diagnostics`, hasText(expected));
@@ -160,6 +182,7 @@ async function main() {
   exportMode = 'success';
   await click('Retry export');
   await check('Export retry downloads file', hasText('Downloaded!'));
+  await wait(`[...document.querySelectorAll('button')].some(e => e.textContent.trim() === 'Export LTspice (.asc)' && !e.disabled)`);
   await click('Back to Search', 'a');
   await check('Back navigation returns to library', hasText('Browse the circuit library'));
   await click('View Circuit', 'a');
@@ -181,8 +204,29 @@ async function main() {
   await check('Library retry supports empty state', hasText('No circuits'));
   listMode = 'ok'; await navigate('/dashboard');
   await check('Shared API dashboard projects still load', hasText(project.name));
+  await click('New Project', 'button[aria-haspopup="dialog"]');
+  await wait('document.querySelector("#project-name") !== null');
+  await evaluate(`(() => {const input=document.querySelector('#project-name'); Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,'Preserved project draft'); input.dispatchEvent(new Event('input',{bubbles:true}));})()`);
+  await click('Create Project');
+  await check('Failed project creation preserves form input', `${hasText('Project save temporarily unavailable')} && document.querySelector('#project-name')?.value === 'Preserved project draft'`);
+  projectCreateMode = 'success';
+  await click('Create Project');
+  await check('Explicit project retry adds the saved project', `${hasText('Preserved project draft')} && !document.querySelector('#project-name')`);
   await navigate('/projects/browser-project');
   await check('Shared API project and source data still load', `${hasText(project.name)} && ${hasText(source.title)}`);
+  await click('Add Source');
+  await wait('document.querySelector("#source-title") !== null');
+  await evaluate(`(() => {const input=document.querySelector('#source-title'); Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set.call(input,'Preserved source draft'); input.dispatchEvent(new Event('input',{bubbles:true})); document.querySelector('[role="dialog"] button[type="submit"]').click();})()`);
+  await check('Failed source creation preserves form input', `${hasText('Source save temporarily unavailable')} && document.querySelector('#source-title')?.value === 'Preserved source draft'`);
+  sourceCreateMode = 'success';
+  await evaluate(`document.querySelector('[role="dialog"] button[type="submit"]').click()`);
+  await check('Explicit source retry adds the saved source', `${hasText('Preserved source draft')} && !document.querySelector('#source-title')`);
+  await evaluate('window.confirm = () => true');
+  await evaluate(`document.querySelector('[aria-label="Delete source"]').click()`);
+  await check('Failed source deletion retains row and permits retry', `${hasText('Source delete temporarily unavailable')} && ${hasText('Preserved source draft')} && !document.querySelector('[aria-label="Delete source"]').disabled`);
+  sourceDeleteMode = 'success';
+  await evaluate(`document.querySelector('[aria-label="Delete source"]').click()`);
+  await check('Explicit source delete retry removes only the saved row', `!${hasText('Preserved source draft')} && ${hasText(source.title)}`);
   for (const route of ['/editor', '/exports', '/favorites', '/assistant']) {
     await navigate(route);
     await check(`Surrounding route ${route} remains accessible`, 'document.querySelector("main") !== null');

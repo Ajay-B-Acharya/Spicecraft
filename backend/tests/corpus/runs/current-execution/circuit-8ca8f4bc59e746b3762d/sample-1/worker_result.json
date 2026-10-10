@@ -1,0 +1,142 @@
+{
+  "compiled_sha256": "8eb7a194631eecbc5e0316992fbe510df324fbf04db50fb85d930a3fff5df42e",
+  "counts": {
+    "compiled": {
+      "components": 1,
+      "connections": 0,
+      "mapped_components": 1,
+      "nets": 0,
+      "pins": 3
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component q-id; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component q-id is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin q-id.C (collector) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin q-id.B (base) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin q-id.E (emitter) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "Q1",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "q-id",
+      "compiled_value": "2N3904",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "UNSUPPORTED_COMPONENT",
+      "component": "Q1",
+      "expected": null,
+      "message": "Component is not currently supported by SpiceCraft; no symbol substitution is allowed",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "input_validation",
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": "Q1.B",
+      "circuit": "test_connectivity.py:line:292",
+      "code": "UNEXPECTED_PIN",
+      "component": "Q1",
+      "error": "Remove or account for the unexpected canonical pin",
+      "expected": null,
+      "net": null,
+      "pin": "B",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": "Q1.C",
+      "circuit": "test_connectivity.py:line:292",
+      "code": "UNEXPECTED_PIN",
+      "component": "Q1",
+      "error": "Remove or account for the unexpected canonical pin",
+      "expected": null,
+      "net": null,
+      "pin": "C",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    },
+    {
+      "actual": "Q1.E",
+      "circuit": "test_connectivity.py:line:292",
+      "code": "UNEXPECTED_PIN",
+      "component": "Q1",
+      "error": "Remove or account for the unexpected canonical pin",
+      "expected": null,
+      "net": null,
+      "pin": "E",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "connectivity"
+    }
+  ],
+  "id": "circuit-8ca8f4bc59e746b3762d",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 13,
+      "peak_rss_bytes": 86556672
+    }
+  },
+  "name": "test_connectivity.py:line:292",
+  "overall": "NOT_RUN",
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "FAIL",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 7.987599999978556,
+    "compiler_process_wall": 536.7569000000003,
+    "compiler_reported": 8.77600000000001,
+    "connectivity_wall": 0.18499999987398041
+  }
+}

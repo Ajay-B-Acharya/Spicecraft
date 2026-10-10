@@ -1,0 +1,182 @@
+{
+  "compiled_sha256": "74de6ea494a212bffd5a8694e26d61bd0ce36268a15588864c53adb0ad2c7c7f",
+  "counts": {
+    "compiled": {
+      "components": 3,
+      "connections": 3,
+      "mapped_components": 3,
+      "nets": 3,
+      "pins": 6
+    },
+    "exported": null,
+    "input": {
+      "components": 3,
+      "connections": 3,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 0,
+      "nets": 0,
+      "pins": 0,
+      "segments": 0
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component D1; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component D2; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Missing value for component C1; library default will be used when available.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "backend_id": "D1",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "D1",
+      "compiled_value": "RED",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "backend_id": "D2",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "D2",
+      "compiled_value": "1N4148",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "backend_id": "C1",
+      "code": "VALUE_DRIFT",
+      "compiled_id": "C1",
+      "compiled_value": "100n",
+      "message": "Compiled value differs from the source; the actual compiler value is preserved unchanged.",
+      "reason": "compiler_default",
+      "severity": "warning",
+      "source_present": false,
+      "source_value": null,
+      "stage": "bridge"
+    },
+    {
+      "actual": [
+        592,
+        128
+      ],
+      "circuit": null,
+      "code": "NO_SAFE_ROUTE",
+      "component": "C1",
+      "expected": null,
+      "message": "Cannot connect C1.1 to net N3 within the fixed-placement routing budgets",
+      "net": "N3",
+      "pin": "1",
+      "pipeline_stage": null,
+      "severity": "error",
+      "stage": "route"
+    },
+    {
+      "actual": [
+        592,
+        128
+      ],
+      "circuit": "Circuit",
+      "code": "NO_SAFE_ROUTE",
+      "component": "C1",
+      "expected": null,
+      "message": "Cannot connect C1.1 to net N3 within the fixed-placement routing budgets",
+      "net": "N3",
+      "pin": "1",
+      "pipeline_stage": "routing",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "id": "circuit-ce1040c45b8e6c3bcbe8",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 13,
+      "peak_rss_bytes": 86908928
+    }
+  },
+  "name": "test_connectivity.py:line:134",
+  "overall": "NOT_RUN",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "small",
+    "componentCount": 3,
+    "errorCount": 1,
+    "iterations": {
+      "input_validation": 0,
+      "layout": 9,
+      "net_building": 12,
+      "pin_resolution": 0,
+      "routing": 6340,
+      "validation": 3
+    },
+    "netCount": 3,
+    "pinCount": 6,
+    "stagesMs": {
+      "input_validation": 0.372,
+      "layout": 0.856,
+      "net_building": 0.089,
+      "pin_resolution": 0.064,
+      "routing": 38.558,
+      "validation": 0.052
+    },
+    "totalTimeMs": 40.05,
+    "warningCount": 0
+  },
+  "routing_metrics": {
+    "astar_searches": 12,
+    "astar_states": 1992,
+    "budget_exhaustions": 0,
+    "candidate_paths": 124,
+    "collision_checks": 2088,
+    "crossings": 0,
+    "failed_connections": 4,
+    "fallback_attempts": 2,
+    "length": 0,
+    "order_attempts": 4,
+    "peak_grid_vertices": 204,
+    "planar_attempts": 2,
+    "segments": 0
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "FAIL",
+    "route": "FAIL",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 45.851800000491494,
+    "compiler_process_wall": 464.32760000061535,
+    "compiler_reported": 6.713799999999992,
+    "connectivity_wall": 0.32749999991210643,
+    "export_wall": 40.25699999965582,
+    "route_wall": 36.05089999928168
+  }
+}

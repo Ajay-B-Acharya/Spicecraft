@@ -1,0 +1,31 @@
+{
+  "category": "Uncategorized",
+  "components": [
+    {
+      "id": "R1",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "R2",
+      "type": "resistor",
+      "value": "1k"
+    }
+  ],
+  "description": "No description available.",
+  "id": "circuit",
+  "metadata": {
+    "author": "Preserved author",
+    "revision": 3
+  },
+  "name": "Test",
+  "tags": [],
+  "wires": [
+    {
+      "source": "R1",
+      "sourceHandle": "2",
+      "target": "R2",
+      "targetHandle": "1"
+    }
+  ]
+}

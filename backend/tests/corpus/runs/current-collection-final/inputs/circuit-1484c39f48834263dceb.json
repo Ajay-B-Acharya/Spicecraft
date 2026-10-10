@@ -1,0 +1,24 @@
+{
+  "components": [
+    {
+      "id": "R1",
+      "type": "resistor"
+    },
+    {
+      "id": "C1",
+      "type": "capacitor",
+      "value": ""
+    },
+    {
+      "id": "R2",
+      "type": "resistor",
+      "value": 1000
+    },
+    {
+      "id": "R3",
+      "type": "resistor",
+      "value": " 2k "
+    }
+  ],
+  "wires": []
+}

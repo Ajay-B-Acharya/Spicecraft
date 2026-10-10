@@ -1,0 +1,108 @@
+{
+  "compiled_sha256": "7e66c07ea019df0612d53796aac790c0e25acd6fb5c73b6c2f3f53e700098e68",
+  "counts": {
+    "compiled": {
+      "components": 0,
+      "connections": 0,
+      "mapped_components": 0,
+      "nets": 0,
+      "pins": 0
+    },
+    "exported": null,
+    "input": {
+      "components": null,
+      "connections": null,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Circuit is empty: no components or connections.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "actual": null,
+      "circuit": "Circuit",
+      "code": "INVALID_COMPONENTS",
+      "component": null,
+      "expected": null,
+      "message": "Circuit must contain a nonempty components list",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "input_validation",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "evidence_directory": "circuit-44136fa355b3678a1146/sample-2",
+  "failure_stage": "export",
+  "failures": [
+    {
+      "actual": null,
+      "circuit": "Circuit",
+      "code": "INVALID_COMPONENTS",
+      "component": null,
+      "expected": null,
+      "message": "Circuit must contain a nonempty components list",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "input_validation",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-44136fa355b3678a1146",
+  "implementation_sha256": "64012f11da6471eec0a9e3a12e9d69fc7f0fad62162229e8b2c6e14ed3c8c4d0",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 6,
+      "peak_rss_bytes": 32755712
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 14,
+      "peak_rss_bytes": 89358336
+    }
+  },
+  "name": "connectivity.test.cjs:line:158",
+  "overall": "INVALID",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "unknown",
+    "errorCount": 1,
+    "iterations": {
+      "input_validation": 0
+    },
+    "stagesMs": {
+      "input_validation": 0.114
+    },
+    "totalTimeMs": 0.154,
+    "warningCount": 0
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "FAIL",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_process_wall": 280.7487999998557,
+    "backend_worker_wall": 4.668199999287026,
+    "compiler_process_wall": 634.5380000002478,
+    "compiler_reported": 1.7830000000000155,
+    "connectivity_wall": 0.0729000003047986,
+    "export_wall": 0.3654000001915847
+  },
+  "validation": "NOT_RUN"
+}

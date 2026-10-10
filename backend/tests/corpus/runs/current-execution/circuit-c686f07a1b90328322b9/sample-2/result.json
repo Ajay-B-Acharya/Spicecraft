@@ -1,0 +1,88 @@
+{
+  "compiled_sha256": "1d82b0ca95a04a3ab2542e9852162361151b888999966b534872d9391d3d6d47",
+  "counts": {
+    "compiled": {
+      "components": 1,
+      "connections": 0,
+      "mapped_components": 1,
+      "nets": 0,
+      "pins": 2
+    },
+    "exported": null,
+    "input": {
+      "components": 1,
+      "connections": 0,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Component X1 is floating.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin X1.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin X1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "UNSUPPORTED_SHARED_EXPORT_KIND",
+      "compiled_id": "X1",
+      "frontend_type": "inductor",
+      "message": "Frontend kind inductor is not supported by the shared backend export; no fallback component is permitted.",
+      "severity": "error",
+      "stage": "bridge"
+    }
+  ],
+  "evidence_directory": "circuit-c686f07a1b90328322b9/sample-2",
+  "failure_stage": "bridge",
+  "failures": [
+    {
+      "code": "UNSUPPORTED_SHARED_EXPORT_KIND",
+      "compiled_id": "X1",
+      "frontend_type": "inductor",
+      "message": "Frontend kind inductor is not supported by the shared backend export; no fallback component is permitted.",
+      "severity": "error",
+      "stage": "bridge"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-c686f07a1b90328322b9",
+  "implementation_sha256": "64012f11da6471eec0a9e3a12e9d69fc7f0fad62162229e8b2c6e14ed3c8c4d0",
+  "implementation_stable": true,
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 10,
+      "peak_rss_bytes": 85594112
+    }
+  },
+  "name": "regressionBridge.test.cjs:line:164",
+  "overall": "UNSUPPORTED",
+  "stages": {
+    "bridge": "FAIL",
+    "compile": "PASS",
+    "connectivity": "NOT_RUN",
+    "export": "NOT_RUN",
+    "route": "NOT_RUN",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "unsupported",
+  "synthetic": false,
+  "timings_ms": {
+    "compiler_process_wall": 460.8418999996502,
+    "compiler_reported": 5.843999999999994
+  },
+  "validation": "NOT_RUN"
+}

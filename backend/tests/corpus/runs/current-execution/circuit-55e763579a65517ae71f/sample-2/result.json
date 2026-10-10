@@ -1,0 +1,142 @@
+{
+  "compiled_sha256": "d5d87f6064965f6c58aa9400dd89cbe681e917700cdec97f3f6e80e27acac3ae",
+  "counts": {
+    "compiled": {
+      "components": 500,
+      "connections": 501,
+      "mapped_components": 500,
+      "nets": 501,
+      "pins": 1000
+    },
+    "exported": null,
+    "input": {
+      "components": 500,
+      "connections": 501,
+      "nets": null,
+      "pins": null
+    },
+    "routed": null
+  },
+  "diagnostics": [
+    {
+      "actual": null,
+      "circuit": "",
+      "code": "PIPELINE_TIMEOUT",
+      "component": null,
+      "expected": null,
+      "message": "routing exceeded its execution budget (10 seconds stage / 30 seconds total)",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "routing",
+      "severity": "error",
+      "stage": "route"
+    },
+    {
+      "actual": null,
+      "circuit": "Repeated resistor sections (500 components)",
+      "code": "PIPELINE_TIMEOUT",
+      "component": null,
+      "expected": null,
+      "message": "routing exceeded its execution budget (10 seconds stage / 30 seconds total)",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "routing",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "evidence_directory": "circuit-55e763579a65517ae71f/sample-2",
+  "failure_stage": "route",
+  "failures": [
+    {
+      "actual": null,
+      "circuit": "",
+      "code": "PIPELINE_TIMEOUT",
+      "component": null,
+      "expected": null,
+      "message": "routing exceeded its execution budget (10 seconds stage / 30 seconds total)",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "routing",
+      "severity": "error",
+      "stage": "route"
+    },
+    {
+      "actual": null,
+      "circuit": "Repeated resistor sections (500 components)",
+      "code": "PIPELINE_TIMEOUT",
+      "component": null,
+      "expected": null,
+      "message": "routing exceeded its execution budget (10 seconds stage / 30 seconds total)",
+      "net": null,
+      "pin": null,
+      "pipeline_stage": "routing",
+      "severity": "error",
+      "stage": "export"
+    }
+  ],
+  "hash_seed": 1,
+  "id": "circuit-55e763579a65517ae71f",
+  "implementation_sha256": "64012f11da6471eec0a9e3a12e9d69fc7f0fad62162229e8b2c6e14ed3c8c4d0",
+  "implementation_stable": true,
+  "memory": {
+    "backend": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 289,
+      "peak_rss_bytes": 40366080
+    },
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 16,
+      "peak_rss_bytes": 88948736
+    }
+  },
+  "name": "Repeated resistor sections (500 components)",
+  "overall": "FAIL",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "large",
+    "componentCount": 500,
+    "errorCount": 1,
+    "iterations": {
+      "input_validation": 0,
+      "layout": 1500,
+      "net_building": 2003,
+      "pin_resolution": 0,
+      "routing": 401785,
+      "validation": 501
+    },
+    "netCount": 501,
+    "pinCount": 1000,
+    "stagesMs": {
+      "input_validation": 25.784,
+      "layout": 4.078,
+      "net_building": 8.321,
+      "pin_resolution": 3.506,
+      "routing": 10005.888,
+      "validation": 3.468
+    },
+    "totalTimeMs": 10051.099,
+    "warningCount": 0
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "FAIL",
+    "route": "TIMEOUT",
+    "serialized_validation": "NOT_RUN"
+  },
+  "support": "supported",
+  "synthetic": true,
+  "timings_ms": {
+    "backend_process_wall": 10369.911500000853,
+    "backend_worker_wall": 10118.730700000015,
+    "compiler_process_wall": 496.8722000003254,
+    "compiler_reported": 39.745000000000005,
+    "connectivity_wall": 62.23870000030729,
+    "export_wall": 10051.308699999936,
+    "route_wall": 10000.677400000313
+  },
+  "validation": "NOT_RUN"
+}

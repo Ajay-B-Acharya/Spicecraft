@@ -1,5 +1,7 @@
 # Phase 10 — production hardening and circuit corpus report
 
+> **Historical report.** Current implementation measurements, corpus outcomes, and acceptance limitations are in [PHASE_10_CURRENT_REPORT.md](PHASE_10_CURRENT_REPORT.md). The results below describe an earlier run and are preserved for comparison, not current acceptance.
+
 ## Acceptance statement
 
 The existing compiler, layout, routing, and export engines have been hardened incrementally. Valid fixture topology was not redesigned, unsupported symbols are not substituted, and failed transactions do not return successful ASC attachments. No simulation requirement, commit, or push was introduced.

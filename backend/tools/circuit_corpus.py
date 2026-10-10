@@ -11,6 +11,7 @@ from dataclasses import asdict
 from datetime import datetime, timezone
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -32,6 +33,13 @@ STAGES = ("compile", "bridge", "connectivity", "route", "export", "serialized_va
 DEPENDENCIES = {"node_modules", "venv", ".venv", ".git", "__pycache__", ".next", ".pytest_cache"}
 TEXT_SUFFIXES = {".py", ".ts", ".tsx", ".js", ".cjs", ".mjs", ".json", ".md", ".sql", ".yaml", ".yml"}
 CANDIDATE = re.compile(r"\b(?:components|nodes|wires|circuit|template|example)\b", re.I)
+
+
+def pipeline_environment():
+    from dataclasses import fields
+    from app.services.production import PipelineLimits
+    allowed = {"SPICECRAFT_" + field.name.upper() for field in fields(PipelineLimits)}
+    return {key: value for key, value in os.environ.items() if key in allowed}
 
 
 def canonical(value):
@@ -136,13 +144,15 @@ def implementation_snapshot():
     paths = []
     for directory in (BACKEND / "app/services", ROOT / "frontend/lib/circuit", ROOT / "frontend/tools", BACKEND / "tests/corpus"):
         paths.extend(path for path in directory.rglob("*") if path.suffix in {".py", ".ts", ".cjs"} and "runs" not in path.parts)
-    paths.extend(BACKEND / path for path in ("tools/circuit_corpus.py", "tools/corpus_catalog.py", "tools/verify_ltspice.py", "tests/test_pin_geometry.py", "tests/test_routing_fixtures.py"))
+    paths.extend(BACKEND / path for path in ("tools/circuit_corpus.py", "tools/corpus_catalog.py", "tools/profile_pipeline.py", "tools/verify_ltspice.py", "tests/test_pin_geometry.py", "tests/test_routing_fixtures.py"))
     sources = {path.relative_to(ROOT).as_posix(): sha(path.read_bytes()) for path in sorted(set(paths))}
     return {"sha256": sha(canonical(sources).encode()), "sources": sources}
 
 
 def run_process(command, *, timeout, cwd=ROOT, input_text=None, env=None):
     """Kill descendants on timeout; the compiler and export never share a process."""
+    if isinstance(timeout, bool) or not isinstance(timeout, (int, float)) or not math.isfinite(timeout) or timeout <= 0:
+        raise ValueError("Timeout must be finite and positive")
     started = time.perf_counter()
     kwargs = {"start_new_session": True} if os.name != "nt" else {}
     process = subprocess.Popen(command, cwd=cwd, env=env, stdin=subprocess.PIPE,
@@ -181,6 +191,12 @@ def run_process(command, *, timeout, cwd=ROOT, input_text=None, env=None):
 
 
 def circuit_body(value):
+    if isinstance(value, str):
+        text = re.sub(r"^```(?:json)?\s*\n([\s\S]*?)\n```$", r"\1", value.strip())
+        try:
+            value = json.loads(text)
+        except (ValueError, UnicodeError):
+            return {}
     if not isinstance(value, dict):
         return {}
     if isinstance(value.get("circuit"), dict):
@@ -194,9 +210,9 @@ def input_counts(value):
     body = circuit_body(value)
     def count(*keys):
         for key in keys:
-            if key in body:
-                return len(body[key]) if isinstance(body[key], list) else None
-        return 0
+            if isinstance(body.get(key), list):
+                return len(body[key])
+        return None
     return {"components": count("components", "nodes"), "connections": count("wires", "connections", "edges"),
             "pins": None, "nets": None}
 
@@ -204,8 +220,9 @@ def input_counts(value):
 def json_circuits(value, pointer="$"):
     if isinstance(value, dict):
         body = circuit_body(value)
-        if any(key in body for key in ("components", "nodes")) and (isinstance(body.get("components", body.get("nodes")), list)
-                                                                          or any(key in body for key in ("wires", "edges"))):
+        if (any(key in body for key in ("components", "nodes"))
+                and (pointer == "$" or any(isinstance(body.get(key), list) for key in ("components", "nodes"))
+                     or any(key in body for key in ("wires", "connections", "edges")))):
             yield pointer, value
             return
         for key in sorted(value):
@@ -323,12 +340,18 @@ def collect_circuits(output=None, *, root=ROOT, include_synthetic=True, timeout=
             except (SyntaxError, ValueError) as exc:
                 extraction.append({"source": source, "status": "extraction_failed", "error": str(exc)})
         elif path.suffix == ".md":
+            captured, unresolved = 0, []
             for match in re.finditer(r"```(?:json|javascript|js)?\s*\n([\s\S]*?)```", text):
+                line = text[:match.start()].count(chr(10)) + 1
                 try:
                     for pointer, value in json_circuits(json.loads(match[1])):
-                        add(value, source, f"line:{text[:match.start()].count(chr(10))+1}:{pointer}", "documentation")
+                        add(value, source, f"line:{line}:{pointer}", "documentation")
+                        captured += 1
                 except ValueError:
-                    pass
+                    if CANDIDATE.search(match[1]):
+                        unresolved.append({"line": line, "reason": "Circuit-related code fence is not JSON"})
+            extraction.append({"source": source, "method": "documentation_json", "status": "partial" if unresolved else "complete",
+                               "captured": captured, "unresolved": unresolved})
 
     frontend_sources = [{"source": item["source"], "text": (root / item["source"]).read_text(encoding="utf-8-sig")}
                         for item in evidence if item["kind"] == "source" and item["source"].startswith("frontend/")
@@ -351,8 +374,8 @@ def collect_circuits(output=None, *, root=ROOT, include_synthetic=True, timeout=
         source = item["source"]
         if item["kind"] != "source" or not source.startswith("frontend/tests/") or not source.endswith((".test.cjs", ".test.js", ".test.ts")):
             continue
-        capture = output / "extraction" / (Path(source).name + ".jsonl")
-        capture.parent.mkdir(exist_ok=True)
+        capture = output / "extraction" / (source + ".jsonl")
+        capture.parent.mkdir(parents=True, exist_ok=True)
         env = dict(os.environ, CIRCUIT_CORPUS_CAPTURE=str(capture), CIRCUIT_CORPUS_SOURCE=Path(source).name)
         result = run_process(["node", "--require", str(BACKEND / "tests/corpus/capture_frontend.cjs"), "--test", str(root / source)],
                              timeout=timeout, cwd=root, env=env)
@@ -394,6 +417,10 @@ def collect_circuits(output=None, *, root=ROOT, include_synthetic=True, timeout=
         "extraction_status": dict(sorted(Counter(item["status"] for item in extraction).items())),
         "unresolved_expressions": sum(len(item.get("unresolved", [])) for item in extraction),
         "runtime_capture_errors": sum(len(item.get("capture_errors", [])) for item in extraction),
+        "inventory_by_kind": dict(sorted(Counter(item["kind"] for item in evidence).items())),
+        "candidate_sources_without_extractor": [item["source"] for item in evidence
+            if item["kind"] == "source" and item["candidate_lines"]
+            and item["source"] not in {entry["source"] for entry in extraction}],
     })
     catalog["limitations"].append("Static expressions are conservative snapshots, not proof that a test branch executes; dynamic/non-JSON/accessor/cyclic inputs remain unresolved evidence.")
     catalog = enrich_catalog(catalog, output)
@@ -602,8 +629,18 @@ def run_case(case, collection, output, *, timeout=30, hash_seed=0):
 def _run_case(case, collection, output, *, timeout=30, hash_seed=0):
     output.mkdir(parents=True, exist_ok=True)
     result = empty_result(case)
-    value = json.loads((collection / case["input"]).read_text(encoding="utf-8"))
-    if sha(canonical(value).encode()) != case["sha256"]:
+    try:
+        root = Path(collection).resolve()
+        path = (root / case["input"]).resolve()
+        if not path.is_relative_to(root):
+            raise ValueError("Collected input path escapes collection root")
+        value = json.loads(path.read_text(encoding="utf-8-sig"))
+        digest = sha(canonical(value).encode())
+    except (OSError, ValueError, TypeError) as exc:
+        result["diagnostics"].append(diagnostic("INPUT_UNAVAILABLE", f"{type(exc).__name__}: {exc}", "input"))
+        result["overall"] = "FAIL"
+        return result
+    if digest != case["sha256"]:
         result["diagnostics"].append(diagnostic("INPUT_DIGEST_MISMATCH", "Collected input changed", "input"))
         result["overall"] = "FAIL"
         return result
@@ -660,7 +697,18 @@ def _run_case(case, collection, output, *, timeout=30, hash_seed=0):
 
 def summarize(results):
     attempts = [sample for case in results for sample in case["samples"]]
+
+    def largest(predicate):
+        counts = [sample.get("counts", {}).get("input", {}).get("components")
+                  for sample in attempts if predicate(sample)]
+        return max((count for count in counts if type(count) is int), default=None)
+
     return {"cases": len(results), "attempts": len(attempts),
+            "attempt_status_by_stage": {stage: dict(sorted(Counter(sample["stages"][stage] for sample in attempts).items())) for stage in STAGES},
+            "attempted_cases_by_stage": {stage: sum(any(sample["stages"][stage] not in {"NOT_RUN", "NOT_REQUIRED"} for sample in case["samples"]) for case in results) for stage in STAGES},
+            "largest_attempted_input_components": largest(lambda sample: True),
+            "largest_successful_input_components": largest(lambda sample: sample["overall"] == "PASS"),
+            "largest_successful_input_components_by_stage": {stage: largest(lambda sample: sample["stages"][stage] == "PASS") for stage in STAGES},
             "failure_stages": dict(sorted(Counter(sample.get("failure_stage") for sample in attempts if sample.get("failure_stage")).items())),
             "failure_codes": dict(sorted(Counter(item["code"] for sample in attempts for item in sample.get("failures", [])).items())),
             "determinism_status": dict(sorted(Counter(case.get("determinism_status", "NOT_MEASURED") for case in results).items())),
@@ -693,12 +741,24 @@ def execution_catalog(catalog, report):
 
 
 def test_corpus(catalog_path, output=None, *, samples=1, timeout=30, ids=()):
-    if samples < 1 or timeout <= 0:
-        raise ValueError("Samples and timeout must be positive")
+    if type(samples) is not int or not 1 <= samples <= 100:
+        raise ValueError("Samples must be an integer between 1 and 100")
+    if isinstance(timeout, bool) or not isinstance(timeout, (int, float)) or not math.isfinite(timeout) or timeout <= 0:
+        raise ValueError("Timeout must be finite and positive")
     catalog_path = Path(catalog_path).resolve()
     catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
-    if catalog.get("schema_version") != SCHEMA_VERSION:
+    if not isinstance(catalog, dict) or catalog.get("schema_version") != SCHEMA_VERSION:
         raise ValueError("Unsupported catalog schema")
+    if not isinstance(catalog.get("cases"), list):
+        raise ValueError("Catalog cases must be a list")
+    seen = set()
+    reserved = {"con", "prn", "aux", "nul", *(f"com{i}" for i in range(1, 10)), *(f"lpt{i}" for i in range(1, 10))}
+    for case in catalog["cases"]:
+        identity = case.get("id") if isinstance(case, dict) else None
+        if (not isinstance(identity, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]{0,127}", identity)
+                or identity.casefold() in reserved or identity.casefold() in seen):
+            raise ValueError("Catalog IDs must be unique, safe directory names")
+        seen.add(identity.casefold())
     output = fresh_directory(output, "test")
     selected = [case for case in catalog["cases"] if not ids or case["id"] in ids]
     if ids and set(ids) - {case["id"] for case in selected}:
@@ -708,7 +768,7 @@ def test_corpus(catalog_path, output=None, *, samples=1, timeout=30, ids=()):
     report = {"schema_version": SCHEMA_VERSION, "catalog_sha256": sha(catalog_path.read_bytes()), "samples_per_case": samples,
               "environment": {"python": sys.version, "platform": platform.platform(), "implementation": "implementation.json",
                               "implementation_sha256": implementation["sha256"],
-                              "pipeline_environment": {key: value for key, value in os.environ.items() if key.startswith("SPICECRAFT_")}},
+                              "pipeline_environment": pipeline_environment()},
               "timeout_seconds_per_stage_process": timeout, "cases": [], "catalog_summary": catalog["summary"],
               "limitations": catalog["limitations"] + ["Timeout applies separately to compiler and backend processes; each attempt is isolated.",
                   "Export wall time includes routing; stage measurements overlap and must not be summed.",
@@ -783,13 +843,22 @@ def main(argv=None):
     if args.command == "_worker":
         backend_worker(args.compiled, args.result, args.asc)
         return 0
+    started = time.perf_counter()
+    started_utc = datetime.now(timezone.utc).isoformat()
     try:
         if args.command == "collect-circuits":
-            if args.timeout <= 0:
-                raise ValueError("Timeout must be positive")
+            if not math.isfinite(args.timeout) or args.timeout <= 0:
+                raise ValueError("Timeout must be finite and positive")
             output, report = collect_circuits(args.output, include_synthetic=not args.no_synthetic, timeout=args.timeout)
         else:
             output, report = test_corpus(args.catalog, args.output, samples=args.samples, timeout=args.timeout, ids=args.id)
+        write_json(output / "invocation.json", {
+            "argv": [sys.executable, str(Path(__file__).resolve()), *(sys.argv[1:] if argv is None else argv)],
+            "cwd": str(Path.cwd()), "started_utc": started_utc,
+            "wall_ms": (time.perf_counter() - started) * 1000,
+            "summary": report["summary"],
+            "pipeline_environment": pipeline_environment(),
+        })
         print(json.dumps({"output": str(output), "summary": report["summary"]}, indent=2))
         if args.command == "test-corpus":
             return 1 if any(case["overall"] != "PASS" for case in report["cases"]) else 0

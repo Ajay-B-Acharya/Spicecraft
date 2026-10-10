@@ -1,0 +1,129 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "df9d1d6f410f021f78208970fa8283d51d3f8b943dfc0bcd6a3b7c5fea6ef6b7",
+  "compiled_sha256": "7a3582806dc63bff47f7262dc5bdc8c7c3c4b1b6c01ae0fef41bd04526c3a70a",
+  "counts": {
+    "compiled": {
+      "components": 6,
+      "connections": 10,
+      "mapped_components": 6,
+      "nets": 6,
+      "pins": 13
+    },
+    "exported": {
+      "components": 6,
+      "flags": 3,
+      "pins": 13,
+      "wires": 14
+    },
+    "input": {
+      "components": 6,
+      "connections": 10,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 3,
+      "nets": 6,
+      "pins": 13,
+      "segments": 23
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Transistor Q1.E has no evident DC emitter return to GND/VCC through explicit resistive/inductive paths; capacitors do not provide a DC return.",
+      "severity": "warning",
+      "stage": "compiler"
+    }
+  ],
+  "id": "circuit-9667b08297f2c0c31332",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 13,
+      "peak_rss_bytes": 85782528
+    }
+  },
+  "name": "Common Emitter Amplifier",
+  "overall": "NOT_RUN",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "small",
+    "componentCount": 6,
+    "errorCount": 0,
+    "exportBytes": 1205,
+    "iterations": {
+      "export": 0,
+      "final_validation": 6,
+      "input_validation": 0,
+      "layout": 18,
+      "net_building": 32,
+      "optimization": 745,
+      "pin_resolution": 0,
+      "post_export_validation": 0,
+      "routing": 915,
+      "routing_validation": 12,
+      "validation": 6
+    },
+    "netCount": 6,
+    "pinCount": 13,
+    "stagesMs": {
+      "export": 7.365,
+      "final_validation": 0.637,
+      "input_validation": 0.823,
+      "layout": 1.009,
+      "net_building": 0.204,
+      "optimization": 0.685,
+      "pin_resolution": 0.076,
+      "post_export_validation": 0.792,
+      "routing": 9.918,
+      "routing_validation": 1.586,
+      "validation": 0.094
+    },
+    "totalTimeMs": 23.219,
+    "warningCount": 0,
+    "wireCount": 14
+  },
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 7,
+    "collision_checks": 9,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 1536,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 14
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 37.31110000080662,
+    "compiler_process_wall": 463.68970000003173,
+    "compiler_reported": 12.286800000000028,
+    "connectivity_wall": 0.9099999997488339,
+    "export_wall": 23.331899999902816,
+    "route_wall": 5.516299999726471,
+    "serialized_validation_wall": 2.9911000001447974
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "asc": "circuit.asc",
+  "asc_sha256": "8cb0778fc2a9267a211eeed505fe18e719eff18208076ee079e3c29f5a558486",
+  "compiled_sha256": "b011a7b67d6ed756da0b8b2e44606daee872597bb5689063d69c1b45f84f12d8",
+  "counts": {
+    "compiled": {
+      "components": 2,
+      "connections": 2,
+      "mapped_components": 2,
+      "nets": 1,
+      "pins": 4
+    },
+    "exported": {
+      "components": 2,
+      "flags": 0,
+      "pins": 4,
+      "wires": 5
+    },
+    "input": {
+      "components": 2,
+      "connections": 2,
+      "nets": null,
+      "pins": null
+    },
+    "routed": {
+      "flags": 0,
+      "nets": 1,
+      "pins": 2,
+      "segments": 5
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R1.2 (right) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Expected pin R2.1 (left) is floating/unconnected.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "code": "COMPILER_WARNING",
+      "message": "Duplicate source connection #2.",
+      "severity": "warning",
+      "stage": "compiler"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "DUPLICATE_WIRE",
+      "component": null,
+      "expected": null,
+      "message": "Wire #2 duplicates wire #1 after alias resolution",
+      "net": "N1",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "warning",
+      "stage": "connectivity"
+    },
+    {
+      "actual": null,
+      "circuit": null,
+      "code": "DUPLICATE_WIRE",
+      "component": null,
+      "expected": null,
+      "message": "Wire #2 duplicates wire #1 after alias resolution",
+      "net": "N1",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "warning",
+      "stage": "route"
+    },
+    {
+      "actual": null,
+      "circuit": "Circuit",
+      "code": "DUPLICATE_WIRE",
+      "component": null,
+      "expected": null,
+      "message": "Wire #2 duplicates wire #1 after alias resolution",
+      "net": "N1",
+      "pin": null,
+      "pipeline_stage": "post_export_validation",
+      "severity": "warning",
+      "stage": "export"
+    },
+    {
+      "actual": null,
+      "circuit": "connectivity.test.cjs:line:123",
+      "code": "DUPLICATE_WIRE",
+      "component": null,
+      "error": "Wire #2 duplicates wire #1 after alias resolution",
+      "expected": null,
+      "net": "N1",
+      "pin": null,
+      "pipeline_stage": null,
+      "severity": "warning",
+      "stage": "serialized_validation"
+    }
+  ],
+  "id": "circuit-42f0738ac053a96df1fb",
+  "memory": {
+    "compiler": {
+      "method": "Windows sampled sum of child-tree WorkingSetSize every 20ms; includes venv launcher descendants",
+      "observations": 13,
+      "peak_rss_bytes": 86331392
+    }
+  },
+  "name": "connectivity.test.cjs:line:123",
+  "overall": "NOT_RUN",
+  "pipeline_metrics": {
+    "circuitId": "",
+    "classification": "small",
+    "componentCount": 2,
+    "errorCount": 0,
+    "exportBytes": 372,
+    "iterations": {
+      "export": 0,
+      "final_validation": 1,
+      "input_validation": 0,
+      "layout": 6,
+      "net_building": 8,
+      "optimization": 51,
+      "pin_resolution": 0,
+      "post_export_validation": 0,
+      "routing": 112,
+      "routing_validation": 2,
+      "validation": 1
+    },
+    "netCount": 1,
+    "pinCount": 4,
+    "stagesMs": {
+      "export": 2.578,
+      "final_validation": 0.108,
+      "input_validation": 0.34,
+      "layout": 0.854,
+      "net_building": 0.091,
+      "optimization": 0.115,
+      "pin_resolution": 0.058,
+      "post_export_validation": 0.692,
+      "routing": 4.512,
+      "routing_validation": 0.203,
+      "validation": 0.044
+    },
+    "totalTimeMs": 9.665,
+    "warningCount": 1,
+    "wireCount": 5
+  },
+  "portable_electrical": {
+    "missing_pins": [],
+    "ok": true,
+    "opens": [],
+    "shorts": [],
+    "unexpected_pins": []
+  },
+  "routing_metrics": {
+    "astar_searches": 0,
+    "astar_states": 0,
+    "budget_exhaustions": 0,
+    "candidate_paths": 8,
+    "collision_checks": 11,
+    "crossings": 0,
+    "failed_connections": 0,
+    "fallback_attempts": 0,
+    "length": 464,
+    "order_attempts": 1,
+    "peak_grid_vertices": 0,
+    "planar_attempts": 1,
+    "segments": 5
+  },
+  "stages": {
+    "bridge": "PASS",
+    "compile": "PASS",
+    "connectivity": "PASS",
+    "export": "PASS",
+    "route": "PASS",
+    "serialized_validation": "PASS"
+  },
+  "support": "supported",
+  "synthetic": false,
+  "timings_ms": {
+    "backend_worker_wall": 18.86079999985668,
+    "compiler_process_wall": 573.290199999974,
+    "compiler_reported": 12.566799999999944,
+    "connectivity_wall": 0.28560000009747455,
+    "export_wall": 9.925199999997858,
+    "route_wall": 1.5584000002490939,
+    "serialized_validation_wall": 0.921599999855971
+  }
+}

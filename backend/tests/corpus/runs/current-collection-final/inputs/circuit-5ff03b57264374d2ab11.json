@@ -1,0 +1,35 @@
+{
+  "category": "",
+  "components": [
+    {
+      "id": "R1",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "id": "R2",
+      "type": "resistor",
+      "value": "1k"
+    }
+  ],
+  "description": "",
+  "id": "circuit",
+  "metadata": {
+    "author": "Preserved author",
+    "revision": 3
+  },
+  "name": "Test",
+  "tags": [],
+  "wires": [
+    {
+      "from": {
+        "componentId": "R1",
+        "pinId": "2"
+      },
+      "to": {
+        "componentId": "R2",
+        "pinId": "1"
+      }
+    }
+  ]
+}

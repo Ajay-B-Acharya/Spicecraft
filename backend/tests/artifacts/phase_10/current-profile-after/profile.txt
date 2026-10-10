@@ -1,0 +1,43 @@
+         182866 function calls (182466 primitive calls) in 0.061 seconds
+
+   Ordered by: cumulative time
+   List reduced from 324 to 35 due to restriction <35>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.063    0.063 profile_pipeline.py:37(export)
+        1    0.000    0.000    0.063    0.063 ltspice_exporter.py:404(generate_asc_with_routing)
+        1    0.000    0.000    0.060    0.060 ltspice_exporter.py:241(_generate_asc_with_routing)
+        1    0.000    0.000    0.031    0.031 export_presentation.py:275(build_presentation)
+        6    0.005    0.001    0.030    0.005 export_presentation.py:206(_choose_windows)
+     1580    0.005    0.000    0.022    0.000 {built-in method builtins.sum}
+        1    0.000    0.000    0.018    0.018 router.py:286(route_nets)
+    41600    0.009    0.000    0.016    0.000 export_presentation.py:240(<genexpr>)
+        1    0.000    0.000    0.012    0.012 router.py:203(run_order)
+        7    0.001    0.000    0.010    0.001 router.py:79(connect)
+        3    0.000    0.000    0.007    0.002 asc_validation.py:410(validate_net_geometry)
+     2477    0.001    0.000    0.007    0.000 production.py:135(checkpoint)
+    40886    0.006    0.000    0.007    0.000 export_presentation.py:109(_overlap)
+     2903    0.004    0.000    0.006    0.000 production.py:82(check)
+        1    0.000    0.000    0.005    0.005 router.py:265(_audit)
+        3    0.001    0.000    0.005    0.002 asc_validation.py:328(_check_between_nets)
+      612    0.002    0.000    0.003    0.000 optimizer.py:63(path_segments)
+        1    0.000    0.000    0.003    0.003 export_cleanup.py:122(clean_export_geometry)
+        1    0.001    0.001    0.003    0.003 input_safety.py:15(validate_input)
+1158/1094    0.001    0.000    0.003    0.000 {built-in method builtins.any}
+       45    0.000    0.000    0.003    0.000 geometry.py:160(segment_allowed)
+        6    0.001    0.000    0.002    0.000 export_cleanup.py:44(_clean_net)
+       18    0.001    0.000    0.002    0.000 asc_validation.py:179(_check_net)
+     1012    0.001    0.000    0.002    0.000 geometry.py:33(intersection)
+     3131    0.001    0.000    0.002    0.000 asc_validation.py:130(_on_segment)
+        1    0.000    0.000    0.001    0.001 export_safety.py:10(validate_serialized_export)
+     2020    0.001    0.000    0.001    0.000 asc_validation.py:140(_strictly_inside)
+     2028    0.000    0.000    0.001    0.000 router.py:99(<genexpr>)
+     6516    0.001    0.000    0.001    0.000 {built-in method builtins.getattr}
+     1401    0.001    0.000    0.001    0.000 {built-in method builtins.sorted}
+      262    0.000    0.000    0.001    0.000 {built-in method builtins.all}
+        1    0.000    0.000    0.001    0.001 regression_validation.py:70(parse_asc_semantics)
+     6951    0.001    0.000    0.001    0.000 {method 'get' of 'dict' objects}
+        1    0.000    0.000    0.001    0.001 connectivity.py:179(build_connectivity)
+      153    0.000    0.000    0.001    0.000 export_cleanup.py:34(_valid)
+
+

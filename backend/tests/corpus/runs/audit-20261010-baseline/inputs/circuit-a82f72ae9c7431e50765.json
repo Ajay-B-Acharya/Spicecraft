@@ -1,0 +1,5512 @@
+{
+  "components": [
+    {
+      "reference": "R1",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C1",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R2",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C2",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R3",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C3",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R4",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C4",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R5",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C5",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R6",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C6",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R7",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C7",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R8",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C8",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R9",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C9",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R10",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C10",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R11",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C11",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R12",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C12",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R13",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C13",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R14",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C14",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R15",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C15",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R16",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C16",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R17",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C17",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R18",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C18",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R19",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C19",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R20",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C20",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R21",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C21",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R22",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C22",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R23",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C23",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R24",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C24",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R25",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C25",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R26",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C26",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R27",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C27",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R28",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C28",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R29",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C29",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R30",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C30",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R31",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C31",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R32",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C32",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R33",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C33",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R34",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C34",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R35",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C35",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R36",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C36",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R37",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C37",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R38",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C38",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R39",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C39",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R40",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C40",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R41",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C41",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R42",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C42",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R43",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C43",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R44",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C44",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R45",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C45",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R46",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C46",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R47",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C47",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R48",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C48",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R49",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C49",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R50",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C50",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R51",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C51",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R52",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C52",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R53",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C53",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R54",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C54",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R55",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C55",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R56",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C56",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R57",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C57",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R58",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C58",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R59",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C59",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R60",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C60",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R61",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C61",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R62",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C62",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R63",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C63",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R64",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C64",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R65",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C65",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R66",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C66",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R67",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C67",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R68",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C68",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R69",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C69",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R70",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C70",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R71",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C71",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R72",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C72",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R73",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C73",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R74",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C74",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R75",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C75",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R76",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C76",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R77",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C77",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R78",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C78",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R79",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C79",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R80",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C80",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R81",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C81",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R82",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C82",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R83",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C83",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R84",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C84",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R85",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C85",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R86",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C86",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R87",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C87",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R88",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C88",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R89",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C89",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R90",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C90",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R91",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C91",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R92",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C92",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R93",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C93",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R94",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C94",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R95",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C95",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R96",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C96",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R97",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C97",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R98",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C98",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R99",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C99",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R100",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C100",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R101",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C101",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R102",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C102",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R103",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C103",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R104",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C104",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R105",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C105",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R106",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C106",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R107",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C107",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R108",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C108",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R109",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C109",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R110",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C110",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R111",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C111",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R112",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C112",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R113",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C113",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R114",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C114",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R115",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C115",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R116",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C116",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R117",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C117",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R118",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C118",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R119",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C119",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R120",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C120",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R121",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C121",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R122",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C122",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R123",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C123",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R124",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C124",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R125",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C125",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R126",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C126",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R127",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C127",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R128",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C128",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R129",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C129",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R130",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C130",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R131",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C131",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R132",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C132",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R133",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C133",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R134",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C134",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R135",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C135",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R136",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C136",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R137",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C137",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R138",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C138",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R139",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C139",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R140",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C140",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R141",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C141",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R142",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C142",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R143",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C143",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R144",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C144",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R145",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C145",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R146",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C146",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R147",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C147",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R148",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C148",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R149",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C149",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R150",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C150",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R151",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C151",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R152",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C152",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R153",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C153",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R154",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C154",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R155",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C155",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R156",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C156",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R157",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C157",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R158",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C158",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R159",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C159",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R160",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C160",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R161",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C161",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R162",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C162",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R163",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C163",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R164",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C164",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R165",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C165",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R166",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C166",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R167",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C167",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R168",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C168",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R169",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C169",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R170",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C170",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R171",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C171",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R172",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C172",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R173",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C173",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R174",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C174",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R175",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C175",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R176",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C176",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R177",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C177",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R178",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C178",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R179",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C179",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R180",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C180",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R181",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C181",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R182",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C182",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R183",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C183",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R184",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C184",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R185",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C185",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R186",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C186",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R187",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C187",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R188",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C188",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R189",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C189",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R190",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C190",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R191",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C191",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R192",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C192",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R193",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C193",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R194",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C194",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R195",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C195",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R196",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C196",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R197",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C197",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R198",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C198",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R199",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C199",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R200",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C200",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R201",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C201",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R202",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C202",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R203",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C203",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R204",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C204",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R205",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C205",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R206",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C206",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R207",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C207",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R208",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C208",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R209",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C209",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R210",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C210",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R211",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C211",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R212",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C212",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R213",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C213",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R214",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C214",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R215",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C215",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R216",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C216",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R217",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C217",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R218",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C218",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R219",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C219",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R220",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C220",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R221",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C221",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R222",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C222",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R223",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C223",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R224",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C224",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R225",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C225",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R226",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C226",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R227",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C227",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R228",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C228",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R229",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C229",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R230",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C230",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R231",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C231",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R232",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C232",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R233",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C233",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R234",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C234",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R235",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C235",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R236",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C236",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R237",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C237",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R238",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C238",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R239",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C239",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R240",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C240",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R241",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C241",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R242",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C242",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R243",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C243",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R244",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C244",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R245",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C245",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R246",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C246",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R247",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C247",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R248",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C248",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R249",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C249",
+      "type": "capacitor",
+      "value": "100n"
+    },
+    {
+      "reference": "R250",
+      "type": "resistor",
+      "value": "1k"
+    },
+    {
+      "reference": "C250",
+      "type": "capacitor",
+      "value": "100n"
+    }
+  ],
+  "description": "Deterministic connected filter network; 250 sections; no simulation source inserted.",
+  "name": "Repeated filter sections (500 components)",
+  "wires": [
+    {
+      "from": "R1.1",
+      "to": "VIN"
+    },
+    {
+      "from": "R1.2",
+      "to": "C1.1"
+    },
+    {
+      "from": "C1.2",
+      "to": "GND"
+    },
+    {
+      "from": "R2.1",
+      "to": "R1.2"
+    },
+    {
+      "from": "R2.2",
+      "to": "C2.1"
+    },
+    {
+      "from": "C2.2",
+      "to": "GND"
+    },
+    {
+      "from": "R3.1",
+      "to": "R2.2"
+    },
+    {
+      "from": "R3.2",
+      "to": "C3.1"
+    },
+    {
+      "from": "C3.2",
+      "to": "GND"
+    },
+    {
+      "from": "R4.1",
+      "to": "R3.2"
+    },
+    {
+      "from": "R4.2",
+      "to": "C4.1"
+    },
+    {
+      "from": "C4.2",
+      "to": "GND"
+    },
+    {
+      "from": "R5.1",
+      "to": "R4.2"
+    },
+    {
+      "from": "R5.2",
+      "to": "C5.1"
+    },
+    {
+      "from": "C5.2",
+      "to": "GND"
+    },
+    {
+      "from": "R6.1",
+      "to": "R5.2"
+    },
+    {
+      "from": "R6.2",
+      "to": "C6.1"
+    },
+    {
+      "from": "C6.2",
+      "to": "GND"
+    },
+    {
+      "from": "R7.1",
+      "to": "R6.2"
+    },
+    {
+      "from": "R7.2",
+      "to": "C7.1"
+    },
+    {
+      "from": "C7.2",
+      "to": "GND"
+    },
+    {
+      "from": "R8.1",
+      "to": "R7.2"
+    },
+    {
+      "from": "R8.2",
+      "to": "C8.1"
+    },
+    {
+      "from": "C8.2",
+      "to": "GND"
+    },
+    {
+      "from": "R9.1",
+      "to": "R8.2"
+    },
+    {
+      "from": "R9.2",
+      "to": "C9.1"
+    },
+    {
+      "from": "C9.2",
+      "to": "GND"
+    },
+    {
+      "from": "R10.1",
+      "to": "R9.2"
+    },
+    {
+      "from": "R10.2",
+      "to": "C10.1"
+    },
+    {
+      "from": "C10.2",
+      "to": "GND"
+    },
+    {
+      "from": "R11.1",
+      "to": "R10.2"
+    },
+    {
+      "from": "R11.2",
+      "to": "C11.1"
+    },
+    {
+      "from": "C11.2",
+      "to": "GND"
+    },
+    {
+      "from": "R12.1",
+      "to": "R11.2"
+    },
+    {
+      "from": "R12.2",
+      "to": "C12.1"
+    },
+    {
+      "from": "C12.2",
+      "to": "GND"
+    },
+    {
+      "from": "R13.1",
+      "to": "R12.2"
+    },
+    {
+      "from": "R13.2",
+      "to": "C13.1"
+    },
+    {
+      "from": "C13.2",
+      "to": "GND"
+    },
+    {
+      "from": "R14.1",
+      "to": "R13.2"
+    },
+    {
+      "from": "R14.2",
+      "to": "C14.1"
+    },
+    {
+      "from": "C14.2",
+      "to": "GND"
+    },
+    {
+      "from": "R15.1",
+      "to": "R14.2"
+    },
+    {
+      "from": "R15.2",
+      "to": "C15.1"
+    },
+    {
+      "from": "C15.2",
+      "to": "GND"
+    },
+    {
+      "from": "R16.1",
+      "to": "R15.2"
+    },
+    {
+      "from": "R16.2",
+      "to": "C16.1"
+    },
+    {
+      "from": "C16.2",
+      "to": "GND"
+    },
+    {
+      "from": "R17.1",
+      "to": "R16.2"
+    },
+    {
+      "from": "R17.2",
+      "to": "C17.1"
+    },
+    {
+      "from": "C17.2",
+      "to": "GND"
+    },
+    {
+      "from": "R18.1",
+      "to": "R17.2"
+    },
+    {
+      "from": "R18.2",
+      "to": "C18.1"
+    },
+    {
+      "from": "C18.2",
+      "to": "GND"
+    },
+    {
+      "from": "R19.1",
+      "to": "R18.2"
+    },
+    {
+      "from": "R19.2",
+      "to": "C19.1"
+    },
+    {
+      "from": "C19.2",
+      "to": "GND"
+    },
+    {
+      "from": "R20.1",
+      "to": "R19.2"
+    },
+    {
+      "from": "R20.2",
+      "to": "C20.1"
+    },
+    {
+      "from": "C20.2",
+      "to": "GND"
+    },
+    {
+      "from": "R21.1",
+      "to": "R20.2"
+    },
+    {
+      "from": "R21.2",
+      "to": "C21.1"
+    },
+    {
+      "from": "C21.2",
+      "to": "GND"
+    },
+    {
+      "from": "R22.1",
+      "to": "R21.2"
+    },
+    {
+      "from": "R22.2",
+      "to": "C22.1"
+    },
+    {
+      "from": "C22.2",
+      "to": "GND"
+    },
+    {
+      "from": "R23.1",
+      "to": "R22.2"
+    },
+    {
+      "from": "R23.2",
+      "to": "C23.1"
+    },
+    {
+      "from": "C23.2",
+      "to": "GND"
+    },
+    {
+      "from": "R24.1",
+      "to": "R23.2"
+    },
+    {
+      "from": "R24.2",
+      "to": "C24.1"
+    },
+    {
+      "from": "C24.2",
+      "to": "GND"
+    },
+    {
+      "from": "R25.1",
+      "to": "R24.2"
+    },
+    {
+      "from": "R25.2",
+      "to": "C25.1"
+    },
+    {
+      "from": "C25.2",
+      "to": "GND"
+    },
+    {
+      "from": "R26.1",
+      "to": "R25.2"
+    },
+    {
+      "from": "R26.2",
+      "to": "C26.1"
+    },
+    {
+      "from": "C26.2",
+      "to": "GND"
+    },
+    {
+      "from": "R27.1",
+      "to": "R26.2"
+    },
+    {
+      "from": "R27.2",
+      "to": "C27.1"
+    },
+    {
+      "from": "C27.2",
+      "to": "GND"
+    },
+    {
+      "from": "R28.1",
+      "to": "R27.2"
+    },
+    {
+      "from": "R28.2",
+      "to": "C28.1"
+    },
+    {
+      "from": "C28.2",
+      "to": "GND"
+    },
+    {
+      "from": "R29.1",
+      "to": "R28.2"
+    },
+    {
+      "from": "R29.2",
+      "to": "C29.1"
+    },
+    {
+      "from": "C29.2",
+      "to": "GND"
+    },
+    {
+      "from": "R30.1",
+      "to": "R29.2"
+    },
+    {
+      "from": "R30.2",
+      "to": "C30.1"
+    },
+    {
+      "from": "C30.2",
+      "to": "GND"
+    },
+    {
+      "from": "R31.1",
+      "to": "R30.2"
+    },
+    {
+      "from": "R31.2",
+      "to": "C31.1"
+    },
+    {
+      "from": "C31.2",
+      "to": "GND"
+    },
+    {
+      "from": "R32.1",
+      "to": "R31.2"
+    },
+    {
+      "from": "R32.2",
+      "to": "C32.1"
+    },
+    {
+      "from": "C32.2",
+      "to": "GND"
+    },
+    {
+      "from": "R33.1",
+      "to": "R32.2"
+    },
+    {
+      "from": "R33.2",
+      "to": "C33.1"
+    },
+    {
+      "from": "C33.2",
+      "to": "GND"
+    },
+    {
+      "from": "R34.1",
+      "to": "R33.2"
+    },
+    {
+      "from": "R34.2",
+      "to": "C34.1"
+    },
+    {
+      "from": "C34.2",
+      "to": "GND"
+    },
+    {
+      "from": "R35.1",
+      "to": "R34.2"
+    },
+    {
+      "from": "R35.2",
+      "to": "C35.1"
+    },
+    {
+      "from": "C35.2",
+      "to": "GND"
+    },
+    {
+      "from": "R36.1",
+      "to": "R35.2"
+    },
+    {
+      "from": "R36.2",
+      "to": "C36.1"
+    },
+    {
+      "from": "C36.2",
+      "to": "GND"
+    },
+    {
+      "from": "R37.1",
+      "to": "R36.2"
+    },
+    {
+      "from": "R37.2",
+      "to": "C37.1"
+    },
+    {
+      "from": "C37.2",
+      "to": "GND"
+    },
+    {
+      "from": "R38.1",
+      "to": "R37.2"
+    },
+    {
+      "from": "R38.2",
+      "to": "C38.1"
+    },
+    {
+      "from": "C38.2",
+      "to": "GND"
+    },
+    {
+      "from": "R39.1",
+      "to": "R38.2"
+    },
+    {
+      "from": "R39.2",
+      "to": "C39.1"
+    },
+    {
+      "from": "C39.2",
+      "to": "GND"
+    },
+    {
+      "from": "R40.1",
+      "to": "R39.2"
+    },
+    {
+      "from": "R40.2",
+      "to": "C40.1"
+    },
+    {
+      "from": "C40.2",
+      "to": "GND"
+    },
+    {
+      "from": "R41.1",
+      "to": "R40.2"
+    },
+    {
+      "from": "R41.2",
+      "to": "C41.1"
+    },
+    {
+      "from": "C41.2",
+      "to": "GND"
+    },
+    {
+      "from": "R42.1",
+      "to": "R41.2"
+    },
+    {
+      "from": "R42.2",
+      "to": "C42.1"
+    },
+    {
+      "from": "C42.2",
+      "to": "GND"
+    },
+    {
+      "from": "R43.1",
+      "to": "R42.2"
+    },
+    {
+      "from": "R43.2",
+      "to": "C43.1"
+    },
+    {
+      "from": "C43.2",
+      "to": "GND"
+    },
+    {
+      "from": "R44.1",
+      "to": "R43.2"
+    },
+    {
+      "from": "R44.2",
+      "to": "C44.1"
+    },
+    {
+      "from": "C44.2",
+      "to": "GND"
+    },
+    {
+      "from": "R45.1",
+      "to": "R44.2"
+    },
+    {
+      "from": "R45.2",
+      "to": "C45.1"
+    },
+    {
+      "from": "C45.2",
+      "to": "GND"
+    },
+    {
+      "from": "R46.1",
+      "to": "R45.2"
+    },
+    {
+      "from": "R46.2",
+      "to": "C46.1"
+    },
+    {
+      "from": "C46.2",
+      "to": "GND"
+    },
+    {
+      "from": "R47.1",
+      "to": "R46.2"
+    },
+    {
+      "from": "R47.2",
+      "to": "C47.1"
+    },
+    {
+      "from": "C47.2",
+      "to": "GND"
+    },
+    {
+      "from": "R48.1",
+      "to": "R47.2"
+    },
+    {
+      "from": "R48.2",
+      "to": "C48.1"
+    },
+    {
+      "from": "C48.2",
+      "to": "GND"
+    },
+    {
+      "from": "R49.1",
+      "to": "R48.2"
+    },
+    {
+      "from": "R49.2",
+      "to": "C49.1"
+    },
+    {
+      "from": "C49.2",
+      "to": "GND"
+    },
+    {
+      "from": "R50.1",
+      "to": "R49.2"
+    },
+    {
+      "from": "R50.2",
+      "to": "C50.1"
+    },
+    {
+      "from": "C50.2",
+      "to": "GND"
+    },
+    {
+      "from": "R51.1",
+      "to": "R50.2"
+    },
+    {
+      "from": "R51.2",
+      "to": "C51.1"
+    },
+    {
+      "from": "C51.2",
+      "to": "GND"
+    },
+    {
+      "from": "R52.1",
+      "to": "R51.2"
+    },
+    {
+      "from": "R52.2",
+      "to": "C52.1"
+    },
+    {
+      "from": "C52.2",
+      "to": "GND"
+    },
+    {
+      "from": "R53.1",
+      "to": "R52.2"
+    },
+    {
+      "from": "R53.2",
+      "to": "C53.1"
+    },
+    {
+      "from": "C53.2",
+      "to": "GND"
+    },
+    {
+      "from": "R54.1",
+      "to": "R53.2"
+    },
+    {
+      "from": "R54.2",
+      "to": "C54.1"
+    },
+    {
+      "from": "C54.2",
+      "to": "GND"
+    },
+    {
+      "from": "R55.1",
+      "to": "R54.2"
+    },
+    {
+      "from": "R55.2",
+      "to": "C55.1"
+    },
+    {
+      "from": "C55.2",
+      "to": "GND"
+    },
+    {
+      "from": "R56.1",
+      "to": "R55.2"
+    },
+    {
+      "from": "R56.2",
+      "to": "C56.1"
+    },
+    {
+      "from": "C56.2",
+      "to": "GND"
+    },
+    {
+      "from": "R57.1",
+      "to": "R56.2"
+    },
+    {
+      "from": "R57.2",
+      "to": "C57.1"
+    },
+    {
+      "from": "C57.2",
+      "to": "GND"
+    },
+    {
+      "from": "R58.1",
+      "to": "R57.2"
+    },
+    {
+      "from": "R58.2",
+      "to": "C58.1"
+    },
+    {
+      "from": "C58.2",
+      "to": "GND"
+    },
+    {
+      "from": "R59.1",
+      "to": "R58.2"
+    },
+    {
+      "from": "R59.2",
+      "to": "C59.1"
+    },
+    {
+      "from": "C59.2",
+      "to": "GND"
+    },
+    {
+      "from": "R60.1",
+      "to": "R59.2"
+    },
+    {
+      "from": "R60.2",
+      "to": "C60.1"
+    },
+    {
+      "from": "C60.2",
+      "to": "GND"
+    },
+    {
+      "from": "R61.1",
+      "to": "R60.2"
+    },
+    {
+      "from": "R61.2",
+      "to": "C61.1"
+    },
+    {
+      "from": "C61.2",
+      "to": "GND"
+    },
+    {
+      "from": "R62.1",
+      "to": "R61.2"
+    },
+    {
+      "from": "R62.2",
+      "to": "C62.1"
+    },
+    {
+      "from": "C62.2",
+      "to": "GND"
+    },
+    {
+      "from": "R63.1",
+      "to": "R62.2"
+    },
+    {
+      "from": "R63.2",
+      "to": "C63.1"
+    },
+    {
+      "from": "C63.2",
+      "to": "GND"
+    },
+    {
+      "from": "R64.1",
+      "to": "R63.2"
+    },
+    {
+      "from": "R64.2",
+      "to": "C64.1"
+    },
+    {
+      "from": "C64.2",
+      "to": "GND"
+    },
+    {
+      "from": "R65.1",
+      "to": "R64.2"
+    },
+    {
+      "from": "R65.2",
+      "to": "C65.1"
+    },
+    {
+      "from": "C65.2",
+      "to": "GND"
+    },
+    {
+      "from": "R66.1",
+      "to": "R65.2"
+    },
+    {
+      "from": "R66.2",
+      "to": "C66.1"
+    },
+    {
+      "from": "C66.2",
+      "to": "GND"
+    },
+    {
+      "from": "R67.1",
+      "to": "R66.2"
+    },
+    {
+      "from": "R67.2",
+      "to": "C67.1"
+    },
+    {
+      "from": "C67.2",
+      "to": "GND"
+    },
+    {
+      "from": "R68.1",
+      "to": "R67.2"
+    },
+    {
+      "from": "R68.2",
+      "to": "C68.1"
+    },
+    {
+      "from": "C68.2",
+      "to": "GND"
+    },
+    {
+      "from": "R69.1",
+      "to": "R68.2"
+    },
+    {
+      "from": "R69.2",
+      "to": "C69.1"
+    },
+    {
+      "from": "C69.2",
+      "to": "GND"
+    },
+    {
+      "from": "R70.1",
+      "to": "R69.2"
+    },
+    {
+      "from": "R70.2",
+      "to": "C70.1"
+    },
+    {
+      "from": "C70.2",
+      "to": "GND"
+    },
+    {
+      "from": "R71.1",
+      "to": "R70.2"
+    },
+    {
+      "from": "R71.2",
+      "to": "C71.1"
+    },
+    {
+      "from": "C71.2",
+      "to": "GND"
+    },
+    {
+      "from": "R72.1",
+      "to": "R71.2"
+    },
+    {
+      "from": "R72.2",
+      "to": "C72.1"
+    },
+    {
+      "from": "C72.2",
+      "to": "GND"
+    },
+    {
+      "from": "R73.1",
+      "to": "R72.2"
+    },
+    {
+      "from": "R73.2",
+      "to": "C73.1"
+    },
+    {
+      "from": "C73.2",
+      "to": "GND"
+    },
+    {
+      "from": "R74.1",
+      "to": "R73.2"
+    },
+    {
+      "from": "R74.2",
+      "to": "C74.1"
+    },
+    {
+      "from": "C74.2",
+      "to": "GND"
+    },
+    {
+      "from": "R75.1",
+      "to": "R74.2"
+    },
+    {
+      "from": "R75.2",
+      "to": "C75.1"
+    },
+    {
+      "from": "C75.2",
+      "to": "GND"
+    },
+    {
+      "from": "R76.1",
+      "to": "R75.2"
+    },
+    {
+      "from": "R76.2",
+      "to": "C76.1"
+    },
+    {
+      "from": "C76.2",
+      "to": "GND"
+    },
+    {
+      "from": "R77.1",
+      "to": "R76.2"
+    },
+    {
+      "from": "R77.2",
+      "to": "C77.1"
+    },
+    {
+      "from": "C77.2",
+      "to": "GND"
+    },
+    {
+      "from": "R78.1",
+      "to": "R77.2"
+    },
+    {
+      "from": "R78.2",
+      "to": "C78.1"
+    },
+    {
+      "from": "C78.2",
+      "to": "GND"
+    },
+    {
+      "from": "R79.1",
+      "to": "R78.2"
+    },
+    {
+      "from": "R79.2",
+      "to": "C79.1"
+    },
+    {
+      "from": "C79.2",
+      "to": "GND"
+    },
+    {
+      "from": "R80.1",
+      "to": "R79.2"
+    },
+    {
+      "from": "R80.2",
+      "to": "C80.1"
+    },
+    {
+      "from": "C80.2",
+      "to": "GND"
+    },
+    {
+      "from": "R81.1",
+      "to": "R80.2"
+    },
+    {
+      "from": "R81.2",
+      "to": "C81.1"
+    },
+    {
+      "from": "C81.2",
+      "to": "GND"
+    },
+    {
+      "from": "R82.1",
+      "to": "R81.2"
+    },
+    {
+      "from": "R82.2",
+      "to": "C82.1"
+    },
+    {
+      "from": "C82.2",
+      "to": "GND"
+    },
+    {
+      "from": "R83.1",
+      "to": "R82.2"
+    },
+    {
+      "from": "R83.2",
+      "to": "C83.1"
+    },
+    {
+      "from": "C83.2",
+      "to": "GND"
+    },
+    {
+      "from": "R84.1",
+      "to": "R83.2"
+    },
+    {
+      "from": "R84.2",
+      "to": "C84.1"
+    },
+    {
+      "from": "C84.2",
+      "to": "GND"
+    },
+    {
+      "from": "R85.1",
+      "to": "R84.2"
+    },
+    {
+      "from": "R85.2",
+      "to": "C85.1"
+    },
+    {
+      "from": "C85.2",
+      "to": "GND"
+    },
+    {
+      "from": "R86.1",
+      "to": "R85.2"
+    },
+    {
+      "from": "R86.2",
+      "to": "C86.1"
+    },
+    {
+      "from": "C86.2",
+      "to": "GND"
+    },
+    {
+      "from": "R87.1",
+      "to": "R86.2"
+    },
+    {
+      "from": "R87.2",
+      "to": "C87.1"
+    },
+    {
+      "from": "C87.2",
+      "to": "GND"
+    },
+    {
+      "from": "R88.1",
+      "to": "R87.2"
+    },
+    {
+      "from": "R88.2",
+      "to": "C88.1"
+    },
+    {
+      "from": "C88.2",
+      "to": "GND"
+    },
+    {
+      "from": "R89.1",
+      "to": "R88.2"
+    },
+    {
+      "from": "R89.2",
+      "to": "C89.1"
+    },
+    {
+      "from": "C89.2",
+      "to": "GND"
+    },
+    {
+      "from": "R90.1",
+      "to": "R89.2"
+    },
+    {
+      "from": "R90.2",
+      "to": "C90.1"
+    },
+    {
+      "from": "C90.2",
+      "to": "GND"
+    },
+    {
+      "from": "R91.1",
+      "to": "R90.2"
+    },
+    {
+      "from": "R91.2",
+      "to": "C91.1"
+    },
+    {
+      "from": "C91.2",
+      "to": "GND"
+    },
+    {
+      "from": "R92.1",
+      "to": "R91.2"
+    },
+    {
+      "from": "R92.2",
+      "to": "C92.1"
+    },
+    {
+      "from": "C92.2",
+      "to": "GND"
+    },
+    {
+      "from": "R93.1",
+      "to": "R92.2"
+    },
+    {
+      "from": "R93.2",
+      "to": "C93.1"
+    },
+    {
+      "from": "C93.2",
+      "to": "GND"
+    },
+    {
+      "from": "R94.1",
+      "to": "R93.2"
+    },
+    {
+      "from": "R94.2",
+      "to": "C94.1"
+    },
+    {
+      "from": "C94.2",
+      "to": "GND"
+    },
+    {
+      "from": "R95.1",
+      "to": "R94.2"
+    },
+    {
+      "from": "R95.2",
+      "to": "C95.1"
+    },
+    {
+      "from": "C95.2",
+      "to": "GND"
+    },
+    {
+      "from": "R96.1",
+      "to": "R95.2"
+    },
+    {
+      "from": "R96.2",
+      "to": "C96.1"
+    },
+    {
+      "from": "C96.2",
+      "to": "GND"
+    },
+    {
+      "from": "R97.1",
+      "to": "R96.2"
+    },
+    {
+      "from": "R97.2",
+      "to": "C97.1"
+    },
+    {
+      "from": "C97.2",
+      "to": "GND"
+    },
+    {
+      "from": "R98.1",
+      "to": "R97.2"
+    },
+    {
+      "from": "R98.2",
+      "to": "C98.1"
+    },
+    {
+      "from": "C98.2",
+      "to": "GND"
+    },
+    {
+      "from": "R99.1",
+      "to": "R98.2"
+    },
+    {
+      "from": "R99.2",
+      "to": "C99.1"
+    },
+    {
+      "from": "C99.2",
+      "to": "GND"
+    },
+    {
+      "from": "R100.1",
+      "to": "R99.2"
+    },
+    {
+      "from": "R100.2",
+      "to": "C100.1"
+    },
+    {
+      "from": "C100.2",
+      "to": "GND"
+    },
+    {
+      "from": "R101.1",
+      "to": "R100.2"
+    },
+    {
+      "from": "R101.2",
+      "to": "C101.1"
+    },
+    {
+      "from": "C101.2",
+      "to": "GND"
+    },
+    {
+      "from": "R102.1",
+      "to": "R101.2"
+    },
+    {
+      "from": "R102.2",
+      "to": "C102.1"
+    },
+    {
+      "from": "C102.2",
+      "to": "GND"
+    },
+    {
+      "from": "R103.1",
+      "to": "R102.2"
+    },
+    {
+      "from": "R103.2",
+      "to": "C103.1"
+    },
+    {
+      "from": "C103.2",
+      "to": "GND"
+    },
+    {
+      "from": "R104.1",
+      "to": "R103.2"
+    },
+    {
+      "from": "R104.2",
+      "to": "C104.1"
+    },
+    {
+      "from": "C104.2",
+      "to": "GND"
+    },
+    {
+      "from": "R105.1",
+      "to": "R104.2"
+    },
+    {
+      "from": "R105.2",
+      "to": "C105.1"
+    },
+    {
+      "from": "C105.2",
+      "to": "GND"
+    },
+    {
+      "from": "R106.1",
+      "to": "R105.2"
+    },
+    {
+      "from": "R106.2",
+      "to": "C106.1"
+    },
+    {
+      "from": "C106.2",
+      "to": "GND"
+    },
+    {
+      "from": "R107.1",
+      "to": "R106.2"
+    },
+    {
+      "from": "R107.2",
+      "to": "C107.1"
+    },
+    {
+      "from": "C107.2",
+      "to": "GND"
+    },
+    {
+      "from": "R108.1",
+      "to": "R107.2"
+    },
+    {
+      "from": "R108.2",
+      "to": "C108.1"
+    },
+    {
+      "from": "C108.2",
+      "to": "GND"
+    },
+    {
+      "from": "R109.1",
+      "to": "R108.2"
+    },
+    {
+      "from": "R109.2",
+      "to": "C109.1"
+    },
+    {
+      "from": "C109.2",
+      "to": "GND"
+    },
+    {
+      "from": "R110.1",
+      "to": "R109.2"
+    },
+    {
+      "from": "R110.2",
+      "to": "C110.1"
+    },
+    {
+      "from": "C110.2",
+      "to": "GND"
+    },
+    {
+      "from": "R111.1",
+      "to": "R110.2"
+    },
+    {
+      "from": "R111.2",
+      "to": "C111.1"
+    },
+    {
+      "from": "C111.2",
+      "to": "GND"
+    },
+    {
+      "from": "R112.1",
+      "to": "R111.2"
+    },
+    {
+      "from": "R112.2",
+      "to": "C112.1"
+    },
+    {
+      "from": "C112.2",
+      "to": "GND"
+    },
+    {
+      "from": "R113.1",
+      "to": "R112.2"
+    },
+    {
+      "from": "R113.2",
+      "to": "C113.1"
+    },
+    {
+      "from": "C113.2",
+      "to": "GND"
+    },
+    {
+      "from": "R114.1",
+      "to": "R113.2"
+    },
+    {
+      "from": "R114.2",
+      "to": "C114.1"
+    },
+    {
+      "from": "C114.2",
+      "to": "GND"
+    },
+    {
+      "from": "R115.1",
+      "to": "R114.2"
+    },
+    {
+      "from": "R115.2",
+      "to": "C115.1"
+    },
+    {
+      "from": "C115.2",
+      "to": "GND"
+    },
+    {
+      "from": "R116.1",
+      "to": "R115.2"
+    },
+    {
+      "from": "R116.2",
+      "to": "C116.1"
+    },
+    {
+      "from": "C116.2",
+      "to": "GND"
+    },
+    {
+      "from": "R117.1",
+      "to": "R116.2"
+    },
+    {
+      "from": "R117.2",
+      "to": "C117.1"
+    },
+    {
+      "from": "C117.2",
+      "to": "GND"
+    },
+    {
+      "from": "R118.1",
+      "to": "R117.2"
+    },
+    {
+      "from": "R118.2",
+      "to": "C118.1"
+    },
+    {
+      "from": "C118.2",
+      "to": "GND"
+    },
+    {
+      "from": "R119.1",
+      "to": "R118.2"
+    },
+    {
+      "from": "R119.2",
+      "to": "C119.1"
+    },
+    {
+      "from": "C119.2",
+      "to": "GND"
+    },
+    {
+      "from": "R120.1",
+      "to": "R119.2"
+    },
+    {
+      "from": "R120.2",
+      "to": "C120.1"
+    },
+    {
+      "from": "C120.2",
+      "to": "GND"
+    },
+    {
+      "from": "R121.1",
+      "to": "R120.2"
+    },
+    {
+      "from": "R121.2",
+      "to": "C121.1"
+    },
+    {
+      "from": "C121.2",
+      "to": "GND"
+    },
+    {
+      "from": "R122.1",
+      "to": "R121.2"
+    },
+    {
+      "from": "R122.2",
+      "to": "C122.1"
+    },
+    {
+      "from": "C122.2",
+      "to": "GND"
+    },
+    {
+      "from": "R123.1",
+      "to": "R122.2"
+    },
+    {
+      "from": "R123.2",
+      "to": "C123.1"
+    },
+    {
+      "from": "C123.2",
+      "to": "GND"
+    },
+    {
+      "from": "R124.1",
+      "to": "R123.2"
+    },
+    {
+      "from": "R124.2",
+      "to": "C124.1"
+    },
+    {
+      "from": "C124.2",
+      "to": "GND"
+    },
+    {
+      "from": "R125.1",
+      "to": "R124.2"
+    },
+    {
+      "from": "R125.2",
+      "to": "C125.1"
+    },
+    {
+      "from": "C125.2",
+      "to": "GND"
+    },
+    {
+      "from": "R126.1",
+      "to": "R125.2"
+    },
+    {
+      "from": "R126.2",
+      "to": "C126.1"
+    },
+    {
+      "from": "C126.2",
+      "to": "GND"
+    },
+    {
+      "from": "R127.1",
+      "to": "R126.2"
+    },
+    {
+      "from": "R127.2",
+      "to": "C127.1"
+    },
+    {
+      "from": "C127.2",
+      "to": "GND"
+    },
+    {
+      "from": "R128.1",
+      "to": "R127.2"
+    },
+    {
+      "from": "R128.2",
+      "to": "C128.1"
+    },
+    {
+      "from": "C128.2",
+      "to": "GND"
+    },
+    {
+      "from": "R129.1",
+      "to": "R128.2"
+    },
+    {
+      "from": "R129.2",
+      "to": "C129.1"
+    },
+    {
+      "from": "C129.2",
+      "to": "GND"
+    },
+    {
+      "from": "R130.1",
+      "to": "R129.2"
+    },
+    {
+      "from": "R130.2",
+      "to": "C130.1"
+    },
+    {
+      "from": "C130.2",
+      "to": "GND"
+    },
+    {
+      "from": "R131.1",
+      "to": "R130.2"
+    },
+    {
+      "from": "R131.2",
+      "to": "C131.1"
+    },
+    {
+      "from": "C131.2",
+      "to": "GND"
+    },
+    {
+      "from": "R132.1",
+      "to": "R131.2"
+    },
+    {
+      "from": "R132.2",
+      "to": "C132.1"
+    },
+    {
+      "from": "C132.2",
+      "to": "GND"
+    },
+    {
+      "from": "R133.1",
+      "to": "R132.2"
+    },
+    {
+      "from": "R133.2",
+      "to": "C133.1"
+    },
+    {
+      "from": "C133.2",
+      "to": "GND"
+    },
+    {
+      "from": "R134.1",
+      "to": "R133.2"
+    },
+    {
+      "from": "R134.2",
+      "to": "C134.1"
+    },
+    {
+      "from": "C134.2",
+      "to": "GND"
+    },
+    {
+      "from": "R135.1",
+      "to": "R134.2"
+    },
+    {
+      "from": "R135.2",
+      "to": "C135.1"
+    },
+    {
+      "from": "C135.2",
+      "to": "GND"
+    },
+    {
+      "from": "R136.1",
+      "to": "R135.2"
+    },
+    {
+      "from": "R136.2",
+      "to": "C136.1"
+    },
+    {
+      "from": "C136.2",
+      "to": "GND"
+    },
+    {
+      "from": "R137.1",
+      "to": "R136.2"
+    },
+    {
+      "from": "R137.2",
+      "to": "C137.1"
+    },
+    {
+      "from": "C137.2",
+      "to": "GND"
+    },
+    {
+      "from": "R138.1",
+      "to": "R137.2"
+    },
+    {
+      "from": "R138.2",
+      "to": "C138.1"
+    },
+    {
+      "from": "C138.2",
+      "to": "GND"
+    },
+    {
+      "from": "R139.1",
+      "to": "R138.2"
+    },
+    {
+      "from": "R139.2",
+      "to": "C139.1"
+    },
+    {
+      "from": "C139.2",
+      "to": "GND"
+    },
+    {
+      "from": "R140.1",
+      "to": "R139.2"
+    },
+    {
+      "from": "R140.2",
+      "to": "C140.1"
+    },
+    {
+      "from": "C140.2",
+      "to": "GND"
+    },
+    {
+      "from": "R141.1",
+      "to": "R140.2"
+    },
+    {
+      "from": "R141.2",
+      "to": "C141.1"
+    },
+    {
+      "from": "C141.2",
+      "to": "GND"
+    },
+    {
+      "from": "R142.1",
+      "to": "R141.2"
+    },
+    {
+      "from": "R142.2",
+      "to": "C142.1"
+    },
+    {
+      "from": "C142.2",
+      "to": "GND"
+    },
+    {
+      "from": "R143.1",
+      "to": "R142.2"
+    },
+    {
+      "from": "R143.2",
+      "to": "C143.1"
+    },
+    {
+      "from": "C143.2",
+      "to": "GND"
+    },
+    {
+      "from": "R144.1",
+      "to": "R143.2"
+    },
+    {
+      "from": "R144.2",
+      "to": "C144.1"
+    },
+    {
+      "from": "C144.2",
+      "to": "GND"
+    },
+    {
+      "from": "R145.1",
+      "to": "R144.2"
+    },
+    {
+      "from": "R145.2",
+      "to": "C145.1"
+    },
+    {
+      "from": "C145.2",
+      "to": "GND"
+    },
+    {
+      "from": "R146.1",
+      "to": "R145.2"
+    },
+    {
+      "from": "R146.2",
+      "to": "C146.1"
+    },
+    {
+      "from": "C146.2",
+      "to": "GND"
+    },
+    {
+      "from": "R147.1",
+      "to": "R146.2"
+    },
+    {
+      "from": "R147.2",
+      "to": "C147.1"
+    },
+    {
+      "from": "C147.2",
+      "to": "GND"
+    },
+    {
+      "from": "R148.1",
+      "to": "R147.2"
+    },
+    {
+      "from": "R148.2",
+      "to": "C148.1"
+    },
+    {
+      "from": "C148.2",
+      "to": "GND"
+    },
+    {
+      "from": "R149.1",
+      "to": "R148.2"
+    },
+    {
+      "from": "R149.2",
+      "to": "C149.1"
+    },
+    {
+      "from": "C149.2",
+      "to": "GND"
+    },
+    {
+      "from": "R150.1",
+      "to": "R149.2"
+    },
+    {
+      "from": "R150.2",
+      "to": "C150.1"
+    },
+    {
+      "from": "C150.2",
+      "to": "GND"
+    },
+    {
+      "from": "R151.1",
+      "to": "R150.2"
+    },
+    {
+      "from": "R151.2",
+      "to": "C151.1"
+    },
+    {
+      "from": "C151.2",
+      "to": "GND"
+    },
+    {
+      "from": "R152.1",
+      "to": "R151.2"
+    },
+    {
+      "from": "R152.2",
+      "to": "C152.1"
+    },
+    {
+      "from": "C152.2",
+      "to": "GND"
+    },
+    {
+      "from": "R153.1",
+      "to": "R152.2"
+    },
+    {
+      "from": "R153.2",
+      "to": "C153.1"
+    },
+    {
+      "from": "C153.2",
+      "to": "GND"
+    },
+    {
+      "from": "R154.1",
+      "to": "R153.2"
+    },
+    {
+      "from": "R154.2",
+      "to": "C154.1"
+    },
+    {
+      "from": "C154.2",
+      "to": "GND"
+    },
+    {
+      "from": "R155.1",
+      "to": "R154.2"
+    },
+    {
+      "from": "R155.2",
+      "to": "C155.1"
+    },
+    {
+      "from": "C155.2",
+      "to": "GND"
+    },
+    {
+      "from": "R156.1",
+      "to": "R155.2"
+    },
+    {
+      "from": "R156.2",
+      "to": "C156.1"
+    },
+    {
+      "from": "C156.2",
+      "to": "GND"
+    },
+    {
+      "from": "R157.1",
+      "to": "R156.2"
+    },
+    {
+      "from": "R157.2",
+      "to": "C157.1"
+    },
+    {
+      "from": "C157.2",
+      "to": "GND"
+    },
+    {
+      "from": "R158.1",
+      "to": "R157.2"
+    },
+    {
+      "from": "R158.2",
+      "to": "C158.1"
+    },
+    {
+      "from": "C158.2",
+      "to": "GND"
+    },
+    {
+      "from": "R159.1",
+      "to": "R158.2"
+    },
+    {
+      "from": "R159.2",
+      "to": "C159.1"
+    },
+    {
+      "from": "C159.2",
+      "to": "GND"
+    },
+    {
+      "from": "R160.1",
+      "to": "R159.2"
+    },
+    {
+      "from": "R160.2",
+      "to": "C160.1"
+    },
+    {
+      "from": "C160.2",
+      "to": "GND"
+    },
+    {
+      "from": "R161.1",
+      "to": "R160.2"
+    },
+    {
+      "from": "R161.2",
+      "to": "C161.1"
+    },
+    {
+      "from": "C161.2",
+      "to": "GND"
+    },
+    {
+      "from": "R162.1",
+      "to": "R161.2"
+    },
+    {
+      "from": "R162.2",
+      "to": "C162.1"
+    },
+    {
+      "from": "C162.2",
+      "to": "GND"
+    },
+    {
+      "from": "R163.1",
+      "to": "R162.2"
+    },
+    {
+      "from": "R163.2",
+      "to": "C163.1"
+    },
+    {
+      "from": "C163.2",
+      "to": "GND"
+    },
+    {
+      "from": "R164.1",
+      "to": "R163.2"
+    },
+    {
+      "from": "R164.2",
+      "to": "C164.1"
+    },
+    {
+      "from": "C164.2",
+      "to": "GND"
+    },
+    {
+      "from": "R165.1",
+      "to": "R164.2"
+    },
+    {
+      "from": "R165.2",
+      "to": "C165.1"
+    },
+    {
+      "from": "C165.2",
+      "to": "GND"
+    },
+    {
+      "from": "R166.1",
+      "to": "R165.2"
+    },
+    {
+      "from": "R166.2",
+      "to": "C166.1"
+    },
+    {
+      "from": "C166.2",
+      "to": "GND"
+    },
+    {
+      "from": "R167.1",
+      "to": "R166.2"
+    },
+    {
+      "from": "R167.2",
+      "to": "C167.1"
+    },
+    {
+      "from": "C167.2",
+      "to": "GND"
+    },
+    {
+      "from": "R168.1",
+      "to": "R167.2"
+    },
+    {
+      "from": "R168.2",
+      "to": "C168.1"
+    },
+    {
+      "from": "C168.2",
+      "to": "GND"
+    },
+    {
+      "from": "R169.1",
+      "to": "R168.2"
+    },
+    {
+      "from": "R169.2",
+      "to": "C169.1"
+    },
+    {
+      "from": "C169.2",
+      "to": "GND"
+    },
+    {
+      "from": "R170.1",
+      "to": "R169.2"
+    },
+    {
+      "from": "R170.2",
+      "to": "C170.1"
+    },
+    {
+      "from": "C170.2",
+      "to": "GND"
+    },
+    {
+      "from": "R171.1",
+      "to": "R170.2"
+    },
+    {
+      "from": "R171.2",
+      "to": "C171.1"
+    },
+    {
+      "from": "C171.2",
+      "to": "GND"
+    },
+    {
+      "from": "R172.1",
+      "to": "R171.2"
+    },
+    {
+      "from": "R172.2",
+      "to": "C172.1"
+    },
+    {
+      "from": "C172.2",
+      "to": "GND"
+    },
+    {
+      "from": "R173.1",
+      "to": "R172.2"
+    },
+    {
+      "from": "R173.2",
+      "to": "C173.1"
+    },
+    {
+      "from": "C173.2",
+      "to": "GND"
+    },
+    {
+      "from": "R174.1",
+      "to": "R173.2"
+    },
+    {
+      "from": "R174.2",
+      "to": "C174.1"
+    },
+    {
+      "from": "C174.2",
+      "to": "GND"
+    },
+    {
+      "from": "R175.1",
+      "to": "R174.2"
+    },
+    {
+      "from": "R175.2",
+      "to": "C175.1"
+    },
+    {
+      "from": "C175.2",
+      "to": "GND"
+    },
+    {
+      "from": "R176.1",
+      "to": "R175.2"
+    },
+    {
+      "from": "R176.2",
+      "to": "C176.1"
+    },
+    {
+      "from": "C176.2",
+      "to": "GND"
+    },
+    {
+      "from": "R177.1",
+      "to": "R176.2"
+    },
+    {
+      "from": "R177.2",
+      "to": "C177.1"
+    },
+    {
+      "from": "C177.2",
+      "to": "GND"
+    },
+    {
+      "from": "R178.1",
+      "to": "R177.2"
+    },
+    {
+      "from": "R178.2",
+      "to": "C178.1"
+    },
+    {
+      "from": "C178.2",
+      "to": "GND"
+    },
+    {
+      "from": "R179.1",
+      "to": "R178.2"
+    },
+    {
+      "from": "R179.2",
+      "to": "C179.1"
+    },
+    {
+      "from": "C179.2",
+      "to": "GND"
+    },
+    {
+      "from": "R180.1",
+      "to": "R179.2"
+    },
+    {
+      "from": "R180.2",
+      "to": "C180.1"
+    },
+    {
+      "from": "C180.2",
+      "to": "GND"
+    },
+    {
+      "from": "R181.1",
+      "to": "R180.2"
+    },
+    {
+      "from": "R181.2",
+      "to": "C181.1"
+    },
+    {
+      "from": "C181.2",
+      "to": "GND"
+    },
+    {
+      "from": "R182.1",
+      "to": "R181.2"
+    },
+    {
+      "from": "R182.2",
+      "to": "C182.1"
+    },
+    {
+      "from": "C182.2",
+      "to": "GND"
+    },
+    {
+      "from": "R183.1",
+      "to": "R182.2"
+    },
+    {
+      "from": "R183.2",
+      "to": "C183.1"
+    },
+    {
+      "from": "C183.2",
+      "to": "GND"
+    },
+    {
+      "from": "R184.1",
+      "to": "R183.2"
+    },
+    {
+      "from": "R184.2",
+      "to": "C184.1"
+    },
+    {
+      "from": "C184.2",
+      "to": "GND"
+    },
+    {
+      "from": "R185.1",
+      "to": "R184.2"
+    },
+    {
+      "from": "R185.2",
+      "to": "C185.1"
+    },
+    {
+      "from": "C185.2",
+      "to": "GND"
+    },
+    {
+      "from": "R186.1",
+      "to": "R185.2"
+    },
+    {
+      "from": "R186.2",
+      "to": "C186.1"
+    },
+    {
+      "from": "C186.2",
+      "to": "GND"
+    },
+    {
+      "from": "R187.1",
+      "to": "R186.2"
+    },
+    {
+      "from": "R187.2",
+      "to": "C187.1"
+    },
+    {
+      "from": "C187.2",
+      "to": "GND"
+    },
+    {
+      "from": "R188.1",
+      "to": "R187.2"
+    },
+    {
+      "from": "R188.2",
+      "to": "C188.1"
+    },
+    {
+      "from": "C188.2",
+      "to": "GND"
+    },
+    {
+      "from": "R189.1",
+      "to": "R188.2"
+    },
+    {
+      "from": "R189.2",
+      "to": "C189.1"
+    },
+    {
+      "from": "C189.2",
+      "to": "GND"
+    },
+    {
+      "from": "R190.1",
+      "to": "R189.2"
+    },
+    {
+      "from": "R190.2",
+      "to": "C190.1"
+    },
+    {
+      "from": "C190.2",
+      "to": "GND"
+    },
+    {
+      "from": "R191.1",
+      "to": "R190.2"
+    },
+    {
+      "from": "R191.2",
+      "to": "C191.1"
+    },
+    {
+      "from": "C191.2",
+      "to": "GND"
+    },
+    {
+      "from": "R192.1",
+      "to": "R191.2"
+    },
+    {
+      "from": "R192.2",
+      "to": "C192.1"
+    },
+    {
+      "from": "C192.2",
+      "to": "GND"
+    },
+    {
+      "from": "R193.1",
+      "to": "R192.2"
+    },
+    {
+      "from": "R193.2",
+      "to": "C193.1"
+    },
+    {
+      "from": "C193.2",
+      "to": "GND"
+    },
+    {
+      "from": "R194.1",
+      "to": "R193.2"
+    },
+    {
+      "from": "R194.2",
+      "to": "C194.1"
+    },
+    {
+      "from": "C194.2",
+      "to": "GND"
+    },
+    {
+      "from": "R195.1",
+      "to": "R194.2"
+    },
+    {
+      "from": "R195.2",
+      "to": "C195.1"
+    },
+    {
+      "from": "C195.2",
+      "to": "GND"
+    },
+    {
+      "from": "R196.1",
+      "to": "R195.2"
+    },
+    {
+      "from": "R196.2",
+      "to": "C196.1"
+    },
+    {
+      "from": "C196.2",
+      "to": "GND"
+    },
+    {
+      "from": "R197.1",
+      "to": "R196.2"
+    },
+    {
+      "from": "R197.2",
+      "to": "C197.1"
+    },
+    {
+      "from": "C197.2",
+      "to": "GND"
+    },
+    {
+      "from": "R198.1",
+      "to": "R197.2"
+    },
+    {
+      "from": "R198.2",
+      "to": "C198.1"
+    },
+    {
+      "from": "C198.2",
+      "to": "GND"
+    },
+    {
+      "from": "R199.1",
+      "to": "R198.2"
+    },
+    {
+      "from": "R199.2",
+      "to": "C199.1"
+    },
+    {
+      "from": "C199.2",
+      "to": "GND"
+    },
+    {
+      "from": "R200.1",
+      "to": "R199.2"
+    },
+    {
+      "from": "R200.2",
+      "to": "C200.1"
+    },
+    {
+      "from": "C200.2",
+      "to": "GND"
+    },
+    {
+      "from": "R201.1",
+      "to": "R200.2"
+    },
+    {
+      "from": "R201.2",
+      "to": "C201.1"
+    },
+    {
+      "from": "C201.2",
+      "to": "GND"
+    },
+    {
+      "from": "R202.1",
+      "to": "R201.2"
+    },
+    {
+      "from": "R202.2",
+      "to": "C202.1"
+    },
+    {
+      "from": "C202.2",
+      "to": "GND"
+    },
+    {
+      "from": "R203.1",
+      "to": "R202.2"
+    },
+    {
+      "from": "R203.2",
+      "to": "C203.1"
+    },
+    {
+      "from": "C203.2",
+      "to": "GND"
+    },
+    {
+      "from": "R204.1",
+      "to": "R203.2"
+    },
+    {
+      "from": "R204.2",
+      "to": "C204.1"
+    },
+    {
+      "from": "C204.2",
+      "to": "GND"
+    },
+    {
+      "from": "R205.1",
+      "to": "R204.2"
+    },
+    {
+      "from": "R205.2",
+      "to": "C205.1"
+    },
+    {
+      "from": "C205.2",
+      "to": "GND"
+    },
+    {
+      "from": "R206.1",
+      "to": "R205.2"
+    },
+    {
+      "from": "R206.2",
+      "to": "C206.1"
+    },
+    {
+      "from": "C206.2",
+      "to": "GND"
+    },
+    {
+      "from": "R207.1",
+      "to": "R206.2"
+    },
+    {
+      "from": "R207.2",
+      "to": "C207.1"
+    },
+    {
+      "from": "C207.2",
+      "to": "GND"
+    },
+    {
+      "from": "R208.1",
+      "to": "R207.2"
+    },
+    {
+      "from": "R208.2",
+      "to": "C208.1"
+    },
+    {
+      "from": "C208.2",
+      "to": "GND"
+    },
+    {
+      "from": "R209.1",
+      "to": "R208.2"
+    },
+    {
+      "from": "R209.2",
+      "to": "C209.1"
+    },
+    {
+      "from": "C209.2",
+      "to": "GND"
+    },
+    {
+      "from": "R210.1",
+      "to": "R209.2"
+    },
+    {
+      "from": "R210.2",
+      "to": "C210.1"
+    },
+    {
+      "from": "C210.2",
+      "to": "GND"
+    },
+    {
+      "from": "R211.1",
+      "to": "R210.2"
+    },
+    {
+      "from": "R211.2",
+      "to": "C211.1"
+    },
+    {
+      "from": "C211.2",
+      "to": "GND"
+    },
+    {
+      "from": "R212.1",
+      "to": "R211.2"
+    },
+    {
+      "from": "R212.2",
+      "to": "C212.1"
+    },
+    {
+      "from": "C212.2",
+      "to": "GND"
+    },
+    {
+      "from": "R213.1",
+      "to": "R212.2"
+    },
+    {
+      "from": "R213.2",
+      "to": "C213.1"
+    },
+    {
+      "from": "C213.2",
+      "to": "GND"
+    },
+    {
+      "from": "R214.1",
+      "to": "R213.2"
+    },
+    {
+      "from": "R214.2",
+      "to": "C214.1"
+    },
+    {
+      "from": "C214.2",
+      "to": "GND"
+    },
+    {
+      "from": "R215.1",
+      "to": "R214.2"
+    },
+    {
+      "from": "R215.2",
+      "to": "C215.1"
+    },
+    {
+      "from": "C215.2",
+      "to": "GND"
+    },
+    {
+      "from": "R216.1",
+      "to": "R215.2"
+    },
+    {
+      "from": "R216.2",
+      "to": "C216.1"
+    },
+    {
+      "from": "C216.2",
+      "to": "GND"
+    },
+    {
+      "from": "R217.1",
+      "to": "R216.2"
+    },
+    {
+      "from": "R217.2",
+      "to": "C217.1"
+    },
+    {
+      "from": "C217.2",
+      "to": "GND"
+    },
+    {
+      "from": "R218.1",
+      "to": "R217.2"
+    },
+    {
+      "from": "R218.2",
+      "to": "C218.1"
+    },
+    {
+      "from": "C218.2",
+      "to": "GND"
+    },
+    {
+      "from": "R219.1",
+      "to": "R218.2"
+    },
+    {
+      "from": "R219.2",
+      "to": "C219.1"
+    },
+    {
+      "from": "C219.2",
+      "to": "GND"
+    },
+    {
+      "from": "R220.1",
+      "to": "R219.2"
+    },
+    {
+      "from": "R220.2",
+      "to": "C220.1"
+    },
+    {
+      "from": "C220.2",
+      "to": "GND"
+    },
+    {
+      "from": "R221.1",
+      "to": "R220.2"
+    },
+    {
+      "from": "R221.2",
+      "to": "C221.1"
+    },
+    {
+      "from": "C221.2",
+      "to": "GND"
+    },
+    {
+      "from": "R222.1",
+      "to": "R221.2"
+    },
+    {
+      "from": "R222.2",
+      "to": "C222.1"
+    },
+    {
+      "from": "C222.2",
+      "to": "GND"
+    },
+    {
+      "from": "R223.1",
+      "to": "R222.2"
+    },
+    {
+      "from": "R223.2",
+      "to": "C223.1"
+    },
+    {
+      "from": "C223.2",
+      "to": "GND"
+    },
+    {
+      "from": "R224.1",
+      "to": "R223.2"
+    },
+    {
+      "from": "R224.2",
+      "to": "C224.1"
+    },
+    {
+      "from": "C224.2",
+      "to": "GND"
+    },
+    {
+      "from": "R225.1",
+      "to": "R224.2"
+    },
+    {
+      "from": "R225.2",
+      "to": "C225.1"
+    },
+    {
+      "from": "C225.2",
+      "to": "GND"
+    },
+    {
+      "from": "R226.1",
+      "to": "R225.2"
+    },
+    {
+      "from": "R226.2",
+      "to": "C226.1"
+    },
+    {
+      "from": "C226.2",
+      "to": "GND"
+    },
+    {
+      "from": "R227.1",
+      "to": "R226.2"
+    },
+    {
+      "from": "R227.2",
+      "to": "C227.1"
+    },
+    {
+      "from": "C227.2",
+      "to": "GND"
+    },
+    {
+      "from": "R228.1",
+      "to": "R227.2"
+    },
+    {
+      "from": "R228.2",
+      "to": "C228.1"
+    },
+    {
+      "from": "C228.2",
+      "to": "GND"
+    },
+    {
+      "from": "R229.1",
+      "to": "R228.2"
+    },
+    {
+      "from": "R229.2",
+      "to": "C229.1"
+    },
+    {
+      "from": "C229.2",
+      "to": "GND"
+    },
+    {
+      "from": "R230.1",
+      "to": "R229.2"
+    },
+    {
+      "from": "R230.2",
+      "to": "C230.1"
+    },
+    {
+      "from": "C230.2",
+      "to": "GND"
+    },
+    {
+      "from": "R231.1",
+      "to": "R230.2"
+    },
+    {
+      "from": "R231.2",
+      "to": "C231.1"
+    },
+    {
+      "from": "C231.2",
+      "to": "GND"
+    },
+    {
+      "from": "R232.1",
+      "to": "R231.2"
+    },
+    {
+      "from": "R232.2",
+      "to": "C232.1"
+    },
+    {
+      "from": "C232.2",
+      "to": "GND"
+    },
+    {
+      "from": "R233.1",
+      "to": "R232.2"
+    },
+    {
+      "from": "R233.2",
+      "to": "C233.1"
+    },
+    {
+      "from": "C233.2",
+      "to": "GND"
+    },
+    {
+      "from": "R234.1",
+      "to": "R233.2"
+    },
+    {
+      "from": "R234.2",
+      "to": "C234.1"
+    },
+    {
+      "from": "C234.2",
+      "to": "GND"
+    },
+    {
+      "from": "R235.1",
+      "to": "R234.2"
+    },
+    {
+      "from": "R235.2",
+      "to": "C235.1"
+    },
+    {
+      "from": "C235.2",
+      "to": "GND"
+    },
+    {
+      "from": "R236.1",
+      "to": "R235.2"
+    },
+    {
+      "from": "R236.2",
+      "to": "C236.1"
+    },
+    {
+      "from": "C236.2",
+      "to": "GND"
+    },
+    {
+      "from": "R237.1",
+      "to": "R236.2"
+    },
+    {
+      "from": "R237.2",
+      "to": "C237.1"
+    },
+    {
+      "from": "C237.2",
+      "to": "GND"
+    },
+    {
+      "from": "R238.1",
+      "to": "R237.2"
+    },
+    {
+      "from": "R238.2",
+      "to": "C238.1"
+    },
+    {
+      "from": "C238.2",
+      "to": "GND"
+    },
+    {
+      "from": "R239.1",
+      "to": "R238.2"
+    },
+    {
+      "from": "R239.2",
+      "to": "C239.1"
+    },
+    {
+      "from": "C239.2",
+      "to": "GND"
+    },
+    {
+      "from": "R240.1",
+      "to": "R239.2"
+    },
+    {
+      "from": "R240.2",
+      "to": "C240.1"
+    },
+    {
+      "from": "C240.2",
+      "to": "GND"
+    },
+    {
+      "from": "R241.1",
+      "to": "R240.2"
+    },
+    {
+      "from": "R241.2",
+      "to": "C241.1"
+    },
+    {
+      "from": "C241.2",
+      "to": "GND"
+    },
+    {
+      "from": "R242.1",
+      "to": "R241.2"
+    },
+    {
+      "from": "R242.2",
+      "to": "C242.1"
+    },
+    {
+      "from": "C242.2",
+      "to": "GND"
+    },
+    {
+      "from": "R243.1",
+      "to": "R242.2"
+    },
+    {
+      "from": "R243.2",
+      "to": "C243.1"
+    },
+    {
+      "from": "C243.2",
+      "to": "GND"
+    },
+    {
+      "from": "R244.1",
+      "to": "R243.2"
+    },
+    {
+      "from": "R244.2",
+      "to": "C244.1"
+    },
+    {
+      "from": "C244.2",
+      "to": "GND"
+    },
+    {
+      "from": "R245.1",
+      "to": "R244.2"
+    },
+    {
+      "from": "R245.2",
+      "to": "C245.1"
+    },
+    {
+      "from": "C245.2",
+      "to": "GND"
+    },
+    {
+      "from": "R246.1",
+      "to": "R245.2"
+    },
+    {
+      "from": "R246.2",
+      "to": "C246.1"
+    },
+    {
+      "from": "C246.2",
+      "to": "GND"
+    },
+    {
+      "from": "R247.1",
+      "to": "R246.2"
+    },
+    {
+      "from": "R247.2",
+      "to": "C247.1"
+    },
+    {
+      "from": "C247.2",
+      "to": "GND"
+    },
+    {
+      "from": "R248.1",
+      "to": "R247.2"
+    },
+    {
+      "from": "R248.2",
+      "to": "C248.1"
+    },
+    {
+      "from": "C248.2",
+      "to": "GND"
+    },
+    {
+      "from": "R249.1",
+      "to": "R248.2"
+    },
+    {
+      "from": "R249.2",
+      "to": "C249.1"
+    },
+    {
+      "from": "C249.2",
+      "to": "GND"
+    },
+    {
+      "from": "R250.1",
+      "to": "R249.2"
+    },
+    {
+      "from": "R250.2",
+      "to": "C250.1"
+    },
+    {
+      "from": "C250.2",
+      "to": "GND"
+    },
+    {
+      "from": "R250.2",
+      "to": "VOUT"
+    }
+  ]
+}

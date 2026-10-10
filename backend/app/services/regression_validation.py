@@ -5,7 +5,8 @@ uses sorted tuples, also JSON-serializable). Diagnostics always contain
 ``circuit, component, pin, net, expected, actual, error, code, severity``; unused
 context is None. ``error`` is an actionable message, not a boolean. Parser
 records also carry one-based ``line`` numbers. Only metric issues are review
-items; structural/electrical failures have severity ``error``.
+items; structural/electrical failures have severity ``error``. Recoverable
+source warnings retain their severity; unsafe conductive contacts remain errors.
 
 This module uses the standard library and existing dependency-free pin/routing
 validators. It neither imports the production exporter nor needs Pillow or an
@@ -455,7 +456,9 @@ def validate_routing(model, layouts: Mapping, routed, *, options: RoutingOptions
     def add_export(diagnostic):
         issues.append(_diagnostic(diagnostic.code, diagnostic.message, circuit=circuit,
                                   component=diagnostic.component, pin=diagnostic.pin, net=diagnostic.net,
-                                  expected=diagnostic.expected, actual=diagnostic.actual))
+                                  expected=diagnostic.expected, actual=diagnostic.actual,
+                                  severity="error" if diagnostic.code in {"NET_SHORT", "WIRE_CROSSES_PIN"}
+                                  else diagnostic.severity))
 
     for diagnostic in routed.diagnostics:
         add_export(diagnostic)

@@ -1,0 +1,23 @@
+{
+  "components": [
+    {
+      "reference": "U1",
+      "type": "ic",
+      "value": "NE555"
+    }
+  ],
+  "wires": [
+    {
+      "from": "VDD",
+      "to": "U1.VCC"
+    },
+    {
+      "from": "U1.GROUND",
+      "to": "0"
+    },
+    {
+      "from": "U1.TRIG",
+      "to": "U1.THR"
+    }
+  ]
+}

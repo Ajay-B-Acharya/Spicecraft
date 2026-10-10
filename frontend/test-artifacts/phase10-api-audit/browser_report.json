@@ -1,0 +1,106 @@
+{
+  "mode": "Real Chrome; isolated Firebase session and mocked API transport",
+  "checks": [
+    {
+      "name": "Circuit library loads authenticated test session",
+      "status": "PASS"
+    },
+    {
+      "name": "Library navigates to editor",
+      "status": "PASS"
+    },
+    {
+      "name": "Routing failure includes net, component and pin",
+      "status": "PASS"
+    },
+    {
+      "name": "unsupported export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "timeout export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "malformed export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "offline export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid-success export remains retryable with useful diagnostics",
+      "status": "PASS"
+    },
+    {
+      "name": "Editing preserves draft and blocks export",
+      "status": "PASS"
+    },
+    {
+      "name": "Failed save keeps input and enables retry",
+      "status": "PASS"
+    },
+    {
+      "name": "Successful retry saves preserved draft",
+      "status": "PASS"
+    },
+    {
+      "name": "Export retry downloads file",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/circuits"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "PUT",
+      "path": "/circuits/browser-circuit"
+    },
+    {
+      "method": "PUT",
+      "path": "/circuits/browser-circuit"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit/export/asc"
+    },
+    {
+      "method": "GET",
+      "path": "/circuits/browser-circuit"
+    }
+  ],
+  "status": "FAIL",
+  "failure": "Error: Browser assertion timed out: document.body.innerText.includes(\"Browse the circuit library\"); page: New Circuit\nDashboard\nMy Projects\nSearch Circuits\nRecent Circuits\nFavorites\nWORKSPACE\nEditor\nAI Assistant\nExports\nDark Mode\nSpiceCraft\nToggle Sidebar\nNew Project\nBT\nBrowser Test\nBack to Search\nRC Low Pass Filter\nAll Changes Saved\nExport LTspice (.asc)\nSave Changes\n\nEdits stay local until saved. Save changes before exporting.\n\nOverview\n\nDescription\n\nFirst-order RC filter that passes low frequencies and attenuates high frequencies.\n\nCategory\n\nFilters\n\nComponents\n\n2 items\n\nWires\n\n4 connections\n\nCircuit Schematic\n\nConnect electrical pins or drag components. Save to keep your changes.\n\nComponents: 2\nNodes: 5\nWires: 4\nEdges: 4\n1: left · 2: right\nR1\n22k\nresistor\n1: left · 2: right\nC1\n100nF\ncapacitor\nnet: VIN\nVIN\nnet: VOUT\nVOUT\nnet: GND\nGND\nComponents\nCOMPONENT ID\tCOMPONENT TYPE\tCOMPONENT VALUE\nR1\tresistor\t\nC1\tcapacitor\t\nConnections\nSOURCE\tDESTINATION\nVIN\tR1.1\nR1.2\tVOUT\nR1.2\tC1.1\nC1.2\tGND\nMetadata\n\nTags\n\nrc\nfilter\nlow-pass\npassive\nanalog\n    at wait (C:\\Projects\\Spice Craft\\frontend\\tools\\verify-production-browser.cjs:44:9)\n    at async check (C:\\Projects\\Spice Craft\\frontend\\tools\\verify-production-browser.cjs:48:3)\n    at async main (C:\\Projects\\Spice Craft\\frontend\\tools\\verify-production-browser.cjs:186:3)"
+}
