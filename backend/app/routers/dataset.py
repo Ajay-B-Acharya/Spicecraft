@@ -9,11 +9,15 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
+from urllib.request import Request, urlopen
+from urllib.error import HTTPError, URLError
 
 from fastapi import APIRouter, HTTPException, Query, status
+from fastapi.responses import Response
 from pydantic import BaseModel
 
 logger = logging.getLogger(__name__)
@@ -129,3 +133,102 @@ def get_dataset_circuit(circuit_id: str) -> DatasetCircuit:
         status_code=status.HTTP_404_NOT_FOUND,
         detail={"message": f"Dataset circuit '{circuit_id}' not found", "code": "NOT_FOUND"},
     )
+
+
+def _blob_url_to_raw_url(blob_url: str) -> str | None:
+    """
+    Convert a GitHub blob URL to a raw.githubusercontent.com URL.
+    
+    Example:
+      https://github.com/owner/repo/blob/sha/path/file.asc
+      → https://raw.githubusercontent.com/owner/repo/sha/path/file.asc
+    """
+    match = re.match(
+        r"https://github\.com/([^/]+)/([^/]+)/blob/([^/]+)/(.*)",
+        blob_url
+    )
+    if not match:
+        return None
+    owner, repo, ref, path = match.groups()
+    return f"https://raw.githubusercontent.com/{owner}/{repo}/{ref}/{path}"
+
+
+@router.get("/circuits/{circuit_id}/content")
+def get_dataset_circuit_content(circuit_id: str) -> Response:
+    """
+    Fetch the actual .asc file content from GitHub for a dataset circuit.
+    
+    Returns the raw .asc file as text/plain. The file is fetched on-demand
+    from the upstream repository and not stored locally.
+    """
+    # Find the manifest entry
+    all_circuits = _load_manifest()
+    entry = next((c for c in all_circuits if str(c.get("id", "")) == circuit_id), None)
+    if not entry:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail={"message": f"Dataset circuit '{circuit_id}' not found", "code": "NOT_FOUND"},
+        )
+    
+    blob_url = str(entry.get("source_url", ""))
+    raw_url = _blob_url_to_raw_url(blob_url)
+    if not raw_url:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail={"message": "Invalid source URL in manifest", "code": "INVALID_SOURCE_URL"},
+        )
+    
+    # Fetch the .asc content from GitHub
+    try:
+        logger.info("Fetching .asc content from %s", raw_url)
+        req = Request(raw_url, headers={"User-Agent": "SpiceCraft-Dataset-Viewer/1.0"})
+        with urlopen(req, timeout=30) as response:
+            content = response.read()
+        
+        # Validate that it looks like an .asc file
+        try:
+            text = content.decode("utf-8-sig")
+            if not text.strip():
+                raise HTTPException(
+                    status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                    detail={"message": "Retrieved file is empty", "code": "EMPTY_FILE"},
+                )
+        except UnicodeDecodeError:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail={"message": "Retrieved file is not valid UTF-8", "code": "INVALID_ENCODING"},
+            )
+        
+        filename = entry.get("filename", "circuit.asc")
+        return Response(
+            content=text.encode("utf-8"),
+            media_type="text/plain; charset=utf-8",
+            headers={
+                "Content-Disposition": f'inline; filename="{filename}"',
+                "X-Source-URL": blob_url,
+            }
+        )
+    
+    except HTTPError as exc:
+        if exc.code == 404:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail={"message": "File not found in upstream repository", "code": "UPSTREAM_NOT_FOUND"},
+            )
+        logger.exception("HTTP error fetching .asc from GitHub: %s", exc)
+        raise HTTPException(
+            status_code=status.HTTP_502_BAD_GATEWAY,
+            detail={"message": f"Failed to fetch file from GitHub (HTTP {exc.code})", "code": "UPSTREAM_ERROR"},
+        )
+    except URLError as exc:
+        logger.exception("Network error fetching .asc from GitHub: %s", exc)
+        raise HTTPException(
+            status_code=status.HTTP_502_BAD_GATEWAY,
+            detail={"message": "Network error connecting to GitHub", "code": "NETWORK_ERROR"},
+        )
+    except Exception as exc:
+        logger.exception("Unexpected error fetching .asc: %s", exc)
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail={"message": "Unexpected error fetching circuit content", "code": "INTERNAL_ERROR"},
+        )

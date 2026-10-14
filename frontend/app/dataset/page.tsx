@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { ExternalLink, Search, Database, Github, ChevronLeft, ChevronRight } from 'lucide-react';
 import { DashboardShell } from '@/components/dashboard-shell';
 import { Button } from '@/components/ui/button';
@@ -147,39 +148,56 @@ export default function DatasetPage() {
                   <th className="px-4 py-3 text-left font-medium text-muted-foreground">Filename</th>
                   <th className="hidden px-4 py-3 text-left font-medium text-muted-foreground md:table-cell">Path</th>
                   <th className="hidden px-4 py-3 text-left font-medium text-muted-foreground lg:table-cell">Repository</th>
-                  <th className="px-4 py-3 text-right font-medium text-muted-foreground">Open</th>
+                  <th className="px-4 py-3 text-right font-medium text-muted-foreground">Actions</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
                 {circuits.map(circuit => (
                   <tr key={circuit.id} className="group transition-colors hover:bg-muted/30">
                     <td className="px-4 py-3">
-                      <span className="font-mono text-xs font-medium text-foreground">
+                      <Link
+                        href={`/dataset/${circuit.id}`}
+                        className="block font-mono text-xs font-medium text-foreground hover:text-primary hover:underline"
+                      >
                         {circuit.filename}
-                      </span>
+                      </Link>
                     </td>
                     <td className="hidden px-4 py-3 md:table-cell">
-                      <span className="font-mono text-xs text-muted-foreground line-clamp-1 max-w-xs" title={circuit.original_relative_path}>
+                      <Link
+                        href={`/dataset/${circuit.id}`}
+                        className="block font-mono text-xs text-muted-foreground hover:text-foreground line-clamp-1 max-w-xs"
+                        title={circuit.original_relative_path}
+                      >
                         {circuit.original_relative_path}
-                      </span>
+                      </Link>
                     </td>
                     <td className="hidden px-4 py-3 lg:table-cell">
-                      <Badge variant="secondary" className="gap-1 font-mono text-xs">
-                        <Github className="h-3 w-3" />
-                        {circuit.source_repository}
-                      </Badge>
+                      <Link href={`/dataset/${circuit.id}`} className="block">
+                        <Badge variant="secondary" className="gap-1 font-mono text-xs">
+                          <Github className="h-3 w-3" />
+                          {circuit.source_repository}
+                        </Badge>
+                      </Link>
                     </td>
                     <td className="px-4 py-3 text-right">
-                      <a
-                        href={circuit.source_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Open ${circuit.filename} on GitHub`}
-                        className="inline-flex items-center gap-1 rounded-md px-2.5 py-1 text-xs font-medium text-primary opacity-70 transition-opacity hover:opacity-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring"
-                      >
-                        <ExternalLink className="h-3.5 w-3.5" />
-                        GitHub
-                      </a>
+                      <div className="flex items-center justify-end gap-2">
+                        <Button variant="ghost" size="sm" asChild>
+                          <Link href={`/dataset/${circuit.id}`}>
+                            View Circuit
+                          </Link>
+                        </Button>
+                        <Button variant="ghost" size="sm" asChild>
+                          <a
+                            href={circuit.source_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`View ${circuit.filename} source on GitHub`}
+                            onClick={e => e.stopPropagation()}
+                          >
+                            <ExternalLink className="h-3.5 w-3.5" />
+                          </a>
+                        </Button>
+                      </div>
                     </td>
                   </tr>
                 ))}
