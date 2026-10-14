@@ -13,9 +13,8 @@ import re
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
-from urllib.request import Request, urlopen
-from urllib.error import HTTPError, URLError
 
+import httpx
 from fastapi import APIRouter, HTTPException, Query, status
 from fastapi.responses import Response
 from pydantic import BaseModel
@@ -181,11 +180,16 @@ def get_dataset_circuit_content(circuit_id: str) -> Response:
     # Fetch the .asc content from GitHub
     try:
         logger.info("Fetching .asc content from %s", raw_url)
-        req = Request(raw_url, headers={"User-Agent": "SpiceCraft-Dataset-Viewer/1.0"})
-        with urlopen(req, timeout=30) as response:
-            content = response.read()
+        response = httpx.get(
+            raw_url,
+            headers={"User-Agent": "SpiceCraft-Dataset-Viewer/1.0"},
+            timeout=30.0,
+            follow_redirects=True,
+        )
+        response.raise_for_status()
         
         # Validate that it looks like an .asc file
+        content = response.content
         try:
             text = content.decode("utf-8-sig")
             if not text.strip():
@@ -209,8 +213,8 @@ def get_dataset_circuit_content(circuit_id: str) -> Response:
             }
         )
     
-    except HTTPError as exc:
-        if exc.code == 404:
+    except httpx.HTTPStatusError as exc:
+        if exc.response.status_code == 404:
             raise HTTPException(
                 status_code=status.HTTP_404_NOT_FOUND,
                 detail={"message": "File not found in upstream repository", "code": "UPSTREAM_NOT_FOUND"},
@@ -218,9 +222,9 @@ def get_dataset_circuit_content(circuit_id: str) -> Response:
         logger.exception("HTTP error fetching .asc from GitHub: %s", exc)
         raise HTTPException(
             status_code=status.HTTP_502_BAD_GATEWAY,
-            detail={"message": f"Failed to fetch file from GitHub (HTTP {exc.code})", "code": "UPSTREAM_ERROR"},
+            detail={"message": f"Failed to fetch file from GitHub (HTTP {exc.response.status_code})", "code": "UPSTREAM_ERROR"},
         )
-    except URLError as exc:
+    except httpx.RequestError as exc:
         logger.exception("Network error fetching .asc from GitHub: %s", exc)
         raise HTTPException(
             status_code=status.HTTP_502_BAD_GATEWAY,
