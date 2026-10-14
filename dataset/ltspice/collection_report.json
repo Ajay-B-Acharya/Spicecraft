@@ -1,0 +1,61 @@
+{
+  "duplicate_files": 0,
+  "errors_and_warnings": [
+    {
+      "repository": "alok-ltspice-circuit-design",
+      "warning": "License is unknown; schematics were recorded as references and were not copied."
+    },
+    {
+      "repository": "mr-jaymac-ltspice-circuits",
+      "warning": "License is unknown; schematics were recorded as references and were not copied."
+    },
+    {
+      "repository": "bert-ltspice-examples",
+      "warning": "License is unknown; schematics were recorded as references and were not copied."
+    },
+    {
+      "repository": "ribster-ltspice",
+      "warning": "License is unknown; schematics were recorded as references and were not copied."
+    }
+  ],
+  "files_discovered": 2269,
+  "files_downloaded_or_reused": 0,
+  "files_selected_for_manifest": 2269,
+  "files_with_known_licenses": 0,
+  "files_with_unknown_licenses": 2269,
+  "generated_at": "2026-10-14T06:45:36Z",
+  "invalid_or_empty_files": 0,
+  "per_repository": {
+    "alok-ltspice-circuit-design": {
+      "discovered": 131,
+      "downloaded_or_reused": 0,
+      "selected": 131
+    },
+    "analogdevices-ltspice-reference": {
+      "discovered": 0,
+      "downloaded_or_reused": 0,
+      "selected": 0
+    },
+    "bert-ltspice-examples": {
+      "discovered": 12,
+      "downloaded_or_reused": 0,
+      "selected": 12
+    },
+    "mr-jaymac-ltspice-circuits": {
+      "discovered": 14,
+      "downloaded_or_reused": 0,
+      "selected": 14
+    },
+    "ribster-ltspice": {
+      "discovered": 2112,
+      "downloaded_or_reused": 0,
+      "selected": 2112
+    }
+  },
+  "repositories_examined": 5,
+  "repositories_failed": 0,
+  "repositories_successfully_accessed": 5,
+  "schema_version": 1,
+  "total_dataset_size_bytes": 0,
+  "unique_downloaded_files": 0
+}

@@ -1,0 +1,107 @@
+{
+  "failures": [],
+  "generated_at": "2026-10-14T06:45:36Z",
+  "schema_version": 1,
+  "sources": [
+    {
+      "collection_date": "2026-10-14T06:37:16Z",
+      "default_branch": "main",
+      "discovered_asc_files": 0,
+      "license": {
+        "file_path": "LICENSE.md",
+        "local_path": "dataset/ltspice/raw/analogdevices-ltspice-reference/LICENSE.md",
+        "name": "Apache License 2.0",
+        "redistribution_status": "PERMITTED_SUBJECT_TO_LICENSE",
+        "source_url": "https://github.com/analogdevicesinc/ltspice-reference/blob/main/LICENSE.md",
+        "spdx_id": "Apache-2.0",
+        "status": "KNOWN"
+      },
+      "repository": "analogdevicesinc/ltspice-reference",
+      "repository_revision": "b4358f83e9d09a719ee5c08f25b7e236a896c41d",
+      "repository_url": "https://github.com/analogdevicesinc/ltspice-reference",
+      "selected_asc_files": 0,
+      "slug": "analogdevices-ltspice-reference",
+      "status": "SUCCESS"
+    },
+    {
+      "collection_date": "2026-10-14T06:39:19Z",
+      "default_branch": "master",
+      "discovered_asc_files": 131,
+      "license": {
+        "file_path": null,
+        "local_path": null,
+        "name": "UNKNOWN",
+        "redistribution_status": "UNCERTAIN_NOT_COPIED",
+        "source_url": null,
+        "spdx_id": "UNKNOWN",
+        "status": "UNKNOWN"
+      },
+      "repository": "Alok018/LTSpice_Circuit_Design",
+      "repository_revision": "e370cfeae334b4dc58bf9dfce31c14ed003f0f33",
+      "repository_url": "https://github.com/Alok018/LTSpice_Circuit_Design",
+      "selected_asc_files": 131,
+      "slug": "alok-ltspice-circuit-design",
+      "status": "SUCCESS"
+    },
+    {
+      "collection_date": "2026-10-14T06:41:26Z",
+      "default_branch": "main",
+      "discovered_asc_files": 14,
+      "license": {
+        "file_path": null,
+        "local_path": null,
+        "name": "UNKNOWN",
+        "redistribution_status": "UNCERTAIN_NOT_COPIED",
+        "source_url": null,
+        "spdx_id": "UNKNOWN",
+        "status": "UNKNOWN"
+      },
+      "repository": "Mr-Jaymac/LTSpice-Circuits",
+      "repository_revision": "bcafa08767a897939c66aea3188385fc62d9ba65",
+      "repository_url": "https://github.com/Mr-Jaymac/LTSpice-Circuits",
+      "selected_asc_files": 14,
+      "slug": "mr-jaymac-ltspice-circuits",
+      "status": "SUCCESS"
+    },
+    {
+      "collection_date": "2026-10-14T06:43:30Z",
+      "default_branch": "master",
+      "discovered_asc_files": 12,
+      "license": {
+        "file_path": null,
+        "local_path": null,
+        "name": "UNKNOWN",
+        "redistribution_status": "UNCERTAIN_NOT_COPIED",
+        "source_url": null,
+        "spdx_id": "UNKNOWN",
+        "status": "UNKNOWN"
+      },
+      "repository": "bert/LTSpice-examples",
+      "repository_revision": "69fbf6fe9c6311ddb64109ce17e479a8877e1403",
+      "repository_url": "https://github.com/bert/LTSpice-examples",
+      "selected_asc_files": 12,
+      "slug": "bert-ltspice-examples",
+      "status": "SUCCESS"
+    },
+    {
+      "collection_date": "2026-10-14T06:45:36Z",
+      "default_branch": "master",
+      "discovered_asc_files": 2112,
+      "license": {
+        "file_path": null,
+        "local_path": null,
+        "name": "UNKNOWN",
+        "redistribution_status": "UNCERTAIN_NOT_COPIED",
+        "source_url": null,
+        "spdx_id": "UNKNOWN",
+        "status": "UNKNOWN"
+      },
+      "repository": "Ribster/LTSpice",
+      "repository_revision": "cc7ecbb8a243649aabdc69401ba07a2ac78211b7",
+      "repository_url": "https://github.com/Ribster/LTSpice",
+      "selected_asc_files": 2112,
+      "slug": "ribster-ltspice",
+      "status": "SUCCESS"
+    }
+  ]
+}
