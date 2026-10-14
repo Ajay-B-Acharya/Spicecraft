@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.exceptions import RequestValidationError
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from app.routers import circuits, circuit_sources, projects, search
+from app.routers import circuits, circuit_sources, dataset, projects, search
 from app.request_limits import CircuitRequestLimits, circuit_http_error, circuit_validation_error
 
 logging.basicConfig(
@@ -34,6 +34,7 @@ app.include_router(projects.router)
 app.include_router(circuit_sources.router)
 app.include_router(search.router)
 app.include_router(circuits.router)
+app.include_router(dataset.router)
 
 
 @app.get("/")

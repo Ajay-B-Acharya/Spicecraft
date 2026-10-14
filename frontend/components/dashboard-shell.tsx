@@ -9,6 +9,7 @@ import {
   CircleHelp,
   CirclePlus,
   Clock3,
+  Database,
   FileCode2,
   FolderKanban,
   Home,
@@ -51,6 +52,7 @@ const primaryLinks = [
   { title: "Dashboard", icon: Home, href: "/dashboard" },
   { title: "My Projects", icon: FolderKanban, href: "/dashboard" },
   { title: "Search Circuits", icon: Search, href: "/search" },
+  { title: "Circuit Dataset", icon: Database, href: "/dataset" },
   { title: "Recent Circuits", icon: Clock3, href: "#" },
   { title: "Favorites", icon: Sparkles, href: "/favorites" },
 ];

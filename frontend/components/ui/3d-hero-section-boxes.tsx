@@ -18,6 +18,7 @@ import {
 import Link from "next/link";
 import type { MouseEvent } from "react";
 import { Navbar } from "@/components/navbar";
+import CursorGrid from "@/components/ui/CursorGrid";
 
 const techPills = ["React", "Python", "FastAPI", "LTspice", "AI Powered"];
 
@@ -121,7 +122,7 @@ const roadmapItems = [
 function PageBackground() {
   return (
     <div className="pointer-events-none absolute inset-0">
-      <div className="absolute inset-0 bg-[#02040A]" />
+      {/* No solid fill here — the root div supplies bg-[#02040A] and CursorGrid canvas sits below */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(56,189,248,0.16),transparent_34%),radial-gradient(circle_at_85%_18%,rgba(34,211,238,0.08),transparent_28%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:64px_64px]" />
       <div className="absolute inset-x-0 bottom-0 h-80 bg-gradient-to-t from-[#02040A] to-transparent" />
@@ -528,6 +529,24 @@ function FinalCta() {
 export function HeroSectionBoxes() {
   return (
     <div className="relative overflow-hidden bg-[#02040A] text-white">
+      {/* Interactive cursor grid — sits below all content layers */}
+      <div className="absolute inset-0 z-0">
+        <CursorGrid
+          cellSize={70}
+          color="#38bdf8"
+          radius={150}
+          falloff="smooth"
+          holdTime={400}
+          fadeDuration={900}
+          lineWidth={1}
+          maxOpacity={0.55}
+          fillOpacity={0.04}
+          gridOpacity={0}
+          cellRadius={0}
+          clickPulse={false}
+          pulseSpeed={600}
+        />
+      </div>
       <PageBackground />
       <Navbar />
 
