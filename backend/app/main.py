@@ -1,4 +1,5 @@
 import logging
+import os
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -13,6 +14,17 @@ logging.basicConfig(
     format="%(asctime)s %(levelname)s %(name)s: %(message)s",
 )
 
+# Build allowed origins from CORS_ORIGINS env var (comma-separated),
+# then ensure localhost is always present for local development.
+ALLOWED_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv("CORS_ORIGINS", "").split(",")
+    if origin.strip()
+]
+for _origin in ["http://localhost:3000"]:
+    if _origin not in ALLOWED_ORIGINS:
+        ALLOWED_ORIGINS.append(_origin)
+
 app = FastAPI(
     title="SpiceCraft API",
     description="AI-Powered LTspice Circuit Generator Backend",
@@ -24,7 +36,7 @@ app.add_exception_handler(StarletteHTTPException, circuit_http_error)
 app.add_middleware(CircuitRequestLimits)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
